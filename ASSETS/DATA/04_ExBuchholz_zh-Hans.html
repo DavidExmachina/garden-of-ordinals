@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定义</h1><hr>
+        <p>&emsp;&emsp;拓展布赫霍兹\( \psi \)函数指的是Denis Maksudov于2017年提出的布赫霍兹\( \psi \)函数的拓展<sup><a id="g1" href="#c1">[1]</a></sup>。该函数\( \psi_\alpha(\beta) \)定义如下：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'\in C_n(\alpha,\beta)\land\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;与原来的布赫霍兹\( \psi \)函数的唯一区别是，在\( C_{n+1}(\alpha,\beta) \)的定义中，原函数中的\( \alpha'&lt;\omega+1 \)改成了\( \alpha'\in C_n(\alpha,\beta) \)。这使得该函数能够使用大于\( \Omega_\omega \)且不超过\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)，\( \Omega \)不动点的不可数基数。</p>
+        <p>&emsp;&emsp;本网站所使用的基本序列系统定义如下，注意所有项都必须是标准型。由于其复杂性，标准型将在“序数表示法”栏目定义：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \alpha=0 \)，则\( \alpha[n]:=0 \)且\( Cof(\alpha):=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \alpha=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m) \)且\( m&gt;1 \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \alpha[n]:=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m)[n] \)且\( Cof(\alpha):=Cof(\psi_{\beta_m}(\gamma_m)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( \alpha=\psi_0(0)=1 \)，则\( \alpha[n]:=0 \)且\( Cof(\alpha):=1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( \alpha=\psi_{\beta}(0)=\Omega_\beta \)且\( Cof(\beta)=1 \)，则\( \alpha[n]:=n \)且\( Cof(\alpha):=\alpha \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( \alpha=\psi_{\beta}(0)=\Omega_\beta \)且\( Cof(\beta)&gt;1 \)，则\( \alpha[n]:=\psi_{\beta[n]}(0) \)且\( Cof(\alpha):=Cof(\beta) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( Cof(\gamma)=1 \)，则\( \alpha[n]:=\psi_{\beta}(\gamma[0])*n \)且\( Cof(\alpha):=\psi_0(\psi_0(0))=\omega \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( 1&lt;Cof(\gamma)\le\Omega_\beta \)，则\( \alpha[n]:=\psi_{\beta}(\gamma[n]) \)且\( Cof(\alpha):=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( \Omega_\beta&lt;Cof(\gamma) \)，则\( \alpha[0]:=0 \)且\( \alpha[n+1]:=\psi_{\beta}(Re(\gamma,n)) \)且\( Cof(\alpha):=\omega \)，</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> 其中\( Re(\gamma,0):=\gamma[0] \)且\( Re(\gamma,n+1):=\gamma[\psi_{\delta}(Re(\gamma,n))] \)且\( \Omega_{\delta+1}=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 若\( \alpha=\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)，则\( \alpha[0]:=0 \)且\( \alpha[n+1]:=\psi_{\alpha[n]}(0) \)且\( Cof(\alpha):=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;顺便一提，Denis Maksudov也在他的网站上定义了他的基本序列系统，与上述定义有所差异。</p>
+        <p>&emsp;&emsp;该序数塌缩函数的可数极限，记作\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)，称作“大布赫霍兹序数（LBO）”，又称“拓展布赫霍兹序数（EBO）”。该序数是\( \Pi_1^1-TR_0 \)的证明论序数<sup><a id="g2" href="#c2">[2]</a></sup>。</p>
+        <h1>序数表示法</h1><hr>
+        <h2>表示法</h2><hr>
+        <p>&emsp;&emsp;我们定义\( S \)为包含以下字符的集合：</p>
+        <p>&emsp;&emsp;常数“\( \overline{0} \)”，</p>
+        <p>&emsp;&emsp;函数字符“\( \psi \)”，</p>
+        <p>&emsp;&emsp;以及其他字符“\( + \)”，“\( ( \)”，“\( ) \)”与“\( , \)”。</p>
+        <br>
+        <p>&emsp;&emsp;我们定义\( S \)的子集\( T_m \)与\( T_s \)如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 对于一切\( a\in T_s \)与\( b\in T_m\setminus\{\overline{0}\} \)，\( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 对于一切\( a,b\in T_m \)，\( \psi(a,b)\in T_m \)且\( \psi(a,b)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;在全篇文章中，我们采用以下简写：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \psi_a(b):=\psi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\psi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\psi_\overline{0}(\overline{1}) \)</p>
+        <h2>顺序</h2><hr>
+        <p>&emsp;&emsp;我们定义二元关系\( &lt; \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( b=\overline{0} \)，返回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\overline{0}\land b\neq\overline{0} \)，返回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，返回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，返回\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，返回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)，返回\( \neg b_0&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，返回\( a_0&lt;b_0\vee(\neg b_0&lt;a_0\land a_1&lt;b_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义所有其他的比较符号：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;返回\( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;返回\( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;返回\( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;返回\( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;返回\( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;注意\( = \)与\( \neq \)表示符号等价性而\( =_* \)与\( \neq_* \)表示数值等价性。</p>
+        <h2>标准型</h2><hr>
+        <p>&emsp;&emsp;我们定义函数\( \in C \)以判断序数\( c \)是否为\( C(a,b) \)的元素：</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( c&lt;\psi_a(\overline{0}) \)，返回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg c&lt;\psi_a(\overline{0}) \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( c=c_0+c_1\land c_0\in T_s\land c_1\in T_m\setminus\{\overline{0}\} \)，返回\( c_0\in C(a,b)\land c_1\in C(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( c=\psi_{c_0}(c_1)\land c_0,c_1\in T_m \)，返回\( c_0\in C(a,b)\land c_1\in C(a,b)\land c_1&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义函数\( \in T \)以判断序数是否为标准型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，返回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T\land a_1\in T \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，返回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，返回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，返回\( a_0\in T\land a_1\in T\land a_1\in C(a_0,a_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义该系统的极限为\( A=\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)。</p>
+        <p>&emsp;&emsp;\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)亦为标准型。</p>
+        <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha&lt;\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)。</p>
+        <p>&emsp;&emsp;序数\( \alpha \)可数当且仅当\( \alpha&lt;\psi_\overline{1}(\overline{0}) \)。</p>
+        <p>&emsp;&emsp;仅限于指令“fgh”与“sgh”可用的可数序数极限为\( \psi_\overline{0}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)。其电脑代码为(,A)。</p>
+        <h2>运算</h2><hr>
+        <p>&emsp;&emsp;我们定义加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，返回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，返回\( a+b \)</p>
+        <h2>共尾数</h2><hr>
+        <p>&emsp;&emsp;我们定义共尾函数\( Cof \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，返回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_1=\overline{0} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> 若\( Cof(a_0)&lt;\overline{\omega} \)，返回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega} \)，返回\( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_1)=\overline{1} \)，返回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> 若\( \neg\psi_{a_0}(0)&lt;Cof(a_1) \)，返回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> 若\( \psi_{a_0}(0)&lt;Cof(a_1) \)，返回\( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;我们也定义\( Cof(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}})=\overline{\omega} \)。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;我们定义基本序列\( [] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，返回\( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_1=\overline{0} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> 若\( a_0=\overline{0} \)，返回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，返回\( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega} \)，返回\( \psi_{a_0[n]}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_1)=\overline{1} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( n\neq\overline{0} \)，返回\( Add(a[n[\overline{0}]], \psi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> 若\( \neg\psi_{a_0}(0)&lt;Cof(a_1) \)，返回\( \psi_{a_0}(a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> 若\( \psi_{a_0}(0)&lt;Cof(a_1) \)，则：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.02.</span> 若\( n\neq\overline{0} \)，返回\( \psi_{a_0}(Re(a_1,n[\overline{0}])) \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义迭代函数\( Re \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto Re(a,n)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，返回\( a[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0}\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \)，返回\( a[\psi_{a_1}(Re(a,n[\overline{0}]))] \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义强基本序列\( {[]}^* \)如下，以便将共尾数不可数的序数以更小的共尾数可数的序数展开：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg\overline{\omega}&lt;Cof(a) \)，返回\( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \overline{\omega}&lt;Cof(a)\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \)，返回\( a[\psi_{a_1}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n])] \)</p>
+        <br>
+        <p>&emsp;&emsp;我们也定义\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)的基本序列如下：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，返回\( \psi_{\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n[\overline{0}]]}(\overline{0}) \)</p>
+        <h1>引用</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function" target="_blank">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-12-13.</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Rathjen, M. (2010). <a href="https://web.archive.org/web/20231207051455/https://www1.maths.leeds.ac.uk/~rathjen/Dissertation_Ontos.pdf" target="_blank">Investigations of Subsystems of Second Order Arithmetic and Set Theory in Strength between \( \Pi_1^1-CA \) and \( \Delta_2^1-CA+BI \): Part I.</a> In R. Schindler (Ed.), Ways of Proof Theory (pp. 363-440). Berlin, Boston: De Gruyter. Retrieved 2024-12-13. https://doi.org/10.1515/9783110324907.363</p>
+    </body>
+</html>

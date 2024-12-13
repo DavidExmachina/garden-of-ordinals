@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="David_Exmachina">
+        <meta name="description" content="A Website of Ordinal Numbers">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title id="title">Garden of Ordinals</title>
+        <link rel="icon" href="ASSETS/icon.png">
+        <link rel="stylesheet" href="ASSETS/main.css">
+        <script src="ASSETS/ordinal.js"></script>
+        <script src="ASSETS/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="main">
+            <div class="menu" style="display: none;">
+                <div class="menu-main1">
+                    <div class="menu-main2">
+                        <div class="menu-title">
+                            <div id="menu-title" class="big-text"></div>
+                            <div class="small-text">By <a href="https://davidexmachina.github.io" target="_blank">David_Exmachina</a></div>
+                        </div>
+                        <div class="menu-button1"><div id="menu0" class="menu-button2 button1" onclick="change_mode(1);"></div></div>
+                        <div class="menu-button1"><div id="menu1" class="menu-button2 button1" onclick="change_mode(2);"></div></div>
+                        <div class="menu-button1"><div id="menu2" class="menu-button2 button1" onclick="change_mode(3);"></div></div>
+                        <div class="menu-button1"><div id="menu3" class="menu-button2 button1" onclick="change_mode(4);"></div></div>
+                        <div class="menu-button1"><div id="menu4" class="menu-button2 button1" onclick="change_mode(5);"></div></div>
+                        <div class="menu-button1"><div id="menu5" class="menu-button2 button1" onclick="change_mode(6);"></div></div>
+                        <div class="menu-button1"><div id="menu6" class="menu-button2 button1" onclick="change_mode(7);"></div></div>
+                    </div>
+                </div>
+                <div class="lang">
+                    <div id="lang0" class="lang-button1 button1" onclick="set_lang()"></div>
+                    <div id="lang1" class="lang-button2 button1" onclick="set_lang(0)"></div>
+                    <div id="lang2" class="lang-button2 button1" onclick="set_lang(1)"></div>
+                    <div id="lang3" class="lang-button2 button1" onclick="set_lang(2)"></div>
+                    <div id="lang4" class="lang-button2 button1" onclick="set_lang(3)"></div>
+                </div>
+                <div class="version">V1.0</div>
+            </div>
+            <div class="system" style="display: none;">
+                <div class="tab">
+                    <div id="back" class="tab-button button1" onclick="change_mode(0);"></div>
+                    <span id="system"></span>
+                    <div class="tab-main" style="display: none;">
+                        <div id="tab0" class="tab-button button1"></div>
+                        <div id="tab1" class="tab-button button1"></div>
+                        <div id="tab2" class="tab-button button1"></div>
+                        <div id="tab3" class="tab-button button1"></div>
+                    </div>
+                </div>
+                <div class="tab-border"></div>
+                <div class="calculate" style="display: none;">
+                    <div class="cal-input">
+                        <input id="ev" class="cal-bar">
+                        <div class="cal-enter button2" onclick="read_command();">→</div>
+                    </div>
+                    <div class="cal-console"></div>
+                    <div class="cal-preset"><div class="cal-items"></div></div>
+                </div>
+                <div class="explore" style="display: none;">
+                    <div class="ordinals"></div>
+                </div>
+                <div class="options" style="display: none;">
+                    <div class="op-lines">
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op0" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op0-0"></div>
+                                    <div id="op0-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op1" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op1-0"></div>
+                                    <div id="op1-1"></div>
+                                    <div id="op1-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op2" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op2-0"></div>
+                                    <div id="op2-1"></div>
+                                    <div id="op2-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op3" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op3-0"></div>
+                                    <div id="op3-1"></div>
+                                    <div id="op3-2"></div>
+                                    <div id="op3-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op4" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op4-0"></div>
+                                    <div id="op4-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op5" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op5-0"></div>
+                                    <div id="op5-1"></div>
+                                    <div id="op5-2"></div>
+                                    <div id="op5-3"></div>
+                                    <div id="op5-4"></div>
+                                    <div id="op5-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op6" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op6-0"></div>
+                                    <div id="op6-1"></div>
+                                    <div id="op6-2"></div>
+                                    <div id="op6-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op7" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op7-0"></div>
+                                    <div id="op7-1"></div>
+                                    <div id="op7-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op8" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op8-0"></div>
+                                    <div id="op8-1"></div>
+                                    <div id="op8-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="op-item">
+                            <div class="op-content">
+                                <div id="op9" class="op-text"></div>
+                                <div class="op-buttons">
+                                    <div id="op9-0"></div>
+                                    <div id="op9-1"></div>
+                                    <div id="op9-2"></div>
+                                    <div id="op9-3"></div>
+                                    <div id="op9-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="help" style="display: none;"></div>
+            </div>
+        </div>
+    </body>
+</html>

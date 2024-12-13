@@ -1,0 +1,1133 @@
+{
+    "words"     : {
+        "en"        : {
+            "lang"      : "English",
+            "title"     : "Garden of Ordinals",
+            "back"      : "Back",
+            "calculate" : "Calculate",
+            "explore"   : "Explore",
+            "options"   : "Options",
+            "help"      : "Help",
+            "input"     : "Enter command here...",
+            "copy"      : "Copy",
+            "yes"       : "Yes",
+            "no"        : "No",
+            "name"      : "Name",
+            "ordinal"   : "Ordinal",
+            "expand_as" : "Expand as ${ord}",
+            "contents"  : "Contents",
+            "hide"      : "Hide",
+            "show"      : "Show",
+            "systems"   : [
+                "Cantor Normal Form",
+                "Veblen Function",
+                "Buchholz's \\( \\psi \\)",
+                "Extended Buchholz's \\( \\psi \\)",
+                "Rathjen's Little \\( \\psi \\)",
+                "Rathjen's Capital \\( \\Psi \\)"
+            ],
+            "console"   : {
+                "initial"           : "You can run some calculations by entering the command in the command bar above.",
+                "rep1"              : "Let ${rep}then:",
+                "rep2"              : "${a} represent ${b}, ",
+                "rep3"              : "${a} represents ${b}",
+                "empty"             : "Empty string",
+                "stra"              : "String \"A\"",
+                "expanding_as"      : "Expanding ${a} as ${b}.",
+                "warning_uc"        : "WARNING: The cofinality of ${ord} is uncountable.",
+                "set_initial"       : "The initial ordinal in the Explore menu has been set to ${ord}.",
+                "search_success1"   : "Ordinal ${ord} is found.",
+                "search_success2"   : "You can check the target ordinal in the Explore menu.",
+                "import_preset"     : "Importing preset file...",
+                "import_success"    : "Import successful.",
+                "export_preset"     : "Exporting preset file...",
+                "reset_preset"      : "Are you sure you want to reset preset data?",
+                "reset_success"     : "The preset data has been reset.",
+                "reset_cancel"      : "Reset cancelled."
+            },
+            "error"     : {
+                "error"             : "ERROR: ",
+                "format"            : "Format: ",
+                "loop"              : "An infinite loop has occurred.",
+                "unknown1"          : "Unknown command: \"${command}\"",
+                "unknown2"          : "Please check the help from the title screen for more information.",
+                "invalid_format"    : "Invalid format.",
+                "invalid1_1"        : "Contains invalid characters.",
+                "invalid1_2"        : "Please remove the invalid characters and try again.",
+                "invalid2_1"        : "Mismatched or missing brackets.",
+                "invalid2_2"        : "Please check the brackets and try again.",
+                "invalid3_1"        : "Not in normal form.",
+                "invalid3_2"        : "Please check the help for more information.",
+                "invalid_num1"      : "Invalid number.",
+                "invalid_num2"      : "Only natural numbers are supported. (0, 1, 2, 3, ...)",
+                "uncountable"       : "The ordinal is uncountable.",
+                "uncountable_fgh"   : "FGH is defined only when the ordinal is countable.",
+                "uncountable_sgh"   : "SGH is defined only when the ordinal is countable.",
+                "not_found1"        : "Ordinal not found.",
+                "not_found2"        : "Unable to find ordinal ${a} under the current initial ordinal ${b}.",
+                "unknown_aux1"      : "Unknown auxiliary command: \"${command}\"",
+                "unknown_aux2"      : "Supported auxiliary commands are: \"import\"/\"export\"/\"reset\"",
+                "import_fail1"      : "Importing failed.",
+                "import_fail2"      : "Invalid file format."
+            },
+            "option"    : {
+                "background"        : "Background Animation",
+                "display_mode"      : "Display Mode",
+                "indent_mode"       : "Indent Mode",
+                "simplification"    : "Simplification Mode",
+                "specification"     : "Function Specification",
+                "rewrite"           : "Rewrite ${ord}",
+                "off"               : "Off",
+                "on"                : "On",
+                "none"              : "None",
+                "original"          : "Original",
+                "expansive"         : "Expansive",
+                "recursive"         : "Recursive"
+            }
+        },
+        "zh-Hans"   : {
+            "lang"      : "简体中文",
+            "title"     : "序数花园",
+            "back"      : "返回",
+            "calculate" : "计算",
+            "explore"   : "探索",
+            "options"   : "选项",
+            "help"      : "帮助",
+            "input"     : "在此处输入指令……",
+            "copy"      : "复制",
+            "yes"       : "是",
+            "no"        : "否",
+            "name"      : "名称",
+            "ordinal"   : "序数",
+            "expand_as" : "以${ord}展开",
+            "contents"  : "目录",
+            "hide"      : "隐藏",
+            "show"      : "显示",
+            "systems"   : [
+                "康托尔标准型",
+                "维布伦函数",
+                "布赫霍兹\\( \\psi \\)函数",
+                "拓展布赫霍兹\\( \\psi \\)函数",
+                "拉珍小\\( \\psi \\)函数",
+                "拉珍大\\( \\Psi \\)函数"
+            ],
+            "console"   : {
+                "initial"           : "您可以通过在上方的指令栏中输入指令以进行计算。",
+                "rep1"              : "令${rep}则：",
+                "rep2"              : "${a}表示${b}，",
+                "rep3"              : "${a}表示${b}",
+                "empty"             : "空字符",
+                "stra"              : "字符“A”",
+                "expanding_as"      : "将${a}以${b}展开。",
+                "warning_uc"        : "警告：${ord}的共尾数不可数。",
+                "set_initial"       : "已将探索菜单的初始序数设置为${ord}。",
+                "search_success1"   : "已找到序数${ord}。",
+                "search_success2"   : "您可以在探索菜单查看目标序数。",
+                "import_preset"     : "正在导入预设文件……",
+                "import_success"    : "导入成功。",
+                "export_preset"     : "正在导出预设文件……",
+                "reset_preset"      : "您确定要重置预设数据吗？",
+                "reset_success"     : "预设数据已重置。",
+                "reset_cancel"      : "重置已取消。"
+            },
+            "error"     : {
+                "error"             : "错误：",
+                "format"            : "格式：",
+                "loop"              : "发生了无限循环。",
+                "unknown1"          : "未知指令：“${command}”",
+                "unknown2"          : "请查看标题画面中的帮助以获取更多信息。",
+                "invalid_format"    : "格式无效。",
+                "invalid1_1"        : "包含无效字符。",
+                "invalid1_2"        : "请移除无效字符然后重试。",
+                "invalid2_1"        : "括号不匹配或缺失。",
+                "invalid2_2"        : "请检查括号然后重试。",
+                "invalid3_1"        : "不是标准型。",
+                "invalid3_2"        : "请查看帮助以获取更多信息。",
+                "invalid_num1"      : "数值无效。",
+                "invalid_num2"      : "仅支持自然数。（0，1，2，3，……）",
+                "uncountable"       : "序数不可数。",
+                "uncountable_fgh"   : "激增阶层仅在序数可数时才有定义。",
+                "uncountable_sgh"   : "缓增阶层仅在序数可数时才有定义。",
+                "not_found1"        : "找不到序数。",
+                "not_found2"        : "未能在初始序数${b}下找到序数${a}。",
+                "unknown_aux1"      : "未知副指令：“${command}”",
+                "unknown_aux2"      : "支持的副指令有：\"import\"/\"export\"/\"reset\"",
+                "import_fail1"      : "导入失败。",
+                "import_fail2"      : "文件格式无效。"
+            },
+            "option"    : {
+                "background"        : "背景动画",
+                "display_mode"      : "显示模式",
+                "indent_mode"       : "缩进模式",
+                "simplification"    : "化简模式",
+                "specification"     : "函数指定",
+                "rewrite"           : "改写${ord}",
+                "off"               : "关",
+                "on"                : "开",
+                "none"              : "无",
+                "original"          : "原始",
+                "expansive"         : "展开式",
+                "recursive"         : "递归式"
+            }
+        },
+        "zh-Hant"   : {
+            "lang"      : "繁體中文",
+            "title"     : "序數花園",
+            "back"      : "返回",
+            "calculate" : "計算",
+            "explore"   : "探索",
+            "options"   : "選項",
+            "help"      : "幫助",
+            "input"     : "在此處輸入指令……",
+            "copy"      : "複製",
+            "yes"       : "是",
+            "no"        : "否",
+            "name"      : "名稱",
+            "ordinal"   : "序數",
+            "expand_as" : "以${ord}展開",
+            "contents"  : "目錄",
+            "hide"      : "隱藏",
+            "show"      : "顯示",
+            "systems"   : [
+                "康托爾標準型",
+                "維布倫函數",
+                "布赫霍茲\\( \\psi \\)函數",
+                "拓展布赫霍茲\\( \\psi \\)函數",
+                "拉珍小\\( \\psi \\)函數",
+                "拉珍大\\( \\Psi \\)函數"
+            ],
+            "console"   : {
+                "initial"           : "您可以透過在上方的指令欄中輸入指令以進行計算。",
+                "rep1"              : "令${rep}則：",
+                "rep2"              : "${a}表示${b}，",
+                "rep3"              : "${a}表示${b}",
+                "empty"             : "空字元",
+                "stra"              : "字元「A」",
+                "expanding_as"      : "將${a}以${b}展開。",
+                "warning_uc"        : "警告：${ord}的共尾數不可數。",
+                "set_initial"       : "已將探索選單的初始序數設定為${ord}。",
+                "search_success1"   : "已找到序數${ord}。",
+                "search_success2"   : "您可以在探索選單查看目標序數。",
+                "import_preset"     : "正在導入預設檔案……",
+                "import_success"    : "導入成功。",
+                "export_preset"     : "正在匯出預設檔案……",
+                "reset_preset"      : "您確定要重置預設資料嗎？",
+                "reset_success"     : "預設資料已重置。",
+                "reset_cancel"      : "重置已取消。"
+            },
+            "error"     : {
+                "error"             : "錯誤：",
+                "format"            : "格式：",
+                "loop"              : "發生了無限循環。",
+                "unknown1"          : "未知指令：「${command}」",
+                "unknown2"          : "請查看標題畫面中的幫助以獲取更多資訊。",
+                "invalid_format"    : "格式無效。",
+                "invalid1_1"        : "包含無效字元。",
+                "invalid1_2"        : "請移除無效字元然後重試。",
+                "invalid2_1"        : "括號不匹配或缺失。",
+                "invalid2_2"        : "請檢查括號然後重試。",
+                "invalid3_1"        : "不是標準型。",
+                "invalid3_2"        : "請查看幫助以獲取更多資訊。",
+                "invalid_num1"      : "數值無效。",
+                "invalid_num2"      : "僅支持自然數。（0，1，2，3，……）",
+                "uncountable"       : "序數不可數。",
+                "uncountable_fgh"   : "激增階層僅在序數可數時才有定義。",
+                "uncountable_sgh"   : "緩增階層僅在序數可數時才有定義。",
+                "not_found1"        : "找不到序數。",
+                "not_found2"        : "未能在初始序數${b}下找到序數${a}。",
+                "unknown_aux1"      : "未知副指令：「${command}」",
+                "unknown_aux2"      : "支持的副指令有：\"import\"/\"export\"/\"reset\"",
+                "import_fail1"      : "導入失敗。",
+                "import_fail2"      : "檔案格式無效。"
+            },
+            "option"    : {
+                "background"        : "背景動畫",
+                "display_mode"      : "顯示模式",
+                "indent_mode"       : "縮排模式",
+                "simplification"    : "化簡模式",
+                "specification"     : "函數指定",
+                "rewrite"           : "改寫${ord}",
+                "off"               : "關",
+                "on"                : "開",
+                "none"              : "無",
+                "original"          : "原始",
+                "expansive"         : "展開式",
+                "recursive"         : "遞迴式"
+            }
+        },
+        "jp"        : {
+            "lang"      : "日本語",
+            "title"     : "順序数の庭園",
+            "back"      : "戻る",
+            "calculate" : "計算",
+            "explore"   : "探索",
+            "options"   : "オプション",
+            "help"      : "ヘルプ",
+            "input"     : "ここにコマンドを入力してください……",
+            "copy"      : "コピー",
+            "yes"       : "はい",
+            "no"        : "いいえ",
+            "name"      : "名前",
+            "ordinal"   : "順序数",
+            "expand_as" : "${ord}として展開",
+            "contents"  : "目次",
+            "hide"      : "非表示",
+            "show"      : "表示",
+            "systems"   : [
+                "カントール標準形",
+                "ヴェブレン関数",
+                "ブーフホルツの\\( \\psi \\)関数",
+                "拡張ブーフホルツの\\( \\psi \\)関数",
+                "ラティエンの小\\( \\psi \\)関数",
+                "ラティエンの大\\( \\Psi \\)関数"
+            ],
+            "console"   : {
+                "initial"           : "上のコマンドバーにコマンドを入力することで計算を実行できます。",
+                "rep1"              : "${rep}を表すとすると：",
+                "rep2"              : "${a}が${b}、",
+                "rep3"              : "${a}は${b}を表す",
+                "empty"             : "空の文字列",
+                "stra"              : "文字列「A」",
+                "expanding_as"      : "${a}を${b}として展開します。",
+                "warning_uc"        : "警告：${ord}の共終数は非可算であります。",
+                "set_initial"       : "探索メニューの初期順序数を${ord}に設定しました。",
+                "search_success1"   : "順序数${ord}が見つかりました。",
+                "search_success2"   : "目標の順序数は探索メニューで確認できます。",
+                "import_preset"     : "プリセットファイルをインポートしています……",
+                "import_success"    : "インポートが成功しました。",
+                "export_preset"     : "プリセットファイルをエクスポートしています……",
+                "reset_preset"      : "プリセットデータをリセットしてもよろしいですか？",
+                "reset_success"     : "プリセットデータがリセットされました。",
+                "reset_cancel"      : "リセットがキャンセルされました。"
+            },
+            "error"     : {
+                "error"             : "エラー：",
+                "format"            : "形式：",
+                "loop"              : "無限ループが発生しました。",
+                "unknown1"          : "不明なコマンド：「${command}」",
+                "unknown2"          : "詳しくはタイトル画面のヘルプをご覧ください。",
+                "invalid_format"    : "形式無効。",
+                "invalid1_1"        : "無効な文字が含まれています。",
+                "invalid1_2"        : "無効な文字を削除してもう一度お試しください。",
+                "invalid2_1"        : "括弧が一致していないか、欠落しています。",
+                "invalid2_2"        : "括弧を確認してもう一度お試しください。",
+                "invalid3_1"        : "標準形ではありません。",
+                "invalid3_2"        : "詳しくはヘルプをご覧ください。",
+                "invalid_num1"      : "数字無効。",
+                "invalid_num2"      : "使用できるの数字は自然数のみです。（0、1、2、3、……）",
+                "uncountable"       : "順序数は非可算であります。",
+                "uncountable_fgh"   : "急増加関数は順序数が可算であるときのみ定義されます。",
+                "uncountable_sgh"   : "緩増加関数は順序数が可算であるときのみ定義されます。",
+                "not_found1"        : "順序数が見つかりません。",
+                "not_found2"        : "初期順序数${b}で順序数${a}が見つかりません。",
+                "unknown_aux1"      : "不明な補助コマンド：「${command}」",
+                "unknown_aux2"      : "使用できるコマンドは：\"import\"/\"export\"/\"reset\"",
+                "import_fail1"      : "インポートが失敗しました。",
+                "import_fail2"      : "ファイル形式が無効です。"
+            },
+            "option"    : {
+                "background"        : "背景アニメーション",
+                "display_mode"      : "表示モード",
+                "indent_mode"       : "インデントモード",
+                "simplification"    : "簡約モード",
+                "specification"     : "関数の特定",
+                "rewrite"           : "${ord}の書き換え",
+                "off"               : "オフ",
+                "on"                : "オン",
+                "none"              : "なし",
+                "original"          : "原始",
+                "expansive"         : "展開的",
+                "recursive"         : "再帰的"
+            }
+        }
+    },
+    "particles" : [
+        "\\( 0 \\)",
+        "\\( 1 \\)",
+        "\\( 2 \\)",
+        "\\( 3 \\)",
+        "\\( 4 \\)",
+        "\\( 5 \\)",
+        "\\( 6 \\)",
+        "\\( 7 \\)",
+        "\\( 8 \\)",
+        "\\( 9 \\)",
+        "\\( \\omega \\)",
+        "\\( \\omega+1 \\)",
+        "\\( \\omega+2 \\)",
+        "\\( \\omega+3 \\)",
+        "\\( \\omega+4 \\)",
+        "\\( \\omega+5 \\)",
+        "\\( \\omega+6 \\)",
+        "\\( \\omega+7 \\)",
+        "\\( \\omega+8 \\)",
+        "\\( \\omega+9 \\)",
+        "\\( \\omega2 \\)",
+        "\\( \\omega3 \\)",
+        "\\( \\omega4 \\)",
+        "\\( \\omega5 \\)",
+        "\\( \\omega6 \\)",
+        "\\( \\omega7 \\)",
+        "\\( \\omega8 \\)",
+        "\\( \\omega9 \\)",
+        "\\( \\omega^2 \\)",
+        "\\( \\omega^3 \\)",
+        "\\( \\omega^4 \\)",
+        "\\( \\omega^5 \\)",
+        "\\( \\omega^6 \\)",
+        "\\( \\omega^7 \\)",
+        "\\( \\omega^8 \\)",
+        "\\( \\omega^9 \\)",
+        "\\( \\omega^\\omega \\)",
+        "\\( \\omega^{\\omega^2} \\)",
+        "\\( \\omega^{\\omega^3} \\)",
+        "\\( \\omega^{\\omega^\\omega} \\)",
+        "\\( \\varepsilon_0 \\)",
+        "\\( \\varepsilon_1 \\)",
+        "\\( \\varepsilon_2 \\)",
+        "\\( \\varepsilon_3 \\)",
+        "\\( \\zeta_0 \\)",
+        "\\( \\zeta_1 \\)",
+        "\\( \\zeta_2 \\)",
+        "\\( \\zeta_3 \\)",
+        "\\( \\eta_0 \\)",
+        "\\( \\eta_1 \\)",
+        "\\( \\eta_2 \\)",
+        "\\( \\eta_3 \\)",
+        "\\( \\varepsilon_\\omega \\)",
+        "\\( \\varepsilon_{\\varepsilon_0} \\)",
+        "\\( \\varepsilon_{\\zeta_0+1} \\)",
+        "\\( \\varepsilon_{\\eta_0+1} \\)",
+        "\\( \\zeta_\\omega \\)",
+        "\\( \\zeta_{\\varepsilon_0} \\)",
+        "\\( \\zeta_{\\zeta_0} \\)",
+        "\\( \\zeta_{\\eta_0+1} \\)",
+        "\\( \\eta_\\omega \\)",
+        "\\( \\eta_{\\varepsilon_0} \\)",
+        "\\( \\eta_{\\zeta_0} \\)",
+        "\\( \\eta_{\\eta_0} \\)",
+        "\\( \\varphi_4(0) \\)",
+        "\\( \\varphi_4(1) \\)",
+        "\\( \\varphi_4(2) \\)",
+        "\\( \\varphi_4(3) \\)",
+        "\\( \\varphi_4(\\omega) \\)",
+        "\\( \\varphi_4(\\varphi_4(0)) \\)",
+        "\\( \\varphi_5(0) \\)",
+        "\\( \\varphi_5(1) \\)",
+        "\\( \\varphi_5(2) \\)",
+        "\\( \\varphi_5(3) \\)",
+        "\\( \\varphi_5(\\omega) \\)",
+        "\\( \\varphi_5(\\varphi_5(0)) \\)",
+        "\\( \\varphi_\\omega(0) \\)",
+        "\\( \\varphi_{\\varepsilon_0}(0) \\)",
+        "\\( \\varphi_{\\zeta_0}(0) \\)",
+        "\\( \\varphi_{\\eta_0}(0) \\)",
+        "\\( \\Gamma_0 \\)",
+        "\\( \\Gamma_1 \\)",
+        "\\( \\Gamma_2 \\)",
+        "\\( \\Gamma_3 \\)",
+        "\\( \\Gamma_\\omega \\)",
+        "\\( \\Gamma_{\\Gamma_0} \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega+1}) \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega2}) \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega^2}) \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega^3}) \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega^\\omega}) \\)",
+        "\\( \\psi_0(\\Omega^{\\Omega^\\Omega}) \\)",
+        "\\( \\psi_0(\\Omega_2) \\)",
+        "\\( \\psi_0(\\Omega_3) \\)",
+        "\\( \\psi_0(\\Omega_4) \\)",
+        "\\( \\psi_0(\\Omega_\\omega) \\)",
+        "\\( \\psi_0(\\varepsilon_{\\Omega_\\omega+1}) \\)",
+        "\\( \\psi_0^*(\\Omega_{\\psi_0^*(\\Omega)}) \\)",
+        "\\( \\psi_0^*(\\Omega_\\Omega) \\)",
+        "\\( \\psi_0^*(\\Omega_{\\Omega_\\Omega}) \\)",
+        "\\( \\psi_0^*(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_\\cdot}}}}) \\)",
+        "\\( \\rho_\\Omega(Z_0) \\)",
+        "\\( \\rho_\\Omega(H_0) \\)",
+        "\\( \\rho_\\Omega(\\Phi_4(0)) \\)",
+        "\\( \\rho_\\Omega(\\Phi_5(0)) \\)",
+        "\\( \\rho_\\Omega(\\Phi_\\omega(0)) \\)",
+        "\\( \\rho_\\Omega(\\Phi_\\Omega(0)) \\)",
+        "\\( \\rho_\\Omega(\\Phi_{E_0}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_I(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_I(1)) \\)",
+        "\\( \\rho_\\Omega(I) \\)",
+        "\\( \\rho_\\Omega(\\varepsilon_{I+1}) \\)",
+        "\\( \\rho_\\Omega(E_{I+1}) \\)",
+        "\\( \\rho_\\Omega(\\rho_{I_2}(0)) \\)",
+        "\\( \\rho_\\Omega(I_2) \\)",
+        "\\( \\rho_\\Omega(I_3) \\)",
+        "\\( \\rho_\\Omega(I_4) \\)",
+        "\\( \\rho_\\Omega(I_\\omega) \\)",
+        "\\( \\rho_\\Omega(I_I) \\)",
+        "\\( \\rho_\\Omega(I_{I_I}) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_2(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_3(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_4(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_\\omega(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_\\Omega(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_2(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_3(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_4(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_\\omega(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_\\Omega(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_M(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\chi_M(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_M(0)}(1)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_M(1)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M+1}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M2}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M^2}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M^\\omega}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M^M}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{M^{M^M}}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{\\varepsilon_{M+1}}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{\\zeta_{M+1}}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(\\rho_{\\chi_{\\eta_{M+1}}(0)}(0)) \\)",
+        "\\( \\rho_\\Omega(M) \\)",
+        "\\( \\rho_\\Omega(\\Gamma_{M+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Omega_{M+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Omega_{M+\\omega}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{M+1}}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_N^0(4)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_N^1(4)}^0(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_N^1(4)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_N^2(4)}^0(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_N^2(4)}^1(5)}^0(6)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_N^2(4)}^1(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_N^2(4)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_N^2(5)) \\)",
+        "\\( \\Psi_\\Omega^0(N) \\)",
+        "\\( \\Psi_\\Omega^0(\\varepsilon_{N+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^0(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^1(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^2(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^3(5)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_4) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_5) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_\\omega) \\)",
+        "\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+1)) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_\\Omega) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_I) \\)",
+        "\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_I}) \\)",
+        "\\( \\Psi_\\Omega^0(K) \\)",
+        "\\( \\Psi_\\Omega^0(K2) \\)",
+        "\\( \\Psi_\\Omega^0(K\\omega) \\)",
+        "\\( \\Psi_\\Omega^0(K^2) \\)",
+        "\\( \\Psi_\\Omega^0(K^K) \\)",
+        "\\( \\Psi_\\Omega^0(K^{K^K}) \\)",
+        "\\( \\Psi_\\Omega^0(\\varepsilon_{K+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\zeta_{K+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\eta_{K+1}) \\)",
+        "\\( \\Psi_\\Omega^0(\\Gamma_{K+1}) \\)",
+        "\\( \\Omega \\)",
+        "\\( \\Omega_2 \\)",
+        "\\( \\Omega_3 \\)",
+        "\\( \\Omega_4 \\)",
+        "\\( \\Omega_\\omega \\)",
+        "\\( \\Omega_\\Omega \\)",
+        "\\( \\Omega_{\\Omega_\\Omega} \\)",
+        "\\( E_0 \\)",
+        "\\( Z_0 \\)",
+        "\\( H_0 \\)",
+        "\\( I \\)",
+        "\\( I_2 \\)",
+        "\\( \\chi_2(0) \\)",
+        "\\( \\chi_3(0) \\)",
+        "\\( \\chi_M(0) \\)",
+        "\\( M \\)",
+        "\\( N \\)",
+        "\\( \\Xi_4 \\)",
+        "\\( \\Xi_5 \\)",
+        "\\( K \\)"
+    ],
+    "presets" : [
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "()"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1]()"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2]()"
+            },
+            {
+                "name"      : "w",
+                "content"   : "([1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "([2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "([w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "A"
+            }
+        ],
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "(,)"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1](,)"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2](,)"
+            },
+            {
+                "name"      : "w",
+                "content"   : "(,[1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "(,[2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "(,[w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "([1],)"
+            },
+            {
+                "name"      : "e_1",
+                "content"   : "([1],[1])"
+            },
+            {
+                "name"      : "z_0",
+                "content"   : "([2],)"
+            },
+            {
+                "name"      : "h_0",
+                "content"   : "([3],)"
+            },
+            {
+                "name"      : "G_0",
+                "content"   : "A"
+            }
+        ],
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "(,)"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1](,)"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2](,)"
+            },
+            {
+                "name"      : "w",
+                "content"   : "(,[1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "(,[2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "(,[w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "(,[W])"
+            },
+            {
+                "name"      : "e_1",
+                "content"   : "(,[W][W])"
+            },
+            {
+                "name"      : "z_0",
+                "content"   : "(,([1],[W]))"
+            },
+            {
+                "name"      : "h_0",
+                "content"   : "(,([1],[W][W]))"
+            },
+            {
+                "name"      : "G_0",
+                "content"   : "(,([1],([1],[W])))"
+            },
+            {
+                "name"      : "AO",
+                "content"   : "(,([1],([1],[W][W])))"
+            },
+            {
+                "name"      : "SVO",
+                "content"   : "(,([1],([1],([1],[1]))))"
+            },
+            {
+                "name"      : "LVO",
+                "content"   : "(,([1],([1],([1],[W]))))"
+            },
+            {
+                "name"      : "BHO",
+                "content"   : "(,[W_2])"
+            },
+            {
+                "name"      : "SBO",
+                "content"   : "(,[W_w])"
+            },
+            {
+                "name"      : "TFBO",
+                "content"   : "(,[e_(W_w+1)])"
+            },
+            {
+                "name"      : "W",
+                "content"   : "([1],)"
+            },
+            {
+                "name"      : "W_2",
+                "content"   : "([2],)"
+            },
+            {
+                "name"      : "W_3",
+                "content"   : "([3],)"
+            },
+            {
+                "name"      : "W_w",
+                "content"   : "([w],)"
+            },
+            {
+                "name"      : "e_(W_w+1)",
+                "content"   : "A"
+            }
+        ],
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "(,)"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1](,)"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2](,)"
+            },
+            {
+                "name"      : "w",
+                "content"   : "(,[1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "(,[2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "(,[w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "(,[W])"
+            },
+            {
+                "name"      : "e_1",
+                "content"   : "(,[W][W])"
+            },
+            {
+                "name"      : "z_0",
+                "content"   : "(,([1],[W]))"
+            },
+            {
+                "name"      : "h_0",
+                "content"   : "(,([1],[W][W]))"
+            },
+            {
+                "name"      : "G_0",
+                "content"   : "(,([1],([1],[W])))"
+            },
+            {
+                "name"      : "AO",
+                "content"   : "(,([1],([1],[W][W])))"
+            },
+            {
+                "name"      : "SVO",
+                "content"   : "(,([1],([1],([1],[1]))))"
+            },
+            {
+                "name"      : "LVO",
+                "content"   : "(,([1],([1],([1],[W]))))"
+            },
+            {
+                "name"      : "BHO",
+                "content"   : "(,[W_2])"
+            },
+            {
+                "name"      : "SBO",
+                "content"   : "(,[W_w])"
+            },
+            {
+                "name"      : "TFBO",
+                "content"   : "(,([w][1],))"
+            },
+            {
+                "name"      : "LBO",
+                "content"   : "(,[OFP])"
+            },
+            {
+                "name"      : "W",
+                "content"   : "([1],)"
+            },
+            {
+                "name"      : "W_2",
+                "content"   : "([2],)"
+            },
+            {
+                "name"      : "W_3",
+                "content"   : "([3],)"
+            },
+            {
+                "name"      : "W_w",
+                "content"   : "([w],)"
+            },
+            {
+                "name"      : "OFP",
+                "content"   : "A"
+            }
+        ],
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "(v,)"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1](v,)"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2](v,)"
+            },
+            {
+                "name"      : "w",
+                "content"   : "(v,[1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "(v,[2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "(v,[w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "(v[1],)"
+            },
+            {
+                "name"      : "e_1",
+                "content"   : "(v[1],[1])"
+            },
+            {
+                "name"      : "z_0",
+                "content"   : "(v[2],)"
+            },
+            {
+                "name"      : "h_0",
+                "content"   : "(v[3],)"
+            },
+            {
+                "name"      : "G_0",
+                "content"   : "(r[W],)"
+            },
+            {
+                "name"      : "AO",
+                "content"   : "(r[W],(v,(v,[W][W][W])))"
+            },
+            {
+                "name"      : "SVO",
+                "content"   : "(r[W],(v,(v,(v,[W][1]))))"
+            },
+            {
+                "name"      : "LVO",
+                "content"   : "(r[W],(v,(v,(v,[W][W]))))"
+            },
+            {
+                "name"      : "BHO",
+                "content"   : "(r[W],(v[1],[W][1]))"
+            },
+            {
+                "name"      : "SBO",
+                "content"   : "(r[W],[W_w])"
+            },
+            {
+                "name"      : "TFBO",
+                "content"   : "(r[W],(v[1],[W_w][1]))"
+            },
+            {
+                "name"      : "LBO",
+                "content"   : "(r[W],[OFP])"
+            },
+            {
+                "name"      : "SRO",
+                "content"   : "(r[W],(r(x(v[1],M[1]),),))"
+            },
+            {
+                "name"      : "W",
+                "content"   : "(x,)"
+            },
+            {
+                "name"      : "W_2",
+                "content"   : "(x,[1])"
+            },
+            {
+                "name"      : "W_3",
+                "content"   : "(x,[2])"
+            },
+            {
+                "name"      : "W_w",
+                "content"   : "(x,[w])"
+            },
+            {
+                "name"      : "OFP",
+                "content"   : "(V[1],)"
+            },
+            {
+                "name"      : "I",
+                "content"   : "(x[1],)"
+            },
+            {
+                "name"      : "I_2",
+                "content"   : "(x[1],[1])"
+            },
+            {
+                "name"      : "I_3",
+                "content"   : "(x[1],[2])"
+            },
+            {
+                "name"      : "I_w",
+                "content"   : "(x[1],[w])"
+            },
+            {
+                "name"      : "I(2,0)",
+                "content"   : "(x[2],)"
+            },
+            {
+                "name"      : "I(3,0)",
+                "content"   : "(x[3],)"
+            },
+            {
+                "name"      : "I(1,0,0)",
+                "content"   : "(xM,)"
+            }
+        ],
+        [
+            {
+                "name"      : "0",
+                "content"   : ""
+            },
+            {
+                "name"      : "1",
+                "content"   : "(v,)"
+            },
+            {
+                "name"      : "2",
+                "content"   : "[1](v,)"
+            },
+            {
+                "name"      : "3",
+                "content"   : "[2](v,)"
+            },
+            {
+                "name"      : "4",
+                "content"   : "[3](v,)"
+            },
+            {
+                "name"      : "5",
+                "content"   : "[4](v,)"
+            },
+            {
+                "name"      : "w",
+                "content"   : "(v,[1])"
+            },
+            {
+                "name"      : "w^2",
+                "content"   : "(v,[2])"
+            },
+            {
+                "name"      : "w^w",
+                "content"   : "(v,[w])"
+            },
+            {
+                "name"      : "e_0",
+                "content"   : "(v[1],)"
+            },
+            {
+                "name"      : "e_1",
+                "content"   : "(v[1],[1])"
+            },
+            {
+                "name"      : "z_0",
+                "content"   : "(v[2],)"
+            },
+            {
+                "name"      : "h_0",
+                "content"   : "(v[3],)"
+            },
+            {
+                "name"      : "G_0",
+                "content"   : "(R[W],,)"
+            },
+            {
+                "name"      : "AO",
+                "content"   : "(R[W],,(v,[W][W][W]))"
+            },
+            {
+                "name"      : "SVO",
+                "content"   : "(R[W],,(v,(v,[W][1])))"
+            },
+            {
+                "name"      : "LVO",
+                "content"   : "(R[W],,(v,(v,[W][W])))"
+            },
+            {
+                "name"      : "BHO",
+                "content"   : "(R[W],,(v[1],[W][1]))"
+            },
+            {
+                "name"      : "SBO",
+                "content"   : "(R[W],,[W_w])"
+            },
+            {
+                "name"      : "TFBO",
+                "content"   : "(R[W],,(v[1],[W_w][1]))"
+            },
+            {
+                "name"      : "LBO",
+                "content"   : "(R[W],,[OFP])"
+            },
+            {
+                "name"      : "SRO",
+                "content"   : "(R[W],,(v[1],[M][1]))"
+            },
+            {
+                "name"      : "LRO",
+                "content"   : "(R[W],,(v[1],K[1]))"
+            },
+            {
+                "name"      : "W",
+                "content"   : "(W[1])"
+            },
+            {
+                "name"      : "W_2",
+                "content"   : "(W[2])"
+            },
+            {
+                "name"      : "W_3",
+                "content"   : "(W[3])"
+            },
+            {
+                "name"      : "W_w",
+                "content"   : "(W[w])"
+            },
+            {
+                "name"      : "OFP",
+                "content"   : "(R[I],,[2])"
+            },
+            {
+                "name"      : "I",
+                "content"   : "(X[1])"
+            },
+            {
+                "name"      : "I_2",
+                "content"   : "(R[M],[1],[3])"
+            },
+            {
+                "name"      : "I_3",
+                "content"   : "(R[M],[1],[4])"
+            },
+            {
+                "name"      : "I_w",
+                "content"   : "(R[M],,[w])"
+            },
+            {
+                "name"      : "I_(w+1)",
+                "content"   : "(R[M],[1],[w])"
+            },
+            {
+                "name"      : "I(2,0)",
+                "content"   : "(R[M],[1],[M])"
+            },
+            {
+                "name"      : "I(3,0)",
+                "content"   : "(R[M],[1],[M][M])"
+            },
+            {
+                "name"      : "I(1,0,0)",
+                "content"   : "(R[M],[1],(v,[M][M]))"
+            },
+            {
+                "name"      : "M",
+                "content"   : "(X[2])"
+            },
+            {
+                "name"      : "M_2",
+                "content"   : "(R[N],[2],[4])"
+            },
+            {
+                "name"      : "M_3",
+                "content"   : "(R[N],[2],[5])"
+            },
+            {
+                "name"      : "M_w",
+                "content"   : "(R[N],,[w])"
+            },
+            {
+                "name"      : "M_(w+1)",
+                "content"   : "(R[N],[2],[w])"
+            },
+            {
+                "name"      : "N",
+                "content"   : "(X[3])"
+            }
+        ]
+    ],
+    "help_files" : [
+        "00_Help",
+        "01_Cantor",
+        "02_Veblen",
+        "03_Buchholz",
+        "04_ExBuchholz",
+        "05_RathjenM",
+        "06_RathjenK"
+    ]
+}

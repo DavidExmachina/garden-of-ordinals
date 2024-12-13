@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>關於本網站</h1><hr>
+        <p>&emsp;&emsp;序數花園是一個在不同的序數系統中透過運行計算與探索來演示（主要是無窮且極大的）序數的性質的網站。本網站涉及6個序數系統：康托爾標準型，維布倫函數，布赫霍茲\( \psi \)函數，拓展佈赫霍茲\( \psi \)函數，拉珍小\( \psi \)函數以及拉珍大\( \Psi \)函數。</p>
+        <p>&emsp;&emsp;您可以透過點擊按鈕來進入對應的序數系統的介面。進入介面後，您將看到4個標籤：計算，探索，選項以及幫助。您可以透過點擊幫助標籤以獲取更多關於這個序數系統的資訊。</p>
+        <h2>計算介面</h2><hr>
+        <p>&emsp;&emsp;您可以透過點擊頁面上方的計算標籤以進入計算選單。事實上，這是一開始進入序數系統介面時的第一個介面。</p>
+        <p>&emsp;&emsp;在計算選單中，您可以看到指令欄，控制台視窗以及預設視窗。進行計算或者執行一些其他功能的方法是透過輸入指令。這是程式設計師們愛做的事情。要輸入序數，您需要將序數轉換為「電腦程式碼」。轉換規則因序數系統而異且會在一開始進入序數系統介面或者在指令欄中輸入空字串時給出。</p>
+        <p>&emsp;&emsp;比如說，在布赫霍茲\( \psi \)函數的序數系統中，轉換規則是：</p>
+        <p>&emsp;&emsp;空字元表示\( 0 \)</p>
+        <p>&emsp;&emsp;字元「A」表示\( \varepsilon_{\Omega_\omega+1} \)</p>
+        <p>&emsp;&emsp;BC表示\( b+c \)</p>
+        <p>&emsp;&emsp;(B,C)表示\( \psi_b(c) \)</p>
+        <br>
+        <p>&emsp;&emsp;現在，我們來將序數\( \zeta_0=\psi_0(\Omega^2) \)轉換為該序數系統的電腦程式碼：</p>
+        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{(,)}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;也就是說，\( \psi_0(\Omega^2) \)的電腦程式碼為(,((,),((,),)))。</p>
+        <p>&emsp;&emsp;需要注意的是，輸入的序數的電腦程式碼必須有效且為標準型。有效指的是電腦程式碼中不含有無效字元及不匹配或缺失的括號。標準型比較複雜且在對應序數系統的幫助選單中有定義。</p>
+        <p>&emsp;&emsp;而且，字元「A」永遠表示<b>序數系統極限</b>。</p>
+        <p>&emsp;&emsp;為了有助於使電腦程式碼視覺化，您可以在程式碼中輸入空格，但是這樣做的話就必須在程式碼兩端輸入半角雙引號以避免識別錯誤。比如說，輸入"(, (,)(,) )"等價於輸入(,(,)(,))。</p>
+        <p>&emsp;&emsp;支援的指令及其格式與功能如下：</p>
+        <h3>display</h3>
+        <p>&emsp;&emsp;<b>格式：</b>display ord</p>
+        <p>&emsp;&emsp;<b>描述：</b>顯示表示為電腦程式碼「ord」的序數。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：display (,((,),((,),)))</p>
+        <p>&emsp;&emsp;控制台：\( \alpha=\psi_0(\Omega^2) \)</p>
+        <h3>cof</h3>
+        <p>&emsp;&emsp;<b>格式：</b>cof ord</p>
+        <p>&emsp;&emsp;<b>描述：</b>顯示表示為電腦程式碼「ord」的序數的共尾數。</p>
+        <p>&emsp;&emsp;您可以透過點擊「複製」按鈕來複製結果。（不是在接下來的例子中）</p>
+        <p>&emsp;&emsp;「共尾數」的定義將在下文解釋。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：cof (,((,),((,),)))</p>
+        <p>&emsp;&emsp;控制台：\( Cof(\alpha)=\omega \)<span class="copy2 button2 noclick">複製</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：cof ((,)(,),)</p>
+        <p>&emsp;&emsp;控制台：\( Cof(\alpha)=\Omega_2 \)<span class="copy2 button2 noclick">複製</span></p>
+        <h3>comp</h3>
+        <p>&emsp;&emsp;<b>格式：</b>comp ord1 ord2</p>
+        <p>&emsp;&emsp;<b>描述：</b>比較兩序數「ord1」與「ord2」並決定哪一個更大。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：comp (,) (,(,))</p>
+        <p>&emsp;&emsp;控制台：\( 1&lt;\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：comp (,) (,(,))</p>
+        <p>&emsp;&emsp;控制台：\( \omega&gt;1 \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：comp (,) (,)</p>
+        <p>&emsp;&emsp;控制台：\( 1=1 \)</p>
+        <h3>fs</h3>
+        <p>&emsp;&emsp;<b>格式：</b>fs ord [steps=3] ["strong"]</p>
+        <p>&emsp;&emsp;<b>描述：</b>展開序數並顯示序數「ord」在對應序數系統中的基本序列的前「steps+1」個序數。</p>
+        <p>&emsp;&emsp;您可以透過點擊「複製」按鈕來複製結果。（不是在接下來的例子中）</p>
+        <p>&emsp;&emsp;若省略參數「steps」，則預設為3。</p>
+        <p>&emsp;&emsp;若序數的共尾數不可數，會在上方顯示警告。但是，如果在指令後方添加文字「strong」，它會以更小的共尾數可數的序數展開：</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（維布倫函數）</p>
+        <p>&emsp;&emsp;輸入：fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \alpha=\zeta_1 \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\zeta_0 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\varepsilon_{\zeta_0+1} \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\varepsilon_{\varepsilon_{\zeta_0+1}} \)<span class="copy2 button2 noclick">複製</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\Omega^22) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega^2+\Omega) \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega)) \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega))) \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;註：在這個情況下，\( \alpha \)、\( \alpha[0] \)、\( \alpha[1] \)、\( \alpha[2] \)與\( \alpha[3] \)的結果在維布倫函數中對應\( \zeta_1 \)、\( 0 \)、\( \varepsilon_{\zeta_0+1} \)、\( \varepsilon_{\varepsilon_{\zeta_0+1}} \)與\( \varepsilon_{\varepsilon_{\varepsilon_{\zeta_0+1}}} \)。說明展開規則因序數系統而異。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fs (,(,)) 9</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \alpha=\omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[4]=4 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[5]=5 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[6]=6 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[7]=7 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[8]=8 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[9]=9 \)<span class="copy2 button2 noclick">複製</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例4：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fs ((,),)</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;警告：\( \Omega \)的共尾數不可數。</p>
+        <p>&emsp;&emsp;\( \alpha=\Omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">複製</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例5：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fs ((,),) strong</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;<span class="error">錯誤：數值無效。</span></p>
+        <p>&emsp;&emsp;<span class="error">僅支持自然數。（0，1，2，3，……）</span></p>
+        <p>&emsp;&emsp;註：這說明在指令後加上文字「strong」時，參數「steps」不能省略。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例6：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fs ((,),) 3 strong</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;將\( \Omega \)以\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)展開。</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\varepsilon_{\Omega_\omega+1}) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=1 \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega_\omega) \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0({\Omega_\omega}^2) \)<span class="copy2 button2 noclick">複製</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0({\Omega_\omega}^{\Omega_\omega}) \)<span class="copy2 button2 noclick">複製</span></p>
+        <h3>fgh</h3>
+        <p>&emsp;&emsp;<b>格式：</b>fgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>描述：</b>計算序數「ord」與數字「n」的激增階層的前「steps」步。</p>
+        <p>&emsp;&emsp;在該指令中給出的「ord」必須可數。「可數」的定義因序數系統而異且在對應序數系統的幫助選單中有定義。</p>
+        <p>&emsp;&emsp;此外，對於某些序數系統，會有對於該指令專用的<b>可數序數極限</b>。注意該序數不是標準型且在其他指令中發生錯誤。</p>
+        <p>&emsp;&emsp;建議給參數「steps」輸入較小的數值（低於100甚至是10），否則本網站會花過長的時間來給出結果。</p>
+        <p>&emsp;&emsp;「激增階層」的定義將在下文解釋。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_3(3) \\ = & f_2^3(3) \\ = & f_2^2(f_1^3(3)) \\ = & f_2^2(f_1^2(f_0^3(3))) \\ = & f_2^2(f_1^2(f_0^2(4))) \\ = & f_2^2(f_1^2(f_0(5))) \\ = & f_2^2(f_1^2(6)) \\ = & f_2^2(f_1(f_0^6(6))) \\ = & f_2^2(f_1(f_0^5(7))) \\ = & f_2^2(f_1(f_0^4(8))) \\ = & f_2^2(f_1(f_0^3(9))) \\ = & \cdots \\ \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fgh ((,),) 3</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;<span class="error">錯誤：序數不可數。</span></p>
+        <p>&emsp;&emsp;<span class="error">激增階層僅在序數可數時才有定義。</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：fgh (,A) 3 2</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_{\psi_0({\varepsilon}_{\Omega_\omega+1})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_\omega})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_3})}(3) \\ = & \cdots \\ \end{align} \)</p>
+        <h3>sgh</h3>
+        <p>&emsp;&emsp;<b>格式：</b>sgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>描述：</b>計算序數「ord」與數字「n」的緩增階層的前「steps」步。</p>
+        <p>&emsp;&emsp;類似fgh，而這次計算的是「緩增階層」。</p>
+        <p>&emsp;&emsp;「緩增階層」的定義將在下文解釋。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：sgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \begin{align} & g_3(3) \\ = & g_2(3)+1 \\ = & g_1(3)+2 \\ = & g_0(3)+3 \\ = & 3 \end{align} \)</p>
+        <h3>initial</h3>
+        <p>&emsp;&emsp;<b>格式：</b>initial ord</p>
+        <p>&emsp;&emsp;<b>描述：</b>將探索選單中的初始序數設定為序數「ord」。</p>
+        <p>&emsp;&emsp;探索選單中的初始序數將在離開序數系統後重設。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：initial (,(,))</p>
+        <p>&emsp;&emsp;控制台：已將探索選單的初始序數設定為\( \omega \)。</p>
+        <h3>search</h3>
+        <p>&emsp;&emsp;<b>格式：</b>search ord</p>
+        <p>&emsp;&emsp;<b>描述：</b>在探索選單中的初始序數下搜尋序數「ord」。</p>
+        <p>&emsp;&emsp;若找到序數「ord」，則會在探索選單中反白顯示。</p>
+        <p>&emsp;&emsp;在初始序數被設定成初始值「A」時，序數「ord」應該一定會找到。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：search (,(,))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;已找到序數\( \omega \)。</p>
+        <p>&emsp;&emsp;您可以在探索選單查看目標序數。</p>
+        <h3>preset</h3>
+        <p>&emsp;&emsp;<b>格式：</b>preset "import"/"export"/"reset"</p>
+        <p>&emsp;&emsp;<b>描述：</b>管理預設（與下文解釋）資料。只有以下3條指令能夠使用：</p>
+        <br>
+        <p>&emsp;&emsp;<b>指令：</b>preset import</p>
+        <p>&emsp;&emsp;<b>描述：</b>導入預先匯出的預設檔案。</p>
+        <br>
+        <p>&emsp;&emsp;<b>指令：</b>preset export</p>
+        <p>&emsp;&emsp;<b>描述：</b>將預設匯出為.json檔案。</p>
+        <br>
+        <p>&emsp;&emsp;<b>指令：</b>preset reset</p>
+        <p>&emsp;&emsp;<b>描述：</b>將預設重設為預設設定。</p>
+        <p>&emsp;&emsp;執行該指令後會跳出確認視窗。</p>
+        <p>&emsp;&emsp;建議如果目前的預設重要則在重設之前匯出。</p>
+        <h2>計算預設</h2><hr>
+        <p>&emsp;&emsp;您可以使用控制台視窗下的預設來使程式碼變得更加簡單。</p>
+        <p>&emsp;&emsp;比如說，在布赫霍茲\( \psi \)函數的序數系統中，可能會想把(,(,))寫成「w」，這是因為它的確表示序數\( \omega \)。假如有以下預設：</p>
+        <p>&emsp;&emsp;名稱：w</p>
+        <p>&emsp;&emsp;序數：(,(,))</p>
+        <br>
+        <p>&emsp;&emsp;要呼叫預設，需要在預設名稱兩端加半角方括號：</p>
+        <p>&emsp;&emsp;<b>例1：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：display [w]</p>
+        <p>&emsp;&emsp;控制台：\( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;現在，該程式碼就與如下的程式碼等價了：</p>
+        <p>&emsp;&emsp;<b>例2：</b>（布赫霍茲\( \psi \)函數）</p>
+        <p>&emsp;&emsp;輸入：display (,(,))</p>
+        <p>&emsp;&emsp;控制台：\( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;在第一次進入本網站時，會有預設預設。要添加新的預設，首先在預設視窗底端的「名稱」輸入框輸入預設名稱，然後在該「名稱」輸入框正右方的「序數」輸入框中輸入該預設所代表的電腦程式碼。要刪除預設，清空要刪除的預設的「序數」輸入框然後再清空其「名稱」輸入框。</p>
+        <p>&emsp;&emsp;預設名稱不能包含以下4個字元：空格，「"」，「[」以及「]」，也不能與其他預設重名。否則，名稱輸入將會失敗。</p>
+        <h2>探索序數</h2><hr>
+        <p>&emsp;&emsp;您可以透過點擊頁面上方的探索標籤以進入探索選單。</p>
+        <p>&emsp;&emsp;在探索選單中，您可以自由地透過點擊左方的按鈕展開序數以探索序數。無論序數如何展開，序數一直都會從小到大遞增排列。若序數的共尾數不可數，它會以更小的共尾數可數的序數展開。各按鈕的功能如下：</p>
+        <p><span class="plus1 button2 noclick" style="font-size: 16px;">+</span></p>
+        <p>&emsp;&emsp;單次地展開序數。</p>
+        <p><span class="plus2 button2 noclick" style="font-size: 16px;">++</span></p>
+        <p>&emsp;&emsp;遞歸地展開序數。</p>
+        <p><span class="plus3 button2 noclick" style="font-size: 16px;">!!!</span></p>
+        <p>&emsp;&emsp;遞歸地展開<b>上方所有序數</b>。若上方序數過多，這可能會導致本網站花過長的時間來給出結果。<b>請謹慎使用。</b></p>
+        <p><span class="minus button2 noclick" style="font-size: 16px;">-</span></p>
+        <p>&emsp;&emsp;收起序數。</b></p>
+        <br>
+        <p>&emsp;&emsp;若按鈕因某些原因被停用，會被染成灰色。</b></p>
+        <h2>選項</h2><hr>
+        <p>&emsp;&emsp;您可以透過點擊頁面上方的選項標籤以進入選項選單。可能出現的選項如下：</p>
+        <h3>背景動畫</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整背景動畫是否顯示。</p>
+        <p>&emsp;&emsp;關：隱藏背景動畫以<b>助於閱讀</b>。</p>
+        <p>&emsp;&emsp;開：顯示背景動畫以<b>美化網站</b>。</p>
+        <h3>顯示模式</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整序數的顯示形式。</p>
+        <p>&emsp;&emsp;原始：序數將以電腦程式碼顯示。<b>指令「display」將變得毫無意義。</b></p>
+        <p>&emsp;&emsp;HTML：序數將以普通文字顯示，<b>簡陋</b>但是<b>不影響效能</b>。</p>
+        <p>&emsp;&emsp;MathJax：序數將以MathJax顯示，<b>美觀</b>但是<b>影響效能</b>。</p>
+        <h3>縮排模式</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整探索選單中序數的縮排。</p>
+        <p>&emsp;&emsp;無：序數沒有縮排。</p>
+        <p>&emsp;&emsp;展開式：同樣次數展開的序數有相同的縮排。</p>
+        <p>&emsp;&emsp;遞歸式：遞歸展開的序數有相同的縮排。</p>
+        <h3>化簡模式</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整寫成非電腦程式碼的序數的化簡程度。</p>
+        <p>&emsp;&emsp;無：不化簡序數。</p>
+        <p>&emsp;&emsp;\( \alpha^\beta \)：化簡序數的底數與指數。（例：\( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \)，其中\( \epsilon \)是任意埃普西隆數（\( \omega^\epsilon=\epsilon \)））</p>
+        <p>&emsp;&emsp;\( \alpha*\beta \)：除以上外，將重複的乘法化簡為乘方。（例：\( \alpha\alpha\alpha=\alpha^3 \)）</p>
+        <p>&emsp;&emsp;\( \alpha+\beta \)：除以上外，將重複的加法化簡為乘法。（例：\( \alpha+\alpha+\alpha=\alpha3 \)）</p>
+        <h3>函數指定</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整是否將某些序數塌縮函數寫成其他形式以避免名稱衝突。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>拓展布赫霍茲\( \psi \)函數、拉珍小\( \psi \)函數</p>
+        <p>&emsp;&emsp;（左邊）：將序數塌縮函數寫成與論文中相同的形式。</p>
+        <p>&emsp;&emsp;（右邊）：將序數塌縮函數寫成其他形式。</p>
+        <h3>改寫\( \varphi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \varphi_\alpha(\beta) \)的書寫方式。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>維布倫函數、拉珍小\( \psi \)函數、拉珍大\( \Psi \)函數</p>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)：不改寫\( \varphi_\alpha(\beta) \)。</p>
+        <p>&emsp;&emsp;\( 1 \)：將\( \varphi_0(0) \)改寫為\( 1 \)。</p>
+        <p>&emsp;&emsp;\( \omega^\beta \)：對於一切\( \beta \)，將\( \varphi_0(\beta) \)改寫為\( \omega^\beta \)。</p>
+        <p>&emsp;&emsp;\( \varepsilon_\beta \)：除以上外，對於一切\( \beta \)，將\( \varphi_1(\beta) \)改寫為\( \varepsilon_\beta \)。</p>
+        <p>&emsp;&emsp;\( \zeta_\beta \)：除以上外，對於一切\( \beta \)，將\( \varphi_2(\beta) \)改寫為\( \zeta_\beta \)。</p>
+        <p>&emsp;&emsp;\( \eta_\beta \)：除以上外，對於一切\( \beta \)，將\( \varphi_3(\beta) \)改寫為\( \eta_\beta \)。</p>
+        <h3>改寫\( \Phi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Phi_\alpha(\beta) \)的書寫方式。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>拉珍小\( \psi \)函數</p>
+        <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \)：不改寫\( \Phi_\alpha(\beta) \)。</p>
+        <p>&emsp;&emsp;\( E_\beta \)：對於一切\( \beta \)，將\( \Phi_1(\beta) \)改寫為\( E_\beta \)。</p>
+        <p>&emsp;&emsp;\( Z_\beta \)：除以上外，對於一切\( \beta \)，將\( \Phi_2(\beta) \)改寫為\( Z_\beta \)。</p>
+        <p>&emsp;&emsp;\( H_\beta \)：除以上外，對於一切\( \beta \)，將\( \Phi_3(\beta) \)改寫為\( H_\beta \)。</p>
+        <h3>改寫\( \psi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \psi_\alpha(\beta) \)（布赫霍茲\( \psi \)函數或拓展布赫霍茲\( \psi \)函數）的書寫方式。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>布赫霍茲\( \psi \)函數、拓展布赫霍茲\( \psi \)函數</p>
+        <p>&emsp;&emsp;\( \psi_\alpha(\beta) \)：不改寫\( \psi_\alpha(\beta) \)。</p>
+        <p>&emsp;&emsp;\( 1 \)：將\( \psi_0(0) \)改寫為\( 1 \)。</p>
+        <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \)：若\( \beta&lt;\Omega_{\alpha+1} \)，則將\( \psi_\alpha(\beta) \)改寫為\( \omega^{\Omega_\alpha+\beta} \)。若\( \alpha=0 \)，則改寫為\( \omega^\beta \)。</p>
+        <h3>改寫\( \chi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \chi_\alpha(\beta) \)的書寫方式。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>拉珍小\( \psi \)函數</p>
+        <p>&emsp;&emsp;\( \chi_\alpha(\beta) \)：不改寫\( \chi_\alpha(\beta) \)。</p>
+        <p>&emsp;&emsp;\( \Omega_{1+\beta} \)：對於一切\( \beta \)，將\( \chi_0(\beta) \)改寫為\( \Omega_{1+\beta} \)。</p>
+        <p>&emsp;&emsp;\( I_{1+\beta} \)：除以上外，對於一切\( \beta \)，將\( \chi_1(\beta) \)改寫為\( I_{1+\beta} \)。</p>
+        <h3>改寫\( \Xi(\alpha) \)</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Xi(\alpha) \)的書寫方式。</p>
+        <p>&emsp;&emsp;<b>僅限於：</b>拉珍大\( \Psi \)函數</p>
+        <p>&emsp;&emsp;\( \Xi(\alpha) \)：不改寫\( \Xi(\alpha) \)。</p>
+        <p>&emsp;&emsp;\( \Xi_\alpha \)：若在\( \alpha \)中沒有\( K \)出現，則將\( \Xi(\alpha) \)改寫為\( \Xi_\alpha \)。</p>
+        <p>&emsp;&emsp;\( I \)：除以上外，將\( \Xi \)改寫為\( I \)。</p>
+        <p>&emsp;&emsp;\( M \)：除以上外，將\( \Xi_2 \)改寫為\( M \)。</p>
+        <p>&emsp;&emsp;\( N \)：除以上外，將\( \Xi_3 \)改寫為\( N \)。</p>
+        <h1>關於序數</h1><hr>
+        <p>&emsp;&emsp;我們從0開始，然後數1，2，3等。這個過程永遠不會結束，因為自然數有無限多個。當我們接受無窮的概念的時候，我們接受數字\( \omega \)為最小的大於一切自然數的序數。就像按回車鍵，移至第二行然後在這一行輸入第一個字一樣。因為無論第一行有多少字，第二行的字總是在所有第一行的字的「後面」。</p>
+        <p>&emsp;&emsp;我們可以繼續「在第二行打字」以構造\( \omega+1 \)、\( \omega+2 \)、\( \omega+3 \)等更大的序數。我們可以再「按下回車鍵」然後得到\( \omega+\omega \)，即\( \omega2 \)。我們可以重複這段過程然後得到\( \omega3 \)，\( \omega4 \)等，最後我們「插入分頁符然後在下一頁輸入第一個字」而得到\( \omega*\omega \)，即\( \omega^2 \)。</p>
+        <p>&emsp;&emsp;我們可以「插入更多分頁符」然後得到\( \omega^22 \)，\( \omega^23 \)等，最後我們「建立新的檔案然後在下一個檔案輸入第一個字」而得到\( \omega^3 \)。我們能透過無限重複從\( \omega^3 \)得到\( \omega^4 \)，從\( \omega^4 \)得到\( \omega^5 \)等，最後達到\( \omega ^\omega \)。</p>
+        <p>&emsp;&emsp;接下來，我們仍然能「在二樓繼續」然後構造\( \omega^{\omega+1} \)，\( \omega^{\omega+2} \)，\( \omega^{\omega2} \)，\( \omega^{\omega^2} \)最後「抵達三樓」然後得到\( \omega^{\omega^\omega} \)。我們可以繼續爬樓然後得到\( \omega^{\omega^{\omega^\omega}} \)、\( \omega^{\omega^{\omega^{\omega^\omega}}} \)等，最後，我們得到無窮高的\( \omega \)的指數塔，記作\( \varepsilon_0 \)。</p>
+        <p>&emsp;&emsp;這就是令人震撼，無窮無盡的創造越來越大的序數的過程。這就是序數有趣的原因之一。為了繼續追求更大的序數的旅程，我們需要知道更多關於序數的概念。</p>
+        <h2>序數的定義</h2><hr>
+        <p>&emsp;&emsp;序數可認為是自然數的拓展。因為序數在集合論中發揮重要作用，多數定義將涉及集合論。</p>
+        <p>&emsp;&emsp;在集合論中，序數被定義為包含所有小於自身的序數的集合。空集合\( \{\} \)表示0，且對一切序數\( \alpha \)，\( \alpha\cup\{\alpha\} \)表示\( \alpha+1 \)（或\( \alpha \)的後繼，\( Suc(\alpha) \)）。然後我們有：</p>
+        <p>&emsp;&emsp;\( 0=\{\} \)</p>
+        <p>&emsp;&emsp;\( 1=\{\{\}\}=\{0\} \)</p>
+        <p>&emsp;&emsp;\( 2=\{\{\},\{\{\}\}\}=\{0,1\} \)</p>
+        <p>&emsp;&emsp;\( 3=\{\{\},\{\{\}\},\{\{\},\{\{\}\}\}\}=\{0,1,2\} \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( \omega=\{0,1,2,3,\cdots\}=\mathbb{N} \)</p>
+        <br>
+        <p>&emsp;&emsp;它們稱作<b>馮諾依曼序數</b>。因此，對於任意兩序數\( \alpha \)與\( \beta \)，\( \alpha&lt;\beta \)當且僅當\( \alpha\in\beta \)。</p>
+        <p>&emsp;&emsp;所有非零序數都包含最小元素\( 0 \)，但並非所有非零序數都包含最大元素。因此，我們能把序數分為兩類──後繼序數與極限序數。後繼序數是包含最大元素的非零序數，因為根據定義，一切後繼序數\( \alpha+1 \)皆包含最大元素\( \alpha \)。極限序數是不包含最大元素的非零序數。因此，\( 0 \)既非後繼序數又非極限序數。</p>
+        <p>&emsp;&emsp;我們也能用序數進行運算。序數的加法，​​乘法，乘方定義如下：</p>
+        <p>&emsp;&emsp;\( \alpha+0:=\alpha \)</p>
+        <p>&emsp;&emsp;\( \alpha+Suc(\beta):=Suc(\alpha+\beta) \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha+\beta:=\bigcup_{\beta'&lt;\beta}\alpha+\beta' \end{align} \)（\( \beta \)是極限序數）</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha*0:=0 \)</p>
+        <p>&emsp;&emsp;\( \alpha*Suc(\beta):=\alpha*\beta+\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha*\beta:=\bigcup_{\beta'&lt;\beta}\alpha*\beta' \end{align} \)（\( \beta \)是極限序數）</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha^0:=1 \)</p>
+        <p>&emsp;&emsp;\( \alpha^{Suc(\beta)}:=\alpha^\beta*\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha^\beta:=\bigcup_{\beta'&lt;\beta}\alpha^{\beta'} \end{align} \)（\( \beta \)是極限序數）</p>
+        <h2>基數</h2><hr>
+        <p>&emsp;&emsp;可以發現序數的加法與乘法不滿足交換律：</p>
+        <p>&emsp;&emsp;\( \omega+1\neq 1+\omega \)</p>
+        <p>&emsp;&emsp;\( \omega*2\neq 2*\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;這是因為序數與數量無關，而是與順序相關。假設我們有無限多的標有小於\( \varepsilon_0 \)的序數的字，我們仍然能將它們壓縮至一行。此時，我們說\( \omega \)與\( \varepsilon_0 \)的<b>勢</b>相等。</p>
+        <p>&emsp;&emsp;基數用於衡量集合（因此也衡量序數）的實際大小。我們說兩集合若有一一對應的關係（亦稱雙射）則勢相等。比如說：\( \omega \)與\( \omega2 \)勢相等，這是因為它們之間有如下的一一對應的關係：（\( n\in\omega \)）</p>
+        <p>&emsp;&emsp;\( \omega \) to \( \omega2 \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
+        <p>&emsp;&emsp;\( 2\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 3\rightarrow\omega+1 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( 2n\rightarrow n \)</p>
+        <p>&emsp;&emsp;\( 2n+1\rightarrow\omega+n \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \omega2 \) to \( \omega \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( \omega\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow2 \)</p>
+        <p>&emsp;&emsp;\( \omega+1\rightarrow3 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
+        <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
+        <br>
+        <p>&emsp;&emsp;一切自然數皆為基數。對於無窮基數，我們將它們標為\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)然後將\( \omega \)的勢（\( \#\omega \)）定義為\( \aleph_0 \)。之所以我們知道有比\( \aleph_0 \)大的無窮，這是因為實數的勢大於自然數的勢。我們只是不知道實數的勢有多大（只是會記作\( \beth_1 \)），因為用ZFC本身既無法證明連續統假設為真又無法證明連續統假設為偽。</p>
+        <p>&emsp;&emsp;在研究ZFC（策梅洛-弗蘭克爾集合論）時，我們可以為每個無窮基數指派一個序數。這叫做<b>馮諾伊曼基數指派</b>。此時，我們定義集合的勢為最小與其有一一對應的關係的序數。因此，<b>基數是序數</b>且\( \aleph_0=\omega \)，\( \aleph_1=\Omega \)，\( \aleph_2=\Omega_2 \)，以此類推。</p>
+        <p>&emsp;&emsp;基數也能進行運算。但是，這些運算與序數運算不同而需要小心區分：（其中\( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \)）</p>
+        <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
+        <br>
+        <p>&emsp;&emsp;當某序數小於\( \Omega \)，我們稱其<b>可數</b>。</p>
+        <h2>激/緩增階層</h2><hr>
+        <p>&emsp;&emsp;另一個序數有趣的原因是它可用來構造異常巨大的數字。我們從以下定義開始：</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{m+1}(n):=f_m^n(n):=\underbrace{f_m(f_m(\cdots f_m(}_nn)\cdots)) \)</p>
+        <br>
+        <p>&emsp;&emsp;然後我們有：</p>
+        <p>&emsp;&emsp;\( f_0(n)=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_1(n)=2n \)</p>
+        <p>&emsp;&emsp;\( f_2(n)=2^nn&gt;2^n \)</p>
+        <p>&emsp;&emsp;\( f_3(n)&gt;2\uparrow\uparrow n:=\underbrace{2\uparrow2\uparrow\cdots\uparrow2}_n:=\underbrace{2^{2^{{\cdot}^{{\cdot}^{{\cdot}^{2}}}}}}_n \)</p>
+        <p>&emsp;&emsp;\( f_4(n)&gt;2\uparrow^3 n:=2\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow2\uparrow\uparrow\cdots\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( f_5(n)&gt;2\uparrow^4 n:=2\uparrow\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow\uparrow2\uparrow\uparrow\uparrow\cdots\uparrow\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;可以說\( f_0 \)、\( f_1 \)與\( f_2 \)都是比較常規的函數。但是，從\( f_3 \)開始就變得非常瘋狂了。因為我們正在使用超運算，這能輕易構造連科學計數法都無法表示的巨大數。</p>
+        <p>&emsp;&emsp;這些函數增長非常快。然而，有一種構造比這些函數增長還要快的函數的方法。這就輪到序數登場了。我們使用最小的無窮序數\( \omega \)然後如下定義：</p>
+        <p>&emsp;&emsp;\( f_\omega(n)=f_n(n) \)</p>
+        <br>
+        <p>&emsp;&emsp;可以驗證對於一切自然數\( m \)，總有一個自然數\( n_0 \)使得對於\( n\ge n_0 \)，\( f_\omega(n)&gt;f_m(n) \)。換句話說，\( f_\omega(n) \)比上述函數增長地都快（或者說支配上述一切函數），類比\( \omega \)比一切自然數都大的事實。</p>
+        <p>&emsp;&emsp;既然我們能繼續向上數序數，我們能如下定義快速增長的函數：</p>
+        <p>&emsp;&emsp;\( f_{\omega+1}(n):=f_\omega^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega+2}(n):=f_{\omega+1}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2}(n):=f_{\omega+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2+1}(n):=f_{\omega2}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega3}(n):=f_{\omega2+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega^2}(n):=f_{\omega n}(n) \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;一般地，我們能將定義拓展至一切可數的極限序數如下：</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{\alpha+1}(n):=f_\alpha^n(n):=\underbrace{f_\alpha(f_\alpha(\cdots f_\alpha(}_nn)\cdots)) \)</p>
+        <p>&emsp;&emsp;\( f_\alpha(n):=f_{\alpha[n]}(n) \)（\( \alpha \)是極限序數）</p>
+        <br>
+        <p>&emsp;&emsp;這叫做<b>激增階層</b>。當我們向上數序數時，我們也能定義增長更快的函數。這成為了構造極其巨大的數字的策略，而該策略的極限目前未知。</p>
+        <p>&emsp;&emsp;此外，我們還有<b>緩增階層</b>，定義如下：</p>
+        <p>&emsp;&emsp;\( g_0(n):=0 \)</p>
+        <p>&emsp;&emsp;\( g_{\alpha+1}(n):=g_\alpha(n)+1 \)</p>
+        <p>&emsp;&emsp;\( g_\alpha(n):=g_{\alpha[n]}(n) \)（\( \alpha \)是極限序數）</p>
+        <br>
+        <p>&emsp;&emsp;可以驗證該函數遠比激增階層緩慢增長。但是如果序數夠大，則仍能趕上激增階層（\( f_\alpha(n)&lt;g_\alpha(n+1) \)）。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;上述表達式\( \alpha[n] \)表示序數\( \alpha \)的<b>基本序列</b>的第\( n+1 \)個元素。</p>
+        <p>&emsp;&emsp;對於一個極限序數\( \alpha \)與一個無窮序列\( \alpha[n] \)，我們說\( \alpha[n] \)是\( \alpha \)的基本序列若：</p>
+        <p>&emsp;&emsp;1. 對於一切\( n\in\mathbb{N} \)，\( \alpha[n]&lt;\alpha \)</p>
+        <p>&emsp;&emsp;2. \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;此外，我們說\( \alpha[n] \)是\( \alpha \)的<b>理想</b>基本序列若：</p>
+        <p>&emsp;&emsp;對於一切\( m,n\in\mathbb{N} \)，若\( m&lt;n \)，則\( \alpha[m]&lt;\alpha[n] \)（序列嚴格遞增）</p>
+        <br>
+        <p>&emsp;&emsp;對於非極限序數，我們也有以下定義：</p>
+        <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
+        <p>&emsp;&emsp;\( 0[n]=0 \)</p>
+        <br>
+        <p>&emsp;&emsp;在上面的例子中，我們選擇了基本序列\( \omega[n]=n \)，但是事實上，有多數的基本序列滿足上述條件。比如說，我們可以定義\( \omega[n]=2^n \)以致使激增階層與緩增階層增長大幅加快。也可以定義\( \omega[n]=\lfloor\log_2(n+1)\rfloor \)（不是理想基本序列）以致使激增階層與緩增階層增長大幅減緩。</p>
+        <p>&emsp;&emsp;因此，<b>僅靠序數並不能構造巨大數</b>。在使用激增階層或緩增階層時，我們需要指定使用的基本序列。若不指定基本序列，我們便無法決定這些函數的實際增長率，而緩增階層能否趕上激增階層的問題將失去數學意義。</p>
+        <p>&emsp;&emsp;對於如\( \varepsilon_0 \)的較小的序數，要定義基本序列很簡單。但是，當序數增長時，定義基本序列會變得更加困難，甚至會花費幾個月的時間。</p>
+        <p>&emsp;&emsp;本網站所使用的6個序數系統使用不同的基本序列系統。如上所示，序數的基本序列因序數係統而異。</p>
+        <h2>序數塌縮函數</h2><hr>
+        <p>&emsp;&emsp;我們能從\( \varepsilon_0 \)繼續然後得到\( \varepsilon_1 \)、\( \varepsilon_2 \)、\( \varepsilon_\omega \)、\( \zeta_0 \)、\( \eta_0 \)、\( \varphi_4(0) \)、\( \varphi_\omega(0) \)、最後得到\( \Gamma_0 \)，費弗曼-舒特序數。在此刻，我們不再有簡單的定義更大序數的方法。</p>
+        <p>&emsp;&emsp;我們在之前所做的是利用激增階層或緩增階層透過無窮而因此大於一切無論多大的自然數的序數來定義巨大數。那麼這一次，我們使用不可數基數來定義可數序數。</p>
+        <p>&emsp;&emsp;我們從定義集合\( C_0(0,0)=\{0\} \)開始然後問：最小的不能用它們相加而得到的序數是什麼？答案是\( 1 \)，因為無論多少的0相加，得到的還是0。因此，我們寫下\( \psi_0(0)=1 \)。</p>
+        <p>&emsp;&emsp;然後：最小的不能用\( 0 \)與\( \psi_0(0)=1 \)相加的而得到序數是什麼？答案是\( \omega \)，然後我們寫下\( \psi_0(1)=\omega \)。我們可以重複然後得到\( \psi_0(2)=\omega^2 \)，\( \psi_0(3)=\omega^3 \)，\( \psi_0(\omega)=\omega^\omega \)，然後我們得到\( \psi_0(\varepsilon_0)=\varepsilon_0 \)。但是接下來，我們有\( \psi_0(\varepsilon_0+1)=\varepsilon_0 \)。這是因為有一條未提及的規則：我們需要能夠透過加法與\( \psi_0(\alpha) \)來構造這個序數。</p>
+        <p>&emsp;&emsp;現在正是時候使用不可數基數了。我們定義\( \psi_0(\Omega)=\varepsilon_0 \)。然後這時，我們有\( \psi_0(\Omega+1)=\varepsilon_0\omega \)，因為我們能使用\( \psi_1(0)=\Omega \)來構造\( \psi_0(\Omega)=\varepsilon_0 \)。我們最終還會遇到一次瓶頸：\( \psi_0(\Omega+\varepsilon_1)=\varepsilon_1 \)，但是此時我們只需要用另一個\( \Omega \)，然後得到\( \psi_0(\Omega2)=\varepsilon_1 \)。現在，我們可以重複然後得到\( \psi_0(\Omega3)=\varepsilon_2 \)，\( \psi_0(\Omega\omega)=\varepsilon_\omega \)，\( \psi_0(\Omega^2)=\zeta_0 \)，\( \psi_0(\Omega^3)=\eta_0 \)，\( \psi_0(\Omega^\omega)=\varphi_\omega(0) \)，最後得到\( \psi_0(\Omega^\Omega)=\Gamma_0 \)。在此刻，我們便能輕易地構造更大的序數了。</p>
+        <p>&emsp;&emsp;這就是一個<b>序數塌縮函數</b>的例子。主要的想法是使用不可數基數以構造巨大又複雜的序數。這個例子所使用的序數塌縮函數稱作布赫霍茲\( \psi \)函數，是最容易掌握的序數塌縮函數。完整定義如下，記住，序數被定義為包含所有小於自身的序數的集合：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'&lt;\beta\land\beta'\in C_n(\alpha,\beta)\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;像威爾弗里德·布赫霍茲那樣的數學家定義這樣的函數的原因是為了研究某些數學公理系統的強度。每個數學公理系統都被指派一個序數，叫做<b>證明論序數</b>，表示數學公理系統的強度。序數越大，數學公理系統便越強。有名的皮亞諾算術的證明論序數是\( \varepsilon_0 \)，此時可認為它非常小。</p>
+        <p>&emsp;&emsp;布赫霍茲\( \psi \)函數能構造的可數序數非常大，然而，這仍然是有限的。為了獲得更大的序數，我們需要使用更加強大的序數塌縮函數。然而，它們難以掌握。因此，本網站的目標是使這些強大的序數塌縮函數更易於理解。</p>
+        <h2>共尾數</h2><hr>
+        <p>&emsp;&emsp;現在，我們在使用不可數基數來定義可數序數，有時我們需要討論不可數基數的​​基本序列。在上述定義中，我們假設了一切基本序列的長度皆為\( \omega \)。但是，我們並不能為大多數的不可數基數構造長度為\( \omega \)的基本序列。這就涉及到共尾數的概念。</p>
+        <p>&emsp;&emsp;我們定義序數\( \alpha \)的共尾數（或共尾性，記作\( Cof(\alpha) \)）為\( \alpha \)的一子集的最小的勢，使得\( \alpha \)大於該子集一切元素。我們稱該子集為共尾子集。</p>
+        <p>&emsp;&emsp;比如說，\( Cof(\Omega_\omega)=\omega \)，這是因為我們可以找到一個勢為\( \omega \)的共尾子集\( \{\Omega_{1+\alpha}|\alpha\in\omega\} \)。</p>
+        <p>&emsp;&emsp;而且，\( 0 \)的共尾數為\( 0 \)，因為0不比任何序數大。一切後繼序數的共尾數皆為\( 1 \)，因為一切後繼序數\( \alpha+1 \)都有一個勢為\( 1 \)的共尾子集\( \{\alpha\} \)。一切極限序數的共尾數至少為\( \omega \)。</p>
+        <p>&emsp;&emsp;有了共尾數的概念，我們便能將基本序列的第二條件從\( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)改為\( \begin{align} \bigcup_{n\in Cof(\alpha)}\alpha[n]=\alpha \end{align} \)。</p>
+        <p>&emsp;&emsp;此外，對於基數\( \kappa \)，若\( Cof(\kappa)=\kappa \)，我們說它是一個<b>正規基數</b>，否則是一個<b>奇異基數</b>。</p>
+        <p>&emsp;&emsp;比如說：\( \Omega \)是一個正規基數，因為\( Cof(\Omega)=\Omega \)。\( \Omega_\omega \)是一個奇異基數，因為\( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \)。</p>
+        <h2>序數表示法</h2><hr>
+        <p>&emsp;&emsp;因為上述的一切函數都是集合的函數，它們在數學上是不可計算的，這是因為多數集合都是無窮的，而電腦不能處理像這樣的無窮多的元素。然而，我們仍然能將它們轉換為有限的字串然後使電腦能夠處理它們。</p>
+        <p>&emsp;&emsp;序數表示法是一個將序數轉換成包含有限符號的有限的字串的方法，類比自然數（或者更多數字）的十進制（或者如二進制的其他數制），因為這是將自然數轉換成包含0、1、2、3、4、5、6、7、8與9的有限的字串的方法。</p>
+        <p>&emsp;&emsp;在研究如拉珍小\( \psi \)函數那樣的複雜序數塌縮函數時，由於極端的複雜性，我們需要像程式語言的程式碼那樣定義標準型，比較規則等概念。它看起來像這樣：</p>
+        <p>&emsp;&emsp;\( (a\in S_0, b\in S_1)\mapsto f(a,b)\in S_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( c_0 \)，傳回\( d_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( c_1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( c_2 \)，傳回\( d_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( c_3 \)，傳回\( d_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( c_4 \)，傳回\( d_3 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，傳回\( d_4 \)</p>
+        <br>
+        <p>&emsp;&emsp;其中\( a \)與\( b \)是變數，\( S_0 \)是變數\( a \)的定義域，\( S_1 \)是變數\( b \)的定義域，\( S_2 \)是結果\( f(a,b) \)的值域。</p>
+        <p>&emsp;&emsp;\( c_0 \)、\( c_1 \)、\( c_2 \)、\( c_3 \)與\( c_4 \)皆為條件。若條件滿足，則會被指派一個值\( \mathbb{T} \)（真），否則被指派為\( \mathbb{F} \)（偽）。注意會有一些條件函數，這些函數的值域皆為\( \{\mathbb{T},\mathbb{F}\} \)。這些條件有時會以邏輯運算符連接，\( \neg \)表示「非」，\( \land \)表示「與」而\( \vee \)表示「或」。</p>
+        <p>&emsp;&emsp;程式碼如此運行：我們從01.行開始。若\( c_0 \)為\( \mathbb{T} \)，函數\( f(a,b) \)傳回值\( d_0 \)，也就是說在這個情況下，\( f(a,b)=d_0 \)。若\( c_0 \)為\( \mathbb{F} \)，則跳轉到02.行。若\( c_1 \)為\( \mathbb{T} \)，則運行副行02.01.與02.02.以決定\( f(a,b) \)的值。若\( c_1 \)為\( \mathbb{F} \)，則直接跳轉到03.行，以此類推。關鍵字「除以上情況」會在以上的一切「若」無法涵蓋所有情況時使用。</p>
+        <h2>一些值得提及的序數</h2><hr>
+        <h3>\( \varepsilon_0 \)</h3>
+        <p>&emsp;&emsp;滿足\( \alpha=\omega^\alpha \)的第一個序數。</p>
+        <p>&emsp;&emsp;皮亞諾算術（\( PA \)）的證明論序數。</p>
+        <p>&emsp;&emsp;於維布倫函數與\( \varphi_1(0) \)等價。</p>
+        <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數與\( \psi_0(\Omega) \)等價。</p>
+        <h3>\( \Gamma_0 \)，費弗曼-舒特序數</h3>
+        <p>&emsp;&emsp;滿足\( \alpha=\varphi_\alpha(0) \)的第一個序數。</p>
+        <p>&emsp;&emsp;算術超限歸納（\( ATR_0 \)）的證明論序數。</p>
+        <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數與\( \psi_0(\Omega^\Omega) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(0) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(0) \)等價。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^2}) \)，阿克曼序數（AO）</h3>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\Omega^{\Omega^2}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\Omega^3) \)等價。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\omega}) \)，小維布倫序數（SVO）</h3>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\Omega^{\Omega^\omega}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\Omega^\omega) \)等價。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\Omega}) \)，大維布倫序數（SVO）</h3>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\Omega^\Omega) \)等價。</p>
+        <h3>\( \psi_0(\Omega_2) \)，巴赫曼-霍華德序數（BHO）</h3>
+        <p>&emsp;&emsp;包含無窮公理的克里普克-普拉特克集理論（\( KP\omega \)）的證明論序數。</p>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\varepsilon_{\Omega+1}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)等價。</p>
+        <h3>\( \psi_0(\Omega_\omega) \)，小布赫霍茲序數（SBO）</h3>
+        <p>&emsp;&emsp;又称布赫霍茲序數（BO）。</p>
+        <p>&emsp;&emsp;\( \Pi_1^1-CA \)的證明論序數。</p>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\Omega_\omega) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\Omega_\omega) \)等價。</p>
+        <h3>\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)，竹內-費弗曼-布赫霍茲序數（TFBO）</h3>
+        <p>&emsp;&emsp;\( \Pi_1^1-CA+BI \)的證明論序數。</p>
+        <p>&emsp;&emsp;於拓展布赫霍茲\( \psi \)函數與\( \psi_0(\Omega_{\omega+1}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)等價。</p>
+        <h3>\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)，大布赫霍茲序數（LBO）</h3>
+        <p>&emsp;&emsp;又称拓展布赫霍茲序數（EBO）。</p>
+        <p>&emsp;&emsp;\( \Pi_1^1-TR_0 \)的證明論序數。</p>
+        <p>&emsp;&emsp;於拉珍小\( \psi \)函數與\( \psi_\Omega(\Phi_1(0)) \)等價。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)等價。</p>
+        <h3>\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)，小拉珍序數（SRO）</h3>
+        <p>&emsp;&emsp;\( KPM \)的證明論序數。</p>
+        <p>&emsp;&emsp;於拉珍大\( \Psi \)函數與\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)等價。</p>
+        <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \)，大拉珍序數（LRO）</h3>
+        <p>&emsp;&emsp;\( KP+\Pi_3-reflection \)的證明論序數的上界。</p>
+    </body>
+</html>
