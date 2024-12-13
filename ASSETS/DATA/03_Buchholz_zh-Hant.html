@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;布赫霍茲\( \psi \)函數指的是威爾弗里德·布赫霍茲於1986年提出的序數塌縮函數<sup><a id="g1" href="#c1">[1]</a></sup>。該函數\( \psi_\alpha(\beta) \)定義如下：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;布赫霍茲\( \psi \)函數可認為是最容易掌握的序數塌縮函數。原因如下：</p>
+        <p>&emsp;&emsp;1. 布赫霍茲\( \psi \)函數對於各變數皆單調遞增。意味著該函數的回傳值更加容易預測。</p>
+        <p>&emsp;&emsp;2. 不像其他序數塌縮函數，布赫霍茲\( \psi \)函數具有下列性質：\( \psi_0(0)=1 \)且若\( \psi_\alpha(\beta+1)&gt;\psi_\alpha(\beta) \)則\( \psi_\alpha(\beta+1)=\psi_\alpha(\beta)*\omega \)，意味著一切布赫霍茲\( \psi \)函數所能表示的序數皆可由0，加法與該函數建構。</p>
+        <p>&emsp;&emsp;本網站所使用的基本序列系統定義如下，注意所有項都必須是標準型。由於其複雜性，標準型將在「序數表示法」欄位定義：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \alpha=0 \)，則\( \alpha[n]:=0 \)且\( Cof(\alpha):=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \alpha=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m) \)且\( m&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \alpha[n]:=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m)[n] \)且\( Cof(\alpha):=Cof(\psi_{\beta_m}(\gamma_m)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( \alpha=\psi_0(0)=1 \)，則\( \alpha[n]:=0 \)且\( Cof(\alpha):=1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( \alpha=\psi_{\beta}(0)=\Omega_\beta \)且\( Cof(\beta)=1 \)，則\( \alpha[n]:=n \)且\( Cof(\alpha):=\alpha \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( \alpha=\psi_\omega(0)=\Omega_\omega \)，則\( \alpha[n]:=\psi_n(0) \)且\( Cof(\alpha):=\psi_0(\psi_0(0))=\omega \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( Cof(\gamma)=1 \)，則\( \alpha[n]:=\psi_{\beta}(\gamma[0])*n \)且\( Cof(\alpha):=\omega \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( 1&lt;Cof(\gamma)\le\Omega_\beta \)，則\( \alpha[n]:=\psi_{\beta}(\gamma[n]) \)且\( Cof(\alpha):=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 若\( \alpha=\psi_{\beta}(\gamma) \)且\( \Omega_\beta&lt;Cof(\gamma) \)，則\( \alpha[0]:=0 \)且\( \alpha[n+1]:=\psi_{\beta}(Re(\gamma,n)) \)且\( Cof(\alpha):=\omega \)，</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> 其中\( Re(\gamma,0):=\gamma[0] \)且\( Re(\gamma,n+1):=\gamma[\psi_{\delta}(Re(\gamma,n))] \)且\( \Omega_{\delta+1}=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 若\( \alpha=\varepsilon_{\Omega_\omega+1} \)，則\( \alpha[0]:=0 \)且\( \alpha[n+1]:=\psi_\omega(\alpha[n]) \)且\( Cof(\alpha):=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;順便一提，威爾弗里德·布赫霍茲也在他的論文中定義了他的基本序列系統，與上述定義有所差異。</p>
+        <p>&emsp;&emsp;該序數塌縮函數的可數極限，記作\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)，稱作「竹內-費弗曼-布赫霍茲序數（TFBO）」。該序數是\( \Pi_1^1-CA+BI \)的證明論序數。</p>
+        <h1>序數表示法</h1><hr>
+        <h2>表示法</h2><hr>
+        <p>&emsp;&emsp;我們定義\( S \)為包含以下字元的集合：</p>
+        <p>&emsp;&emsp;常數「\( \overline{0} \)」，</p>
+        <p>&emsp;&emsp;函數字元「\( \psi \)」，</p>
+        <p>&emsp;&emsp;以及其他字元「\( + \)」，「\( ( \)」，「\( ) \)」與「\( , \)」。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義\( S \)的子集\( T_m \)與\( T_s \)如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切\( a\in T_s \)與\( b\in T_m\setminus\{\overline{0}\} \)，\( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 對於一切\( a,b\in T_m \)，\( \psi(a,b)\in T_m \)且\( \psi(a,b)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;在全篇文章中，我們採用以下簡寫：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \psi_a(b):=\psi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\psi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\psi_\overline{0}(\overline{1}) \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;我們定義二元關係\( &lt; \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( b=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\overline{0}\land b\neq\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg b_0&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，傳回\( a_0&lt;b_0\vee(\neg b_0&lt;a_0\land a_1&lt;b_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義所有其他的比較符號：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;注意\( = \)與\( \neq \)表示符號等價性而\( =_* \)與\( \neq_* \)表示數值等價性。</p>
+        <h2>標準型</h2><hr>
+        <p>&emsp;&emsp;我們定義函數\( \in C \)以判斷序數\( c \)是否為\( C(a,b) \)的元素：</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( c&lt;\psi_a(\overline{0}) \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg c&lt;\psi_a(\overline{0}) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( c=c_0+c_1\land c_0\in T_s\land c_1\in T_m\setminus\{\overline{0}\} \)，傳回\( c_0\in C(a,b)\land c_1\in C(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( c=\psi_{c_0}(c_1)\land c_0,c_1\in T_m \)，傳回\( c_0&lt;\overline{\omega}+\overline{1}\land c_1\in C(a,b)\land c_1&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in T \)以判斷序數是否為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T\land a_1\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，傳回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_0&lt;\overline{\omega}+\overline{1}\land a_1\in T\land a_1\in C(a_0,a_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義該系統的極限為\( A=\varepsilon_{\Omega_\omega+1} \)。</p>
+        <p>&emsp;&emsp;\( \varepsilon_{\Omega_\omega+1} \)亦為標準型。</p>
+        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha&lt;\varepsilon_{\Omega_\omega+1} \)。</p>
+        <p>&emsp;&emsp;序數\( \alpha \)可數當且僅當\( \alpha&lt;\psi_\overline{1}(\overline{0}) \)。</p>
+        <p>&emsp;&emsp;僅限於指令「fgh」與「sgh」可用的可數序數極限為\( \psi_\overline{0}(\varepsilon_{\Omega_\omega+1}) \)。其電腦程式碼為(,A)。</p>
+        <h2>運算</h2><hr>
+        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，傳回\( a+b \)</p>
+        <h2>共尾數</h2><hr>
+        <p>&emsp;&emsp;我們定義共尾函數\( Cof \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> 若\( a_0\neq\overline{\omega} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> 若\( a_0=\overline{\omega} \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_1)=\overline{1} \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> 若\( \neg\psi_{a_0}(0)&lt;Cof(a_1) \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> 若\( \psi_{a_0}(0)&lt;Cof(a_1) \)，傳回\( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( Cof(\varepsilon_{\Omega_\omega+1})=\overline{\omega} \)。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;我們定義基本序列\( [] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，傳回\( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> 若\( a_0=\overline{\omega} \)，傳回\( \psi_n(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]], \psi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> 若\( \neg\psi_{a_0}(0)&lt;Cof(a_1) \)，傳回\( \psi_{a_0}(a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> 若\( \psi_{a_0}(0)&lt;Cof(a_1) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \psi_{a_0}(Re(a_1,n[\overline{0}])) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義迭代函數\( Re \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto Re(a,n)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( a[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0}\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \)，傳回\( a[\psi_{a_1}(Re(a,n[\overline{0}]))] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義強基本序列\( {[]}^* \)如下，以便將共尾數不可數的序數以更小的共尾數可數的序數展開：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg\overline{\omega}&lt;Cof(a) \)，傳回\( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \overline{\omega}&lt;Cof(a)\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \)，傳回\( a[\psi_{a_1}(\varepsilon_{\Omega_\omega+1}[n])] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( \varepsilon_{\Omega_\omega+1} \)的基本序列如下：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\varepsilon_{\Omega_\omega+1}[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，傳回\( \psi_\overline{\omega}(\varepsilon_{\Omega_\omega+1}[n[\overline{0}]]) \)</p>
+        <h1>引用</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Buchholz, W. (1986). <a href="https://www.sciencedirect.com/science/article/pii/0168007286900527" target="_blank">A new system of proof-theoretic ordinal functions.</a> Annals of Pure and Applied Logic, 32, 195-207. Retrieved 2024-12-13. https://doi.org/10.1016/0168-0072(86)90052-7</p>
+    </body>
+</html>

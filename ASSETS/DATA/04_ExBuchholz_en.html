@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Definition</h1><hr>
+        <p>&emsp;&emsp;Extended Buchholz's \( \psi \) refers to an extension of Buchholz's \( \psi \) proposed by Denis Maksudov in 2017<sup><a id="g1" href="#c1">[1]</a></sup>. The definition of the function \( \psi_\alpha(\beta) \) is as follows:</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'\in C_n(\alpha,\beta)\land\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;The only difference from the original Buchholz's \( \psi \) is in the definition of \( C_{n+1}(\alpha,\beta) \), where \( \alpha'&lt;\omega+1 \) in the original is changed to \( \alpha'\in C_n(\alpha,\beta) \). This allows the use of uncountable cardinals greater than \( \Omega_\omega \) and up to \( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \), the Omega fixed point.</p>
+        <p>&emsp;&emsp;The fundamental sequence system used in this website is defined as follows, note that every term has to be in normal form. Due to the complexity, the normal form will be defined in the "Ordinal Notation" section:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \alpha=0 \), then \( \alpha[n]:=0 \) and \( Cof(\alpha):=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \alpha=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m) \) and \( m&gt;1 \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \alpha[n]:=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m)[n] \) and \( Cof(\alpha):=Cof(\psi_{\beta_m}(\gamma_m)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( \alpha=\psi_0(0)=1 \), then \( \alpha[n]:=0 \) and \( Cof(\alpha):=1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( \alpha=\psi_{\beta}(0)=\Omega_\beta \) and \( Cof(\beta)=1 \), then \( \alpha[n]:=n \) and \( Cof(\alpha):=\alpha \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( \alpha=\psi_{\beta}(0)=\Omega_\beta \) and \( Cof(\beta)&gt;1 \), then \( \alpha[n]:=\psi_{\beta[n]}(0) \) and \( Cof(\alpha):=Cof(\beta) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( \alpha=\psi_{\beta}(\gamma) \) and \( Cof(\gamma)=1 \), then \( \alpha[n]:=\psi_{\beta}(\gamma[0])*n \) and \( Cof(\alpha):=\psi_0(\psi_0(0))=\omega \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> If \( \alpha=\psi_{\beta}(\gamma) \) and \( 1&lt;Cof(\gamma)\le\Omega_\beta \), then \( \alpha[n]:=\psi_{\beta}(\gamma[n]) \) and \( Cof(\alpha):=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> If \( \alpha=\psi_{\beta}(\gamma) \) and \( \Omega_\beta&lt;Cof(\gamma) \), then \( \alpha[0]:=0 \) and \( \alpha[n+1]:=\psi_{\beta}(Re(\gamma,n)) \) and \( Cof(\alpha):=\omega \),</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> where \( Re(\gamma,0):=\gamma[0] \) and \( Re(\gamma,n+1):=\gamma[\psi_{\delta}(Re(\gamma,n))] \) and \( \Omega_{\delta+1}=Cof(\gamma) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> If \( \alpha=\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \), then \( \alpha[0]:=0 \) and \( \alpha[n+1]:=\psi_{\alpha[n]}(0) \) and \( Cof(\alpha):=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;Note that Denis Maksudov also defined his fundamental sequence system in his website, which is slightly different from the definition above.</p>
+        <p>&emsp;&emsp;The countable limit of this OCF, denoted as \( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \), is called the Large Buchholz ordinal (LBO), it's also known as Extended Buchholz's ordinal (EBO). It's the PTO of \( \Pi_1^1-TR_0 \)<sup><a id="g2" href="#c2">[2]</a></sup>.</p>
+        <h1>Ordinal Notation</h1><hr>
+        <h2>Notation</h2><hr>
+        <p>&emsp;&emsp;We define \( S \) to be the set that contains all the strings composed of the following symbols:</p>
+        <p>&emsp;&emsp;Constant "\( \overline{0} \)",</p>
+        <p>&emsp;&emsp;Function symbol "\( \psi \)",</p>
+        <p>&emsp;&emsp;And other symbols "\( + \)", "\( ( \)", "\( ) \)" and "\( , \)".</p>
+        <br>
+        <p>&emsp;&emsp;We define the subsets of \( S \), \( T_m \) and \( T_s \) as follows:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For all \( a\in T_s \) and \( b\in T_m\setminus\{\overline{0}\} \), \( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> For all \( a,b\in T_m \), \( \psi(a,b)\in T_m \) and \( \psi(a,b)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \psi_a(b):=\psi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\psi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\psi_\overline{0}(\overline{1}) \)</p>
+        <h2>Ordering</h2><hr>
+        <p>&emsp;&emsp;We define the binary relation \( &lt; \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( b=\overline{0} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=\overline{0}\land b\neq\overline{0} \), return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( a_0&lt;b_0 \), return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( \neg a_0&lt;b_0 \), return \( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \), return \( \neg b_0&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\psi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), return \( a_0&lt;b_0\vee(\neg b_0&lt;a_0\land a_1&lt;b_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define all the other comparison symbols:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represents symbolic equivalence while \( =_* \) and \( \neq_* \) represents numerical equivalence.</p>
+        <h2>Normal Form</h2><hr>
+        <p>&emsp;&emsp;We define the function \( \in C \) to determine whether an ordinal \( c \) is an element of \( C(a,b) \):</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( c&lt;\psi_a(\overline{0}) \), return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \neg c&lt;\psi_a(\overline{0}) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( c=c_0+c_1\land c_0\in T_s\land c_1\in T_m\setminus\{\overline{0}\} \), return \( c_0\in C(a,b)\land c_1\in C(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( c=\psi_{c_0}(c_1)\land c_0,c_1\in T_m \), return \( c_0\in C(a,b)\land c_1\in C(a,b)\land c_1&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( a_0\in T\land a_1\in T \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> If \( a_1\in T_s \), return \( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> If \( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \), return \( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0\in T\land a_1\in T\land a_1\in C(a_0,a_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the limit of the system \( A=\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \).</p>
+        <p>&emsp;&emsp;\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \) is also in normal form.</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)</p>
+        <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\psi_\overline{1}(\overline{0}) \).</p>
+        <p>&emsp;&emsp;The countable limit ordinal exclusive to the command "fgh" or "sgh" is \( \psi_\overline{0}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \), written in computer code as "(,A)".</p>
+        <h2>Operations</h2><hr>
+        <p>&emsp;&emsp;We define addition \( Add \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
+        <h2>Cofinality</h2><hr>
+        <p>&emsp;&emsp;We define the cofinality function \( Cof \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( a_1=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> If \( Cof(a_0)&lt;\overline{\omega} \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_1)=\overline{1} \), return \( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> If \( \neg\psi_{a_0}(0)&lt;Cof(a_1) \), return \( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> If \( \psi_{a_0}(0)&lt;Cof(a_1) \), return \( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;We also define that \( Cof(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}})=\overline{\omega} \).</p>
+        <h2>Fundamental Sequence</h2><hr>
+        <p>&emsp;&emsp;We define the fundamental sequence \( [] \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( a_1=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> If \( a_0=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( Cof(a_0)=\overline{1} \), return \( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> If \( \neg Cof(a_0)&lt;\overline{\omega} \), return \( \psi_{a_0[n]}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> If \( n\neq\overline{0} \), return \( Add(a[n[\overline{0}]], \psi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> If \( \neg\psi_{a_0}(0)&lt;Cof(a_1) \), return \( \psi_{a_0}(a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> If \( \psi_{a_0}(0)&lt;Cof(a_1) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.02.</span> If \( n\neq\overline{0} \), return \( \psi_{a_0}(Re(a_1,n[\overline{0}])) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the recursion function \( Re \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto Re(a,n)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( a[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0}\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \), return \( a[\psi_{a_1}(Re(a,n[\overline{0}]))] \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the strong fundamental sequence \( {[]}^* \) in case we want an ordinal of uncountable cofinality to expand as a smaller ordinal with countable cofinality:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \neg\overline{\omega}&lt;Cof(a) \), return \( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \overline{\omega}&lt;Cof(a)\land Cof(a)=\psi_{a_0}(0)\land a_1=a_0[\overline{0}] \), return \( a[\psi_{a_1}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n])] \)</p>
+        <br>
+        <p>&emsp;&emsp;We also define the fundamental sequence of \( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \) as follows:</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0} \), return \( \psi_{\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}[n[\overline{0}]]}(\overline{0}) \)</p>
+        <h1>References</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function" target="_blank">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-12-13.</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Rathjen, M. (2010). <a href="https://web.archive.org/web/20231207051455/https://www1.maths.leeds.ac.uk/~rathjen/Dissertation_Ontos.pdf" target="_blank">Investigations of Subsystems of Second Order Arithmetic and Set Theory in Strength between \( \Pi_1^1-CA \) and \( \Delta_2^1-CA+BI \): Part I.</a> In R. Schindler (Ed.), Ways of Proof Theory (pp. 363-440). Berlin, Boston: De Gruyter. Retrieved 2024-12-13. https://doi.org/10.1515/9783110324907.363</p>
+    </body>
+</html>

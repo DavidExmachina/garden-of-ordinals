@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>About this website</h1><hr>
+        <p>&emsp;&emsp;Garden of Ordinals is a website that can demonstrate the behaviors of (mainly infinite and extremely large) ordinal numbers by running calculations and exploring them in different ordinal systems. This website involves 6 ordinal systems: Cantor Normal Form, Veblen Function, Buchholz's \( \psi \), Extended Buchholz's \( \psi \), Rathjen's Little \( \psi \) and Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;You can enter the interface of these ordinal systems by clicking the corresponding button in the title screen. After entering the interface, you will see 4 tabs: Calculate, Explore, Options and Help. You can click the Help tab for more information about the ordinal system.</p>
+        <h2>The calculation interface</h2><hr>
+        <p>&emsp;&emsp;You can enter the Calculate menu by clicking the Calculate tab at the top of the page. In fact, this is the first menu you enter when you first enter the ordinal system interface.</p>
+        <p>&emsp;&emsp;In the Calculate menu, you can see the command bar, the console window, and the preset window. The way to do calculations and perform some other functions is to enter commands, which programmers like to do. To enter ordinals, you need to convert ordinals into "computer codes". The rule of conversion varies depending on the ordinal system and is given when you first enter the ordinal system interface or by entering an empty string in the command bar.</p>
+        <p>&emsp;&emsp;For example, in the ordinal system Buchholz's \( \psi \), the conversion rules are:</p>
+        <p>&emsp;&emsp;Empty string represents \( 0 \)</p>
+        <p>&emsp;&emsp;String "A" represents \( \varepsilon_{\Omega_\omega+1} \)</p>
+        <p>&emsp;&emsp;BC represents \( b+c \)</p>
+        <p>&emsp;&emsp;(B,C) represents \( \psi_b(c) \)</p>
+        <br>
+        <p>&emsp;&emsp;Now, let's convert the ordinal \( \zeta_0=\psi_0(\Omega^2) \) into the computer code in this ordinal system:</p>
+        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{(,)}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;Which means, the computer code of \( \psi_0(\Omega^2) \) is (,((,),((,),))).</p>
+        <p>&emsp;&emsp;It should be noted that the computer code of ordinals you enter has to be valid and in normal form. Being valid means there are no invalid characters and mismatched or missing brackets in the computer code. Being in normal form means something complicated and are defined in the Help menu in the corresponding ordinal system interface.</p>
+        <p>&emsp;&emsp;Also, the string "A" always represents <b>the limit of the ordinal system</b>.</p>
+        <p>&emsp;&emsp;You can enter spaces in the computer code to help visualizing the code, but you'll have to add double quotes around the code when doing this to avoid identification errors. For example, entering "(, (,)(,) )" is the same as entering (,(,)(,)).</p>
+        <p>&emsp;&emsp;The supported commands and their formats and functions are as follows:</p>
+        <h3>display</h3>
+        <p>&emsp;&emsp;<b>Format:</b> display ord</p>
+        <p>&emsp;&emsp;<b>Description:</b> Display the ordinal written in the computer code "ord".</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: display (,((,),((,),)))</p>
+        <p>&emsp;&emsp;Console: \( \alpha=\psi_0(\Omega^2) \)</p>
+        <h3>cof</h3>
+        <p>&emsp;&emsp;<b>Format:</b> cof ord</p>
+        <p>&emsp;&emsp;<b>Description:</b> Display the cofinality of the ordinal written in the computer code "ord".</p>
+        <p>&emsp;&emsp;You can copy the result by clicking the "Copy" button. (Not in the following examples)</p>
+        <p>&emsp;&emsp;The definition of "cofinality" will be explained later in this article.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: cof (,((,),((,),)))</p>
+        <p>&emsp;&emsp;Console: \( Cof(\alpha)=\omega \)<span class="copy2 button2 noclick">Copy</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>Example2:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: cof ((,)(,),)</p>
+        <p>&emsp;&emsp;Console: \( Cof(\alpha)=\Omega_2 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <h3>comp</h3>
+        <p>&emsp;&emsp;<b>Format:</b> comp ord1 ord2</p>
+        <p>&emsp;&emsp;<b>Description:</b> Compare the two ordinals "ord1" and "ord2" and determine which one is larger.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: comp (,) (,(,))</p>
+        <p>&emsp;&emsp;Console: \( 1&lt;\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example2:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: comp (,) (,(,))</p>
+        <p>&emsp;&emsp;Console: \( \omega&gt;1 \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example3:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: comp (,) (,)</p>
+        <p>&emsp;&emsp;Console: \( 1=1 \)</p>
+        <h3>fs</h3>
+        <p>&emsp;&emsp;<b>Format:</b> fs ord [steps=3] ["strong"]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Expand the ordinal and display the first "steps+1" ordinals of the fundamental sequence of the ordinal "ord" in the corresponding ordinal system.</p>
+        <p>&emsp;&emsp;You can copy the result by clicking the "Copy" button. (Not in the following examples)</p>
+        <p>&emsp;&emsp;If the attribute "steps" is omitted, it's set as 3 on default.</p>
+        <p>&emsp;&emsp;If the cofinality of the ordinal ord is uncountable, there will be a warning on top. However, if the text "strong" is added at the end of the command, it will be expanded as a smaller ordinal with countable cofinality.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example1:</b> (Veblen Function)</p>
+        <p>&emsp;&emsp;Input: fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \alpha=\zeta_1 \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\zeta_0 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\varepsilon_{\zeta_0+1} \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\varepsilon_{\varepsilon_{\zeta_0+1}} \)<span class="copy2 button2 noclick">Copy</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>Example2:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\Omega^22) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega^2+\Omega) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega)) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega))) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;Note: In this case, the result of \( \alpha \), \( \alpha[0] \), \( \alpha[1] \), \( \alpha[2] \) and \( \alpha[3] \) corresponds to \( \zeta_1 \), \( 0 \), \( \varepsilon_{\zeta_0+1} \), \( \varepsilon_{\varepsilon_{\zeta_0+1}} \) and \( \varepsilon_{\varepsilon_{\varepsilon_{\zeta_0+1}}} \) in Veblen Function, which shows that expansion rules vary depending on the ordinal system.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example3:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fs (,(,)) 9</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \alpha=\omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[4]=4 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[5]=5 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[6]=6 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[7]=7 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[8]=8 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[9]=9 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>Example4:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fs ((,),)</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;WARNING: The cofinality of \( \Omega \) is uncountable.</p>
+        <p>&emsp;&emsp;\( \alpha=\Omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>Example5:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fs ((,),) strong</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;<span class="error">ERROR: Invalid number.</span></p>
+        <p>&emsp;&emsp;<span class="error">Only natural numbers are supported. (0, 1, 2, 3, ...)</span></p>
+        <p>&emsp;&emsp;Note: This shows that when the text "strong" is added at the end of the command, the attribute "steps" can't be omitted.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example6:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fs ((,),) 3 strong</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;Expanding \( \Omega \) as \( \psi_0(\varepsilon_{\Omega_\omega+1}) \).</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\varepsilon_{\Omega_\omega+1}) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=1 \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega_\omega) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0({\Omega_\omega}^2) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0({\Omega_\omega}^{\Omega_\omega}) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <h3>fgh</h3>
+        <p>&emsp;&emsp;<b>Format:</b> fgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Compute the Fast-Growing Hierarchy using the ordinal "ord" and number "n" in "steps" steps.</p>
+        <p>&emsp;&emsp;The "ord" given in this command must be countable. The definition of "countable" varies depending on the ordinal system and are defined in the Help menu in the corresponding ordinal system interface.</p>
+        <p>&emsp;&emsp;In addition, for some ordinal systems, there is a <b>countable limit ordinal</b> that is exclusive to this command. It should be noted that this ordinal is not in normal form and will cause errors in other commands.</p>
+        <p>&emsp;&emsp;It's advised that the attribute "steps" should be small (below 100 or even 10), otherwise, the website may take too long to render the result.</p>
+        <p>&emsp;&emsp;The definition of the "Fast-Growing Hierarchy" will be explained later in this article.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_3(3) \\ = & f_2^3(3) \\ = & f_2^2(f_1^3(3)) \\ = & f_2^2(f_1^2(f_0^3(3))) \\ = & f_2^2(f_1^2(f_0^2(4))) \\ = & f_2^2(f_1^2(f_0(5))) \\ = & f_2^2(f_1^2(6)) \\ = & f_2^2(f_1(f_0^6(6))) \\ = & f_2^2(f_1(f_0^5(7))) \\ = & f_2^2(f_1(f_0^4(8))) \\ = & f_2^2(f_1(f_0^3(9))) \\ = & \cdots \\ \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example2:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fgh ((,),) 3</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;<span class="error">ERROR: The ordinal is uncountable.</span></p>
+        <p>&emsp;&emsp;<span class="error">FGH is defined only when the ordinal is countable.</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>Example3:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: fgh (,A) 3 2</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_{\psi_0({\varepsilon}_{\Omega_\omega+1})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_\omega})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_3})}(3) \\ = & \cdots \\ \end{align} \)</p>
+        <h3>sgh</h3>
+        <p>&emsp;&emsp;<b>Format:</b> sgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Compute the Slow-Growing Hierarchy using the ordinal "ord" and number "n" in "steps" steps.</p>
+        <p>&emsp;&emsp;Same as fgh except the "Slow-Growing Hierarchy" is calculated.</p>
+        <p>&emsp;&emsp;The definition of the "Slow-Growing Hierarchy" will be explained later in this article.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: sgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \begin{align} & g_3(3) \\ = & g_2(3)+1 \\ = & g_1(3)+2 \\ = & g_0(3)+3 \\ = & 3 \end{align} \)</p>
+        <h3>initial</h3>
+        <p>&emsp;&emsp;<b>Format:</b> initial ord</p>
+        <p>&emsp;&emsp;<b>Description:</b> Set the initial ordinal in the Explore menu to ordinal "ord".</p>
+        <p>&emsp;&emsp;The initial ordinal in the Explore menu will be reset after exiting the ordinal system interface.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: initial (,(,))</p>
+        <p>&emsp;&emsp;Console: The initial ordinal in the Explore menu has been set to \( \omega \).</p>
+        <h3>search</h3>
+        <p>&emsp;&emsp;<b>Format:</b> search ord</p>
+        <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal in the Explore menu.</p>
+        <p>&emsp;&emsp;If the ordinal "ord" is found, it will be highlighted in the Explore menu.</p>
+        <p>&emsp;&emsp;The ordinal "ord" is supposed to be always found when the initial ordinal is set to "A" in computer code, which is the default value.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: search (,(,))</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;Ordinal \( \omega \) is found.</p>
+        <p>&emsp;&emsp;You can check the target ordinal in the Explore menu.</p>
+        <h3>preset</h3>
+        <p>&emsp;&emsp;<b>Format:</b> preset "import"/"export"/"reset"</p>
+        <p>&emsp;&emsp;<b>Description:</b> Manage the preset (explained later in this article) data. Only the following 3 commands can be used:</p>
+        <br>
+        <p>&emsp;&emsp;<b>Command:</b> preset import</p>
+        <p>&emsp;&emsp;<b>Description:</b> Import the preset file that is exported in advance.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Command:</b> preset export</p>
+        <p>&emsp;&emsp;<b>Description:</b> Export the presets as a .json file.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Command:</b> preset reset</p>
+        <p>&emsp;&emsp;<b>Description:</b> Reset the presets to default.</p>
+        <p>&emsp;&emsp;There will be a confirmation window when this command is executed.</p>
+        <p>&emsp;&emsp;It's advised to export the presets before resetting the presets if the current presets are important.</p>
+        <h2>Presets for calculations</h2><hr>
+        <p>&emsp;&emsp;You can use the presets at the bottom of the console window to make the code easier.</p>
+        <p>&emsp;&emsp;For example, in the ordinal system Buchholz's \( \psi \), you might want to write "w" for (,(,)) because it does represent the ordinal \( \omega \). Let's say you have the following preset:</p>
+        <p>&emsp;&emsp;Name: w</p>
+        <p>&emsp;&emsp;Ordinal: (,(,))</p>
+        <br>
+        <p>&emsp;&emsp;To call the preset, you need to add square brackets around the name of the preset:</p>
+        <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: display [w]</p>
+        <p>&emsp;&emsp;Console: \( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;Now, the code is equivalent to the following code:</p>
+        <p>&emsp;&emsp;<b>Example2:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: display (,(,))</p>
+        <p>&emsp;&emsp;Console: \( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;There will be default presets when you first enter this website. To add a new preset, enter the name of your preset in the empty "Name" input box at the end of the preset window, and then enter the computer code you want the preset to represent in the "Ordinal" input box to the right of the "Name" input box. To delete a preset, clear the "Ordinal" input box of the preset you want to delete and then clear the "Name" input box of that preset.</p>
+        <p>&emsp;&emsp;The name of the preset can't contain the following 4 characters: space, ", [ and ]. It also can't be the name of the other presets. Otherwise, the entry of the name will fail.</p>
+        <h2>Exploring ordinals</h2><hr>
+        <p>&emsp;&emsp;You can enter the Explore menu by clicking the Explore tab at the top of the page.</p>
+        <p>&emsp;&emsp;In the Explore menu, you can freely explore the ordinals by expanding them via clicking the buttons on the left. No matter how the ordinals are expanded, they will always be increasing from top to bottom. If the cofinality of the ordinal is uncountable, it will expand as a smaller ordinal with countable cofinality. The functions of the buttons are as follows:</p>
+        <p><span class="plus1 button2 noclick" style="font-size: 16px;">+</span></p>
+        <p>&emsp;&emsp;Expand the ordinal once.</p>
+        <p><span class="plus2 button2 noclick" style="font-size: 16px;">++</span></p>
+        <p>&emsp;&emsp;Expand the ordinal recursively.</p>
+        <p><span class="plus3 button2 noclick" style="font-size: 16px;">!!!</span></p>
+        <p>&emsp;&emsp;Expand <b>all the ordinals above</b> recursively. It's possible that this will cause the website to take too long to render the result if there are too many ordinals above. <b>Proceed with caution.</b></p>
+        <p><span class="minus button2 noclick" style="font-size: 16px;">-</span></p>
+        <p>&emsp;&emsp;Collapse the ordinal.</b></p>
+        <br>
+        <p>&emsp;&emsp;When the button is disabled for some reason, it will be colored gray.</b></p>
+        <h2>Options</h2><hr>
+        <p>&emsp;&emsp;You can enter the Options menu by clicking the Options tab at the top of the page. The possible options are as follows:</p>
+        <h3>Background Animation</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust whether the background animation is displayed.</p>
+        <p>&emsp;&emsp;Off: The background animation will be hidden <b>to make reading easier</b>.</p>
+        <p>&emsp;&emsp;On: The background animation will be displayed <b>to make the interface more beautiful</b>.</p>
+        <h3>Display Mode</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust the form the ordinals are displayed.</p>
+        <p>&emsp;&emsp;Original: The ordinals will be displayed as computer codes. <b>The command "display" will become meaningless.</b></p>
+        <p>&emsp;&emsp;HTML: The ordinals will be displayed as normal texts which are <b>simple</b> but <b>does not affect performance</b>.</p>
+        <p>&emsp;&emsp;MathJax: The ordinals will be displayed as MathJax which are <b>beautiful</b> but <b>affects performance</b>.</p>
+        <h3>Indent Mode</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust the indentation of the ordinals in the Explore menu.</p>
+        <p>&emsp;&emsp;None: The ordinals will not be indented.</p>
+        <p>&emsp;&emsp;Expansive: The ordinals expanded the same number of times will have the same indentation.</p>
+        <p>&emsp;&emsp;Recursive: The ordinals that are recursively expanded will have the same indentation.</p>
+        <h3>Simplification Mode</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust the degree of simplification of ordinals written in non-computer codes.</p>
+        <p>&emsp;&emsp;None: The ordinals will not be simplified.</p>
+        <p>&emsp;&emsp;\( \alpha^\beta \): The bases and exponent of the ordinals will be simplified. (For example: \( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \), where \( \epsilon \) is an arbitrary epsilon number (\( \omega^\epsilon=\epsilon \)))</p>
+        <p>&emsp;&emsp;\( \alpha*\beta \): In addition to the above, repeated multiplications will be simplified as exponentiations. (For example: \( \alpha\alpha\alpha=\alpha^3 \))</p>
+        <p>&emsp;&emsp;\( \alpha+\beta \): In addition to the above, repeated additions will be simplified as multiplications. (For example: \( \alpha+\alpha+\alpha=\alpha3 \))</p>
+        <h3>Function Specification</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust whether the OCFs are written in another way to avoid name collision.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Extended Buchholz's \( \psi \), Rathjen's Little \( \psi \)</p>
+        <p>&emsp;&emsp;(Left): The OCFs will be written just like in the original papers.</p>
+        <p>&emsp;&emsp;(Right): The OCFs will be written in another way.</p>
+        <h3>Rewrite \( \varphi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \varphi_\alpha(\beta) \) is written.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Veblen Function, Rathjen's Little \( \psi \), Rathjen's Capital \( \Psi \)</p>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \): \( \varphi_\alpha(\beta) \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( 1 \): \( \varphi_0(0) \) will be rewritten as \( 1 \).</p>
+        <p>&emsp;&emsp;\( \omega^\beta \): \( \varphi_0(\beta) \) will be rewritten as \( \omega^\beta \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( \varepsilon_\beta \): In addition to the above, \( \varphi_1(\beta) \) will be rewritten as \( \varepsilon_\beta \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( \zeta_\beta \): In addition to the above, \( \varphi_2(\beta) \) will be rewritten as \( \zeta_\beta \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( \eta_\beta \): In addition to the above, \( \varphi_3(\beta) \) will be rewritten as \( \eta_\beta \) for all \( \beta \).</p>
+        <h3>Rewrite \( \Phi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \Phi_\alpha(\beta) \) is written.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Little \( \psi \)</p>
+        <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \): \( \Phi_\alpha(\beta) \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( E_\beta \): \( \Phi_1(\beta) \) will be rewritten as \( E_\beta \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( Z_\beta \): In addition to the above, \( \Phi_2(\beta) \) will be rewritten as \( Z_\beta \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( H_\beta \): In addition to the above, \( \Phi_3(\beta) \) will be rewritten as \( H_\beta \) for all \( \beta \).</p>
+        <h3>Rewrite \( \psi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \psi_\alpha(\beta) \) (Buchholz's \( \psi \) or Extended Buchholz's \( \psi \)) is written.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Buchholz's \( \psi \), Extended Buchholz's \( \psi \)</p>
+        <p>&emsp;&emsp;\( \psi_\alpha(\beta) \): \( \psi_\alpha(\beta) \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( 1 \): \( \psi_0(0) \) will be rewritten as \( 1 \).</p>
+        <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \): \( \psi_\alpha(\beta) \) will be rewritten as \( \omega^{\Omega_\alpha+\beta} \) if \( \beta&lt;\Omega_{\alpha+1} \). If \( \alpha=0 \), then it's rewritten as \( \omega^\beta \) instead.</p>
+        <h3>Rewrite \( \chi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \chi_\alpha(\beta) \) is written.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Little \( \psi \)</p>
+        <p>&emsp;&emsp;\( \chi_\alpha(\beta) \): \( \chi_\alpha(\beta) \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( \Omega_{1+\beta} \): \( \chi_0(\beta) \) will be rewritten as \( \Omega_{1+\beta} \) for all \( \beta \).</p>
+        <p>&emsp;&emsp;\( I_{1+\beta} \): In addition to the above, \( \chi_1(\beta) \) will be rewritten as \( I_{1+\beta} \) for all \( \beta \).</p>
+        <h3>Rewrite \( \Xi(\alpha) \)</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \Xi(\alpha) \) is written.</p>
+        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Capital \( \Psi \)</p>
+        <p>&emsp;&emsp;\( \Xi(\alpha) \): \( \Xi(\alpha) \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( \Xi_\alpha \): \( \Xi(\alpha) \) will be rewritten as \( \Xi_\alpha \) if \( K \) doesn't occur in \( \alpha \).</p>
+        <p>&emsp;&emsp;\( I \): In addition to the above, \( \Xi \) will be rewritten as \( I \).</p>
+        <p>&emsp;&emsp;\( M \): In addition to the above, \( \Xi_2 \) will be rewritten as \( M \).</p>
+        <p>&emsp;&emsp;\( N \): In addition to the above, \( \Xi_3 \) will be rewritten as \( N \).</p>
+        <h1>About ordinals</h1><hr>
+        <p>&emsp;&emsp;We start from 0, and we count 1, 2, 3 and so on. This process will never end because there are infinitely many natural numbers. As we accept the concept of infinity, we accept the number \( \omega \) as the smallest ordinal number larger than all natural numbers. It's like pressing the Enter key, moving on to the second line and typing the first letter of this line. Because no matter how many letters we type on the first line, the letter on the second line is AFTER all the letters on the first line.</p>
+        <p>&emsp;&emsp;We can continue "typing letters on the second line" to create larger ordinal numbers like \( \omega+1 \), \( \omega+2 \), \( \omega+3 \) and so on. We can then "press the Enter key" again and get \( \omega+\omega \), which is \( \omega2 \). We can repeat the process and get \( \omega3 \), \( \omega4 \) and so on and finally, we "insert a page break and type a letter on the next page" and get \( \omega*\omega \), which is \( \omega^2 \).</p>
+        <p>&emsp;&emsp;We can then "insert more page breaks" and get \( \omega^22 \), \( \omega^23 \) and so on and finally "create a new file and type a letter on the next file" and get \( \omega^3 \). We can get \( \omega^4 \) from \( \omega^3 \) by repeating infinitely, and also get \( \omega^5 \) from \( \omega^4 \) and so on and finally reach \( \omega^\omega \).</p>
+        <p>&emsp;&emsp;After this, we can still proceed "on the second floor" and create \( \omega^{\omega+1} \), \( \omega^{\omega+2} \), \( \omega^{\omega2} \), \( \omega^{\omega^2} \) and finally "reach the third floor" and get \( \omega^{\omega^\omega} \). We can keep climbing up and get \( \omega^{\omega^{\omega^\omega}} \), \( \omega^{\omega^{\omega^{\omega^\omega}}} \) and so on and finally, we get an infinite power tower of \( \omega \), which is denoted as \( \varepsilon_0 \).</p>
+        <p>&emsp;&emsp;And so is the mind-blowing and never-ending process of creating larger and larger ordinal numbers. And that's one of the reasons why ordinal numbers are so interesting. To continue the journey of pursuing larger ordinal numbers, we need to know more about ordinal numbers.</p>
+        <h2>The definition of ordinals</h2><hr>
+        <p>&emsp;&emsp;Ordinal numbers (or ordinals) can be considered as an extension of natural numbers. Since ordinals play an important role in set theory, most of the definitions will be related with set theory.</p>
+        <p>&emsp;&emsp;In set theory, ordinals are defined as sets that contains all the ordinals less than itself. The empty set \( \{\} \) represents zero, and for any ordinals \( \alpha \), \( \alpha\cup\{\alpha\} \) represents \( \alpha+1 \) (Or the successor of \( \alpha \), \( Suc(\alpha) \)). And then we have:</p>
+        <p>&emsp;&emsp;\( 0=\{\} \)</p>
+        <p>&emsp;&emsp;\( 1=\{\{\}\}=\{0\} \)</p>
+        <p>&emsp;&emsp;\( 2=\{\{\},\{\{\}\}\}=\{0,1\} \)</p>
+        <p>&emsp;&emsp;\( 3=\{\{\},\{\{\}\},\{\{\},\{\{\}\}\}\}=\{0,1,2\} \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( \omega=\{0,1,2,3,\cdots\}=\mathbb{N} \)</p>
+        <br>
+        <p>&emsp;&emsp;They're known as the <b>von Neumann ordinals</b>. Consequently, for any two ordinals \( \alpha \) and \( \beta \), \( \alpha&lt;\beta \) if and only if \( \alpha\in\beta \).</p>
+        <p>&emsp;&emsp;All non-zero ordinals contain \( 0 \) as the smallest element, while not all of them contain the largest element. And so, we can divide ordinals into two categories - successor ordinals and limit ordinals. Successor ordinals are non-zero ordinals that contain the largest element because every successor ordinal \( \alpha+1 \) contains the largest element \( \alpha \) by definition, while limit ordinals are non-zero ordinals that doesn't contain the largest element. Consequently, \( 0 \) is neither a successor ordinal nor a limit ordinal.</p>
+        <p>&emsp;&emsp;We can also do arithmetics on ordinals. Addition, multiplication and exponentiation in ordinals are defined as follows:</p>
+        <p>&emsp;&emsp;\( \alpha+0:=\alpha \)</p>
+        <p>&emsp;&emsp;\( \alpha+Suc(\beta):=Suc(\alpha+\beta) \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha+\beta:=\bigcup_{\beta'&lt;\beta}\alpha+\beta' \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha*0:=0 \)</p>
+        <p>&emsp;&emsp;\( \alpha*Suc(\beta):=\alpha*\beta+\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha*\beta:=\bigcup_{\beta'&lt;\beta}\alpha*\beta' \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha^0:=1 \)</p>
+        <p>&emsp;&emsp;\( \alpha^{Suc(\beta)}:=\alpha^\beta*\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha^\beta:=\bigcup_{\beta'&lt;\beta}\alpha^{\beta'} \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <h2>Cardinals</h2><hr>
+        <p>&emsp;&emsp;We can see that addition and multiplication are not commutative in ordinals:</p>
+        <p>&emsp;&emsp;\( \omega+1\neq 1+\omega \)</p>
+        <p>&emsp;&emsp;\( \omega*2\neq 2*\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;This is because ordinals are not about quantities, but about orders. Assume that we indeed have infinitely many letters labelled up to \( \varepsilon_0 \), we can still arrange the letters and compress them into a single line. So, we say that \( \omega \) and \( \varepsilon_0 \) have the same <b>cardinality</b>.</p>
+        <p>&emsp;&emsp;Cardinal numbers (or cardinals) are used to measure the actual sizes of sets and thus ordinals. Two sets are said to have the same cardinality if there is a one-to-one correspondence (a.k.a. bijection) between them. For example, \( \omega \) and \( \omega2 \) have the same cardinality because we have the following one-to-one correspondence: (\( n\in\omega \))</p>
+        <p>&emsp;&emsp;\( \omega \) to \( \omega2 \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
+        <p>&emsp;&emsp;\( 2\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 3\rightarrow\omega+1 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( 2n\rightarrow n \)</p>
+        <p>&emsp;&emsp;\( 2n+1\rightarrow\omega+n \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \omega2 \) to \( \omega \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( \omega\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow2 \)</p>
+        <p>&emsp;&emsp;\( \omega+1\rightarrow3 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
+        <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
+        <br>
+        <p>&emsp;&emsp;All natural numbers are cardinals. As of infinite cardinals, we label them as \( \aleph_0 \), \( \aleph_1 \), \( \aleph_2 \) and so on and we set the cardinality of \( \omega \) (\( \#\omega \)) to be \( \aleph_0 \). We know that there are infinities larger than \( \aleph_0 \) because the cardinality of real numbers is larger than natural numbers. We just don't know the exact cardinality of real numbers (We just denote that as \( \beth_1 \)) because the continuum hypothesis can neither be proven nor disproven by ZFC itself.</p>
+        <p>&emsp;&emsp;When working in ZFC (Zermelo-Fraenkel set theory), we can assign each infinite cardinal with an ordinal. This is called the <b>von Neumann cardinal assignment</b>. In this case, we define the cardinality of a set as the smallest ordinal that has a one-to-one correspondence with the set. Consequently, <b>cardinals are ordinals</b> and \( \aleph_0=\omega \), \( \aleph_1=\Omega \), \( \aleph_2=\Omega_2 \) and so on.</p>
+        <p>&emsp;&emsp;There are also arithmetics of cardinals. However, these arithmetics are different from the arithmetics of ordinals and we need to differ them carefully: (Where \( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \))</p>
+        <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
+        <br>
+        <p>&emsp;&emsp;We say that an ordinal is <b>countable</b> if and only if it's less than \( \Omega \).</p>
+        <h2>The fast/slow growing hierarchy</h2><hr>
+        <p>&emsp;&emsp;Another reason why ordinals are interesting is because ordinals can be used to create extraordinarily large numbers. Let's start from the following definitions:</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{m+1}(n):=f_m^n(n):=\underbrace{f_m(f_m(\cdots f_m(}_nn)\cdots)) \)</p>
+        <br>
+        <p>&emsp;&emsp;And we have the following:</p>
+        <p>&emsp;&emsp;\( f_0(n)=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_1(n)=2n \)</p>
+        <p>&emsp;&emsp;\( f_2(n)=2^nn&gt;2^n \)</p>
+        <p>&emsp;&emsp;\( f_3(n)&gt;2\uparrow\uparrow n:=\underbrace{2\uparrow2\uparrow\cdots\uparrow2}_n:=\underbrace{2^{2^{{\cdot}^{{\cdot}^{{\cdot}^{2}}}}}}_n \)</p>
+        <p>&emsp;&emsp;\( f_4(n)&gt;2\uparrow^3 n:=2\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow2\uparrow\uparrow\cdots\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( f_5(n)&gt;2\uparrow^4 n:=2\uparrow\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow\uparrow2\uparrow\uparrow\uparrow\cdots\uparrow\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;You can argue that \( f_0 \), \( f_1 \) and \( f_2 \) are pretty ordinary. However, when it comes to \( f_3 \) and larger, it starts to get crazy. Because we are now using hyperoperations, which can easily produce extremely large numbers that even the scientific notation can't represent.</p>
+        <p>&emsp;&emsp;These functions are pretty fast-growing. However, there's a way to create functions that grows faster than all of them. And that's where the ordinals kick in. We use the least infinite ordinals \( \omega \) and define as follows:</p>
+        <p>&emsp;&emsp;\( f_\omega(n)=f_n(n) \)</p>
+        <br>
+        <p>&emsp;&emsp;You can check that for all natural numbers \( m \), there is a natural number \( n_0 \) that \( f_\omega(n)&gt;f_m(n) \) for all \( n\ge n_0 \). In other words, \( f_\omega(n) \) grows faster than (In other words, dominates) all of the functions above, which resembles the fact that \( \omega \) is greater than all natural numbers.</p>
+        <p>&emsp;&emsp;Since we can continue counting up ordinals, we can define faster-growing functions as follows:</p>
+        <p>&emsp;&emsp;\( f_{\omega+1}(n):=f_\omega^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega+2}(n):=f_{\omega+1}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2}(n):=f_{\omega+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2+1}(n):=f_{\omega2}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega3}(n):=f_{\omega2+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega^2}(n):=f_{\omega n}(n) \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;In general, we can extend the definition to all countable ordinals as follows:</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{\alpha+1}(n):=f_\alpha^n(n):=\underbrace{f_\alpha(f_\alpha(\cdots f_\alpha(}_nn)\cdots)) \)</p>
+        <p>&emsp;&emsp;\( f_\alpha(n):=f_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;This is called the <b>fast-growing hierarchy (FGH)</b>. As we count up ordinals, we can define faster-growing functions as well. This has become a strategy to create extremely large numbers and the limit of this method is currently unknown.</p>
+        <p>&emsp;&emsp;Furthermore, we also have the <b>slow-growing hierarchy (SGH)</b> defined as follows:</p>
+        <p>&emsp;&emsp;\( g_0(n):=0 \)</p>
+        <p>&emsp;&emsp;\( g_{\alpha+1}(n):=g_\alpha(n)+1 \)</p>
+        <p>&emsp;&emsp;\( g_\alpha(n):=g_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;You can check that this function grows much slower than FGH. But still, it can catch up with FGH (\( f_\alpha(n)&lt;g_\alpha(n+1) \)) if the ordinal is large enough.</p>
+        <h2>Fundamental sequence</h2><hr>
+        <p>&emsp;&emsp;The expression \( \alpha[n] \) appeared above represents the \( n+1 \)-th element of the <b>fundamental sequence (FS)</b> of the ordinal \( \alpha \).</p>
+        <p>&emsp;&emsp;For a limit ordinal \( \alpha \) and an infinite sequence \( \alpha[n] \), we say that \( \alpha[n] \) is a FS of \( \alpha \) if:</p>
+        <p>&emsp;&emsp;1. For all \( n\in\mathbb{N} \), \( \alpha[n]&lt;\alpha \)</p>
+        <p>&emsp;&emsp;2. \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;Additionally, we say that \( \alpha[n] \) is an <b>ideal</b> FS of \( \alpha \) if:</p>
+        <p>&emsp;&emsp;For all \( m,n\in\mathbb{N} \), if \( m&lt;n \), then \( \alpha[m]&lt;\alpha[n] \) (The sequence is strictly increasing)</p>
+        <br>
+        <p>&emsp;&emsp;For non-limit ordinals, we also have the following definitions:</p>
+        <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
+        <p>&emsp;&emsp;\( 0[n]=0 \)</p>
+        <br>
+        <p>&emsp;&emsp;In the example above, we chose the sequence that \( \omega[n]=n \), but in fact, there are multiple FSes that satisfies the conditions above. For example, we can define that \( \omega[n]=2^n \) which makes both FGH and SGH grow much faster. We can also define that \( \omega[n]=\lfloor\log_2(n+1)\rfloor \) (Not an ideal FS) which makes both FGH and SGH grow much slower.</p>
+        <p>&emsp;&emsp;As a result, <b>ordinals alone are not enough to create extremely large numbers</b>. We have to specify the FS we use when we use FGH or SGH. Without the specification of FS, we can't determine the actual growth rate, and the problem of when SGH will catch up with FGH will stop making mathematical sense.</p>
+        <p>&emsp;&emsp;It's easy to define the FS for relatively small ordinals like \( \varepsilon_0 \). However, as the ordinal goes up, defining FS will be more difficult and it can even take months of work.</p>
+        <p>&emsp;&emsp;The 6 ordinal systems this website uses use different systems of fundamental sequences. The fundamental sequence of ordinals varies depending on the ordinal system as already shown above.</p>
+        <h2>Ordinal collapsing functions</h2><hr>
+        <p>&emsp;&emsp;We can actually continue from \( \varepsilon_0 \) and get \( \varepsilon_1 \), \( \varepsilon_2 \), \( \varepsilon_\omega \), \( \zeta_0 \), \( \eta_0 \), \( \varphi_4(0) \), \( \varphi_\omega(0) \) and finally \( \Gamma_0 \), the Feferman-Schütte ordinal. At this point, we no longer have an easy way to define larger ordinals.</p>
+        <p>&emsp;&emsp;What we did before when we use FGH or SGH is to define large numbers using ordinals that are infinite and thus greater than any natural numbers, however large they are. So, this time, we are using uncountable cardinals to define countable ordinals.</p>
+        <p>&emsp;&emsp;We start by defining the set \( C_0(0,0)=\{0\} \) and ask: what's the least ordinal we can't get when we add them together? The answer is \( 1 \) because no matter how many times we add 0 together, it still results in 0. And so, we write \( \psi_0(0)=1 \).</p>
+        <p>&emsp;&emsp;And then: what's the least ordinal we can't get when we add \( 0 \) or \( \psi_0(0)=1 \) together. The answer is \( \omega \) and we write \( \psi_0(1)=\omega \). We can repeat and get \( \psi_0(2)=\omega^2 \), \( \psi_0(3)=\omega^3 \), \( \psi_0(\omega)=\omega^\omega \), and then we hit \( \psi_0(\varepsilon_0)=\varepsilon_0 \). But then, we have \( \psi_0(\varepsilon_0+1)=\varepsilon_0 \). This is because we have an unmentioned rule that we need to be able to construct the ordinal using addition and \( \psi_0(\alpha) \).</p>
+        <p>&emsp;&emsp;Now is the time we use the uncountable cardinals. We define that \( \psi_0(\Omega)=\varepsilon_0 \). And this time, we have \( \psi_0(\Omega+1)=\varepsilon_0\omega \) because we can use \( \psi_1(0)=\Omega \) and construct \( \psi_0(\Omega)=\varepsilon_0 \). We will eventually hit another bottleneck: \( \psi_0(\Omega+\varepsilon_1)=\varepsilon_1 \), but all we need to do is to use another \( \Omega \) and get \( \psi_0(\Omega2)=\varepsilon_1 \). Now, we can repeat and get \( \psi_0(\Omega3)=\varepsilon_2 \), \( \psi_0(\Omega\omega)=\varepsilon_\omega \), \( \psi_0(\Omega^2)=\zeta_0 \), \( \psi_0(\Omega^3)=\eta_0 \), \( \psi_0(\Omega^\omega)=\varphi_\omega(0) \) and finally \( \psi_0(\Omega^\Omega)=\Gamma_0 \). And after this point, we can easily create larger ordinals.</p>
+        <p>&emsp;&emsp;And this is an example of <b>ordinal collapsing functions (OCF)</b>. The main idea is to use uncountable cardinals to create large and complex countable ordinals. The OCF used in the example above is called Buchholz's function or Buchholz's \( \psi \), which is actually the easiest OCF to understand. The full definition is as follows, remember, ordinals are defined as sets that contains all the ordinals less than itself:</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'&lt;\beta\land\beta'\in C_n(\alpha,\beta)\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;The reason why mathematicians like Wilfried Buchholz defined such functions was to study the strength of some mathematical axiom systems. Every mathematical axiom system is assigned with an ordinal called <b>proof-theoretic ordinal (PTO)</b> that represents the strength of the mathematical axiom system. The larger the ordinal, the stronger the mathematical axiom system. The PTO of the well-known Peano arithmetic is \( \varepsilon_0 \), which can be considered small in this case.</p>
+        <p>&emsp;&emsp;The countable ordinal that Buchholz's \( \psi \) can create is extremely large. However, it's still limited. To obtain larger ordinals, we need to use more powerful OCFs. However, they're pretty hard to understand. And so, the objective of this website is to make these powerful OCFs easier to understand.</p>
+        <h2>Cofinality</h2><hr>
+        <p>&emsp;&emsp;Now, we're using uncountable cardinals to define countable ordinals, sometimes we will have to consider the fundamental sequences of uncountable cardinals. In the definition above, we actually assumed that the length of every fundamental sequence is \( \omega \). However, we can't create a fundamental sequence of length \( \omega \) for most uncountable cardinals. This is where the concept of cofinality kicks in.</p>
+        <p>&emsp;&emsp;We define the cofinality of an ordinal \( \alpha \) (\( Cof(\alpha) \)) to be the least cardinality of a subset of \( \alpha \) that \( \alpha \) is greater than all the elements of the subset. We call the subset the cofinal subset.</p>
+        <p>&emsp;&emsp;For example, \( Cof(\Omega_\omega)=\omega \) because we can find a cofinal subset \( \{\Omega_{1+\alpha}|\alpha\in\omega\} \) of cardinality \( \omega \).</p>
+        <p>&emsp;&emsp;Also, the cofinality of \( 0 \) is \( 0 \) because 0 is greater than no ordinals. The cofinality of every successor ordinal is \( 1 \) because for every successor ordinal \( \alpha+1 \) there is a cofinal subset \( \{\alpha\} \) of cardinality \( 1 \). The cofinality of every limit ordinal is at least \( \omega \).</p>
+        <p>&emsp;&emsp;With the concept of cofinality, we can change the second condition of fundamental sequence from \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \) to \( \begin{align} \bigcup_{n\in Cof(\alpha)}\alpha[n]=\alpha \end{align} \).</p>
+        <p>&emsp;&emsp;Also, we say that a cardinal \( \kappa \) is a <b>regular cardinal</b> if \( Cof(\kappa)=\kappa \), otherwise, we say that \( \kappa \) is a <b>singular cardinal</b>.</p>
+        <p>&emsp;&emsp;For example, \( \Omega \) is a regular cardinal because \( Cof(\Omega)=\Omega \). \( \Omega_\omega \) is a singular cardinal because \( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \).</p>
+        <h2>Ordinal notation</h2><hr>
+        <p>&emsp;&emsp;Since all of the functions we've mentioned above are all functions of sets, they're mathematically uncomputable because most of the sets are infinite and computers can't process infinitely many elements like these. However, we can still convert them into finite strings and enable computers to process them.</p>
+        <p>&emsp;&emsp;Ordinal notation is a method to convert ordinals into finite sequences of finite symbols. It actually resembles decimal (Or other bases like binary) in natural numbers (Or more) because it's a method to convert natural numbers into finite sequences of 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.</p>
+        <p>&emsp;&emsp;When we work with complex OCFs like Rathjen's Little \( \psi \), we need to write a lot of definitions like normal form, comparison rule etc. as codes in programming languages due to the extreme complexity. It looks like this:</p>
+        <p>&emsp;&emsp;\( (a\in S_0, b\in S_1)\mapsto f(a,b)\in S_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( c_0 \), return \( d_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( c_1 \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( c_2 \), return \( d_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( c_3 \), return \( d_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> Else if \( c_4 \), return \( d_3 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> Else, return \( d_4 \)</p>
+        <br>
+        <p>&emsp;&emsp;Where \( a \), \( b \) are variables, \( S_0 \) is the domain of the variable \( a \), \( S_1 \) is the domain of the variable \( b \), \( S_2 \) is the range of the result \( f(a,b) \).</p>
+        <p>&emsp;&emsp;\( c_0 \), \( c_1 \), \( c_2 \), \( c_3 \) and \( c_4 \) are all conditions. If a condition is satisfied, it will be assigned the value \( \mathbb{T} \) (True). Otherwise, it will be assigned the value \( \mathbb{F} \) (False). Note that there will also be functions of conditions, the range of these functions are all \( \{\mathbb{T},\mathbb{F}\} \). The conditions can sometimes be connected with logical connectives, where \( \neg \) represents "not", \( \land \) represents "and" and \( \vee \) represents "or".</p>
+        <p>&emsp;&emsp;The code runs like this: We start from line 01. . If \( c_0 \) is \( \mathbb{T} \), the function \( f(a,b) \) returns value \( d_0 \), which means \( f(a,b)=d_0 \) in this case. If \( c_0 \) is \( \mathbb{F} \), we will go to line 02. . If \( c_1 \) is \( \mathbb{T} \), we will run the sublines 02.01. and 02.02. and determine the value of \( f(a,b) \). If \( c_1 \) is \( \mathbb{F} \), we will jump straight to line 03. and so on. The words "Else if" or "Else" are used if all the "If"s above can't cover all of the cases.</p>
+        <h2>Some notable ordinals</h2><hr>
+        <h3>\( \varepsilon_0 \)</h3>
+        <p>&emsp;&emsp;The first ordinal that \( \alpha=\omega^\alpha \).</p>
+        <p>&emsp;&emsp;The PTO of Peano arithmetic (\( PA \)).</p>
+        <p>&emsp;&emsp;Equivalent to \( \varphi_1(0) \) in Veblen function.</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_0(\Omega) \) in (Extended) Buchholz's \( \psi \).</p>
+        <h3>\( \Gamma_0 \), the Feferman-Schütte ordinal</h3>
+        <p>&emsp;&emsp;The first ordinal that \( \alpha=\varphi_\alpha(0) \).</p>
+        <p>&emsp;&emsp;The PTO of arithmetical transfinite recursion (\( ATR_0 \)).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_0(\Omega^\Omega) \) in (Extended) Buchholz's \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(0) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(0) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega^{\Omega^2}) \), the Ackermann ordinal (AO)</h3>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\Omega^{\Omega^2}) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\Omega^3) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\omega}) \), the Small Veblen ordinal (SVO)</h3>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\Omega^{\Omega^\omega}) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\Omega^\omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\Omega}) \), the Large Veblen ordinal (LVO)</h3>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\Omega^{\Omega^\Omega}) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\Omega^\Omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega_2) \), the Bachmann-Howard ordinal (BHO)</h3>
+        <p>&emsp;&emsp;The PTO of Kripke-Platek set theory with the axiom of infinity. (\( KP\omega \)).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\varepsilon_{\Omega+1}) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega_\omega) \), the Small Buchholz ordinal (SBO)</h3>
+        <p>&emsp;&emsp;Also known as Buchholz's ordinal (BO).</p>
+        <p>&emsp;&emsp;The PTO of \( \Pi_1^1-CA \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\Omega_\omega) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\Omega_\omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\varepsilon_{\Omega_\omega+1}) \), the Takeuti-Feferman-Buchholz ordinal (TFBO)</h3>
+        <p>&emsp;&emsp;The PTO of \( \Pi_1^1-CA+BI \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_0(\Omega_{\omega+1}) \) in Extended Buchholz's \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \), the Large Buchholz ordinal (LBO)</h3>
+        <p>&emsp;&emsp;Also known as Extended Buchholz's ordinal (EBO).</p>
+        <p>&emsp;&emsp;The PTO of \( \Pi_1^1-TR_0 \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \psi_\Omega(\Phi_1(0)) \) in Rathjen's Little \( \psi \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \), the Small Rathjen ordinal (SRO)</h3>
+        <p>&emsp;&emsp;The PTO of \( KPM \).</p>
+        <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \), the Large Rathjen ordinal (LRO)</h3>
+        <p>&emsp;&emsp;The upper bound of the PTO of \( KP+\Pi_3-reflection \).</p>
+    </body>
+</html>

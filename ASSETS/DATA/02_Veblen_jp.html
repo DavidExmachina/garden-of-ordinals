@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;ヴェブレン関数とはオズワルド・ヴェブレンが1908年に提案した順序数関数である<sup><a id="g1" href="#c1">[1]</a></sup>。関数\( \varphi_\alpha(\beta) \)はこのように定義されます：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> すべての非0の順序数\( \alpha \)対して、\( \varphi_{\alpha}(\beta) \)はすべての\( \alpha'&lt;\alpha \)で関数\( \gamma\mapsto\varphi_{\alpha'}(\gamma) \)の\( 1+\beta \)番目の共通の不動点を返します。</p>
+        <p>&emsp;&emsp;関数\( f \)の不動点とは\( x=f(x) \)を満たす入力値\( x \)である。</p>
+        <br>
+        <p>&emsp;&emsp;このシステムの標準形は<b>「ヴェブレン標準形」</b>と呼ばれ、以下のように定義されます：</p>
+        <p>&emsp;&emsp;\( \alpha=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_n}(\beta_n) \)</p>
+        <p>&emsp;&emsp;ここで\( n \)は自然数であり、\( \varphi_{\alpha_0}(\beta_0)\ge\varphi_{\alpha_1}(\beta_1)\ge\cdots\ge\varphi_{\alpha_n}(\beta_n) \)、そして任意の自然数\( m\le n \)に対して、\( \varphi_{\alpha_m}(\beta_m)&lt;\beta_m \)である。</p>
+        <p>&emsp;&emsp;すべての非0の順序数はヴェブレン標準形で一意に表すことができます。</p>
+        <br>
+        <p>&emsp;&emsp;このサイトでは、フェファーマン・シュッテの順序数\( \Gamma_0 \)未満の順序数を扱っています。これは、\( \Gamma_0 \)が\( \alpha=\varphi_{\alpha}(0) \)を満たす最小の順序数であり、\( \Gamma_0 \)未満のすべての順序数は0、加法、この関数のみを使用して作成できるためです。</p>
+        <p>&emsp;&emsp;このサイトで使用されている基本列システムは以下のように定義されます：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)及び\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_1(\beta+1)[0]:=0 \)，\( \varphi_1(\beta+1)[1]:=\varphi_1(\beta) \)，\( \varphi_1(\beta+1)[2]:=\varphi_0(\varphi_1(\beta)*2) \)及び\( \varphi_1(\beta+1)[n+3]:=\varphi_0(\varphi_1(\beta+1)[n+2]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=0 \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta)+1) \)及び\( \varphi_{\alpha+1}(\beta+1)[n+3]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+2]) \) (\( \alpha\neq0 \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <br>
+        <p>&emsp;&emsp;ちなみに、上記の基本列システムとは異なるよりよく知られている<b>「ヴェブレン階層」</b>と呼ばれる基本列システムがあり、以下のように定義されます。上記のシステムを使用する理由はブーフホルツの\( \psi \)関数とその拡張の基本列システムを真似するためです。</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)及び\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \)及び\( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <br>
+        <p>&emsp;&emsp;時々、関数をこのように書き直すことがあります：</p>
+        <p>&emsp;&emsp;\( \omega^\beta:=\varphi_0(\beta) \)</p>
+        <p>&emsp;&emsp;\( \varepsilon_\beta:=\varphi_1(\beta) \)</p>
+        <p>&emsp;&emsp;\( \zeta_\beta:=\varphi_2(\beta) \)</p>
+        <p>&emsp;&emsp;\( \eta_\beta:=\varphi_3(\beta) \)</p>
+        <h1>順序数表記</h1><hr>
+        <h2>表記</h2><hr>
+        <p>&emsp;&emsp;\( S \)を以下の文字を含む集合として定義します：</p>
+        <p>&emsp;&emsp;定数「\( \overline{0} \)」、</p>
+        <p>&emsp;&emsp;関数文字「\( \varphi \)」、</p>
+        <p>&emsp;&emsp;そして他の文字「\( + \)」、「\( ( \)」、「\( ) \)」と「\( , \)」。</p>
+        <br>
+        <p>&emsp;&emsp;\( S \)部分集合、\( T_m \)と\( T_s \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 任意の\( a\in T_s \)と\( b\in T_m\setminus\{\overline{0}\} \)に対して、\( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 任意の\( a,b\in T_m \)に対して、\( \varphi(a,b)\in T_m \)及び\( \varphi(a,b)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;この記事では、以下の略記を使用します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;二項関係\( &lt; \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( b=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\overline{0}\land b\neq\overline{0} \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_0&lt;b_0 \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( \neg a_0&lt;b_0 \)ならば、\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( a_0&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \neg b_0&lt;a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a_0&lt;b_0 \)ならば、\( a_1&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( b_0&lt;a_0 \)ならば、\( a&lt;b_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( a_0=_*b_0 \)ならば、\( a_1&lt;b_1 \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;他のすべての比較演算子を定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg a&lt;b \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg a&lt;b\land\neg b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( a&lt;b\vee b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( = \)と\( \neq \)は記号的な等価性を表し、\( =_* \)と\( \neq_* \)は数値的な等価性を表すことに注意してください。</p>
+        <h2>標準形</h2><hr>
+        <p>&emsp;&emsp;順序数が標準形であるかどうかを判断するため、関数\( \in T \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \neg a_0\in T\vee\neg a_1\in T \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a_0\in T\land a_1\in T \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a_1\in T_s \)ならば、\( \neg a_0&lt;a_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)ならば、\( \neg a_0&lt;a_2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;このシステムの限界を\( A=\Gamma_0 \)と定義します。</p>
+        <p>&emsp;&emsp;\( \Gamma_0 \)も標準形である。</p>
+        <p>&emsp;&emsp;このシステムのすべての順序数に対して、\( \alpha&lt;\Gamma_0 \)。</p>
+        <p>&emsp;&emsp;このシステムの<b>すべての順序数は可算</b>である。</p>
+        <p>&emsp;&emsp;コマンド「fgh」と「sgh」の専用の<b>可算順序数限界はありません</b>。</p>
+        <h2>演算</h2><hr>
+        <p>&emsp;&emsp;加法\( Add \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land b=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a\neq\overline{0}\land b\neq\overline{0} \)ならば、\( a+b \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;後者\( Suc \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;\( Add(a,\overline{1}) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in T \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a\in T \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Norm(a_0)+Norm(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=a_1 \)ならば、\( a_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=a_0 \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a\neq a_0\land a\neq a_1 \)ならば、\( a \)を返す</p>
+        <h2>共終数</h2><hr>
+        <p>&emsp;&emsp;共終数関数\( Cof \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Cof(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> \( a_0=\overline{0}\land a_1=\overline{0} \)ならば、\( \overline{1} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;また、\( Cof(\Gamma_0)=\overline{\omega} \)と定義します。</p>
+        <h2>基本列</h2><hr>
+        <p>&emsp;&emsp;基本列\( [] \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Add(a_0,a_1[n]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_1=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> \( a_0=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> \( n\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0[n]}(\overline{0})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( Cof(a_1)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( a_0=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> \( n\neq\overline{0} \)ならば、\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.01.</span> \( a_0=\overline{1} \)ならば、\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0}(a_1[n])) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;また、\( \Gamma_0 \)的基本列を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_0[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0} \)ならば、\( \varphi_{\Gamma_0[n[\overline{0}]]}(0) \)を返す</p>
+        <h1>出典</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Veblen, O. (1908). Continuous Increasing Functions of Finite and Transfinite Ordinals. Transactions of the American Mathematical Society, 9(3), 280-292. Retrieved 2024-12-13. https://doi.org/10.2307%2F1988605</p>
+    </body>
+</html>

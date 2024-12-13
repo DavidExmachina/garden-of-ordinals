@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Definition</h1><hr>
+        <p>&emsp;&emsp;Rathjen's Capital \( \Psi \) refers to another ordinal collapsing function proposed by Michael Rathjen in 1994<sup><a id="g1" href="#c1">[1]</a></sup>. The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Omega_\alpha \), \( \Xi(\alpha) \) and \( \Psi_\alpha^\beta(\gamma) \) and described and defined as follows.</p>
+        <h2>The function \( \varphi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \) denotes Veblen Function. It's defined as follows as shown in the Help menu in the "Veblen Function" interface:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all of the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <h2>The function \( \Omega_\alpha \)</h2><hr>
+        <p>&emsp;&emsp;\( \Omega_\alpha \) denotes the \( (1+\alpha) \)-th infinite cardinal. Note that \( \Omega_0 \) is defined as \( 0 \) in the paper.</p>
+        <h2>The function \( \Xi(\alpha) \)</h2><hr>
+        <p>&emsp;&emsp;\( \Xi(\alpha) \) denotes the least element in the Mahlo Cardinal hierarchy \( M^\alpha \), which can be considered the "least Mahlo function". It's defined as follows: (\( \alpha&lt;\Gamma_{K+1} \))</p>
+        <p>&emsp;&emsp;\( \Xi(\alpha)=min(M^\alpha\cup\{K\}) \)</p>
+        <br>
+        <p>&emsp;&emsp;The class \( M^\alpha \) is defined as follows:</p>
+        <p>&emsp;&emsp;\( M^0=Lim\cap K \)</p>
+        <p>&emsp;&emsp;\( \begin{align} M^\alpha=\{\kappa| & \kappa\in Reg\cap K \\ & C(\alpha,\kappa)\cap K=\kappa \\ & \alpha\in C(\alpha,\kappa) \\ & \forall\alpha'\in C(\alpha,\kappa)\cap\alpha(M^{\alpha'}\in Sta_\kappa) \}\ (\alpha&gt;0) \end{align} \)</p>
+        <p>&emsp;&emsp;Where \( Lim \) denotes the class of limit ordinals, \( Reg \) denotes the class of regular cardinals and \( Sta_\kappa \) denotes the class of sets stationary in \( \kappa \). You can check the definition of stationary sets in the Help menu in the "Rathjen's Little \( \psi \)" interface.</p>
+        <br>
+        <p>&emsp;&emsp;The set \( C(\alpha,\beta) \) is defined as follows:</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \beta\cup\{0,K\} \\
+                                        C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\Omega_{\alpha'}\land\alpha'\in C_n(\alpha,\beta)\cap K\} \\
+                                        \cup & \{\gamma|\gamma=\Xi(\alpha')\land\alpha'\in C_n(\alpha,\beta)\cap\alpha\} \\
+                                        \cup & \{\gamma|\gamma=\Psi_{\alpha'}^{\beta'}(\gamma')\land\alpha'\in Reg\land\beta'\le\gamma'&lt;\alpha\land\alpha',\beta',\gamma'\in C_n(\alpha,\beta) \} \\
+                                        C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;From the definition above, we can see that it introduces an extension of Mahlo Cardinals:</p>
+        <p>&emsp;&emsp;\( M^0 \) denotes the class of limit ordinals (less than \( K \)).</p>
+        <p>&emsp;&emsp;\( M^1 \) denotes the class of Inaccessible Cardinals due to the presence of the function \( \Omega_\alpha \). The reason why this function is included is probably because Inaccessible Cardinals are equivalent to \( \Pi_0^1- \)indescribable cardinals<sup><a id="g2" href="#c2">[2]</a></sup>.</p>
+        <p>&emsp;&emsp;\( M^2 \) denotes the class of Mahlo Cardinals. Not only does this contain the least Mahlo Cardinal \( M \), but it also contains larger Mahlo Cardinals like \( M_2 \), \( M_3 \) and so on.</p>
+        <p>&emsp;&emsp;\( M^3 \) denotes the class of "Hyper-Mahlo Cardinals". It contains Mahlo Cardinals \( \kappa \) that the set of all Mahlo Cardinals less than \( \kappa \) is a stationary set in \( \kappa \).</p>
+        <p>&emsp;&emsp;\( M^4 \) denotes the class of "Hyper-Hyper-Mahlo Cardinals". It contains Hyper-Mahlo Cardinals \( \kappa \) that the set of all Hyper-Mahlo Cardinals less than \( \kappa \) is a stationary set in \( \kappa \) and so on.</p>
+        <br>
+        <p>&emsp;&emsp;As a consequence, \( \Xi(1)=I \) and \( \Xi(2)=M \). Sometimes we denote \( \Xi(3) \) as \( N \).</p>
+        <h2>The function \( \Psi_\alpha^\beta(\gamma) \)</h2><hr>
+        <p>&emsp;&emsp;\( \Psi_\alpha^\beta(\gamma) \) denotes the collapsing function, which is the core of this ordinal system. It's defined as follows: (\( \alpha\in Reg \) and \( \beta\le\gamma \) and \( \gamma&lt;\Gamma_{K+1} \))</p>
+        <p>&emsp;&emsp;\( \begin{align} \Psi_\alpha^\beta(\gamma)=min(\{\delta| & \delta\in M^\beta\cap\alpha \\ & C(\gamma,\delta)\cap\alpha=\delta \\ & \alpha,\gamma\in C(\gamma,\delta) \}\cup\{\alpha\}) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;As you can see, this OCF takes 3 ordinals as input instead of 2 like most of other OCFs. If \( \beta&gt;0 \), then \( \Psi_\alpha^\beta(\gamma) \) always return a regular cardinal. Moreover, since both \( \Psi_\alpha^\beta(\gamma) \) and \( \Xi(\beta) \) returns an element of \( M^\beta \), it can represent larger Inaccessible Cardinals, Mahlo Cardinals, "Hyper-Mahlo Cardinals" and so on. As a consequence, \( \Psi_{\Xi(2)}^1(3)=I_2 \), \( \Psi_{\Xi(2)}^1(4)=I_3 \), \( \Psi_{\Xi(3)}^2(4)=M_2 \), \( \Psi_{\Xi(3)}^2(5)=M_3 \), \( \Psi_{\Xi(4)}^3(5)=N_2 \), \( \Psi_{\Xi(4)}^3(6)=N_3 \) and so on.</p>
+        <p>&emsp;&emsp;Also, it seems it's possible that \( \Psi_\alpha^\beta(\gamma)=\alpha \). In fact, this is true, and same goes for the function \( \Xi(\alpha) \). When this happens, we say that the function "fails to collapse". As a consequence, most of the time, there's a least \( \gamma \) so that \( \Psi_\alpha^\beta(\gamma) \) doesn't fail to collapse.</p>
+        <p>&emsp;&emsp;The most challenging part of this OCF is that \( \Psi_\alpha^\beta(\gamma) \) doesn't monotonically increase in \( \gamma \), meaning that it's easy to overlook some ordinals when analyzing this OCF.</p>
+        <p>&emsp;&emsp;For example, we might expect this at first glance: (Where \( supA \) denotes the least ordinal greater or equal to all of the elements in \( A \))</p>
+        <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\varphi_{\Psi_\Omega^0(\Omega)}(1),\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0)}(0),\cdots\} \)</p>
+        <p>&emsp;&emsp;But in fact:</p>
+        <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \)</p>
+        <p>&emsp;&emsp;As a result, it becomes extremely difficult to determine whether an infinite sequence approaches to ordinals represented in this OCF in general. With all the complexities above, Rathjen's Capital \( \Psi \) becomes one of the hardest OCFs to understand.</p>
+        <h2>The Weakly Compact Cardinal \( K \)</h2><hr>
+        <p>&emsp;&emsp;The Weakly Compact Cardinal \( K \) is the key to this OCF. There are multiple definitions of this cardinal. For example, Weakly Compact Cardinals are equivalent to \( \Pi_1^1- \)indescribable cardinals. However, almost all of the definitions require high-level set theory concepts. Since it requires a long article to explain this cardinal clearly, this article doesn't aim to explain this cardinal. One thing is certain, the immense size of this cardinal allows itself to be used to construct high-level Mahlo Cardinals. By the way, ZFC can't determine the existence of Weakly Compact Cardinals.</p>
+        <br>
+        <p>&emsp;&emsp;The ordinal \( \Psi_\Omega^0(\varepsilon_{K+1}) \) is called the Large Rathjen ordinal (LRO). It's the upper bound of the PTO of \( KP+\Pi_3-reflection \).</p>
+        <h1>Ordinal Notation</h1><hr>
+        <h2>Notation</h2><hr>
+        <p>&emsp;&emsp;We define \( S \) to be the set that contains all the strings composed of the following symbols:</p>
+        <p>&emsp;&emsp;Constant "\( \overline{0} \)" and "\( K \)",</p>
+        <p>&emsp;&emsp;Function symbols "\( \varphi \)", "\( \Omega \)", "\( \Xi \)" and "\( \Psi \)",</p>
+        <p>&emsp;&emsp;And other symbols "\( + \)", "\( ( \)", "\( ) \)" and "\( , \)".</p>
+        <br>
+        <p>&emsp;&emsp;We define the subsets of \( S \), \( T_m \) and \( T_s \) as follows:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( K\in T_m \) and \( K\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> For all \( a\in T_s \) and \( b\in T_m\setminus\{\overline{0}\} \), \( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> For all \( a,b\in T_m \), \( \varphi(a,b)\in T_m \) and \( \varphi(a,b)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> For all \( a\in T_m \), \( \Omega(a)\in T_m \) and \( \Omega(a)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> For all \( a\in T_m \), \( \Xi(a)\in T_m \) and \( \Xi(a)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> For all \( a,b,c\in T_m \), \( \Psi(a,b,c)\in T_m \) and \( \Psi(a,b,c)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Omega_a:=\Omega(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \Psi_a^b(c):=\Psi(a,b,c) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <h2>Ordering</h2><hr>
+        <p>&emsp;&emsp;We define the binary relation \( &lt; \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <table class="section"><tbody>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( b=\overline{0} \), return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=\overline{0}\land b\neq\overline{0} \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( a_0&lt;b_0 \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( \neg a_0&lt;b_0 \), return \( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \), return \( \neg b_0&lt;a \)</p>        
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=K\land b=K \), return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> If \( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> If \( a_0&lt;b_0 \), return \( a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> If \( b_0&lt;a_0 \), return \( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> If \( a_0=_*b_0 \), return \( a_1&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> If \( a=\Omega_{a_0}\land b=\Omega_{b_0}\land a_0,b_0\in T_m \), return \( a_0&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> If \( a=\Xi(a_0)\land b=\Xi(b_0)\land a_0,b_0\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> If \( a_0&lt;b_0 \), return \( a_0\in C(b_0,b) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> If \( b_0&lt;a_0 \), return \( \neg b_0\in C(a_0,a) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> If \( a_0=_*b_0 \), return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land b=\Psi_{b_0}^{b_1}(b_2)\land a_0,a_1,a_2,b_0,b_1,b_2\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> If \( b&lt;a_0 \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.01.</span> If \( a_2&lt;b_2\land a&lt;b_0\land a_0\in C(b_2,b)\land a_1\in C(b_2,b)\land a_2\in C(b_2,b) \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.02.</span> Else if \( \neg a_2&lt;b_2\land\neg(b_0\in C(a_2,a)\land b_1\in C(a_2,a)\land b_2\in C(a_2,a)) \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.03.</span> Else if \( a_0=_*b_0\land a_2=_*b_2\land a_1&lt;b_1\land a_1\in C(b_1,b) \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.04.</span> Else if \( b_1&lt;a_1\land b_1\in C(a_1,a) \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.05.</span> Else, return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> Else if \( a_0\neg_*b_0\land a_1\neg_*b_1\land a_2\neg_*b_2 \), return \( \neg b&lt;a \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> Else, return \( \mathbb{F} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> If \( a=K\land b\neq K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.01.</span> If \( b=\varphi_{b_0}(b_1)\land b_0,b_1\in T_m \), return \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.02.</span> If \( b=\Omega_{b_0}\land b_0\in T_m \), return \( a&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.03.</span> If \( b=\Xi(b_0)\land b_0\in T_m \), return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.04.</span> If \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \), return \( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.</span> If \( a\neq K\land b=K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.01.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0&lt;b\land a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.02.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.03.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.04.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), return \( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">13.</span> If \( a=\varphi_{a_0}(a_1)\land(b=\Omega_{b_0}\vee b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land a_0,a_1,b_0,b_1,b_2\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">13.01.</span> Return \( a_0&lt;b\land a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">14.</span> If \( (a=\Omega_{a_0}\vee a=\Xi(a_0)\vee a=\Psi_{a_0}^{a_1}(a_2))\land b=\varphi_{b_0}(b_1)\land a_0,a_1,a_2,b_0,b_1\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">14.01.</span> Return \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">15.</span> If \( a=\Omega_{a_0}\land b=\Xi(b_0)\land a_0,b_0\in T_m \), return \( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.</span> If \( a=\Xi(a_0)\land b=\Omega_{b_0}\land a_0,b_0\in T_m \), return \( a&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">17.</span> If \( a=\Omega_{a_0}\land b=\Psi_{b_0}^{b_1}(b_2)\land a_0,b_0,b_1,b_2\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">17.01.</span> If \( b_0=\Omega_{b_3}\land b_3\in T_m \), return \( a&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">17.02.</span> Else, return \( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land b=\Omega_{b_0}\land a_0,a_1,a_2,b_0\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.01.</span> If \( a_0=\Omega_{a_3}\land a_3\in T_m \), return \( \neg b&lt;a_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.02.</span> Else, return \( a&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">19.</span> If \( a=\Xi(a_0)\land b=\Psi_{b_0}^{b_1}(b_2)\land a_0,b_0,b_1,b_2\in T_m \), return \( a&lt;b_0\land(\neg a_0&lt;b_2\vee a_0\in C(b_2,b)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">20.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land b=\Xi(b_0)\land a_0,a_1,a_2,b_0\in T_m \), return \( \neg b&lt;a_0\vee(b_0&lt;a_2\land\neg b_2\in C(a_2,a)) \)</p>
+            </td></tr>
+        </tbody></table>
+        <br>
+        <p>&emsp;&emsp;We define all the other comparison symbols:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represents symbolic equivalence while \( =_* \) and \( \neq_* \) represents numerical equivalence.</p>
+        <h2>Normal Form</h2><hr>
+        <p>&emsp;&emsp;We define the max function \( Max \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto Max(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a&lt;b \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \neg a&lt;b \), return \( a \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the Mahloness function \( m \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto m(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( a_0=Suc(a_1)\land a_1\in T_m\setminus\{\overline{0}\} \), return \( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> Else, return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), return \( a_1 \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the least valid value function \( \lambda \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto\lambda_b(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( \lambda_b(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> If \( a&lt;b \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> If \( \neg a&lt;b \), return \( Max(Suc(a_0),\lambda_b(a_0)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( a&lt;b \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( \neg a&lt;b \), return \( Max(Suc(a_2),Max(\lambda_b(a_0),Max(\lambda_b(a_1),\lambda_b(a_2)))) \)</p>
+        <p>&emsp;&emsp;We write \( \lambda(a) \) for \( \lambda_a(a) \).</p>
+        <br>
+        <p>&emsp;&emsp;We define the function \( \in C \) to determine whether an ordinal \( c \) is an element of \( C(a,b) \):</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in R)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;Return \( \neg a&lt;\lambda_b(c) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( a_0\in T\land a_1\in T \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> If \( a_1\in T_s \), return \( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> If \( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \), return \( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( a_0\in T\land a_0&lt;a\land a_0&lt;K\land a_0\neq\overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( a_0\in T\land a_0\neq\overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( \neg(a_0\in T\land a_1\in T\land a_2\in T) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> Else if \( \neg(a_0\in C(a_2,a_0)\land a_1\in C(a_2,a_0)\land a_2\in C(a_2,a_0)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> Else, return \( m(a_0)\neq\overline{0}\land\neg a_2&lt;a_1\land a_1&lt;m(a_0)\land a_1\in C(m(a_0),a_0) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the limit of the system \( A=\Gamma_{K+1} \). (Denoted as \( K^\Gamma \) in the paper)</p>
+        <p>&emsp;&emsp;\( \Gamma_{K+1} \) is also in normal form.</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Gamma_{K+1} \)</p>
+        <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\Omega_\overline{1} \).</p>
+        <p>&emsp;&emsp;The countable limit ordinal exclusive to the command "fgh" or "sgh" is \( \Psi_{\Omega_\overline{1}}^\overline{0}(\Gamma_{K+1}) \), written in computer code as "(R(W(v,)),,A)".</p>
+        <h2>Operations</h2><hr>
+        <p>&emsp;&emsp;We define addition \( Add \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T\cup\{0\})\mapsto Add(a,b,c)\in T \) (Note that \( 0 \) is a numerical value and it's DIFFERENT from the symbol \( \overline{0} \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( c=0 \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> If \( a_0&lt;b_0 \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( \neg a_0&lt;b_0 \), return \( a_0+Add(a_1,b,0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( c\in T \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> If \( \neg a&lt;c \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> Else if \( c=c_0+c_1\land c_0\in T_s\land c_1\in T_m\setminus\{\overline{0}\}\land a_0=b_0\land b_0=c_0 \), return \( a_0+Add(a_1,b_1,c_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> Else, return \( Add(a,b,0) \)</p>
+        <p>&emsp;&emsp;We write \( Add(a,b) \) for \( Add(a,b,0) \).</p>
+        <br>
+        <p>&emsp;&emsp;We define succession \( Suc \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;Return \( Add(a,\overline{1}) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the tail function \( t \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in\{0,1,2\})\mapsto t_b^c(a)\in T_m \) (Note that it doesn't always return a normal term if \( c=2 \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a&lt;b \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( c=0 \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( c=1 \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> If \( c=2 \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=b \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( c=0 \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( c\neq0 \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( b&lt;a \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> If \( c=0 \), return \( t_b^c(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> If \( c\neq0 \), return \( a_0+t_b^c(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> Else if \( c=1 \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> Else if \( (a=\Xi(a_0)\vee a=\Psi_{a_0}^{a_1}(a_2))\land a_0,a_1,a_2\in T_m \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> Else if \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.</span> If \( Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.01.</span> If \( c=0 \), return \( t_b^c(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.</span> If \( c\neq0 \), return \( \varphi_{t_b^c(a_0)}(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.01.</span> If \( c=0 \), return \( t_b^c(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.02.</span> If \( c\neq0 \), return \( \varphi_{a_0}(t_b^c(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> Else if \( a=\Omega_{a_0}\land a_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.01.</span> If \( c=0 \), return \( t_b^c(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.02.</span> If \( c\neq0 \), return \( \Omega_{t_b^c(a_0)} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the \( \Omega- \)tail function \( \Omega t \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto\Omega t(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Max(\Omega t(a_0),\Omega t(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( Max(\Omega t(a_0),\Omega t(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( \Omega t(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> Else, return \( a \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the root function \( Root \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Root_b(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( (a=\varphi_{a_0}(a_1)\vee a=\Omega_{a_0})\land a_0,a_1\in T_m \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( b=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), return \( Root_b(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( b\neq\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> If \( a_0=b \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> Else if \( a_0=\Xi(a_3)\land a_3\in T_m \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.03.</span> Else, return \( Root_b(a_0) \)</p>
+        <p>&emsp;&emsp;We write \( Root(a) \) for \( Root_\overline{0}(a) \).</p>
+        <br>
+        <p>&emsp;&emsp;We define the fixed point function \( FP \) to determine whether a term is a fixed point. Although there are no fixed points of the \( \Xi \) and \( \Psi \) functions, the idea is to determine whether for all \( a&lt;b,f(a)&lt;b \). Where \( a,b \) are arbitrary terms and \( f \) is an arbitrary function. For example, \( \Psi_\Omega^0(\Omega) \) is not a fixed point of the function \( \alpha\mapsto\Psi_\Omega^0(\alpha) \), but it's true that for all \( \alpha&lt;\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\alpha)&lt;\Psi_\Omega^0(\Omega) \).</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T\cup\{0\})\mapsto FP_b^c(a)\in\{\mathbb{T},\mathbb{F}\} \) (Again, note that \( 0 \) is a numerical value that is DIFFERENT from \( \overline{0} \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( c=0 \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> If \( t_b^0(a)=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> Else if \( \neg t_b^2(a)\in T \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> Else if \( b\neq K \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> If \( t_b^0(a)\neq\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> Else if \( t_b^0(a)=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m\land t_2&lt;t_b^2(a) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.03.</span> Else if \( t_b^0(a)&lt;\Psi_b^\overline{0}(t_b^2(a)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> Else if \( b=K \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.01.</span> If \( (t_b^0(a)=\varphi_{t_0}(t_1)\vee t_b^0(a)=\Omega_{t_0})\land t_0,t_1\in T_m \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.</span> Else if \( Root_b(t_b^0(a))=\Xi(r_0)\land r_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.01.</span> If \( r_0&lt;\Xi(t_b^2(a)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.02.</span> Else if \( \Psi_{\Xi(r_0)}^\overline{0}(Suc(r_0))&lt;\Psi_{\Xi(t_b^2(a))}^\overline{0}(Suc(t_b^2(a))) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.03.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( c\in T \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( t_K^0(c)=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> Else if \( \neg t_K^2(c)\in T \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> Else if \( t_K^0(c)\neq\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> Else if \( Root_b(t_K^0(c))=\overline{0} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> Else if \( Root_b(t_K^0(c))=\Psi_{r_0}^{r_1}(r_2)\land r_0,r_1,r_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.01.</span> If \( r_2&lt;a \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.02.</span> Else if \( \Psi_{r_0}^\overline{0}(r_2)&lt;\Psi_{b}^\overline{0}(a) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.</span> Else if \( r_2=a \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.01.</span> If \( r_1&lt;t_K^2(c) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.02.</span> Else if \( \Psi_{r_0}^{r_1}(r_2)&lt;\Psi_{b}^{t_K^2(c)}(a) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.03.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.04.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;We write \( FP_b(a) \) for \( FP_b^0(a) \).</p>
+        <br>
+        <p>&emsp;&emsp;We define the normal limit function \( NL \) for future abbreviation:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto NL(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> If \( m(a)=t_K^1(m(a)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> Else if \( Cof(m(a))&lt;\overline{\omega} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> Else if \( FP_K(m(a)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( m(a)=t_K^1(m(a)) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> Else if \( Cof(m(a))&lt;\overline{\omega} \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> Else if \( FP_{a_0}^{a_1}(a_2) \), return \( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> Else, return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> Else, return \( \mathbb{T} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the normalization function \( Norm \) to normalize an ordinal to its normal form:</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a\in T \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \neg a\in T \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Norm(a_0)+Norm(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> If \( a=a_1 \), return \( a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> If \( a=a_0 \), return \( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> If \( a\neq a_0\land a\neq a_1 \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> Else, return \( a \)</p>
+        <h2>Cofinality</h2><hr>
+        <p>&emsp;&emsp;We define the cofinality function \( Cof \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \), return \( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> If \( a_0=\overline{0}\land a_1=\overline{0} \), return \( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), return \( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( a_1=\overline{0} \), return \( CP_{a_0}(a_2,\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( a_1\neq\overline{0} \), return \( a \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the collapsing cofinality function \( CP \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto CP_b(a,c)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a\neq t_b^1(a)\land\neg Cof(a)&lt;\overline{\omega}\land\neg FP_b(a) \), return \( Cof(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> Else if \( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b)\land Cof(a)=\overline{1}\land c=\overline{0} \), return \( Cof(m(b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> Else if \( a=t_b^1(a)\vee \lambda(b)=a \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)\land Cof(t_b^1(a))&lt;b \), return \( Cof(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> Else if \( \neg(t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> If \( b=\Xi(b_0)\land b_0\in T_m\land NL(b) \), return \( CP_d(\lambda(d),c) \), where \( d=\Xi(Add(\overline{1},t_K^1(m(b)))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> Else if \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m\land(NL(b)\vee t_K^1(m(b))=\overline{0}) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> If \( c\neq\overline{0} \), return \( CP_{b_0}(b_2,c) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> If \( c=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> If \( NL(b)\vee Cof(m(b))=\overline{1} \), return \( CP_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> If \( \neg NL(b)\land Cof(m(b))\neq\overline{1} \), return \( CP_{b_0}(b_2,t_K^0(m(b))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> Else if \( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land t_K^0(m(b))\neq\overline{0}\land Cof(t_K^1(m(b)))&lt;K \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.01.</span> Return \( Cof(t_K^1(m(b))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.04.</span> Else, return \( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> Else, return \( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> Else if \( (b=\Omega_{b_0}\vee(t_K^1(m(b))=\overline{0}\land Cof(m(b))=\overline{1}))\land b_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( Cof(a)=\overline{1} \), return \( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> If \( Cof(a)\neq\overline{1} \), return \( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> Else if \( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land NL(b)\land b_0,b_1,b_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> If \( Cof(a)=\overline{1} \), return \( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> If \( Cof(a)\neq\overline{1} \), return \( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> Else if \( t_K^1(m(b))=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( Cof(a)=\overline{1} \), return \( Cof(m(b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( Cof(a)\neq\overline{1} \), return \( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> Else if \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> If \( Cof(t_K^1(m(b)))&lt;K \), return \( Cof(t_K^1(m(b))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> Else if \( Cof(a)=\overline{1} \), return \( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> Else, return \( Cof(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> Else if \( Cof(a)\neq\overline{1} \), return \( Cof(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> Else if \( c\neq\overline{0} \), return \( Cof(m(b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> Else if \( Cof(t_K^1(m(b)))&lt;K \), return \( Cof(t_K^1(m(b))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> Else, return \( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;We also define that \( Cof(\Gamma_{K+1})=\overline{\omega} \).</p>
+        <h2>Fundamental Sequence</h2><hr>
+        <p>&emsp;&emsp;We define the fundamental sequence \( [] \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=K \), return \( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( a_1=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> If \( a_0=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> If \( n\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> If \( a_0=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.02.</span> If \( n\neq\overline{0} \), return \( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> If \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> If \( a_0=\overline{1} \), return \( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> If \( a_0\neq\overline{1} \), return \( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> If \( n[\overline{0}][\overline{0}]\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0}(a_1[n])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a=\Omega_{a_0}\land a_0\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> If \( Cof(a_0)&lt;\overline{\omega} \), return \( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega} \), return \( \Omega_{a_0[n]} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Xi(a_0)\land a_0\in T_m \), return \( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> If \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> If \( a_1=\overline{0} \), return \( P_{a_0}(a_2,\overline{0})[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> If \( a_1\neq\overline{0} \), return \( n \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the collapsing fundamental sequence \( P[] \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T,n\in T)\mapsto P_b(a,c)[n]\in T \)</p>
+        <table class="section"><tbody>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a\neq t_b^1(a)\land\neg Cof(a)&lt;\overline{\omega}\land\neg FP_b(a) \), return \( \Psi_b^c(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> Else if \( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b)\land Cof(a)=\overline{1}\land c=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \lambda(b)=a \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.01.</span> If \( b=\Xi(b_0)\land b_0\in T_m \), return \( \Xi(Add(\overline{1},m(b)[n],m(b))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.02.</span> If \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \), return \( \Psi_{b_0}^{m(b)[n]}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.03.</span> Else, return \( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( \lambda(b)&lt;a \), return \( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> Else if \( (a=t_b^1(a)\vee\lambda(b)=a)\land t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)\land Cof(t_b^1(a))&lt;b \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( t_b^0(a)=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m\land c\neq\overline{0}\land\neg(\lambda(b_0)[\overline{0}]=t_{b_0}^0(\lambda(b_0)[\overline{0}])\land\lambda(b_0)[\overline{0}]=t_{b_0}^1(\lambda(b_0)[\overline{0}])) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> Let \( A=Add(\lambda(b),Add(a[\overline{0}],t_{b_0}^0(\lambda(b_0)[\overline{0}])),a),B=Add(\lambda(b),a[\overline{1}],a) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( \Psi_{b}^\overline{0}(A)&lt;\Psi_{b}^\overline{0}(B)\land A&lt;a \), return \( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_{b_0}^0(\lambda(b_0)[\overline{0}])),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> Else if \( FP_b(a)\land c=\overline{0} \), return \( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_b^0(a)),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.04.</span> Else, return \( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],c),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> Else if \( FP_b(a)\land c=\overline{0} \), return \( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_b^0(a)),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> Else, return \( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],c),a)) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> Else if \( a=t_b^1(a)\vee\lambda(b)=a \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> If \( t_b^1(a)=\overline{0}\vee\lambda(b)=t_b^1(a) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> If \( b=\Omega_{b_0}\land b_0\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.01.</span> If \( c=\overline{0}\land b_0\neq\overline{1} \), return \( P_{\Omega_\overline{1}}(\lambda(b),Norm(\Omega_{b_0[\overline{0}]}))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.02.</span> Else if \( n=\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.03.</span> Else if \( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{0})\in T \), return \( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.04.</span> Else, return \( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{1}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> If \( b=\Xi(b_0)\land b_0\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> If \( NL(b) \), return \( P_{\Xi(Add(\overline{1},t_K^1(m(b))))}(\lambda(\Xi(Add(\overline{1},t_K^1(m(b))))),c)[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> If \( t_K^1(m(b))=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.</span> If \( Cof(m(b))=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.01.</span> If \( c=\overline{0}\land b_0\neq\overline{1} \), return \( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},\Xi(m(b[\overline{0}])))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.02.</span> Else if \( n=\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.03.</span> Else if \( \Omega_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}\in T \), return \( \Omega_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.04.</span> Else, return \( \Omega_{Suc(P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]])} \)</p>    
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.</span> If \( Cof(m(b))\neq\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.01.</span> If \( c\neq\overline{0} \), return \( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},c)[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.02.</span> If \( c=\overline{0} \), return \( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},m(b))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.</span> If \( Cof(t_K^1(m(b)))&lt;K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.</span> If \( m(b)=t_K^1(m(b)) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.01.</span> If \( FP_K(m(b))\land c=\overline{0} \), return \( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],t_K^0(m(b))))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.02.</span> If \( \neg FP_K(m(b))\vee c\neq\overline{0} \), return \( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],c))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.</span> If \( m(b)\neq t_K^1(m(b)) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.01.</span> If \( c\neq\overline{0} \), return \( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],c))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.02.</span> Else if \( Cof(m(b))=\overline{1} \), return \( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],\Xi(m(b)[\overline{0}])))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.03.</span> Else, return \( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],t_K^0(m(b))))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.</span> If \( Cof(t_K^1(m(b)))=K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.</span> If \( n=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.01.</span> If \( c\neq\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.02.</span> Else if \( m(b)=t_K^1(m(b)) \), return \( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.03.</span> Else if \( Cof(m(b))=\overline{1} \), return \( \Xi(m(b)[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.04.</span> Else, return \( t_K^0(m(b)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.02.</span> If \( n\neq\overline{0} \), return \( \Xi(Add(\overline{1},t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> If \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.</span> If \( NL(b) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.01.</span> If \( c\neq\overline{0} \), return \( P_{b_0}(b_2,c)[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.02.</span> If \( c=\overline{0} \), return \( P_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.</span> If \( t_K^1(m(b))=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.01.</span> If \( c\neq\overline{0} \), return \( P_{b_0}(b_2,c)[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.02.</span> Else if \( Cof(m(b))=\overline{1} \), return \( P_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.03.</span> Else, return \( P_{b_0}(b_2,t_K^0(m(b)))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.</span> If \( m(b)=t_K^1(m(b)) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.01.</span> If \( FP_{b_0}^{b_1}(b_2)\land c=\overline{0} \), return \( \Psi_{b_0}^{Add(t_K^1(m(b))[n],t_K^0(m(b)))}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.02.</span> If \( \neg FP_{b_0}^{b_1}(b_2)\vee c\neq\overline{0} \), return \( \Psi_{b_0}^{Add(t_K^1(m(b))[n],c)}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.</span> If \( m(b)\neq t_K^1(m(b)) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.01.</span> If \( c\neq\overline{0} \), return \( \Psi_{b_0}^{Add(t_K^1(m(b))[n],c)}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.02.</span> Else if \( Cof(m(b))=\overline{1} \), return \( \Psi_{b_0}^{Add(t_K^1(m(b))[n],\Psi_{b_0}^{m(b)[\overline{0}]}(b_2))}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.03.</span> Else, return \( \Psi_{b_0}^{Add(t_K^1(m(b))[n],t_K^0(m(b)))}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.</span> If \( Cof(t_K^1(m(b)))=K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.</span> If \( n=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.01.</span> If \( c\neq\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.02.</span> Else if \( m(b)=t_K^1(m(b)) \), return \( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.03.</span> Else if \( Cof(m(b))=\overline{1} \), return \( \Psi_{b_0}^{m(b)[\overline{0}]}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.04.</span> Else, return \( t_K^0(m(b)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.02.</span> If \( n\neq\overline{0} \), return \( \Psi_{b_0}^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(b_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> Else if \( n=\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> Else if \( b=Cof(t_b^1(a)) \), return \( \Psi_b^\overline{0}(Add(\lambda(b),a[P_b(Add(\lambda(b),a,a),c)[n]],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> Else if \( ((b=\Xi(b_0)\land Cof(t_b^1(a))&lt;K)\vee(b\neq\Xi(b_0)\land Cof(t_b^1(a))=\Omega_{t_0}))\land b_0,t_0\in T_m \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.</span> Return \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}]),c),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> Else if \( b=\Omega(b_0)\land b_0\in T_m \), return \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}],\Omega t(b)),c),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.06.</span> Else if \( Add(Re(t_b^1(a),\overline{0},\lambda(b)[\overline{0}]),c)&lt;Add(Re(t_b^1(a),\overline{1},\lambda(b)[\overline{0}]),c) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.06.01.</span> Return \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}],\lambda(b)[\overline{0}]),c),a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.07.</span> Else, return \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n,\lambda(b)[\overline{0}]),c),a)) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> Else if \( (b=\Omega_{b_0}\vee b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b) \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> If \( Cof(a)=\overline{1} \), return \( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> If \( Cof(a)\neq\overline{1} \), return \( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> Else if \( t_K^1(m(b))=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( Cof(m(b))\neq\overline{1}\land Cof(a)=\overline{1} \), return \( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( Cof(m(b))=\overline{1}\land Cof(a)=\overline{1} \), return \( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> If \( Cof(a)\neq\overline{1} \), return \( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a))[n] \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> Else if \( Cof(t_K^1(m(b)))&lt;K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> If \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.</span> If \( Cof(a)=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.01.</span> If \( m(b)=t_K^1(m(b))\vee c\neq\overline{0} \), return \( \Psi_b^{Add(t_K^1(m(b))[n],c)}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.02.</span> Else if \( m(b)\neq t_K^1(m(b))\land c=\overline{0} \), return \( \Psi_b^{Add(t_K^1(m(b))[n],\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.02.</span> Else if \( c\neq\overline{0} \), return \( \Psi_b^{Add(t_K^1(m(b))[n],c)}(\lambda(b)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.03.</span> Else if \( c=\overline{0} \), return \( \Psi_b^{Add(t_K^1(m(b))[n],t_b^0(a))}(\lambda(b)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> Else if \( Cof(a)=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.01.</span> If \( c\neq\overline{0} \), return \( \Psi_b^{Add(t_K^1(m(b))[n],c)}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.02.</span> If \( c=\overline{0} \), return \( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> Else if \( c\neq\overline{0} \), return \( \Psi_b^c(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.</span> Else if \( c=\overline{0} \), return \( \Psi_b^{t_b^0(a)}(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> Else if \( Cof(t_K^1(m(b)))=K \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> If \( Cof(a)=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.</span> If \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.</span> If \( n=\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.01.</span> If \( c\neq\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.02.</span> Else if \( m(b)=t_K^1(m(b)) \), return \( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.03.</span> Else, return \( \Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.02.</span> If \( n\neq\overline{0} \), return \( \Psi_b^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.</span> Else if \( c\neq\overline{0} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.01.</span> If \( n=\overline{0} \), return \( c \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.02.</span> If \( n\neq\overline{0} \), return \( \Psi_b^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.03.</span> Else if \( c=\overline{0} \), return \( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.</span> Else if \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \), then:</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.01.</span> If \( c\neq\overline{0} \), return \( \Psi_b^{t_K^1(m(b))[c]}(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.02.</span> If \( c=\overline{0} \), return \( \Psi_b^{t_K^1(m(b))[t_b^0(a)]}(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.03.</span> Else if \( c\neq\overline{0} \), return \( \Psi_b^c(Add(\lambda(b),a[n],a)) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.04.</span> Else if \( c=\overline{0} \), return \( \Psi_b^{t_b^0(a)}(Add(\lambda(b),a[n],a)) \)</p>
+            </td></tr>
+        </tbody></table>
+        <br>
+        <p>&emsp;&emsp;We define the recursion function \( Re \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T,c\in T)\mapsto Re(a,n,c)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> If \( c=t_{Cof(a)}^0(c)\land c=t_{Cof(a)}^1(c) \), return \( a[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> If \( c\neq t_{Cof(a)}^0(c)\vee c\neq t_{Cof(a)}^1(c) \), return \( a[t_{Cof(a)}^0(c)] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( Cof(a)=K \), return \( \Xi(Add(\overline{1},Re(a,n[\overline{0}],c),Re(a,n[\overline{0}],c))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( Cof(a)\neq K \), return \( \Psi_{Cof(a)}^\overline{0}(Add(\lambda(Cof(a)),Re(a,n[\overline{0}],c),Re(a,n[\overline{0}],c))) \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the strong fundamental sequence \( {[]}^* \) in case we want an ordinal of uncountable cofinality to expand as a smaller ordinal with countable cofinality:</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \neg\overline{\omega}&lt;Cof(a) \), return \( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \overline{\omega}&lt;Cof(a)\land Cof(a)&lt;K \), return \( a[\Psi_{Cof(a)}^\overline{0}(Add(\lambda(Cof(a)),\Gamma_{K+1}[n])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( Cof(a)=K \), return \( \Xi(Add(\overline{1},\Gamma_{K+1}[n])) \)</p>
+        <br>
+        <p>&emsp;&emsp;We also define the fundamental sequence of \( \Gamma_{K+1} \) as follows:</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{K+1}[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( K \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \), return \( \varphi_K(\overline{1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( n[\overline{0}][\overline{0}]\neq\overline{0} \), return \( \varphi_{\Gamma_{K+1}[n[\overline{0}]]}(\overline{0}) \)</p>
+        <h1>References</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Rathjen, M. (1994). <a href="https://web.archive.org/web/20231208185422/https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf" target="_blank"
+>Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-12-13. https://doi.org/10.1016/0168-0072(94)90074-4</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2024-12-13. https://doi.org/10.2307%2F2274692</p>
+    </body>
+</html>

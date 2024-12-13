@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;康托爾標準型是一個序數的書寫標準，定義如下：</p>
+        <p>&emsp;&emsp;\( \alpha=\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_n} \)</p>
+        <p>&emsp;&emsp;其中\( n \)自然數且\( \alpha_0\ge\alpha_1\ge\cdots\ge\alpha_n \)。</p>
+        <p>&emsp;&emsp;任意非零序數皆可寫成獨一的康托爾標準型。</p>
+        <br>
+        <p>&emsp;&emsp;在本網站中，我們將使用小於\( \varepsilon_0 \)的序數，這是因為\( \varepsilon_0 \)是最小滿足\( \alpha=\omega^\alpha \)的序數，而且一切小於\( \varepsilon_0 \)的序數皆可由0，加法與\( \omega \)的冪構造。</p>
+        <p>&emsp;&emsp;本網站所使用的基本序列系統定義如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_m}+\omega^{\alpha_{m+1}})[n]:=\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_m}+\omega^{\alpha_{m+1}}[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \omega^0[n]=1[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \omega^{\alpha+1}[n]:=\omega^\alpha n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \omega^\alpha[n]:=\omega^{\alpha[n]} \)（\( \alpha \)是極限序數）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varepsilon_0[0]:=0 \)且\( \varepsilon_0[n+1]:=\omega^{\varepsilon_0[n]} \)</p>
+        <br>
+        <p>&emsp;&emsp;由於其簡單性，該基本序列系統稱作<b>「懷納階層」</b>。</p>
+        <h1>序數表示法</h1><hr>
+        <h2>表示法</h2><hr>
+        <p>&emsp;&emsp;我們定義\( S \)為包含以下字元的集合：</p>
+        <p>&emsp;&emsp;常數「\( \overline{0} \)」，</p>
+        <p>&emsp;&emsp;函數字元「\( \omega \)」，</p>
+        <p>&emsp;&emsp;以及其他字元「\( + \)」，「\( ( \)」與「\( ) \)」。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義\( S \)的子集\( T_m \)與\( T_s \)如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切\( a\in T_s \)與\( b\in T_m\setminus\{\overline{0}\} \)，\( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 對於一切\( a\in T_m \)，\( \omega(a)\in T_m \)且\( \omega(a)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;在全篇文章中，我們採用以下簡寫：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \omega^a:=\omega(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\omega^\overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\omega^\overline{1} \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;我們定義二元關係\( &lt; \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( b=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\overline{0}\land b\neq\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg b_0&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\omega^{a_0}\land b=\omega^{b_0}\land a_0,b_0\in T_m \)，傳回\( a_0&lt;b_0 \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義所有其他的比較符號：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;注意\( = \)與\( \neq \)表示符號等價性而\( =_* \)與\( \neq_* \)表示數值等價性。</p>
+        <h2>標準型</h2><hr>
+        <p>&emsp;&emsp;我們定義函數\( \in T \)以判斷序數是否為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T\land a_1\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，傳回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\omega^{a_0}\land a_0\in T_m \)，傳回\( a_0\in T \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義該系統的極限為\( A=\varepsilon_0 \)。</p>
+        <p>&emsp;&emsp;\( \varepsilon_0 \)亦為標準型。</p>
+        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha&lt;\varepsilon_0 \)。</p>
+        <p>&emsp;&emsp;該系統的序數<b>一律可數</b>。</p>
+        <p>&emsp;&emsp;<b>不存在</b>僅限於指令「fgh」與「sgh」可用的<b>可數序數極限</b>。</p>
+        <h2>運算</h2><hr>
+        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，傳回\( a+b \)</p>
+        <h2>共尾數</h2><hr>
+        <p>&emsp;&emsp;我們定義共尾函數\( Cof \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\omega^{a_0}\land a_0\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( a_0\neq\overline{0} \)，傳回\( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( Cof(\varepsilon_0)=\overline{\omega} \)。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;我們定義基本序列\( [] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\omega^{a_0}\land a_0\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]],\omega^{a_0[\overline{0}]}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_0)=\overline{\omega} \)，傳回\( \omega^{a_0[n]} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( \varepsilon_0 \)的基本序列如下：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\varepsilon_0[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，傳回\( \omega^{\varepsilon_0[n[\overline{0}]]} \)</p>
+    </body>
+</html>

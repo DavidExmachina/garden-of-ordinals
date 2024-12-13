@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;拉珍小\( \psi \)函數指的是麥可·拉珍於1990年提出的序數塌縮函數<sup><a id="g1" href="#c1">[1]</a></sup>。整個序數系統由4個函數：\( \varphi_\alpha(\beta) \)，\( \Phi_\alpha(\beta) \)，\( \chi_\alpha(\beta) \)與\( \psi_\alpha(\beta) \)組成，描述與定義如下。</p>
+        <h2>函數\( \varphi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)表示維布倫函數。定義如下且已在「維布倫函數」介面的幫助選單顯示：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切非零序數\( \alpha \)，\( \varphi_{\alpha}(\beta) \)傳回對於一切\( \alpha'&lt;\alpha \)的所有函數\( \gamma\mapsto\varphi_{\alpha'}(\gamma) \)的第\( (1+\beta) \)個共同不動點。</p>
+        <h2>函數\( \Phi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \)表示一個維布倫函數的變種，定義如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切非零序數\( \alpha \)，\( \Phi_{\alpha}(\beta) \)傳回對於一切\( \alpha'&lt;\alpha \)的所有函數\( \gamma\mapsto\Phi_{\alpha'}(\gamma) \)的第\( (1+\beta) \)個共同不動點。</p>
+        <br>
+        <p>&emsp;&emsp;與原來的函數的唯一區別是，\( \Phi_0(\beta) \)從返回不可數基數而不只是\( \omega \)的冪的函數\( \beta\mapsto\Omega_{1+\beta} \)開始。因此，拓展布赫霍茲\( \psi \)函數的序數系統中的\( \Omega \)不動點\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)也可寫作\( \Phi_1(0) \)，或者是\( E_0 \)，就像我們把\( \varphi_1(0) \)寫作\( \varepsilon_0 \)那樣。</p>
+        <p>&emsp;&emsp;此外，我們採用以下簡寫：</p>
+        <p>&emsp;&emsp;\( E_\beta:=\Phi_1(\beta) \)</p>
+        <p>&emsp;&emsp;\( Z_\beta:=\Phi_2(\beta) \)</p>
+        <p>&emsp;&emsp;\( H_\beta:=\Phi_3(\beta) \)</p>
+        <h2>函數\( \chi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \chi_\alpha(\beta) \)表示一系列不可達基數的階層（除非\( \alpha=0 \)）。不可達基數是滿足下列3個條件的基數\( \kappa \)：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \kappa&gt;\omega \)（\( \kappa \)不可數）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( Cof(\kappa)=\kappa \)（\( \kappa \)是一個正規基數）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 存在一個極限序數\( \alpha \)使得\( \kappa=\Omega_\alpha \)</p>
+        <br>
+        <p>&emsp;&emsp;可見\( E_0 \)違反條件02.，這是因為\( Cof(E_0)=\omega\neq E_0 \)。但對於稍大的基數\( \Omega_{E_0+1} \)，它滿足條件02.但是違反條件03.。可以驗證\( E_1 \)，\( Z_0 \)，\( H_0 \)甚至是\( \alpha\mapsto\Phi_\alpha(0) \)的不動點都不是不可達基數，可見甚至是最小的不可達基數\( I \)有多麼巨大。順便一提，ZFC無法證明不可達基數是否存在。</p>
+        <p>&emsp;&emsp;在\( I \)後面，我們可以找到更大的不可達基數\( I_2 \)，\( I_3 \)，以此類推。我們甚至能透過以下更改條件03.以定義更加高等的不可達基數：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 存在一個極限序數\( \alpha \)使得\( \kappa=I_\alpha \)</p>
+        <br>
+        <p>&emsp;&emsp;我們可以把最小的滿足這些條件的基數記作\( I(2,0) \)。我們還有更大的基數\( I(2,1) \)，\( I(2,2) \)，依此類推。如此反复，我們便有一系列不可達基數的階層。</p>
+        <p>&emsp;&emsp;函數\( \chi_\alpha(\beta) \)定義如下：（\( \alpha&lt;\Gamma_{M+1} \)且\( \beta&lt;M \)）</p>
+        <p>&emsp;&emsp;\( \begin{align} B_0(\alpha,\beta) := & \{0,M\} \\
+                                        B_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in B_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in B_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma&lt;\kappa\land\kappa\in R\land\kappa\in B_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\chi_{\alpha'}(\beta')\land\alpha'&lt;\alpha\land\beta'&lt;M\} \\
+                                        B(\alpha,\beta) := & \bigcup_{n&lt;\omega}{B_n(\alpha,\beta)}=B_0(\alpha,\beta)\cup B_1(\alpha,\beta)\cup B_2(\alpha,\beta)\cup\cdots\cup B_m(\alpha,\beta)\cup\cdots \\
+                                        \chi_\alpha(\beta) := & Enum_{Cl_M(\{\kappa|\kappa\in R\land\kappa\notin B(\alpha,\kappa)\land\alpha\in B(\alpha,\kappa)\})}(\beta) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;\( Enum_A(\alpha) \)表示枚舉函數，它傳回從小到大數起的第\( 1+\alpha \)個\( A \)的元素。有了這個函數，函數\( \varphi_\alpha(\beta) \)與\( \Phi_\alpha(\beta) \)可定義如下：</p>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta):=Enum_{\{\gamma|\exists\gamma'(\gamma=\omega^{\gamma'})\land\forall\alpha'&lt;\alpha(\gamma=\varphi_{\alpha'}(\gamma))\}}(\beta) \)</p>
+        <p>&emsp;&emsp;\( \Phi_\alpha(\beta):=Enum_{\{\gamma|\exists\gamma'(\gamma=\Omega_{1+\gamma'})\land\forall\alpha'&lt;\alpha(\gamma=\Phi_{\alpha'}(\gamma))\}}(\beta) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( Cl_M(A) \)表示閉合函數，它傳回一個包含所有\( A \)的元素以及所有小於\( M \)的\( A \)的極限點的集合。\( A \)的極限點指的是一個序數\( \alpha \)，使得\( \alpha \)是最小的大於等於所有\( A\cap\alpha \)的元素。麻洛基數\( M \)將於下文解釋。</p>
+        <p>&emsp;&emsp;因此，當\( \beta \)是極限基數，\( \chi_\alpha(\beta) \)必傳回一個奇異基數，否則必傳回一個正規基數。注意\( \Omega_\omega \)是一個奇異基數，而且\( I_\omega \)，\( \alpha&lt;\omega \)時\( I_\alpha \)的極限，也是一個奇異基數，因此根據定義，不是不可達基數。因此，函數\( Cl_M(A) \)使得函數\( \beta\mapsto\chi_\alpha(\beta) \)對於一切\( \alpha \)變得「連續」。</p>
+        <p>&emsp;&emsp;但是，函數\( Cl_M(A) \)並不使\( \alpha\mapsto\chi_\alpha(0) \)變得「連續」，因此導致\( \chi_\omega(0) \)仍然是一個正規基數，從而大於\( \alpha&lt;\omega \)時\( \chi_\alpha(0) \)的極限。對於其他的極限序數也會發生相同的古怪現象。</p>
+        <p>&emsp;&emsp;由以上定義，我們有：</p>
+        <p>&emsp;&emsp;\( \chi_0(\beta)=\Omega_{1+\beta} \)</p>
+        <p>&emsp;&emsp;\( \chi_1(\beta)=I_{1+\beta} \)</p>
+        <br>
+        <p>&emsp;&emsp;\( R \)表示一類一切小於\( M \)的不可數正規基數。</p>
+        <h2>函數\( \psi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \psi_\alpha(\beta) \)表示塌縮函數，是該序數系統的核心。定義如下：（\( \alpha\in R \)且\( \beta&lt;\Gamma_{M+1} \)）</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} \chi_{\alpha'}(\beta')+1\cup\{M\} & \alpha=\chi_{\alpha'}(\beta'+1) \\ {\alpha'}^*+1\cup\{M\} & \alpha=\chi_{\alpha'}(0) \end{cases} \\
+                                        C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\Phi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\cap M\} \\
+                                        \cup & \{\gamma|\gamma=\chi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\
+                                        \cup & \{\gamma|\gamma&lt;\kappa\land\kappa\in R\land\kappa\in C_n(\alpha,\beta)\cap\alpha\} \\
+                                        C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\
+                                        \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;其中\( \alpha^* \)表示最小的大於一切\( SC_M(\alpha) \)的元素的序數，集合\( SC_M(\alpha) \)定義如下：</p>
+        <p>&emsp;&emsp;\( SC_M(\alpha)=\begin{cases} \{\} & \alpha=0\vee\alpha=M \\ \{\alpha\} & \alpha=\varphi_\alpha(0)\land\alpha&lt;M \\ SC_M(\alpha_0)\cup SC_M(\alpha_1)\cup\cdots\cup SC_M(\alpha_n) & \alpha=\alpha_0+\alpha_1+\cdots+\alpha_n\land\forall m\le n\exists\beta(\alpha_m=\omega^\beta) \\ SC_M(\alpha_0)\cup SC_M(\alpha_1) & \alpha=\varphi_{\alpha_0}(\alpha_1)\land\alpha_0,\alpha_1&lt;\alpha \end{cases} \)</p>
+        <br>
+        <p>&emsp;&emsp;與布赫霍茲\( \psi \)函數的不同點在於，該序數塌縮函數使用正規基數而非一般的序數進行塌縮。例如（此處將拉珍小\( \psi \)函數記作\( \rho \)），\( \psi_0(\alpha) \)與\( \rho_\Omega(\alpha) \)皆傳回小於\( \Omega \)的序數，\( \psi_1(\alpha) \)與\( \rho_{\Omega_2}(\alpha) \)皆回傳小於\( \Omega_2 \)的序數，以此類推。</p>
+        <p>&emsp;&emsp;此外，該序數塌縮函數透過維布倫函數來使用先前的結果。例如，\( \rho_\Omega(0) \)從\( \Gamma_0=\psi_0(\Omega^\Omega) \)開始，而\( \rho_\Omega(1)=\psi_0(\Omega^\Omega2) \)，以此類推。一般來說，對於某些序數\( \alpha \)，\( \rho_\Omega(\alpha)=\psi_0(\Omega^\Omega(1+\alpha)) \)。</p>
+        <h2>麻洛基數\( M \)</h2><hr>
+        <p>&emsp;&emsp;麻洛基數\( M \)是該序數塌縮函數的關鍵。在描述該基數前，我們需要定義一些概念。</p>
+        <p>&emsp;&emsp;若\( \alpha \)的子集\( A \)包含非零且小於\( \alpha \)的一切\( A \)的極限點，則稱\( A \)於\( \alpha \)<b>閉合</b>。</p>
+        <p>&emsp;&emsp;若對於一切小於\( \alpha \)的序數，\( \alpha \)的子集\( A \)中總有一個能超過，則稱\( A \)於\( \alpha \)<b>無界</b>。</p>
+        <p>&emsp;&emsp;若\( A \)於\( \alpha \)即閉合又無界，則稱\( A \)是\( \alpha \)的<b>俱樂集</b>。該用語取自英文「Closed（閉合）」與「Unbounded（無界）」的組合「Club（俱樂部）」。</p>
+        <p>&emsp;&emsp;若\( \alpha \)共尾數不可數的子集\( A \)與一切\( \alpha \)的俱樂集交集皆非空，或著說\( \alpha \)無與\( A \)不交的俱樂集，則稱\( A \)是\( \alpha \)的<b>駐集</b>。</p>
+        <p>&emsp;&emsp;在定義這些概念之後，我們定義麻洛基數\( \kappa \)是一個使得小於\( \kappa \)的不可達基數的集合是\( \kappa \)的駐集的不可達基數。我們將最小的麻洛基數記作\( M \)。</p>
+        <br>
+        <p>&emsp;&emsp;S那麼，\( M \)到底有多大呢？首先，\( I \)不是麻洛基數，因為沒有不可達基數小於\( I \)，因此小於\( \kappa \)的不可達基數的集合是空集從而與一切\( I \)的俱樂集皆不交。</p>
+        <p>&emsp;&emsp;\( I_2 \)不是麻洛基數，因為\( \{I\} \)與\( I_2 \)的一個俱樂集\( \{I+1+\alpha|\alpha&lt;I_2\} \)不交。</p>
+        <p>&emsp;&emsp;\( I_3 \)不是麻洛基數，因為\( \{I,I_2\} \)與\( I_3 \)的一個俱樂集\( \{I_2+1+\alpha|\alpha&lt;I_3\} \)不交。</p>
+        <p>&emsp;&emsp;\( \chi_2(0) \)（於之前記作\( I(2,0) \)）不是麻洛基數，因為小於\( \chi_2(0) \)的不可達基數的集合與\( \chi_2(0) \)的一個俱樂集\( \{I_{\omega(1+\alpha)}|\alpha&lt;\chi_2(0)\} \)不交。這利用了\( I_\omega \)，\( I_{\omega2} \)等基數因為是奇異基數從而不是不可達基數的事實。</p>
+        <p>&emsp;&emsp;由此可驗證類似\( \chi_3(0) \)與\( \chi_M(0) \)等更大的不可達基數皆如此，從而說明了為什麼\( M \)在此可用來構造大的不可達基數。順便一提，ZFC無法證明麻洛基數是否存在。</p>
+        <br>
+        <p>&emsp;&emsp;序數\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)稱為「小拉珍序數（SRO）」。該序數是\( KPM \)的證明論序數。</p>
+        <h1>序數表示法</h1><hr>
+        <h2>表示法</h2><hr>
+        <p>&emsp;&emsp;我們定義\( S \)為包含以下字元的集合：</p>
+        <p>&emsp;&emsp;常數「\( \overline{0} \)」與「\( M \)」，</p>
+        <p>&emsp;&emsp;函數字元「\( \varphi \)」，「\( \Phi \)」，「\( \chi \)」與「\( \psi \)」，</p>
+        <p>&emsp;&emsp;以及其他字元「\( + \)」，「\( ( \)」，「\( ) \)」與「\( , \)」。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義\( S \)的子集\( T_m \)與\( T_s \)如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( M\in T_m \)且\( M\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 對於一切\( a\in T_s \)與\( b\in T_m\setminus\{\overline{0}\} \)，\( a+b\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 對於一切\( a\in T_m \)與\( b\in T_m \)，\( \varphi(a,b)\in T_m \)且\( \varphi(a,b)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 對於一切\( a\in T_m \)與\( b\in T_m \)，\( \Phi(a,b)\in T_m \)且\( \Phi(a,b)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 對於一切\( a\in T_m \)與\( b\in T_m \)，\( \chi(a,b)\in T_m \)且\( \chi(a,b)\in T_s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 對於一切\( a\in T_m \)與\( b\in T_m \)，\( \psi(a,b)\in T_m \)且\( \psi(a,b)\in T_s \)</p>
+        <br>
+        <p>&emsp;&emsp;在全篇文章中，我們採用以下簡寫：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Phi_a(b):=\Phi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \chi_a(b):=\chi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \psi_a(b):=\psi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;我們定義二元關係\( &lt; \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <table class="section"><tbody>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( b=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\overline{0}\land b\neq\overline{0} \)，傳回\( \mathbb{T} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg b_0&lt;a \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=M\land b=M \)，傳回\( \mathbb{F} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> 若\( a_0&lt;b_0 \)，傳回\( a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 若\( b_0&lt;a_0 \)，傳回\( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> 若\( a_0=_*b_0 \)，傳回\( a_1&lt;b_1 \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 若\( a=\Phi_{a_0}(a_1)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> 若\( a_0&lt;b_0 \)，傳回\( a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.</span> 若\( b_0&lt;a_0 \)，傳回\( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.03.</span> 若\( a_0=_*b_0 \)，傳回\( a_1&lt;b_1 \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 若\( a=\chi_{a_0}(a_1)\land b=\chi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> 若\( a=_*b_1 \)，傳回\( \neg b_0&lt;a_0\vee\neg {b_0}^*&lt;a \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 若\( a\neq_*b_1 \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.01.</span> 若\( a_0&lt;b_0 \)，傳回\( a_1&lt;b\land{a_0}^*&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.02.</span> 若\( b_0&lt;a_0 \)，傳回\( \neg b_1&lt;a\vee\neg{b_0}^*&lt;a \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.03.</span> 若\( a_0=_*b_0 \)，傳回\( a_1&lt;b_1 \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> 若\( a=\psi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> 若\( a_0&lt;b_0 \)，傳回\( a_0&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> 若\( b_0&lt;a_0 \)，傳回\( a&lt;b_0 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> 若\( a_0=_*b_0 \)，傳回\( a_1&lt;b_1 \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> 若\( a=M\land b\neq M \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.01.</span> 若\( b=\varphi_{b_0}(b_1)\land b_0,b_1\in T_m \)，傳回\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.02.</span> 若\( b=\Phi_{b_0}(b_1)\land b_0,b_1\in T_m \)，傳回\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.03.</span> 若\( b=\chi_{b_0}(b_1)\land b_0,b_1\in T_m \)，傳回\( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">11.04.</span> 若\( b=\psi_{b_0}(b_1)\land b_0,b_1\in T_m \)，傳回\( \mathbb{F} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.</span> 若\( a\neq M\land b=M \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.01.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.02.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.03.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">12.04.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \mathbb{T} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">13.</span> 若\( a=\varphi_{a_0}(a_1)\land(b=\Phi_{b_0}(b_1)\vee b=\chi_{b_0}(b_1)\vee b=\psi_{b_0}(b_1))\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">13.01.</span> 傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">14.</span> 若\( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">14.01.</span> 傳回\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">15.</span> 若\( a=\Phi_{a_0}(a_1)\land b=\chi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">15.01.</span> 若\( b_0=\overline{0} \)，傳回\( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">15.02.</span> 若\( b_0\neq\overline{0} \)，傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.</span> 若\( a=\chi_{a_0}(a_1)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.01.</span> 若\( a_0=\overline{0} \)，傳回\( a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.02.</span> 若\( a_0\neq\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.02.01.</span> 若\( a&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.02.02.</span> 若\( b_0&lt;a \)，傳回\( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">16.02.03.</span> 若\( a=_*b_0 \)，傳回\( b_1\neq\overline{0} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">17.</span> 若\( a=\Phi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，傳回\( a_0&lt;b\land a_1&lt;b\land a&lt;b_0 \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.</span> 若\( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,a_2,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.01.</span> 若\( a_0=\overline{0} \)，傳回\( a_1&lt;b \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.02.</span> 若\( a_0\neq\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.02.01.</span> 若\( a&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.02.02.</span> 若\( b_0&lt;a \)，傳回\( a&lt;b_1 \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">18.02.03.</span> 若\( a=_*b_0 \)，傳回\( b_1\neq\overline{0} \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">19.</span> 若\( a=\chi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，傳回\( a&lt;b_0\land a\in C(b_0,b_1) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">20.</span> 若\( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land b=\chi_{b_0}(b_1)\land a_0,a_1,a_2,b_0,b_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">20.01.</span> 若\( a=_*b_1 \)，傳回\( \neg b_0&lt;a_0\vee\neg{b_0}^*&lt;\chi_{a_0}(a_1)\vee\neg b_0\in C(\chi_{a_0}(a_1),a_2) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">20.02.</span> 若\( a\neq_*b_1 \)，傳回\( \neg b&lt;\chi_{a_0}(a_1)\vee\neg b\in C(\chi_{a_0}(a_1),a_2) \)</p>
+            </td></tr>
+        </tbody></table>
+        <br>
+        <p>&emsp;&emsp;我們定義所有其他的比較符號：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;注意\( = \)與\( \neq \)表示符號等價性而\( =_* \)與\( \neq_* \)表示數值等價性。</p>
+        <h2>標準型</h2><hr>
+        <p>&emsp;&emsp;我們定義最大值函數\( Max \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto Max(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義符號\( a^* \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto a^*\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=M \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Max({a_0}^*,{a_1}^*) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( Max({a_0}^*,{a_1}^*) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in R \)以判斷序數是否為小於\( M \)的不可數正規基數：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( Cof(a_1)&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義最小有效值函數\( \lambda \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in R)\mapsto\lambda_b(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=M \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1))\land a_0,a_1\in T_m \)，傳回\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\psi_{a_0}(a_1)\land b=\chi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( b_1=\overline{0}\land\neg {b_0}^*&lt;a \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 若\( b_1\neq\overline{0}\land\neg \chi_{b_0}(b_1[0])&lt;a \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 除以上情況，若\( a_0&lt;b \)，傳回\( \lambda_b(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> 除以上情況，傳回\( Max(Suc(a_1),Max(\lambda_b(a_0),\lambda_b(a_1))) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in C \)以判斷序數\( c \)是否為\( C(a,b) \)的元素：</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in R)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;\lambda_b(c) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in T \)以判斷序數是否為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T\land a_1\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，傳回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a\land a_0\neq\overline{0}\land a_0&lt;M\land a_1&lt;M \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_1&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_0\in R\land a_1\in C(a_0,a_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;順便一提，麥可·拉珍在論文中也定義了標準型\( T(M) \)。我們也將用該網站的語言定義該版本：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T(M)\vee\neg a_1\in T(M) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T(M)\land a_1\in T(M) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，傳回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T(M)\land a_1\in T(M)\land a_0&lt;a\land a_1&lt;a\land(a_0=\overline{0}\vee(a_0&lt;M\land a_1&lt;M)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T(M)\land a_1\in T(M)\land a_0&lt;a\land a_1&lt;a\land a_0\neq\overline{0}\land a_0&lt;M\land a_1&lt;M \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T(M)\land a_1\in T(M)\land a_1&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T(M)\land a_1\in T(M)\land a_0\in R\land a_1\in C(a_0,a_1)\land a_1&lt;M \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義該系統的極限為\( A=\Gamma_{M+1} \)。</p>
+        <p>&emsp;&emsp;\( \Gamma_{M+1} \)亦為標準型。</p>
+        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha&lt;\Gamma_{M+1} \)。</p>
+        <p>&emsp;&emsp;序數\( \alpha \)可數當且僅當\( \alpha&lt;\chi_\overline{0}(\overline{0}) \)。</p>
+        <p>&emsp;&emsp;僅限於指令「fgh」與「sgh」可用的可數序數極限為\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其電腦程式碼為(r(x,),A)。</p>
+        <h2>運算</h2><hr>
+        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，傳回\( a+b \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義後繼\( Suc \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;傳回\( Add(a,\overline{1}) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義標準化函數\( Norm \)以將序數化為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a\in T \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Norm(a_0)+Norm(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a=a_1 \)，傳回\( a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a=a_0 \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( a\neq a_0\land a\neq a_1 \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.</span> 若\( a_0=\overline{0} \)，傳回\( \chi_\overline{0}(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.</span> 若\( a_0\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.01.</span> 若\( a=a_1 \)，傳回\( a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.02.</span> 若\( a=a_0 \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.03.</span> 若\( a\neq a_0\land a\neq a_1 \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a \)</p>
+        <h2>共尾數</h2><hr>
+        <p>&emsp;&emsp;我們定義共尾函數\( Cof \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=M \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1))\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，傳回\( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 若\( a_0=\overline{0}\land a_1=\overline{0} \)，傳回\( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( a\in R \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 若\( \neg a\in R \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land a_0,a_1,a_2\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( \chi_{a_0}(a_1)\le Cof(a_2) \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( \overline{\omega}\le Cof(a_2)\land Cof(a_2)&lt;\chi_{a_0}(a_1) \)，傳回\( Cof(a_2) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 若\( Cof(a_2)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.01.</span> 若\( Cof(a_0)&lt;\overline{\omega} \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.02.</span> 若\( Cof(a_0)=M \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.03.</span> 若\( \overline{\omega}\le Cof(a_0)\land Cof(a_0)&lt;M \)，傳回\( Cof(a_0) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( Cof(\Gamma_{M+1})=\overline{\omega} \)。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;我們定義基本序列\( [] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <table class="section"><tbody>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=M \)，傳回\( n \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> 若\( a_0=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> 若\( a_0=\overline{1} \)，傳回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，傳回\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.</span> 若\( a_0=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.</span> 若\( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\Phi_{a_0[n]}(\overline{0})) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> 若\( a_0=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( \Phi_{\overline{1}}(a_1[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \chi_\overline{0}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.04.</span> 若\( [\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> 若\( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( \Phi_{a_0}(a_1[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \Phi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\Phi_{a_0[n]}(Suc(Norm(\Phi_{a_0}(a_1[\overline{0}]))))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\Phi_{a_0}(a_1[n])) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( Cof(a_1)&lt;\overline{\omega} \)，傳回\( n \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( \chi_{a_0}(a_1[n]) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land a_0,a_1,a_2\in T_m \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> 若\( Cof(a_2)=M \)，傳回\( \psi_{\chi_{a_0}(a_1)}(a_2[\psi_{\chi_{M^\Gamma[n]}(\overline{0})}(\overline{0})]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 若\( \chi_{a_0}(a_1)\le Cof(a_2)\land Cof(a_2)&lt;M \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \psi_{\chi_{a_0}(a_1)}(Re(a_2,n[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> 若\( \overline{\omega}\le Cof(a_2)\land Cof(a_2)&lt;\chi_{a_0}(a_1) \)，傳回\( \psi_{\chi_{a_0}(a_1)}(a_2[n]) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.</span> 若\( Cof(a_2)&lt;\overline{\omega} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.</span> 若\( a_0=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.01.</span> 若\( a_1=\overline{0}\land a_2=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( \varphi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.</span> 若\( a_1\neq\overline{0}\vee a_2\neq\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.02.01.</span> 若\( a_2=\overline{0} \)，傳回\( Norm(\chi_\overline{0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.02.02.</span> 若\( a_2\neq\overline{0} \)，傳回\( \psi_{\chi_\overline{0}(a_1)}(a_2[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \varphi_{a[n[\overline{0}]]}(\overline{1}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.01.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.</span> 若\( a_0=\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.01.</span> 若\( a_1=\overline{0}\land a_2=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.01.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( \chi_\overline{0}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.01.03.</span> 若\( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \)，傳回\( \Phi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.</span> 若\( a_1\neq\overline{0}\vee a_2\neq\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.02.01.</span> 若\( a_2=\overline{0} \)，傳回\( Norm(\chi_{\overline{1}}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.02.02.</span> 若\( a_2\neq\overline{0} \)，傳回\( \psi_{\chi_{\overline{1}}(a_1)}(a_2[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \Phi_{a[n[\overline{0}]]}(\overline{1}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \Phi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.</span> 若\( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.01.</span> 若\( a_1=\overline{0}\land a_2=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( \chi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.</span> 若\( a_1\neq\overline{0}\vee a_2\neq\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.02.01.</span> 若\( a_2=\overline{0} \)，傳回\( Norm(\chi_{a_0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.02.02.</span> 若\( a_2\neq\overline{0} \)，傳回\( \psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \chi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.03.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \chi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.</span> 若\( \overline{\omega}\le Cof(a_0)\land Cof(a_0)&lt;M \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.01.</span> 若\( a_1=\overline{0}\land a_2=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.01.01.</span> 若\( \chi_{a_0[\overline{0}]}(Suc(Tail(a_0)))&lt;\chi_{a_0[1]}(\overline{0}) \)，傳回\( \psi_{\chi_{a_0[n]}(\overline{0})}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.01.02.</span> 若\( \chi_{a_0[\overline{0}]}(Suc(Tail(a_0)))\ge\chi_{a_0[1]}(\overline{0}) \)，傳回\( \psi_{\chi_{a_0[n]}(Suc(Tail(a_0)))}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.02.</span> 若\( a_1\neq\overline{0}\land a_2=\overline{0} \)，傳回\( \psi_{\chi_{a_0[n]}(Suc(Norm(\chi_{a_0}(a_1[n]))))}(\overline{0}) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.04.03.</span> 若\( a_2\neq\overline{0} \)，傳回\( \psi_{\chi_{a_0[n]}(Suc(\psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}])))}(\overline{0}) \)</p>
+            </td></tr>
+            <tr><td>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.</span> 若\( Cof(a_0)=M \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.01.</span> 若\( n=\overline{0} \)，則：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.01.01.</span> 若\( a_1=\overline{0}\land a_2=\overline{0} \)，傳回\( \overline{0} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.01.02.</span> 若\( a_1\neq\overline{0}\land a_2=\overline{0} \)，傳回\( Norm(\chi_{a_0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.01.03.</span> 若\( a_2\neq\overline{0} \)，傳回\( a=\psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.05.02.</span> 若\( n\neq\overline{0} \)，傳回\( \psi_{\chi_{a_0[a[n[\overline{0}]]]}(\overline{0})}(\overline{0}) \)</p>
+            </td></tr>
+        </tbody></table>
+        <br>
+        <p>&emsp;&emsp;我們定義迭代函數\( Re \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto Re(a,n)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( a[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，傳回\( a[\psi_{Cof(a)}(Re(a,n[\overline{0}]))] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義尾部函數\( Tail \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Tail(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=M \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\vee a&lt;M \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a&gt;M \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Tail(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( Cof(a_1)&lt;\overline{\omega} \)，傳回\( Tail(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Tail(a_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義強基本序列\( {[]}^* \)如下，以便將共尾數不可數的序數以更小的共尾數可數的序數展開：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg\overline{\omega}&lt;Cof(a) \)，傳回\( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \overline{\omega}&lt;Cof(a)\land Cof(a)&lt;M \)，傳回\( a[\psi_{Cof(a)}(\Gamma_{M+1}[n])] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( Cof(a)=M \)，傳回\( \chi_{\Gamma_{M+1}[n]}(\overline{0}) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( \Gamma_{M+1} \)的基本序列如下：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{M+1}[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( M \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，傳回\( \varphi_M(\overline{1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{\Gamma_{M+1}[n[\overline{0}]]}(\overline{0}) \)</p>
+        <h1>引用</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Rathjen, M. (1990). <a href="https://web.archive.org/web/20231208185422/https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf" target="_blank">Ordinal notations based on a weakly Mahlo Cardinal.</a> Archive for Mathematical Logic, 29(4), 249-263. Retrieved 2024-12-13. https://doi.org/10.1007/bf01651328</p>
+    </body>
+</html>

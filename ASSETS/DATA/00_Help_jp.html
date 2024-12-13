@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>このサイトについて</h1><hr>
+        <p>&emsp;&emsp;順序数の庭園とはさまざまな順序数システムで計算と探究を実行して（主に無限かつ非常に大きい）順序数の性質を示すことができるサイトである。このサイトには、カントール標準形、ヴェブレン関数、ブーフホルツの\( \psi \)関数、拡張ブーフホルツの\( \psi \)関数、ラティエンの小\( \psi \)関数、ラティエンの大\( \Psi \)関数の6つの順序数システムが含まれています。</p>
+        <p>&emsp;&emsp;タイトル画面の対応するボタンをクリックすると、これらの順序数システムのインターフェースに入ることができます。インターフェイスに入ると、「計算」、「探索」、「オプション」、「ヘルプ」の4つのタブが表示されます。順序数システムの詳細については、ヘルプタブをクリックしてください。</p>
+        <h2>計算インターフェース</h2><hr>
+        <p>&emsp;&emsp;ページ上部の計算タブをクリックすると、計算メニューに入ることができます。実際、これは順序数システムのインターフェイスに初めてアクセスしたときに表示される最初のメニューです。</p>
+        <p>&emsp;&emsp;「計算」メニューには、コマンドバー、コンソールウィンドウとプリセットウィンドウが表示されます。計算やその他の機能を実行するには、プログラマーの好みのようにコマンドを入力します。順序数を入力するには、順序数を「コンピュータコード」に変換する必要があります。変換のルールは順序数システムによって異なり、順序数システムのインターフェイスに初めてアクセスしたとき、またはコマンド バーに空の文字列を入力すると表示されます。</p>
+        <p>&emsp;&emsp;例えば、ブーフホルツの\( \psi \)関数の順序数システムでは、変換のルールはこのようになります：</p>
+        <p>&emsp;&emsp;空の文字列は\( 0 \)を表す</p>
+        <p>&emsp;&emsp;文字列「A」は\( \varepsilon_{\Omega_\omega+1} \)を表す</p>
+        <p>&emsp;&emsp;BCは\( b+c \)を表す</p>
+        <p>&emsp;&emsp;(B,C)は\( \psi_b(c) \)を表す</p>
+        <br>
+        <p>&emsp;&emsp;ここで、順序数\( \zeta_0=\psi_0(\Omega^2) \)をこの順序数システムのコンピュータコードに変換してみましょう：</p>
+        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{(,)}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;つまり、\( \psi_0(\Omega^2) \)のコンピュータコードは(,((,),((,),)))である。</p>
+        <p>&emsp;&emsp;入力する順序数のコンピュータコードは有効で、標準形である必要があることに注意してください。有効であるということは、コンピュータコード内に無効な文字や、一致していないまたは欠落した括弧がないことを意味します。標準形であることは複雑なことを意味し、対応する順序数システムのインターフェイスのヘルプメニューで定義されます。</p>
+        <p>&emsp;&emsp;また、文字列「A」は常に<b>順序数システムの限界</b>を表します。</p>
+        <p>&emsp;&emsp;コードを視覚化するためにコンピュータコードにスペースを入力することもできますが、識別エラーを回避するために、これを行うときはコードの周囲に二重引用符を追加する必要があります。</p>
+        <p>&emsp;&emsp;サポートされているコマンドとその形式および機能はこちらです：</p>
+        <h3>display</h3>
+        <p>&emsp;&emsp;<b>形式：</b>display ord</p>
+        <p>&emsp;&emsp;<b>説明：</b>コンピュータコード「ord」に書かれた順序数を表示します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：display (,((,),((,),)))</p>
+        <p>&emsp;&emsp;コンソール：\( \alpha=\psi_0(\Omega^2) \)</p>
+        <h3>cof</h3>
+        <p>&emsp;&emsp;<b>形式：</b>cof ord</p>
+        <p>&emsp;&emsp;<b>説明：</b>コンピュータコード「ord」に書かれた順序数の共終数を表示します。</p>
+        <p>&emsp;&emsp;「コピー」ボタンをクリックすると結果をコピーできます。（以下の例では該当しません）</p>
+        <p>&emsp;&emsp;「共終数」の定義についてはこの記事の後で説明します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：cof (,((,),((,),)))</p>
+        <p>&emsp;&emsp;コンソール：\( Cof(\alpha)=\omega \)<span class="copy2 button2 noclick">コピー</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：cof ((,)(,),)</p>
+        <p>&emsp;&emsp;コンソール：\( Cof(\alpha)=\Omega_2 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <h3>comp</h3>
+        <p>&emsp;&emsp;<b>形式：</b>comp ord1 ord2</p>
+        <p>&emsp;&emsp;<b>説明：</b>2つの順序数「ord1」と「ord2」を比較し、どちらが大きいかを判断します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：comp (,) (,(,))</p>
+        <p>&emsp;&emsp;コンソール：\( 1&lt;\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：comp (,) (,(,))</p>
+        <p>&emsp;&emsp;コンソール：\( \omega&gt;1 \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：comp (,) (,)</p>
+        <p>&emsp;&emsp;コンソール：\( 1=1 \)</p>
+        <h3>fs</h3>
+        <p>&emsp;&emsp;<b>形式：</b>fs ord [steps=3] ["strong"]</p>
+        <p>&emsp;&emsp;<b>説明：</b>順序数を展開し、対応する順序数システムで順序数「ord」の基本列の最初の「steps+1」の順序数を表示します。</p>
+        <p>&emsp;&emsp;「コピー」ボタンをクリックすると結果をコピーできます。（以下の例では該当しません）</p>
+        <p>&emsp;&emsp;属性「steps」が省略されている場合は、デフォルトで3に設定されます。</p>
+        <p>&emsp;&emsp;順序数の共終数は非可算である場合、上部に警告が表示されます。しかし、コマンドの最後に「strong」というテキストを追加すると、より小さい共終数は可算の順序数として展開されます。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（ヴェブレン関数）</p>
+        <p>&emsp;&emsp;入力：fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \alpha=\zeta_1 \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\zeta_0 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\varepsilon_{\zeta_0+1} \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\varepsilon_{\varepsilon_{\zeta_0+1}} \)<span class="copy2 button2 noclick">コピー</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fs ((,)(,),(,))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\Omega^22) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega^2+\Omega) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega)) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega*\psi_0(\Omega^2+\Omega))) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;注記：この場合、\( \alpha \)、\( \alpha[0] \)、\( \alpha[1] \)、\( \alpha[2] \)と\( \alpha[3] \)の結果はヴェブレン関数の順序数システムの\( \zeta_1 \)、\( 0 \)、\( \varepsilon_{\zeta_0+1} \)、\( \varepsilon_{\varepsilon_{\zeta_0+1}} \)と\( \varepsilon_{\varepsilon_{\varepsilon_{\zeta_0+1}}} \)に対応し、拡張ルールは順序数システムによって異なることを示しています。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fs (,(,)) 9</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \alpha=\omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[4]=4 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[5]=5 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[6]=6 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[7]=7 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[8]=8 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[9]=9 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例4：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fs ((,),)</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;警告：\( \Omega \)の共終数は非可算であります。</p>
+        <p>&emsp;&emsp;\( \alpha=\Omega \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=0 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=1 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=2 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=3 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例5：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fs ((,),) strong</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;<span class="error">数字無効。</span></p>
+        <p>&emsp;&emsp;<span class="error">使用できるの数字は自然数のみです。（0、1、2、3、……）</span></p>
+        <p>&emsp;&emsp;注記：これは、コマンドの最後にテキスト「strong」が追加された場合、属性「steps」を省略できないことを示しています。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例6：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fs ((,),) 3 strong</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \Omega \)を\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)として展開します。</p>
+        <p>&emsp;&emsp;\( \alpha=\psi_0(\varepsilon_{\Omega_\omega+1}) \)</p>
+        <p>&emsp;&emsp;\( \alpha[0]=1 \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega_\omega) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[2]=\psi_0({\Omega_\omega}^2) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <p>&emsp;&emsp;\( \alpha[3]=\psi_0({\Omega_\omega}^{\Omega_\omega}) \)<span class="copy2 button2 noclick">コピー</span></p>
+        <h3>fgh</h3>
+        <p>&emsp;&emsp;<b>形式：</b>fgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>説明：</b>順序数「ord」と数値「n」の急増加関数の最初の「steps」ステップを計算します。</p>
+        <p>&emsp;&emsp;このコマンドで指定する「ord」は可算でなければなりません。「可算」の定義は順序数システムによって異なり、対応する順序数システムのインターフェイスのヘルプメニューで定義されます。</p>
+        <p>&emsp;&emsp;また、一部の順序数システムでは、このコマンド専用の<b>可算順序数限界</b>が存在します。この順序数は標準形ではないため、他のコマンドでエラーが発生することに注意してください。</p>
+        <p>&emsp;&emsp;属性「steps」は小さく（100 未満または 10 未満）することをおすすめします。そうしないと、サイトが結果をレンダリングするのに時間がかかりすぎる可能性があります。</p>
+        <p>&emsp;&emsp;「急増加関数」の定義についてはこの記事の後で説明します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_3(3) \\ = & f_2^3(3) \\ = & f_2^2(f_1^3(3)) \\ = & f_2^2(f_1^2(f_0^3(3))) \\ = & f_2^2(f_1^2(f_0^2(4))) \\ = & f_2^2(f_1^2(f_0(5))) \\ = & f_2^2(f_1^2(6)) \\ = & f_2^2(f_1(f_0^6(6))) \\ = & f_2^2(f_1(f_0^5(7))) \\ = & f_2^2(f_1(f_0^4(8))) \\ = & f_2^2(f_1(f_0^3(9))) \\ = & \cdots \\ \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fgh ((,),) 3</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;<span class="error">順序数は非可算であります。</span></p>
+        <p>&emsp;&emsp;<span class="error">急増加関数は順序数が可算であるときのみ定義されます。</span></p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：fgh (,A) 3 2</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \begin{align} & f_{\psi_0({\varepsilon}_{\Omega_\omega+1})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_\omega})}(3) \\ = & f_{\psi_0({\Omega_\omega}^{\Omega_3})}(3) \\ = & \cdots \\ \end{align} \)</p>
+        <h3>sgh</h3>
+        <p>&emsp;&emsp;<b>形式：</b>sgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>説明：</b>順序数「ord」と数値「n」の緩増加関数の最初の「steps」ステップを計算します。</p>
+        <p>&emsp;&emsp;「緩増加関数」が計算されることを除いてfghと同じです。</p>
+        <p>&emsp;&emsp;「緩増加関数」の定義についてはこの記事の後で説明します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：sgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \begin{align} & g_3(3) \\ = & g_2(3)+1 \\ = & g_1(3)+2 \\ = & g_0(3)+3 \\ = & 3 \end{align} \)</p>
+        <h3>initial</h3>
+        <p>&emsp;&emsp;<b>形式：</b>initial ord</p>
+        <p>&emsp;&emsp;<b>説明：</b>探索メニューの初期順序数を順序数「ord」に設定します。</p>
+        <p>&emsp;&emsp;順序数システムのインターフェイスを終了した後、探索メニューの初期順序数はリセットされます。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：initial (,(,))</p>
+        <p>&emsp;&emsp;コンソール：探索メニューの初期順序数を\( \omega \)に設定しました。</p>
+        <h3>search</h3>
+        <p>&emsp;&emsp;<b>形式：</b>search ord</p>
+        <p>&emsp;&emsp;<b>説明：</b>探索メニューの現在の初期順序数の下にある順序数「ord」を検索します。</p>
+        <p>&emsp;&emsp;順序数「ord」が見つかった場合は、探索メニューで強調表示されます。</p>
+        <p>&emsp;&emsp;コンピュータコードで初期データがデフォルト値である「A」に設定されている場合、順序数「ord」は常に見つかるはずです。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：search (,(,))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;順序数\( \omega \)が見つかりました。</p>
+        <p>&emsp;&emsp;目標の順序数は探索メニューで確認できます。</p>
+        <h3>preset</h3>
+        <p>&emsp;&emsp;<b>形式：</b>preset "import"/"export"/"reset"</p>
+        <p>&emsp;&emsp;<b>説明：</b>プリセットデータを管理します。使用できるコマンドは以下の3つだけです：</p>
+        <br>
+        <p>&emsp;&emsp;<b>コマンド：</b>preset import</p>
+        <p>&emsp;&emsp;<b>説明：</b>事前にエクスポートしたプリセットファイルをインポートします。</p>
+        <br>
+        <p>&emsp;&emsp;<b>コマンド：</b>preset export</p>
+        <p>&emsp;&emsp;<b>説明：</b>プリセットを.jsonファイルとしてエクスポートします。</p>
+        <br>
+        <p>&emsp;&emsp;<b>コマンド：</b>preset reset</p>
+        <p>&emsp;&emsp;<b>説明：</b>プリセットをデフォルトにリセットします。</p>
+        <p>&emsp;&emsp;このコマンドを実行すると確認ウィンドウが表示されます。</p>
+        <p>&emsp;&emsp;現在のプリセットが重要な場合は、プリセットをリセットする前にプリセットをエクスポートすることをおすすめします。</p>
+        <h2>計算のプリセット</h2><hr>
+        <p>&emsp;&emsp;コンソールウィンドウの下部にあるプリセットを使用すると、コードを簡単にすることができます。</p>
+        <p>&emsp;&emsp;例えば、ブーフホルツの\( \psi \)関数の順序数システムでは、(,(,))を「w」と書きたいかもしれません、それは確かに\( \omega \)を表しているからです。このようなプリセットがあるとします。</p>
+        <p>&emsp;&emsp;名前：w</p>
+        <p>&emsp;&emsp;順序数：(,(,))</p>
+        <br>
+        <p>&emsp;&emsp;プリセットを呼び出すには、プリセット名の前後に角括弧を追加する必要があります。</p>
+        <p>&emsp;&emsp;<b>例1：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：display [w]</p>
+        <p>&emsp;&emsp;コンソール：\( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;これで、このコードは以下のコードと同等になります：</p>
+        <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
+        <p>&emsp;&emsp;入力：display (,(,))</p>
+        <p>&emsp;&emsp;コンソール：\( \alpha=\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;このサイトに初めてアクセスすると、デフォルトのプリセットが表示されます。新しいプリセットを追加するには、プリセットウィンドウの末尾にある空の「名前」入力ボックスにプリセットの名前を入力し、そのプリセットで表すコンピュータコードを「名前」入力ボックスの右側にある「順序数」入力ボックスに入力します。プリセットを削除するには、削除するプリセットの「順序数」入力ボックスをクリアし、そのプリセットの「名前」入力ボックスをクリアします。</p>
+        <p>&emsp;&emsp;プリセット名には、スペース、「"」、「[」と「]」の4つの文字を含めることはできません。また、他のプリセットの名前にすることもできません。さもないと、名前の入力が失敗します。</p>
+        <h2>順序数の探究</h2><hr>
+        <p>&emsp;&emsp;ページ上部の探索タブをクリックすると、探索メニューに入ることができます。</p>
+        <p>&emsp;&emsp;探索メニューでは、左側のボタンをクリックして順序数を展開し、自由に探索することができます。順序数がどのように展開されても、常に上から下に向かって増加します。順序数の共終数は非可算である場合、より小さい共終数は可算の順序数として展開されます。各ボタンの機能はこちらです：</p>
+        <p><span class="plus1 button2 noclick" style="font-size: 16px;">+</span></p>
+        <p>&emsp;&emsp;順序数を1回展開します。</p>
+        <p><span class="plus2 button2 noclick" style="font-size: 16px;">++</span></p>
+        <p>&emsp;&emsp;順序数を再帰的に展開します。</p>
+        <p><span class="plus3 button2 noclick" style="font-size: 16px;">!!!</span></p>
+        <p>&emsp;&emsp;<b>上にあるのすべての順序数</b>を再帰的に展開します。上にある順序数が多すぎると、サイトが結果をレンダリングするのに時間がかかりすぎる可能性があります。<b>注意してご使用ください。</b></p>
+        <p><span class="minus button2 noclick" style="font-size: 16px;">-</span></p>
+        <p>&emsp;&emsp;順序数を折りたたみます。</b></p>
+        <br>
+        <p>&emsp;&emsp;何らかの理由でボタンが無効になっている場合は、ボタンの色は灰色になります。</b></p>
+        <h2>オプション</h2><hr>
+        <p>&emsp;&emsp;ページ上部のオプションタブをクリックすると、オプションメニューに入ることができます。出現可能なオプションはこちらです：</p>
+        <h3>背景アニメーション</h3>
+        <p>&emsp;&emsp;<b>説明：</b>背景アニメーションを表示するかどうかを調整します。</p>
+        <p>&emsp;&emsp;オフ：<b>読みやすくするために</b>背景アニメーションは非表示になります。</p>
+        <p>&emsp;&emsp;オン：<b>インターフェースをより美観になるために</b>背景アニメーションが表示されます。</p>
+        <h3>表示モード</h3>
+        <p>&emsp;&emsp;<b>説明：</b>順序数が表示される形式を調整します。</p>
+        <p>&emsp;&emsp;原始：順序数はコンピューターコードで表示されます。<b>「display」コマンドは無意味になります。</b></p>
+        <p>&emsp;&emsp;HTML：順序数は通常のテキストで表示されます。<b>シンプル</b>だが<b>パフォーマンスには影響しない</b>。</p>
+        <p>&emsp;&emsp;MathJax：順序数はMathJaxで表示されます。<b>美観</b>だが<b>パフォーマンスに影響を与える</b>。</p>
+        <h3>インデントモード</h3>
+        <p>&emsp;&emsp;<b>説明：</b>探索メニューの順序数のインデントを調整します。</p>
+        <p>&emsp;&emsp;なし：順序数はインデントされません。</p>
+        <p>&emsp;&emsp;展開的：同じ回数展開された順序数は同じインデントになります。</p>
+        <p>&emsp;&emsp;再帰的：再帰的に展開される順序数は同じインデントになります。</p>
+        <h3>簡約モード</h3>
+        <p>&emsp;&emsp;<b>説明：</b>非コンピュータコードで書かれた順序数の簡略化の度合いを調整します。</p>
+        <p>&emsp;&emsp;なし：順序数は簡略化されません。</p>
+        <p>&emsp;&emsp;\( \alpha^\beta \)：順序数の基数と指数は簡略化されます。（例：\( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \)、ここで\( \epsilon \)は任意のイプシロン数（\( \omega^\epsilon=\epsilon \)）である）</p>
+        <p>&emsp;&emsp;\( \alpha*\beta \)：上記に加えて、繰り返しの乗算は累乗として簡略化されます。（例：\( \alpha\alpha\alpha=\alpha^3 \)）</p>
+        <p>&emsp;&emsp;\( \alpha+\beta \)：上記に加えて、繰り返しの加算は乗算として簡略化されます。（例：\( \alpha+\alpha+\alpha=\alpha3 \)）</p>
+        <h3>関数の特定</h3>
+        <p>&emsp;&emsp;<b>説明：</b>名前の衝突を避けるために、順序数崩壊関数が別の方法で記述されているかどうかを調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>拡張ブーフホルツの\( \psi \)関数、ラティエンの小\( \psi \)関数</p>
+        <p>&emsp;&emsp;（左）：順序数崩壊関数は元の論文と同じように記述されます。</p>
+        <p>&emsp;&emsp;（右）：順序数崩壊関数は別の形式で記述されます。</p>
+        <h3>\( \varphi_\alpha(\beta) \)の書き換え</h3>
+        <p>&emsp;&emsp;<b>説明：</b>関数\( \varphi_\alpha(\beta) \)の記述方法を調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>ヴェブレン関数、ラティエンの小\( \psi \)関数、ラティエンの大\( \Psi \)関数</p>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)：\( \varphi_\alpha(\beta) \)は書き換えられません。</p>
+        <p>&emsp;&emsp;\( 1 \)：\( \varphi_0(0) \)は\( 1 \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \omega^\beta \)：任意の\( \beta \)に対して、\( \varphi_0(\beta) \)は\( \omega^\beta \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \varepsilon_\beta \)：上記に加えて、任意の\( \beta \)に対して、\( \varphi_1(\beta) \)は\( \varepsilon_\beta \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \zeta_\beta \)：上記に加えて、任意の\( \beta \)に対して、\( \varphi_2(\beta) \)は\( \zeta_\beta \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \eta_\beta \)：上記に加えて、任意の\( \beta \)に対して、\( \varphi_3(\beta) \)は\( \eta_\beta \)に書き換えられます。</p>
+        <h3>\( \Phi_\alpha(\beta) \)の書き換え</h3>
+        <p>&emsp;&emsp;<b>説明：</b>関数\( \Phi_\alpha(\beta) \)の記述方法を調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>ラティエンの小\( \psi \)関数</p>
+        <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \)：\( \Phi_\alpha(\beta) \)は書き換えられません。</p>
+        <p>&emsp;&emsp;\( E_\beta \)：任意の\( \beta \)に対して、\( \Phi_1(\beta) \)は\( E_\beta \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( Z_\beta \)：上記に加えて、任意の\( \beta \)に対して、\( \Phi_2(\beta) \)は\( Z_\beta \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( H_\beta \)：上記に加えて、任意の\( \beta \)に対して、\( \Phi_3(\beta) \)は\( H_\beta \)に書き換えられます。</p>
+        <h3>\( \psi_\alpha(\beta) \)の書き換え</h3>
+        <p>&emsp;&emsp;<b>説明：</b>関数\( \psi_\alpha(\beta) \)（ブーフホルツの\( \psi \)関数または拡張ブーフホルツの\( \psi \)関数）の記述方法を調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>ブーフホルツの\( \psi \)関数、拡張ブーフホルツの\( \psi \)関数</p>
+        <p>&emsp;&emsp;\( \psi_\alpha(\beta) \)：\( \psi_\alpha(\beta) \)は書き換えられません。</p>
+        <p>&emsp;&emsp;\( 1 \)：\( \psi_0(0) \)は\( 1 \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \)：\( \beta&lt;\Omega_{\alpha+1} \)ならば、\( \psi_\alpha(\beta) \)は\( \omega^{\Omega_\alpha+\beta} \)に書き換えられます。\( \alpha=0 \)ならば、代わりに\( \omega^\beta \)に書き換えられます。</p>
+        <h3>\( \chi_\alpha(\beta) \)の書き換え</h3>
+        <p>&emsp;&emsp;<b>説明：</b>関数\( \chi_\alpha(\beta) \)の記述方法を調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>ラティエンの小\( \psi \)関数</p>
+        <p>&emsp;&emsp;\( \chi_\alpha(\beta) \)：\( \chi_\alpha(\beta) \)は書き換えられません。</p>
+        <p>&emsp;&emsp;\( \Omega_{1+\beta} \)：任意の\( \beta \)に対して、\( \chi_0(\beta) \)は\( \Omega_{1+\beta} \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( I_{1+\beta} \)：上記に加えて、任意の\( \beta \)に対して、\( \chi_1(\beta) \)は\( I_{1+\beta} \)に書き換えられます。</p>
+        <h3>\( \Xi(\alpha) \)の書き換え</h3>
+        <p>&emsp;&emsp;<b>説明：</b>関数\( \Xi(\alpha) \)の記述方法を調整します。</p>
+        <p>&emsp;&emsp;<b>限定：</b>ラティエンの大\( \Psi \)関数</p>
+        <p>&emsp;&emsp;\( \Xi(\alpha) \)：\( \Xi(\alpha) \)は書き換えられません。</p>
+        <p>&emsp;&emsp;\( \Xi_\alpha \)：\( K \)が\( \alpha \)に存在しない場合、\( \Xi(\alpha) \)は\( \Xi_\alpha \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( I \)：上記に加えて、\( \Xi \)は\( I \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( M \)：上記に加えて、\( \Xi_2 \)は\( M \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( N \)：上記に加えて、\( \Xi_3 \)は\( N \)に書き換えられます。</p>
+        <h1>順序数について</h1><hr>
+        <p>&emsp;&emsp;0から始めて、1、2、3と数えていきます。自然数は無限にあるため、このプロセスは決して終わりません。無限の概念を受け入れると、数\( \omega \)がすべての自然数より大きい最小の順序数として受け入れられます。これは、Enterキーを押して2行目に移動し、この行の最初の文字を入力するようなものです。1行目に何文字入力しても、2行目の文字は1行目のすべての文字の「後」にあるためです。</p>
+        <p>&emsp;&emsp;「2行目に文字を入力」し続けると、\( \omega+1 \)、\( \omega+2 \)、\( \omega+3 \)などの大きな順序数を作成できます。次に、「Enterキーをもう一度押す」と、\( \omega+\omega \)が得られ、\( \omega2 \)であります。このプロセスを繰り返して、\( \omega3 \)、\( \omega4 \)などを得て、最後に、「ページ区切りを挿入して次のページに文字を入力」すると、\( \omega*\omega \)が得られ、\( \omega^2 \)であります。</p>
+        <p>&emsp;&emsp;次に「さらに改ページを挿入」して\( \omega^22 \)、\( \omega^23 \)などを得て、最後に「新しいファイルを作成し、次のファイルに文字を入力」して\( \omega^3 \)を得ます。無限に繰り返すことで\( \omega^3 \)から\( \omega^4 \)を得て、また\( \omega^4 \)から\( \omega^5 \)を得て、最後に\( \omega^\omega \)に到達できます。</p>
+        <p>&emsp;&emsp;この後、さらに「2階」に進み、\( \omega^{\omega+1} \)、\( \omega^{\omega+2} \)、\( \omega^{\omega2} \)、\( \omega^{\omega^2} \)を作成し、最終的に「3階に到達」して\( \omega^{\omega^\omega} \)を得ます。さらに上へ登り、\( \omega^{\omega^{\omega^\omega}} \)、\( \omega^{\omega^{\omega^{\omega^\omega}}} \)などを得て、最終的に\( \omega \)の無限乗タワーを得ます。これは\( \varepsilon_0 \)と表されます。</p>
+        <p>&emsp;&emsp;これが、ますます大きな順序数を作り出す、驚くべき終わりのないプロセスである。それが順序数が興味深い理由の一つです。より大きな順序数を追い求める旅を続けるには、順序数についてさらに知る必要があります。</p>
+        <h2>順序数の定義</h2><hr>
+        <p>&emsp;&emsp;順序数は自然数の拡張として考えることができます。順序数は集合論において重要な役割を果たすため、定義のほとんどは集合論に関連しています。</p>
+        <p>&emsp;&emsp;集合論では、順序数はそれ自身より小さい順序数をすべて含む集合として定義されます。空集合はゼロを表し、任意の順序数\( \alpha \)に対して、\( \alpha\cup\{\alpha\} \)は\( \alpha+1 \)（或いは\( \alpha \)の後者、\( Suc(\alpha) \)）を表します。そして：</p>
+        <p>&emsp;&emsp;\( 0=\{\} \)</p>
+        <p>&emsp;&emsp;\( 1=\{\{\}\}=\{0\} \)</p>
+        <p>&emsp;&emsp;\( 2=\{\{\},\{\{\}\}\}=\{0,1\} \)</p>
+        <p>&emsp;&emsp;\( 3=\{\{\},\{\{\}\},\{\{\},\{\{\}\}\}\}=\{0,1,2\} \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( \omega=\{0,1,2,3,\cdots\}=\mathbb{N} \)</p>
+        <br>
+        <p>&emsp;&emsp;これらは<b>フォン・ノイマン順序数</b>として知られています。その結果、任意の2つの順序数\( \alpha \)と\( \beta \)に対して、\( \alpha&lt;\beta \)と\( \alpha\in\beta \)とは同値である。</p>
+        <p>&emsp;&emsp;すべての非0の順序数には\( 0 \)が最小要素として含まれますが、すべての順序数に最大要素が含まれるわけではありません。そのため、順序数を後続順序数と極限順序数の2つのカテゴリに分けることができます。後続順序数は最大要素を含む非0の順序数である。なぜなら、すべての後続順序数\( \alpha+1 \)には定義により最大要素\( \alpha \)が含まれるからです。一方、極限順序数は最大要素を含まない非0の順序数である。故に、\( 0 \)は後続順序数でも極限順序数でもありません。</p>
+        <p>&emsp;&emsp;順序数に対しても算術演算を行うことができます。順序数における加算、乗算、累乗はこのように定義されます：</p>
+        <p>&emsp;&emsp;\( \alpha+0:=\alpha \)</p>
+        <p>&emsp;&emsp;\( \alpha+Suc(\beta):=Suc(\alpha+\beta) \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha+\beta:=\bigcup_{\beta'&lt;\beta}\alpha+\beta' \end{align} \)（\( \beta \)は極限順序数である）</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha*0:=0 \)</p>
+        <p>&emsp;&emsp;\( \alpha*Suc(\beta):=\alpha*\beta+\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha*\beta:=\bigcup_{\beta'&lt;\beta}\alpha*\beta' \end{align} \)（\( \beta \)は極限順序数である）</p>
+        <br>
+        <p>&emsp;&emsp;\( \alpha^0:=1 \)</p>
+        <p>&emsp;&emsp;\( \alpha^{Suc(\beta)}:=\alpha^\beta*\alpha \)</p>
+        <p>&emsp;&emsp;\( \begin{align} \alpha^\beta:=\bigcup_{\beta'&lt;\beta}\alpha^{\beta'} \end{align} \)（\( \beta \)は極限順序数である）</p>
+        <h2>基数</h2><hr>
+        <p>&emsp;&emsp;順序数では加算と乗算は可換ではないことがわかります：</p>
+        <p>&emsp;&emsp;\( \omega+1\neq 1+\omega \)</p>
+        <p>&emsp;&emsp;\( \omega*2\neq 2*\omega \)</p>
+        <br>
+        <p>&emsp;&emsp;これは、順序数が量ではなく順序に関するものであるためです。実際に\( \varepsilon_0 \)までのラベルが付けられた文字が無限にあると仮定すると、文字を並べて1行に圧縮することができます。故に、\( \omega \)と\( \varepsilon_0 \)は<b>濃度</b>が等しいと言います。</p>
+        <p>&emsp;&emsp;基数は、集合（そして順序数）の実際のサイズを測定するために使用されます。2つの集合の間に1対1の対応（すなわち双射）が存在する場合、それらの集合は濃度が等しいと言われます。例えば、\( \omega \)と\( \omega2 \)は濃度が等しい。なぜなら、それらの間に以下の1対1の対応が存在するからです：</p>
+        <p>&emsp;&emsp;\( \omega \) to \( \omega2 \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
+        <p>&emsp;&emsp;\( 2\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 3\rightarrow\omega+1 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( 2n\rightarrow n \)</p>
+        <p>&emsp;&emsp;\( 2n+1\rightarrow\omega+n \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \omega2 \) to \( \omega \):</p>
+        <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
+        <p>&emsp;&emsp;\( \omega\rightarrow1 \)</p>
+        <p>&emsp;&emsp;\( 1\rightarrow2 \)</p>
+        <p>&emsp;&emsp;\( \omega+1\rightarrow3 \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
+        <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
+        <br>
+        <p>&emsp;&emsp;すべての自然数は基数である。これらを\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)などを表し、\( \omega \)の濃度（\( \#\omega \)）を\( \aleph_0 \)と定義します。実数の濃度は自然数よりも大きいため、\( \aleph_0 \)より大きい無限大が存在することはわかっています。実数の濃度の正確さはわかりません (これを\( \beth_1 \)と表記します)。連続体仮説はZFC自体では証明も反証もできないためです。</p>
+        <p>&emsp;&emsp;ZFC (ツェルメロ＝フレンケル集合論) を扱う場合、各無限基数に順序数を割り当てることができます。これは<b>フォン・ノイマンの割り当て</b>と呼ばれます。これで、集合の濃度を集合と1対1の対応が存在する最小の順序数として定義します。その結果、<b>基数は順序数であり</b>、\( \aleph_0=\omega \)、\( \aleph_1=\Omega \)、\( \aleph_2=\Omega_2 \)などになります。</p>
+        <p>&emsp;&emsp;基数の算術もあります。しかし、これらの算術は順序数の算術とは異なるため、慎重に区別する必要があります：（ここで\( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \)）</p>
+        <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
+        <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
+        <br>
+        <p>&emsp;&emsp;順序数が\( \Omega \)より小さい場合、その順序数は<b>可算</b>であると言います。</p>
+        <h2>急/緩増加関数</h2><hr>
+        <p>&emsp;&emsp;順序数が興味深いもう一つの理由は、順序数を使用して極めて大きな数を作成できるためです。以下の定義から始めましょう：</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{m+1}(n):=f_m^n(n):=\underbrace{f_m(f_m(\cdots f_m(}_nn)\cdots)) \)</p>
+        <br>
+        <p>&emsp;&emsp;そして：</p>
+        <p>&emsp;&emsp;\( f_0(n)=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_1(n)=2n \)</p>
+        <p>&emsp;&emsp;\( f_2(n)=2^nn&gt;2^n \)</p>
+        <p>&emsp;&emsp;\( f_3(n)&gt;2\uparrow\uparrow n:=\underbrace{2\uparrow2\uparrow\cdots\uparrow2}_n:=\underbrace{2^{2^{{\cdot}^{{\cdot}^{{\cdot}^{2}}}}}}_n \)</p>
+        <p>&emsp;&emsp;\( f_4(n)&gt;2\uparrow^3 n:=2\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow2\uparrow\uparrow\cdots\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( f_5(n)&gt;2\uparrow^4 n:=2\uparrow\uparrow\uparrow\uparrow n:=\underbrace{2\uparrow\uparrow\uparrow2\uparrow\uparrow\uparrow\cdots\uparrow\uparrow\uparrow2}_n \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;\( f_0 \)、\( f_1 \)、\( f_2 \)はかなり普通だと言います。ですが、\( f_3 \)から始まると、狂気が始まります。なぜなら、ハイパー演算子を使用しているため、科学的記数法でも表現できないほどの極めて大きな数を簡単作成できるからです。</p>
+        <p>&emsp;&emsp;これらの関数は非常に急速に増加しています。しかし、それらすべてよりも速く増加する関数を作成する方法があります。ここで順序数の出番です。最小の無限順序数\( \omega \)を使ってこのように定義します：</p>
+        <p>&emsp;&emsp;\( f_\omega(n)=f_n(n) \)</p>
+        <br>
+        <p>&emsp;&emsp;すべての自然数\( m \)に対して、すべての\( n\ge n_0 \)に対して\( f_\omega(n)&gt;f_m(n) \)となる自然数\( n_0 \)が存在することを確認できます。つまり、\( f_\omega(n) \)は上記のすべての関数よりも速く増加します（或いは支配します）。これは、\( \omega \)がすべての自然数より大きいという事実に似ています。</p>
+        <p>&emsp;&emsp;順序数を上に数えることができるので、このようにより速く増加する関数を定義できます：</p>
+        <p>&emsp;&emsp;\( f_{\omega+1}(n):=f_\omega^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega+2}(n):=f_{\omega+1}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2}(n):=f_{\omega+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega2+1}(n):=f_{\omega2}^n(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega3}(n):=f_{\omega2+n}(n) \)</p>
+        <p>&emsp;&emsp;\( f_{\omega^2}(n):=f_{\omega n}(n) \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;一般に、定義をこのようにすべての可算極限順序数に拡張できます：</p>
+        <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( f_{\alpha+1}(n):=f_\alpha^n(n):=\underbrace{f_\alpha(f_\alpha(\cdots f_\alpha(}_nn)\cdots)) \)</p>
+        <p>&emsp;&emsp;\( f_\alpha(n):=f_{\alpha[n]}(n) \)（\( \alpha \)は極限順序数である）</p>
+        <br>
+        <p>&emsp;&emsp;これは<b>急増加関数</b>と呼ばれます。順序数を上に数えていくと、より速く増加する関数も定義できます。これは極めて大きな数字を作成する謀となっており、この方法の限界は現時点では不明です。</p>
+        <p>&emsp;&emsp;さらに、<b>緩増加関数</b>もあって、このように定義されます：</p>
+        <p>&emsp;&emsp;\( g_0(n):=0 \)</p>
+        <p>&emsp;&emsp;\( g_{\alpha+1}(n):=g_\alpha(n)+1 \)</p>
+        <p>&emsp;&emsp;\( g_\alpha(n):=g_{\alpha[n]}(n) \)（\( \alpha \)は極限順序数である）</p>
+        <br>
+        <p>&emsp;&emsp;この関数は急増加関数よりもはるかに遅く増加することを確認できます。しかし、それでも順序数が十分大きければ、急増加関数に追いつく（\( f_\alpha(n)&lt;g_\alpha(n+1) \)）ことができます。</p>
+        <h2>基本列</h2><hr>
+        <p>&emsp;&emsp;上記の式\( \alpha[n] \)は、順序数\( \alpha \)の<b>基本列</b>の\( n+1 \)番目の元を表します。</p>
+        <p>&emsp;&emsp;極限順序数\( \alpha \)と無限列\( \alpha[n] \)に対して、以下の場合、\( \alpha[n] \)は\( \alpha \)の基本列であると言います：</p>
+        <p>&emsp;&emsp;1. 任意の\( n\in\mathbb{N} \)に対して、\( \alpha[n]&lt;\alpha \)</p>
+        <p>&emsp;&emsp;2. \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;さらに、以下の場合、\( \alpha[n] \)は\( \alpha \)の<b>理想的な</b>基本列であると言います：</p>
+        <p>&emsp;&emsp;任意の\( m,n\in\mathbb{N} \)に対して、\( m&lt;n \)ならば、\( \alpha[m]&lt;\alpha[n] \)（列は狭義増加する）</p>
+        <br>
+        <p>&emsp;&emsp;非極限順序数については、以下の定義もあります：</p>
+        <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
+        <p>&emsp;&emsp;\( 0[n]=0 \)</p>
+        <br>
+        <p>&emsp;&emsp;上記の例では、\( \omega[n]=n \)という列を選びましたが、実際には上記の条件を満たす基本列は複数あります。たとえば、\( \omega[n]=2^n \)と定義すると、急増加関数と緩増加関数の両方の増加がはるかに速くなります。また、\( \omega[n]=\lfloor\log_2(n+1)\rfloor \)（理想的な基本列ではありません）と定義すると、急増加関数と緩増加関数の両方の増加がはるかに遅くなります。</p>
+        <p>&emsp;&emsp;その結果、<b>順序数だけでは極めて大きな数を作るのに十分ではありません</b>。急増加関数または緩増加関数を使用する場合、基本列を指定する必要があります。基本列を指定しないと、実際の増加率を決定することはできず、緩増加関数がいつ急増加関数に追いつくかという問題は数学的に意味をなさなくなります。</p>
+        <p>&emsp;&emsp;\( \varepsilon_0 \)のような比較的小さな順序数の場合、基本列を定義するのは簡単です。しかし、順序数が上がるにつれて、基本列の定義は難しくなり、数か月の作業が必要になる場合もあります。</p>
+        <p>&emsp;&emsp;このサイトが使用する6つの順序数システムは、異なる基本列システムを使用します。既に上で示したとおり、順序数の基本列は順序数システムによって異なります。</p>
+        <h2>順序数崩壊関数</h2><hr>
+        <p>&emsp;&emsp;\( \varepsilon_0 \)から続いて、\( \varepsilon_1 \)、\( \varepsilon_2 \)、\( \varepsilon_\omega \)、\( \zeta_0 \)、\( \eta_0 \)、\( \varphi_4(0) \)、\( \varphi_\omega(0) \)、最後に\( \Gamma_0 \)、フェファーマン・シュッテの順序数をえます。この時点で、より大きな順序数を定義する簡単な方法はもうありません。</p>
+        <p>&emsp;&emsp;これまで急増加関数または緩増加関数を使用するときに行っていたことは、無限であり、したがってどんなに大きくてもどの自然数よりも大きい順序数を使用して大きな数を定義することでした。そこで今回は、非可算基数を使用して可算順序数を定義します。</p>
+        <p>&emsp;&emsp;まず集合\( C_0(0,0)=\{0\} \)を定義し、質問をします：その集合の元を加算したときに得られない最小の順序数は何ですか。答えは\( 1 \)です。0を何回足しても、結果は0になるからです。故に、\( \psi_0(0)=1 \)と書きます。</p>
+        <p>&emsp;&emsp;そして：\( 0 \)または\( \psi_0(0)=1 \)を加算したときに得られない最小の順序数は何ですか。答えは\( \omega \)であり、\( \psi_0(1)=\omega \)と書きます。これを繰り返すと、\( \psi_0(2)=\omega^2 \)、\( \psi_0(3)=\omega^3 \)、\( \psi_0(\omega)=\omega^\omega \)となり、\( \psi_0(\varepsilon_0)=\varepsilon_0 \)となります。しかし、\( \psi_0(\varepsilon_0+1)=\varepsilon_0 \)となります。これは、加算と\( \psi_0(\alpha) \)を使用して順序数を作成できる必要があるという、言及されていないルールがあるためです。</p>
+        <p>&emsp;&emsp;今こそ非可算基数を使う時です。\( \psi_0(\Omega)=\varepsilon_0 \)と定義します。そして今回は、\( \psi_1(0)=\Omega \)を使って\( \psi_0(\Omega)=\varepsilon_0 \)を作成できるため、\( \psi_0(\Omega+1)=\varepsilon_0\omega \)となります。いずれまた別のボトルネックにぶつかることになる：\( \psi_0(\Omega+\varepsilon_1)=\varepsilon_1 \)、しかし、必要なのはもう一つの\( \Omega \)を使って\( \psi_0(\Omega2)=\varepsilon_1 \)を得ることだけです。これを繰り返して、\( \psi_0(\Omega3)=\varepsilon_2 \)、\( \psi_0(\Omega\omega)=\varepsilon_\omega \)、\( \psi_0(\Omega^2)=\zeta_0 \)、\( \psi_0(\Omega^3)=\eta_0 \)、\( \psi_0(\Omega^\omega)=\varphi_\omega(0) \)、最後に\( \psi_0(\Omega^\Omega)=\Gamma_0 \)を得ることができます。そして、この時点で、より大きな順序数を簡単に作成できます。</p>
+        <p>&emsp;&emsp;これが、<b>順序数崩壊関数</b>の例のひとつである。主なアイデアは非可算基数を使用して大きくて複雑な可算順序数を作成することである。この例に使った順序数崩壊関数はブーフホルツの\( \psi \)関数とよばれ、最も理解しやすい順序数崩壊関数である。完全な定義は以下のとおりです。順序数はそれ自身より小さい順序数をすべて含む集合として定義されることを覚えてください：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'&lt;\beta\land\beta'\in C_n(\alpha,\beta)\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;ウィルフリード・ブーフホルツのような数学者がこのような関数を定義した理由は、いくつかの数学的な公理系の強さを研究するためでした。すべての数学公理系には、その強さを表す<b>証明論的順序数</b>と呼ばれる順序数が割り当てられます。順序数が大きいほど、数学的な公理系は強くなります。よく知られているペアノ算術の証明論的順序数は\( \varepsilon_0 \)であり、この場合は小さいと見なすことができます。</p>
+        <p>&emsp;&emsp;ブーフホルツの\( \psi \)関数が作成できる可算順序数は非常に大きいです。しかし、まだ限りがあります。より大きな順序数を得るには、より強力な順序数崩壊関数は必要です。しかし、理解するのはかなり難しいです。故に、このサイトの目的は、これらの強力な順序数崩壊関数を理解しやすくすることです。</p>
+        <h2>共終数</h2><hr>
+        <p>&emsp;&emsp;今では、非可算基数を使用して可算順序数を定義していて、時には非可算基数の基本列を検討する必要があります。上記の定義では、すべての基本列の長さが\( \omega \)であると実際に想定しました。しかし、ほとんどの非可算基数では長さ\( \omega \)の基本列を作成することはできません。これには共終数という概念が関係します。</p>
+        <p>&emsp;&emsp;順序数\( \alpha \)の共終数（\( Cof(\alpha) \)）を\( \alpha \)のひとつの\( \alpha \)部分集合のすべての元より大きいにするその部分集合の最小の濃度と定義します。その部分集合を共終部分集合と呼ばれます。</p>
+        <p>&emsp;&emsp;例えば、\( Cof(\Omega_\omega)=\omega \)、なぜなら濃度\( \omega \)の共終部分集合\( \{\Omega_{1+\alpha}|\alpha\in\omega\} \)の一つを見つけることができるからです。</p>
+        <p>&emsp;&emsp;また、\( 0 \)の共終数は\( 0 \)である、なぜなら0はどの順序数よりも大きくないからです。すべての後続順序数の共終数は\( 1 \)である、なぜならすべての後続順序数に\( \alpha+1 \)対して濃度\( 1 \)の共終部分集合\( \{\alpha\} \)が存在するからです。すべての極限順序数の共終数は少なくとも\( \omega \)である。</p>
+        <p>&emsp;&emsp;共終数の概念により、基本列の2番目の条件を\( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)から\( \begin{align} \bigcup_{n\in Cof(\alpha)}\alpha[n]=\alpha \end{align} \)に変更できる。</p>
+        <p>&emsp;&emsp;また、基数\( \kappa \)に対して、\( Cof(\kappa)=\kappa \)ならば、<b>正則基数</b>であると言います。でなければ、<b>特異基数</b>であると言います。</p>
+        <p>&emsp;&emsp;例えば、\( \Omega \)は\( Cof(\Omega)=\Omega \)であるから正則基数である。\( \Omega_\omega \)は\( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \)であるから特異基数である。</p>
+        <h2>順序数表記</h2><hr>
+        <p>&emsp;&emsp;上で述べた関数はすべて集合の関数であるため、ほとんどの集合は無限であり、コンピューターはこのような無限の数の要素を処理できないため、数学的には計算不能である。ただし、これらを有限の文字列に変換して、コンピューターで処理できるようにすることはできます。</p>
+        <p>&emsp;&emsp;順序数表記とは順序数を有限の記号の有限の列に変換する方法である。これは、自然数を0、1、2、3、4、5、6、7、8と9の有限のシーケンスに変換する方法であるため、実際には自然数（またはそれ以上）の10進数（または2進数などの他の基数）に似ています。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数のような複雑な順序数崩壊関数を扱う場合、非常に複雑なため、標準形、比較規則などの多くの概念をプログラミング言語のコードとして定義する必要があります。このようになります：</p>
+        <p>&emsp;&emsp;\( (a\in S_0, b\in S_1)\mapsto f(a,b)\in S_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( c_0 \)ならば、\( d_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( c_1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( c_2 \)ならば、\( d_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( c_3 \)ならば、\( d_2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( c_4 \)ならば、\( d_3 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( d_4 \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;ここで、\( a \)、\( b \)は変数、\( S_0 \)は変数\( a \)の定義域、\( S_1 \)は変数\( b \)の定義域、\( S_2 \)は結果\( f(a,b) \)の値域である。</p>
+        <p>&emsp;&emsp;\( c_0 \)、\( c_1 \)、\( c_2 \)、\( c_3 \)と\( c_4 \)はすべて条件である。条件が満たされると、値\( \mathbb{T} \)（真）が割り当てられます。そうでない場合は、値\( \mathbb{F} \)（偽）が割り当てられます。条件の関数も存在することに注意してください。これらの関数の範囲はすべて\( \{\mathbb{T},\mathbb{F}\} \)である。条件は、論理接続詞で接続されることもあります。この場合、\( \neg \)は「NOT」、\( \land \)は「AND」、\( \vee \)は「OR」を表します。</p>
+        <p>&emsp;&emsp;コードの実行はこのようになります。行01.から開始します。\( c_0 \)は\( \mathbb{T} \)である場合、関数\( f(a,b) \)は値\( d_0 \)を返します。つまり、この場合は\( f(a,b)=d_0 \)となります。\( c_0 \)は\( \mathbb{F} \)である場合、行02.に進みます。\( c_1 \)は\( \mathbb{T} \)である場合、サブ行02.01.と02.02.を実行し、\( f(a,b) \)の値を決定します。\( c_1 \)は\( \mathbb{F} \)である場合、直接行03.に進みます。以下同様に続きます。上記のすべての「ならば」ですべての状況をカバーできない場合は、「上記以外の場合」という語句が使用されます。</p>
+        <h2>注目すべき順序数</h2><hr>
+        <h3>\( \varepsilon_0 \)</h3>
+        <p>&emsp;&emsp;\( \alpha=\omega^\alpha \)となる最初の順序数である。</p>
+        <p>&emsp;&emsp;ペアノ算術（\( PA \)）の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;ヴェブレン関数の\( \varphi_1(0) \)と同等である。</p>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega) \)と同等である。</p>
+        <h3>\( \Gamma_0 \)、フェファーマン・シュッテの順序数</h3>
+        <p>&emsp;&emsp;\( \alpha=\varphi_\alpha(0) \)となる最初の順序数である。</p>
+        <p>&emsp;&emsp;算術超限再帰（\( ATR_0 \)）の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega^\Omega) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(0) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(0) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^2}) \)、アッカーマン順序数（AO）</h3>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^2}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^3) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\omega}) \)、小ヴェブレン順序数（SVO）</h3>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^\omega}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^\omega) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega^{\Omega^\Omega}) \)、大ヴェブレン順序数（SVO）</h3>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^\Omega) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega_2) \)、バッハマン・ハワード順序数（BHO）</h3>
+        <p>&emsp;&emsp;無限公理を含むクリプキ＝プラテックの集合論（\( KP\omega \)）の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\varepsilon_{\Omega+1}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega_\omega) \)、小ブーフホルツ順序数（SBO）</h3>
+        <p>&emsp;&emsp;ブーフホルツ順序数（BO）とも呼ばれます。</p>
+        <p>&emsp;&emsp;\( \Pi_1^1-CA \)の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega_\omega) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega_\omega) \)と同等である。</p>
+        <h3>\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)、竹内・フェファーマン・ブーフホルツ順序数（TFBO）</h3>
+        <p>&emsp;&emsp;\( \Pi_1^1-CA+BI \)の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;拡張ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega_{\omega+1}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)と同等である。</p>
+        <h3>\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)、大ブーフホルツ順序数（LBO）</h3>
+        <p>&emsp;&emsp;拡張ブーフホルツ順序数（EBO）とも呼ばれます。</p>
+        <p>&emsp;&emsp;\( \Pi_1^1-TR_0 \)の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Phi_1(0)) \)と同等である。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)と同等である。</p>
+        <h3>\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)、小ラティエン順序数（SRO）</h3>
+        <p>&emsp;&emsp;\( KPM \)の証明論的順序数のである。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)と同等である。</p>
+        <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \)、大ラティエン順序数（LRO）</h3>
+        <p>&emsp;&emsp;\( KP+\Pi_3-reflection \)の証明論的順序数の上限である。</p>
+    </body>
+</html>
