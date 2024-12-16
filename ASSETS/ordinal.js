@@ -1725,7 +1725,14 @@ const RathjenK = {
         if (a[1] === "v"){
             if (mode === 0) return this.tail(a2[1 - this.lt(this.cof(a2[1]), "(v,(v,))")], b, mode);
             if (this.lt(this.cof(a2[1]), "(v,(v,))")){
-                return `(v${this.tail(a2[0], b, mode)},${a2[1]})`;
+                var a3 = this.tail(a2[0], b, mode);
+                if (!a2[1]) return `(v${a3},${a2[1]})`;
+                if (!this.single(this.fs(a2[1]))) return `(v${a3},${a2[1]})`;
+                if (this.fs(a2[1])[1] === "v"){
+                    var a4 = this.vsp(this.fs(a2[1]));
+                    return `(v${a3},${a3 === a4[0] ? a4[1] + "(v,)" : a2[1]})`;
+                }
+                return `(v${a3},${(b === this.fs(a2[1]) && b === a3) ? "(v,)" : a2[1]})`;
             }
             return `(v${a2[0]},${this.tail(a2[1], b, mode)})`;
         }
