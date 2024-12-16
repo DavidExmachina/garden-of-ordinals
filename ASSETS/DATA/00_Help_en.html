@@ -32,7 +32,8 @@
         <h3>cof</h3>
         <p>&emsp;&emsp;<b>Format:</b> cof ord</p>
         <p>&emsp;&emsp;<b>Description:</b> Display the cofinality of the ordinal written in the computer code "ord".</p>
-        <p>&emsp;&emsp;You can copy the result by clicking the "Copy" button. (Not in the following examples)</p>
+        <p>&emsp;&emsp;You can copy the computer code of the result by clicking the "Copy" button. (Not in the following examples)</p>
+        <p>&emsp;&emsp;If the ordinals are displayed as MathJax, you can copy the MathJax code by: Right-click the ordinal > Copy to Clipboard > TeX Commands, which is actually a default function of MathJax.</p>
         <p>&emsp;&emsp;The definition of "cofinality" will be explained later in this article.</p>
         <br>
         <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
@@ -60,7 +61,7 @@
         <h3>fs</h3>
         <p>&emsp;&emsp;<b>Format:</b> fs ord [steps=3] ["strong"]</p>
         <p>&emsp;&emsp;<b>Description:</b> Expand the ordinal and display the first "steps+1" ordinals of the fundamental sequence of the ordinal "ord" in the corresponding ordinal system.</p>
-        <p>&emsp;&emsp;You can copy the result by clicking the "Copy" button. (Not in the following examples)</p>
+        <p>&emsp;&emsp;You can copy the result by clicking the "Copy" button as mentioned before.</p>
         <p>&emsp;&emsp;If the attribute "steps" is omitted, it's set as 3 on default.</p>
         <p>&emsp;&emsp;If the cofinality of the ordinal ord is uncountable, there will be a warning on top. However, if the text "strong" is added at the end of the command, it will be expanded as a smaller ordinal with countable cofinality.</p>
         <br>
@@ -483,5 +484,12 @@
         <p>&emsp;&emsp;Equivalent to \( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \) in Rathjen's Capital \( \Psi \).</p>
         <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \), the Large Rathjen ordinal (LRO)</h3>
         <p>&emsp;&emsp;The upper bound of the PTO of \( KP+\Pi_3-reflection \).</p>
+        <h1>Version History</h1><hr>
+        <h2>Dec 13, 2024 - V1.0</h2><hr>
+        <p>&emsp;&emsp;◇The first version.</p>
+        <h2>Dec 16, 2024 - V1.1</h2><hr>
+        <p>&emsp;&emsp;◇Fixed line 04.04.01.02. of the tail function \( t \) in Rathjen's Capital \( \Psi \) that caused ordinals like \( {\Psi}_{\Omega}^{0}({\varphi}_{{\Psi}_{\Omega}^{0}({\varphi}_{\Omega}(1))}(\Omega+1)) \) to expand abnormally.</p>
+        <p>&emsp;&emsp;◇Fixed the inconsistency between computer fonts and mobile fonts that caused the title to wrap.</p>
+        <p>&emsp;&emsp;◇Added more description for the copy button in this article.</p>
     </body>
 </html>
