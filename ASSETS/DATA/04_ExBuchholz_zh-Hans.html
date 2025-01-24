@@ -3,7 +3,9 @@
     <head></head>
     <body>
         <h1>定义</h1><hr>
-        <p>&emsp;&emsp;拓展布赫霍兹\( \psi \)函数指的是Denis Maksudov于2017年提出的布赫霍兹\( \psi \)函数的拓展<sup><a id="g1" href="#c1">[1]</a></sup>。该函数\( \psi_\alpha(\beta) \)定义如下：</p>
+        <p>&emsp;&emsp;拓展布赫霍兹\( \psi \)函数指的是Denis Maksudov于2017年提出的布赫霍兹\( \psi \)函数的拓展<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
+        <p>&emsp;&emsp;虽然该序数塌缩函数与原来的布赫霍兹\( \psi \)函数的返回值在某一范围下相同，但是为了严谨起见，该序数塌缩函数于计算菜单与探索菜单记作\( \psi_\alpha^*(\beta) \)。您可以通过 选项 &gt; 函数指定 &gt; \( \psi_\alpha(\beta) \) 以使其恢复原状。</p>
+        <p>&emsp;&emsp;该函数\( \psi_\alpha(\beta) \)定义如下：</p>
         <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'\in C_n(\alpha,\beta)\land\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
         <br>
         <p>&emsp;&emsp;与原来的布赫霍兹\( \psi \)函数的唯一区别是，在\( C_{n+1}(\alpha,\beta) \)的定义中，原函数中的\( \alpha'&lt;\omega+1 \)改成了\( \alpha'\in C_n(\alpha,\beta) \)。这使得该函数能够使用大于\( \Omega_\omega \)且不超过\( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \)，\( \Omega \)不动点的不可数基数。</p>

@@ -170,7 +170,7 @@
         <p>&emsp;&emsp;<b>Format:</b> search ord</p>
         <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal in the Explore menu.</p>
         <p>&emsp;&emsp;If the ordinal "ord" is found, it will be highlighted in the Explore menu.</p>
-        <p>&emsp;&emsp;The ordinal "ord" is supposed to be always found when the initial ordinal is set to "A" in computer code, which is the default value.</p>
+        <p>&emsp;&emsp;The ordinal "ord" is supposed to be always found when the initial ordinal is set to "A" in computer code, which is the default value. (Unless it can't be found in 10000 steps)</p>
         <br>
         <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
         <p>&emsp;&emsp;Input: search (,(,))</p>
@@ -439,6 +439,15 @@
         <p>&emsp;&emsp;Where \( a \), \( b \) are variables, \( S_0 \) is the domain of the variable \( a \), \( S_1 \) is the domain of the variable \( b \), \( S_2 \) is the range of the result \( f(a,b) \).</p>
         <p>&emsp;&emsp;\( c_0 \), \( c_1 \), \( c_2 \), \( c_3 \) and \( c_4 \) are all conditions. If a condition is satisfied, it will be assigned the value \( \mathbb{T} \) (True). Otherwise, it will be assigned the value \( \mathbb{F} \) (False). Note that there will also be functions of conditions, the range of these functions are all \( \{\mathbb{T},\mathbb{F}\} \). The conditions can sometimes be connected with logical connectives, where \( \neg \) represents "not", \( \land \) represents "and" and \( \vee \) represents "or".</p>
         <p>&emsp;&emsp;The code runs like this: We start from line 01. . If \( c_0 \) is \( \mathbb{T} \), the function \( f(a,b) \) returns value \( d_0 \), which means \( f(a,b)=d_0 \) in this case. If \( c_0 \) is \( \mathbb{F} \), we will go to line 02. . If \( c_1 \) is \( \mathbb{T} \), we will run the sublines 02.01. and 02.02. and determine the value of \( f(a,b) \). If \( c_1 \) is \( \mathbb{F} \), we will jump straight to line 03. and so on. The words "Else if" or "Else" are used if all the "If"s above can't cover all of the cases.</p>
+        <p>&emsp;&emsp;Furthermore, we will also encounter definitions with inner variables. It looks like this:</p>
+        <p>&emsp;&emsp;\( (a\in S_3)\mapsto g(a)\in S_4 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> Let \( v=n_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( c_5 \), let \( v=n_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( c_6 \), return \( d_5 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> Return \( v \)</p>
+        <br>
+        <p>&emsp;&emsp;The code runs like this: We start from line 01. . We assign the value \( n_0 \) to the variable \( v \) and then go to the next line, line 02. . If \( c_5 \) is \( \mathbb{T} \), we assign the value \( n_1 \) to the variable \( v \) and then go to the next line. Otherwise, we go to the next line directly. If \( c_6 \) is \( \mathbb{T} \), the function \( g(a) \) returns value \( d_5 \) and the evaluation ends. Otherwise, the evaluation continues and we go to the next line. And then the function \( g(a) \) returns value \( v \), which depends on the value that we assign to previously.</p>
+        <p>&emsp;&emsp;Sometimes, the same variable will appear on both sides. When this happens, it means to assign the variable a new value that depends on its old value instead of to solve an equation.</p>
         <h2>Some notable ordinals</h2><hr>
         <h3>\( \varepsilon_0 \)</h3>
         <p>&emsp;&emsp;The first ordinal that \( \alpha=\omega^\alpha \).</p>
@@ -491,5 +500,11 @@
         <p>&emsp;&emsp;◇Fixed line 04.04.01.02. of the tail function \( t \) in Rathjen's Capital \( \Psi \) that caused ordinals like \( {\Psi}_{\Omega}^{0}({\varphi}_{{\Psi}_{\Omega}^{0}({\varphi}_{\Omega}(1))}(\Omega+1)) \) to expand abnormally.</p>
         <p>&emsp;&emsp;◇Fixed the inconsistency between computer fonts and mobile fonts that caused the title to wrap.</p>
         <p>&emsp;&emsp;◇Added more description for the copy button in this article.</p>
+        <h2>Jan 24, 2025 - V1.2</h2><hr>
+        <p>&emsp;&emsp;<b>※Thoroughly fixed the ordinal system of Rathjen's Capital \( \Psi \).</b></p>
+        <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent a larger cardinal in <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957" target="_blank">this paper</a>, to avoid the confusion that \( \Xi=I \) (Where \( I \) denotes the least inaccessible cardinal), \( \Xi_1 \) is no longer rewritten as \( \Xi \).</p>
+        <p>&emsp;&emsp;◇Due to some confusions caused by function specification (Denoting Extended Buchholz's \( \psi \) as \( \psi_\alpha^*(\beta) \) and Rathjen's Little \( \psi \) as \( \rho_\alpha(\beta) \)), added some texts in the corresponding help menu.</p>
+        <p>&emsp;&emsp;◇Added some texts in <a href="#1.1.8">the paragraph about the command "search"</a>.</p>
+        <p>&emsp;&emsp;◇Added some texts in <a href="#2.7">the paragraph of "Ordinal notation"</a> about the keyword "Let".</p>
     </body>
 </html>

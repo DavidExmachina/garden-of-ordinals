@@ -212,6 +212,18 @@
         <p>&emsp;&emsp;\( \alpha&lt;\Omega_\overline{1} \)の場合に限り、順序数\( \alpha \)は可算である。</p>
         <p>&emsp;&emsp;コマンド「fgh」と「sgh」の専用の可算順序数限界は\( \Psi_{\Omega_\overline{1}}^\overline{0}(\Gamma_{K+1}) \)である。そのコンピューターコードは(R(W(v,)),,A)である。</p>
         <h2>演算</h2><hr>
+        <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in T \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a\in T \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Norm(a_0)+Norm(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=a_1 \)ならば、\( a_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=a_0 \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a\neq a_0\land a\neq a_1 \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=\Omega_{a_0}\land a_0\in T_m \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
         <p>&emsp;&emsp;加法\( Add \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T\cup\{0\})\mapsto Add(a,b,c)\in T \)（\( 0 \)は数値であり、記号\( \overline{0} \)とは異なることに注意してください。）</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( b \)を返す</p>
@@ -230,45 +242,19 @@
         <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
         <p>&emsp;&emsp;\( Add(a,\overline{1}) \)を返す</p>
         <br>
-        <p>&emsp;&emsp;尾の関数\( t \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in\{0,1,2\})\mapsto t_b^c(a)\in T_m \)（\( c=2 \)の場合、非標準形の順序数を返す可能性があるので注意してください。）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a&lt;b \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( c=0 \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( c=1 \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( c=2 \)ならば、\( b \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=b \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( c=0 \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( c\neq0 \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( b&lt;a \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> \( c=0 \)ならば、\( t_b^c(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> \( c\neq0 \)ならば、\( a_0+t_b^c(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 上記以外の場合、\( c=1 \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 上記以外の場合、\( (a=\Xi(a_0)\vee a=\Psi_{a_0}^{a_1}(a_2))\land a_0,a_1,a_2\in T_m \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> 上記以外の場合、\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.</span> \( Cof(a_1)&lt;\overline{\omega} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.01.</span> \( c=0 \)ならば、\( t_b^c(a_0) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.</span> \( c\neq0 \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.01.</span> \( a_1=Suc(\varphi_{a_3}(a_4))\land a_3,a_4\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.01.01.</span> \( a_3=t_b^c(a_0) \)ならば、\( \varphi_{t_b^c(a_0)}(Suc(a_4)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.01.02.</span> \( a_3\neq t_b^c(a_0) \)ならば、\( \varphi_{t_b^c(a_0)}(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.02.</span> \( a_1=Suc(b)\land b=t_b^c(a_0) \)ならば、\( \varphi_{t_b^c(a_0)}(\overline{1}) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.02.03.</span> 上記以外の場合、\( \varphi_{t_b^c(a_0)}(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.01.</span> \( c=0 \)ならば、\( t_b^c(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.02.02.</span> \( c\neq0 \)ならば、\( \varphi_{a_0}(t_b^c(a_1)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> 上記以外の場合、\( a=\Omega_{a_0}\land a_0\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.01.</span> \( c=0 \)ならば、\( t_b^c(a_0) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.02.</span> \( c\neq0 \)ならば、\( \Omega_{t_b^c(a_0)} \)を返す</p>
+        <p>&emsp;&emsp;左部分の関数\( L \)を以下のように定義します。これは、順序数を2つの部分に分割し、左部分のすべての項が特定の順序数以上になり、右部分はその順序数より小さくなるようにします：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto L_b(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( a_0+L_b(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば、\( a \)を返す</p>
         <br>
-        <p>&emsp;&emsp;\( \Omega- \)尾の関数\( \Omega t \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T)\mapsto\Omega t(a)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a=K \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Max(\Omega t(a_0),\Omega t(a_1)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( Max(\Omega t(a_0),\Omega t(a_1)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\Omega_{a_0}\land a_0\in T_m \)ならば、\( \Omega t(a_0) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( a \)を返す</p>
+        <p>&emsp;&emsp;同様に、右部分の関数\( R \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto R_b(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( L_b(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば、\( \overline{0} \)を返す</p>
         <br>
         <p>&emsp;&emsp;根の関数\( Root \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Root_b(a)\in T \)</p>
@@ -286,62 +272,161 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.03.</span> 上記以外の場合、\( Root_b(a_0) \)を返す</p>
         <p>&emsp;&emsp;\( Root_\overline{0}(a) \)を\( Root(a) \)と書きます。</p>
         <br>
-        <p>&emsp;&emsp;順序数が不動点であるかどうかを判断するため、不動点関数\( FP \)を以下のように定義します。関数\( \Xi \)と\( \Psi \)には不動点はありませんが、任意の\( a&lt;b \)に対して、\( f(a)&lt;b \)が真であるかどうかを判断するためです。ここで\( a,b \)は任意の順序数、\( f \)は任意の実数である。例えば、\( \Psi_\Omega^0(\Omega) \)は関数\( \alpha\mapsto\Psi_\Omega^0(\alpha) \)の不動点ではありませんが、任意の\( \alpha&lt;\Psi_\Omega^0(\Omega) \)に対して、\( \Psi_\Omega^0(\alpha)&lt;\Psi_\Omega^0(\Omega) \)が真である。</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T\cup\{0\})\mapsto FP_b^c(a)\in\{\mathbb{T},\mathbb{F}\} \)（また、\( 0 \)は数値であり、記号\( \overline{0} \)とは異なります。）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( c=0 \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( t_b^0(a)=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 上記以外の場合、\( \neg t_b^2(a)\in T \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 上記以外の場合、\( b\neq K \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> \( t_b^0(a)\neq\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> 上記以外の場合、\( t_b^0(a)=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m\land t_2&lt;t_b^2(a) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.03.</span> 上記以外の場合、\( t_b^0(a)&lt;\Psi_b^\overline{0}(t_b^2(a)) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> 上記以外の場合、\( b=K \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.01.</span> \( (t_b^0(a)=\varphi_{t_0}(t_1)\vee t_b^0(a)=\Omega_{t_0})\land t_0,t_1\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.</span> 上記以外の場合、\( Root_b(t_b^0(a))=\Xi(r_0)\land r_0\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.01.</span> \( r_0&lt;\Xi(t_b^2(a)) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.02.</span> 上記以外の場合、\( \Psi_{\Xi(r_0)}^\overline{0}(Suc(r_0))&lt;\Psi_{\Xi(t_b^2(a))}^\overline{0}(Suc(t_b^2(a))) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.03.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( c\in T \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( t_K^0(c)=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 上記以外の場合、\( \neg t_K^2(c)\in T \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 上記以外の場合、\( t_K^0(c)\neq\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 上記以外の場合、\( Root_b(t_K^0(c))=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 上記以外の場合、\( Root_b(t_K^0(c))=\Psi_{r_0}^{r_1}(r_2)\land r_0,r_1,r_2\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.01.</span> \( r_2&lt;a \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.02.</span> 上記以外の場合、\( \Psi_{r_0}^\overline{0}(r_2)&lt;\Psi_{b}^\overline{0}(a) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.</span> 上記以外の場合、\( r_2=a \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.01.</span> \( r_1&lt;t_K^2(c) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.02.</span> 上記以外の場合、\( \Psi_{r_0}^{r_1}(r_2)&lt;\Psi_{b}^{t_K^2(c)}(a) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.03.03.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.04.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <p>&emsp;&emsp;\( FP_b^0(a) \)を\( FP_b(a) \)と書きます。</p>
+        <p>&emsp;&emsp;尾の関数\( t \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto t_b(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( t_b(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=K \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば、\( t_b(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> \( Cof(a_1)&lt;\overline{\omega} \)ならば、\( t_b(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a=\Omega_{a_0}\land a_0\in T_m \)ならば、\( t_b(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> \( a=\Xi(a_0)\land a_0\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.</span> \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.01.</span> \( a_1\neq\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.</span> \( a_1=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.</span> \( \lambda(a_0)&lt;a_2 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.01.</span> \( \neg FP_{a_0}(a_2) \)ならば、\( t_b(a_2) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.</span> \( FP_{a_0}(a_2) \)ならば、\( t_b(L_{a_0}(a_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.</span> \( \neg\lambda(a_0)&lt;a_2 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.01.</span> \( a_0=\Omega_{a_{00}}\land a_{00}\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.</span> \( a_0=\Xi(a_{00})\land a_{00}\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.01.</span> \( \neg\Xi FP(a_{00}) \)ならば、\( t_b(a_{00}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.</span> \( \Xi FP(a_{00}) \)ならば、\( t_b(L_K(a_{00})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.</span> \( a_0=\Psi_{a_{00}}^{a_{01}}(a_{02})\land a_{00},a_{01},a_{02}\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.</span> \( \neg\Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)ならば、\( t_b(a_{01}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.</span> \( \Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.01.</span> \( Cof(a_{02})=\overline{1} \)ならば、\( t_b(L_K(a_{01})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.</span> \( Cof(a_{02})\neq\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.01.</span> \( L_{a_{00}}(a_{02})=\overline{0} \)ならば、\( t_b(a_{02}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.02.</span> \( L_{a_{00}}(a_{02})\neq\overline{0} \)ならば、\( t_b(L_{a_{00}}(a_{02})) \)を返す</p>
         <br>
-        <p>&emsp;&emsp;その後の略記のため、一般限界関数\( NL \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T)\mapsto NL(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Xi(a_0)\land a_0\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( m(a)=t_K^1(m(a)) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 上記以外の場合、\( Cof(m(a))&lt;\overline{\omega} \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 上記以外の場合、\( FP_K(m(a)) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( m(a)=t_K^1(m(a)) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 上記以外の場合、\( Cof(m(a))&lt;\overline{\omega} \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 上記以外の場合、\( FP_{a_0}^{a_1}(a_2) \)ならば、\( \mathbb{F} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;置換関数\( RP \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto RP_b(a,c)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( c \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( a_0+RP_b(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=K \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.01.</span> \( a_1=\overline{0}\vee\neg a_1[\overline{0}]\in T_s \)ならば、\( \varphi_{RP_b(a_0)}(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.</span> 上記以外の場合、\( a_1[\overline{0}]=\varphi_{p_0}(p_1) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.01.</span> \( RP_b(a_0)&lt;p_0 \)ならば、\( \varphi_{RP_b(a_0)}(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.02.</span> \( p_0&lt;RP_b(a_0) \)ならば、\( \varphi_{a_0+RP_b(a_0)}(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.03.</span> \( RP_b(a_0)=_*p_0 \)ならば、\( \varphi_{RP_b(a_0)}(Suc(p_1)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.</span> 上記以外の場合、Elseならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.01.</span> \( RP_b(a_0)&lt;a_1[\overline{0}] \)ならば、\( \varphi_{RP_b(a_0)}(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.02.</span> \( a_1[\overline{0}]&lt;RP_b(a_0) \)ならば、\( \varphi_{a_0+RP_b(a_0)}(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.03.</span> \( RP_b(a_0)=_*a_1[\overline{0}] \)ならば、\( \varphi_{RP_b(a_0)}(\overline{1}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> \( Cof(a_1)&lt;\overline{\omega} \)ならば、\( \varphi_{a_0}(RP_b(a_1)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a=\Omega_{a_0}\land a_0\in T_m \)ならば、\( \Omega_{RP_b(a_0)} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> \( a=\Xi(a_0)\land a_0\in T_m \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.</span> \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.01.</span> \( a_1\neq\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.</span> \( a_1=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.</span> \( \lambda(a_0)&lt;a_2 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.01.</span> \( \neg FP_{a_0}(a_2) \)ならば、\( \Psi_{a_0}^{a_1}(RP_b(a_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.</span> \( FP_{a_0}(a_2) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.01.</span> \( a_L=L_{a_0}(a_2) \)、\( a_R=R_{a_0}(a_2)=\Psi_{a_{R0}}^{a_{R1}}(a_{R2}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.02.</span> \( RP_b(a_L)&lt;L_{a_{R0}}(a_{R2}) \)ならば、\( \Psi_{a_{R0}}^{a_1}(RP_b(a_L)+a_R) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.03.</span> \( L_{a_{R0}}(a_{R2})&lt;RP_b(a_L) \)ならば、\( \Psi_{a_{R0}}^{a_1}(a_L+RP_b(a_L)+a_R) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.</span> \( RP_b(a_L)=_*L_{a_{R0}}(a_{R2}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.01.</span> \( \neg Suc(a_{R1})&lt;a_0 \)ならば、\( \Psi_{a_0}^{a_1}(Suc(a_{R2})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.02.</span> 上記以外の場合、\( \neg Suc(a_{R1})&lt;a_{R0} \)ならば、\( \Psi_{a_{R0}}^{a_1}(Suc(a_{R2})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.03.</span> 上記以外の場合、\( \Psi_{\Psi_{a_{R0}}^{S(a_{R1})}(a_{R2})}^{a_1}(Suc(a_{R2})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.</span> \( \neg\lambda(a_0)&lt;a_2 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.01.</span> \( a_0=\Omega_{a_{00}}\land a_{00}\in T_m \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.</span> \( a_0=\Xi(a_{00})\land a_{00}\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.01.</span> \( \neg\Xi FP(a_{00}) \)ならば、\( \Psi_{\Xi(a_{00})}^\overline{0}(Suc(a_{00})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.</span> \( \Xi FP(a_{00}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.01.</span> \( m_L=L_K(a_{00}) \)、\( m_R=R_K(a_{00}) \)、\( r=RP_b(m_L) \)とする
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.</span> \( m_R=\Xi(m_0)\land m\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.01.</span> \( RP_b(m_L)&lt;L_K(m_0) \)ならば、\( \Psi_{\Xi(RP_b(m_L)+m_R)}^\overline{0}(Suc(RP_b(m_L)+m_R)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.02.</span> \( L_K(m_0)&lt;RP_b(m_L) \)ならば、\( \Psi_{\Xi(m_L+RP_b(m_L)+m_R)}^\overline{0}(Suc(m_L+RP_b(m_L)+m_R)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.03.</span> \( RP_b(m_L)=_*L_K(m_0) \)ならば、\( \Psi_{Suc(m_0)}^\overline{0}(Suc(Suc(m_0))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.</span> \( m_R=\Psi_{m_0}^{m_1}(m_2)\land m\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.01.</span> \( RP_b(m_L)&lt;L_K(m_2) \)ならば、\( \Psi_{\Psi_{m_0}^{m_R}(Suc(RP_b(m_L)))}^\overline{0}(Suc(Suc(RP_b(m_L)))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.02.</span> \( L_K(m_2)&lt;RP_b(m_L) \)ならば、\( \Psi_{\Psi_{m_0}^{m_R}(Suc(m_L+RP_b(m_L)))}^\overline{0}(Suc(Suc(m_L+RP_b(m_L)))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.</span> \( RP_b(m_L)=_*L_K(m_2) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.01.</span> \( \neg Suc(m_1)&lt;a_{00} \)ならば、\( \Psi_{a_0}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.02.</span> 上記以外の場合、\( \neg Suc(m_1)&lt;m(m_0) \)ならば、\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.03.</span> 上記以外の場合、\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.</span> \( a_0=\Psi_{a_{00}}^{a_{01}}(a_{02})\land a_{00},a_{01},a_{02}\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.</span> \( \neg\Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.01.</span> \( RP_b(a_{01})=_*m(a_{00}) \)ならば、\( \Psi{a_{00}}^\overline{0}(Suc(a_{02})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.02.</span> \( RP_b(a_{01})\neq_*m(a_{00}) \)ならば、\( \Psi_{\Psi{a_{00}}^{RP_b(a_{01})}(a_{02})}^\overline{0}(Suc(a_{02})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.</span> \( \Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.01.</span> \( m_L=L_K(a_{01}) \)、\( m_R=R_K(a_{01})=\Psi_{m_0}^{m_1}(m_2) \)、\( r=Root_{a_{00}}(m_R)=\Psi_{r_0}^{r_1}(r_2) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.</span> \( Cof(a_{02})=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.01.</span> \( RP_b(m_L)\neq_*L_K(m(a_{00})) \)ならば、\( \Psi_{\Psi_{a_{00}}^{RP_b(m_L)+m_R}(a_{02})}^\overline{0}(Suc(a_{02})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.02.</span> 上記以外の場合、\( Suc(a_{02})&lt;r_2 \)ならば、\( \Psi_{\Psi_{a_{00}}^{m_R}(Suc(a_{02}))}^\overline{0}(Suc(Suc(a_{02}))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.03.</span> 上記以外の場合、\( \neg Suc(m_1)&lt;m(m_0) \)ならば、\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.04.</span> 上記以外の場合、\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.</span> \( Cof(a_{02})\neq\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.01.</span> \( a_{0L}=L_{a_{00}}(a_{02}) \)、\( a_{0R}=R_{a_{00}}(a_{02}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.02.</span> \( a_{0R}=\overline{0} \)ならば、\( d=RP_b(a_{02}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.03.</span> \( a_{0R}\neq\overline{0} \)ならば、\( d=a_{0L}+RP_b(a_{0R}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.04.</span> \( \Psi FP_{a_{00}}^{a_{01}}(d) \)ならば、\( \Psi_{\Psi_{a_{00}}^{a_{01}}(d)}^\overline{0}(Suc(d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.</span> 上記以外の場合、\( d&lt;r_2 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.01.</span> \( r_2&lt;RP_b(a_{0R}) \)ならば、\( \Psi_{a_{00}}^\overline{0}(a_{02}+d) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.02.</span> \( \neg r_2&lt;RP_b(a_{0R}) \)ならば、\( \Psi_{a_{00}}^\overline{0}(d) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.06.</span> 上記以外の場合、\( r_2&lt;d \)ならば、\( \Psi_{\Psi_{a_{00}}^{a_{01}}(a_{02}+d)}^\overline{0}(Suc(a_{02}+d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.07.</span> 上記以外の場合、\( d&lt;L_{a_{00}}(m_2) \)ならば、\( \Psi_{m_0}^{a_1}(d+\Psi_{m_0}^{a_1}(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.08.</span> 上記以外の場合、\( Suc(a_{02})&lt;r_2 \)ならば、\( \Psi_{\Psi_{a_{00}}^{m_R}(Suc(a_{02}))}^\overline{0}(Suc(Suc(a_{02}))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.09.</span> 上記以外の場合、\( \neg Suc(m_1)&lt;m(m_0) \)ならば、\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.10.</span> 上記以外の場合、\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)を返す</p>
+        <p>&emsp;&emsp;\( RP_b(a,b) \)を\( RP_b(a) \)と書きます。この関数は、場合によってはわざと非標準形の順序数を生成することに注意してください。例えば、行02.02.05.02.01.02.03.はそういう順序数を生成します。これは\( m_L&lt;RP_b(m_L) \)であるためであり、それらを直接追加すると非標準形の順序数が得られます。これは、順序数が不動点であるかどうかを判断するために必要です。</p>
+        <br>
+        <p>&emsp;&emsp;順序数が一般不動点であるかどうかを判断するため、一般不動点関数\( FP \)を以下のように定義します。関数\( \Xi \)と\( \Psi \)には不動点はありませんが、任意の\( a&lt;b \)に対して、\( f(a)&lt;b \)が真であるかどうかを判断するためです。ここで\( a,b \)は任意の順序数、\( f \)は任意の実数である。例えば、\( \Psi_\Omega^0(\Omega) \)は関数\( \alpha\mapsto\Psi_\Omega^0(\alpha) \)の不動点ではありませんが、任意の\( \alpha&lt;\Psi_\Omega^0(\Omega) \)に対して、\( \Psi_\Omega^0(\alpha)&lt;\Psi_\Omega^0(\Omega) \)が真である。</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto FP_b(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( t=t_b(a) \)、\( r=RP_b(a) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg t\in T_s \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( \neg r\in T \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( t_2&lt;r \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 上記以外の場合、\( t&lt;\Psi_b^\overline{0}(r) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 上記以外の場合、\( t_0=_*b \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> 上記以外の場合、\( FP_b(RP_b(a,t_0)) \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数がマーロ不動点であるかどうかを判断するため、マーロ不動点関数\( \Xi FP \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto \Xi FP(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( t=t_K(a) \)、\( r=RP_K(a) \)、\( R=Root(t)=\Xi(R_0) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg t\in T_s \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( \neg r\in T \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( (t=\Xi(t_0)\vee t=\Psi_{t_0}^{t_1}(t_2))\land t_0,t_1,t_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( R_0&lt;r \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 上記以外の場合、\( t&lt;\Psi_{\Xi(r)}^\overline{0}(S(r)) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数が崩壊不動点であるかどうかを判断するため、崩壊不動点関数\( \Psi FP \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto \Psi FP_b^c(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( t=t_K(c) \)、\( r=RP_K(c) \)、\( R=Root_b(t) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg t\in T_s \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( \neg r\in T \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( R=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 上記以外の場合、\( R=\Psi_{R_0}^{R_1}(R_2) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> \( t&lt;\Psi_b^\overline{0}(a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> \( \neg t&lt;\Psi_b^\overline{0}(a) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> \( a&lt;R_1 \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> \( \neg a&lt;R_1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.01.</span> \( R_1&lt;r \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.02.</span> \( \neg R_1&lt;r\land R&lt;\Psi_b^r(a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.03.</span> \( \neg R_1&lt;r\land \neg R&lt;\Psi_b^r(a) \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数が基数不動点であるかどうかを判断するため、基数不動点関数\( \kappa FP \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto \kappa FP(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Xi(a_0)\land a_0\in T_m \)ならば、\( \Xi FP(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)ならば、\( \Psi FP_{a_0}^{a_1}(a_2) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
-        <br>
-        <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in T \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a\in T \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Norm(a_0)+Norm(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=a_1 \)ならば、\( a_1 \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=a_0 \)ならば、\( a_0 \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a\neq a_0\land a\neq a_1 \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=\Omega_{a_0}\land a_0\in T_m \)ならば、\( a_0 \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 上記以外の場合、\( a \)を返す</p>
         <h2>共終数</h2><hr>
         <p>&emsp;&emsp;共終数関数\( Cof \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
@@ -360,38 +445,37 @@
         <br>
         <p>&emsp;&emsp;崩壊共終数関数\( CP \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto CP_b(a,c)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\neq t_b^1(a)\land\neg Cof(a)&lt;\overline{\omega}\land\neg FP_b(a) \)ならば、\( Cof(a) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b)\land Cof(a)=\overline{1}\land c=\overline{0} \)ならば、\( Cof(m(b)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( a=t_b^1(a)\vee \lambda(b)=a \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)\land Cof(t_b^1(a))&lt;b \)ならば、\( Cof(a) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 上記以外の場合、\( \neg(t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)) \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( b=\Xi(b_0)\land b_0\in T_m\land NL(b) \)ならば、\( CP_d(\lambda(d),c) \), where \( d=\Xi(Add(\overline{1},t_K^1(m(b)))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 上記以外の場合、\( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m\land(NL(b)\vee t_K^1(m(b))=\overline{0}) \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( c\neq\overline{0} \)ならば、\( CP_{b_0}(b_2,c) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( c=\overline{0} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> \( NL(b)\vee Cof(m(b))=\overline{1} \)ならば、\( CP_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> \( \neg NL(b)\land Cof(m(b))\neq\overline{1} \)ならば、\( CP_{b_0}(b_2,t_K^0(m(b))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> 上記以外の場合、\( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land t_K^0(m(b))\neq\overline{0}\land Cof(t_K^1(m(b)))&lt;K \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.01.</span> \( Cof(t_K^1(m(b))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.04.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( (b=\Omega_{b_0}\vee(t_K^1(m(b))=\overline{0}\land Cof(m(b))=\overline{1}))\land b_0\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( Cof(a)=\overline{1} \)ならば、\( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> \( Cof(a)\neq\overline{1} \)ならば、\( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land NL(b)\land b_0,b_1,b_2\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( Cof(a)=\overline{1} \)ならば、\( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> \( Cof(a)\neq\overline{1} \)ならば、\( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 上記以外の場合、\( t_K^1(m(b))=\overline{0} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( Cof(a)=\overline{1} \)ならば、\( Cof(m(b)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( Cof(a)\neq\overline{1} \)ならば、\( CP_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 上記以外の場合、\( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> \( Cof(t_K^1(m(b)))&lt;K \)ならば、\( Cof(t_K^1(m(b))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 上記以外の場合、\( Cof(a)=\overline{1} \)ならば、\( \overline{\omega} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> 上記以外の場合、\( Cof(a) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 上記以外の場合、\( Cof(a)\neq\overline{1} \)ならば、\( Cof(a) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば、\( Cof(m(b)) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> 上記以外の場合、\( Cof(t_K^1(m(b)))&lt;K \)ならば、\( Cof(t_K^1(m(b))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a_L=L_b(a) \)、\( a_R=R_b(a) \)、\( m=m(b) \)、\( m_L=L_K(m) \)、\( m_R=R_K(m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( m_L=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( c=\overline{0}\land\overline{1}&lt;Cof(a_R)\land\neg FP_b(a) \)ならば、\( Cof(a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 上記以外の場合、\( \lambda(b)&lt;a_L \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( \overline{1}&lt;Cof(m_R)\land Cof(a_R)=\overline{1}\land c=\overline{0} \)ならば、\( Cof(m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 上記以外の場合、\( Cof(a_L)&lt;b \)ならば、\( Cof(a_L) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 上記以外の場合、\( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.</span> \( c=\overline{0}\land Cof(a_R)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.01.</span> \( \overline{1}&lt;Cof(m_R) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.01.01.</span> \( \neg\kappa FP(b)\vee\lambda(b)&lt;a \)ならば、\( Cof(m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.01.02.</span> \( \kappa FP(b)\land\neg\lambda(b)&lt;a \)ならば、\( CP_{b_0}(b_2,m_R) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.02.</span> 上記以外の場合、\( \lambda(b)&lt;a \)ならば、\( CP_{b_0}(b_2,\Psi_b^{m[\overline{0}]}(a[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.01.03.</span> 上記以外の場合、\( CP_{b_0}(b_2,\Psi_{b_0}^{m[\overline{0}]}(b_2)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.</span> \( c\neq\overline{0} \)ならば、\( CP_{b_0}(b_2,c) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.03.</span> \( c=\overline{0}\land\overline{1}&lt;Cof(a_R)\land FP_b(a) \)ならば、\( CP_{b_0}(b_2,a_R) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 上記以外の場合、\( \neg\overline{1}&lt;Cof(m_R) \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> 上記以外の場合、\( Cof(a_R)\neq\overline{1} \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.07.</span> 上記以外の場合、\( \kappa FP(b)\land\neg\lambda(b)&lt;a \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.</span> 上記以外の場合、\( Cof(m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( m_L\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_R=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> \( \lambda(b)&lt;a_L\land Cof(a_L)&lt;b \)ならば、\( Cof(a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> \( \neg(\lambda(b)&lt;a_L\land Cof(a_L)&lt;b) \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( Cof(a_R)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( (\kappa FP(b)\vee\lambda(b)&lt;a\vee\lambda(b)&lt;a_L)\land \overline{1}&lt;Cof(m_R)\land c=\overline{0} \)ならば、\( Cof(m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> \( \neg((\kappa FP(b)\vee\lambda(b)&lt;a\vee\lambda(b)&lt;a_L)\land \overline{1}&lt;Cof(m_R)\land c=\overline{0}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( Cof(m_L)&lt;K \)ならば、\( Cof(m_L) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( \neg Cof(m_L)&lt;K \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( \neg Cof(a_R)&lt;\overline{\omega} \)ならば、\( Cof(a) \)を返す</p>
         <br>
         <p>&emsp;&emsp;また、\( Cof(\Gamma_{K+1})=\overline{\omega} \)と定義します。</p>
         <h2>基本列</h2><hr>
@@ -416,7 +500,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> \( a_0=\overline{1} \)ならば、\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0}(a_1[n])) \)を返す</p>
@@ -430,137 +514,129 @@
         <br>
         <p>&emsp;&emsp;崩壊基本列\( P[] \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T,n\in T)\mapsto P_b(a,c)[n]\in T \)</p>
-        <table class="section"><tbody>
-            <tr><td>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\neq t_b^1(a)\land\neg Cof(a)&lt;\overline{\omega}\land\neg FP_b(a) \)ならば、\( \Psi_b^c(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( (b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b)\land Cof(a)=\overline{1}\land c=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \lambda(b)=a \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば、\( \Xi(Add(\overline{1},m(b)[n],m(b))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( \Psi_{b_0}^{m(b)[n]}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.03.</span> 上記以外の場合、\( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( \lambda(b)&lt;a \)ならば、\( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( (a=t_b^1(a)\vee\lambda(b)=a)\land t_b^1(a)\neq\overline{0}\land\lambda(b)&lt;t_b^1(a)\land Cof(t_b^1(a))&lt;b \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( t_b^0(a)=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m\land c\neq\overline{0}\land\neg(\lambda(b_0)[\overline{0}]=t_{b_0}^0(\lambda(b_0)[\overline{0}])\land\lambda(b_0)[\overline{0}]=t_{b_0}^1(\lambda(b_0)[\overline{0}])) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> \( A=Add(\lambda(b),Add(a[\overline{0}],t_{b_0}^0(\lambda(b_0)[\overline{0}])),a),B=Add(\lambda(b),a[\overline{1}],a) \)とする</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> \( \Psi_{b}^\overline{0}(A)&lt;\Psi_{b}^\overline{0}(B)\land A&lt;a \)ならば、\( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_{b_0}^0(\lambda(b_0)[\overline{0}])),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> 上記以外の場合、\( FP_b(a)\land c=\overline{0} \)ならば、\( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_b^0(a)),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.04.</span> 上記以外の場合、\( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],c),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 上記以外の場合、\( FP_b(a)\land c=\overline{0} \)ならば、\( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],t_b^0(a)),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 上記以外の場合、\( \Psi_{b}^\overline{0}(Add(\lambda(b),Add(a[n],c),a)) \)を返す</p>
-            </td></tr>
-            <tr><td>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( a=t_b^1(a)\vee\lambda(b)=a \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> \( t_b^1(a)=\overline{0}\vee\lambda(b)=t_b^1(a) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> \( b=\Omega_{b_0}\land b_0\in T_m \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.01.</span> \( c=\overline{0}\land b_0\neq\overline{1} \)ならば、\( P_{\Omega_\overline{1}}(\lambda(b),Norm(\Omega_{b_0[\overline{0}]}))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.02.</span> 上記以外の場合、\( n=\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.03.</span> 上記以外の場合、\( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{0})\in T \)ならば、\( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{0}) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.04.</span> 上記以外の場合、\( \varphi_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}(\overline{1}) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> \( NL(b) \)ならば、\( P_{\Xi(Add(\overline{1},t_K^1(m(b))))}(\lambda(\Xi(Add(\overline{1},t_K^1(m(b))))),c)[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> \( t_K^1(m(b))=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.</span> \( Cof(m(b))=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.01.</span> \( c=\overline{0}\land b_0\neq\overline{1} \)ならば、\( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},\Xi(m(b[\overline{0}])))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.02.</span> 上記以外の場合、\( n=\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.03.</span> 上記以外の場合、\( \Omega_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]}\in T \)ならば、\( \Omega_{P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]} \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.01.04.</span> 上記以外の場合、\( \Omega_{Suc(P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]])} \)を返す</p>    
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.</span> \( Cof(m(b))\neq\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.01.</span> \( c\neq\overline{0} \)ならば、\( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},c)[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.02.02.</span> \( c=\overline{0} \)ならば、\( P_{\Xi(\overline{1})}(\overline{1}+\overline{1},m(b))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.</span> \( Cof(t_K^1(m(b)))&lt;K \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.</span> \( m(b)=t_K^1(m(b)) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.01.</span> \( FP_K(m(b))\land c=\overline{0} \)ならば、\( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],t_K^0(m(b))))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.01.02.</span> \( \neg FP_K(m(b))\vee c\neq\overline{0} \)ならば、\( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],c))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.</span> \( m(b)\neq t_K^1(m(b)) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.01.</span> \( c\neq\overline{0} \)ならば、\( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],c))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.02.</span> 上記以外の場合、\( Cof(m(b))=\overline{1} \)ならば、\( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],\Xi(m(b)[\overline{0}])))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.03.02.03.</span> 上記以外の場合、\( \Xi(Add(\overline{1},Add(t_K^1(m(b))[n],t_K^0(m(b))))) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.</span> \( Cof(t_K^1(m(b)))=K \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.</span> \( n=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.01.</span> \( c\neq\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.02.</span> 上記以外の場合、\( m(b)=t_K^1(m(b)) \)ならば、\( \overline{0} \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.03.</span> 上記以外の場合、\( Cof(m(b))=\overline{1} \)ならば、\( \Xi(m(b)[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.01.04.</span> 上記以外の場合、\( t_K^0(m(b)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.04.02.</span> \( n\neq\overline{0} \)ならば、\( \Xi(Add(\overline{1},t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]])) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.</span> \( NL(b) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.01.</span> \( c\neq\overline{0} \)ならば、\( P_{b_0}(b_2,c)[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.01.02.</span> \( c=\overline{0} \)ならば、\( P_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.</span> \( t_K^1(m(b))=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.01.</span> \( c\neq\overline{0} \)ならば、\( P_{b_0}(b_2,c)[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.02.</span> 上記以外の場合、\( Cof(m(b))=\overline{1} \)ならば、\( P_{b_0}(b_2,\Psi_{b_0}^{b_1[\overline{0}]}(b_2))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.02.03.</span> 上記以外の場合、\( P_{b_0}(b_2,t_K^0(m(b)))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.</span> \( m(b)=t_K^1(m(b)) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.01.</span> \( FP_{b_0}^{b_1}(b_2)\land c=\overline{0} \)ならば、\( \Psi_{b_0}^{Add(t_K^1(m(b))[n],t_K^0(m(b)))}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.01.02.</span> \( \neg FP_{b_0}^{b_1}(b_2)\vee c\neq\overline{0} \)ならば、\( \Psi_{b_0}^{Add(t_K^1(m(b))[n],c)}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.</span> \( m(b)\neq t_K^1(m(b)) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.01.</span> \( c\neq\overline{0} \)ならば、\( \Psi_{b_0}^{Add(t_K^1(m(b))[n],c)}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.02.</span> 上記以外の場合、\( Cof(m(b))=\overline{1} \)ならば、\( \Psi_{b_0}^{Add(t_K^1(m(b))[n],\Psi_{b_0}^{m(b)[\overline{0}]}(b_2))}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.03.02.03.</span> 上記以外の場合、\( \Psi_{b_0}^{Add(t_K^1(m(b))[n],t_K^0(m(b)))}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.</span> \( Cof(t_K^1(m(b)))=K \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.</span> \( n=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.01.</span> \( c\neq\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.02.</span> 上記以外の場合、\( m(b)=t_K^1(m(b)) \)ならば、\( \overline{0} \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.03.</span> 上記以外の場合、\( Cof(m(b))=\overline{1} \)ならば、\( \Psi_{b_0}^{m(b)[\overline{0}]}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.01.04.</span> 上記以外の場合、\( t_K^0(m(b)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.04.02.</span> \( n\neq\overline{0} \)ならば、\( \Psi_{b_0}^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(b_2) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 上記以外の場合、\( n=\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 上記以外の場合、\( b=Cof(t_b^1(a)) \)ならば、\( \Psi_b^\overline{0}(Add(\lambda(b),a[P_b(Add(\lambda(b),a,a),c)[n]],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> 上記以外の場合、\( ((b=\Xi(b_0)\land Cof(t_b^1(a))&lt;K)\vee(b\neq\Xi(b_0)\land Cof(t_b^1(a))=\Omega_{t_0}))\land b_0,t_0\in T_m \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.01.</span> \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}]),c),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> 上記以外の場合、\( b=\Omega(b_0)\land b_0\in T_m \)ならば、\( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}],\Omega t(b)),c),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.06.</span> 上記以外の場合、\( Add(Re(t_b^1(a),\overline{0},\lambda(b)[\overline{0}]),c)&lt;Add(Re(t_b^1(a),\overline{1},\lambda(b)[\overline{0}]),c) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.06.01.</span> \( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n[\overline{0}],\lambda(b)[\overline{0}]),c),a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.07.</span> 上記以外の場合、\( \Psi_b^\overline{0}(Add(\lambda(b),Add(Re(t_b^1(a),n,\lambda(b)[\overline{0}]),c),a)) \)を返す</p>
-            </td></tr>
-            <tr><td>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( (b=\Omega_{b_0}\vee b=\Xi(b_0)\vee b=\Psi_{b_0}^{b_1}(b_2))\land b_0,b_1,b_2\in T_m\land NL(b) \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( Cof(a)=\overline{1} \)ならば、\( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> \( Cof(a)\neq\overline{1} \)ならば、\( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 上記以外の場合、\( t_K^1(m(b))=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( Cof(m(b))\neq\overline{1}\land Cof(a)=\overline{1} \)ならば、\( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( Cof(m(b))=\overline{1}\land Cof(a)=\overline{1} \)ならば、\( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( Cof(a)\neq\overline{1} \)ならば、\( P_b(Add(\lambda(b),t_b^1(a),t_b^1(a)),t_b^0(a))[n] \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 上記以外の場合、\( Cof(t_K^1(m(b)))&lt;K \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.</span> \( Cof(a)=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.01.</span> \( m(b)=t_K^1(m(b))\vee c\neq\overline{0} \)ならば、\( \Psi_b^{Add(t_K^1(m(b))[n],c)}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.01.02.</span> 上記以外の場合、\( m(b)\neq t_K^1(m(b))\land c=\overline{0} \)ならば、\( \Psi_b^{Add(t_K^1(m(b))[n],\Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]))}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.02.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば、\( \Psi_b^{Add(t_K^1(m(b))[n],c)}(\lambda(b)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.03.</span> 上記以外の場合、\( c=\overline{0} \)ならば、\( \Psi_b^{Add(t_K^1(m(b))[n],t_b^0(a))}(\lambda(b)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 上記以外の場合、\( Cof(a)=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.01.</span> \( c\neq\overline{0} \)ならば、\( \Psi_b^{Add(t_K^1(m(b))[n],c)}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.02.</span> \( c=\overline{0} \)ならば、\( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば、\( \Psi_b^c(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">07.04.</span> 上記以外の場合、\( c=\overline{0} \)ならば、\( \Psi_b^{t_b^0(a)}(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 上記以外の場合、\( Cof(t_K^1(m(b)))=K \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.</span> \( Cof(a)=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.</span> \( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.</span> \( n=\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.01.</span> \( c\neq\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.02.</span> 上記以外の場合、\( m(b)=t_K^1(m(b)) \)ならば、\( \overline{0} \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.01.03.</span> 上記以外の場合、\( \Psi_b^{m(b)[\overline{0}]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.01.02.</span> \( n\neq\overline{0} \)ならば、\( \Psi_b^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.01.</span> \( n=\overline{0} \)ならば、\( c \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.02.02.</span> \( n\neq\overline{0} \)ならば、\( \Psi_b^{t_K^1(m(b))[P_b(Add(\lambda(b),a,a),c)[n[\overline{0}]]]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.01.03.</span> 上記以外の場合、\( c=\overline{0} \)ならば、\( \Psi_b^{m(b)[n]}(a[\overline{0}]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.</span> 上記以外の場合、\( m(b)=t_K^1(m(b))\vee Cof(m(b))=\overline{1} \)ならば：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.01.</span> \( c\neq\overline{0} \)ならば、\( \Psi_b^{t_K^1(m(b))[c]}(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.02.02.</span> \( c=\overline{0} \)ならば、\( \Psi_b^{t_K^1(m(b))[t_b^0(a)]}(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.03.</span> 上記以外の場合、\( c\neq\overline{0} \)ならば、\( \Psi_b^c(Add(\lambda(b),a[n],a)) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">08.04.</span> 上記以外の場合、\( c=\overline{0} \)ならば、\( \Psi_b^{t_b^0(a)}(Add(\lambda(b),a[n],a)) \)を返す</p>
-            </td></tr>
-        </tbody></table>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a_L=L_b(a) \)、\( a_R=R_b(a) \)、\( m=m(b) \)、\( m_L=L_K(m) \)、\( m_R=R_K(m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( m_L=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( c=\overline{0}\land\overline{1}&lt;Cof(a_R)\land\neg FP_b(a) \)ならば、\( \Psi_b^\overline{0}(Add(\lambda(b), a[n], a)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( c=\overline{0}\land Cof(a_R)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( \overline{1}&lt;Cof(m_R) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.01.</span> \( \lambda(b)&lt;a \)ならば、\( \Psi_b^{m[n]}(a[\overline{0}]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.</span> \( \neg\lambda(b)&lt;a \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.01.01.</span> \( \kappa FP(b) \)ならば、\( \Phi(m_R)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.01.02.</span> \( \neg\kappa FP(b) \)ならば、\( \Xi(Add(\overline{1},m[n],m)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.02.01.</span> \( \kappa FP(b) \)ならば、\( P_{b_0}(b_2,m_R)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.02.02.02.</span> \( \neg\kappa FP(b) \)ならば、\( \Psi_{b_0}^{m[n]}(b_2) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( \neg\overline{1}&lt;Cof(m_R) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> \( \lambda(b)&lt;a \)ならば、\( d=\Psi_b^{m[\overline{0}]}(a[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> \( \neg\lambda(b)&lt;a \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.01.01.</span> \( m=\overline{1} \)ならば、\( d=\overline{0} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.01.02.</span> \( m\neq\overline{1} \)ならば、\( d=\Xi(m[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( d=\Psi_{b_0}^{m[\overline{0}]}(b_2) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( c\neq\overline{0} \)ならば、\( d=c \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> \( c=\overline{0}\land a_R=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.01.</span> \( \lambda(b)&lt;a_L\land Cof(a_L)&lt;b\land FP_b(a) \)ならば、\( d=t_b(a) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.02.</span> 上記以外の場合、\( b=\Omega_{b_0}\land b_0\in T_m\land\neg\lambda(b)&lt;a_L\land b_0\neq\overline{1} \)ならば、\( d=Norm(b_0[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.03.</span> 上記以外の場合、\( d=\overline{0} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> \( c=\overline{0}\land\overline{1}&lt;Cof(a_R)\land FP_b(a) \)ならば、\( d=a_R \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> \( \neg\lambda(b)&lt;a_L \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> \( b=\Omega_{b_0}\land b_0\in T_m \)ならば、\( \Gamma(d)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば、\( \Phi(d)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.03.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( P_{b_0}(b_2,d)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.07.</span> \( Cof(a_L)&lt;b \)ならば、\( d=Add(a_L[n],d) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.</span> \( \neg Cof(a_L)&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.01.</span> \( d=\overline{0} \)ならば、\( n'=n \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.02.</span> \( d\neq\overline{0} \)ならば、\( n'=n[\overline{0}] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.03.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.04.</span> \( n\neq\overline{0}\land n'=\overline{0} \)ならば、\( d \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.05.</span> \( b&lt;Cof(a_L) \)ならば、\( d=Add(Re(a_L,b)[n'[\overline{0}]],d) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.08.06.</span> \( \neg b&lt;Cof(a_L) \)ならば、\( d=Re(a_L,d)[n'[\overline{0}]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.09.</span> \( \Psi_b^\overline{0}(Add(\lambda(b),d,d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( m_L\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_R=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> \( \lambda(b)&lt;a_L\land Cof(a_L)&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.01.</span> \( c\neq\overline{0} \)ならば、\( \Psi_b^c(Add(\lambda(b),a[n],a)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.02.</span> \( c=\overline{0}\land FP_b(a) \)ならば、\( \Psi_b^{t_b(a)}(Add(\lambda(b),a[n],a)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.03.</span> \( c=\overline{0}\land\neg FP_b(a) \)ならば、\( \Psi_b^\overline{0}(Add(\lambda(b),a[n],a)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> \( \neg(\lambda(b)&lt;a_L\land Cof(a_L)&lt;b) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.01.</span> \( d=c \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> \( d=\overline{0} \)ならば、\( n'=n \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.03.</span> \( d\neq\overline{0} \)ならば、\( n'=n[\overline{0}] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.04.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.05.</span> \( n\neq\overline{0}\land n'=\overline{0} \)ならば、\( d \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.06.</span> \( b&lt;Cof(a_L) \)ならば、\( d=Add(Re(a_L,b)[n'[\overline{0}]],d) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.07.</span> \( \neg b&lt;Cof(a_L) \)ならば、\( d=Re(a_L,d)[n'[\overline{0}]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.08.</span> \( \Psi_b^\overline{0}(Add(\lambda(b),d,d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( Cof(a_R)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( \overline{1}&lt;Cof(m_R) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> \( (\kappa FP(b)\land\neg\lambda(b)&lt;a)\vee c\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.01.</span> \( c\neq\overline{0} \)ならば、\( d=c \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.02.</span> \( c=\overline{0}\land\kappa FP(b) \)ならば、\( d=m_R \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.03.</span> \( c=\overline{0}\land\neg\kappa FP(b) \)ならば、\( d=\overline{0} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.04.</span> \( Cof(m_L)&lt;K \)ならば、\( d=Add(m_L[n],d) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.05.</span> \( \neg Cof(m_L)&lt;K \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.05.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.05.02.</span> 上記以外の場合、\( d\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( d \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.05.03.</span> 上記以外の場合、\( d=m_L[P_b(a,c)[n[\overline{0}]]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.06.</span> \( \lambda(b)&lt;a \)ならば、\( \Psi_b^{d}(a[\overline{0}]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.07.</span> \( \neg\lambda(b)&lt;a \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.07.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば、\( \Xi(Add(\overline{1},d,d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.07.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( \Psi_{b_0}^{d}(b_2) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> \( ((\neg\kappa FP(b)\vee\lambda(b)&lt;a)\land c=\overline{0}) \)ならば、\( d=m[n] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> \( \neg\overline{1}&lt;Cof(m_R) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( c\neq\overline{0} \)ならば、\( d=c \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( c=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> \( m_R\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.01.</span> \( \lambda(b)&lt;a \)ならば、\( d=\Psi_b^{m[\overline{0}]}(a[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.02.</span> \( \neg\lambda(b)&lt;a \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.02.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば、\( d=\Xi(m[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.02.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( d=\Psi_{b_0}^{m[\overline{0}]}(b_2) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> \( m_R=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.01.</span> \( Cof(m_L)&lt;K\land\kappa FP(b) \)ならば、\( d=t_K(m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.01.</span> \( \neg Cof(m_L)&lt;K\land\kappa FP(b) \)ならば、\( d=\overline{0} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> \( Cof(m_L)&lt;K \)ならば、\( d=Add(m_L[n],d) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> \( \neg Cof(m_L)&lt;K \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.02.</span> 上記以外の場合、\( d\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( d \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.03.</span> 上記以外の場合、\( d=m_L[P_b(a,c)[n[\overline{0}]]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> \( \lambda(b)&lt;a \)ならば、\( \Psi_b^{d}(a[\overline{0}]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.04.</span> \( \neg\lambda(b)&lt;a \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.04.01.</span> \( b=\Xi(b_0)\land b_0\in T_m \)ならば、\( \Xi(Add(\overline{1},d,d)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.04.02.</span> \( b=\Psi_{b_0}^{b_1}(b_2)\land b_0,b_1,b_2\in T_m \)ならば、\( \Psi_{b_0}^{d}(b_2) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( \neg Cof(a_R)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> \( c\neq\overline{0}\vee\neg FP_b(a) \)ならば、\( \Psi_b^c(Add(\lambda(b),a[n],a)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> \( c=\overline{0}\land FP_b(a) \)ならば、\( \Psi_b^{a_R}(Add(\lambda(b),a[n],a)) \)を返す</p>
         <br>
-        <p>&emsp;&emsp;反復関数\( Re \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T,n\in T,c\in T)\mapsto Re(a,n,c)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( c=t_{Cof(a)}^0(c)\land c=t_{Cof(a)}^1(c) \)ならば、\( a[\overline{0}] \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( c\neq t_{Cof(a)}^0(c)\vee c\neq t_{Cof(a)}^1(c) \)ならば、\( a[t_{Cof(a)}^0(c)] \)を返す</p>
+        <p>&emsp;&emsp;強臨界列\( \Gamma[] \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto \Gamma(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=\overline{0} \)ならば、\( \overline{1} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\neq\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a=\overline{0} \)ならば、\( \varphi_{\overline{1}}(\overline{0}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( a\neq\overline{0} \)ならば、\( \varphi_a(\overline{1}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0}) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( \Omega \)不動点列\( \Phi[] \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto \Phi(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=\overline{0} \)ならば、\( \Omega_\overline{1} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\neq\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a=\overline{0} \)ならば、\( \Omega_{\Omega_\overline{1}} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( a\neq\overline{0} \)ならば、\( \Omega_{Suc(a)} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \Omega_{\Phi(a)[n[\overline{0}]]} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;再帰列\( Re[] \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T,c\in T)\mapsto Re(a,c)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( a[c] \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( Cof(a)=K \)ならば、\( \Xi(Add(\overline{1},Re(a,n[\overline{0}],c),Re(a,n[\overline{0}],c))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( Cof(a)\neq K \)ならば、\( \Psi_{Cof(a)}^\overline{0}(Add(\lambda(Cof(a)),Re(a,n[\overline{0}],c),Re(a,n[\overline{0}],c))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( p=Re(a,c)[n[\overline{0}]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( Cof(a)&lt;K \)ならば、\( \Psi_{Cof(a)}^\overline{0}(Add(\lambda(Cof(a)),p,p)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( \neg Cof(a)&lt;K \)ならば、\( \Xi(Add(\overline{1},p,p)) \)を返す</p>
         <br>
         <p>&emsp;&emsp;共終数は非可算の順序数をより小さい共終数は可算の順序数として展開するため、強基本列\( {[]}^* \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
@@ -570,10 +646,7 @@
         <br>
         <p>&emsp;&emsp;また、\( \Gamma_{K+1} \)的基本列を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{K+1}[n]\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( K \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば、\( \varphi_K(\overline{1}) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{\Gamma_{K+1}[n[\overline{0}]]}(\overline{0}) \)を返す</p>
+        <p>&emsp;&emsp;\( \Gamma(K)[n] \)を返す</p>
         <h1>出典</h1><hr>
         <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Rathjen, M. (1994). <a href="https://web.archive.org/web/20231208185422/https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf" target="_blank"
 >Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-12-13. https://doi.org/10.1016/0168-0072(94)90074-4</p>
