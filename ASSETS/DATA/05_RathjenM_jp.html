@@ -3,7 +3,9 @@
     <head></head>
     <body>
         <h1>定義</h1><hr>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数とはマイケル・ラティエンが1990年に提案した順序数崩壊関数である<sup><a id="g1" href="#c1">[1]</a></sup>。この順序数システム全体は4つの関数：\( \varphi_\alpha(\beta) \)、\( \Phi_\alpha(\beta) \)、\( \chi_\alpha(\beta) \)と\( \psi_\alpha(\beta) \)で構成されており、後ほど説明および定義します。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数とはマイケル・ラティエンが1990年に提案した順序数崩壊関数である<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
+        <p>&emsp;&emsp;ブーフホルツの\( \psi \)関数は\( \psi_\alpha(\beta) \)とも表記されるため、区別するために、この順序数崩壊関数は計算メニューと探索メニューでは\( \rho_\alpha(\beta) \)と表されます。オプション &gt; 関数の特定 &gt; \( \psi_\alpha(\beta) \) で復元できます。</p>
+        <p>&emsp;&emsp;この順序数システム全体は4つの関数：\( \varphi_\alpha(\beta) \)、\( \Phi_\alpha(\beta) \)、\( \chi_\alpha(\beta) \)と\( \psi_\alpha(\beta) \)で構成されており、後ほど説明および定義します。</p>
         <h2>関数\( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)はヴェブレン関数を表します。「ヴェブレン関数」のインターフェースのヘルプメニューに示されている通り、このように定義されます：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -287,16 +289,6 @@
         <p>&emsp;&emsp;\( \alpha&lt;\chi_\overline{0}(\overline{0}) \)の場合に限り、順序数\( \alpha \)は可算である。</p>
         <p>&emsp;&emsp;コマンド「fgh」と「sgh」の専用の可算順序数限界は\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)である。そのコンピューターコードは(r(x,),A)である。</p>
         <h2>演算</h2><hr>
-        <p>&emsp;&emsp;加法\( Add \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( b \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land b=\overline{0} \)ならば、\( a \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a\neq\overline{0}\land b\neq\overline{0} \)ならば、\( a+b \)を返す</p>
-        <br>
-        <p>&emsp;&emsp;後者\( Suc \)を以下のように定義します：</p>
-        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
-        <p>&emsp;&emsp;\( Add(a,\overline{1}) \)を返す</p>
-        <br>
         <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in T \)ならば、\( a \)を返す</p>
@@ -314,6 +306,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.03.</span> \( a\neq a_0\land a\neq a_1 \)ならば、\( a \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a_1 \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;加法\( Add \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land b=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a\neq\overline{0}\land b\neq\overline{0} \)ならば、\( a+b \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;後者\( Suc \)を以下のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;\( Add(a,\overline{1}) \)を返す</p>
         <h2>共終数</h2><hr>
         <p>&emsp;&emsp;共終数関数\( Cof \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
@@ -362,7 +364,7 @@
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> \( a_0=\overline{1} \)ならば、\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)を返す</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)を返す</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)を返す</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)を返す</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0}(a_1[n])) \)を返す</p>

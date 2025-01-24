@@ -3,7 +3,9 @@
     <head></head>
     <body>
         <h1>Definition</h1><hr>
-        <p>&emsp;&emsp;Rathjen's Little \( \psi \) refers to an ordinal collapsing function proposed by Michael Rathjen in 1990<sup><a id="g1" href="#c1">[1]</a></sup>. The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and described and defined as follows.</p>
+        <p>&emsp;&emsp;Rathjen's Little \( \psi \) refers to an ordinal collapsing function proposed by Michael Rathjen in 1990<sup><a id="g1" href="#c1">[1]</a></sup>.</p>
+        <p>&emsp;&emsp;Because Buchholz's \( \psi \) is also denoted as \( \psi_\alpha(\beta) \), this OCF is denoted as \( \rho_\alpha(\beta) \) in the Calculate menu and the Explore menu for distinction. You can restore it by Options &gt; Function Specification &gt; \( \psi_\alpha(\beta) \).</p>
+        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and described and defined as follows.</p>
         <h2>The function \( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \) denotes Veblen Function. It's defined as follows as shown in the Help menu in the "Veblen Function" interface:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -287,16 +289,6 @@
         <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\chi_\overline{0}(\overline{0}) \).</p>
         <p>&emsp;&emsp;The countable limit ordinal exclusive to the command "fgh" or "sgh" is \( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \), written in computer code as "(r(x,),A)".</p>
         <h2>Operations</h2><hr>
-        <p>&emsp;&emsp;We define addition \( Add \) as follows:</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
-        <br>
-        <p>&emsp;&emsp;We define succession \( Suc \) as follows:</p>
-        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
-        <p>&emsp;&emsp;Return \( Add(a,\overline{1}) \)</p>
-        <br>
         <p>&emsp;&emsp;We define the normalization function \( Norm \) to normalize an ordinal to its normal form:</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a\in T \), return \( a \)</p>
@@ -314,6 +306,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.02.03.</span> If \( a\neq a_0\land a\neq a_1 \), return \( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_1 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a \)</p>
+        <br>
+        <p>&emsp;&emsp;We define addition \( Add \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
+        <br>
+        <p>&emsp;&emsp;We define succession \( Suc \) as follows:</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;Return \( Add(a,\overline{1}) \)</p>
         <h2>Cofinality</h2><hr>
         <p>&emsp;&emsp;We define the cofinality function \( Cof \) as follows:</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
@@ -362,7 +364,7 @@
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> If \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \), then:</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> If \( a_0=\overline{1} \), return \( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> If \( a_0\neq\overline{1} \), return \( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> If \( a_0\neq\overline{1} \), return \( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> If \( n[\overline{0}][\overline{0}]\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0}(a_1[n])) \)</p>

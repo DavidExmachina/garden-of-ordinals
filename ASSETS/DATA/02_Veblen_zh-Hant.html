@@ -109,16 +109,6 @@
         <p>&emsp;&emsp;該系統的序數<b>一律可數</b>。</p>
         <p>&emsp;&emsp;<b>不存在</b>僅限於指令「fgh」與「sgh」可用的<b>可數序數極限</b>。</p>
         <h2>運算</h2><hr>
-        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，傳回\( a+b \)</p>
-        <br>
-        <p>&emsp;&emsp;我們定義後繼\( Suc \)如下：</p>
-        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
-        <p>&emsp;&emsp;傳回\( Add(a,\overline{1}) \)</p>
-        <br>
         <p>&emsp;&emsp;我們定義標準化函數\( Norm \)以將序數化為標準型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a\in T \)，傳回\( a \)</p>
@@ -128,6 +118,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a=a_1 \)，傳回\( a_1 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a=a_0 \)，傳回\( a_0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( a\neq a_0\land a\neq a_1 \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land b\neq\overline{0} \)，傳回\( a+b \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義後繼\( Suc \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;傳回\( Add(a,\overline{1}) \)</p>
         <h2>共尾數</h2><hr>
         <p>&emsp;&emsp;我們定義共尾函數\( Cof \)如下：</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
@@ -161,7 +161,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.01.</span> 若\( a_0=\overline{1} \)，傳回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，傳回\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，傳回\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
