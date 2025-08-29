@@ -7,7 +7,8 @@
         <p>&emsp;&emsp;You can enter the interface of these ordinal systems by clicking the corresponding button in the title screen. After entering the interface, you will see 4 tabs: Calculate, Explore, Options and Help. You can click the Help tab for more information about the ordinal system.</p>
         <h2>The calculation interface</h2><hr>
         <p>&emsp;&emsp;You can enter the Calculate menu by clicking the Calculate tab at the top of the page. In fact, this is the first menu you enter when you first enter the ordinal system interface.</p>
-        <p>&emsp;&emsp;In the Calculate menu, you can see the command bar, the console window, and the preset window. The way to do calculations and perform some other functions is to enter commands, which programmers like to do. To enter ordinals, you need to convert ordinals into "computer codes". The rule of conversion varies depending on the ordinal system and is given when you first enter the ordinal system interface or by entering an empty string in the command bar.</p>
+        <p>&emsp;&emsp;In the Calculate menu, you can see the command bar, the console window, and the preset window. The way to do calculations and perform some other functions is to enter commands, which programmers like to do. When the command bar is selected, you can press the Enter key to execute the command and press the ↑ and ↓ keys to input the previously entered commands.</p>
+        <p>&emsp;&emsp;To enter ordinals, you need to convert ordinals into "computer codes". The rule of conversion varies depending on the ordinal system and is given when you first enter the ordinal system interface or by entering an empty string in the command bar.</p>
         <p>&emsp;&emsp;For example, in the ordinal system Buchholz's \( \psi \), the conversion rules are:</p>
         <p>&emsp;&emsp;Empty string represents \( 0 \)</p>
         <p>&emsp;&emsp;String "A" represents \( \varepsilon_{\Omega_\omega+1} \)</p>
@@ -33,7 +34,7 @@
         <p>&emsp;&emsp;<b>Format:</b> cof ord</p>
         <p>&emsp;&emsp;<b>Description:</b> Display the cofinality of the ordinal written in the computer code "ord".</p>
         <p>&emsp;&emsp;You can copy the computer code of the result by clicking the "Copy" button. (Not in the following examples)</p>
-        <p>&emsp;&emsp;If the ordinals are displayed as MathJax, you can copy the MathJax code by: Right-click the ordinal > Copy to Clipboard > TeX Commands, which is actually a default function of MathJax.</p>
+        <p>&emsp;&emsp;If the ordinals are displayed as MathJax, you can copy the MathJax code by: Right-click the ordinal &gt; Copy to Clipboard &gt; TeX Commands, which is actually a default function of MathJax.</p>
         <p>&emsp;&emsp;The definition of "cofinality" will be explained later in this article.</p>
         <br>
         <p>&emsp;&emsp;<b>Example1:</b> (Buchholz's \( \psi \))</p>
@@ -158,6 +159,26 @@
         <p>&emsp;&emsp;Input: sgh (,)(,)(,) 3 10</p>
         <p>&emsp;&emsp;Console:</p>
         <p>&emsp;&emsp;\( \begin{align} & g_3(3) \\ = & g_2(3)+1 \\ = & g_1(3)+2 \\ = & g_0(3)+3 \\ = & 3 \end{align} \)</p>
+        <h3>mgh</h3>
+        <p>&emsp;&emsp;<b>Format:</b> mgh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Compute the Middle-Growing Hierarchy using the ordinal "ord" and number "n" in "steps" steps.</p>
+        <p>&emsp;&emsp;Same as fgh except the "Middle-Growing Hierarchy" is calculated.</p>
+        <p>&emsp;&emsp;The definition of the "Middle-Growing Hierarchy" will be explained later in this article.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: mgh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \begin{align} & m_{3}(3) \\ = & m_{2}^{2}(3) \\ = & m_{2}(m_{1}^{2}(3)) \\ = & m_{2}(m_{1}(m_{0}^{2}(3))) \\ = & m_{2}(m_{1}(m_{0}(4))) \\ = & m_{2}(m_{1}(5)) \\ = & m_{2}(m_{0}^{2}(5)) \\ = & m_{2}(m_{0}(6)) \\ = & m_{2}(7) \\ = & m_{1}^{2}(7) \\ = & m_{1}(m_{0}^{2}(7)) \\ = & \cdots \\ \end{align} \)</p>
+        <h3>hh</h3>
+        <p>&emsp;&emsp;<b>Format:</b> hh ord n [steps=1]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Compute the Hardy Hierarchy using the ordinal "ord" and number "n" in "steps" steps.</p>
+        <p>&emsp;&emsp;Same as fgh except the "Hardy Hierarchy" is calculated.</p>
+        <p>&emsp;&emsp;The definition of the "Hardy-Growing Hierarchy" will be explained later in this article.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
+        <p>&emsp;&emsp;Input: hh (,)(,)(,) 3 10</p>
+        <p>&emsp;&emsp;Console:</p>
+        <p>&emsp;&emsp;\( \begin{align} & H_{3}(3) \\ = & H_{2}(4) \\ = & H_{1}(5) \\ = & H_{0}(6) \\ = & 6 \end{align} \)</p>
         <h3>initial</h3>
         <p>&emsp;&emsp;<b>Format:</b> initial ord</p>
         <p>&emsp;&emsp;<b>Description:</b> Set the initial ordinal in the Explore menu to ordinal "ord".</p>
@@ -167,15 +188,15 @@
         <p>&emsp;&emsp;Input: initial (,(,))</p>
         <p>&emsp;&emsp;Console: The initial ordinal in the Explore menu has been set to \( \omega \).</p>
         <h3>search</h3>
-        <p>&emsp;&emsp;<b>Format:</b> search ord</p>
-        <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal in the Explore menu.</p>
+        <p>&emsp;&emsp;<b>Format:</b> search ord [steps=10000]</p>
+        <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal within "steps" step(s) in the Explore menu.</p>
         <p>&emsp;&emsp;If the ordinal "ord" is found, it will be highlighted in the Explore menu.</p>
-        <p>&emsp;&emsp;The ordinal "ord" is supposed to be always found when the initial ordinal is set to "A" in computer code, which is the default value. (Unless it can't be found in 10000 steps)</p>
+        <p>&emsp;&emsp;The ordinal "ord" is supposed to be always found within sufficient steps when the initial ordinal is set to "A" in computer code, which is the default value.</p>
         <br>
         <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
         <p>&emsp;&emsp;Input: search (,(,))</p>
         <p>&emsp;&emsp;Console:</p>
-        <p>&emsp;&emsp;Ordinal \( \omega \) is found.</p>
+        <p>&emsp;&emsp;Ordinal \( \omega \) is found. (Elapsed time: ?.???s)</p>
         <p>&emsp;&emsp;You can check the target ordinal in the Explore menu.</p>
         <h3>preset</h3>
         <p>&emsp;&emsp;<b>Format:</b> preset "import"/"export"/"reset"</p>
@@ -212,6 +233,8 @@
         <h2>Exploring ordinals</h2><hr>
         <p>&emsp;&emsp;You can enter the Explore menu by clicking the Explore tab at the top of the page.</p>
         <p>&emsp;&emsp;In the Explore menu, you can freely explore the ordinals by expanding them via clicking the buttons on the left. No matter how the ordinals are expanded, they will always be increasing from top to bottom. If the cofinality of the ordinal is uncountable, it will expand as a smaller ordinal with countable cofinality. The functions of the buttons are as follows:</p>
+        <p><span class="select button2 noclick" style="font-size: 16px;">√</span></p>
+        <p>&emsp;&emsp;Select an ordinal in the Explore menu as a label to make it easier to find. You can also select the ordinal again to deselect it or dehighlight a highlighted ordinal due to the command "search".</p>
         <p><span class="plus1 button2 noclick" style="font-size: 16px;">+</span></p>
         <p>&emsp;&emsp;Expand the ordinal once.</p>
         <p><span class="plus2 button2 noclick" style="font-size: 16px;">++</span></p>
@@ -226,7 +249,7 @@
         <p>&emsp;&emsp;You can enter the Options menu by clicking the Options tab at the top of the page. The possible options are as follows:</p>
         <h3>Background Animation</h3>
         <p>&emsp;&emsp;<b>Description:</b> Adjust whether the background animation is displayed.</p>
-        <p>&emsp;&emsp;Off: The background animation will be hidden <b>to make reading easier</b>.</p>
+        <p>&emsp;&emsp;Off: The background animation will be hidden <b>to make reading easier and improve performance</b>.</p>
         <p>&emsp;&emsp;On: The background animation will be displayed <b>to make the interface more beautiful</b>.</p>
         <h3>Display Mode</h3>
         <p>&emsp;&emsp;<b>Description:</b> Adjust the form the ordinals are displayed.</p>
@@ -242,8 +265,10 @@
         <p>&emsp;&emsp;<b>Description:</b> Adjust the degree of simplification of ordinals written in non-computer codes.</p>
         <p>&emsp;&emsp;None: The ordinals will not be simplified.</p>
         <p>&emsp;&emsp;\( \alpha^\beta \): The bases and exponent of the ordinals will be simplified. (For example: \( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \), where \( \epsilon \) is an arbitrary epsilon number (\( \omega^\epsilon=\epsilon \)))</p>
-        <p>&emsp;&emsp;\( \alpha*\beta \): In addition to the above, repeated multiplications will be simplified as exponentiations. (For example: \( \alpha\alpha\alpha=\alpha^3 \))</p>
-        <p>&emsp;&emsp;\( \alpha+\beta \): In addition to the above, repeated additions will be simplified as multiplications. (For example: \( \alpha+\alpha+\alpha=\alpha3 \))</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha*\beta} \): Same as \( \alpha*\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( epsilon\omega^\alpha \).</p>
+        <p>&emsp;&emsp;\( \alpha*\beta \): In addition to \( \alpha^\beta \), repeated multiplications will be simplified as exponentiations. (For example: \( \alpha\alpha\alpha=\alpha^3 \))</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \): Same as \( \alpha+\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( epsilon\omega^\alpha \).</p>
+        <p>&emsp;&emsp;\( \alpha+\beta \): In addition to \( \alpha*\beta \), repeated additions will be simplified as multiplications. (For example: \( \alpha+\alpha+\alpha=\alpha3 \))</p>
         <h3>Function Specification</h3>
         <p>&emsp;&emsp;<b>Description:</b> Adjust whether the OCFs are written in another way to avoid name collision.</p>
         <p>&emsp;&emsp;<b>Only available in:</b> Extended Buchholz's \( \psi \), Rathjen's Little \( \psi \)</p>
@@ -270,7 +295,8 @@
         <p>&emsp;&emsp;<b>Only available in:</b> Buchholz's \( \psi \), Extended Buchholz's \( \psi \)</p>
         <p>&emsp;&emsp;\( \psi_\alpha(\beta) \): \( \psi_\alpha(\beta) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( 1 \): \( \psi_0(0) \) will be rewritten as \( 1 \).</p>
-        <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \): \( \psi_\alpha(\beta) \) will be rewritten as \( \omega^{\Omega_\alpha+\beta} \) if \( \beta&lt;\Omega_{\alpha+1} \). If \( \alpha=0 \), then it's rewritten as \( \omega^\beta \) instead.</p>
+        <p>&emsp;&emsp;\( \psi_{\Omega_\alpha}(\beta) \): In the beginning, \( \gamma \) in \( \psi_\gamma(\delta) \) will be simplified according to the option \( \omega^{\Omega_\alpha+\beta} \) and \( \delta \) will be simplified according to this option. The ordinal remains unchanged other than these changes.</p>
+        <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \): \( \psi_\alpha(\beta) \) will be rewritten as \( \omega^{\Omega_\alpha+\beta} \) if \( \beta&lt;\Omega_{\alpha+1} \). In this case, if \( \alpha=0 \), then it's rewritten as \( \omega^\beta \) instead.</p>
         <h3>Rewrite \( \chi_\alpha(\beta) \)</h3>
         <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \chi_\alpha(\beta) \) is written.</p>
         <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Little \( \psi \)</p>
@@ -306,15 +332,15 @@
         <p>&emsp;&emsp;We can also do arithmetics on ordinals. Addition, multiplication and exponentiation in ordinals are defined as follows:</p>
         <p>&emsp;&emsp;\( \alpha+0:=\alpha \)</p>
         <p>&emsp;&emsp;\( \alpha+Suc(\beta):=Suc(\alpha+\beta) \)</p>
-        <p>&emsp;&emsp;\( \begin{align} \alpha+\beta:=\bigcup_{\beta'&lt;\beta}\alpha+\beta' \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;\( \displaystyle\alpha+\beta:=\bigcup_{\beta'&lt;\beta}\alpha+\beta' \) (\( \beta \) is a limit ordinal)</p>
         <br>
         <p>&emsp;&emsp;\( \alpha*0:=0 \)</p>
         <p>&emsp;&emsp;\( \alpha*Suc(\beta):=\alpha*\beta+\alpha \)</p>
-        <p>&emsp;&emsp;\( \begin{align} \alpha*\beta:=\bigcup_{\beta'&lt;\beta}\alpha*\beta' \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;\( \displaystyle\alpha*\beta:=\bigcup_{\beta'&lt;\beta}\alpha*\beta' \) (\( \beta \) is a limit ordinal)</p>
         <br>
         <p>&emsp;&emsp;\( \alpha^0:=1 \)</p>
         <p>&emsp;&emsp;\( \alpha^{Suc(\beta)}:=\alpha^\beta*\alpha \)</p>
-        <p>&emsp;&emsp;\( \begin{align} \alpha^\beta:=\bigcup_{\beta'&lt;\beta}\alpha^{\beta'} \end{align} \) (\( \beta \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;\( \displaystyle\alpha^\beta:=\bigcup_{\beta'&lt;\beta}\alpha^{\beta'} \) (\( \beta \) is a limit ordinal)</p>
         <h2>Cardinals</h2><hr>
         <p>&emsp;&emsp;We can see that addition and multiplication are not commutative in ordinals:</p>
         <p>&emsp;&emsp;\( \omega+1\neq 1+\omega \)</p>
@@ -348,7 +374,7 @@
         <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
         <br>
         <p>&emsp;&emsp;We say that an ordinal is <b>countable</b> if and only if it's less than \( \Omega \).</p>
-        <h2>The fast/slow growing hierarchy</h2><hr>
+        <h2>The growing hierarchies</h2><hr>
         <p>&emsp;&emsp;Another reason why ordinals are interesting is because ordinals can be used to create extraordinarily large numbers. Let's start from the following definitions:</p>
         <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
         <p>&emsp;&emsp;\( f_{m+1}(n):=f_m^n(n):=\underbrace{f_m(f_m(\cdots f_m(}_nn)\cdots)) \)</p>
@@ -366,7 +392,11 @@
         <p>&emsp;&emsp;These functions are pretty fast-growing. However, there's a way to create functions that grows faster than all of them. And that's where the ordinals kick in. We use the least infinite ordinals \( \omega \) and define as follows:</p>
         <p>&emsp;&emsp;\( f_\omega(n)=f_n(n) \)</p>
         <br>
-        <p>&emsp;&emsp;You can check that for all natural numbers \( m \), there is a natural number \( n_0 \) that \( f_\omega(n)&gt;f_m(n) \) for all \( n\ge n_0 \). In other words, \( f_\omega(n) \) grows faster than (In other words, dominates) all of the functions above, which resembles the fact that \( \omega \) is greater than all natural numbers.</p>
+        <p>&emsp;&emsp;So, how does this function grow faster than all of them? To explain this, we define the concept "domination", which means a function grows faster than another.</p>
+        <p>&emsp;&emsp;For 2 functions \( f,g:\mathbb{N}\rightarrow\mathbb{N} \), we say that \( f \) <b>dominates</b> \( g \) if:</p>
+        <p>&emsp;&emsp;There exists \( n_0\in\mathbb{N} \) such that for all \( n\in\mathbb{N} \), if \( n\ge n_0 \), then \( f(n)&gt;g(n) \)</p>
+        <br>
+        <p>&emsp;&emsp;You can check that for all natural numbers \( m \), \( f_\omega \) dominates \( f_m \). In other words, \( f_\omega \) grows faster than all of the functions above, which resembles the fact that \( \omega \) is greater than all natural numbers.</p>
         <p>&emsp;&emsp;Since we can continue counting up ordinals, we can define faster-growing functions as follows:</p>
         <p>&emsp;&emsp;\( f_{\omega+1}(n):=f_\omega^n(n) \)</p>
         <p>&emsp;&emsp;\( f_{\omega+2}(n):=f_{\omega+1}^n(n) \)</p>
@@ -382,32 +412,48 @@
         <p>&emsp;&emsp;\( f_\alpha(n):=f_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
         <br>
         <p>&emsp;&emsp;This is called the <b>fast-growing hierarchy (FGH)</b>. As we count up ordinals, we can define faster-growing functions as well. This has become a strategy to create extremely large numbers and the limit of this method is currently unknown.</p>
-        <p>&emsp;&emsp;Furthermore, we also have the <b>slow-growing hierarchy (SGH)</b> defined as follows:</p>
+        <p>&emsp;&emsp;Furthermore, we also have the other growing hierarchies introduced and defined as follows.</p>
+        <br>
+        <p>&emsp;&emsp;<b>Slow-growing hierarchy (SGH):</b></p>
         <p>&emsp;&emsp;\( g_0(n):=0 \)</p>
         <p>&emsp;&emsp;\( g_{\alpha+1}(n):=g_\alpha(n)+1 \)</p>
         <p>&emsp;&emsp;\( g_\alpha(n):=g_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
         <br>
-        <p>&emsp;&emsp;You can check that this function grows much slower than FGH. But still, it can catch up with FGH (\( f_\alpha(n)&lt;g_\alpha(n+1) \)) if the ordinal is large enough.</p>
+        <p>&emsp;&emsp;<b>Middle-growing hierarchy (MGH):</b></p>
+        <p>&emsp;&emsp;\( m_0(n):=n+1 \)</p>
+        <p>&emsp;&emsp;\( m_{\alpha+1}(n):=m_\alpha^2(n):=m_\alpha(m_\alpha(n)) \)</p>
+        <p>&emsp;&emsp;\( m_\alpha(n):=m_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;<b>Hardy hierarchy (HH):</b></p>
+        <p>&emsp;&emsp;\( H_0(n):=0 \)</p>
+        <p>&emsp;&emsp;\( H_{\alpha+1}(n):=H_\alpha(n+1) \)</p>
+        <p>&emsp;&emsp;\( H_\alpha(n):=H_{\alpha[n]}(n) \) (\( \alpha \) is a limit ordinal)</p>
+        <br>
+        <p>&emsp;&emsp;You can check that these growing hierarchies grow slower than FGH. But still, they can catch up with FGH (\( f_\alpha(n)&lt;g_\alpha(n+1),f_\alpha(n)&lt;m_\alpha(n+1),f_\alpha(n)&lt;H_\alpha(n+1) \)) if the ordinal is large enough.</p>
         <h2>Fundamental sequence</h2><hr>
         <p>&emsp;&emsp;The expression \( \alpha[n] \) appeared above represents the \( n+1 \)-th element of the <b>fundamental sequence (FS)</b> of the ordinal \( \alpha \).</p>
         <p>&emsp;&emsp;For a limit ordinal \( \alpha \) and an infinite sequence \( \alpha[n] \), we say that \( \alpha[n] \) is a FS of \( \alpha \) if:</p>
         <p>&emsp;&emsp;1. For all \( n\in\mathbb{N} \), \( \alpha[n]&lt;\alpha \)</p>
-        <p>&emsp;&emsp;2. \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \)</p>
+        <p>&emsp;&emsp;2. \( sup\{\alpha[n]|n\in\mathbb{N}\}=\alpha \)</p>
+        <p>&emsp;&emsp;Where \( supA \) denotes the least ordinal greater or equal to all of the elements in \( A \).</p>
         <br>
-        <p>&emsp;&emsp;Additionally, we say that \( \alpha[n] \) is an <b>ideal</b> FS of \( \alpha \) if:</p>
+        <p>&emsp;&emsp;We say that \( \alpha[n] \) is an <b>ideal</b> FS of \( \alpha \) if:</p>
         <p>&emsp;&emsp;For all \( m,n\in\mathbb{N} \), if \( m&lt;n \), then \( \alpha[m]&lt;\alpha[n] \) (The sequence is strictly increasing)</p>
+        <br>
+        <p>&emsp;&emsp;We say that \( \alpha[n] \) is <b>eventually weakly increasing</b> if:</p>
+        <p>&emsp;&emsp;There exists \( k\in\mathbb{N} \) such that for all \( m,n\in\mathbb{N} \), if \( k\le m&lt;n \), then \( \alpha[m]\le\alpha[n] \) (The sequence is weakly increasing starting from \( k \))</p>
         <br>
         <p>&emsp;&emsp;For non-limit ordinals, we also have the following definitions:</p>
         <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
         <p>&emsp;&emsp;\( 0[n]=0 \)</p>
         <br>
-        <p>&emsp;&emsp;In the example above, we chose the sequence that \( \omega[n]=n \), but in fact, there are multiple FSes that satisfies the conditions above. For example, we can define that \( \omega[n]=2^n \) which makes both FGH and SGH grow much faster. We can also define that \( \omega[n]=\lfloor\log_2(n+1)\rfloor \) (Not an ideal FS) which makes both FGH and SGH grow much slower.</p>
-        <p>&emsp;&emsp;As a result, <b>ordinals alone are not enough to create extremely large numbers</b>. We have to specify the FS we use when we use FGH or SGH. Without the specification of FS, we can't determine the actual growth rate, and the problem of when SGH will catch up with FGH will stop making mathematical sense.</p>
+        <p>&emsp;&emsp;In the example above, we chose the sequence that \( \omega[n]=n \), but in fact, there are multiple FSes that satisfies the conditions above. For example, we can define that \( \omega[n]=2^n \) which makes the growing hierarchies grow much faster. We can also define that \( \omega[n]=\lfloor\log_2(n+1)\rfloor \) (Not an ideal FS) which makes the growing hierarchies grow much slower.</p>
+        <p>&emsp;&emsp;As a result, <b>ordinals alone are not enough to create extremely large numbers</b>. We have to specify the FS we use when we use the growing hierarchies. Without the specification of FS, we can't determine the actual growth rate, and the problem of when the other growing hierarchies will catch up with FGH will stop making mathematical sense. Also, if the FS we use is not eventually weakly increasing, we can't even make sure that the growing hierarchy with larger ordinal dominates the same growing hierarchy with smaller ordinal.</p>
         <p>&emsp;&emsp;It's easy to define the FS for relatively small ordinals like \( \varepsilon_0 \). However, as the ordinal goes up, defining FS will be more difficult and it can even take months of work.</p>
         <p>&emsp;&emsp;The 6 ordinal systems this website uses use different systems of fundamental sequences. The fundamental sequence of ordinals varies depending on the ordinal system as already shown above.</p>
         <h2>Ordinal collapsing functions</h2><hr>
         <p>&emsp;&emsp;We can actually continue from \( \varepsilon_0 \) and get \( \varepsilon_1 \), \( \varepsilon_2 \), \( \varepsilon_\omega \), \( \zeta_0 \), \( \eta_0 \), \( \varphi_4(0) \), \( \varphi_\omega(0) \) and finally \( \Gamma_0 \), the Feferman-Schütte ordinal. At this point, we no longer have an easy way to define larger ordinals.</p>
-        <p>&emsp;&emsp;What we did before when we use FGH or SGH is to define large numbers using ordinals that are infinite and thus greater than any natural numbers, however large they are. So, this time, we are using uncountable cardinals to define countable ordinals.</p>
+        <p>&emsp;&emsp;What we did before when we use the growing hierarchies is to define large numbers using ordinals that are infinite and thus greater than any natural numbers, however large they are. So, this time, we are using uncountable cardinals to define countable ordinals.</p>
         <p>&emsp;&emsp;We start by defining the set \( C_0(0,0)=\{0\} \) and ask: what's the least ordinal we can't get when we add them together? The answer is \( 1 \) because no matter how many times we add 0 together, it still results in 0. And so, we write \( \psi_0(0)=1 \).</p>
         <p>&emsp;&emsp;And then: what's the least ordinal we can't get when we add \( 0 \) or \( \psi_0(0)=1 \) together. The answer is \( \omega \) and we write \( \psi_0(1)=\omega \). We can repeat and get \( \psi_0(2)=\omega^2 \), \( \psi_0(3)=\omega^3 \), \( \psi_0(\omega)=\omega^\omega \), and then we hit \( \psi_0(\varepsilon_0)=\varepsilon_0 \). But then, we have \( \psi_0(\varepsilon_0+1)=\varepsilon_0 \). This is because we have an unmentioned rule that we need to be able to construct the ordinal using addition and \( \psi_0(\alpha) \).</p>
         <p>&emsp;&emsp;Now is the time we use the uncountable cardinals. We define that \( \psi_0(\Omega)=\varepsilon_0 \). And this time, we have \( \psi_0(\Omega+1)=\varepsilon_0\omega \) because we can use \( \psi_1(0)=\Omega \) and construct \( \psi_0(\Omega)=\varepsilon_0 \). We will eventually hit another bottleneck: \( \psi_0(\Omega+\varepsilon_1)=\varepsilon_1 \), but all we need to do is to use another \( \Omega \) and get \( \psi_0(\Omega2)=\varepsilon_1 \). Now, we can repeat and get \( \psi_0(\Omega3)=\varepsilon_2 \), \( \psi_0(\Omega\omega)=\varepsilon_\omega \), \( \psi_0(\Omega^2)=\zeta_0 \), \( \psi_0(\Omega^3)=\eta_0 \), \( \psi_0(\Omega^\omega)=\varphi_\omega(0) \) and finally \( \psi_0(\Omega^\Omega)=\Gamma_0 \). And after this point, we can easily create larger ordinals.</p>
@@ -421,7 +467,7 @@
         <p>&emsp;&emsp;We define the cofinality of an ordinal \( \alpha \) (\( Cof(\alpha) \)) to be the least cardinality of a subset of \( \alpha \) that \( \alpha \) is greater than all the elements of the subset. We call the subset the cofinal subset.</p>
         <p>&emsp;&emsp;For example, \( Cof(\Omega_\omega)=\omega \) because we can find a cofinal subset \( \{\Omega_{1+\alpha}|\alpha\in\omega\} \) of cardinality \( \omega \).</p>
         <p>&emsp;&emsp;Also, the cofinality of \( 0 \) is \( 0 \) because 0 is greater than no ordinals. The cofinality of every successor ordinal is \( 1 \) because for every successor ordinal \( \alpha+1 \) there is a cofinal subset \( \{\alpha\} \) of cardinality \( 1 \). The cofinality of every limit ordinal is at least \( \omega \).</p>
-        <p>&emsp;&emsp;With the concept of cofinality, we can change the second condition of fundamental sequence from \( \begin{align} \bigcup_{n\in\mathbb{N}}\alpha[n]=\alpha \end{align} \) to \( \begin{align} \bigcup_{n\in Cof(\alpha)}\alpha[n]=\alpha \end{align} \).</p>
+        <p>&emsp;&emsp;With the concept of cofinality, we can replace all the \( \mathbb{N} \) in the definition of FS with \( Cof(\alpha) \). Note that \( \mathbb{N}=\omega \).</p>
         <p>&emsp;&emsp;Also, we say that a cardinal \( \kappa \) is a <b>regular cardinal</b> if \( Cof(\kappa)=\kappa \), otherwise, we say that \( \kappa \) is a <b>singular cardinal</b>.</p>
         <p>&emsp;&emsp;For example, \( \Omega \) is a regular cardinal because \( Cof(\Omega)=\Omega \). \( \Omega_\omega \) is a singular cardinal because \( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \).</p>
         <h2>Ordinal notation</h2><hr>
@@ -502,9 +548,22 @@
         <p>&emsp;&emsp;◇Added more description for the copy button in this article.</p>
         <h2>Jan 24, 2025 - V1.2</h2><hr>
         <p>&emsp;&emsp;<b>※Thoroughly fixed the ordinal system of Rathjen's Capital \( \Psi \).</b></p>
-        <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent a larger cardinal in <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957" target="_blank">this paper</a>, to avoid the confusion that \( \Xi=I \) (Where \( I \) denotes the least inaccessible cardinal), \( \Xi_1 \) is no longer rewritten as \( \Xi \).</p>
+        <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent a larger cardinal in <a href="https://d-nb.info/1017849250/34" target="_blank">this paper</a>, to avoid the confusion that \( \Xi=I \) (Where \( I \) denotes the least inaccessible cardinal), \( \Xi_1 \) is no longer rewritten as \( \Xi \).</p>
         <p>&emsp;&emsp;◇Due to some confusions caused by function specification (Denoting Extended Buchholz's \( \psi \) as \( \psi_\alpha^*(\beta) \) and Rathjen's Little \( \psi \) as \( \rho_\alpha(\beta) \)), added some texts in the corresponding help menu.</p>
         <p>&emsp;&emsp;◇Added some texts in <a href="#1.1.8">the paragraph about the command "search"</a>.</p>
         <p>&emsp;&emsp;◇Added some texts in <a href="#2.7">the paragraph of "Ordinal notation"</a> about the keyword "Let".</p>
+        <h2>Aug 29, 2025 - V1.3</h2><hr>
+        <p>&emsp;&emsp;<b>※Added "Middle-growing hierarchy" and "Hardy hierarchy".</b></p>
+        <p>&emsp;&emsp;◇Simplified the ordinal system of Rathjen's Capital \( \Psi \) and fixed a problem with the collapsing fixed point function \( \Psi FP \).</p>
+        <p>&emsp;&emsp;◇When the command bar is selected, you can now press the ↑ and ↓ keys to input the previously entered commands.</p>
+        <p>&emsp;&emsp;◇The command "search" now allows you to set a maximum search step limit, and displays the elapsed time when the ordinal is found.</p>
+        <p>&emsp;&emsp;◇The highlighted ordinal due to the command "search" will no longer be dehighlighted when expanding or collapsing other ordinals.</p>
+        <p>&emsp;&emsp;◇Added the <a href="1.3">"select button"</a>. You can now select an ordinal in the Explore menu as a label to make it easier to find.</p>
+        <p>&emsp;&emsp;◇Added the options \( \omega^{\alpha*\beta} \) and \( \omega^{\alpha+\beta} \) in the item <a href="1.4.4">"Simplification Mode"</a>.</p>
+        <p>&emsp;&emsp;◇Added the option \( \psi_{\Omega_\alpha}(\beta) \) in the item <a href="1.4.8">"Rewrite \( \psi_\alpha(\beta) \)"</a>.</p>
+        <p>&emsp;&emsp;◇Improved the performance of the website when the background animation is turned off.</p>
+        <p>&emsp;&emsp;◇Reduced the lag when opening the Help menu.</p>
+        <p>&emsp;&emsp;◇Fixed some errors when simplifying some ordinals.</p>
+        <p>&emsp;&emsp;◇Fixed the errors in the help articles and added some important details.</p>
     </body>
 </html>

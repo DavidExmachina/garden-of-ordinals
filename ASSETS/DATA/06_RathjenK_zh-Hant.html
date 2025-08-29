@@ -31,9 +31,9 @@
         <p>&emsp;&emsp;從上述定義，可見這個函數引入了麻洛基數的拓展：</p>
         <p>&emsp;&emsp;\( M^0 \)表示一類（小於\( K \)的）極限序數。</p>
         <p>&emsp;&emsp;\( M^1 \)表示一類不可達基數，這是由於函數\( \Omega_\alpha \)的出現而導致的。引入了這個函數的原因可能是因為不可達基數與\( \Pi_0^1- \)不可描述基數等價<sup><a id="g2" href="#c2">[2]</a></sup>。</p>
-        <p>&emsp;&emsp;\( M^2 \)表示一類麻洛基數。它不只包含最小麻洛基數\( M \)，還包含更大的麻洛基數如\( M_2 \)，\( M_3 \)等。</p>
-        <p>&emsp;&emsp;\( M^3 \)表示一類「超麻洛基數」。它包含一切使得小於\( \kappa \)的麻洛基數的集合是\( \kappa \)的駐集的麻洛基數的麻洛基數\( \kappa \)。</p>
-        <p>&emsp;&emsp;\( M^4 \)表示一類「超超麻洛基數」。它包含一切使得小於\( \kappa \)的「超麻洛基數」的集合是\( \kappa \)的駐集的「超麻洛基數」的「超麻洛基數」\( \kappa \)，以此類推。</p>
+        <p>&emsp;&emsp;\( M^2 \)表示一類麻洛基數。實際上，使得小於自身的不可數正規基數的集合是自身的駐集的不可數正規基數也是麻洛基數。這是一個更加寬鬆的條件。它不只包含最小麻洛基數\( M \)，還包含更大的麻洛基數如\( M_2 \)，\( M_3 \)等。</p>
+        <p>&emsp;&emsp;\( M^3 \)表示一類「超麻洛基數」。它包含一切使得小於自身的麻洛基數的集合是自身的駐集的麻洛基數的不可數正規基數。</p>
+        <p>&emsp;&emsp;\( M^4 \)表示一類「超超麻洛基數」。它包含一切使得小於自身的「超麻洛基數」的集合是自身的駐集的「超麻洛基數」的不可數正規基數，以此類推。</p>
         <br>
         <p>&emsp;&emsp;因此，\( \Xi(1)=I \)且\( \Xi(2)=M \)。有時我們將\( \Xi(3) \)記作\( N \)。</p>
         <h2>函數\( \Psi_\alpha^\beta(\gamma) \)</h2><hr>
@@ -43,7 +43,7 @@
         <p>&emsp;&emsp;可見，這個序數塌縮函數有3個變量，而非像其他序數塌縮函數那樣只有2個。若\( \beta&gt;0 \)，則\( \Psi_\alpha^\beta(\gamma) \)必傳回正規基數。此外，因為\( \Psi_\alpha^\beta(\gamma) \)與\( \Xi(\beta) \)都傳回\( M^\beta \)的元素，它能表示更大的不可達基數，麻洛基數，「超麻洛基數」等。因此，\( \Psi_{\Xi(2)}^1(3)=I_2 \)，\( \Psi_{\Xi(2)}^1(4)=I_3 \)，\( \Psi_{\Xi(3)}^2(4)=M_2 \)，\( \Psi_{\Xi(3)}^2(5)=M_3 \)，\( \Psi_{\Xi(4)}^3(5)=N_2 \)，\( \Psi_{\Xi(4)}^3(6)=N_3 \)，以此類推。</p>
         <p>&emsp;&emsp;而且，\( \Psi_\alpha^\beta(\gamma)=\alpha \)似乎有可能是成立的。事實上這是真的，而且函數\( \Xi(\alpha) \)也是如此。當這種情況發生時，我們稱函數「塌縮失敗」。因此，大多數情況下，都會有一個最小的\( \gamma \)使\( \Psi_\alpha^\beta(\gamma) \)不會塌縮失敗。</p>
         <p>&emsp;&emsp;該序數塌縮函數最具挑戰性的一點在於\( \Psi_\alpha^\beta(\gamma) \)不隨\( \gamma \)單調遞增，這就意味著在分析該序數塌縮函數時容易漏掉一些序數。</p>
-        <p>&emsp;&emsp;比如說，乍看之下我們會如此預料：（其中\( supA \)表示大於等於一切\( A \)的元素的最小序數）</p>
+        <p>&emsp;&emsp;比如說，乍看之下我們會如此預料：</p>
         <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\varphi_{\Psi_\Omega^0(\Omega)}(1),\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0)}(0),\cdots\} \)</p>
         <p>&emsp;&emsp;但實際上：</p>
         <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \)</p>
@@ -73,7 +73,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Omega_a:=\Omega(a) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \Psi_a^b(c):=\Psi(a,b,c) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{2}:=\overline{1}+\overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
         <h2>順序</h2><hr>
         <p>&emsp;&emsp;我們定義二元關係\( &lt; \)如下：</p>
         <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
@@ -99,14 +100,12 @@
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 若\( b_0&lt;a_0 \)，傳回\( \neg b_0\in C(a_0,a) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> 若\( a_0=_*b_0 \)，傳回\( \mathbb{F} \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> 若\( a=\Psi_{a_0}^{a_1}(a_2)\land b=\Psi_{b_0}^{b_1}(b_2)\land a_0,a_1,a_2,b_0,b_1,b_2\in T_m \)，則：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> 若\( b&lt;a_0 \)，則：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.01.</span> 若\( a_2&lt;b_2\land a&lt;b_0\land a_0\in C(b_2,b)\land a_1\in C(b_2,b)\land a_2\in C(b_2,b) \)，傳回\( \mathbb{T} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.02.</span> 除以上情況，若\( \neg a_2&lt;b_2\land\neg(b_0\in C(a_2,a)\land b_1\in C(a_2,a)\land b_2\in C(a_2,a)) \)，傳回\( \mathbb{T} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.03.</span> 除以上情況，若\( a_0=_*b_0\land a_2=_*b_2\land a_1&lt;b_1\land a_1\in C(b_1,b) \)，傳回\( \mathbb{T} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.04.</span> 除以上情況，若\( b_1&lt;a_1\land b_1\in C(a_1,a) \)，傳回\( \mathbb{T} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.05.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> 除以上情況，若\( a_0\neg_*b_0\land a_1\neg_*b_1\land a_2\neg_*b_2 \)，傳回\( \neg b&lt;a \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> 若\( \neg b&lt;a_0 \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> 除以上情況，若\( a_2&lt;b_2\land a&lt;b_0\land a_0\in C(b_2,b)\land a_1\in C(b_2,b)\land a_2\in C(b_2,b) \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> 除以上情況，若\( \neg a_2&lt;b_2\land\neg(b_0\in C(a_2,a)\land b_1\in C(a_2,a)\land b_2\in C(a_2,a)) \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.04.</span> 除以上情況，若\( a_0=_*b_0\land a_2=_*b_2\land a_1&lt;b_1\land a_1\in C(b_1,b) \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.05.</span> 除以上情況，若\( b_1&lt;a_1\land b_1\in C(a_1,a) \)，傳回\( \mathbb{T} \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">10.06.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
             </td></tr>
             <tr><td>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> 若\( a=K\land b\neq K \)，則：</p>
@@ -303,124 +302,47 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.01.</span> 若\( L_{a_{00}}(a_{02})=\overline{0} \)，傳回\( t_b(a_{02}) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.02.</span> 若\( L_{a_{00}}(a_{02})\neq\overline{0} \)，傳回\( t_b(L_{a_{00}}(a_{02})) \)</p>
         <br>
-        <p>&emsp;&emsp;我們定義置換函數\( RP \)如下：</p>
-        <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto RP_b(a,c)\in T_m \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( c \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0+RP_b(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a\in T_s \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a=K \)，傳回\( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.01.</span> 若\( a_1=\overline{0}\vee\neg a_1[\overline{0}]\in T_s \)，傳回\( \varphi_{RP_b(a_0)}(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.</span> 除以上情況，若\( a_1[\overline{0}]=\varphi_{p_0}(p_1) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.01.</span> 若\( RP_b(a_0)&lt;p_0 \)，傳回\( \varphi_{RP_b(a_0)}(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.02.</span> 若\( p_0&lt;RP_b(a_0) \)，傳回\( \varphi_{a_0+RP_b(a_0)}(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.02.03.</span> 若\( RP_b(a_0)=_*p_0 \)，傳回\( \varphi_{RP_b(a_0)}(Suc(p_1)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.</span> 除以上情況，若Else，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.01.</span> 若\( RP_b(a_0)&lt;a_1[\overline{0}] \)，傳回\( \varphi_{RP_b(a_0)}(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.02.</span> 若\( a_1[\overline{0}]&lt;RP_b(a_0) \)，傳回\( \varphi_{a_0+RP_b(a_0)}(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.03.03.</span> 若\( RP_b(a_0)=_*a_1[\overline{0}] \)，傳回\( \varphi_{RP_b(a_0)}(\overline{1}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> 若\( Cof(a_1)&lt;\overline{\omega} \)，傳回\( \varphi_{a_0}(RP_b(a_1)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( a=\Omega_{a_0}\land a_0\in T_m \)，傳回\( \Omega_{RP_b(a_0)} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> 若\( a=\Xi(a_0)\land a_0\in T_m \)，傳回\( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.</span> 若\( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.01.</span> 若\( a_1\neq\overline{0} \)，傳回\( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.</span> 若\( a_1=\overline{0} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.</span> 若\( \lambda(a_0)&lt;a_2 \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.01.</span> 若\( \neg FP_{a_0}(a_2) \)，傳回\( \Psi_{a_0}^{a_1}(RP_b(a_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.</span> 若\( FP_{a_0}(a_2) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.01.</span> 令\( a_L=L_{a_0}(a_2) \)，\( a_R=R_{a_0}(a_2)=\Psi_{a_{R0}}^{a_{R1}}(a_{R2}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.02.</span> 若\( RP_b(a_L)&lt;L_{a_{R0}}(a_{R2}) \)，傳回\( \Psi_{a_{R0}}^{a_1}(RP_b(a_L)+a_R) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.03.</span> 若\( L_{a_{R0}}(a_{R2})&lt;RP_b(a_L) \)，傳回\( \Psi_{a_{R0}}^{a_1}(a_L+RP_b(a_L)+a_R) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.</span> 若\( RP_b(a_L)=_*L_{a_{R0}}(a_{R2}) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.01.</span> 若\( \neg Suc(a_{R1})&lt;a_0 \)，傳回\( \Psi_{a_0}^{a_1}(Suc(a_{R2})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.02.</span> 除以上情況，若\( \neg Suc(a_{R1})&lt;a_{R0} \)，傳回\( \Psi_{a_{R0}}^{a_1}(Suc(a_{R2})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.01.02.04.03.</span> 除以上情況，傳回\( \Psi_{\Psi_{a_{R0}}^{S(a_{R1})}(a_{R2})}^{a_1}(Suc(a_{R2})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.</span> 若\( \neg\lambda(a_0)&lt;a_2 \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.01.</span> 若\( a_0=\Omega_{a_{00}}\land a_{00}\in T_m \)，傳回\( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.</span> 若\( a_0=\Xi(a_{00})\land a_{00}\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.01.</span> 若\( \neg\Xi FP(a_{00}) \)，傳回\( \Psi_{\Xi(a_{00})}^\overline{0}(Suc(a_{00})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.</span> 若\( \Xi FP(a_{00}) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.01.</span> 令\( m_L=L_K(a_{00}) \)，\( m_R=R_K(a_{00}) \)，\( r=RP_b(m_L) \)
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.</span> 若\( m_R=\Xi(m_0)\land m\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.01.</span> 若\( RP_b(m_L)&lt;L_K(m_0) \)，傳回\( \Psi_{\Xi(RP_b(m_L)+m_R)}^\overline{0}(Suc(RP_b(m_L)+m_R)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.02.</span> 若\( L_K(m_0)&lt;RP_b(m_L) \)，傳回\( \Psi_{\Xi(m_L+RP_b(m_L)+m_R)}^\overline{0}(Suc(m_L+RP_b(m_L)+m_R)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.02.03.</span> 若\( RP_b(m_L)=_*L_K(m_0) \)，傳回\( \Psi_{Suc(m_0)}^\overline{0}(Suc(Suc(m_0))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.</span> 若\( m_R=\Psi_{m_0}^{m_1}(m_2)\land m\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.01.</span> 若\( RP_b(m_L)&lt;L_K(m_2) \)，傳回\( \Psi_{\Psi_{m_0}^{m_R}(Suc(RP_b(m_L)))}^\overline{0}(Suc(Suc(RP_b(m_L)))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.02.</span> 若\( L_K(m_2)&lt;RP_b(m_L) \)，傳回\( \Psi_{\Psi_{m_0}^{m_R}(Suc(m_L+RP_b(m_L)))}^\overline{0}(Suc(Suc(m_L+RP_b(m_L)))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.</span> 若\( RP_b(m_L)=_*L_K(m_2) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.01.</span> 若\( \neg Suc(m_1)&lt;a_{00} \)，傳回\( \Psi_{a_0}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.02.</span> 除以上情況，若\( \neg Suc(m_1)&lt;m(m_0) \)，傳回\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.02.02.03.03.03.</span> 除以上情況，傳回\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.</span> 若\( a_0=\Psi_{a_{00}}^{a_{01}}(a_{02})\land a_{00},a_{01},a_{02}\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.</span> 若\( \neg\Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.01.</span> 若\( RP_b(a_{01})=_*m(a_{00}) \)，傳回\( \Psi{a_{00}}^\overline{0}(Suc(a_{02})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.02.</span> 若\( RP_b(a_{01})\neq_*m(a_{00}) \)，傳回\( \Psi_{\Psi{a_{00}}^{RP_b(a_{01})}(a_{02})}^\overline{0}(Suc(a_{02})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.</span> 若\( \Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.01.</span> 令\( m_L=L_K(a_{01}) \)，\( m_R=R_K(a_{01})=\Psi_{m_0}^{m_1}(m_2) \)，\( r=Root_{a_{00}}(m_R)=\Psi_{r_0}^{r_1}(r_2) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.</span> 若\( Cof(a_{02})=\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.01.</span> 若\( RP_b(m_L)\neq_*L_K(m(a_{00})) \)，傳回\( \Psi_{\Psi_{a_{00}}^{RP_b(m_L)+m_R}(a_{02})}^\overline{0}(Suc(a_{02})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.02.</span> 除以上情況，若\( Suc(a_{02})&lt;r_2 \)，傳回\( \Psi_{\Psi_{a_{00}}^{m_R}(Suc(a_{02}))}^\overline{0}(Suc(Suc(a_{02}))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.03.</span> 除以上情況，若\( \neg Suc(m_1)&lt;m(m_0) \)，傳回\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.04.</span> 除以上情況，傳回\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.</span> 若\( Cof(a_{02})\neq\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.01.</span> 令\( a_{0L}=L_{a_{00}}(a_{02}) \)，\( a_{0R}=R_{a_{00}}(a_{02}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.02.</span> 若\( a_{0R}=\overline{0} \)，令\( d=RP_b(a_{02}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.03.</span> 若\( a_{0R}\neq\overline{0} \)，令\( d=a_{0L}+RP_b(a_{0R}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.04.</span> 若\( \Psi FP_{a_{00}}^{a_{01}}(d) \)，傳回\( \Psi_{\Psi_{a_{00}}^{a_{01}}(d)}^\overline{0}(Suc(d)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.</span> 除以上情況，若\( d&lt;r_2 \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.01.</span> 若\( r_2&lt;RP_b(a_{0R}) \)，傳回\( \Psi_{a_{00}}^\overline{0}(a_{02}+d) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.05.02.</span> 若\( \neg r_2&lt;RP_b(a_{0R}) \)，傳回\( \Psi_{a_{00}}^\overline{0}(d) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.06.</span> 除以上情況，若\( r_2&lt;d \)，傳回\( \Psi_{\Psi_{a_{00}}^{a_{01}}(a_{02}+d)}^\overline{0}(Suc(a_{02}+d)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.03.07.</span> 除以上情況，若\( d&lt;L_{a_{00}}(m_2) \)，傳回\( \Psi_{m_0}^{a_1}(d+\Psi_{m_0}^{a_1}(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.08.</span> 除以上情況，若\( Suc(a_{02})&lt;r_2 \)，傳回\( \Psi_{\Psi_{a_{00}}^{m_R}(Suc(a_{02}))}^\overline{0}(Suc(Suc(a_{02}))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.09.</span> 除以上情況，若\( \neg Suc(m_1)&lt;m(m_0) \)，傳回\( \Psi_{m_0}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.10.</span> 除以上情況，傳回\( \Psi_{\Psi_{m_0}^{Suc(m_1)}(m_2)}^{a_1}(Suc(m_2)) \)</p>
-        <p>&emsp;&emsp;我們將\( RP_b(a,b) \)寫作\( RP_b(a) \)。注意在某些情況下，該函數會產生一些非標準型的序數。例如，02.02.05.02.01.02.03.行會產生此類序數，這是因為\( m_L&lt;RP_b(m_L) \)，而將它們直接相加會得到一個非標準型的序數。這對於判斷序數是否為不定點是必要的。</p>
-        <br>
         <p>&emsp;&emsp;我們定義一般不動點函數\( FP \)以判斷某序數是否為一般不動點。雖然函數\( \Xi \)與\( \Psi \)不存在不動點，這是為了判斷對於一切\( a&lt;b,f(a)&lt;b \)是否成立。其中\( a,b \)是任意序數而\( f \)是任意函數。例如，雖然\( \Psi_\Omega^0(\Omega) \)不是函數\( \alpha\mapsto\Psi_\Omega^0(\alpha) \)的不動點，但是對於一切\( \alpha&lt;\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\alpha)&lt;\Psi_\Omega^0(\Omega) \)皆成立。</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto FP_b(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_b(a) \)，\( r=RP_b(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_b(a) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg t\in T_s \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( \neg r\in T \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，若\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( t_2&lt;r \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 除以上情況，若\( t&lt;\Psi_b^\overline{0}(r) \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 除以上情況，若\( t_0=_*b \)，傳回\( \mathbb{T} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.04.</span> 除以上情況，若\( FP_b(RP_b(a,t_0)) \)，傳回\( \mathbb{T} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.05.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( t&lt;\Psi_b^\overline{0}(a{[\overline{0}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 除以上情況，若\( t&lt;\Psi_b^\overline{0}(a{[\overline{1}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 除以上情況，若\( t&lt;\Psi_b^\overline{0}(a{[\overline{2}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
         <br>
         <p>&emsp;&emsp;我們定義麻洛不動點函數\( \Xi FP \)以判斷某序數是否為麻洛不動點：</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto \Xi FP(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_K(a) \)，\( r=RP_K(a) \)，\( R=Root(t)=\Xi(R_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_K(a) \)，\( R=Root(t)=\Xi(R_0) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg t\in T_s \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( \neg r\in T \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，若\( (t=\Xi(t_0)\vee t=\Psi_{t_0}^{t_1}(t_2))\land t_0,t_1,t_2\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( R_0&lt;r \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 除以上情況，若\( t&lt;\Psi_{\Xi(r)}^\overline{0}(S(r)) \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( (t=\Xi(t_0)\vee t=\Psi_{t_0}^{t_1}(t_2))\land t_0,t_1,t_2\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( R_0&lt;\Xi(a{[\overline{0}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 除以上情況，若\( R_0&lt;\Xi(a{[\overline{1}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 除以上情況，若\( R_0&lt;\Xi(a{[\overline{2}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 除以上情況，若\( t&lt;\Psi_{\Xi(a{[\overline{0}]}^*)}^\overline{0}(S(a{[\overline{0}]}^*)) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.05.</span> 除以上情況，若\( t&lt;\Psi_{\Xi(a{[\overline{1}]}^*)}^\overline{0}(S(a{[\overline{1}]}^*)) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.06.</span> 除以上情況，若\( t&lt;\Psi_{\Xi(a{[\overline{2}]}^*)}^\overline{0}(S(a{[\overline{2}]}^*)) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.07.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
         <br>
         <p>&emsp;&emsp;我們定義塌縮不動點函數\( \Psi FP \)以判斷某序數是否為塌縮不動點：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T)\mapsto \Psi FP_b^c(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_K(c) \)，\( r=RP_K(c) \)，\( R=Root_b(t) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 令\( t=t_K(c) \)，\( R=Root_b(t)=\Psi_{R_0}^{R_1}(R_2) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg t\in T_s \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( \neg r\in T \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，若\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( R=\overline{0} \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 除以上情況，若\( R=\Psi_{R_0}^{R_1}(R_2) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> 若\( t&lt;\Psi_b^\overline{0}(a) \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> 若\( \neg t&lt;\Psi_b^\overline{0}(a) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> 若\( a&lt;R_1 \)，傳回\( \mathbb{T} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> 若\( \neg a&lt;R_1 \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.01.</span> 若\( R_1&lt;r \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.02.</span> 若\( \neg R_1&lt;r\land R&lt;\Psi_b^r(a) \)，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.03.</span> 若\( \neg R_1&lt;r\land \neg R&lt;\Psi_b^r(a) \)，傳回\( \mathbb{T} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( t&lt;\Psi_b^\overline{0}(a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( R=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 除以上情況，若\( t=\Psi_{t_0}^{t_1}(t_2)\land t_0,t_1,t_2\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( R&lt;\Psi_b^{c{[\overline{0}]}^*}(a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 除以上情況，若\( R&lt;\Psi_b^{c{[\overline{1}]}^*}(a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 除以上情況，若\( R&lt;\Psi_b^{c{[\overline{2}]}^*}(a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.04.</span> 除以上情況，若\( a&lt;R_2 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.05.</span> 除以上情況，若\( R_1&lt;c{[\overline{0}]}^* \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.06.</span> 除以上情況，若\( R_1&lt;c{[\overline{1}]}^* \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.07.</span> 除以上情況，若\( R_1&lt;c{[\overline{2}]}^* \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.08.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
         <br>
         <p>&emsp;&emsp;我們定義基數不動點函數\( \kappa FP \)以判斷某序數是否為基數不動點：</p>
         <p>&emsp;&emsp;\( (a\in T)\mapsto \kappa FP(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
@@ -482,35 +404,31 @@
         <p>&emsp;&emsp;我們定義基本序列\( [] \)如下：</p>
         <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=K \)，傳回\( n \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.</span> 若\( a_1=\overline{0} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> 若\( a_0=\overline{0} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> 若\( a_0=\overline{1} \)，傳回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，傳回\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Omega_{a_0}\land a_0\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( Cof(a_0)&lt;\overline{\omega} \)，傳回\( n \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega} \)，傳回\( \Omega_{a_0[n]} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Xi(a_0)\land a_0\in T_m \)，傳回\( n \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> 若\( a_1=\overline{0} \)，傳回\( P_{a_0}(a_2,\overline{0})[n] \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 若\( a_1\neq\overline{0} \)，傳回\( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=K\vee m(a)\neq\overline{0} \)，傳回\( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq K\land m(a)=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> 若\( a_0=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.03.01.</span> 若\( a_0=\overline{1} \)，傳回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，傳回\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( a=\Omega_{a_0}\land a_0\in T_m \)，傳回\( \Omega_{a_0[n]} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 若\( a=\Psi_{a_0}^{a_1}(a_2)\land a_0,a_1,a_2\in T_m \)，傳回\( P_{a_0}(a_2,\overline{0})[n] \)</p>
         <br>
         <p>&emsp;&emsp;我們定義塌縮基本序列\( P[] \)如下：</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T,c\in T,n\in T)\mapsto P_b(a,c)[n]\in T \)</p>
