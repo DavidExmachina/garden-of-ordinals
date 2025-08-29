@@ -4,7 +4,7 @@
 // USE STRICT
 "use strict";
 // CACHE
-var cache = {};
+let cache = {};
 // =================================================================================================
 // CANTOR NORMAL FORM
 // =================================================================================================
@@ -23,7 +23,7 @@ const Cantor = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"()".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -41,7 +41,7 @@ const Cantor = {
         // SINGLE
         if (this.single(str)) return this.isnormal(this.vsp(str)[0]);
         // ADDITION
-        var str1 = this.asp(str);
+        let str1 = this.asp(str);
         if (!this.isnormal(str1[0])) return false;
         if (!this.isnormal(str1[1])) return false;
         if (this.single(str1[1])) return !this.lt(str1[0], str1[1]);
@@ -53,7 +53,7 @@ const Cantor = {
     // ADDITION SPLIT
     asp: function (str){
         if (!str) return ["", ""];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -71,7 +71,7 @@ const Cantor = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -82,7 +82,7 @@ const Cantor = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
@@ -118,7 +118,7 @@ const Cantor = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
@@ -142,7 +142,7 @@ const Cantor = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -152,7 +152,7 @@ const Cantor = {
         if (a === "A") return n ? `(${this.fs(a, this.fs(n))})` : "";
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n);
         }
         // SINGLE
@@ -163,7 +163,7 @@ const Cantor = {
         if (this.cof(this.vsp(a)[0]) === "(())") return `(${this.fs(this.vsp(a)[0], n)})`;
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
@@ -172,7 +172,7 @@ const Cantor = {
         if (str === "A") return [["e", ["0"]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
@@ -197,15 +197,16 @@ const Veblen = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"(,)".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = [];
+        let depth = [];
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth.push(1);
-            if (str[i] === ",") depth[depth.length - 1] --;
+            if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
                 if (depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
+        if (depth.length) return 1;
         // CHECK NORMAL
         if (!this.isnormal(str)) return 2;
         // ALL CLEAR
@@ -217,13 +218,13 @@ const Veblen = {
         if (["", "A"].includes(str)) return true;
         // SINGLE
         if (this.single(str)){
-            var str1 = this.vsp(str);
+            let str1 = this.vsp(str);
             if (!this.isnormal(str1[0])) return false;
             if (!this.isnormal(str1[1])) return false;
             return this.lt(str1[1], str);
         }
         // ADDITION
-        var str2 = this.asp(str);
+        let str2 = this.asp(str);
         if (!this.isnormal(str2[0])) return false;
         if (!this.isnormal(str2[1])) return false;
         if (this.single(str2[1])) return !this.lt(str2[0], str2[1]);
@@ -235,7 +236,7 @@ const Veblen = {
     // ADDITION SPLIT
     asp: function (str){
         if (!str) return ["", ""];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -244,7 +245,7 @@ const Veblen = {
     },
     // VARIABLE SPLIT
     vsp: function (str){
-        var depth = 0;
+        let depth = 0;
         for (let i = 1; i < str.length - 1; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -260,7 +261,7 @@ const Veblen = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -271,13 +272,13 @@ const Veblen = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
         if (this.single(a) && !this.single(b)) return !this.lt(this.asp(b)[0], a);
         // SINGLE
-        var a2 = this.vsp(a), b2 = this.vsp(b);
+        let a2 = this.vsp(a), b2 = this.vsp(b);
         if (this.lt(a2[0], b2[0])) return this.lt(a2[1], b);
         if (this.lt(b2[0], a2[0])) return this.lt(a, b2[1]);
         return this.lt(a2[1], b2[1]);
@@ -312,7 +313,7 @@ const Veblen = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
@@ -336,7 +337,7 @@ const Veblen = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -346,11 +347,11 @@ const Veblen = {
         if (a === "A") return n ? `(${this.fs(a, this.fs(n))},)` : "";
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n);
         }
         // SINGLE
-        var a2 = this.vsp(a);
+        let a2 = this.vsp(a);
         if (this.cof(a2[1]) === "(,(,))") return this.norm(`(${a2[0]},${this.fs(a2[1], n)})`);
         if (!a2[0]){
             if (!a2[1]) return "";
@@ -370,7 +371,7 @@ const Veblen = {
         return `(${this.fs(a2[0], n)},${this.norm(`(${a2[0]},${this.fs(a2[1])})`)}(,))`;
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
@@ -379,11 +380,11 @@ const Veblen = {
         if (str === "A") return [["G", ["0"]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         return [["v", this.math(str2[0]), this.math(str2[1])]];
     },
 };
@@ -405,15 +406,16 @@ const Buchholz = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"(,)".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = [];
+        let depth = [];
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth.push(1);
-            if (str[i] === ",") depth[depth.length - 1] --;
+            if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
                 if (depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
+        if (depth.length) return 1;
         // CHECK NORMAL
         if (!this.isnormal(str)) return 2;
         // ALL CLEAR
@@ -423,10 +425,10 @@ const Buchholz = {
     inc: function (c, a, b){
         if (this.lt(c, `(${a},)`)) return true;
         if (this.single(c)){
-            var c1 = this.vsp(c);
+            let c1 = this.vsp(c);
             return this.lt(c1[0], "(,(,))(,)") && this.inc(c1[1], a, b) && this.lt(c1[1], b);
         }
-        var c2 = this.asp(c);
+        let c2 = this.asp(c);
         return this.inc(c2[0], a, b) && this.inc(c2[1], a, b);
     },
     // IS NORMAL
@@ -435,13 +437,13 @@ const Buchholz = {
         if (["", "A"].includes(str)) return true;
         // SINGLE
         if (this.single(str)){
-            var str1 = this.vsp(str);
+            let str1 = this.vsp(str);
             if (!this.isnormal(str1[0])) return false;
             if (!this.isnormal(str1[1])) return false;
             return this.inc(str1[1], str1[0], str1[1]);
         }
         // ADDITION
-        var str2 = this.asp(str);
+        let str2 = this.asp(str);
         if (!this.isnormal(str2[0])) return false;
         if (!this.isnormal(str2[1])) return false;
         if (this.single(str2[1])) return !this.lt(str2[0], str2[1]);
@@ -453,7 +455,7 @@ const Buchholz = {
     // ADDITION SPLIT
     asp: function (str){
         if (!str) return ["", ""];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -462,7 +464,7 @@ const Buchholz = {
     },
     // VARIABLE SPLIT
     vsp: function (str){
-        var depth = 0;
+        let depth = 0;
         for (let i = 1; i < str.length - 1; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -478,7 +480,7 @@ const Buchholz = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -489,13 +491,13 @@ const Buchholz = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
         if (this.single(a) && !this.single(b)) return !this.lt(this.asp(b)[0], a);
         // SINGLE
-        var a2 = this.vsp(a), b2 = this.vsp(b);
+        let a2 = this.vsp(a), b2 = this.vsp(b);
         return this.lt(a2[0], b2[0]) || (!this.lt(b2[0], a2[0]) && this.lt(a2[1], b2[1]));
     },
     // GREATER THAN
@@ -526,7 +528,7 @@ const Buchholz = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
@@ -536,11 +538,11 @@ const Buchholz = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        var str1 = this.vsp(str);
-        var c1 = this.cof(str1[1]);
+        let str1 = this.vsp(str);
+        let c1 = this.cof(str1[1]);
         // SINGLE ZERO
         if (!str1[1]){
-            var c2 = this.cof(str1[0]);
+            let c2 = this.cof(str1[0]);
             if (this.lt(c2, "(,(,))")) return str;
             return c2;
         }
@@ -563,7 +565,7 @@ const Buchholz = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -573,13 +575,13 @@ const Buchholz = {
         if (a === "A") return n ? `((,(,)),${this.fs(a, this.fs(n))})` : "";
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        var a2 = this.vsp(a);
-        var c1 = this.cof(a2[1]);
-        var c2;
+        let a2 = this.vsp(a);
+        let c1 = this.cof(a2[1]);
+        let c2;
         // SINGLE ZERO
         if (!a2[1]){
             c2 = this.cof(a2[0]);
@@ -598,11 +600,11 @@ const Buchholz = {
         return n ? `(${a2[0]},${this.re(a2[1], this.fs(n))})` : "";
     },
     re: function (a, n){
-        var c = this.fs(this.vsp(this.cof(a))[0]);
+        let c = this.fs(this.vsp(this.cof(a))[0]);
         return this.fs(a, n ? `(${c},${this.re(a, this.fs(n))})` : "");
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
@@ -611,11 +613,11 @@ const Buchholz = {
         if (str === "A") return [["e", [["W", ["\\omega"]], "+", "1"]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         return [["b", this.math(str2[0]), this.math(str2[1])]];
     },
 };
@@ -637,15 +639,16 @@ const ExBuchholz = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"(,)".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = [];
+        let depth = [];
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth.push(1);
-            if (str[i] === ",") depth[depth.length - 1] --;
+            if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
                 if (depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
+        if (depth.length) return 1;
         // CHECK NORMAL
         if (!this.isnormal(str)) return 2;
         // ALL CLEAR
@@ -655,10 +658,10 @@ const ExBuchholz = {
     inc: function (c, a, b){
         if (this.lt(c, `(${a},)`)) return true;
         if (this.single(c)){
-            var c1 = this.vsp(c);
+            let c1 = this.vsp(c);
             return this.inc(c1[0], a, b) && this.inc(c1[1], a, b) && this.lt(c1[1], b);
         }
-        var c2 = this.asp(c);
+        let c2 = this.asp(c);
         return this.inc(c2[0], a, b) && this.inc(c2[1], a, b);
     },
     // IS NORMAL
@@ -667,13 +670,13 @@ const ExBuchholz = {
         if (["", "A"].includes(str)) return true;
         // SINGLE
         if (this.single(str)){
-            var str1 = this.vsp(str);
+            let str1 = this.vsp(str);
             if (!this.isnormal(str1[0])) return false;
             if (!this.isnormal(str1[1])) return false;
             return this.inc(str1[1], str1[0], str1[1]);
         }
         // ADDITION
-        var str2 = this.asp(str);
+        let str2 = this.asp(str);
         if (!this.isnormal(str2[0])) return false;
         if (!this.isnormal(str2[1])) return false;
         if (this.single(str2[1])) return !this.lt(str2[0], str2[1]);
@@ -685,7 +688,7 @@ const ExBuchholz = {
     // ADDITION SPLIT
     asp: function (str){
         if (!str) return ["", ""];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -694,7 +697,7 @@ const ExBuchholz = {
     },
     // VARIABLE SPLIT
     vsp: function (str){
-        var depth = 0;
+        let depth = 0;
         for (let i = 1; i < str.length - 1; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -710,7 +713,7 @@ const ExBuchholz = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -721,13 +724,13 @@ const ExBuchholz = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
         if (this.single(a) && !this.single(b)) return !this.lt(this.asp(b)[0], a);
         // SINGLE
-        var a2 = this.vsp(a), b2 = this.vsp(b);
+        let a2 = this.vsp(a), b2 = this.vsp(b);
         return this.lt(a2[0], b2[0]) || (!this.lt(b2[0], a2[0]) && this.lt(a2[1], b2[1]));
     },
     // GREATER THAN
@@ -758,7 +761,7 @@ const ExBuchholz = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
@@ -768,11 +771,11 @@ const ExBuchholz = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        var str1 = this.vsp(str);
-        var c1 = this.cof(str1[1]);
+        let str1 = this.vsp(str);
+        let c1 = this.cof(str1[1]);
         // SINGLE ZERO
         if (!str1[1]){
-            var c2 = this.cof(str1[0]);
+            let c2 = this.cof(str1[0]);
             if (this.lt(c2, "(,(,))")) return str;
             return c2;
         }
@@ -795,7 +798,7 @@ const ExBuchholz = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -805,13 +808,13 @@ const ExBuchholz = {
         if (a === "A") return n ? `(${this.fs(a, this.fs(n))},)` : "";
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        var a2 = this.vsp(a);
-        var c1 = this.cof(a2[1]);
-        var c2;
+        let a2 = this.vsp(a);
+        let c1 = this.cof(a2[1]);
+        let c2;
         // SINGLE ZERO
         if (!a2[1]){
             c2 = this.cof(a2[0]);
@@ -830,11 +833,11 @@ const ExBuchholz = {
         return n ? `(${a2[0]},${this.re(a2[1], this.fs(n))})` : "";
     },
     re: function (a, n){
-        var c = this.fs(this.vsp(this.cof(a))[0]);
+        let c = this.fs(this.vsp(this.cof(a))[0]);
         return this.fs(a, n ? `(${c},${this.re(a, this.fs(n))})` : "");
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
@@ -843,11 +846,11 @@ const ExBuchholz = {
         if (str === "A") return [["W", [["W", [["W", ["\\cdot_{\\cdot_\\cdot}"]]]]]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         return [["B", this.math(str2[0]), this.math(str2[1])]];
     },
 };
@@ -869,14 +872,14 @@ const RathjenM = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"(,)MvVxr".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = [];
+        let depth = [];
         for (let i = 0; i < str.length; i++){
             if (str[i] === "("){
                 if (i + 1 >= str.length) return 1;
                 if (!"vVxr".includes(str[i + 1])) return 1;
                 depth.push(1);
             }
-            if (str[i] === ",") depth[depth.length - 1] --;
+            if (str[i] === ",") depth[depth.length - 1]--;
             if (depth[depth.length - 1] < 0) return 1;
             if (str[i] === ")"){
                 if (depth[depth.length - 1]) return 1;
@@ -887,6 +890,7 @@ const RathjenM = {
                 if (str[i - 1] !== "(") return 1;
             }
         }
+        if (depth.length) return 1;
         // CHECK NORMAL
         if (!this.isnormal(str)) return 2;
         // ALL CLEAR
@@ -897,14 +901,14 @@ const RathjenM = {
         // CONSTANT
         if (["", "M"].includes(str)) return "";
         // ADDITION
-        var str1 = null;
+        let str1 = null;
         if (!this.single(str)) str1 = this.asp(str);
         // VEBLEN
         if (str[1] === "v" && str1 === null) str1 = this.vsp(str);
         // ELSE
         if (str1 === null) return str;
         // COMPARE
-        var s0 = this.st(str1[0]), s1 = this.st(str1[1]);
+        let s0 = this.st(str1[0]), s1 = this.st(str1[1]);
         return this.lt(s0, s1) ? s1 : s0;
     },
     // IS REGULAR
@@ -912,7 +916,7 @@ const RathjenM = {
         if (!str) return false;
         if (!this.single(str)) return false;
         if (str[1] !== "x") return false;
-        var str1 = this.vsp(str);
+        let str1 = this.vsp(str);
         if (!str1[1]) return true;
         if (str1[1].slice(-4) === "(v,)") return true;
         return false;
@@ -921,7 +925,7 @@ const RathjenM = {
     least: function (a, b){
         // CONSTANT
         if (["", "M"].includes(a)) return "";
-        var a1, b1, s0, s1, s2, max;
+        let a1, b1, s0, s1, s2, max;
         // ADDITION
         if (!this.single(a)){
             a1 = this.asp(a);
@@ -961,14 +965,14 @@ const RathjenM = {
         if (["", "M", "A"].includes(str)) return true;
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             if (!this.isnormal(str1[0])) return false;
             if (!this.isnormal(str1[1])) return false;
             if (this.single(str1[1])) return !this.lt(str1[0], str1[1]);
             return !this.lt(str1[0], this.asp(str1[1])[0]);
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         if (!this.isnormal(str2[0])) return false;
         if (!this.isnormal(str2[1])) return false;
         // VEBLEN
@@ -990,7 +994,7 @@ const RathjenM = {
     asp: function (str){
         if (!str) return ["", ""];
         if (str[0] === "M") return ["M", str.slice(1)];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -1000,7 +1004,7 @@ const RathjenM = {
     // VARIABLE SPLIT
     vsp: function (str){
         if (str[0] === "M") return [];
-        var depth = 0;
+        let depth = 0;
         for (let i = 2; i < str.length - 1; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -1016,7 +1020,7 @@ const RathjenM = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -1027,13 +1031,13 @@ const RathjenM = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
         if (this.single(a) && !this.single(b)) return !this.lt(this.asp(b)[0], a);
         // SAME
-        var a2 = this.vsp(a), b2 = this.vsp(b);
+        let a2 = this.vsp(a), b2 = this.vsp(b);
         if (a === "M" && b === "M") return false;
         if (a[1] === b[1]){
             if ("vV".includes(a[1])){
@@ -1124,11 +1128,11 @@ const RathjenM = {
         if (this.isnormal(str)) return str;
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return this.norm(str1[0]) + this.norm(str1[1]);
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         // VEBLEN
         if ("vV".includes(str[1])){
             if (str[1] === "V" && !str2[0]) return this.norm(`(x,${str2[1]})`);
@@ -1147,7 +1151,7 @@ const RathjenM = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
@@ -1159,7 +1163,7 @@ const RathjenM = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        var str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]), a;
+        let str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]), a;
         // BOTH VEBLEN
         if ("vV".includes(str[1])){
             if (!this.lt(c1, "(v,(v,))")) return c1;
@@ -1191,7 +1195,7 @@ const RathjenM = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -1212,11 +1216,11 @@ const RathjenM = {
         }
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        var a2 = this.vsp(a);
+        let a2 = this.vsp(a);
         // VEBLEN
         if (a[1] === "v"){
             // BETA IS LIMIT
@@ -1284,8 +1288,8 @@ const RathjenM = {
             return this.norm(`(x${a2[0]},${this.fs(a2[1], n, strong)})`);
         }
         // COLLAPSE (r(x[ALPHA],[BETA])=[CARD],[GAMMA])
-        var a3 = this.vsp(a2[0]).concat(a2[1]);
-        var c0 = this.cof(a3[0]), c2 = this.cof(a3[2]);
+        let a3 = this.vsp(a2[0]).concat(a2[1]);
+        let c0 = this.cof(a3[0]), c2 = this.cof(a3[2]);
         // GAMMA COF IS MAHLO
         if (c2 === "M") return `(r${a2[0]},${this.fs(a2[1], `(r(x${this.fs("A", n)},),)`)})`;
         // GAMMA COF IS AT LEAST CARD
@@ -1335,7 +1339,7 @@ const RathjenM = {
                               `(r${a2[0]},${this.fs(a2[1])})(v,)),)`;
             if (a3[1]) return `(r(x${this.fs(a3[0], n, strong)},` +
                               `${this.norm(`(x${a3[0]},${this.fs(a3[1])})`)}(v,)),)`;
-            var t = this.tail(a3[0]);
+            let t = this.tail(a3[0]);
             if (this.lt(`(x${this.fs(a3[0])},${t}(v,))`, `(x${this.fs(a3[0], "(v,)")},)`)){
                 return `(r(x${this.fs(a3[0], n, strong)},),)`;
             }
@@ -1360,12 +1364,12 @@ const RathjenM = {
         // ADDITION
         if (!this.single(str)) return this.tail(this.asp(str)[1]);
         // SINGLE (HAS TO BE VEBLEN)
-        var str1 = this.vsp(str);
+        let str1 = this.vsp(str);
         if (this.lt(this.cof(str1[1]), "(v,(v,))")) return this.tail(str1[0]);
         return this.tail(str1[1]);
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
@@ -1376,11 +1380,11 @@ const RathjenM = {
         if (str === "A") return [["G", ["M", "+", "1"]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         return [[str[1], this.math(str2[0]), this.math(str2[1])]];
     },
 };
@@ -1402,7 +1406,7 @@ const RathjenK = {
         // CHECK SYMBOLS
         for (let i = 0; i < str.length; i++) if (!"(,)KvWXR".includes(str[i])) return 0;
         // CHECK BRACKETS
-        var depth = [];
+        let depth = [];
         for (let i = 0; i < str.length; i++){
             if (str[i] === "("){
                 if (i + 1 >= str.length) return 1;
@@ -1422,6 +1426,7 @@ const RathjenK = {
                 if (str[i - 1] !== "(") return 1;
             }
         }
+        if (depth.length) return 1;
         // CHECK NORMAL
         if (!this.isnormal(str)) return 2;
         // ALL CLEAR
@@ -1446,7 +1451,7 @@ const RathjenK = {
     least: function (a, b = a){
         // CONSTANT
         if (["", "K"].includes(a)) return "";
-        var a1, s0, s1, s2, s3, max;
+        let a1, s0, s1, s2, s3, max;
         // ADDITION
         if (!this.single(a)){
             a1 = this.asp(a);
@@ -1488,14 +1493,14 @@ const RathjenK = {
         if (["", "K", "A"].includes(str)) return true;
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             if (!this.isnormal(str1[0])) return false;
             if (!this.isnormal(str1[1])) return false;
             if (this.single(str1[1])) return !this.lt(str1[0], str1[1]);
             return !this.lt(str1[0], this.asp(str1[1])[0]);
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         for (let i = 0; i < str2.length; i++) if (!this.isnormal(str2[i])) return false;
         // VEBLEN
         if (str[1] === "v") return this.lt(str2[0], str) && this.lt(str2[1], str);
@@ -1523,7 +1528,7 @@ const RathjenK = {
     asp: function (str){
         if (!str) return ["", ""];
         if (str[0] === "K") return ["K", str.slice(1)];
-        var depth = 0;
+        let depth = 0;
         for (let i = 0; i < str.length; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -1533,7 +1538,7 @@ const RathjenK = {
     // VARIABLE SPLIT
     vsp: function (str){
         if (str[0] === "K") return [];
-        var depth = 0, start = 2, result = [];
+        let depth = 0, start = 2, result = [];
         for (let i = 2; i < str.length - 1; i++){
             if (str[i] === "(") depth++;
             if (str[i] === ")") depth--;
@@ -1553,7 +1558,7 @@ const RathjenK = {
     lt: function (a, b, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-LT-${a}-${b}`;
+            let key = `${this.name}-LT-${a}-${b}`;
             if (!(key in cache)) cache[key] = this.lt(a, b, false);
             return cache[key];
         }
@@ -1564,13 +1569,13 @@ const RathjenK = {
         if (!a) return true;
         // ADDITION
         if (!this.single(a) && !this.single(b)){
-            var a1 = this.asp(a), b1 = this.asp(b);
+            let a1 = this.asp(a), b1 = this.asp(b);
             return this.lt(a1[0], b1[0]) || (!this.lt(b1[0], a1[0]) && this.lt(a1[1], b1[1]));
         }
         if (!this.single(a) && this.single(b)) return this.lt(this.asp(a)[0], b);
         if (this.single(a) && !this.single(b)) return !this.lt(this.asp(b)[0], a);
         // SAME
-        var a2 = this.vsp(a), b2 = this.vsp(b);
+        let a2 = this.vsp(a), b2 = this.vsp(b);
         if (a === "K" && b === "K") return false;
         if (a[1] === b[1]){
             if (a[1] === "v"){
@@ -1585,21 +1590,16 @@ const RathjenK = {
                 return false;
             }
             if (a[1] === "R"){
-                if (this.lt(b, a2[0])){
-                    if (this.lt(a2[2], b2[2]) && this.lt(a, b2[0]) &&
-                        this.inc(a2[0], b2[2], b) && this.inc(a2[1], b2[2], b) &&
-                        this.inc(a2[2], b2[2], b)) return true;
-                    if (!this.lt(a2[2], b2[2]) && !(this.inc(b2[0], a2[2], a) &&
-                        this.inc(b2[1], a2[2], a) && this.inc(b2[2], a2[2], a))) return true;
-                    if (!this.lt(a2[0], b2[0]) && !this.lt(b2[0], a2[0]) &&
-                        !this.lt(a2[2], b2[2]) && !this.lt(b2[2], a2[2]) &&
-                        this.lt(a2[1], b2[1]) && this.inc(a2[1], b2[1], b)) return true;
-                    if (this.lt(b2[1], a2[1]) && !this.inc(b2[1], a2[1], a)) return true;
-                    return false;
-                }
-                if (this.lt(a2[0], b2[0]) || this.lt(b2[0], a2[0]) ||
-                    this.lt(a2[1], b2[1]) || this.lt(b2[1], a2[1]) ||
-                    this.lt(a2[2], b2[2]) || this.lt(b2[2], a2[2])) return !this.lt(b, a);
+                if (!this.lt(b, a2[0])) return true;
+                if (this.lt(a2[2], b2[2]) && this.lt(a, b2[0]) &&
+                    this.inc(a2[0], b2[2], b) && this.inc(a2[1], b2[2], b) &&
+                    this.inc(a2[2], b2[2], b)) return true;
+                if (!this.lt(a2[2], b2[2]) && !(this.inc(b2[0], a2[2], a) &&
+                    this.inc(b2[1], a2[2], a) && this.inc(b2[2], a2[2], a))) return true;
+                if (!this.lt(a2[0], b2[0]) && !this.lt(b2[0], a2[0]) &&
+                    !this.lt(a2[2], b2[2]) && !this.lt(b2[2], a2[2]) &&
+                    this.lt(a2[1], b2[1]) && this.inc(a2[1], b2[1], b)) return true;
+                if (this.lt(b2[1], a2[1]) && !this.inc(b2[1], a2[1], a)) return true;
                 return false;
             }
         }
@@ -1662,11 +1662,11 @@ const RathjenK = {
         if (this.isnormal(str)) return str;
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return this.norm(str1[0]) + this.norm(str1[1]);
         }
         // SINGLE
-        var str2 = this.vsp(str);
+        let str2 = this.vsp(str);
         // VEBLEN
         if (str[1] === "v"){
             if (!this.lt(str2[1], str)) return str2[1];
@@ -1682,11 +1682,11 @@ const RathjenK = {
         // ZERO
         if (!b) return a;
         if (!a) return b;
-        var a1 = this.asp(a), b1 = this.asp(b);
+        let a1 = this.asp(a), b1 = this.asp(b);
         // NO LIMIT
         if (c === null) return this.lt(a1[0], b1[0]) ? b : a1[0] + this.add(a1[1], b);
         // HAS LIMIT
-        var c1 = this.asp(c);
+        let c1 = this.asp(c);
         // A NOT LESS THAN LIMIT
         if (!this.lt(a, c)) return a;
         // CANCEL OUT SAME FIRST PART
@@ -1702,7 +1702,7 @@ const RathjenK = {
         // SINGLE
         if (this.single(a)) return left ? a : "";
         // ADDITION
-        var a1 = this.asp(a);
+        let a1 = this.asp(a);
         return (left ? a1[0] : "") + this.csp(a1[1], b, left);
     },
     // CARDINAL ROOT
@@ -1717,7 +1717,7 @@ const RathjenK = {
         if (!target) return str[1] === "X" ? str : this.root(this.vsp(str)[0]);
         // HAS TARGET
         if (str[1] === "X") return "";
-        var str1 = this.vsp(str)[0];
+        let str1 = this.vsp(str)[0];
         if (str1 === target) return str;
         if (str1[1] === "X") return "";
         return this.root(str1, target);
@@ -1731,7 +1731,7 @@ const RathjenK = {
         // ADDITION
         if (!this.single(a)) return this.tail(this.asp(a)[1], b);
         // SINGLE
-        var a1 = this.vsp(a);
+        let a1 = this.vsp(a);
         // VEBLEN
         if (a[1] === "v") return this.tail(a1[1 - this.lt(this.cof(a1[1]), "(v,(v,))")], b);
         // OMEGA
@@ -1750,182 +1750,55 @@ const RathjenK = {
             if (a1[0][1] === "W") return "";
             // CARD IS MAHLO
             if (a1[0][1] === "X"){
-                var m = this.m(a1[0]);
+                let m = this.m(a1[0]);
                 return this.tail(this.mfp(m) ? this.csp(m, "K", true) : m, b);
             }
             // CARD IS COLLAPSE
             if (a1[0][1] === "R"){
-                var a2 = this.vsp(a1[0]);
+                let a2 = this.vsp(a1[0]);
                 // MAHLONESS NOT FIXED POINT
                 if (!this.cfp(a2[2], a2[0], a2[1])) return this.tail(a2[1], b);
                 // GAMMA IS SUC
                 if (this.cof(a2[2]) === "(v,)") return this.tail(this.csp(a2[1], "K", true), b);
                 // GAMMA NOT SUC
-                var a2r = this.csp(a2[2], a2[0], false);
+                let a2r = this.csp(a2[2], a2[0], false);
                 return this.tail(a2r ? a2r : a2[2], b);
-            }
-        }
-    },
-    // REPLACE
-    rp: function (a, b, c = null){
-        // LESS THAN CARD
-        if (this.lt(a, b)) return c === null ? b : c;
-        // WEAKLY COMPACT
-        if (a === "K") return a;
-        // ADDITION
-        if (!this.single(a)) return this.asp(a)[0] + this.rp(this.asp(a)[1], b, c);
-        // SINGLE
-        var a1 = this.vsp(a);
-        // VEBLEN
-        if (a[1] === "v"){
-            if (!this.lt(this.cof(a1[1]), "(v,(v,))")){
-                return `(v${a1[0]},${this.rp(a1[1], b, c)})`;
-            }
-            var r = this.rp(a1[0], b, c), p = this.fs(a1[1]);
-            if (!a1[1] || !this.single(p)) return this.norm(`(v${r},${a1[1]})`);
-            if (p[1] === "v"){
-                if (this.lt(r, this.vsp(p)[0])) return `(v${r},${a1[1]})`;
-                if (this.lt(this.vsp(p)[0], r)) return `(v${a1[0] + r},${a1[1]})`;
-                return `(v${r},${this.vsp(p)[1]}(v,))`;
-            }
-            if (this.lt(r, p)) return `(v${r},${a1[1]})`;
-            if (this.lt(p, r)) return `(v${a1[0] + r},${a1[1]})`;
-            return `(v${r},(v,))`;
-        }
-        // OMEGA
-        if (a[1] === "W") return `(W${this.rp(a1[0], b, c)})`;
-        // MAHLO
-        if (a[1] === "X") return a;
-        // COLLAPSE
-        if (a[1] === "R"){
-            // REGULAR
-            if (this.m(a)) return a;
-            // NOT LEAST
-            if (this.lt(this.least(a1[0]), a1[2])){
-                // NOT FIXED POINT
-                if (!this.nfp(a1[2], a1[0])) return `(R${a1[0]},${a1[1]},${this.rp(a1[2], b, c)})`;
-                // IS FIXED POINT
-                var al = this.csp(a1[2], a1[0], true), ar = this.csp(a1[2], a1[0], false);
-                var a2 = this.vsp(ar), r = this.rp(al, b, c), al2 = this.csp(a2[2], a2[0], true), d;
-                if (this.lt(r, al2)) return `(R${a2[0]},${a1[1]},${r + ar})`;
-                if (this.lt(al2, r)) return `(R${a2[0]},${a1[1]},${al + r + ar})`;
-                if (!this.lt(this.m(ar) + "(v,)", this.m(a1[0]))) d = a1[0];
-                else if (!this.lt(this.m(ar) + "(v,)", this.m(a2[0]))) d = a2[0];
-                else d = `(R${a2[0]},${a2[1]}(v,),${a2[2]})`;
-                return `(R${d},${a1[1]},${a2[2]}(v,))`;
-            }
-            // CARD IS OMEGA
-            if (a1[0][1] === "W") return a;
-            // CARD IS MAHLO
-            if (a1[0][1] === "X"){
-                var m = this.m(a1[0]);
-                // MAHLONESS NOT FIXED POINT
-                if (!this.mfp(m)){
-                    var r = this.rp(m, b, c);
-                    return `(R(X${r}),,${r}(v,))`;
-                }
-                // MAHLONESS IS FIXED POINT
-                var ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
-                var r = this.rp(ml, b, c), m2, ml2, d;
-                // TAIL IS MAHLO
-                if (mr[1] === "X"){
-                    m2 = this.vsp(mr)[0]; ml2 = this.csp(m2, "K", true);
-                    if (this.lt(r, ml2)) return `(R(X${r + mr}),,${r + mr}(v,))`;
-                    if (this.lt(ml2, r)) return `(R(X${ml + r + mr}),,${ml + r + mr}(v,))`;
-                    return `(R(X${m2}(v,)),,${m2}(v,)(v,))`;
-                }
-                // TAIL IS COLLAPSE
-                if (mr[1] === "R"){
-                    m2 = this.vsp(mr); ml2 = this.csp(m2[2], "K", true);
-                    if (this.lt(r, ml2)) return `(R(R${m2[0]},${mr},${r}(v,)),,${r}(v,)(v,))`;
-                    if (this.lt(ml2, r)){
-                        return `(R(R${m2[0]},${mr},${ml + r}(v,)),,${ml + r}(v,)(v,))`;
-                    }
-                    if (!this.lt(this.m(mr) + "(v,)", m)) d = a1[0];
-                    else if (!this.lt(this.m(mr) + "(v,)", this.m(m2[0]))) d = m2[0];
-                    else d = `(R${m2[0]},${m2[1]}(v,),${m2[2]})`;
-                    return `(R${d},${a1[1]},${m2[2]}(v,))`;
-                }
-            }
-            // CARD IS COLLAPSE
-            if (a1[0][1] === "R"){
-                var a2 = this.vsp(a1[0]);
-                // MAHLONESS NOT FIXED POINT
-                if (!this.cfp(a2[2], a2[0], a2[1])){
-                    var r = this.rp(a2[1], b, c);
-                    if (this.lt(r, this.m(a2[0])) || this.lt(this.m(a2[0]), r)){
-                        return `(R(R${a2[0]},${r},${a2[2]}),,${a2[2]}(v,))`;
-                    }
-                    return `(R${a2[0]},,${a2[2]}(v,))`;
-                }
-                // MAHLONESS IS FIXED POINT
-                var ml = this.csp(a2[1], "K", true), mr = this.csp(a2[1], "K", false);
-                var rt = this.vsp(this.root(mr, a2[0]))[2], mr2 = this.vsp(mr), d;
-                // GAMMA IS SUC
-                if (this.cof(a2[2]) === "(v,)"){
-                    var m2 = this.rp(ml, b), m3 = this.csp(this.m(a2[0]), "K", true);
-                    if (this.lt(m2, m3) || this.lt(m3, m2)){
-                        return `(R(R${a2[0]},${m2 + mr},${a2[2]}),,${a2[2]}(v,))`;
-                    }
-                    if (this.lt(a2[2] + "(v,)", rt)){
-                        return `(R(R${a2[0]},${mr},${a2[2]}(v,)),,${a2[2]}(v,)(v,))`;
-                    }
-                    if (!this.lt(this.m(mr) + "(v,)", this.m(mr2[0]))) d = mr2[0];
-                    else d = `(R${mr2[0]},${mr2[1]}(v,),${mr2[2]})`;
-                    return `(R${d},${a1[1]},${mr2[2]}(v,))`;
-                }
-                // GAMMA NOT SUC
-                var a2l = this.csp(a2[2], a2[0], true), a2r = this.csp(a2[2], a2[0], false);
-                var a3 = this.rp(a2r, b, c), a4 = a2r ? a2l + a3 : this.rp(a2[2], b, c);
-                // STILL A FIXED POINT AFTER REPLACEMENT
-                if (this.cfp(a4, a2[0], a2[1])) return `(R(R${a2[0]},${a2[1]},${a4}),,${a4}(v,))`;
-                // FIXED POINT TYPE
-                if (this.lt(a4, rt)) return `(R${a2[0]},,${(this.lt(rt, a3) ? a2[2] : "") + a4})`;
-                // ROOT TYPE
-                if (this.lt(rt, a4)){
-                    return `(R(R${a2[0]},${a2[1]},${a2[2] + a4}),,${a2[2] + a4}(v,))`;
-                }
-                if (this.lt(a4, this.csp(mr2[2], a2[0], true))){
-                    return `(R${mr2[0]},${a1[1]},${a4}(R${mr2[0]},${a1[1]},${mr2[2]}))`;
-                }
-                if (!this.lt(this.m(mr) + "(v,)", this.m(mr2[0]))) d = mr2[0];
-                else d = `(R${mr2[0]},${mr2[1]}(v,),${mr2[2]})`;
-                return `(R${d},${a1[1]},${mr2[2]}(v,))`;
             }
         }
     },
     // NORMAL FIXED POINT
     nfp: function (a, b){
-        var t = this.tail(a, b), r = this.rp(a, b);
+        let t = this.tail(a, b), r;
         if (!this.single(t)) return false;
-        if (!this.isnormal(r)) return false;
         if (t[1] !== "R") return false;
-        if (this.lt(this.vsp(t)[2], r)) return false;
-        if (this.lt(t, `(R${b},,${r})`)) return false;
-        if (this.vsp(t)[0] === b) return true;
-        if (this.nfp(this.rp(a, b, this.vsp(t)[0]), b)) return true;
-        return false;
+        for (let i = 0; i < 3; i++){
+            r = this.fs(a, this.to_str(i), true);
+            if (this.lt(t, `(R${b},,${r})`)) return false;
+        }
+        return true;
     },
     // MAHLO FIXED POINT
     mfp: function (a){
-        var t = this.tail(a, "K"), r = this.rp(a, "K"), rt = this.root(t);
+        let t = this.tail(a, "K"), rt = this.root(t), r;
         if (!this.single(t)) return false;
-        if (!this.isnormal(r)) return false;
         if (!"XR".includes(t[1])) return false;
-        if (this.lt(this.vsp(rt)[0], r)) return false;
-        if (this.lt(t, `(R(X${r}),,${r}(v,))`)) return false;
+        for (let i = 0; i < 3; i++){
+            r = this.fs(a, this.to_str(i), true);
+            if (this.lt(this.vsp(rt)[0], r)) return false;
+            if (this.lt(t, `(R(X${r}),,${r}(v,))`)) return false;
+        }
         return true;
     },
     // COLLAPSING FIXED POINT
     cfp: function (a, b, c){
-        var t = this.tail(c, "K"), r = this.rp(c, "K"), rt = this.root(t, b), rt1 = this.vsp(rt);
+        let t = this.tail(c, "K"), rt = this.root(t, b), rt1 = this.vsp(rt), r;
         if (!this.single(t)) return false;
-        if (!this.isnormal(r)) return false;
         if (t[1] !== "R") return false;
-        if (!rt) return false;
         if (this.lt(t, `(R${b},,${a})`)) return false;
-        if (!this.lt(a, rt1[2])){
-            if (this.lt(rt1[1], r)) return false;
+        if (!rt) return false;
+        for (let i = 0; i < 3; i++){
+            r = this.fs(c, this.to_str(i), true);
+            if (!this.lt(a, rt1[2]) && this.lt(rt1[1], r)) return false;
             if (this.lt(rt, `(R${b},${r},${a})`)) return false;
         }
         return true;
@@ -1937,19 +1810,19 @@ const RathjenK = {
     cof: function (str, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-COF-${str}`;
+            let key = `${this.name}-COF-${str}`;
             if (!(key in cache)) cache[key] = this.cof(str, false);
             return cache[key];
         }
         // CONSTANT
         if (["", "(v,)", "K"].includes(str)) return str;
-        if ("AB".includes(str)) return "(v,(v,))";
+        if (str === "A") return "(v,(v,))";
         // REGULAR
         if (this.m(str)) return str;
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        var str1 = this.vsp(str), c = [];
+        let str1 = this.vsp(str), c = [];
         for (let i = 0; i < str1.length; i++) c.push(this.cof(str1[i]));
         // VEBLEN
         if (str[1] === "v"){
@@ -1966,17 +1839,17 @@ const RathjenK = {
     ccof: function (a, b, c, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-CCOF-${a}-${b}-${c}`;
+            let key = `${this.name}-CCOF-${a}-${b}-${c}`;
             if (!(key in cache)) cache[key] = this.ccof(a, b, c, false);
             return cache[key];
         }
         // VARIABLES
-        var b1 = this.vsp(b), l = this.least(b), m = this.m(b);
-        var al = this.csp(a, b, true), ar = this.csp(a, b, false);
-        var ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
-        var ca = this.cof(a), cm = this.cof(m);
-        var cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
-        var fp, d1;
+        let b1 = this.vsp(b), l = this.least(b), m = this.m(b);
+        let al = this.csp(a, b, true), ar = this.csp(a, b, false);
+        let ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
+        let ca = this.cof(a), cm = this.cof(m);
+        let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
+        let fp, d1;
         // FIXED POINT
         if (b[1] === "W") fp = true;
         else if (b[1] === "X") fp = this.mfp(m);
@@ -2039,7 +1912,7 @@ const RathjenK = {
     fs: function (a, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-FS-${a}-${n}-${strong}`;
+            let key = `${this.name}-FS-${a}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.fs(a, n, strong, false);
             return cache[key];
         }
@@ -2053,13 +1926,19 @@ const RathjenK = {
             if (n === "A") return "(R(XA),,A(v,))";
             return `(X${this.add("(v,)", this.fs("A", n))})`;
         }
+        // REGULAR
+        if (this.m(a)){
+            if (!strong) return n;
+            if (n === "A") return `(R${a},,A)`;
+            return `(R${a},,${this.add(this.least(a), this.fs("A", n))})`;
+        }
         // ADDITION
         if (!this.single(a)){
-            var a1 = this.asp(a);
+            let a1 = this.asp(a);
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        var a2 = this.vsp(a), c = [];
+        let a2 = this.vsp(a), c = [];
         for (let i = 0; i < a2.length; i++) c.push(this.cof(a2[i]));
         // VEBLEN
         if (a[1] === "v"){
@@ -2090,26 +1969,7 @@ const RathjenK = {
                    this.norm(`(v${a2[0]},${this.fs(a2[1])})`) + "(v,))";
         }
         // OMEGA
-        if (a[1] === "W"){
-            if (this.lt(c[0], "(v,(v,))")){
-                if (!strong) return n;
-                if (n === "A") return `(R${a},,A)`;
-                return `(R${a},,${this.fs("A", n)})`;
-            }
-            return this.norm(`(W${this.add("(v,)", this.fs(a2[0], n, strong))})`);
-        }
-        // MAHLO
-        if (a[1] === "X"){
-            if (!strong) return n;
-            if (n === "A") return `(R${a},,A)`;
-            return `(R${a},,${this.add(this.least(a), this.fs("A", n))})`;
-        }
-        // COLLAPSE REGULAR
-        if (a2[1]){
-            if (!strong) return n;
-            if (n === "A") return `(R${a},,A)`;
-            return `(R${a},,${this.add(this.least(a), this.fs("A", n))})`;
-        }
+        if (a[1] === "W") return this.norm(`(W${this.add("(v,)", this.fs(a2[0], n, strong))})`);
         // COLLAPSE
         return this.cfs(a2[2], a2[0], "", n, strong);
     },
@@ -2117,16 +1977,16 @@ const RathjenK = {
     cfs: function (a, b, c, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
-            var key = `${this.name}-CFS-${a}-${b}-${c}-${n}-${strong}`;
+            let key = `${this.name}-CFS-${a}-${b}-${c}-${n}-${strong}`;
             if (!(key in cache)) cache[key] = this.cfs(a, b, c, n, strong, false);
             return cache[key];
         }
         // VARIABLES
-        var b1 = this.vsp(b), l = this.least(b), m = this.m(b);
-        var al = this.csp(a, b, true), ar = this.csp(a, b, false);
-        var ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
-        var cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
-        var fp, d1, n0;
+        let b1 = this.vsp(b), l = this.least(b), m = this.m(b);
+        let al = this.csp(a, b, true), ar = this.csp(a, b, false);
+        let ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
+        let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
+        let fp, d1, n0;
         // FIXED POINT
         if (b[1] === "W") fp = true;
         else if (b[1] === "X") fp = this.mfp(m);
@@ -2278,27 +2138,27 @@ const RathjenK = {
     // NORMAL RECURSION
     re: function (a, n, base = ""){
         if (!n) return this.fs(a, base);
-        var c = this.cof(a), l = c === "K" ? "(v,)" : this.least(c);
-        var p = this.re(a, this.fs(n), base);
+        let c = this.cof(a), l = c === "K" ? "(v,)" : this.least(c);
+        let p = this.re(a, this.fs(n), base);
         return this.fs(a, c === "K" ? `(X${this.add(l, p, p)})` : `(R${c},,${this.add(l, p, p)})`);
     },
     // ---------------------------------------------------------------------------------------------
-    // MATH FORM
+    // MATH FORM *
     // ---------------------------------------------------------------------------------------------
     math: function (str){
         // ZERO
         if (!str) return ["0"];
-        // MAHLO
+        // WEAKLY COMPACT
         if (str === "K") return ["K"];
         // LIMIT
         if (str === "A") return [["G", ["K", "+", "1"]]];
         // ADDITION
         if (!this.single(str)){
-            var str1 = this.asp(str);
+            let str1 = this.asp(str);
             return [].concat(this.math(str1[0]), ["+"], this.math(str1[1]));
         }
         // SINGLE
-        var str2 = this.vsp(str), result = [str[1]];
+        let str2 = this.vsp(str), result = [str[1]];
         for (let i = 0; i < str2.length; i++) result.push(this.math(str2[i]));
         return [result];
     },
@@ -2332,7 +2192,7 @@ function feq(a, b){return st(a) === st(b);}
 // CLONE A FORMULA
 function clone(math){
     if (typeof math !== "object") return math;
-    var result, k;
+    let result, k;
     if (Array.isArray(math)){
         result = [];
         for (let i = 0; i < math.length; i++) result.push(clone(math[i]));
@@ -2363,13 +2223,13 @@ function combuch(a, b){
     return combuch(a[0][1], b[0][1]) || (!combuch(b[0][1], a[0][1]) && combuch(a[0][2], b[0][2]));
 }
 // REWRITE BUCHHOLZ FUNCTION
-function rebuch(math, level = 2){
+function rebuch(math, level = 3){
     // DO NOTHING IF LEVEL IS 0
     if (!level) return math;
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], item, index;
+    let result = [], item, index;
     for (let i = 0; i < math.length; i++){
         // KEEP SIMPLE TERMS
         if (typeof math[i] !== "object"){
@@ -2383,13 +2243,14 @@ function rebuch(math, level = 2){
             result.push(item);
             continue;
         }
-        if (level < 2){
+        if (level < 3){
             if (level > 0 && feq(math[i][1], ["0"]) && feq(math[i][2], ["0"])){
                 result.push(["v", ["0"], ["0"]]);
                 continue;
             }
             item = clone(math[i]);
-            for (let j = 1; j < item.length; j++) item[j] = rebuch(item[j], level);
+            item[1] = rebuch(item[1], level + (level === 2));
+            item[2] = rebuch(item[2], level);
             result.push(item);
             continue;
         }
@@ -2431,7 +2292,7 @@ function rechi(math, level = 2){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], item;
+    let result = [], item;
     for (let i = 0; i < math.length; i++){
         // KEEP SIMPLE TERMS
         if (typeof math[i] !== "object"){
@@ -2490,7 +2351,7 @@ function rexi(math, level = 4){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], item;
+    let result = [], item;
     for (let i = 0; i < math.length; i++){
         // KEEP SIMPLE TERMS
         if (typeof math[i] !== "object"){
@@ -2525,7 +2386,7 @@ function reunc(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], item;
+    let result = [], item;
     for (let i = 0; i < math.length; i++){
         // KEEP SIMPLE TERMS
         if (typeof math[i] !== "object"){
@@ -2555,7 +2416,7 @@ function reveb(math, level1 = 5, level2 = 4){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], item;
+    let result = [], item;
     for (let i = 0; i < math.length; i++){
         // KEEP SIMPLE TERMS
         if (typeof math[i] !== "object"){
@@ -2607,11 +2468,11 @@ function reveb(math, level1 = 5, level2 = 4){
     return result;
 }
 // EXPONENTIAL SIMPLIFICATION
-function spexp(math){
+function spexp(math, level = 1){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], a, math2, add, mult, depth;
+    let result = [], a, math2, add, mult, depth;
     for (let i = 0; i < math.length; i++){
         // KEEP THE NON-ARRAYS
         if (typeof math[i] !== "object"){
@@ -2622,13 +2483,13 @@ function spexp(math){
         if (typeof math[i] === "object" ? (math[i][0] !== 0 || math[i][1][0] !== "\\omega") :
             (math[i] === "\\omega")){
             a = clone(math[i]);
-            if (!a[0]) a[2] = spexp(a[2]);
-            else for (let j = 1; j < a.length; j++) a[j] = spexp(a[j]);
+            if (!a[0]) a[2] = spexp(a[2], level);
+            else for (let j = 1; j < a.length; j++) a[j] = spexp(a[j], level);
             result.push(a);
             continue;
         }
         // PROCESS ω-EXPONENTS
-        math2 = spexp(clone(math[i][2])), add = [], mult = null, depth = 0;
+        math2 = spexp(clone(math[i][2]), level), add = [], mult = null, depth = 0;
         // REWRITE ω^0 AS 1
         if (feq(math2, ["0"])){
             result.push("1");
@@ -2640,6 +2501,18 @@ function spexp(math){
             continue;
         }
         // PROCESS EXPONENTS
+        if (level === 0){
+            a = clone(math[i]);
+            if (a[0]) for (let j = 1; j < a.length; j++) a[j] = spexp(a[j], level);
+            else if (a[2].length < 3) a[2] = spexp(a[2], level);
+            else if (a[2][1] !== "+") a[2] = spexp(a[2], level);
+            else if (typeof a[2][2] !== "object") a[2] = spexp(a[2], level);
+            else if (a[2][2][0]) a[2] = spexp(a[2], level);
+            else if (st(a[2][0]) !== st(a[2][2][2][0])) a[2] = spexp(a[2], level);
+            else a[2] = spexp(a[2].slice(2), level);
+            result.push(a);
+            continue;
+        }
         math2.push("+");
         for (let j = 0; j < math2.length; j++){
             // WHEN HITTING 1 OR ω
@@ -2658,7 +2531,7 @@ function spexp(math){
             // WHEN HITTING THE + OR * SIGN
             if ("+*".includes(math2[j])){
                 if (typeof mult === "object"){
-                    for (let k = 1; k < mult.length; k++) mult[k] = spexp(mult[k]);
+                    for (let k = 1; k < mult.length; k++) mult[k] = spexp(mult[k], level);
                     add.push(clone(mult));
                 } else add.push(mult);
                 mult = null;
@@ -2670,14 +2543,29 @@ function spexp(math){
                         a = [0, add[0][1], []];
                         for (let k = 0; k < add.length; k++) a[2] = a[2].concat([add[k], "*"]);
                         a[2] = a[2].slice(0, -1);
-                        result = result.concat([a, "*"]);
-                    } else result = result.concat([[0, add[0][1], add], "*"]);
+                        if (result.length < 2) result = result.concat([a, "*"]);
+                        else if (result.slice(-1)[0] !== "*"){
+                            result = result.concat([a, "*"]);
+                        } else if (st(result.slice(-2, -1)[0]) !== st(add[0][1][0])){
+                            result = result.concat([a, "*"]);
+                        } else result = result.slice(0, -2).concat([a, "*"]);
+                    } else if (result.length < 2){
+                        result = result.concat([[0, add[0][1], add], "*"]);
+                    } else if (result.slice(-1)[0] !== "*"){
+                        result = result.concat([[0, add[0][1], add], "*"]);
+                    } else if (st(result.slice(-2, -1)[0]) !== st(add[0][1][0])){
+                        result = result.concat([[0, add[0][1], add], "*"]);
+                    } else result = result.slice(0, -2).concat([[0, add[0][1], add], "*"]);
                 // PROCESS NON-EXPONENT
                 } else if (add.length > 1){
                     a = [0, [add[0]], []];
                     for (let k = 1; k < add.length; k++) a[2] = a[2].concat([add[k], "*"]);
                     a[2] = a[2].slice(0, -1);
-                    result = result.concat([a, "*"]);
+                    if (result.length < 2) result = result.concat([a, "*"]);
+                    else if (result.slice(-1)[0] !== "*") result = result.concat([a, "*"]);
+                    else if (st(result.slice(-2, -1)[0]) !== st(add[0])){
+                        result = result.concat([a, "*"]);
+                    } else result = result.slice(0, -2).concat([a, "*"]);
                 } else result = result.concat(add, ["*"]);
                 add = [];
                 continue;
@@ -2693,7 +2581,7 @@ function spmult(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var math2 = math.concat(["+"]), result = [], a, b, base = [], exp = [], item = null;
+    let math2 = math.concat(["+"]), result = [], a, b, base = [], exp = [], item = null;
     for (let i = 0; i < math2.length; i++){
         // WHEN NOT HITTING + OR * OUTSIDE THE BRACKETS
         if (!"+*".includes(math2[i])){
@@ -2762,7 +2650,7 @@ function spadd(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var math2 = math.concat(["+"]), result = [], base = [], add = [], n = 0, item = null;
+    let math2 = math.concat(["+"]), result = [], base = [], add = [], n = 0, item = null;
     for (let i = 0; i < math2.length; i++){
         // WHEN NOT HITTING + OR * OUTSIDE THE BRACKETS
         if (!"+*".includes(math2[i])){
@@ -2814,7 +2702,7 @@ function remult(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [], a;
+    let result = [], a;
     for (let i = 0; i < math.length; i++){
         // KEEP ALL NON-* SYMBOLS
         if (math[i] !== "*"){
@@ -2859,7 +2747,7 @@ function orifunc(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = clone(math);
+    let result = clone(math);
     for (let i = 0; i < result.length; i++){
         if (typeof result[i] !== "object") continue;
         if ("Br".includes(result[i][0])) result[i][0] = "b";
@@ -2872,7 +2760,7 @@ function refunc(math){
     // ZERO CASE
     if (feq(math, ["0"])) return math;
     // LOOP
-    var result = [];
+    let result = [];
     for (let i = 0; i < math.length; i++){
         // KEEP THE NON-ARRAYS
         if (typeof math[i] !== "object"){
@@ -2918,22 +2806,27 @@ function refunc(math){
             result = result.concat(["\\Xi", "("], refunc(math[i][1]), [")"]);
         } else if (math[i][0] === "X_"){
             result.push([1, ["\\Xi"], refunc(math[i][1])]);
+        } else {
+            result.push([math[i][0]]);
+            for (let j = 1; j < math[i].length; j++){
+                result[result.length - 1].push(refunc(math[i][j]));
+            }
         }
     }
     return result;
 }
 // TOTAL SIMPLIFICATION
 function simplify(math, options){
-    var result = clone(math);
+    let result = clone(math);
     result = rebuch(result, options.rebuch);
     result = rechi(result, options.rechi);
     result = rexi(result, options.rexi);
     result = reunc(result);
     result = reveb(result, Math.max(options.reveb1, options.force_omega),
                    options.reveb2 + !!options.reveb2);
-    if (options.simplify > 0) result = spexp(result);
+    if (options.simplify > 0) result = spexp(result, options.simplify % 2);
     if (options.simplify > 1) result = spmult(result);
-    if (options.simplify > 2) result = spadd(result);
+    if (options.simplify > 3) result = spadd(result);
     result = remult(result);
     if (!options.specify) result = orifunc(result);
     result = refunc(result);
@@ -2959,13 +2852,13 @@ function replace(math){
         ["\\Psi", "Ψ"],
         ["\\Omega", "Ω"],
     ];
-    var result = clone(math);
+    let result = clone(math);
     for (let i = 0; i < rep.length; i++) result = result.split(rep[i][0]).join(rep[i][1]);
     return result;
 }
 // HTML NOTATION
 function html(math, rep = true){
-    var text = "";
+    let text = "";
     for (let i = 0; i < math.length; i++){
         if (typeof math[i] === "object"){
             if (math[i][0] === 0){
@@ -2990,7 +2883,7 @@ function html(math, rep = true){
 }
 // MATHJAX NOTATION
 function mathjax(math, bracket = true){
-    var text = "";
+    let text = "";
     for (let i = 0; i < math.length; i++){
         if (typeof math[i] === "object"){
             if (math[i][0] === 0){
@@ -3024,9 +2917,7 @@ function display(str, rule, mode, options){
 // =================================================================================================
 // CHECK IF AN ARRAY IS IN ANOTHER ARRAY
 function array_include(arrs, arr){
-    for (let i = 0; i < arrs.length; i++){
-        if (JSON.stringify(arrs[i]) === JSON.stringify(arr)) return true;
-    }
+    for (let i = 0; i < arrs.length; i++) if (st(arrs[i]) === st(arr)) return true;
     return false;
 }
 // CHAIN LESS THAN
@@ -3045,7 +2936,7 @@ function chain_comp(a, b){
 // REDUCE CHAIN
 function chain_reduce(chain){
     if (chain.length < 2) return [];
-    var result = chain.slice(0, -1);
+    let result = chain.slice(0, -1);
     for (let i = chain.length - 2; i >= 0; i--){
         if (chain[i]){
             result[i]--;
@@ -3057,7 +2948,7 @@ function chain_reduce(chain){
 // EXPAND CHAIN LIST
 function list_expand(list, chain){
     if (!array_include(list, chain)) return list;
-    var result = JSON.parse(JSON.stringify(list));
+    let result = JSON.parse(st(list));
     for (let i = 0;; i++){
         if (!array_include(list, chain.concat([i]))){
             result.push(chain.concat([i]));
@@ -3068,19 +2959,17 @@ function list_expand(list, chain){
 }
 // REMOVE CHAIN LIST
 function list_remove(list, chain){
-    var result = [];
+    let result = [];
     for (let i = 0; i < list.length; i++){
-        if (JSON.stringify(list[i].slice(0, chain.length)) !== JSON.stringify(chain)){
-            result.push(list[i]);
-        }
+        if (st(list[i].slice(0, chain.length)) !== st(chain)) result.push(list[i]);
     }
     return result;
 }
 // COLLAPSE CHAIN LIST
 function list_collapse(list, chain){
-    var max = null;
+    let max = null;
     for (let i = 0; i < list.length; i++){
-        if (JSON.stringify(list[i].slice(0, chain.length)) === JSON.stringify(chain) &&
+        if (st(list[i].slice(0, chain.length)) === st(chain) &&
             list[i].length - chain.length === 1){
             if (max === null) max = list[i][list[i].length - 1];
             else if (max < list[i][list[i].length - 1]) max = list[i][list[i].length - 1];
@@ -3095,7 +2984,7 @@ function list_collapse(list, chain){
 // LOWER BOUNDED FS
 function lowfs(rule, a, n, low = null){
     if (low === null) return rule.fs(a, rule.to_str(n), true);
-    var more = 0;
+    let more = 0;
     for (;;){
         if (rule.lt(low, rule.fs(a, rule.to_str(more), true))) break;
         else more++;
@@ -3105,11 +2994,11 @@ function lowfs(rule, a, n, low = null){
 // CHAIN FS
 function chainfs(rule, initial, chain, cac = true){
     if (cac){
-        var key = `${rule.name}-CHAIN-${initial}-${st(chain)}`;
+        let key = `${rule.name}-CHAIN-${initial}-${st(chain)}`;
         if (!(key in cache)) cache[key] = chainfs(rule, initial, chain, false);
         return cache[key];
     }
-    var result = initial, r, low;
+    let result = initial, r, low;
     for (let i = 0; i < chain.length; i++){
         r = chain_reduce(chain.slice(0, i + 1));
         low = r.length ? chainfs(rule, initial, r) : null;
@@ -3119,16 +3008,16 @@ function chainfs(rule, initial, chain, cac = true){
     return result;
 }
 // SEARCH ORDINAL
-function search(rule, initial, str){
+function search(rule, initial, str, steps){
     if (initial === str) return [];
-    var result = [], n = 0, ord;
-    for (let i = 0; i < 10000; i++){
+    let result = [], n = 0, ord;
+    for (let i = 0; i < steps; i++){
         ord = chainfs(rule, initial, result.concat([n]));
         if (!rule.lt(ord, str)) result.push(n);
         if (rule.lt(str, ord)) n = -1;
         if (!rule.lt(str, ord) && !rule.lt(ord, str)) break;
         n++;
-        if (i === 9999) result = null;
+        if (i === steps - 1) result = null;
     }
     return result;
 }

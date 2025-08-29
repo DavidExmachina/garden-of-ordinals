@@ -12,15 +12,6 @@ function add_space(text, space){
     if (space >= 0) return replaceall(text, "\n", "\n" + " ".repeat(space));
     else return replaceall(text, "\n" + " ".repeat(-space), "\n");
 }
-// READ FILE
-function read_file(file){
-    var command, req = new XMLHttpRequest(), result = null;
-    command = function (){if ([0, 200].includes(req.status)) result = req.responseText;}
-    req.open("GET", file, false);
-    req.onreadystatechange = command;
-    req.send(null);
-    return result;
-}
 // CONVERT FILE TO DOM
 function to_dom(text){return new DOMParser().parseFromString(text, 'text/html');}
 // COPY CODE
@@ -46,7 +37,7 @@ function display_mode(){return data.save.options.display;}
 function indent_mode(){return data.save.options.indent;}
 // DEFAULT DISPLAY
 function display2(str, no_original = false){
-    var options = {}, op = ["simplify", "specify", "reveb1", "reveb2", "rebuch", "rechi", "rexi"];
+    let options = {}, op = ["simplify", "specify", "reveb1", "reveb2", "rebuch", "rechi", "rexi"];
     for (let i = 0; i < op.length; i++) options[op[i]] = data.save.options[op[i]];
     options.force_omega = [4, 5].includes(data.mode1) * 1;
     return display(str, rule(), Math.max(display_mode(), no_original), options);
@@ -60,7 +51,7 @@ function fm(text){return [er(words().error.invalid_format), words().error.format
 // =================================================================================================
 // GENERATE PARTICLE PARAMETERS
 function generate_particle(t){
-    var x, y, vx, vy, a, b, c;
+    let x, y, vx, vy, a, b, c;
     x = Math.floor(window.innerWidth * Math.random());
     y = Math.floor(window.innerHeight * Math.random());
     a = Math.random();
@@ -72,12 +63,13 @@ function generate_particle(t){
 }
 // UPDATE BACKGROUND
 function update_background(t1, t2){
-    var id, k, div, particle, pdiv, x, y;
+    let id, k, div, particle, pdiv, x, y;
     if (data.save.options.background && data.background < 500)
         data.background = Math.min(data.background + t1 - t2, 500);
     if (!data.save.options.background && data.background > 0)
         data.background = Math.max(data.background - t1 + t2, 0);
     document.querySelector(".background").style.opacity = data.background / 500;
+    if (!data.background) return;
     if (Math.random() * 500000000 < (t1 - t2) * window.innerWidth * window.innerHeight){
         for (;;){
             id = Math.floor(Math.random() * 1000000);
@@ -121,7 +113,7 @@ function set_display(elm, state){
 function set_text(id, text){document.getElementById(id).innerHTML = text;}
 // SET MENU
 function set_menu(){
-    var elm;
+    let elm;
     set_text("menu-title", words().title);
     set_text("menu0", words().help);
     for (let i = 0; i < data.constant.systems.length; i++){
@@ -171,11 +163,11 @@ function set_explore(){
         document.querySelector(".ordinals").innerHTML = "";
         return;
     }
-    if (data.mode1 > 1) update_explore();
+    if (data.mode1 > 1) update_explore(true);
 }
 // SET OPTIONS
 function set_options(){
-    var options = ["background", "display", "indent", "simplify", "specify",
+    let options = ["background", "display", "indent", "simplify", "specify",
                    "reveb1", "reveb2", "rebuch", "rechi", "rexi"], element, condition;
     set_display(document.querySelectorAll(".op-item")[4], [5, 6].includes(data.mode1));
     set_display(document.querySelectorAll(".op-item")[5], [3, 6, 7].includes(data.mode1));
@@ -184,7 +176,7 @@ function set_options(){
     set_display(document.querySelectorAll(".op-item")[8], data.mode1 === 6);
     set_display(document.querySelectorAll(".op-item")[9], data.mode1 === 7);
     for (let i = 0; i < options.length; i++){
-        for (let j = 0; j < [2, 3, 3, 4, 2, 6, 4, 3, 3, 5][i]; j++){
+        for (let j = 0; j < [2, 3, 3, 6, 2, 6, 4, 4, 3, 5][i]; j++){
             element = document.getElementById(`op${i}-${j}`);
             condition = data.save.options[options[i]] === j;
             element.setAttribute("class", `op-button button${condition * 2 + 1}`);
@@ -212,8 +204,10 @@ function set_options(){
     set_text("op2-2", words().option.recursive);
     set_text("op3-0", words().option.none);
     set_text("op3-1", "\\( \\alpha^\\beta \\)");
-    set_text("op3-2", "\\( \\alpha*\\beta \\)");
-    set_text("op3-3", "\\( \\alpha+\\beta \\)");
+    set_text("op3-2", "\\( \\omega^{\\alpha*\\beta} \\)");
+    set_text("op3-3", "\\( \\alpha*\\beta \\)");
+    set_text("op3-4", "\\( \\omega^{\\alpha+\\beta} \\)");
+    set_text("op3-5", "\\( \\alpha+\\beta \\)");
     set_text("op4-0", "\\( \\psi_\\alpha(\\beta) \\)");
     set_text("op4-1", `\\( \\${data.mode1 === 6 ? "rho_\\alpha" : "psi_\\alpha^*"}(\\beta) \\)`);
     set_text("op5-0", "\\( \\varphi_\\alpha(\\beta) \\)");
@@ -228,7 +222,8 @@ function set_options(){
     set_text("op6-3", "\\( H_\\beta \\)");
     set_text("op7-0", "\\( \\psi_\\alpha(\\beta) \\)");
     set_text("op7-1", "\\( 1 \\)");
-    set_text("op7-2", "\\( \\omega^{\\Omega_\\alpha+\\beta} \\)");
+    set_text("op7-2", "\\( \\psi_{\\Omega_\\alpha}(\\beta) \\)");
+    set_text("op7-3", "\\( \\omega^{\\Omega_\\alpha+\\beta} \\)");
     set_text("op8-0", "\\( \\chi_\\alpha(\\beta) \\)");
     set_text("op8-1", "\\( \\Omega_{1+\\beta} \\)");
     set_text("op8-2", "\\( I_{1+\\beta} \\)");
@@ -248,14 +243,14 @@ function change_option(item, value){
 }
 // REFRESH CONTENTS
 function refresh_contents(){
-    var button = document.querySelector(".contents span");
+    let button = document.querySelector(".contents span");
     button.innerHTML = words()[data.save.contents ? "hide" : "show"];
     set_display(document.querySelector(".contents-content"), data.save.contents);
 }
 // SET CONTENTS
 function set_contents(){
-    var text = "", id = [0, 0, 0, 0, 0, 0], depth, index;
-    var hs = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    let text = "", id = [0, 0, 0, 0, 0, 0], depth, index;
+    let hs = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
     text += `<div class="contents-title"><b>${words().contents}&nbsp;</b>`;
     text += `<span class="button2 hide-show" onclick="change_contents();"></span></div>`;
     text += `<div class="contents-content">`;
@@ -279,28 +274,37 @@ function change_contents(){
     refresh_contents();
 }
 // SET HELP
-function set_help(){
-    var filename, content;
-    if (!data.mode1){
-        document.querySelector(".help").innerHTML = "";
-        return;
-    }
+async function set_help(){
+    let filename, content;
+    document.querySelector(".help").innerHTML = "";
+    document.querySelector(".help").scrollTop = 0;
+    if (!data.mode1) return;
     filename = "ASSETS/DATA/";
     filename += data.resources.help_files[data.mode1 - 1];
     filename += `_${data.constant.langs[data.save.lang]}.html`;
-    content = to_dom(read_file(filename));
+    content = await fetch(filename);
+    content = await content.text();
+    content = to_dom(content);
     content = add_space(content.getElementsByTagName("body")[0].innerHTML, 16);
     content = "\n" + " ".repeat(24) + `<div class="contents"></div>` + content;
     document.querySelector(".help").innerHTML = content;
     set_contents();
-    document.querySelector(".help").scrollTop = 0;
-    MathJax.typeset([document.querySelector(".help")]);
+    gradual_mathjax(Array.from(document.querySelectorAll(".help > *")));
+}
+// SET MATHJAX IN HELP GRADUALLY
+function gradual_mathjax(n, s = 1){
+    if (!n.length || data.mode2 !== 3) return;
+    MathJax.typeset(n.slice(0, s));
+    setTimeout(() => gradual_mathjax(n.slice(s), s + 1), 0);
 }
 // SET SYSTEM
 function set_system(){
+    data.system.history = [""];
+    data.system.position = 0;
     data.system.initial = "A";
     data.system.chains = [[]];
-    data.search = null;
+    data.system.select = null;
+    data.system.search = null;
     document.querySelector(".cal-bar").value = "";
     if (data.mode1 > 1) set_console();
 }
@@ -317,6 +321,7 @@ function set_main(system = true){
     set_tab();
     if (system) set_system();
     if (data.mode1){
+        if (data.lang) set_lang();
         if (data.mode2 === 0){
             set_input();
             set_preset();
@@ -341,8 +346,9 @@ function change_tab(tab){
 }
 // UPDATE MAIN INTERFACE
 function update_main(t1, t2){
-    var op;
+    let oc, op;
     if (!data.change) return;
+    oc = data.change;
     data.change = Math.max(data.change - t1 + t2, 0);
     op = Math.min(Math.abs(data.change - 500), 500) / 500;
     document.querySelector(".main").style.opacity = op;
@@ -350,7 +356,7 @@ function update_main(t1, t2){
     document.querySelector(".main").style["-ms-user-select"] = data.change ? "none" : "auto";
     document.querySelector(".main").style["-webkit-user-select"] = data.change ? "none" : "auto";
     document.querySelector(".main").style["pointer-events"] = data.change ? "none" : "auto";
-    if (data.change + t1 - t2 >= 500 && data.change < 500) set_main();
+    if (oc >= 500 && data.change < 500) set_main();
 }
 // UPDATE EVERYTHING
 function update(t1, t2){
@@ -366,7 +372,7 @@ function set_input(){
 }
 // SET CONSOLE
 function set_console(text = null, error = false){
-    var t = [], a, b, rep, content = "";
+    let t = [], a, b, rep, content = "";
     if (text === null){
         t.push(words().console.initial);
         a = "";
@@ -436,7 +442,7 @@ function set_console(text = null, error = false){
 }
 // SET PRESET
 function set_preset(){
-    var text = "", command;
+    let text = "", command;
     command = function (n){
         return function (e){
             if (e.key === "Enter"){
@@ -451,9 +457,11 @@ function set_preset(){
     text += "<div id=\"preset\" class=\"cal-item\">Presets</div>";
     text += "<div class=\"cal-item\"></div>";
     for (let i = 0; i < presets().length + 1; i++){
-        text += `<input class="cal-item" placeholder="${words().name}" `;
+        text += `<input class="cal-item" name="name" autocomplete="off" `;
+        text += `placeholder="${words().name}" `;
         text += `onfocusout="check_preset(${i * 2});"></input>`;
-        text += `<input class="cal-item" placeholder="${words().ordinal}" `;
+        text += `<input class="cal-item" name="ordinal" autocomplete="off" `;
+        text += `placeholder="${words().ordinal}" `;
         text += `onfocusout="check_preset(${i * 2 + 1});"></input>`;
     }
     document.querySelector(".cal-items").innerHTML = text;
@@ -466,7 +474,7 @@ function set_preset(){
 }
 // CHECK PRESET
 function check_preset(n){
-    var item = document.querySelectorAll(".cal-item")[n + 2].value, valid = true;
+    let item = document.querySelectorAll(".cal-item")[n + 2].value, valid = true;
     if (item === "") valid = false;
     if (item.includes(" ")) valid = false;
     if (item.includes("\"")) valid = false;
@@ -495,16 +503,16 @@ function check_preset(n){
 }
 // IMPORT PRESET
 function preset_import(){
-    var input, command;
+    let input, command;
     input = document.createElement("input");
     input.type = "file";
     command = function (e){
-        var file, reader, command;
+        let file, reader, command;
         file = e.target.files[0];
         reader = new FileReader();
         reader.readAsText(file, "UTF-8");
         command = function (e){
-            var load, error = false, result = [];
+            let load, error = false, result = [];
             try {
                 load = JSON.parse(e.target.result);
                 for (let i = 0; i < load.length; i++){
@@ -529,7 +537,7 @@ function preset_import(){
 }
 // EXPORT PRESET
 function preset_export(){
-    var filename = `Save_${rule().name}.json`;
+    let filename = `Save_${rule().name}.json`;
     saveAs(new File([JSON.stringify(presets())], filename, {type: "text/plain;charset=utf-8"}));
 }
 // RESET PRESET
@@ -541,12 +549,28 @@ function preset_reset(reset){
         set_preset();
     } else set_console([words().console.reset_cancel]);
 }
+// SHIFT COMMAND
+function shift_command(prev){
+    if (!data.system.position) data.system.history[0] = document.querySelector(".cal-bar").value;
+    data.system.position = Math.max(data.system.position + prev * 2 - 1, 0);
+    data.system.position = Math.min(data.system.position, data.system.history.length - 1);
+    document.querySelector(".cal-bar").value = data.system.history[data.system.position];
+}
+// SAVE COMMAND
+function save_command(){
+    data.system.history[0] = document.querySelector(".cal-bar").value;
+    data.system.history.unshift("");
+    data.system.position = 0;
+}
 // READ COMMAND
-function read_command(){execute_command(document.querySelector(".cal-bar").value);}
+function read_command(){
+    save_command();
+    execute_command(document.querySelector(".cal-bar").value);
+}
 // EXECUTE COMMAND
 function execute_command(code){
     // READ CODE
-    var sections = [], c = "", quote = false, empty = true, old, t1, t2, text;
+    let sections = [], c = "", quote = false, empty = true, old, tm, t1, t2, text;
     for (let i = 0; i < code.length; i++){
         if (code[i] === "\""){
             quote = !quote;
@@ -843,21 +867,169 @@ function execute_command(code){
         }
         t1 = [sections[1], t1, 0];
         for (let i = 0; i < t2; i++){
-            if (rule().type(t1[t1.length - 3]) === 0){
-                t1 = t1.slice(2);
-            } else if (rule().type(t1[t1.length - 3]) === 1){
+            if (rule().type(t1[0]) === 0) t1 = t1.slice(-1);
+            else if (rule().type(t1[0]) === 1){
                 t1[0] = rule().fs(t1[0]);
                 t1[2]++;
-            }
-            else if (rule().type(t1[t1.length - 3]) === 2){
-                t1[0] = rule().fs(t1[0], rule().to_str(t1[1]));
-            }
+            } else if (rule().type(t1[0]) === 2) t1[0] = rule().fs(t1[0], rule().to_str(t1[1]));
             text[0] += display_mode() < 2 ? "=" : " = & ";
             if (t1.length === 1){text[0] += t1[0]; break;}
             if (display_mode() < 2) text[0] += `g<sub>${display2(t1[0])}</sub>`;
             else text[0] += `g_{${display2(t1[0]).slice(3, -3)}}`;
             text[0] += `(${t1[1]})` + (t1[2] ? "+" + t1[2] : "");
             text[0] += display_mode() < 2 ? "<br>" : " \\\\";
+        }
+        if (t1.length > 1) text[0] += display_mode() < 2 ? "=..." : " = & \\cdots \\\\";
+        if (display_mode() === 2) text[0] += " \\end{align} \\)";
+        set_console(text);
+        return;
+    }
+    if (sections[0] === "mgh"){
+        if (![3, 4].includes(sections.length)){
+            set_console(fm("mgh ord n [steps=1]"), true);
+            return;
+        }
+        if (rule().uc() === null ? true : sections[1] !== rule().fs(rule().uc(), "A", true)){
+            if (rule().validity(sections[1]) < 1){
+                set_console([er(words().error.invalid1_1), words().error.invalid1_2], true);
+                return;
+            }
+            if (rule().validity(sections[1]) < 2){
+                set_console([er(words().error.invalid2_1), words().error.invalid2_2], true);
+                return;
+            }
+            if (rule().validity(sections[1]) < 3){
+                set_console([er(words().error.invalid3_1), words().error.invalid3_2], true);
+                return;
+            }
+            if (rule().uc() !== null) if (!rule().lt(sections[1], rule().uc())){
+                set_console([er(words().error.uncountable), words().error.uncountable_mgh], true);
+                return;
+            }
+        }
+        t1 = Number(sections[2]);
+        if (!Number.isInteger(t1) || t1 < 0){
+            set_console([er(words().error.invalid_num1), words().error.invalid_num2], true);
+            return;
+        }
+        if (sections.length === 3) t2 = 1;
+        else {
+            t2 = Number(sections[3]);
+            if (!Number.isInteger(t2) || t2 < 0){
+                set_console([er(words().error.invalid_num1), words().error.invalid_num2], true);
+                return;
+            }
+        }
+        if (display_mode() < 2){
+            text = [`&nbsp;&nbsp;f<sub>${display2(sections[1])}</sub>(${t1})<br>`];
+        } else {
+            text = [`\\( \\begin{align} & m_{${display2(sections[1]).slice(3, -3)}}(${t1}) \\\\`];
+        }
+        t1 = [sections[1], 1, t1];
+        for (let i = 0; i < t2; i++){
+            if (rule().type(t1[t1.length - 3]) === 0){
+                if (t1[t1.length - 2] === 1){
+                    t1[t1.length - 1]++;
+                    t1 = t1.slice(0, t1.length - 3).concat(t1.slice(t1.length - 1));
+                } else {
+                    t1[t1.length - 2]--;
+                    t1[t1.length - 1]++;
+                }
+            } else if (rule().type(t1[t1.length - 3]) === 1){
+                if (t1[t1.length - 2] === 1){
+                    t1[t1.length - 3] = rule().fs(t1[t1.length - 3]);
+                    t1[t1.length - 2] = 2;
+                } else {
+                    t1[t1.length - 2]--;
+                    t1 = t1.slice(0, t1.length - 1).concat([rule().fs(t1[t1.length - 3]),
+                                                           2, t1[t1.length - 1]]);
+                }
+            } else if (rule().type(t1[t1.length - 3]) === 2){
+                if (t1[t1.length - 2] === 1){
+                    t1[t1.length - 3] = rule().fs(t1[t1.length - 3],
+                                                  rule().to_str(t1[t1.length - 1]));
+                } else {
+                    t1[t1.length - 2]--;
+                    t1 = t1.slice(0, t1.length - 1).concat([
+                        rule().fs(t1[t1.length - 3], rule().to_str(t1[t1.length - 1])),
+                        1, t1[t1.length - 1]]);
+                }
+            }
+            text[0] += display_mode() < 2 ? "=" : " = & ";
+            for (let j = 0; j < (t1.length - 1) / 2; j++){
+                if (display_mode() < 2){
+                    text[0] += `m<sub>${display2(t1[j * 2])}</sub>`;
+                    text[0] += `${t1[j * 2 + 1] > 1 ? `<sup>${t1[j * 2 + 1]}</sup>` : ""}(`;
+                } else {
+                    text[0] += `m_{${display2(t1[j * 2]).slice(3, -3)}}`;
+                    text[0] += `${t1[j * 2 + 1] > 1 ? `^{${t1[j * 2 + 1]}}` : ""}(`;
+                }
+            }
+            text[0] += t1[t1.length - 1] + ")".repeat((t1.length - 1) / 2);
+            text[0] += display_mode() < 2 ? "<br>" : " \\\\";
+            if (t1.length === 1) break;
+        }
+        if (t1.length > 1) text[0] += display_mode() < 2 ? "=..." : " = & \\cdots \\\\";
+        if (display_mode() === 2) text[0] += " \\end{align} \\)";
+        set_console(text);
+        return;
+    }
+    if (sections[0] === "hh"){
+        if (![3, 4].includes(sections.length)){
+            set_console(fm("hh ord n [steps=1]"), true);
+            return;
+        }
+        if (rule().uc() === null ? true : sections[1] !== rule().fs(rule().uc(), "A", true)){
+            if (rule().validity(sections[1]) < 1){
+                set_console([er(words().error.invalid1_1), words().error.invalid1_2], true);
+                return;
+            }
+            if (rule().validity(sections[1]) < 2){
+                set_console([er(words().error.invalid2_1), words().error.invalid2_2], true);
+                return;
+            }
+            if (rule().validity(sections[1]) < 3){
+                set_console([er(words().error.invalid3_1), words().error.invalid3_2], true);
+                return;
+            }
+            if (rule().uc() !== null) if (!rule().lt(sections[1], rule().uc())){
+                set_console([er(words().error.uncountable), words().error.uncountable_hh], true);
+                return;
+            }
+        }
+        t1 = Number(sections[2]);
+        if (!Number.isInteger(t1) || t1 < 0){
+            set_console([er(words().error.invalid_num1), words().error.invalid_num2], true);
+            return;
+        }
+        if (sections.length === 3) t2 = 1;
+        else {
+            t2 = Number(sections[3]);
+            if (!Number.isInteger(t2) || t2 < 0){
+                set_console([er(words().error.invalid_num1), words().error.invalid_num2], true);
+                return;
+            }
+        }
+        text = [""];
+        if (display_mode() < 2){
+            text = [`&nbsp;&nbsp;H<sub>${display2(sections[1])}</sub>(${t1})<br>`];
+        } else {
+            text = [`\\( \\begin{align} & H_{${display2(sections[1]).slice(3, -3)}}(${t1}) \\\\`];
+        }
+        t1 = [sections[1], t1];
+        for (let i = 0; i < t2; i++){
+            if (rule().type(t1[0]) === 0) t1 = t1.slice(-1);
+            else if (rule().type(t1[0]) === 1){
+                t1[0] = rule().fs(t1[0]);
+                t1[1]++;
+            } else if (rule().type(t1[0]) === 2){
+                t1[0] = rule().fs(t1[0], rule().to_str(t1[1]));
+            }
+            text[0] += display_mode() < 2 ? "=" : " = & ";
+            if (t1.length === 1){text[0] += t1[0]; break;}
+            if (display_mode() < 2) text[0] += `H<sub>${display2(t1[0])}</sub>`;
+            else text[0] += `H_{${display2(t1[0]).slice(3, -3)}}`;
+            text[0] += `(${t1[1]})${display_mode() < 2 ? "<br>" : " \\\\"}`;
         }
         if (t1.length > 1) text[0] += display_mode() < 2 ? "=..." : " = & \\cdots \\\\";
         if (display_mode() === 2) text[0] += " \\end{align} \\)";
@@ -888,8 +1060,8 @@ function execute_command(code){
         return;
     }
     if (sections[0] === "search"){
-        if (sections.length !== 2){
-            set_console(fm("search ord"), true);
+        if (![2, 3].includes(sections.length)){
+            set_console(fm("search ord [steps=10000]"), true);
             return;
         }
         if (rule().validity(sections[1]) < 1){
@@ -904,17 +1076,31 @@ function execute_command(code){
             set_console([er(words().error.invalid3_1), words().error.invalid3_2], true);
             return;
         }
-        t1 = search(rule(), initial(), sections[1]);
-        if (t1 === null){
+        if (sections.length === 2) t1 = 10000;
+        else {
+            t1 = Number(sections[2]);
+            if (!Number.isInteger(t1) || t1 < 0){
+                set_console([er(words().error.invalid_num1), words().error.invalid_num2], true);
+                return;
+            }
+        }
+        tm = (new Date).getTime();
+        t2 = search(rule(), initial(), sections[1], t1);
+        if (t2 === null){
             text = [er(words().error.not_found1), words().error.not_found2];
             text[1] = text[1].replace("${a}", display2(sections[1]));
             text[1] = text[1].replace("${b}", display2(initial()));
+            text[1] = text[1].replace("${c}", t1);
             set_console(text, true);
             return;
         }
-        chain_search(sections[1]);
-        text = [words().console.search_success1.replace("${ord}", display2(sections[1]))];
-        text.push(words().console.search_success2);
+        chain_search(t2);
+        tm = (new Date).getTime() - tm;
+        text = words().console.search_success1;
+        text = text.replace("${ord}", display2(sections[1]));
+        text = text.replace("${s}", (tm - tm % 1000) / 1000);
+        text = text.replace("${ms}", z(tm % 1000, 3));
+        text = [text, words().console.search_success2];
         set_console(text);
         return;
     }
@@ -958,35 +1144,43 @@ function indent(chain, mode = 0){
     if (mode === 0) return 0;
     if (mode === 1) return chain.length;
     if (mode === 2){
-        var result = 0;
+        let result = 0;
         for (let i = 0; i < chain.length; i++) result += chain[i];
         return result;
     }
 }
+// ORDINAL LIST
+function chain_list(){
+    let result = [];
+    for (let i = 0; i < chains().length; i++) result.push(st(chains()[i]));
+    return result;
+}
 // UPDATE EXPLORE
-function update_explore(){
-    var content = "", ord, y;
+function update_explore(tab = false){
+    let content = "", ord, index, y;
     for (let i = 0; i < chains().length; i++){
         ord = chainfs(rule(), initial(), chains()[i]);
         content += `<div class="ordinal" style="margin-left: `;
         content += `${indent(chains()[i], indent_mode()) * 32}px;">`;
+        content += `<div class="select button2" onclick="`;
+        content += `chain_select(${st(chains()[i])});">√</div>`;
         if (rule().type(ord) < 2){
             content += `<div class="disabled">+</div>`;
             content += `<div class="disabled">++</div>`;
             content += `<div class="disabled">!!!</div>`;
         } else {
             content += `<div class="plus1 button2" onclick="`;
-            content += `chain_expand(${JSON.stringify(chains()[i])});">+</div>`;
+            content += `chain_expand(${st(chains()[i])});">+</div>`;
             content += `<div class="plus2 button2" onclick="`;
-            content += `chain_expand_recursive(${JSON.stringify(chains()[i])});">++</div>`;
+            content += `chain_expand_recursive(${st(chains()[i])});">++</div>`;
             content += `<div class="plus3 button2" onclick="`;
-            content += `chain_expand_all(${JSON.stringify(chains()[i])});">!!!</div>`;
+            content += `chain_expand_all(${st(chains()[i])});">!!!</div>`;
         }
         if (feq(clone(chains()), list_collapse(clone(chains()), chains()[i]))){
             content += `<div class="disabled">-</div>`;
         } else {
             content += `<div class="minus button2" onclick="`;
-            content += `chain_collapse(${JSON.stringify(chains()[i])});">-</div>`;
+            content += `chain_collapse(${st(chains()[i])});">-</div>`;
         }
         content += `<div class="copy1 button2" onclick="copy('${ord}')">${words().copy}</div>`;
         content += `<div class="ord">${display2(ord)}`;
@@ -998,26 +1192,38 @@ function update_explore(){
         content += `</div></div>`;
     }
     document.querySelector(".ordinals").innerHTML = content;
-    if (data.search !== null){
-        document.querySelectorAll(".ordinal")[data.search].style["background-color"] = "#00000020";
-        y = document.querySelectorAll(".ordinal")[data.search].getBoundingClientRect().y;
-        y -= document.querySelectorAll(".ordinal")[0].getBoundingClientRect().y;
-        document.querySelector(".explore").scrollTop = y;
+    if (data.system.select !== null){
+        index = chain_list().indexOf(data.system.select);
+        document.querySelectorAll(".ordinal")[index].style["background-color"] = "#00000010";
+    }
+    if (data.system.search !== null){
+        index = chain_list().indexOf(data.system.search);
+        document.querySelectorAll(".ordinal")[index].style["background-color"] = "#00000020";
+        if (tab){
+            y = document.querySelectorAll(".ordinal")[index].getBoundingClientRect().y;
+            y -= document.querySelectorAll(".ordinal")[0].getBoundingClientRect().y;
+            document.querySelector(".explore").scrollTop = y;
+        }
     }
     MathJax.typeset([document.querySelector(".ordinals")]);
+}
+// SELECT
+function chain_select(chain){
+    if (data.system.search === st(chain)) data.system.search = null;
+    else if (data.system.select === st(chain)) data.system.select = null;
+    else data.system.select = st(chain);
+    update_explore(true);
 }
 // EXPAND
 function chain_expand(chain){
     if (rule().type(chainfs(rule(), initial(), chain)) < 2) return;
-    data.search = null;
     data.system.chains = list_expand(data.system.chains, chain);
     update_explore();
 }
 // EXPAND RECURSIVELY
 function chain_expand_recursive(chain){
     if (rule().type(chainfs(rule(), initial(), chain)) < 2) return;
-    data.search = null;
-    var old = [], added = null;
+    let old = [], added = null;
     for (let i = 0; i < chains().length; i++) old.push(st(chains()[i]));
     data.system.chains = list_expand(data.system.chains, chain);
     for (let i = 0; i < chains().length; i++) if (!old.includes(st(chains()[i]))){
@@ -1034,8 +1240,7 @@ function chain_expand_recursive(chain){
 // EXPAND ALL
 function chain_expand_all(chain){
     if (rule().type(chainfs(rule(), initial(), chain)) < 2) return;
-    data.search = null;
-    var chains2 = [];
+    let chains2 = [];
     for (let i = 0; i < chains().length; i++){
         if (!chain_lt(chain, chains()[i])) chains2.push(chains()[i]);
     }
@@ -1043,29 +1248,27 @@ function chain_expand_all(chain){
 }
 // COLLAPSE
 function chain_collapse(chain){
-    data.search = null;
     data.system.chains = list_collapse(chains(), chain);
+    if (!chain_list().includes(data.system.search)) data.system.search = null;
     update_explore();
 }
 // SEARCH AND EXPAND
-function chain_search(str){
-    var position = search(rule(), initial(), str), chains2 = [], id;
-    for (let i = 0; i < chains().length; i++) chains2.push(st(chains()[i]));
+function chain_search(position){
+    let chains = chain_list();
     for (let i = 0; i < position.length + 1; i++) for (let j = 0; j < position[i] + 1; j++){
-        if (!chains2.includes(st(position.slice(0, i).concat([j])))){
+        if (!chains.includes(st(position.slice(0, i).concat([j])))){
             chain_expand(position.slice(0, i));
         }
     }
-    chains2 = [];
-    for (let i = 0; i < chains().length; i++) chains2.push(st(chains()[i]));
-    data.search = chains2.indexOf(st(position));
+    data.system.search = st(position);
+    if (data.system.select === data.system.search) data.system.select = null;
 }
 // =================================================================================================
 // DATA
 // =================================================================================================
 // GET SYSTEM LANGUAGE
 function get_lang(){
-    var lan = navigator.language.toLowerCase();
+    let lan = navigator.language.toLowerCase();
     if (lan.includes("ja")) return 3;
     if (!lan.includes("zh")) return 0;
     if (lan.includes("hant")) return 2;
@@ -1077,38 +1280,52 @@ function get_lang(){
 // SAVE DATA
 function save_data(){localStorage.setItem("data-ord", JSON.stringify(data.save));}
 // LOAD DATA
-function load_data(){
-    var d = JSON.parse(localStorage.getItem("data-ord")), k;
+async function load_data(){
+    let d = JSON.parse(localStorage.getItem("data-ord")), res, ver, k;
     if (d === null) data.save.lang = get_lang();
     else data.save = d;
-    data.resources = JSON.parse(read_file("ASSETS/DATA/resources.json"));
+    res = await fetch("ASSETS/DATA/resources.json");
+    res = await res.text();
+    data.resources = JSON.parse(res);
     data.constant.save.presets = clone(data.resources.presets);
+    ver = data.save.version === undefined ? "1.2-" : data.save.version;
     k = Object.keys(data.constant.save);
     for (let i = 0; i < k.length; i++){
         if (data.save[k[i]] === undefined) data.save[k[i]] = clone(data.constant.save[k[i]]);
     }
-    if (d === null) save_data();
+    if (d === null){
+        save_data();
+        return;
+    }
+    if (ver < "1.3"){
+        if (data.save.options.simplify){
+            data.save.options.simplify += data.save.options.simplify - 1;
+        }
+        if (data.save.options.rebuch > 1) data.save.options.rebuch++;
+    }
+    if (ver < data.constant.save.version) save_data();
 }
 // =================================================================================================
 // INITIALIZE
 // =================================================================================================
 // SET DATA
-var data = {
+let data = {
     constant    : {
         langs       : ["en", "zh-Hans", "zh-Hant", "jp"],
         systems     : [Cantor, Veblen, Buchholz, ExBuchholz, RathjenM, RathjenK],
         save        : {
+            version     : "1.3",
             lang        : 0,
             presets     : [],
             options     : {
                 background  : 1,
                 display     : 2,
                 indent      : 1,
-                simplify    : 3,
+                simplify    : 5,
                 specify     : 1,
                 reveb1      : 5,
                 reveb2      : 3,
-                rebuch      : 2,
+                rebuch      : 3,
                 rechi       : 2,
                 rexi        : 4,
             },
@@ -1116,9 +1333,13 @@ var data = {
         },
     },
     system      : {
-        rule    : null,
-        initial : "A",
-        chains  : [[]],
+        rule        : null,
+        history     : [""],
+        position    : 0,
+        initial     : "A",
+        chains      : [[]],
+        select      : null,
+        search      : null,
     },
     resources   : null,
     now         : null,
@@ -1131,7 +1352,6 @@ var data = {
     mode2       : 0,
     goto        : 0,
     lang        : false,
-    search      : null,
     save        : {},
 };
 // =================================================================================================
@@ -1140,10 +1360,19 @@ var data = {
 // INITIALIZE
 function initialize(){
     set_text("title", words().title);
-    var command = function (e){
+    set_text("version", "V" + data.constant.save.version);
+    let command = function (e){
         if (e.key === "Enter"){
-            e.preventDefault();
             document.querySelector(".cal-enter").click();
+            e.preventDefault();
+        }
+        if (e.key === "ArrowUp"){
+            shift_command(true);
+            e.preventDefault();
+        }
+        if (e.key === "ArrowDown"){
+            shift_command(false);
+            e.preventDefault();
         }
     }
     document.querySelector(".cal-bar").addEventListener("keydown", command);
@@ -1151,14 +1380,14 @@ function initialize(){
     data.background = data.save.options.background * 500;
 }
 // MAIN
-function main(){
-    load_data();
+async function main(){
+    await load_data();
     initialize();
 }
 // INTERVAL
 function interval(){
     if (!data.interval) return;
-    var t = Date.now();
+    let t = Date.now();
     if (data.now === null) data.now = Date.now();
     try {update(t - data.now, data.time);} catch {}
     data.time = t - data.now;

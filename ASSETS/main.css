@@ -258,7 +258,7 @@ input.cal-item {
     border: 1px solid #000000;
     padding: 0px 400px 0px 0px;
     display: grid;
-    grid-template-columns: 32px 32px 32px 32px 64px 1fr;
+    grid-template-columns: 32px 32px 32px 32px 32px 64px 1fr;
 }
 .ord {
     margin: 2px 4px 2px 4px;
@@ -350,7 +350,7 @@ input.cal-item {
 
 /* BUTTONS ------------------------------------------------------------------------------------- */
 
-.yes, .no, .plus1, .plus2, .plus3, .minus, .disabled, .copy1, .copy2, .hide-show {
+.yes, .no, .select, .plus1, .plus2, .plus3, .minus, .disabled, .copy1, .copy2, .hide-show {
     margin: 2px 4px 2px 4px;
     display: flex;
     justify-content: center;
@@ -360,8 +360,11 @@ input.cal-item {
     padding: 0px 8px 0px 8px;
     display: inline-block;
 }
-.plus1, .plus2, .plus3, .minus, .disabled {
+.select, .plus1, .plus2, .plus3, .minus, .disabled {
     width: 22px;
+}
+.select {
+    background-color: #c0ffff;
 }
 .yes, .plus1 {
     background-color: #c0ffc0;

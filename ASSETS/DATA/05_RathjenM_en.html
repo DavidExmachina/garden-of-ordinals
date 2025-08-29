@@ -5,7 +5,7 @@
         <h1>Definition</h1><hr>
         <p>&emsp;&emsp;Rathjen's Little \( \psi \) refers to an ordinal collapsing function proposed by Michael Rathjen in 1990<sup><a id="g1" href="#c1">[1]</a></sup>.</p>
         <p>&emsp;&emsp;Because Buchholz's \( \psi \) is also denoted as \( \psi_\alpha(\beta) \), this OCF is denoted as \( \rho_\alpha(\beta) \) in the Calculate menu and the Explore menu for distinction. You can restore it by Options &gt; Function Specification &gt; \( \psi_\alpha(\beta) \).</p>
-        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and described and defined as follows.</p>
+        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and are described and defined as follows.</p>
         <h2>The function \( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \) denotes Veblen Function. It's defined as follows as shown in the Help menu in the "Veblen Function" interface:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -45,7 +45,7 @@
         <p>&emsp;&emsp;\( \Phi_\alpha(\beta):=Enum_{\{\gamma|\exists\gamma'(\gamma=\Omega_{1+\gamma'})\land\forall\alpha'&lt;\alpha(\gamma=\Phi_{\alpha'}(\gamma))\}}(\beta) \)</p>
         <br>
         <p>&emsp;&emsp;\( Cl_M(A) \) denotes the closure function, which returns a set of all of the elements of \( A \) and also all of the limit points of \( A \) less than \( M \). A limit point of \( A \) is an ordinal \( \alpha \) that \( \alpha \) is the least ordinal greater or equal to all of the elements of \( A\cap\alpha \). The Mahlo Cardinal \( M \) will be explained later in this article.</p>
-        <p>&emsp;&emsp;As a result, \( \chi_\alpha(\beta) \) always return a singular cardinal if \( \beta \) is a limit ordinal and a regular cardinal otherwise. Notice that \( \Omega_\omega \) is a singular cardinal. And also, \( I_\omega \), the limit of \( I_\alpha \) for \( \alpha&lt;\omega \), is a singular cardinal, and thus NOT an inaccessible cardinal by definition. And so, the function \( Cl_M(A) \) makes the function \( \beta\mapsto\chi_\alpha(\beta) \) "continuous" for all \( \alpha \).</p>
+        <p>&emsp;&emsp;As a result, \( \chi_\alpha(\beta) \) always returns a singular cardinal if \( \beta \) is a limit ordinal and a regular cardinal otherwise. Notice that \( \Omega_\omega \) is a singular cardinal. And also, \( I_\omega \), the limit of \( I_\alpha \) for \( \alpha&lt;\omega \), is a singular cardinal, and thus NOT an inaccessible cardinal by definition. And so, the function \( Cl_M(A) \) makes the function \( \beta\mapsto\chi_\alpha(\beta) \) "continuous" for all \( \alpha \).</p>
         <p>&emsp;&emsp;However, the function \( Cl_M(A) \) doesn't make the function \( \alpha\mapsto\chi_\alpha(0) \) "continuous", which causes \( \chi_\omega(0) \) to still be a regular cardinal and greater than the limit of \( \chi_\alpha(0) \) for \( \alpha&lt;\omega \). The same weird behavior also happens for other limit ordinals.</p>
         <p>&emsp;&emsp;With the definition above, we have:</p>
         <p>&emsp;&emsp;\( \chi_0(\beta)=\Omega_{1+\beta} \)</p>
@@ -75,7 +75,7 @@
         <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is <b>unbounded</b> in \( \alpha \) if every ordinal less than \( \alpha \) can be surpassed by an element of \( A \).</p>
         <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is a <b>club set</b> in \( \alpha \) if \( A \) is both closed and unbounded in \( \alpha \). This term comes from merging the word "closed" and "unbounded".</p>
         <p>&emsp;&emsp;A subset of a cardinal of uncountable cofinality \( \alpha \), \( A \) is a <b>stationary set</b> (Not to be confused with "stationEry set") in \( \alpha \) if \( A \) intersects every club set in \( \alpha \), in other words, there's no club set in \( \alpha \) that doesn't intersect with \( A \).</p>
-        <p>&emsp;&emsp;After all these concepts, we define that a Mahlo Cardinal \( \kappa \) is an inaccessible cardinal that the set of all Inaccessible Cardinals less than \( \kappa \) is a stationary set in \( \kappa \). We denote the least of which as \( M \).</p>
+        <p>&emsp;&emsp;After all these concepts, we define that a Mahlo Cardinal is an inaccessible cardinal that the set of all Inaccessible Cardinals less than itself is a stationary set in itself. We denote the least of which as \( M \).</p>
         <br>
         <p>&emsp;&emsp;So, how large is \( M \)? Firstly, \( I \) is not a Mahlo Cardinal because there are no Inaccessible Cardinals under \( I \) and thus the set of all Inaccessible Cardinals less than \( I \) is empty and doesn't intersect with every club set in \( I \).</p>
         <p>&emsp;&emsp;\( I_2 \) is not a Mahlo Cardinal because \( \{I\} \) doesn't intersect with \( \{I+1+\alpha|\alpha&lt;I_2\} \), which is a club set in \( I_2 \).</p>
