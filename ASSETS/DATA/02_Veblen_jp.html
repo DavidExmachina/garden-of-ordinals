@@ -21,23 +21,27 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)及び\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_1(\beta+1)[0]:=0 \)，\( \varphi_1(\beta+1)[1]:=\varphi_1(\beta) \)，\( \varphi_1(\beta+1)[2]:=\varphi_0(\varphi_1(\beta)*2) \)及び\( \varphi_1(\beta+1)[n+3]:=\varphi_0(\varphi_1(\beta+1)[n+2]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=0 \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta)+1) \)及び\( \varphi_{\alpha+1}(\beta+1)[n+3]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+2]) \) (\( \alpha\neq0 \))</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[0]+1) \)及び\( \varphi_{\alpha+1}(\beta+1)[n+2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+1]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
         <br>
-        <p>&emsp;&emsp;ちなみに、上記の基本列システムとは異なるよりよく知られている<b>「ヴェブレン階層」</b>と呼ばれる基本列システムがあり、以下のように定義されます。上記のシステムを使用する理由はブーフホルツの\( \psi \)関数とその拡張の基本列システムを真似するためです。</p>
+        <p>&emsp;&emsp;ちなみに、上記の基本列システムとは異なるよりよく知られている<b>「ヴェブレン階層」</b>と呼ばれる基本列システムがあり、唯一の違いは、07.行にあります：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \)及び\( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
+        <br>
+        <p>&emsp;&emsp;上記の基本列システムとの唯一の違い\( \Varphi_{\alpha+1}(\beta+1)[0]:=\Varphi_{\alpha+1}(\beta)+1 \)である。それは列内のすべての要素が極限順序数であることを保証するためです。唯一の例外は、末尾が\( \omega \)の順序数です。</p>
+        <p>&emsp;&emsp;また、このサイトにおいてV1.3以前に使用されていた基本列システムは以下のように定義されます。このシステムを使用した理由はブーフホルツの\( \psi \)関数とその拡張の基本列システムを模倣するためでした。しかし、これはもっと複雑なことになった：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)及び\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \)及び\( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_1(\beta+1)[0]:=0 \)，\( \varphi_1(\beta+1)[1]:=\varphi_1(\beta) \)，\( \varphi_1(\beta+1)[2]:=\varphi_0(\varphi_1(\beta)*2) \)及び\( \varphi_1(\beta+1)[n+3]:=\varphi_0(\varphi_1(\beta+1)[n+2]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=0 \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta)+1) \)及び\( \varphi_{\alpha+1}(\beta+1)[n+3]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+2]) \) (\( \alpha\neq0 \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)は極限順序数である）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \)及び\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
         <br>
         <p>&emsp;&emsp;時々、関数をこのように書き直すことがあります：</p>
         <p>&emsp;&emsp;\( \omega^\beta:=\varphi_0(\beta) \)</p>
@@ -107,7 +111,7 @@
         <p>&emsp;&emsp;\( \Gamma_0 \)も標準形である。</p>
         <p>&emsp;&emsp;このシステムのすべての順序数に対して、\( \alpha&lt;\Gamma_0 \)。</p>
         <p>&emsp;&emsp;このシステムの<b>すべての順序数は可算</b>である。</p>
-        <p>&emsp;&emsp;コマンド「fgh」と「sgh」の専用の<b>可算順序数限界はありません</b>。</p>
+        <p>&emsp;&emsp;増加関数コマンド（「fgh」、「sgh」、「mgh」そして「hh」）の専用の<b>可算順序数限界はありません</b>。</p>
         <h2>演算</h2><hr>
         <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を以下のように定義します：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
@@ -134,8 +138,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( a \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Cof(a_1) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_1) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Cof(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( Cof(a_0)\ge\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_0) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)ならば、\( \overline{\omega} \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> \( a_0=\overline{0}\land a_1=\overline{0} \)ならば、\( \overline{1} \)を返す</p>
         <br>
@@ -150,19 +154,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> \( a_0=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> \( n\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> \( n\neq\overline{0} \)ならば、\( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0[n]}(\overline{0})) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( Cof(a_1)=\overline{1} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( a_0=\overline{0} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> \( n\neq\overline{0} \)ならば、\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.01.</span> \( a_0=\overline{1} \)ならば、\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> \( a_0\neq\overline{1} \)ならば、\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> \( n[\overline{0}][\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( n=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> \( n[\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0}(a_1[n])) \)を返す</p>
         <br>

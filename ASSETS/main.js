@@ -16,6 +16,12 @@ function add_space(text, space){
 function to_dom(text){return new DOMParser().parseFromString(text, 'text/html');}
 // COPY CODE
 function copy(str){navigator.clipboard.writeText(str);}
+// GET PARAMETER
+function get_para(code, url = null){
+    return new URLSearchParams(url === null ? window.location.search : url).get(code);
+}
+// CHANGE URL
+function change_url(url){window.history.pushState({}, "", url);}
 // =================================================================================================
 // ABBREVIATIONS
 // =================================================================================================
@@ -24,13 +30,13 @@ function lang(){return data.constant.langs[data.save.lang];}
 // WORDS IN CURRENT LANGUAGE
 function words(){return data.resources.words[lang()];}
 // CURRENT RULE
-function rule(){return [null, null].concat(data.constant.systems)[data.mode1];}
+function rule(){return [null, null].concat(data.constant.systems)[get_mode()[0]];}
 // INITIAL ORDINAL
 function initial(){return data.system.initial;}
 // CURRENT CHAINS
 function chains(){return data.system.chains;}
 // PRESETS
-function presets(){return data.mode1 < 2 ? [] : data.save.presets[data.mode1 - 2];}
+function presets(){return get_mode()[0] < 2 ? [] : data.save.presets[get_mode()[0] - 2];}
 // DISPLAY MODE
 function display_mode(){return data.save.options.display;}
 // INDENT MODE
@@ -39,7 +45,7 @@ function indent_mode(){return data.save.options.indent;}
 function display2(str, no_original = false){
     let options = {}, op = ["simplify", "specify", "reveb1", "reveb2", "rebuch", "rechi", "rexi"];
     for (let i = 0; i < op.length; i++) options[op[i]] = data.save.options[op[i]];
-    options.force_omega = [4, 5].includes(data.mode1) * 1;
+    options.force_omega = [4, 5].includes(get_mode()[0]) * 1;
     return display(str, rule(), Math.max(display_mode(), no_original), options);
 }
 // ERROR TEXT
@@ -111,6 +117,8 @@ function set_display(elm, state){
 }
 // SET TEXT
 function set_text(id, text){document.getElementById(id).innerHTML = text;}
+// SET TITLE
+function set_title(){set_text("title", words().title);}
 // SET MENU
 function set_menu(){
     let elm;
@@ -137,13 +145,13 @@ function set_lang(lang = null){
         data.lang = false;
         save_data();
     }
-    set_text("title", words().title);
+    set_title();
     set_menu();
 }
 // SET TAB
 function set_tab(){
-    set_text("system", ["", words().help].concat(words().systems)[data.mode1]);
-    if (!data.mode1) set_text("system", "");
+    set_text("system", ["", words().help].concat(words().systems)[get_mode()[0]]);
+    if (!get_mode()[0]) set_text("system", "");
     set_text("back", words().back);
     set_text("tab0", words().calculate);
     set_text("tab1", words().explore);
@@ -151,30 +159,30 @@ function set_tab(){
     set_text("tab3", words().help);
     for (let i = 0; i < 4; i++){
         document.getElementById("tab" + i).setAttribute("class",
-            "tab-button button" + (data.mode2 === i ? 3 : 1));
+            "tab-button button" + (get_mode()[1] === i ? 3 : 1));
         document.getElementById("tab" + i).setAttribute("onclick",
-            data.mode2 === i ? "" : `change_tab(${i});`);
+            get_mode()[1] === i ? "" : `change_tab(${i});`);
     }
     MathJax.typeset([document.querySelector(".tab")]);
 }
 // SET EXPLORE
 function set_explore(){
-    if (!data.mode1){
+    if (!get_mode()[0]){
         document.querySelector(".ordinals").innerHTML = "";
         return;
     }
-    if (data.mode1 > 1) update_explore(true);
+    if (get_mode()[0] > 1) update_explore(true);
 }
 // SET OPTIONS
 function set_options(){
     let options = ["background", "display", "indent", "simplify", "specify",
                    "reveb1", "reveb2", "rebuch", "rechi", "rexi"], element, condition;
-    set_display(document.querySelectorAll(".op-item")[4], [5, 6].includes(data.mode1));
-    set_display(document.querySelectorAll(".op-item")[5], [3, 6, 7].includes(data.mode1));
-    set_display(document.querySelectorAll(".op-item")[6], data.mode1 === 6);
-    set_display(document.querySelectorAll(".op-item")[7], [4, 5].includes(data.mode1));
-    set_display(document.querySelectorAll(".op-item")[8], data.mode1 === 6);
-    set_display(document.querySelectorAll(".op-item")[9], data.mode1 === 7);
+    set_display(document.querySelectorAll(".op-item")[4], [5, 6].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[5], [3, 6, 7].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[6], get_mode()[0] === 6);
+    set_display(document.querySelectorAll(".op-item")[7], [4, 5].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[8], get_mode()[0] === 6);
+    set_display(document.querySelectorAll(".op-item")[9], get_mode()[0] === 7);
     for (let i = 0; i < options.length; i++){
         for (let j = 0; j < [2, 3, 3, 6, 2, 6, 4, 4, 3, 5][i]; j++){
             element = document.getElementById(`op${i}-${j}`);
@@ -209,7 +217,7 @@ function set_options(){
     set_text("op3-4", "\\( \\omega^{\\alpha+\\beta} \\)");
     set_text("op3-5", "\\( \\alpha+\\beta \\)");
     set_text("op4-0", "\\( \\psi_\\alpha(\\beta) \\)");
-    set_text("op4-1", `\\( \\${data.mode1 === 6 ? "rho_\\alpha" : "psi_\\alpha^*"}(\\beta) \\)`);
+    set_text("op4-1", `\\( \\${get_mode()[0] === 6 ? "rho_\\alpha" : "psi_\\alpha^*"}(\\beta) \\)`);
     set_text("op5-0", "\\( \\varphi_\\alpha(\\beta) \\)");
     set_text("op5-1", "\\( 1 \\)");
     set_text("op5-2", "\\( \\omega^\\beta \\)");
@@ -275,12 +283,12 @@ function change_contents(){
 }
 // SET HELP
 async function set_help(){
-    let filename, content;
+    let filename, content, hash;
     document.querySelector(".help").innerHTML = "";
     document.querySelector(".help").scrollTop = 0;
-    if (!data.mode1) return;
+    if (!get_mode()[0]) return;
     filename = "ASSETS/DATA/";
-    filename += data.resources.help_files[data.mode1 - 1];
+    filename += data.resources.help_files[get_mode()[0] - 1];
     filename += `_${data.constant.langs[data.save.lang]}.html`;
     content = await fetch(filename);
     content = await content.text();
@@ -289,11 +297,13 @@ async function set_help(){
     content = "\n" + " ".repeat(24) + `<div class="contents"></div>` + content;
     document.querySelector(".help").innerHTML = content;
     set_contents();
+    hash = window.location.hash;
+    if (hash) document.getElementById(hash.slice(1)).scrollIntoView();
     gradual_mathjax(Array.from(document.querySelectorAll(".help > *")));
 }
 // SET MATHJAX IN HELP GRADUALLY
 function gradual_mathjax(n, s = 1){
-    if (!n.length || data.mode2 !== 3) return;
+    if (!n.length || get_mode()[1] !== 3) return;
     MathJax.typeset(n.slice(0, s));
     setTimeout(() => gradual_mathjax(n.slice(s), s + 1), 0);
 }
@@ -306,43 +316,46 @@ function set_system(){
     data.system.select = null;
     data.system.search = null;
     document.querySelector(".cal-bar").value = "";
-    if (data.mode1 > 1) set_console();
+    if (get_mode()[0] > 1) set_console();
 }
 // SET MAIN INTERFACE
-function set_main(system = true){
-    set_display(document.querySelector(".menu"), !data.mode1);
-    set_display(document.querySelector(".system"), data.mode1);
-    set_display(document.querySelector(".tab-main"), data.mode1 !== 1);
-    set_display(document.querySelector(".calculate"), data.mode2 === 0);
-    set_display(document.querySelector(".explore"), data.mode2 === 1);
-    set_display(document.querySelector(".options"), data.mode2 === 2);
-    set_display(document.querySelector(".help"), data.mode2 === 3);
+function set_main(){
+    set_title();
+    if (data.mode1 === get_mode()[0] && data.mode2 === get_mode()[1]) return;
+    set_display(document.querySelector(".menu"), !get_mode()[0]);
+    set_display(document.querySelector(".system"), get_mode()[0]);
+    set_display(document.querySelector(".tab-main"), get_mode()[0] !== 1);
+    set_display(document.querySelector(".calculate"), get_mode()[1] === 0);
+    set_display(document.querySelector(".explore"), get_mode()[1] === 1);
+    set_display(document.querySelector(".options"), get_mode()[1] === 2);
+    set_display(document.querySelector(".help"), get_mode()[1] === 3);
     set_menu();
     set_tab();
-    if (system) set_system();
-    if (data.mode1){
+    if (data.mode1 != get_mode()[0]) set_system();
+    data.mode1 = get_mode()[0];
+    data.mode2 = get_mode()[1];
+    if (get_mode()[0]){
         if (data.lang) set_lang();
-        if (data.mode2 === 0){
+        if (get_mode()[1] === 0){
             set_input();
             set_preset();
         }
-        if (data.mode2 === 1) set_explore();
-        if (data.mode2 === 2) set_options();
-        if (data.mode2 === 3) set_help();
+        if (get_mode()[1] === 1) set_explore();
+        if (get_mode()[1] === 2) set_options();
+        if (get_mode()[1] === 3) set_help();
     }
 }
 // CHANGE MODE
 function change_mode(mode){
-    if (data.mode1 === mode) return;
-    data.mode1 = mode;
-    data.mode2 = (data.mode1 === 1) * 3;
+    if (get_mode()[0] === mode) return;
     data.change = 1000;
+    data.destination = `?mode=${mode}-${(mode === 1) * 3}`;
 }
 // CHANGE TAB
 function change_tab(tab){
-    if (data.mode2 === tab) return;
-    data.mode2 = tab;
-    set_main(false);
+    if (get_mode()[1] === tab) return;
+    change_url(`?mode=${get_mode()[0]}-${tab}`);
+    set_main();
 }
 // UPDATE MAIN INTERFACE
 function update_main(t1, t2){
@@ -356,7 +369,10 @@ function update_main(t1, t2){
     document.querySelector(".main").style["-ms-user-select"] = data.change ? "none" : "auto";
     document.querySelector(".main").style["-webkit-user-select"] = data.change ? "none" : "auto";
     document.querySelector(".main").style["pointer-events"] = data.change ? "none" : "auto";
-    if (oc >= 500 && data.change < 500) set_main();
+    if (oc >= 500 && data.change < 500){
+        change_url(data.destination);
+        set_main();
+    }
 }
 // UPDATE EVERYTHING
 function update(t1, t2){
@@ -376,7 +392,7 @@ function set_console(text = null, error = false){
     if (text === null){
         t.push(words().console.initial);
         a = "";
-        for (let i = 0; i < 2 + (data.mode1 === 7); i++){
+        for (let i = 0; i < 2 + (get_mode()[0] === 7); i++){
             b = words().console.rep2.replace("${a}", "BCD"[i]);
             b = b.replace("${b}", display_mode() < 2 ? "bcd"[i] : `\\( ${"bcd"[i]} \\)`);
             a += b;
@@ -386,19 +402,19 @@ function set_console(text = null, error = false){
         t.push(rep(words().console.empty, display2("", true)));
         t.push(rep(words().console.stra, display2("A", true)));
         t.push(rep("BC", display_mode() < 2 ? "b+c" : "\\( b+c \\)"));
-        if (data.mode1 === 2){
+        if (get_mode()[0] === 2){
             if (display_mode() < 2) t.push(rep("(B)", "ω<sup>b</sup>"));
             else t.push(rep("(B)", "\\( \\omega^b \\)"));
         }
-        if (data.mode1 === 3){
+        if (get_mode()[0] === 3){
             if (display_mode() < 2) t.push(rep("(B,C)", "φ<sub>b</sub>(c)"));
             else t.push(rep("(B,C)", "\\( \\varphi_b(c) \\)"));
         }
-        if (data.mode1 === 4){
+        if (get_mode()[0] === 4){
             if (display_mode() < 2) t.push(rep("(B,C)", "ψ<sub>b</sub>(c)"));
             else t.push(rep("(B,C)", "\\( \\psi_b(c) \\)"));
         }
-        if (data.mode1 === 5){
+        if (get_mode()[0] === 5){
             if (display_mode() < 2){
                 a = data.save.options.specify ? "ψ<sub>b</sub><sup>*</sup>(c)" : "ψ<sub>b</sub>";
             } else {
@@ -406,7 +422,7 @@ function set_console(text = null, error = false){
             }
             t.push(rep("(B,C)", a));
         }
-        if (data.mode1 === 6){
+        if (get_mode()[0] === 6){
             if (display_mode() < 2){
                 t.push(rep("(vB,C)", "φ<sub>b</sub>(c)"));
                 t.push(rep("(VB,C)", "Φ<sub>b</sub>(c)"));
@@ -420,7 +436,7 @@ function set_console(text = null, error = false){
             }
             t.push(rep("(rB,C)", a));
         }
-        if (data.mode1 === 7){
+        if (get_mode()[0] === 7){
             if (display_mode() < 2){
                 t.push(rep("(vB,C)", "φ<sub>b</sub>(c)"));
                 t.push(rep("(WB)", "Ω<sub>b</sub>"));
@@ -483,19 +499,19 @@ function check_preset(n){
     for (let i = 0; i < presets().length; i++) if (item === presets()[i].name) valid = false;
     if (n === presets().length * 2){
         if (valid) {
-            data.save.presets[data.mode1 - 2].push({name: item, content: ""});
+            data.save.presets[get_mode()[0] - 2].push({name: item, content: ""});
             save_data();
         }
     } else if (n < presets().length * 2){
         if (n % 2){
-            data.save.presets[data.mode1 - 2][(n - 1) / 2].content = item;
+            data.save.presets[get_mode()[0] - 2][(n - 1) / 2].content = item;
             save_data();
-        } else if (item === "" && data.save.presets[data.mode1 - 2][n / 2].content === ""){
-            data.save.presets[data.mode1 - 2] =
+        } else if (item === "" && data.save.presets[get_mode()[0] - 2][n / 2].content === ""){
+            data.save.presets[get_mode()[0] - 2] =
                 presets().slice(0, n / 2).concat(presets().slice(n / 2 + 1));
             save_data();
         } else if (valid){
-            data.save.presets[data.mode1 - 2][n / 2].name = item;
+            data.save.presets[get_mode()[0] - 2][n / 2].name = item;
             save_data();
         }
     }
@@ -524,7 +540,7 @@ function preset_import(){
                 }
             } catch {error = true;}
             if (!error){
-                data.save.presets[data.mode1 - 2] = result;
+                data.save.presets[get_mode()[0] - 2] = result;
                 save_data();
                 set_console([words().console.import_success]);
                 set_preset();
@@ -543,7 +559,7 @@ function preset_export(){
 // RESET PRESET
 function preset_reset(reset){
     if (reset){
-        data.save.presets[data.mode1 - 2] = clone(data.constant.save.presets[data.mode1 - 2]);
+        data.save.presets[get_mode()[0] - 2] = clone(data.constant.save.presets[get_mode()[0] - 2]);
         save_data();
         set_console([words().console.reset_success]);
         set_preset();
@@ -608,6 +624,7 @@ function execute_command(code){
         set_console();
         return;
     }
+    // DISPLAY
     if (sections[0] === "display"){
         if (sections.length !== 2){
             set_console(fm("display ord"), true);
@@ -630,6 +647,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // COF
     if (sections[0] === "cof"){
         if (sections.length !== 2){
             set_console(fm("cof ord"), true);
@@ -655,6 +673,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // COMP
     if (sections[0] === "comp"){
         if (sections.length !== 3){
             set_console(fm("comp ord1 ord2"), true);
@@ -684,6 +703,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // FS
     if (sections[0] === "fs"){
         if (![2, 3, 4].includes(sections.length)){
             set_console(fm("fs ord [steps=3] [\"strong\"]"), true);
@@ -732,6 +752,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // FGH
     if (sections[0] === "fgh"){
         if (![3, 4].includes(sections.length)){
             set_console(fm("fgh ord n [steps=1]"), true);
@@ -823,6 +844,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // SGH
     if (sections[0] === "sgh"){
         if (![3, 4].includes(sections.length)){
             set_console(fm("sgh ord n [steps=1]"), true);
@@ -884,6 +906,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // MGH
     if (sections[0] === "mgh"){
         if (![3, 4].includes(sections.length)){
             set_console(fm("mgh ord n [steps=1]"), true);
@@ -974,6 +997,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // HH
     if (sections[0] === "hh"){
         if (![3, 4].includes(sections.length)){
             set_console(fm("hh ord n [steps=1]"), true);
@@ -1036,6 +1060,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // INITIAL
     if (sections[0] === "initial"){
         if (sections.length !== 2){
             set_console(fm("initial ord"), true);
@@ -1059,6 +1084,7 @@ function execute_command(code){
         set_console([words().console.set_initial.replace("${ord}", display2(sections[1]))]);
         return;
     }
+    // SEARCH
     if (sections[0] === "search"){
         if (![2, 3].includes(sections.length)){
             set_console(fm("search ord [steps=10000]"), true);
@@ -1104,6 +1130,7 @@ function execute_command(code){
         set_console(text);
         return;
     }
+    // PRESET
     if (sections[0] === "preset"){
         if (sections.length !== 2){
             set_console(fm("preset \"import\"/\"export\"/\"reset\""), true);
@@ -1277,6 +1304,13 @@ function get_lang(){
     if (lan.includes("tw")) return 2;
     return 1;
 }
+// GET MODE
+function get_mode(){
+    let mode = get_para("mode");
+    if (mode === null) return [0, 0];
+    if (!mode.includes("-")) return [0, 0];
+    return [Number(mode.split("-")[0]), Number(mode.split("-")[1])];
+}
 // SAVE DATA
 function save_data(){localStorage.setItem("data-ord", JSON.stringify(data.save));}
 // LOAD DATA
@@ -1314,7 +1348,7 @@ let data = {
         langs       : ["en", "zh-Hans", "zh-Hant", "jp"],
         systems     : [Cantor, Veblen, Buchholz, ExBuchholz, RathjenM, RathjenK],
         save        : {
-            version     : "1.3",
+            version     : "1.4",
             lang        : 0,
             presets     : [],
             options     : {
@@ -1348,9 +1382,9 @@ let data = {
     interval    : false,
     change      : 2000,
     background  : 500,
-    mode1       : 0,
-    mode2       : 0,
-    goto        : 0,
+    destination : "",
+    mode1       : null,
+    mode2       : null,
     lang        : false,
     save        : {},
 };
@@ -1359,7 +1393,7 @@ let data = {
 // =================================================================================================
 // INITIALIZE
 function initialize(){
-    set_text("title", words().title);
+    set_title();
     set_text("version", "V" + data.constant.save.version);
     let command = function (e){
         if (e.key === "Enter"){
@@ -1394,4 +1428,5 @@ function interval(){
 }
 // SET FUNCTIONS
 window.onload = main;
+window.onpopstate = set_main;
 setInterval(interval, 1);

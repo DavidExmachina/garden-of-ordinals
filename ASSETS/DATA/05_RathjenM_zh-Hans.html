@@ -287,7 +287,7 @@
         <p>&emsp;&emsp;\( \Gamma_{M+1} \)亦为标准型。</p>
         <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha&lt;\Gamma_{M+1} \)。</p>
         <p>&emsp;&emsp;序数\( \alpha \)可数当且仅当\( \alpha&lt;\chi_\overline{0}(\overline{0}) \)。</p>
-        <p>&emsp;&emsp;仅限于指令“fgh”与“sgh”可用的可数序数极限为\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其电脑代码为(r(x,),A)。</p>
+        <p>&emsp;&emsp;仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的可数序数极限为\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其电脑代码为(r(x,),A)。</p>
         <h2>运算</h2><hr>
         <p>&emsp;&emsp;我们定义标准化函数\( Norm \)以将序数化作标准型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
@@ -322,8 +322,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=M \)，返回\( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，返回\( Cof(a_1) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1))\land a_0,a_1\in T_m \)，则：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，返回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_0)\ge\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_0) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)，返回\( \overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 若\( a_0=\overline{0}\land a_1=\overline{0} \)，返回\( \overline{1} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，则：</p>
@@ -353,44 +353,32 @@
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.01.</span> 若\( a_0=\overline{0} \)，返回\( \overline{0} \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> 若\( n\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.02.02.</span> 若\( n\neq\overline{0} \)，返回\( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.</span> 若\( Cof(a_1)=\overline{1} \)，则：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.</span> 若\( a_0=\overline{0} \)，则：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.01.02.</span> 若\( n\neq\overline{0} \)，返回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.01.</span> 若\( a_0=\overline{1} \)，返回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，返回\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.01.</span> 若\( n=\overline{0} \)，返回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">04.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，返回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
             </td></tr>
             <tr><td>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \)，则：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( a_1=\overline{0} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.</span> 若\( a_0=\overline{1} \)，则：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.02.</span> 若\( n\neq\overline{0} \)，返回\( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.</span> 若\( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.02.</span> 若\( n\neq\overline{0} \)，返回\( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\Phi_{a_0[n]}(\overline{0})) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.01.02.</span> 若\( n\neq\overline{0} \)，返回\( Norm(\Phi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.02.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\Phi_{a_0[n]}(\overline{0})) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( Cof(a_1)=\overline{1} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> 若\( a_0=\overline{1} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( \Phi_{\overline{1}}(a_1[\overline{0}]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，返回\( \chi_\overline{0}(Suc(a[n[\overline{0}]])) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.04.</span> 若\( [\overline{0}][\overline{0}]\neq\overline{0} \)，返回\( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> 若\( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \)，则：</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( \Phi_{a_0}(a_1[\overline{0}]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，返回\( \Phi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，返回\( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
-                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\Phi_{a_0[n]}(Suc(Norm(\Phi_{a_0}(a_1[\overline{0}]))))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.01.</span> 若\( n=\overline{0} \)，返回\( Norm(\Phi_{a_0}(a_1[\overline{0}])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( Norm(\Phi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.03.</span> 若\( n[\overline{0}]\neq\overline{0} \)，返回\( Norm(\Phi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
+                <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\Phi_{a_0[n]}(Suc(Norm(\Phi_{a_0}(a_1[\overline{0}]))))) \)</p>
                 <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，返回\( Norm(\Phi_{a_0}(a_1[n])) \)</p>
             </td></tr>
             <tr><td>

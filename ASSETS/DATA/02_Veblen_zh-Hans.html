@@ -21,23 +21,27 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)且\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_1(\beta+1)[0]:=0 \)，\( \varphi_1(\beta+1)[1]:=\varphi_1(\beta) \)，\( \varphi_1(\beta+1)[2]:=\varphi_0(\varphi_1(\beta)*2) \)且\( \varphi_1(\beta+1)[n+3]:=\varphi_0(\varphi_1(\beta+1)[n+2]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=0 \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta)+1) \)且\( \varphi_{\alpha+1}(\beta+1)[n+3]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+2]) \) (\( \alpha\neq0 \))</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \)且\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[0]+1) \)且\( \varphi_{\alpha+1}(\beta+1)[n+2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+1]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)是极限序数）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)是极限序数）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \)且\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
         <br>
-        <p>&emsp;&emsp;顺便一提，有一个更加有名的基本序列系统叫做<b>“维布伦阶层”</b>，与上述系统略有不同，定义如下。本网站使用上述系统的原因是为了模仿布赫霍兹\( \psi \)函数及其拓展的基本序列系统。</p>
+        <p>&emsp;&emsp;顺便一提，有一个更加有名的基本序列系统叫做<b>“维布伦阶层”</b>，与上述系统唯一区别在于07.行：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \)且\( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
+        <br>
+        <p>&emsp;&emsp;与上述基本序列系统的唯一区别在于\( \Varphi_{\alpha+1}(\beta+1)[0]:=\Varphi_{\alpha+1}(\beta)+1 \)。使用上述系统的原因是确保序列内一切元素皆为极限序数。唯一的例外是以\( \omega \)结尾的序数。</p>
+        <p>&emsp;&emsp;此外，本网站在V1.3前所使用的基本序列系统定义如下。本网站曾经使用了该系统的原因是为了模仿布赫霍兹\( \psi \)函数及其拓展的基本序列系统。然而实际上这更加复杂：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \)且\( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) （\( \alpha \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \)且\( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)是极限序数）</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \)且\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_1(\beta+1)[0]:=0 \)，\( \varphi_1(\beta+1)[1]:=\varphi_1(\beta) \)，\( \varphi_1(\beta+1)[2]:=\varphi_0(\varphi_1(\beta)*2) \)且\( \varphi_1(\beta+1)[n+3]:=\varphi_0(\varphi_1(\beta+1)[n+2]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=0 \)，\( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_{\alpha+1}(\beta) \)，\( \varphi_{\alpha+1}(\beta+1)[2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta)+1) \)且\( \varphi_{\alpha+1}(\beta+1)[n+3]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+2]) \) (\( \alpha\neq0 \))</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) （\( \alpha \)是极限序数）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) （\( \beta \)是极限序数）</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \)且\( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
         <br>
         <p>&emsp;&emsp;有时我们会采用以下改写：</p>
         <p>&emsp;&emsp;\( \omega^\beta:=\varphi_0(\beta) \)</p>
@@ -107,7 +111,7 @@
         <p>&emsp;&emsp;\( \Gamma_0 \)亦为标准型。</p>
         <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha&lt;\Gamma_0 \)。</p>
         <p>&emsp;&emsp;该系统的序数<b>一律可数</b>。</p>
-        <p>&emsp;&emsp;<b>不存在</b>仅限于指令“fgh”与“sgh”可用的<b>可数序数极限</b>。</p>
+        <p>&emsp;&emsp;<b>不存在</b>仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的<b>可数序数极限</b>。</p>
         <h2>运算</h2><hr>
         <p>&emsp;&emsp;我们定义标准化函数\( Norm \)以将序数化作标准型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
@@ -134,8 +138,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，返回\( Cof(a_1) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，则：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，返回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_0)\ge\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，返回\( Cof(a_0) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)，返回\( \overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> 若\( a_0=\overline{0}\land a_1=\overline{0} \)，返回\( \overline{1} \)</p>
         <br>
@@ -150,19 +154,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> 若\( a_0=\overline{0} \)，返回\( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> 若\( n\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> 若\( n\neq\overline{0} \)，返回\( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( Cof(a_1)=\overline{1} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( a_0=\overline{0} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> 若\( n\neq\overline{0} \)，返回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，则：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> 若\( n=\overline{0} \)，返回\( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \)，则：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.01.</span> 若\( a_0=\overline{1} \)，返回\( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> 若\( a_0\neq\overline{1} \)，返回\( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> 若\( n[\overline{0}][\overline{0}]\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> 若\( n=\overline{0} \)，返回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0} \)，返回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，返回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，返回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
         <br>

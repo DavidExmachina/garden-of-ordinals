@@ -5,7 +5,7 @@
         <h1>Definition</h1><hr>
         <p>&emsp;&emsp;Veblen Function refers to an ordinal function proposed by Oswald Veblen in 1908<sup><a id="g1" href="#c1">[1]</a></sup>. The definition of the function \( \varphi_\alpha(\beta) \) is as follows:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all of the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
         <p>&emsp;&emsp;A fixed point of a function \( f \) is an input of the function \( x \) that \( x=f(x) \).</p>
         <br>
         <p>&emsp;&emsp;The normal form of this system is called <b>Veblen Normal Form</b> and is defined as follows:</p>
@@ -14,7 +14,23 @@
         <p>&emsp;&emsp;Every non-zero ordinal can be uniquely written as Veblen Normal Form.</p>
         <br>
         <p>&emsp;&emsp;In this website, we are working with ordinals less than the Feferman-Schütte ordinal \( \Gamma_0 \) because \( \Gamma_0 \) is the least ordinal that \( \alpha=\varphi_{\alpha}(0) \) and every ordinal less than \( \Gamma_0 \) can be constructed only using zero, addition and the function.</p>
-        <p>&emsp;&emsp;The fundamental sequence system used in this website is defined as follows:</p>
+        <p>&emsp;&emsp;The fundamental sequence system used on this website is defined as follows:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \) and \( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) (\( \alpha \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta) \), \( \varphi_{\alpha+1}(\beta+1)[1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[0]+1) \) and \( \varphi_{\alpha+1}(\beta+1)[n+2]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n+1]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) (\( \alpha \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) (\( \beta \) is a limit ordinal)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \) and \( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
+        <br>
+        <p>&emsp;&emsp;Note that there's also another fundamental sequence system which is more well-known called the <b>Veblen hierarchy</b>, with the only difference on Line 07.:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \) and \( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
+        <br>
+        <p>&emsp;&emsp;The only difference from the fundamental sequence on this website is that \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \). The reason why the fundamental sequence system above is used is to make sure that every element in the sequence is a limit ordinal. The only exception is for ordinals ending with \( \omega \).</p>
+        <p>&emsp;&emsp;Also, the fundamental sequence system used on this website prior to V1.3 is defined as follows. The reason why this fundamental sequence system was used was to mimic the fundamental sequence system of Buchholz's \( \psi \) and its extension. But this turned out to be more complicated:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
@@ -26,18 +42,6 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) (\( \alpha \) is a limit ordinal)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) (\( \beta \) is a limit ordinal)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( \Gamma_0[0]:=0 \) and \( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
-        <br>
-        <p>&emsp;&emsp;Note that there's also another fundamental sequence system which is more well-known called the <b>Veblen hierarchy</b> defined as follows, which slightly differs from this one. The reason why the fundamental sequence system above is used is to mimic the fundamental sequence system of Buchholz's \( \psi \) and its extension:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \varphi_0(0)[n]=1[n]:=0 \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( \varphi_0(\beta+1)[n]:=\varphi_0(\beta)*n \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \varphi_{\alpha+1}(0)[0]:=0 \) and \( \varphi_{\alpha+1}(0)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(0)[n]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( \varphi_\alpha(0)[n]:=\varphi_{\alpha[n]}(0) \) (\( \alpha \) is a limit ordinal)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \varphi_{\alpha+1}(\beta+1)[0]:=\varphi_{\alpha+1}(\beta)+1 \) and \( \varphi_{\alpha+1}(\beta+1)[n+1]:=\varphi_\alpha(\varphi_{\alpha+1}(\beta+1)[n]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( \varphi_\alpha(\beta+1)[n]:=\varphi_{\alpha[n]}(\varphi_\alpha(\beta)+1) \) (\( \alpha \) is a limit ordinal)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \varphi_\alpha(\beta)[n]:=\varphi_\alpha(\beta[n]) \) (\( \beta \) is a limit ordinal)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \Gamma_0[0]:=0 \) and \( \Gamma_0[n+1]:=\varphi_{\Gamma_0[n]}(0) \)</p>
         <br>
         <p>&emsp;&emsp;Sometimes, we rewrite the function as follows:</p>
         <p>&emsp;&emsp;\( \omega^\beta:=\varphi_0(\beta) \)</p>
@@ -91,7 +95,7 @@
         <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;Return \( a&lt;b\vee b&lt;a \)</p>
         <br>
-        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represents symbolic equivalence while \( =_* \) and \( \neq_* \) represents numerical equivalence.</p>
+        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represent symbolic equivalence, while \( =_* \) and \( \neq_* \) represent numerical equivalence.</p>
         <h2>Normal Form</h2><hr>
         <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
@@ -107,7 +111,7 @@
         <p>&emsp;&emsp;\( \Gamma_0 \) is also in normal form.</p>
         <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Gamma_0 \)</p>
         <p>&emsp;&emsp;Ordinals in this system are <b>always countable</b>.</p>
-        <p>&emsp;&emsp;There is <b>no countable limit ordinal</b> exclusive to the command "fgh" or "sgh".</p>
+        <p>&emsp;&emsp;There is <b>no countable limit ordinal</b> exclusive to the growing hierarchy commands. ("fgh", "sgh", "mgh" and "hh")</p>
         <h2>Operations</h2><hr>
         <p>&emsp;&emsp;We define the normalization function \( Norm \) to normalize an ordinal to its normal form:</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
@@ -134,8 +138,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Cof(a_1) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_1) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_0)\ge\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \), return \( \overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.04.</span> If \( a_0=\overline{0}\land a_1=\overline{0} \), return \( \overline{1} \)</p>
         <br>
@@ -150,19 +154,16 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> If \( a_0=\overline{0} \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> If \( n\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.02.</span> If \( n\neq\overline{0} \), return \( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> If \( a_0=\overline{0} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> If \( n\neq\overline{0} \), return \( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> If \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.01.</span> If \( a_0=\overline{1} \), return \( \varphi_\overline{0}(a[n[\overline{0}]]+a[n[\overline{0}]]) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.02.</span> If \( a_0\neq\overline{1} \), return \( Norm(\varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]]))) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.04.</span> If \( n[\overline{0}][\overline{0}]\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> If \( n=\overline{0} \), return \( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> If \( n[\overline{0}]\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0}(a_1[n])) \)</p>
         <br>

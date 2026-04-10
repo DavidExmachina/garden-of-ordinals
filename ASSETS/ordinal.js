@@ -202,7 +202,7 @@ const Veblen = {
             if (str[i] === "(") depth.push(1);
             if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
-                if (depth[depth.length - 1]) return 1;
+                if (!depth.length || depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
@@ -352,22 +352,24 @@ const Veblen = {
         }
         // SINGLE
         let a2 = this.vsp(a);
+        // BETA IS LIMIT
         if (this.cof(a2[1]) === "(,(,))") return this.norm(`(${a2[0]},${this.fs(a2[1], n)})`);
+        // ALPHA IS ZERO
         if (!a2[0]){
             if (!a2[1]) return "";
             return n ? `${this.fs(a, this.fs(n))}${this.norm(`(,${this.fs(a2[1])})`)}` : "";
         }
+        // ALPHA IS SUC
         if (this.cof(a2[0]) === "(,)"){
-            if (!n) return "";
-            if (!a2[1]) return this.norm(`(${this.fs(a2[0])},${this.fs(a, this.fs(n))})`);
-            if (!this.fs(n)) return this.norm(`(${a2[0]},${this.fs(a2[1])})`);
-            if (!this.fs(this.fs(n))){
-                if (a2[0] === "(,)") return `(,${this.fs(a, this.fs(n)).repeat(2)})`;
-                return `(${this.fs(a2[0])},${this.fs(a, this.fs(n))}(,))`;
-            }
-            return `(${this.fs(a2[0])},${this.fs(a, this.fs(n))})`;
+            // BETA IS ZERO
+            if (!a2[1]) return n ? this.norm(`(${this.fs(a2[0])},${this.fs(a, this.fs(n))})`) : "";
+            // BETA IS SUC
+            if (!n) return this.norm(`(${a2[0]},${this.fs(a2[1])})`);
+            return `(${this.fs(a2[0])},${this.fs(a, this.fs(n))}${this.fs(n) ? "" : "(,)"})`;
         }
+        // BETA IS ZERO
         if (!a2[1]) return `(${this.fs(a2[0], n)},)`;
+        // BETA IS SUC
         return `(${this.fs(a2[0], n)},${this.norm(`(${a2[0]},${this.fs(a2[1])})`)}(,))`;
     },
     // ---------------------------------------------------------------------------------------------
@@ -411,7 +413,7 @@ const Buchholz = {
             if (str[i] === "(") depth.push(1);
             if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
-                if (depth[depth.length - 1]) return 1;
+                if (!depth.length || depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
@@ -538,14 +540,9 @@ const Buchholz = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        let str1 = this.vsp(str);
-        let c1 = this.cof(str1[1]);
+        let str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]);
         // SINGLE ZERO
-        if (!str1[1]){
-            let c2 = this.cof(str1[0]);
-            if (this.lt(c2, "(,(,))")) return str;
-            return c2;
-        }
+        if (!str1[1]) return this.lt("(,)", c0) ? c0 : str;
         // SINGLE SUCCESSOR
         if (c1 === "(,)") return "(,(,))";
         // SINGLE LIMIT
@@ -579,14 +576,11 @@ const Buchholz = {
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        let a2 = this.vsp(a);
-        let c1 = this.cof(a2[1]);
-        let c2;
+        let a2 = this.vsp(a), c0 = this.cof(a2[0]), c1 = this.cof(a2[1]);
         // SINGLE ZERO
         if (!a2[1]){
-            c2 = this.cof(a2[0]);
-            if (!c2) return "";
-            if (c2 === "(,)"){
+            if (!c0) return "";
+            if (c0 === "(,)"){
                 if (!strong) return n;
                 if (n === "A") return `(${this.fs(a2[0])},A)`;
                 return `(${this.fs(a2[0])},${this.fs("A", n)})`;
@@ -644,7 +638,7 @@ const ExBuchholz = {
             if (str[i] === "(") depth.push(1);
             if (str[i] === ",") depth[depth.length - 1]--;
             if (str[i] === ")"){
-                if (depth[depth.length - 1]) return 1;
+                if (!depth.length || depth[depth.length - 1]) return 1;
                 depth.pop();
             }
         }
@@ -771,14 +765,9 @@ const ExBuchholz = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        let str1 = this.vsp(str);
-        let c1 = this.cof(str1[1]);
+        let str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]);
         // SINGLE ZERO
-        if (!str1[1]){
-            let c2 = this.cof(str1[0]);
-            if (this.lt(c2, "(,(,))")) return str;
-            return c2;
-        }
+        if (!str1[1]) return this.lt("(,)", c0) ? c0 : str;
         // SINGLE SUCCESSOR
         if (c1 === "(,)") return "(,(,))";
         // SINGLE LIMIT
@@ -812,14 +801,11 @@ const ExBuchholz = {
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        let a2 = this.vsp(a);
-        let c1 = this.cof(a2[1]);
-        let c2;
+        let a2 = this.vsp(a), c0 = this.cof(a2[0]), c1 = this.cof(a2[1]);
         // SINGLE ZERO
         if (!a2[1]){
-            c2 = this.cof(a2[0]);
-            if (!c2) return "";
-            if (c2 === "(,)"){
+            if (!c0) return "";
+            if (c0 === "(,)"){
                 if (!strong) return n;
                 if (n === "A") return `(${this.fs(a2[0])},A)`;
                 return `(${this.fs(a2[0])},${this.fs("A", n)})`;
@@ -855,7 +841,7 @@ const ExBuchholz = {
     },
 };
 // =================================================================================================
-// RATHJEN'S LITTLE PSI
+// RATHJEN'S SMALL PSI
 // =================================================================================================
 const RathjenM = {
     // ---------------------------------------------------------------------------------------------
@@ -882,7 +868,7 @@ const RathjenM = {
             if (str[i] === ",") depth[depth.length - 1]--;
             if (depth[depth.length - 1] < 0) return 1;
             if (str[i] === ")"){
-                if (depth[depth.length - 1]) return 1;
+                if (!depth.length || depth[depth.length - 1]) return 1;
                 depth.pop();
             }
             if ("vVxr".includes(str[i])){
@@ -1092,9 +1078,9 @@ const RathjenM = {
         if (a[1] === "x" && b[1] === "r") return this.lt(a, b2[0]) && this.inc(a, b2[0], b2[1]);
         if (a[1] === "r" && b[1] === "x"){
             if (!this.lt(a, b2[1]) && !this.lt(b2[1], a)){
-                return !this.lt(b2[0], this.vsp(a2[0])[0]) ||
-                       !this.lt(this.st(b2[0]), a2[0]) ||
-                       !this.inc(b2[0], a2[0], a2[1]);
+                if (!this.lt(b2[0], this.vsp(a2[0])[0])) return true;
+                if (!this.lt(this.st(b2[0]), a2[0])) return true;
+                return !this.inc(b2[0], a2[0], a2[1]);
             }
             return !(this.lt(b, a2[0]) && this.inc(b, a2[0], a2[1]));
         }
@@ -1163,11 +1149,11 @@ const RathjenM = {
         // ADDITION
         if (!this.single(str)) return this.cof(this.asp(str)[1]);
         // SINGLE
-        let str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]), a;
+        let str1 = this.vsp(str), c0 = this.cof(str1[0]), c1 = this.cof(str1[1]), c2;
         // BOTH VEBLEN
         if ("vV".includes(str[1])){
-            if (!this.lt(c1, "(v,(v,))")) return c1;
-            if (!this.lt(c0, "(v,(v,))")) return c0;
+            if (this.lt("(v,)", c1)) return c1;
+            if (this.lt("(v,)", c0)) return c0;
             return "(v,(v,))";
         }
         // INACCESSIBLE
@@ -1175,11 +1161,11 @@ const RathjenM = {
         // COLLAPSE
         if (str[1] === "r"){
             if (!this.lt(c1, str1[0])) return "(v,(v,))";
-            if (!this.lt(c1, "(v,(v,))")) return c1;
-            a = this.cof(this.vsp(str1[0])[0]);
-            if (this.lt(a, "(v,(v,))")) return "(v,(v,))";
-            if (a === "M") return "(v,(v,))";
-            return a;
+            if (this.lt("(v,)", c1)) return c1;
+            c2 = this.cof(this.vsp(str1[0])[0]);
+            if (!this.lt("(v,)", c2)) return "(v,(v,))";
+            if (c2 === "M") return "(v,(v,))";
+            return c2;
         }
     },
     // TYPE (0: ZERO / 1: SUC / 2: COUNTABLE LIM / 3: UNCOUNTABLE LIM)
@@ -1224,7 +1210,7 @@ const RathjenM = {
         // VEBLEN
         if (a[1] === "v"){
             // BETA IS LIMIT
-            if (!this.lt(this.cof(a2[1]), "(v,(v,))")){
+            if (this.lt("(v,)", this.cof(a2[1]))){
                 return this.norm(`(v${a2[0]},${this.fs(a2[1], n, strong)})`);
             }
             // ALPHA IS ZERO
@@ -1234,14 +1220,13 @@ const RathjenM = {
             }
             // ALPHA IS SUC
             if (this.cof(a2[0]) === "(v,)"){
-                if (!n) return "";
-                if (!a2[1]) return this.norm(`(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`);
-                if (!this.fs(n)) return this.norm(`(v${a2[0]},${this.fs(a2[1])})`);
-                if (!this.fs(this.fs(n))){
-                    if (a2[0] === "(v,)") return `(v,${this.fs(a, this.fs(n)).repeat(2)})`;
-                    return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))}(v,))`;
+                // BETA IS ZERO
+                if (!a2[1]){
+                    return n ? this.norm(`(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`) : "";
                 }
-                return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`;
+                // BETA IS SUC
+                if (!n) return this.norm(`(v${a2[0]},${this.fs(a2[1])})`);
+                return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))}${this.fs(n) ? "" : "(v,)"})`;
             }
             // BETA IS ZERO
             if (!a2[1]) return this.norm(`(v${this.fs(a2[0], n, strong)},)`);
@@ -1252,25 +1237,21 @@ const RathjenM = {
         // BIG VEBLEN
         if (a[1] === "V"){
             // BETA IS LIMIT
-            if (!this.lt(this.cof(a2[1]), "(v,(v,))")){
+            if (this.lt("(v,)", this.cof(a2[1]))){
                 return this.norm(`(V${a2[0]},${this.fs(a2[1], n, strong)})`);
             }
-            // ALPHA IS SUC AND BETA IS ZERO
-            if (this.cof(a2[0]) === "(v,)" && !a2[1]){
-                if (!n) return "";
-                if (a2[0] === "(v,)") return `(x,${this.fs(a, this.fs(n))})`;
-                return `(V${this.fs(a2[0])},${this.fs(a, this.fs(n))})`;
-            }
-            // ALPHA IS SUC AND BETA IS SUC
-            if (this.cof(a2[0]) === "(v,)" && this.cof(a2[1]) === "(v,)"){
-                if (!n) return "";
-                if (!this.fs(n)) return this.norm(`(V${a2[0]},${this.fs(a2[1])})`);
-                if (!this.fs(this.fs(n))){
-                    if (a2[0] === "(v,)") return `(x,${this.fs(a, this.fs(n))}(v,))`;
-                    return `(V${this.fs(a2[0])},${this.fs(a, this.fs(n))}(v,))`;
+            // ALPHA IS SUC
+            if (this.cof(a2[0]) === "(v,)"){
+                // BETA IS ZERO
+                if (!a2[1]){
+                    return n ? this.norm(`(V${this.fs(a2[0])},${this.fs(a, this.fs(n))})`) : "";
                 }
-                if (a2[0] === "(v,)") return `(x,${this.fs(a, this.fs(n))})`;
-                return `(V${this.fs(a2[0])},${this.fs(a, this.fs(n))})`;
+                // BETA IS SUC
+                if (!n) return this.norm(`(V${a2[0]},${this.fs(a2[1])})`);
+                if (!this.fs(n)){
+                    return this.norm(`(V${this.fs(a2[0])},${this.fs(a, this.fs(n))}(v,))`);
+                }
+                return this.norm(`(V${this.fs(a2[0])},${this.fs(a, this.fs(n))})`);
             }
             // BETA IS ZERO
             if (!a2[1]) return this.norm(`(V${this.fs(a2[0], n, strong)},)`);
@@ -1280,7 +1261,7 @@ const RathjenM = {
         }
         // INACCESSIBLE
         if (a[1] === "x"){
-            if (this.lt(this.cof(a2[1]), "(v,(v,))")){
+            if (!this.lt("(v,)", this.cof(a2[1]))){
                 if (!strong) return n;
                 if (n === "A") return `(r${a},A)`;
                 return `(r${a},${this.fs("A", n)})`;
@@ -1295,7 +1276,7 @@ const RathjenM = {
         // GAMMA COF IS AT LEAST CARD
         if (!this.lt(c2, a2[0])) return n ? `(r${a2[0]},${this.re(a2[1], this.fs(n))})` : "";
         // GAMMA IS LIMIT
-        if (!this.lt(c2, "(v,(v,))")) return `(r${a2[0]},${this.fs(a2[1], n, strong)})`;
+        if (this.lt("(v,)", c2)) return `(r${a2[0]},${this.fs(a2[1], n, strong)})`;
         // ALPHA IS ZERO
         if (!a3[0]){
             if (!a3[1] && !a3[2]) return n ? `(v${this.fs(a, this.fs(n))},)` : "";
@@ -1365,8 +1346,7 @@ const RathjenM = {
         if (!this.single(str)) return this.tail(this.asp(str)[1]);
         // SINGLE (HAS TO BE VEBLEN)
         let str1 = this.vsp(str);
-        if (this.lt(this.cof(str1[1]), "(v,(v,))")) return this.tail(str1[0]);
-        return this.tail(str1[1]);
+        return this.lt("(v,)", this.cof(str1[1])) ? this.tail(str1[1]) : this.tail(str1[0]);
     },
     // ---------------------------------------------------------------------------------------------
     // MATH FORM *
@@ -1418,7 +1398,7 @@ const RathjenK = {
             if (str[i] === ",") depth[depth.length - 1]--;
             if (depth[depth.length - 1] < 0) return 1;
             if (str[i] === ")"){
-                if (depth[depth.length - 1]) return 1;
+                if (!depth.length || depth[depth.length - 1]) return 1;
                 depth.pop();
             }
             if ("vWXR".includes(str[i])){
@@ -1510,13 +1490,13 @@ const RathjenK = {
         if (str[1] === "X") return str2[0];
         // COLLAPSE
         if (str[1] === "R"){
-            return this.m(str2[0]) &&
-                   this.inc(str2[0], str2[2], str2[0]) &&
-                   this.inc(str2[1], str2[2], str2[0]) &&
-                   this.inc(str2[2], str2[2], str2[0]) &&
-                   !this.lt(str2[2], str2[1]) &&
-                   this.lt(str2[1], this.m(str2[0])) &&
-                   this.inc(str2[1], this.m(str2[0]), str2[0]);
+            if (!this.m(str2[0])) return false;
+            if (!this.inc(str2[0], str2[2], str2[0])) return false;
+            if (!this.inc(str2[1], str2[2], str2[0])) return false;
+            if (!this.inc(str2[2], str2[2], str2[0])) return false;
+            if (this.lt(str2[2], str2[1])) return false;
+            if (!this.lt(str2[1], this.m(str2[0]))) return false;
+            return this.inc(str2[1], this.m(str2[0]), str2[0]);
         }
         // ELSE
         return false;
@@ -1678,22 +1658,17 @@ const RathjenK = {
         return str;
     },
     // ADDITION
-    add: function (a, b, c = null){
-        // ZERO
+    add: function (a, b){
         if (!b) return a;
         if (!a) return b;
         let a1 = this.asp(a), b1 = this.asp(b);
-        // NO LIMIT
-        if (c === null) return this.lt(a1[0], b1[0]) ? b : a1[0] + this.add(a1[1], b);
-        // HAS LIMIT
-        let c1 = this.asp(c);
-        // A NOT LESS THAN LIMIT
-        if (!this.lt(a, c)) return a;
-        // CANCEL OUT SAME FIRST PART
-        if (!this.lt(a1[0], b1[0]) && !this.lt(b1[0], c1[0]) && !this.lt(c1[0], a1[0])){
-            return a1[0] + this.add(a1[1], b1[1], c1[1]);
-        }
-        return this.add(a, b);
+        return this.lt(a1[0], b1[0]) ? b : a1[0] + this.add(a1[1], b);
+    },
+    // SOLVE
+    solve: function (a, b){
+        if (!this.lt(a, b)) return "";
+        let a1 = this.asp(a), b1 = this.asp(b);
+        return this.lt(a1[0], b1[0]) ? b : this.solve(a1[1], b1[1]);
     },
     // CARDINAL SPLIT
     csp: function (a, b, left){
@@ -1714,13 +1689,14 @@ const RathjenK = {
         // NOT MAHLO OR COLLAPSE
         if (!"XR".includes(str[1])) return "";
         // NO TARGET
-        if (!target) return str[1] === "X" ? str : this.root(this.vsp(str)[0]);
+        if (!target){
+            if (str[1] === "X") return str;
+            if (this.vsp(str)[0][1] === "W") return "";
+            return this.root(this.vsp(str)[0]);
+        }
         // HAS TARGET
-        if (str[1] === "X") return "";
-        let str1 = this.vsp(str)[0];
-        if (str1 === target) return str;
-        if (str1[1] === "X") return "";
-        return this.root(str1, target);
+        if (str[1] !== "R") return "";
+        return (this.vsp(str)[0] === target) ? str : this.root(this.vsp(str)[0], target);
     },
     // TAIL
     tail: function (a, b){
@@ -1733,7 +1709,7 @@ const RathjenK = {
         // SINGLE
         let a1 = this.vsp(a);
         // VEBLEN
-        if (a[1] === "v") return this.tail(a1[1 - this.lt(this.cof(a1[1]), "(v,(v,))")], b);
+        if (a[1] === "v") return this.tail(a1[this.lt("(v,)", this.cof(a1[1])) * 1], b);
         // OMEGA
         if (a[1] === "W") return this.tail(a1[0], b);
         // MAHLO
@@ -1768,40 +1744,32 @@ const RathjenK = {
     },
     // NORMAL FIXED POINT
     nfp: function (a, b){
-        let t = this.tail(a, b), r;
+        let t = this.tail(a, b), r = this.root(t, b);
         if (!this.single(t)) return false;
+        if (!r) return false;
         if (t[1] !== "R") return false;
-        for (let i = 0; i < 3; i++){
-            r = this.fs(a, this.to_str(i), true);
-            if (this.lt(t, `(R${b},,${r})`)) return false;
-        }
-        return true;
+        if (this.lt(t, `(R${b},,${this.fs(a, "", true)})`)) return false;
+        return this.lt(a, this.vsp(r)[2]);
     },
     // MAHLO FIXED POINT
     mfp: function (a){
-        let t = this.tail(a, "K"), rt = this.root(t), r;
+        let t = this.tail(a, "K"), r = this.root(t);
         if (!this.single(t)) return false;
+        if (!r) return false;
         if (!"XR".includes(t[1])) return false;
-        for (let i = 0; i < 3; i++){
-            r = this.fs(a, this.to_str(i), true);
-            if (this.lt(this.vsp(rt)[0], r)) return false;
-            if (this.lt(t, `(R(X${r}),,${r}(v,))`)) return false;
-        }
-        return true;
+        if (this.lt(t, `(X${this.fs(a, "", true)})`)) return false;
+        return this.lt(a, this.vsp(r)[0]);
     },
     // COLLAPSING FIXED POINT
     cfp: function (a, b, c){
-        let t = this.tail(c, "K"), rt = this.root(t, b), rt1 = this.vsp(rt), r;
+        let t = this.tail(c, "K"), r = this.root(t, b);
         if (!this.single(t)) return false;
+        if (!r) return false;
         if (t[1] !== "R") return false;
-        if (this.lt(t, `(R${b},,${a})`)) return false;
-        if (!rt) return false;
-        for (let i = 0; i < 3; i++){
-            r = this.fs(c, this.to_str(i), true);
-            if (!this.lt(a, rt1[2]) && this.lt(rt1[1], r)) return false;
-            if (this.lt(rt, `(R${b},${r},${a})`)) return false;
-        }
-        return true;
+        if (this.lt(t, `(R${b},${this.fs(c, "", true)},${a})`)) return false;
+        if (this.lt(this.vsp(r)[2], a)) return false;
+        if (this.lt(a, this.vsp(r)[2])) return true;
+        return this.lt(c, this.vsp(r)[1]);
     },
     // ---------------------------------------------------------------------------------------------
     // COFINALITY *
@@ -1826,16 +1794,16 @@ const RathjenK = {
         for (let i = 0; i < str1.length; i++) c.push(this.cof(str1[i]));
         // VEBLEN
         if (str[1] === "v"){
-            if (!this.lt(c[1], "(v,(v,))")) return c[1];
-            if (!this.lt(c[0], "(v,(v,))")) return c[0];
+            if (this.lt("(v,)", c[1])) return c[1];
+            if (this.lt("(v,)", c[0])) return c[0];
             return "(v,(v,))";
         }
         // OMEGA
         if (str[1] === "W") return c[0];
         // COLLAPSE
-        return this.ccof(str1[2], str1[0], "");
+        return this.ccof(str1[2], str1[0], this.it(str1[2], str1[0]));
     },
-    // COLLAPSING COFINALITY (R[ALPHA],[BETA],[GAMMA])
+    // COLLAPSING FUNDAMENTAL SEQUENCE (R[ALPHA],,[GAMMA])
     ccof: function (a, b, c, cac = true){
         // CACHE
         if (cac){
@@ -1844,59 +1812,29 @@ const RathjenK = {
             return cache[key];
         }
         // VARIABLES
-        let b1 = this.vsp(b), l = this.least(b), m = this.m(b);
-        let al = this.csp(a, b, true), ar = this.csp(a, b, false);
+        let b1 = this.vsp(b), l = this.least(b), m = this.m(b), a0 = this.solve(l, a);
+        let al = this.csp(a0, b, true), ar = this.csp(a0, b, false), ca = this.cof(a0);
         let ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
-        let ca = this.cof(a), cm = this.cof(m);
         let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
-        let fp, d1;
-        // FIXED POINT
-        if (b[1] === "W") fp = true;
-        else if (b[1] === "X") fp = this.mfp(m);
-        else if (b[1] === "R") fp = this.cfp(b1[2], b1[0], m);
         // ALPHA LEFT IS ZERO
         if (!ml){
             // GAMMA RIGHT IS LIM AND NOT FIXED POINT
-            if (!c && this.lt("(v,)", car) && !this.nfp(a, b)) return ca;
-            // GAMMA LEFT NOT LEAST
-            if (this.lt(l, al)){
-                if (this.lt("(v,)", cmr) && car === "(v,)" && !c) return cm;
-                if (this.lt(cal, b)) return cal;
-                return "(v,(v,))";
-            }
-            // NOT COLLAPSE
-            if (b[1] !== "R"){
-                if (c) return "(v,(v,))";
-                if (!this.lt("(v,)", cmr)) return "(v,(v,))";
-                if (car !== "(v,)") return "(v,(v,))";
-                if (fp && !this.lt(l, a)) return "(v,(v,))";
-                return cm;
-            }
-            // GAMMA RIGHT IS SUC
-            if (!c && car === "(v,)"){
-                // ALPHA RIGHT IS LIM
-                if (this.lt("(v,)", cmr)){
-                    if (!fp || this.lt(l, a)) return cm;
-                    d1 = mr;
-                // ALPHA RIGHT NOT LIM
-                } else if (this.lt(l, a)) d1 = `(R${b},${this.fs(m)},${this.fs(a)})`;
-                else d1 = `(R${b1[0]},${this.fs(m)},${b1[2]})`;
-            }
-            // USING RECURSION
-            if (c) d1 = c;
-            // GAMMA RIGHT IS LIM AND IS FIXED POINT
-            if (!c && this.lt("(v,)", car) && this.nfp(a, b)) d1 = ar;
-            return this.ccof(b1[2], b1[0], d1);
+            if (this.lt("(v,)", car) && !c) return ca;
+            // (GAMMA IS ZERO OR GAMMA RIGHT IS SUC) AND ALPHA RIGHT IS LIM AND NOT FIXED POINT
+            if ((!a0 || car === "(v,)") && this.lt("(v,)", cmr) && !c) return cmr;
+            // GAMMA LEFT NOT ZERO
+            if (al) return this.lt(cal, b) ? cal : "(v,(v,))";
+            // ELSE
+            return b[1] === "R" ? this.ccof(b1[2], b1[0], c) : "(v,(v,))";
         }
-        // GAMMA RIGHT IS ZERO
-        if (!ar) return (this.lt(l, al) && this.lt(cal, b)) ? ca : "(v,(v,))";
-        // GAMMA RIGHT IS SUC
-        if (car === "(v,)"){
-            if ((!fp || this.lt(l, a) || this.lt(l, al)) && this.lt("(v,)", cmr) && !c) return cm;
-            return this.lt(cml, "K") ? cml : "(v,(v,))";
-        }
-        // GAMMA RIGHT IS LIM
-        if (this.lt("(v,)", car)) return ca;
+        // GAMMA IS LIM
+        if (this.lt("(v,)", ca)) return this.lt(ca, b) ? ca : "(v,(v,))";
+        // ALPHA RIGHT IS LIM AND NOT FP
+        if (this.lt("(v,)", cmr) && !c) return cmr;
+        // ALPHA LEFT COF LESS THAN K
+        if (this.lt(cml, "K")) return cml;
+        // ELSE
+        return "(v,(v,))";
     },
     // TYPE (0: ZERO / 1: SUC / 2: COUNTABLE LIM / 3: UNCOUNTABLE LIM)
     type: function (str){
@@ -1938,12 +1876,11 @@ const RathjenK = {
             return a1[0] + this.fs(a1[1], n, strong);
         }
         // SINGLE
-        let a2 = this.vsp(a), c = [];
-        for (let i = 0; i < a2.length; i++) c.push(this.cof(a2[i]));
+        let a2 = this.vsp(a);
         // VEBLEN
         if (a[1] === "v"){
             // BETA IS LIMIT
-            if (!this.lt(c[1], "(v,(v,))")){
+            if (this.lt("(v,)", this.cof(a2[1]))){
                 return this.norm(`(v${a2[0]},${this.fs(a2[1], n, strong)})`);
             }
             // ALPHA IS ZERO
@@ -1952,15 +1889,14 @@ const RathjenK = {
                 return n ? `${this.fs(a, this.fs(n))}${this.norm(`(v,${this.fs(a2[1])})`)}` : "";
             }
             // ALPHA IS SUC
-            if (c[0] === "(v,)"){
-                if (!n) return "";
-                if (!a2[1]) return this.norm(`(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`);
-                if (!this.fs(n)) return this.norm(`(v${a2[0]},${this.fs(a2[1])})`);
-                if (!this.fs(this.fs(n))){
-                    if (a2[0] === "(v,)") return `(v,${this.fs(a, this.fs(n)).repeat(2)})`;
-                    return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))}(v,))`;
+            if (this.cof(a2[0]) === "(v,)"){
+                // BETA IS ZERO
+                if (!a2[1]){
+                    return n ? this.norm(`(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`) : "";
                 }
-                return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))})`;
+                // BETA IS SUC
+                if (!n) return this.norm(`(v${a2[0]},${this.fs(a2[1])})`);
+                return `(v${this.fs(a2[0])},${this.fs(a, this.fs(n))}${this.fs(n) ? "" : "(v,)"})`;
             }
             // BETA IS ZERO
             if (!a2[1]) return this.norm(`(v${this.fs(a2[0], n, strong)},)`);
@@ -1971,9 +1907,44 @@ const RathjenK = {
         // OMEGA
         if (a[1] === "W") return this.norm(`(W${this.add("(v,)", this.fs(a2[0], n, strong))})`);
         // COLLAPSE
-        return this.cfs(a2[2], a2[0], "", n, strong);
+        return this.cfs(a2[2], a2[0], this.it(a2[2], a2[0]), n, strong);
     },
-    // COLLAPSING FUNDAMENTAL SEQUENCE (R[ALPHA],[BETA],[GAMMA])
+    // INITIAL TERM
+    it: function (a, b, cac = true){
+        // CACHE
+        if (cac){
+            let key = `${this.name}-IT-${a}-${b}`;
+            if (!(key in cache)) cache[key] = this.it(a, b, false);
+            return cache[key];
+        }
+        // VARIABLES
+        let b1 = this.vsp(b), l = this.least(b), m = this.m(b), a0 = this.solve(l, a);
+        let al = this.csp(a0, b, true), ar = this.csp(a0, b, false);
+        let ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
+        let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
+        let tb = this.tail(a, b), tk = this.tail(m, "K");
+        // GAMMA RIGHT IS SUC
+        if (car === "(v,)") return cmr === "(v,)" ? `(R${b},${this.fs(m)},${this.fs(a)})` : "";
+        // GAMMA RIGHT IS LIM
+        if (ar) return this.nfp(a, b) ? tb : "";
+        // GAMMA LEFT NOT ZERO
+        if (al) return this.lt(cal, b) && this.nfp(a, b) ? tb : "";
+        // ALPHA RIGHT IS SUC
+        if (cmr === "(v,)"){
+            if (b[1] === "W") return this.fs(b1[0]) ? this.norm(`(W${this.fs(b1[0])})`) : "";
+            if (b[1] === "X") return this.fs(m) ? `(X${this.fs(m)})` : "";
+            if (b[1] === "R") return `(R${b1[0]},${this.fs(m)},${b1[2]})`;
+        }
+        // ALPHA RIGHT IS LIM
+        if (mr){
+            if (b[1] === "X") return this.mfp(m) ? tk : "";
+            if (b[1] === "R") return this.cfp(b1[2], b1[0], m) ? tk : "";
+        }
+        // ALPHA RIGHT IS ZERO
+        if (b[1] === "X") return this.lt(cml, "K") && this.mfp(m) ? tk : "";
+        if (b[1] === "R") return this.lt(cml, "K") && this.cfp(b1[2], b1[0], m) ? tk : "";
+    },
+    // COLLAPSING FUNDAMENTAL SEQUENCE (R[ALPHA],,[GAMMA])
     cfs: function (a, b, c, n = "", strong = false, cac = true){
         // CACHE
         if (cac){
@@ -1982,165 +1953,95 @@ const RathjenK = {
             return cache[key];
         }
         // VARIABLES
-        let b1 = this.vsp(b), l = this.least(b), m = this.m(b);
-        let al = this.csp(a, b, true), ar = this.csp(a, b, false);
+        let b1 = this.vsp(b), l = this.least(b), m = this.m(b), a0 = this.solve(l, a);
+        let al = this.csp(a0, b, true), ar = this.csp(a0, b, false), ca = this.cof(a0);
         let ml = this.csp(m, "K", true), mr = this.csp(m, "K", false);
-        let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr);
-        let fp, d1, n0;
-        // FIXED POINT
-        if (b[1] === "W") fp = true;
-        else if (b[1] === "X") fp = this.mfp(m);
-        else if (b[1] === "R") fp = this.cfp(b1[2], b1[0], m);
+        let cal = this.cof(al), car = this.cof(ar), cml = this.cof(ml), cmr = this.cof(mr), d;
         // ALPHA LEFT IS ZERO
         if (!ml){
             // GAMMA RIGHT IS LIM AND NOT FIXED POINT
-            if (!c && this.lt("(v,)", car) && !this.nfp(a, b)){
-                return `(R${b},,${this.add(l, this.fs(a, n, strong), a)})`;
+            if (this.lt("(v,)", car) && !c){
+                return `(R${b},,${this.add(l, this.fs(a0, n, strong))})`;
             }
-            // GAMMA RIGHT IS SUC
-            if (!c && car === "(v,)"){
-                // ALPHA RIGHT IS LIM
-                if (this.lt("(v,)", cmr)){
-                    // ALPHA NOT LEAST
-                    if (this.lt(l, a)) return `(R${b},${this.fs(m, n, strong)},${this.fs(a)})`;
-                    // MAHLO
-                    if (b[1] === "X"){
-                        if (fp) return this.ofpfs(mr, n);
-                        return `(X${this.add("(v,)", this.fs(m, n, strong), m)})`;
-                    }
-                    // COLLAPSE
-                    if (b[1] === "R"){
-                        if (fp) return this.cfs(b1[2], b1[0], mr, n, strong);
-                        return `(R${b1[0]},${this.fs(m, n, strong)},${b1[2]})`;
-                    }
-                }
-                // ALPHA RIGHT IS SUC
-                d1 = `(R${b},${this.fs(m)},${this.fs(a)})`;
-                // ALPHA IS LEAST
-                if (!this.lt(l, a)){
-                    if (b[1] === "X") d1 = this.fs(m) ? `(X${this.fs(m)})` : "";
-                    if (b[1] === "R") d1 = `(R${b1[0]},${this.fs(m)},${b1[2]})`;
-                }
+            // GAMMA IS ZERO AND ALPHA RIGHT IS LIM AND NOT FIXED POINT
+            if (!a0 && this.lt("(v,)", cmr) && !c){
+                if (b[1] === "X") return `(X${this.add("(v,)", this.fs(m, n, strong))})`;
+                if (b[1] === "R") return `(R${b1[0]},${this.fs(m, n, strong)},${b1[2]})`;
             }
-            // USING RECURSION
-            if (c) d1 = c;
-            // GAMMA RIGHT IS ZERO
-            if (!c && !ar){
-                d1 = "";
-                if (this.lt(l, al) && this.lt(cal, b) && this.nfp(a, b)) d1 = this.tail(a, b);
-                if (b[1] === "W" && !this.lt(l, al) && this.fs(b1[0])){
-                    d1 = this.norm(`(W${this.fs(b1[0])})`);
-                }
+            // GAMMA RIGHT IS SUC AND ALPHA RIGHT IS LIM AND NOT FIXED POINT
+            if (car === "(v,)" && this.lt("(v,)", cmr) && !c){
+                return `(R${b},${this.fs(m, n, strong)},${this.fs(a)})`;
             }
-            // GAMMA RIGHT IS LIM AND IS FIXED POINT
-            if (!c && this.lt("(v,)", car) && this.nfp(a, b)) d1 = ar;
-            // GAMMA LEFT IS LEAST
-            if (!this.lt(l, al)){
-                // OMEGA
-                if (b[1] === "W") return this.scfs(d1, n);
-                // MAHLO
-                if (b[1] === "X") return this.ofpfs(d1, n);
-                // COLLAPSE
-                if (b[1] === "R") return this.cfs(b1[2], b1[0], d1, n, strong);
-            }
-            // GAMMA LEFT COF LESS THAN ALPHA
-            if (this.lt(cal, b)) d1 = this.add(this.fs(al, n, strong), d1);
-            // GAMMA LEFT COF IS AT LEAST ALPHA
-            else {
-                n0 = d1 ? this.fs(n) : n;
-                if (!n) return "";
-                if (!n0) return d1;
-                if (!this.lt(b, cal)) d1 = this.re(al, this.fs(n0), d1);
-                else d1 = this.add(this.re(al, this.fs(n0), b), d1);
-            }
-            return `(R${b},,${this.add(l, d1, d1)})`;
-        }
-        // ALPHA LEFT NOT ZERO
-        if (ml){
-            // GAMMA RIGHT IS ZERO
-            if (!ar){
+            // GAMMA LEFT NOT ZERO
+            if (al){
                 // GAMMA LEFT COF LESS THAN ALPHA
-                if (this.lt(l, al) && this.lt(cal, b)){
-                    d1 = c ? c : this.nfp(a, b) ? this.tail(a, b) : "";
-                    return `(R${b},${d1},${this.add(l, this.fs(a, n, strong), a)})`;
+                if (this.lt(cal, b)){
+                    return `(R${b},,${this.add(l, this.add(this.fs(al, n, strong), c))})`;
                 }
-                // GAMMA LEFT COF IS AT LEAST ALPHA
-                d1 = c;
-                n0 = d1 ? this.fs(n) : n;
-                if (!n) return "";
-                if (!n0) return d1;
-                if (!this.lt(b, cal)) d1 = this.re(al, this.fs(n0), d1);
-                else d1 = this.add(this.re(al, this.fs(n0), b), d1);
-                return `(R${b},,${this.add(l, d1, d1)})`;
-            }
-            // GAMMA RIGHT IS SUC
-            if (car === "(v,)"){
-                // ALPHA RIGHT IS LIM
-                if (this.lt("(v,)", cmr)){
-                    if ((fp && !this.lt(l, a)) || c){
-                        d1 = c ? c : fp ? mr : "";
-                        if (this.lt(cml, "K")) d1 = this.add(this.fs(ml, n, strong), d1);
-                        else {
-                            if (!n) return "";
-                            if (d1 && !this.fs(n)) return d1;
-                            d1 = this.fs(ml, this.cfs(a, b, c, this.fs(n)));
-                        }
-                        if (!this.lt(l, a)){
-                            if (b[1] === "X") return `(X${this.add("(v,)", d1, d1)})`;
-                            if (b[1] === "R") return `(R${b1[0]},${d1},${b1[2]})`;
-                        }
-                        return `(R${b},${d1},${this.fs(a)})`;
-                    }
-                    d1 = this.fs(m, n, strong);
-                // ALPHA RIGHT NOT LIM
-                } else {
-                    d1 = `(R${b},${this.fs(m)},${this.fs(a)})`;
-                    if (!this.lt(l, a)){
-                        if (b[1] === "X") d1 = `(X${this.fs(m)})`;
-                        if (b[1] === "R") d1 = `(R${b1[0]},${this.fs(m)},${b1[2]})`;
-                    }
-                    if (!mr) d1 = (this.lt(cml, "K") && fp) ? this.tail(m, "K") : "";
-                    if (c) d1 = c;
-                    if (this.lt(cml, "K")) d1 = this.add(this.fs(ml, n, strong), d1);
-                    else {
-                        if (!n) return "";
-                        if (d1 && !this.fs(n)) return d1;
-                        d1 = this.fs(ml, this.cfs(a, b, c, this.fs(n)));
-                    }
+                // GAMMA LEFT COF GREATER THAN ALPHA
+                if (this.lt(b, cal)){
+                    if (!n) return c;
+                    return `(R${b},,${this.add(this.re(this.add(l, al), this.fs(n), b), c)})`;
                 }
-                if (!this.lt(l, a)){
-                    if (b[1] === "X") return `(X${this.add("(v,)", d1, d1)})`;
-                    if (b[1] === "R") return `(R${b1[0]},${d1},${b1[2]})`;
-                }
-                return `(R${b},${d1},${this.fs(a)})`;
+                // GAMMA LEFT COF EQUAL ALPHA
+                if (!n) return c;
+                return `(R${b},,${this.add(l, this.fs(al, this.cfs(a, b, c, this.fs(n))))})`;
             }
-            // GAMMA RIGHT IS LIM
-            if (this.lt("(v,)", car)){
-                d1 = (c || !this.nfp(a, b)) ? c : ar;
-                return `(R${b},${d1},${this.add(l, this.fs(a, n, strong), a)})`;
-            }
+            // OMEGA
+            if (b[1] === "W") return this.scfs(c, n);
+            // MAHLO
+            if (b[1] === "X") return this.ofpfs(c, n);
+            // COLLAPSE
+            if (b[1] === "R") return this.cfs(b1[2], b1[0], c, n, strong);
         }
+        // GAMMA NOT LIM
+        if (!this.lt("(v,)", ca)){
+            // ALPHA RIGHT IS LIM AND NOT FP
+            if (this.lt("(v,)", cmr) && !c) d = this.fs(m, n, strong);
+            // ALPHA LEFT COF LESS THAN K
+            else if (this.lt(cml, "K")) d = this.add(this.fs(ml, n, strong), c);
+            // ALPHA LEFT COF IS K
+            else if (!n) return c;
+            else d = this.fs(ml, this.cfs(a, b, c, this.fs(n)));
+            // GAMMA NOT ZERO
+            if (a0) return `(R${b},${d},${this.fs(a)})`;
+            // MAHLO
+            if (b[1] === "X") return `(X${this.add("(v,)", d)})`;
+            // COLLAPSE
+            if (b[1] === "R") return `(R${b1[0]},${d},${b1[2]})`;
+        }
+        // GAMMA COF LESS THAN ALPHA
+        if (this.lt(ca, b)) return `(R${b},${c},${this.add(l, this.fs(a0, n, strong))})`;
+        // GAMMA COF GREATER THAN ALPHA
+        if (this.lt(b, ca)){
+            return n ? `(R${b},,${this.add(this.re(this.add(l, al), this.fs(n), b), c)})` : c;
+        }
+        // GAMMA COF IS ALPHA
+        return n ? `(R${b},,${this.add(l, this.fs(a0, this.cfs(a, b, c, this.fs(n))))})` : c;
     },
     // FUNDAMENTAL SEQUENCE FOR STRONGLY CRITICAL ORDINALS
     scfs: function (a, n){
-        if (!n) return "";
-        if (!this.fs(n)) return a ? a : "(v,)";
-        if (!this.fs(this.fs(n))) return a ? `(v${a},(v,))` : `(v(v,),)`;
-        return `(v${this.scfs(a, this.fs(n))},)`;
+        if (!n) return a;
+        if (this.isnormal(`(v${this.scfs(a, this.fs(n))},)`)){
+            return `(v${this.scfs(a, this.fs(n))},)`;
+        }
+        return `(v${this.scfs(a, this.fs(n))},(v,))`;
     },
     // FUNDAMENTAL SEQUENCE FOR OMEGA FIXED POINTS
     ofpfs: function (a, n){
-        if (!n) return "";
-        if (!this.fs(n)) return a ? a : "(W(v,))";
-        if (!this.fs(this.fs(n))) return a ? `(W${a}(v,))` : "(W(W(v,)))";
-        return `(W${this.ofpfs(a, this.fs(n))})`;
+        if (!n) return a;
+        if (this.isnormal(`(W${this.ofpfs(a, this.fs(n))})`)){
+            return `(W${this.ofpfs(a, this.fs(n))})`;
+        }
+        return `(W${this.ofpfs(a, this.fs(n))}(v,))`;
     },
     // NORMAL RECURSION
     re: function (a, n, base = ""){
         if (!n) return this.fs(a, base);
         let c = this.cof(a), l = c === "K" ? "(v,)" : this.least(c);
         let p = this.re(a, this.fs(n), base);
-        return this.fs(a, c === "K" ? `(X${this.add(l, p, p)})` : `(R${c},,${this.add(l, p, p)})`);
+        if (this.lt(p, l)) p = l;
+        return this.fs(a, c === "K" ? `(X${p})` : `(R${c},,${p})`);
     },
     // ---------------------------------------------------------------------------------------------
     // MATH FORM *

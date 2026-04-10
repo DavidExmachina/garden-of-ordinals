@@ -6,10 +6,10 @@
         <p>&emsp;&emsp;Buchholz's \( \psi \) refers to an ordinal collapsing function proposed by Wilfried Buchholz in 1986<sup><a id="g1" href="#c1">[1]</a></sup>. The definition of the function \( \psi_\alpha(\beta) \) is as follows:</p>
         <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
         <br>
-        <p>&emsp;&emsp;Buchholz's \( \psi \) can be considered one of the easiest OCF. The reason is as follows:</p>
+        <p>&emsp;&emsp;Buchholz's \( \psi \) can be considered one of the easiest OCFs. The reason is as follows:</p>
         <p>&emsp;&emsp;1. Buchholz's \( \psi \) is monotonically increasing for both variables. Meaning that the return value of the function is easier to predict.</p>
-        <p>&emsp;&emsp;2. Unlike most of other OCFs, Buchholz's \( \psi \) has the property: \( \psi_0(0)=1 \) and \( \psi_\alpha(\beta+1)=\psi_\alpha(\beta)*\omega \) if \( \psi_\alpha(\beta+1)&gt;\psi_\alpha(\beta) \), meaning that every ordinal that Buchholz's \( \psi \) can represent can be constructed only using zero, addition and the function.</p>
-        <p>&emsp;&emsp;The fundamental sequence system used in this website is defined as follows, note that every term has to be in normal form. Due to the complexity, the normal form will be defined in the "Ordinal Notation" section:</p>
+        <p>&emsp;&emsp;2. Unlike most other OCFs, Buchholz's \( \psi \) has this property: \( \psi_0(0)=1 \) and \( \psi_\alpha(\beta+1)=\psi_\alpha(\beta)*\omega \) if \( \psi_\alpha(\beta+1)&gt;\psi_\alpha(\beta) \), meaning that every ordinal that Buchholz's \( \psi \) can represent can be constructed only using zero, addition and the function.</p>
+        <p>&emsp;&emsp;The fundamental sequence system used on this website is defined as follows. Note that every term has to be in normal form. Due to the complexity, the normal form will be defined in the "Ordinal Notation" section:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \alpha=0 \), then \( \alpha[n]:=0 \) and \( Cof(\alpha):=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \alpha=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m) \) and \( m&gt;1 \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \alpha[n]:=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m)[n] \) and \( Cof(\alpha):=Cof(\psi_{\beta_m}(\gamma_m)) \)</p>
@@ -68,7 +68,7 @@
         <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;Return \( a&lt;b\vee b&lt;a \)</p>
         <br>
-        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represents symbolic equivalence while \( =_* \) and \( \neq_* \) represents numerical equivalence.</p>
+        <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represent symbolic equivalence, while \( =_* \) and \( \neq_* \) represent numerical equivalence.</p>
         <h2>Normal Form</h2><hr>
         <p>&emsp;&emsp;We define the function \( \in C \) to determine whether an ordinal \( c \) is an element of \( C(a,b) \):</p>
         <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
@@ -91,7 +91,7 @@
         <p>&emsp;&emsp;\( \varepsilon_{\Omega_\omega+1} \) is also in normal form.</p>
         <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\varepsilon_{\Omega_\omega+1} \)</p>
         <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\psi_\overline{1}(\overline{0}) \).</p>
-        <p>&emsp;&emsp;The countable limit ordinal exclusive to the command "fgh" or "sgh" is \( \psi_\overline{0}(\varepsilon_{\Omega_\omega+1}) \), written in computer code as "(,A)".</p>
+        <p>&emsp;&emsp;The countable limit ordinal exclusive to the growing hierarchy commands ("fgh", "sgh", "mgh" and "hh") is \( \psi_\overline{0}(\varepsilon_{\Omega_\omega+1}) \), written in computer code as "(,A)".</p>
         <h2>Operations</h2><hr>
         <p>&emsp;&emsp;We define addition \( Add \) as follows:</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
@@ -108,7 +108,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.01.</span> If \( a_0\neq\overline{\omega} \), return \( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.02.</span> If \( a_0=\overline{\omega} \), return \( \overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_1)=\overline{1} \), return \( \overline{\omega} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> If \( \neg\psi_{a_0}(0)&lt;Cof(a_1) \), return \( Cof(a_1) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> If \( \psi_{a_0}(0)&lt;Cof(a_1) \), return \( \overline{\omega} \)</p>
         <br>
@@ -126,7 +126,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> If \( n\neq\overline{0} \), return \( Add(a[n[\overline{0}]], \psi_{a_0}(a_1[\overline{0}])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.01.</span> If \( \neg\psi_{a_0}(0)&lt;Cof(a_1) \), return \( \psi_{a_0}(a_1[n]) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.</span> If \( \psi_{a_0}(0)&lt;Cof(a_1) \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
