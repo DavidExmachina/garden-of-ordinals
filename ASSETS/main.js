@@ -13,7 +13,7 @@ function add_space(text, space){
     else return replaceall(text, "\n" + " ".repeat(-space), "\n");
 }
 // CONVERT FILE TO DOM
-function to_dom(text){return new DOMParser().parseFromString(text, 'text/html');}
+function to_dom(text){return new DOMParser().parseFromString(text, "text/html");}
 // COPY CODE
 function copy(str){navigator.clipboard.writeText(str);}
 // GET PARAMETER
@@ -70,10 +70,12 @@ function generate_particle(t){
 // UPDATE BACKGROUND
 function update_background(t1, t2){
     let id, k, div, particle, pdiv, x, y;
-    if (data.save.options.background && data.background < 500)
+    if (data.save.options.background && data.background < 500){
         data.background = Math.min(data.background + t1 - t2, 500);
-    if (!data.save.options.background && data.background > 0)
+    }
+    if (!data.save.options.background && data.background > 0){
         data.background = Math.max(data.background - t1 + t2, 0);
+    }
     document.querySelector(".background").style.opacity = data.background / 500;
     if (!data.background) return;
     if (Math.random() * 500000000 < (t1 - t2) * window.innerWidth * window.innerHeight){
@@ -86,7 +88,7 @@ function update_background(t1, t2){
         div.setAttribute("class", "ord" + z(id, 6));
         div.innerHTML = data.resources.particles[Math.floor(Math.random() * 200)];
         document.querySelector(".background").appendChild(div);
-        MathJax.typeset([div]);
+        MathJax.typesetPromise([div]);
     }
     k = Object.keys(data.particles);
     for (let i = 0; i < k.length; i++){
@@ -134,7 +136,7 @@ function set_menu(){
         set_text("lang" + (i + 1), data.resources.words[data.constant.langs[i]].lang);
         elm.setAttribute("class", "lang-button2 button" + ((data.save.lang === i) * 2 + 1));
     }
-    MathJax.typeset([document.querySelector(".menu")]);
+    MathJax.typesetPromise([document.querySelector(".menu")]);
 }
 // SET LANGUAGE
 function set_lang(lang = null){
@@ -163,7 +165,7 @@ function set_tab(){
         document.getElementById("tab" + i).setAttribute("onclick",
             get_mode()[1] === i ? "" : `change_tab(${i});`);
     }
-    MathJax.typeset([document.querySelector(".tab")]);
+    MathJax.typesetPromise([document.querySelector(".tab")]);
 }
 // SET EXPLORE
 function set_explore(){
@@ -240,7 +242,7 @@ function set_options(){
     set_text("op9-2", "\\( I \\)");
     set_text("op9-3", "\\( M \\)");
     set_text("op9-4", "\\( N \\)");
-    MathJax.typeset([document.querySelector(".options")]);
+    MathJax.typesetPromise([document.querySelector(".options")]);
 }
 // CHANGE OPTION
 function change_option(item, value){
@@ -284,15 +286,13 @@ function change_contents(){
 // SET HELP
 async function set_help(){
     let filename, content, hash;
-    document.querySelector(".help").innerHTML = "";
+    document.querySelector(".help").innerHTML = words().loading;
     document.querySelector(".help").scrollTop = 0;
     if (!get_mode()[0]) return;
     filename = "ASSETS/DATA/";
     filename += data.resources.help_files[get_mode()[0] - 1];
     filename += `_${data.constant.langs[data.save.lang]}.html`;
-    content = await fetch(filename);
-    content = await content.text();
-    content = to_dom(content);
+    content = to_dom(await (await fetch(filename)).text());
     content = add_space(content.getElementsByTagName("body")[0].innerHTML, 16);
     content = "\n" + " ".repeat(24) + `<div class="contents"></div>` + content;
     document.querySelector(".help").innerHTML = content;
@@ -302,10 +302,12 @@ async function set_help(){
     gradual_mathjax(Array.from(document.querySelectorAll(".help > *")));
 }
 // SET MATHJAX IN HELP GRADUALLY
-function gradual_mathjax(n, s = 1){
-    if (!n.length || get_mode()[1] !== 3) return;
-    MathJax.typeset(n.slice(0, s));
-    setTimeout(() => gradual_mathjax(n.slice(s), s + 1), 0);
+async function gradual_mathjax(elements, n = 10){
+    if (get_mode()[1] !== 3) return;
+    if (!elements.length) return;
+    await MathJax.typesetPromise(elements.slice(0, n));
+    await new Promise(r => setTimeout(r, 10));
+    await gradual_mathjax(elements.slice(n), n);
 }
 // SET SYSTEM
 function set_system(){
@@ -365,12 +367,12 @@ function update_main(t1, t2){
     data.change = Math.max(data.change - t1 + t2, 0);
     op = Math.min(Math.abs(data.change - 500), 500) / 500;
     document.querySelector(".main").style.opacity = op;
-    document.querySelector(".main").style["user-select"] = data.change ? "none" : "auto";
-    document.querySelector(".main").style["-ms-user-select"] = data.change ? "none" : "auto";
-    document.querySelector(".main").style["-webkit-user-select"] = data.change ? "none" : "auto";
-    document.querySelector(".main").style["pointer-events"] = data.change ? "none" : "auto";
+    document.querySelector(".main").style.userSelect = data.change ? "none" : "auto";
+    document.querySelector(".main").style.msUserSelect = data.change ? "none" : "auto";
+    document.querySelector(".main").style.WebkitUserSelect = data.change ? "none" : "auto";
+    document.querySelector(".main").style.pointerEvents = data.change ? "none" : "auto";
     if (oc >= 500 && data.change < 500){
-        change_url(data.destination);
+        if (data.destination) change_url(data.destination);
         set_main();
     }
 }
@@ -454,7 +456,7 @@ function set_console(text = null, error = false){
         content += `<div${error ? ` class="error"` : ""}>${t[i]}</div>`;
     }
     document.querySelector(".cal-console").innerHTML = content;
-    MathJax.typeset([document.querySelector(".cal-console")]);
+    MathJax.typesetPromise([document.querySelector(".cal-console")]);
 }
 // SET PRESET
 function set_preset(){
@@ -498,7 +500,7 @@ function check_preset(n){
     if (item.includes("]")) valid = false;
     for (let i = 0; i < presets().length; i++) if (item === presets()[i].name) valid = false;
     if (n === presets().length * 2){
-        if (valid) {
+        if (valid){
             data.save.presets[get_mode()[0] - 2].push({name: item, content: ""});
             save_data();
         }
@@ -1221,18 +1223,18 @@ function update_explore(tab = false){
     document.querySelector(".ordinals").innerHTML = content;
     if (data.system.select !== null){
         index = chain_list().indexOf(data.system.select);
-        document.querySelectorAll(".ordinal")[index].style["background-color"] = "#00000010";
+        document.querySelectorAll(".ordinal")[index].style.backgroundColor = "#00000010";
     }
     if (data.system.search !== null){
         index = chain_list().indexOf(data.system.search);
-        document.querySelectorAll(".ordinal")[index].style["background-color"] = "#00000020";
+        document.querySelectorAll(".ordinal")[index].style.backgroundColor = "#00000020";
         if (tab){
             y = document.querySelectorAll(".ordinal")[index].getBoundingClientRect().y;
             y -= document.querySelectorAll(".ordinal")[0].getBoundingClientRect().y;
             document.querySelector(".explore").scrollTop = y;
         }
     }
-    MathJax.typeset([document.querySelector(".ordinals")]);
+    MathJax.typesetPromise([document.querySelector(".ordinals")]);
 }
 // SELECT
 function chain_select(chain){
@@ -1315,12 +1317,10 @@ function get_mode(){
 function save_data(){localStorage.setItem("data-ord", JSON.stringify(data.save));}
 // LOAD DATA
 async function load_data(){
-    let d = JSON.parse(localStorage.getItem("data-ord")), res, ver, k;
+    let d = JSON.parse(localStorage.getItem("data-ord")), ver, k;
     if (d === null) data.save.lang = get_lang();
     else data.save = d;
-    res = await fetch("ASSETS/DATA/resources.json");
-    res = await res.text();
-    data.resources = JSON.parse(res);
+    data.resources = JSON.parse(await (await fetch("ASSETS/DATA/resources.json")).text());
     data.constant.save.presets = clone(data.resources.presets);
     ver = data.save.version === undefined ? "1.2-" : data.save.version;
     k = Object.keys(data.constant.save);
@@ -1348,7 +1348,7 @@ let data = {
         langs       : ["en", "zh-Hans", "zh-Hant", "jp"],
         systems     : [Cantor, Veblen, Buchholz, ExBuchholz, RathjenM, RathjenK],
         save        : {
-            version     : "1.4",
+            version     : "1.5",
             lang        : 0,
             presets     : [],
             options     : {

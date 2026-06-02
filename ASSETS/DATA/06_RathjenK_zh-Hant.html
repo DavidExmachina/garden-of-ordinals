@@ -30,7 +30,7 @@
         <br>
         <p>&emsp;&emsp;從上述定義，可見這個函數引入了麻洛基數的拓展：</p>
         <p>&emsp;&emsp;\( M^0 \)表示一類（小於\( K \)的）極限序數。</p>
-        <p>&emsp;&emsp;\( M^1 \)表示一類不可達基數，這是由於函數\( \Omega_\alpha \)的出現而導致的。引入了這個函數的原因可能是因為不可達基數與\( \Pi_0^1- \)不可描述基數等價<sup><a id="g2" href="#c2">[2]</a></sup>。</p>
+        <p>&emsp;&emsp;\( M^1 \)表示一類不可達基數，這是由於函數\( \Omega_\alpha \)的出現而導致的。引入了這個函數的原因可能是因為\( \Pi_0^1- \)不可描述基數與強不可達基數是等價的<sup><a id="g2" href="#c2">[2]</a></sup>。注意是從函數\( \beth_\alpha \)得到的<b>強</b>不可達基數而不是從函數\( \aleph_\alpha=\Omega_\alpha \)得到的<b>弱</b>不可達基數。</p>
         <p>&emsp;&emsp;\( M^2 \)表示一類麻洛基數。實際上，使得小於自身的不可數正規基數的集合是自身的駐集的不可數正規基數也是麻洛基數。這是一個更加寬鬆的條件。它不只包含最小麻洛基數\( M \)，還包含更大的麻洛基數如\( M_2 \)，\( M_3 \)等。</p>
         <p>&emsp;&emsp;\( M^3 \)表示一類「超麻洛基數」。它包含一切使得小於自身的麻洛基數的集合是自身的駐集的麻洛基數的不可數正規基數。</p>
         <p>&emsp;&emsp;\( M^4 \)表示一類「超超麻洛基數」。它包含一切使得小於自身的「超麻洛基數」的集合是自身的駐集的「超麻洛基數」的不可數正規基數，以此類推。</p>
@@ -298,10 +298,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.</span> 若\( a_0=\Psi_{a_{00}}^{a_{01}}(a_{02})\land a_{00},a_{01},a_{02}\in T_m \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.01.</span> 若\( \neg\Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)，傳回\( t_b(a_{01}) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.</span> 若\( \Psi FP_{a_{00}}^{a_{01}}(a_{02}) \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.01.</span> 若\( Cof(a_{02})=\overline{1} \)，傳回\( t_b(L_K(a_{01})) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.</span> 若\( Cof(a_{02})\neq\overline{1} \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.01.</span> 若\( L_{a_{00}}(a_{02})=\overline{0} \)，傳回\( t_b(a_{02}) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.02.</span> 若\( L_{a_{00}}(a_{02})\neq\overline{0} \)，傳回\( t_b(L_{a_{00}}(a_{02})) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.01.</span> 若\( L_K(a_{01})\neq\overline{0} \)，傳回\( t_b(L_K(a_{01})) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.05.02.02.03.02.02.</span> 若\( L_K(a_{01})=\overline{0} \)，傳回\( t_b(a_{02}) \)</p>
         <br>
         <p>&emsp;&emsp;我們定義一般不動點函數\( FP \)以判斷某序數是否為一般不動點。雖然函數\( \Xi \)與\( \Psi \)不存在不動點，這是為了判斷對於一切\( a&lt;b,f(a)&lt;b \)是否成立。其中\( a,b \)是任意序數而\( f \)是任意函數。例如，雖然\( \Psi_\Omega^0(\Omega) \)不是函數\( \alpha\mapsto\Psi_\Omega^0(\alpha) \)的不動點，但是對於一切\( \alpha&lt;\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\alpha)&lt;\Psi_\Omega^0(\Omega) \)皆成立。</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto FP_b(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>

@@ -33,7 +33,7 @@
         <h3>cof</h3>
         <p>&emsp;&emsp;<b>形式：</b>cof ord</p>
         <p>&emsp;&emsp;<b>説明：</b>コンピュータコード「ord」に書かれた順序数の共終数を表示します。</p>
-        <p>&emsp;&emsp;「コピー」ボタンをクリックすると結果のコンピュータコードをコピーできます。（以下の例では該当しません）</p>
+        <p>&emsp;&emsp;「コピー」ボタンをクリックすると結果のコンピュータコードをコピーできます。（次の例では該当しません）</p>
         <p>&emsp;&emsp;順序数がMathJaxとして表示されている場合、順序数を右クリック &gt; Copy to Clipboard &gt; TeX CommandsでMathJaxコードをコピーできます。実は、これはMathJaxのデフォルト機能です。</p>
         <p>&emsp;&emsp;「共終数」の定義についてはこの記事の後で説明します。</p>
         <br>
@@ -200,7 +200,7 @@
         <p>&emsp;&emsp;目標の順序数は探索メニューで確認できます。</p>
         <h3>preset</h3>
         <p>&emsp;&emsp;<b>形式：</b>preset "import"/"export"/"reset"</p>
-        <p>&emsp;&emsp;<b>説明：</b>プリセットデータを管理します。使用できるコマンドは以下の3つだけです：</p>
+        <p>&emsp;&emsp;<b>説明：</b>プリセットデータを管理します。使用できるコマンドは次の3つだけです：</p>
         <br>
         <p>&emsp;&emsp;<b>コマンド：</b>preset import</p>
         <p>&emsp;&emsp;<b>説明：</b>事前にエクスポートしたプリセットファイルをインポートします。</p>
@@ -223,7 +223,7 @@
         <p>&emsp;&emsp;入力：display [w]</p>
         <p>&emsp;&emsp;コンソール：\( \alpha=\omega \)</p>
         <br>
-        <p>&emsp;&emsp;これで、このコードは以下のコードと同等になります：</p>
+        <p>&emsp;&emsp;これで、このコードは次のコードと同等になります：</p>
         <p>&emsp;&emsp;<b>例2：</b>（ブーフホルツの\( \psi \)関数）</p>
         <p>&emsp;&emsp;入力：display (,(,))</p>
         <p>&emsp;&emsp;コンソール：\( \alpha=\omega \)</p>
@@ -272,8 +272,8 @@
         <h3>関数の特定</h3>
         <p>&emsp;&emsp;<b>説明：</b>名前の衝突を避けるために、順序数崩壊関数が別の方法で記述されているかどうかを調整します。</p>
         <p>&emsp;&emsp;<b>限定：</b>拡張ブーフホルツの\( \psi \)関数、ラティエンの小\( \psi \)関数</p>
-        <p>&emsp;&emsp;（左）：順序数崩壊関数は元の論文と同じように記述されます。</p>
-        <p>&emsp;&emsp;（右）：順序数崩壊関数は別の形式で記述されます。</p>
+        <p>&emsp;&emsp;（左側）：順序数崩壊関数は元の論文と同じように記述されます。</p>
+        <p>&emsp;&emsp;（右側）：順序数崩壊関数は別の形式で記述されます。</p>
         <h3>\( \varphi_\alpha(\beta) \)の書き換え</h3>
         <p>&emsp;&emsp;<b>説明：</b>関数\( \varphi_\alpha(\beta) \)の記述方法を調整します。</p>
         <p>&emsp;&emsp;<b>限定：</b>ヴェブレン関数、ラティエンの小\( \psi \)関数、ラティエンの大\( \Psi \)関数</p>
@@ -307,8 +307,8 @@
         <p>&emsp;&emsp;<b>説明：</b>関数\( \Xi(\alpha) \)の記述方法を調整します。</p>
         <p>&emsp;&emsp;<b>限定：</b>ラティエンの大\( \Psi \)関数</p>
         <p>&emsp;&emsp;\( \Xi(\alpha) \)：\( \Xi(\alpha) \)は書き換えられません。</p>
-        <p>&emsp;&emsp;\( \Xi_\alpha \)：\( K \)が\( \alpha \)に存在しない場合、\( \Xi(\alpha) \)は\( \Xi_\alpha \)に書き換えられます。</p>
-        <p>&emsp;&emsp;\( I \)：上記に加えて、\( \Xi \)は\( I \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( \Xi_\alpha \)：\( \alpha&lt;K \)の場合、\( \Xi(\alpha) \)は\( \Xi_\alpha \)に書き換えられます。</p>
+        <p>&emsp;&emsp;\( I \)：上記に加えて、\( \Xi_1 \)は\( I \)に書き換えられます。</p>
         <p>&emsp;&emsp;\( M \)：上記に加えて、\( \Xi_2 \)は\( M \)に書き換えられます。</p>
         <p>&emsp;&emsp;\( N \)：上記に加えて、\( \Xi_3 \)は\( N \)に書き換えられます。</p>
         <h1>順序数について</h1><hr>
@@ -347,8 +347,8 @@
         <p>&emsp;&emsp;\( \omega*2\neq 2*\omega \)</p>
         <br>
         <p>&emsp;&emsp;これは、順序数が量ではなく順序に関するものであるためです。実際に\( \varepsilon_0 \)までのラベルが付けられた文字が無限にあると仮定すると、文字を並べて1行に圧縮することができます。故に、\( \omega \)と\( \varepsilon_0 \)は<b>濃度</b>が等しいと言います。</p>
-        <p>&emsp;&emsp;基数は、集合（そして順序数）の実際のサイズを測定するために使用されます。2つの集合の間に1対1の対応（すなわち双射）が存在する場合、それらの集合は濃度が等しいと言われます。例えば、\( \omega \)と\( \omega2 \)は濃度が等しい。なぜなら、それらの間に以下の1対1の対応が存在するからです：</p>
-        <p>&emsp;&emsp;\( \omega \) to \( \omega2 \):</p>
+        <p>&emsp;&emsp;基数は、集合（そして順序数）の実際のサイズを測定するために使用されます。2つの集合の間に1対1の対応（すなわち双射）が存在する場合、それらの集合は濃度が等しいと言われます。例えば、\( \omega \)と\( \omega2 \)は濃度が等しい。なぜなら、それらの間に次の1対1の対応が存在するからです：</p>
+        <p>&emsp;&emsp;\( \omega \)から\( \omega2 \)：</p>
         <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
         <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
         <p>&emsp;&emsp;\( 2\rightarrow1 \)</p>
@@ -357,7 +357,7 @@
         <p>&emsp;&emsp;\( 2n\rightarrow n \)</p>
         <p>&emsp;&emsp;\( 2n+1\rightarrow\omega+n \)</p>
         <br>
-        <p>&emsp;&emsp;\( \omega2 \) to \( \omega \):</p>
+        <p>&emsp;&emsp;\( \omega2 \)から\( \omega \)：</p>
         <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
         <p>&emsp;&emsp;\( \omega\rightarrow1 \)</p>
         <p>&emsp;&emsp;\( 1\rightarrow2 \)</p>
@@ -366,16 +366,14 @@
         <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
         <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
         <br>
-        <p>&emsp;&emsp;すべての自然数は基数である。これらを\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)などを表し、\( \omega \)の濃度（\( \#\omega \)）を\( \aleph_0 \)と定義します。実数の濃度は自然数よりも大きいため、\( \aleph_0 \)より大きい無限大が存在することはわかっています。実数の濃度の正確さはわかりません (これを\( \beth_1 \)と表記します)。連続体仮説はZFC自体では証明も反証もできないためです。</p>
-        <p>&emsp;&emsp;ZFC (ツェルメロ＝フレンケル集合論) を扱う場合、各無限基数に順序数を割り当てることができます。これは<b>フォン・ノイマンの割り当て</b>と呼ばれます。これで、集合の濃度を集合と1対1の対応が存在する最小の順序数として定義します。その結果、<b>基数は順序数であり</b>、\( \aleph_0=\omega \)、\( \aleph_1=\Omega \)、\( \aleph_2=\Omega_2 \)などになります。</p>
+        <p>&emsp;&emsp;すべての自然数は基数である。これらをアレフ数、即ち\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)、\( \aleph_3 \)などで表し、\( \omega \)の濃度（\( \#\omega \)と表されます）を\( \aleph_0 \)と定義します。ZFC (ツェルメロ＝フレンケル集合論) を扱う場合、各無限基数に順序数を割り当てることができます。これは<b>フォン・ノイマンの割り当て</b>と呼ばれます。これで、集合の濃度を集合と1対1の対応が存在する最小の順序数として定義します。その結果、<b>基数は順序数であり</b>、\( \aleph_0=\omega \)、\( \aleph_1=\Omega \)、\( \aleph_2=\Omega_2 \)、\( \aleph_3=\Omega_3 \)などになります。</p>
+        <p>&emsp;&emsp;実数の集合の濃度は自然数の集合よりも大きいため、\( \aleph_0 \)より大きい無限大が存在することはわかっています。実数の集合の濃度は\( \beth_1 \)（ベート-1）であり、それは自然数の集合の冪集合（その部分集合の集合）とも同じです。また、冪集合を用いて\( \beth_2 \)や\( \beth_3 \)などのベート数を得て、別の基数列を得ます。連続体仮説は\( \aleph_1=\beth_1 \)を意味する。しかし、それはZFC自体では証明も反証もできません。つまり、それはZFCから独立しています。一般連続体仮説と呼ばれる拡張も存在し、これは任意の順序数\( \alpha \)に対して\( \aleph_\alpha=\beth_\alpha \)を意味すると同時に、ZFCから独立しています。</p>
         <p>&emsp;&emsp;基数の算術もあります。しかし、これらの算術は順序数の算術とは異なるため、慎重に区別する必要があります：（ここで\( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \)）</p>
         <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
-        <br>
-        <p>&emsp;&emsp;順序数が\( \Omega \)より小さい場合、その順序数は<b>可算</b>であると言います。</p>
         <h2>増加関数</h2><hr>
-        <p>&emsp;&emsp;順序数が興味深いもう一つの理由は、順序数を使用して極めて大きな数を作成できるためです。以下の定義から始めましょう：</p>
+        <p>&emsp;&emsp;順序数が興味深いもう一つの理由は、順序数を使用して極めて大きな数を作成できるためです。次の定義から始めましょう：</p>
         <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
         <p>&emsp;&emsp;\( f_{m+1}(n):=f_m^n(n):=\underbrace{f_m(f_m(\cdots f_m(}_nn)\cdots)) \)</p>
         <br>
@@ -393,7 +391,7 @@
         <p>&emsp;&emsp;\( f_\omega(n)=f_n(n) \)</p>
         <br>
         <p>&emsp;&emsp;それで、この関数は何故上記のすべての関数よりも速く増加するのでしょうか？これを説明するために、「支配」という概念を定義します。これは、ある関数が別の関数よりも速く成長することを意味します。</p>
-        <p>&emsp;&emsp;二つの関数\( f,g:\mathbb{N}\rightarrow\mathbb{N} \)に対して、以下の場合、\( f \)は\( g \)を<b>支配する</b>と言います：</p>
+        <p>&emsp;&emsp;二つの関数\( f,g:\mathbb{N}\rightarrow\mathbb{N} \)に対して、次の場合、\( f \)は\( g \)を<b>支配する</b>と言います：</p>
         <p>&emsp;&emsp;ある\( n_0\in\mathbb{N} \)が存在し、任意の\( n\in\mathbb{N} \)に対して、\( n\ge n_0 \)ならば、\( f(n)&gt;g(n) \)</p>
         <br>
         <p>&emsp;&emsp;すべての自然数\( m \)に対して、\( f_\omega \)は\( f_m \)を支配することを確認できます。つまり、\( f_\omega \)は上記のすべての関数よりも速く増加します。これは、\( \omega \)がすべての自然数より大きいという事実に似ています。</p>
@@ -412,7 +410,7 @@
         <p>&emsp;&emsp;\( f_\alpha(n):=f_{\alpha[n]}(n) \)（\( \alpha \)は極限順序数である）</p>
         <br>
         <p>&emsp;&emsp;これは<b>急増加関数</b>と呼ばれます。順序数を上に数えていくと、より速く増加する関数も定義できます。これは極めて大きな数字を作成する謀となっており、この方法の限界は現時点では不明です。</p>
-        <p>&emsp;&emsp;さらに、以下のように他の増加関数も紹介され、定義されています。</p>
+        <p>&emsp;&emsp;さらに、次のように他の増加関数も紹介され、定義されています。</p>
         <br>
         <p>&emsp;&emsp;<b>緩増加関数：</b></p>
         <p>&emsp;&emsp;\( g_0(n):=0 \)</p>
@@ -432,18 +430,18 @@
         <p>&emsp;&emsp;これらの増加関数は急増加関数よりも遅く増加することを確認できます。しかし、それでも順序数が十分大きければ、急増加関数に追いつく（\( f_\alpha(n)&lt;g_\alpha(n+1),f_\alpha(n)&lt;m_\alpha(n+1),f_\alpha(n)&lt;H_\alpha(n+1) \)）ことができます。</p>
         <h2>基本列</h2><hr>
         <p>&emsp;&emsp;上記の式\( \alpha[n] \)は、順序数\( \alpha \)の<b>基本列</b>の\( n+1 \)番目の元を表します。</p>
-        <p>&emsp;&emsp;極限順序数\( \alpha \)と無限列\( \alpha[n] \)に対して、以下の場合、\( \alpha[n] \)は\( \alpha \)の基本列であると言います：</p>
+        <p>&emsp;&emsp;極限順序数\( \alpha \)と無限列\( \alpha[n] \)に対して、次の場合、\( \alpha[n] \)は\( \alpha \)の基本列であると言います：</p>
         <p>&emsp;&emsp;1. 任意の\( n\in\mathbb{N} \)に対して、\( \alpha[n]&lt;\alpha \)</p>
         <p>&emsp;&emsp;2. \( sup\{\alpha[n]|n\in\mathbb{N}\}=\alpha \)</p>
         <p>&emsp;&emsp;ここで\( supA \)は\( A \)のすべての元よりも大きいか等しい最小の順序数と表します。</p>
         <br>
-        <p>&emsp;&emsp;以下の場合、\( \alpha[n] \)は\( \alpha \)の<b>理想的な</b>基本列であると言います：</p>
+        <p>&emsp;&emsp;次の場合、\( \alpha[n] \)は\( \alpha \)の<b>理想的な</b>基本列であると言います：</p>
         <p>&emsp;&emsp;任意の\( m,n\in\mathbb{N} \)に対して、\( m&lt;n \)ならば、\( \alpha[m]&lt;\alpha[n] \)（列は狭義増加する）</p>
         <br>
-        <p>&emsp;&emsp;以下の場合、\( \alpha[n] \)は<b>最終的に広義増加する</b>と言います：</p>
+        <p>&emsp;&emsp;次の場合、\( \alpha[n] \)は<b>最終的に広義増加する</b>と言います：</p>
         <p>&emsp;&emsp;ある\( k\in\mathbb{N} \)が存在し、任意の\( m,n\in\mathbb{N} \)に対して、\( k\le m&lt;n \)ならば、\( \alpha[m]\le\alpha[n] \)（列は\( k \)から広義増加する）</p>
         <br>
-        <p>&emsp;&emsp;非極限順序数については、以下の定義もあります：</p>
+        <p>&emsp;&emsp;非極限順序数については、次の定義もあります：</p>
         <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
         <p>&emsp;&emsp;\( 0[n]=0 \)</p>
         <br>
@@ -457,7 +455,7 @@
         <p>&emsp;&emsp;まず集合\( C_0(0,0)=\{0\} \)を定義し、質問をします：その集合の元を加算したときに得られない最小の順序数は何ですか。答えは\( 1 \)です。0を何回足しても、結果は0になるからです。故に、\( \psi_0(0)=1 \)と書きます。</p>
         <p>&emsp;&emsp;そして：\( 0 \)または\( \psi_0(0)=1 \)を加算したときに得られない最小の順序数は何ですか。答えは\( \omega \)であり、\( \psi_0(1)=\omega \)と書きます。これを繰り返すと、\( \psi_0(2)=\omega^2 \)、\( \psi_0(3)=\omega^3 \)、\( \psi_0(\omega)=\omega^\omega \)となり、\( \psi_0(\varepsilon_0)=\varepsilon_0 \)となります。しかし、\( \psi_0(\varepsilon_0+1)=\varepsilon_0 \)となります。これは、加算と\( \psi_0(\alpha) \)を使用して順序数を作成できる必要があるという、言及されていないルールがあるためです。</p>
         <p>&emsp;&emsp;今こそ非可算基数を使う時です。\( \psi_0(\Omega)=\varepsilon_0 \)と定義します。そして今回は、\( \psi_1(0)=\Omega \)を使って\( \psi_0(\Omega)=\varepsilon_0 \)を作成できるため、\( \psi_0(\Omega+1)=\varepsilon_0\omega \)となります。いずれまた別のボトルネックにぶつかることになる：\( \psi_0(\Omega+\varepsilon_1)=\varepsilon_1 \)、しかし、必要なのはもう一つの\( \Omega \)を使って\( \psi_0(\Omega2)=\varepsilon_1 \)を得ることだけです。これを繰り返して、\( \psi_0(\Omega3)=\varepsilon_2 \)、\( \psi_0(\Omega\omega)=\varepsilon_\omega \)、\( \psi_0(\Omega^2)=\zeta_0 \)、\( \psi_0(\Omega^3)=\eta_0 \)、\( \psi_0(\Omega^\omega)=\varphi_\omega(0) \)、最後に\( \psi_0(\Omega^\Omega)=\Gamma_0 \)を得ることができます。そして、この時点で、より大きな順序数を簡単に作成できます。</p>
-        <p>&emsp;&emsp;これが、<b>順序数崩壊関数</b>の例のひとつである。主なアイデアは非可算基数を使用して大きくて複雑な可算順序数を作成することである。この例に使った順序数崩壊関数はブーフホルツの\( \psi \)関数とよばれ、最も理解しやすい順序数崩壊関数である。完全な定義は以下のとおりです。順序数はそれ自身より小さい順序数をすべて含む集合として定義されることを覚えてください：</p>
+        <p>&emsp;&emsp;これが、<b>順序数崩壊関数</b>の例のひとつである。主なアイデアは非可算基数を使用して大きくて複雑な可算順序数を作成することである。この例に使った順序数崩壊関数はブーフホルツの\( \psi \)関数とよばれ、最も理解しやすい順序数崩壊関数である。完全な定義は次のとおりです。順序数はそれ自身より小さい順序数をすべて含む集合として定義されることを覚えてください：</p>
         <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \begin{cases} 1 & \alpha=0 \\ \Omega_\alpha & \alpha&gt;0 \end{cases} \\ C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\ \cup & \{\gamma|\gamma=\psi_{\alpha'}(\beta')\land\alpha'&lt;\omega+1\land\beta'&lt;\beta\land\beta'\in C_n(\alpha,\beta)\} \\ C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha(\beta) := & min(Ord\setminus C(\alpha,\beta)) \end{align} \)</p>
         <br>
         <p>&emsp;&emsp;ウィルフリード・ブーフホルツのような数学者がこのような関数を定義した理由は、いくつかの数学的な公理系の強さを研究するためでした。すべての数学公理系には、その強さを表す<b>証明論的順序数</b>と呼ばれる順序数が割り当てられます。順序数が大きいほど、数学的な公理系は強くなります。よく知られているペアノ算術の証明論的順序数は\( \varepsilon_0 \)であり、この場合は小さいと見なすことができます。</p>
@@ -494,63 +492,83 @@
         <br>
         <p>&emsp;&emsp;コードの実行はこのようになります。行01.から開始します。変数\( v \)に値\( n_0 \)を割り当て、次の行、行02.に進みます。\( c_5 \)は\( \mathbb{T} \)である場合、変数\( v \)に値\( n_1 \)を割り当て、次の行に進みます。それ以外の場合は、直接次の行に進みます。\( c_6 \)は\( \mathbb{T} \)である場合、関数\( g(a) \)は値\( d_0 \)を返し、計算は終了します。それ以外の場合は、計算は続行し、次の行に進みます。そして、関数\( g(a) \)は以前に割り当てた値に応じて値\( v \)を返します。</p>
         <p>&emsp;&emsp;両端に同じ変数が現れる場合もあります。これは、方程式を解くのではなく、古い値に依存する変数に新しい値を割り当てることを意味します。</p>
-        <h2>注目すべき順序数</h2><hr>
-        <h3>\( \varepsilon_0 \)</h3>
+        <h1>注目すべき順序数</h1><hr>
+        <h2>\( \varepsilon_0 \)</h2><hr>
+        <p>&emsp;&emsp;ヴェブレン関数を用いて\( \varphi_1(0) \)と表される。</p>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega) \)と表される。</p>
         <p>&emsp;&emsp;\( \alpha=\omega^\alpha \)となる最初の順序数である。</p>
-        <p>&emsp;&emsp;ペアノ算術（\( PA \)）の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;ヴェブレン関数の\( \varphi_1(0) \)と同等である。</p>
-        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega) \)と同等である。</p>
-        <h3>\( \Gamma_0 \)、フェファーマン・シュッテの順序数</h3>
+        <p>&emsp;&emsp;ペアノ算術\( PA \)の証明論的順序数のである。</p>
+        <h2>フェファーマン・シュッテの順序数\( \Gamma_0 \)</h2><hr>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega^\Omega) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(0) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(0) \)と表される。</p>
         <p>&emsp;&emsp;\( \alpha=\varphi_\alpha(0) \)となる最初の順序数である。</p>
-        <p>&emsp;&emsp;算術的超限再帰（\( ATR_0 \)）の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega^\Omega) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(0) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(0) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^2}) \)（（拡張）ブーフホルツの\( \psi \)関数）、アッカーマン順序数（AO）</h3>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^2}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^3) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^\omega}) \)（（拡張）ブーフホルツの\( \psi \)関数）、小ヴェブレン順序数（SVO）</h3>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^\omega}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^\omega) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^\Omega}) \)（（拡張）ブーフホルツの\( \psi \)関数）、大ヴェブレン順序数（LVO）</h3>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega^\Omega) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega_2) \)（（拡張）ブーフホルツの\( \psi \)関数）、バッハマン・ハワード順序数（BHO）</h3>
-        <p>&emsp;&emsp;無限公理を含むクリプキ＝プラテックの集合論（\( KP\omega \)）の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\varepsilon_{\Omega+1}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega_\omega) \)（（拡張）ブーフホルツの\( \psi \)関数）、小ブーフホルツ順序数（SBO）</h3>
+        <p>&emsp;&emsp;算術的超限再帰\( ATR_0 \)の証明論的順序数のである。</p>
+        <h2>アッカーマン順序数（AO）</h2><hr>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega^{\Omega^2}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\Omega^{\Omega^2}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\Omega^3) \)と表される。</p>
+        <h2>小ヴェブレン順序数（SVO）</h2><hr>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega^{\Omega^\omega}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\Omega^{\Omega^\omega}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\Omega^\omega) \)と表される。</p>
+        <h2>大ヴェブレン順序数（LVO）</h2><hr>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega^{\Omega^\Omega}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\Omega^\Omega) \)と表される。</p>
+        <h2>バッハマン・ハワード順序数（BHO）</h2><hr>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega_2) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\varepsilon_{\Omega+1}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)と表される。</p>
+        <p>&emsp;&emsp;無限公理を含むクリプキ＝プラテックの集合論\( KP\omega \)の証明論的順序数のである。</p>
+        <h2>小ブーフホルツ順序数（SBO）</h2><hr>
         <p>&emsp;&emsp;ブーフホルツ順序数（BO）とも呼ばれます。</p>
+        <p>&emsp;&emsp;（拡張）ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega_\omega) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\Omega_\omega) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\Omega_\omega) \)と表される。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA \)の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Omega_\omega) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Omega_\omega) \)と同等である。</p>
-        <h3>\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)（（拡張）ブーフホルツの\( \psi \)関数）、竹内・フェファーマン・ブーフホルツ順序数（TFBO）</h3>
+        <h2>竹内・フェファーマン・ブーフホルツ順序数（TFBO）</h2><hr>
+        <p>&emsp;&emsp;ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)と表される。</p>
+        <p>&emsp;&emsp;拡張ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega_{\omega+1}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)と表される。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA+BI \)の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;拡張ブーフホルツの\( \psi \)関数の\( \psi_0(\Omega_{\omega+1}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)と同等である。</p>
-        <h3>\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)（拡張ブーフホルツの\( \psi \)関数）、大ブーフホルツ順序数（LBO）</h3>
+        <h2>大ブーフホルツ順序数（LBO）</h2><hr>
         <p>&emsp;&emsp;拡張ブーフホルツ順序数（EBO）とも呼ばれます。</p>
+        <p>&emsp;&emsp;拡張ブーフホルツの\( \psi \)関数を用いて\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\Phi_1(0)) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)と表される。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-TR_0 \)の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数の\( \psi_\Omega(\Phi_1(0)) \)と同等である。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)と同等である。</p>
-        <h3>\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)（ラティエンの小\( \psi \)関数）、小ラティエン順序数（SRO）</h3>
+        <h2>小ラティエン順序数（SRO）</h2><hr>
+        <p>&emsp;&emsp;ラティエンの小\( \psi \)関数を用いて\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)と表される。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)と表される。</p>
         <p>&emsp;&emsp;\( KPM \)の証明論的順序数のである。</p>
-        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)と同等である。</p>
-        <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \)（ラティエンの大\( \Psi \)関数）、大ラティエン順序数（LRO）</h3>
+        <h2>大ラティエン順序数（LRO）</h2><hr>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数を用いて\( \Psi_\Omega^0(\varepsilon_{K+1}) \)と表される。</p>
         <p>&emsp;&emsp;\( KP+\Pi_3-reflection \)の証明論的順序数の上限である。</p>
+        <h2>チャーチ・クリーネ順序数\( \omega_1^{CK} \)と許容順序数\( \omega_\alpha^{CK} \)</h2><hr>
+        <p>&emsp;&emsp;チャーチ・クリーネ順序数\( \omega_1^{CK} \)は、コンピュータプログラムを用いてはその順序を解釈できない、最小の順序数である。そのため、本サイト上であらゆる順序数システムを用いて表せるすべての順序数は再帰順序数で、即ち、\( \omega_1^{CK} \)より小さいです。</p>
+        <p>&emsp;&emsp;チャーチ・クリーネ順序数\( \omega_1^{CK} \)に加え、許容順序数\( \omega_\alpha^{CK} \)も存在しており、その順序数のレベルにおける構成可能集合\( L_{\omega_\alpha^{CK}} \)はクリプキ＝プラテック集合論\( KP \)のモデルとなっています。</p>
+        <p>&emsp;&emsp;構成可能集合は先行する集合を用いて「構築」する集合階層であり、次のように大まかに定義されます：</p>
+        <p>&emsp;&emsp;\( L_0=\{\} \)</p>
+        <p>&emsp;&emsp;\( L_{\alpha+1}= \)\( \in \)、（\( = \)、）\( \neg \)、\( \land \)、\( \exists x\in L_{\alpha} \)（\( x \)は任意の変数である）、括弧および\( L_{\alpha} \)の要素を用いて定義可能の集合の集合</p>
+        <p>&emsp;&emsp;\( L_\alpha=\bigcup\{L_\beta|\beta&lt;\alpha\} \)（\( \alpha\in Lim \)）</p>
+        <br>
+        <p>&emsp;&emsp;公式、或いは数学的な公理系\( T \)に含まれるすべての\( \exists x \)を\( \exists x\in A \)に置き換えた場合に\( T \)が真となるならば、集合\( A \)は\( T \)のモデルである（\( A\vDash T \)と表されます）。即ち、\( L_\alpha\vDash KP \)の場合、\( \alpha \)は許容順序数である。</p>
+        <p>&emsp;&emsp;最初の許容順序数は\( \omega \)で、その次はチャーチ・クリーネ順序数\( \omega_1^{CK} \)である。これらの順序数は、それぞれ\( \omega \)と\( \Omega \)に「対応」します。クリプキ＝プラテック集合論を無限公理を含むことにすると、\( \omega \)は最初の許容順序数ではなくなり、\( \omega_1^{CK} \)が最初の許容順序数になります。</p>
+        <p>&emsp;&emsp;\( \omega_2^{CK} \)、\( \omega_3^{CK} \)などのより大きの許容順序数も存在し、これらはそれぞれ\( \Omega_2 \)や\( \Omega_3 \)などに「対応」しています。しかし、隣接する許容順序数の関係（例えば、\( \omega_1^{CK} \)と\( \omega_2^{CK} \)の間、\( \omega_2^{CK} \)と\( \omega_3^{CK} \)の間など）については十分に研究が進んでおらず、\( \omega_2^{CK} \)や\( \omega_3^{CK} \)のサイズ（すなわち、どうやってその基本列を作成するか）についても、まだよく知られていません。</p>
         <h1>バージョン履歴</h1><hr>
         <h2>2024年12月13日 - V1.0</h2><hr>
         <p>&emsp;&emsp;◇初期バージョン。</p>
         <h2>2024年12月16日 - V1.1</h2><hr>
-        <p>&emsp;&emsp;◇\( {\Psi}_{\Omega}^{0}({\varphi}_{{\Psi}_{\Omega}^{0}({\varphi}_{\Omega}(1))}(\Omega+1)) \)のような順序数の展開が異常になる原因となっていたラティエンの大\( \Psi \)関数の尾の関数\( t \)の04.04.01.02.行を修正しました。</p>
+        <p>&emsp;&emsp;◇\( \Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varphi_\Omega(1))}(\Omega+1)) \)のような順序数の展開が異常になる原因となっていたラティエンの大\( \Psi \)関数の尾の関数\( t \)の04.04.01.02.行を修正しました。</p>
         <p>&emsp;&emsp;◇タイトルが折り返される原因となっていた、PCとモバイルのフォントの不一致を修正しました。</p>
         <p>&emsp;&emsp;◇この記事のコピーボタンに説明を追加しました。</p>
         <h2>2025年01月24日 - V1.2</h2><hr>
         <p>&emsp;&emsp;<b>※徹底的にラティエンの大\( \Psi \)関数の順序数システムを修復しました。</b></p>
         <p>&emsp;&emsp;◇<a href="https://d-nb.info/1017849250/34" target="_blank">この論文</a>では、\( \Xi \)はより大きな基数を表すためにも使用されるため、\( \Xi=I \)（ここで\( I \)は最小の到達不能基数と表します）のような混乱を避けるために、\( \Xi_1 \)は\( \Xi \)に書き換えられません。</p>
         <p>&emsp;&emsp;◇関数の特定（拡張ブーフホルツの\( \psi \)関数は\( \psi_\alpha^*(\beta) \)、ラティエンの小\( \psi \)関数は\( \rho_\alpha(\beta) \)を表すこと）による混乱のため、対応するヘルプメニューにテキストを追加しました。</p>
-        <p>&emsp;&emsp;◇<a href="#1.1.8">コマンド「search」に関する段落</a>にテキストを追加しました。</p>
+        <p>&emsp;&emsp;◇<a href="#1.1.10">コマンド「search」に関する段落</a>にテキストを追加しました。</p>
         <p>&emsp;&emsp;◇<a href="#2.7">「順序数表記」の段落</a>にキーワード「とする」に関するテキストを追加しました。</p>
         <h2>2025年08月29日 - V1.3</h2><hr>
         <p>&emsp;&emsp;<b>※「中増加関数」と「ハーディ階層」を追加しました。</b></p>
@@ -558,9 +576,9 @@
         <p>&emsp;&emsp;◇コマンドバーを選択すると、↑キーと↓キーを押して以前に入力したコマンドを入力できるようになりました。</p>
         <p>&emsp;&emsp;◇コマンド「search」では、検索ステップの最大数を設定できるようになり、順序数が見つかったときの経過時間も表示されます。</p>
         <p>&emsp;&emsp;◇コマンド「search」によって強調表示された順序数は、他の順序数を展開または折りたたんだときに強調表示が解除されなくなりました。</p>
-        <p>&emsp;&emsp;◇<a href="1.3">「選択ボタン」</a>を追加しました。探索メニューで順序数を選択して、簡単に見つけられるようになります。</p>
-        <p>&emsp;&emsp;◇項目<a href="1.4.4">「簡約モード」</a>に\( \omega^{\alpha*\beta} \)と\( \omega^{\alpha+\beta} \)のオプションを追加しました。</p>
-        <p>&emsp;&emsp;◇項目<a href="1.4.8">「\( \psi_\alpha(\beta) \)の書き換え」</a>に\( \psi_{\Omega_\alpha}(\beta) \)のオプションを追加しました。</p>
+        <p>&emsp;&emsp;◇<a href="#1.3">「選択ボタン」</a>を追加しました。探索メニューで順序数を選択して、簡単に見つけられるようになります。</p>
+        <p>&emsp;&emsp;◇項目<a href="#1.4.4">「簡約モード」</a>に\( \omega^{\alpha*\beta} \)と\( \omega^{\alpha+\beta} \)のオプションを追加しました。</p>
+        <p>&emsp;&emsp;◇項目<a href="#1.4.8">「\( \psi_\alpha(\beta) \)の書き換え」</a>に\( \psi_{\Omega_\alpha}(\beta) \)のオプションを追加しました。</p>
         <p>&emsp;&emsp;◇背景アニメーションをオフにしたときのパフォーマンスが改善しました。</p>
         <p>&emsp;&emsp;◇ヘルプメニューを開くときの遅延を削減しました。</p>
         <p>&emsp;&emsp;◇いくつかの順序数を簡略化する際のいくつかエラーを修正しました。</p>
@@ -571,5 +589,11 @@
         <p>&emsp;&emsp;<b><span style="opacity: 0.25;">※（英語のみ）「Rathjen's Little \( \psi \)」を「Rathjen's Small \( \psi \)」に名前を変更しました。</span></b></p>
         <p>&emsp;&emsp;◇別のメニューに移動するたびにURLが変化するようになり、迅速なアクセスや引用が可能になりました。</p>
         <p>&emsp;&emsp;◇ヘルプ記事のエラーを修正しました。</p>
+        <h2>2026年06月02日 - V1.5</h2><hr>
+        <p>&emsp;&emsp;◇ある順序数の展開が異常になる原因となっていたラティエンの大\( \Psi \)関数の尾の関数\( t \)の02.02.05.02.02.03.02.行を修正しました。</p>
+        <p>&emsp;&emsp;◇項目<a href="#1.4.10">「\( \Xi(\alpha) \)の書き換え」</a>に\( \Xi_\alpha \)のオプションの仕組みを変えました。</p>
+        <p>&emsp;&emsp;◇<a href="#3">「注目すべき順序数」</a>に<a href="#3.12">「チャーチ・クリーネ順序数\( \omega_1^{CK} \)と許容順序数\( \omega_\alpha^{CK} \)」</a>を追加しました。</p>
+        <p>&emsp;&emsp;◇この記事を再構成しました。</p>
+        <p>&emsp;&emsp;◇ヘルプ記事のエラーを修正しました。これには、この記事内のリンク切れも含まれます。</p>
     </body>
 </html>

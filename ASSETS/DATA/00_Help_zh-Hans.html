@@ -307,8 +307,8 @@
         <p>&emsp;&emsp;<b>描述：</b>调整函数\( \Xi(\alpha) \)的书写方式。</p>
         <p>&emsp;&emsp;<b>仅限于：</b>拉珍大\( \Psi \)函数</p>
         <p>&emsp;&emsp;\( \Xi(\alpha) \)：不改写\( \Xi(\alpha) \)。</p>
-        <p>&emsp;&emsp;\( \Xi_\alpha \)：若在\( \alpha \)中没有\( K \)出现，则将\( \Xi(\alpha) \)改写为\( \Xi_\alpha \)。</p>
-        <p>&emsp;&emsp;\( I \)：除以上外，将\( \Xi \)改写为\( I \)。</p>
+        <p>&emsp;&emsp;\( \Xi_\alpha \)：若\( \alpha&lt;K \)，则将\( \Xi(\alpha) \)改写为\( \Xi_\alpha \)。</p>
+        <p>&emsp;&emsp;\( I \)：除以上外，将\( \Xi_1 \)改写为\( I \)。</p>
         <p>&emsp;&emsp;\( M \)：除以上外，将\( \Xi_2 \)改写为\( M \)。</p>
         <p>&emsp;&emsp;\( N \)：除以上外，将\( \Xi_3 \)改写为\( N \)。</p>
         <h1>关于序数</h1><hr>
@@ -348,7 +348,7 @@
         <br>
         <p>&emsp;&emsp;这是因为序数与数量无关，而是与顺序相关。假设我们有无穷多的标有小于\( \varepsilon_0 \)的序数的字，我们仍然能将它们压缩至一行。此时，我们说\( \omega \)与\( \varepsilon_0 \)的<b>势</b>相同。</p>
         <p>&emsp;&emsp;基数用于衡量集合（因此也衡量序数）的实际大小。我们说两集合若有一一对应的关系（亦称双射）则势相等。比如说：\( \omega \)与\( \omega2 \)势相等，这是因为它们之间有如下的一一对应的关系：（\( n\in\omega \)）</p>
-        <p>&emsp;&emsp;\( \omega \) to \( \omega2 \):</p>
+        <p>&emsp;&emsp;从\( \omega \)到\( \omega2 \)：</p>
         <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
         <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
         <p>&emsp;&emsp;\( 2\rightarrow1 \)</p>
@@ -357,7 +357,7 @@
         <p>&emsp;&emsp;\( 2n\rightarrow n \)</p>
         <p>&emsp;&emsp;\( 2n+1\rightarrow\omega+n \)</p>
         <br>
-        <p>&emsp;&emsp;\( \omega2 \) to \( \omega \):</p>
+        <p>&emsp;&emsp;从\( \omega2 \)到\( \omega \)：</p>
         <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
         <p>&emsp;&emsp;\( \omega\rightarrow1 \)</p>
         <p>&emsp;&emsp;\( 1\rightarrow2 \)</p>
@@ -366,14 +366,12 @@
         <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
         <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
         <br>
-        <p>&emsp;&emsp;一切自然数皆为基数。对于无穷基数，我们将它们标为\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)然后将\( \omega \)的势（\( \#\omega \)）定义为\( \aleph_0 \)。之所以我们知道有比\( \aleph_0 \)大的无穷，这是因为实数的势大于自然数的势。我们只是不知道实数的势有多大（只是会记作\( \beth_1 \)），因为用ZFC本身既无法证明连续统假设为真又无法证明连续统假设为伪。</p>
-        <p>&emsp;&emsp;在研究ZFC（策梅洛-弗兰克尔集合论）时，我们可以给每个无穷基数指派一个序数。这叫做<b>冯·诺伊曼基数指派</b>。此时，我们定义集合的势为最小与其有一一对应的关系的序数。因此，<b>基数是序数</b>且\( \aleph_0=\omega \)，\( \aleph_1=\Omega \)，\( \aleph_2=\Omega_2 \)，以此类推。</p>
+        <p>&emsp;&emsp;一切自然数皆为基数。对于无穷基数，我们将它们记作阿列夫数\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)、\( \aleph_3 \)等，然后将\( \omega \)的势（记作\( \#\omega \)）定义为\( \aleph_0 \)。在研究ZFC（策梅洛-弗兰克尔集合论）时，我们可以给每个无穷基数指派一个序数。这叫做<b>冯·诺伊曼基数指派</b>。此时，我们定义集合的势为最小与其有一一对应的关系的序数。因此，<b>基数是序数</b>且\( \aleph_0=\omega \)，\( \aleph_1=\Omega \)，\( \aleph_2=\Omega_2 \)，\( \aleph_3=\Omega_3 \)，以此类推。</p>
+        <p>&emsp;&emsp;之所以我们知道有比\( \aleph_0 \)大的无穷，这是因为实数集的势大于自然数集的势。实数集的势是\( \beth_1 \)（贝特-1），与自然数集的幂集（其子集的集合）相等。我们也可以多次取幂集以获得贝特数\( \beth_2 \)，\( \beth_3 \)等。这是另一个势序列。连续统假设意味着\( \aleph_1=\beth_1 \)。然而，ZFC本身既无法证明它为真又无法证明它为伪，即与ZFC独立。此外还有一个名为“广义连续统假设”的扩展，意味着对于一切序数\( \alpha \)，\( \aleph_\alpha=\beth_\alpha \)。它也与ZFC独立。</p>
         <p>&emsp;&emsp;基数也能进行运算。但是，这些运算与序数运算不同而需要小心区分：（其中\( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \)）</p>
         <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A_\#^B:=\#\{f|f:B\rightarrow A \} \)</p>
-        <br>
-        <p>&emsp;&emsp;当某序数小于\( \Omega \)，我们称其<b>可数</b>。</p>
         <h2>增长阶层</h2><hr>
         <p>&emsp;&emsp;另一个序数有趣的原因是它可用来构造异常巨大的数字。我们从以下定义开始：</p>
         <p>&emsp;&emsp;\( f_0(n):=n+1 \)</p>
@@ -494,63 +492,83 @@
         <br>
         <p>&emsp;&emsp;代码如此运行：我们从01.行开始。我们对变量\( v \)赋值\( n_0 \)然后跳转到下一行，02.行。若\( c_5 \)为\( \mathbb{T} \)，我们对变量\( v \)赋值\( n_1 \)然后跳转到下一行。否则，直接跳转到下一行。若\( c_6 \)为\( \mathbb{T} \)，函数\( g(a) \)返回值\( d_5 \)，计算结束。否则，计算继续，跳转到下一行。然后函数\( g(a) \)返回值\( v \)，这取决于先前的赋值。</p>
         <p>&emsp;&emsp;有时，同一变量会在两端同时出现。此时意味着对变量赋予取决于旧值的新值，而不是解方程。</p>
-        <h2>一些值得提及的序数</h2><hr>
-        <h3>\( \varepsilon_0 \)</h3>
+        <h1>一些值得提及的序数</h1><hr>
+        <h2>\( \varepsilon_0 \)</h2><hr>
+        <p>&emsp;&emsp;于维布伦函数记作\( \varphi_1(0) \)。</p>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega) \)。</p>
         <p>&emsp;&emsp;满足\( \alpha=\omega^\alpha \)的第一个序数。</p>
-        <p>&emsp;&emsp;皮亚诺算术（\( PA \)）的证明论序数。</p>
-        <p>&emsp;&emsp;于维布伦函数与\( \varphi_1(0) \)等价。</p>
-        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数与\( \psi_0(\Omega) \)等价。</p>
-        <h3>\( \Gamma_0 \)，费弗曼-舒特序数</h3>
+        <p>&emsp;&emsp;皮亚诺算术\( PA \)的证明论序数。</p>
+        <h2>费弗曼-舒特序数\( \Gamma_0 \)</h2><hr>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega^\Omega) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(0) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(0) \)。</p>
         <p>&emsp;&emsp;满足\( \alpha=\varphi_\alpha(0) \)的第一个序数。</p>
-        <p>&emsp;&emsp;算术超限归纳法（\( ATR_0 \)）的证明论序数。</p>
-        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数与\( \psi_0(\Omega^\Omega) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(0) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(0) \)等价。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^2}) \)（（拓展）布赫霍兹\( \psi \)函数），阿克曼序数（AO）</h3>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\Omega^{\Omega^2}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\Omega^3) \)等价。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^\omega}) \)（（拓展）布赫霍兹\( \psi \)函数），小维布伦序数（SVO）</h3>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\Omega^{\Omega^\omega}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\Omega^\omega) \)等价。</p>
-        <h3>\( \psi_0(\Omega^{\Omega^\Omega}) \)（（拓展）布赫霍兹\( \psi \)函数），大维布伦序数（LVO）</h3>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\Omega^\Omega) \)等价。</p>
-        <h3>\( \psi_0(\Omega_2) \)（（拓展）布赫霍兹\( \psi \)函数），巴赫曼-霍华德序数（BHO）</h3>
-        <p>&emsp;&emsp;包含无穷公理的克里普克-普拉特克集合论（\( KP\omega \)）的证明论序数。</p>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\varepsilon_{\Omega+1}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)等价。</p>
-        <h3>\( \psi_0(\Omega_\omega) \)（（拓展）布赫霍兹\( \psi \)函数），小布赫霍兹序数（SBO）</h3>
+        <p>&emsp;&emsp;算术超限归纳法\( ATR_0 \)的证明论序数。</p>
+        <h2>阿克曼序数（AO）</h2><hr>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega^{\Omega^2}) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\Omega^{\Omega^2}) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\Omega^3) \)。</p>
+        <h2>小维布伦序数（SVO）</h2><hr>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega^{\Omega^\omega}) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\Omega^{\Omega^\omega}) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\Omega^\omega) \)。</p>
+        <h2>大维布伦序数（LVO）</h2><hr>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega^{\Omega^\Omega}) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\Omega^\Omega) \)。</p>
+        <h2>巴赫曼-霍华德序数（BHO）</h2><hr>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega_2) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\varepsilon_{\Omega+1}) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)。</p>
+        <p>&emsp;&emsp;包含无穷公理的克里普克-普拉特克集合论\( KP\omega \)的证明论序数。</p>
+        <h2>小布赫霍兹序数（SBO）</h2><hr>
         <p>&emsp;&emsp;又称布赫霍兹序数（BO）。</p>
+        <p>&emsp;&emsp;于（拓展）布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega_\omega) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\Omega_\omega) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\Omega_\omega) \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA \)的证明论序数。</p>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\Omega_\omega) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\Omega_\omega) \)等价。</p>
-        <h3>\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)（（拓展）布赫霍兹\( \psi \)函数），竹内-费弗曼-布赫霍兹序数（TFBO）</h3>
+        <h2>竹内-费弗曼-布赫霍兹序数（TFBO）</h2><hr>
+        <p>&emsp;&emsp;于布赫霍兹\( \psi \)函数记作\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)。</p>
+        <p>&emsp;&emsp;于拓展布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega_{\omega+1}) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA+BI \)的证明论序数。</p>
-        <p>&emsp;&emsp;于拓展布赫霍兹\( \psi \)函数与\( \psi_0(\Omega_{\omega+1}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)等价。</p>
-        <h3>\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)（拓展布赫霍兹\( \psi \)函数），大布赫霍兹序数（LBO）</h3>
+        <h2>大布赫霍兹序数（LBO）</h2><hr>
         <p>&emsp;&emsp;又称拓展布赫霍兹序数（EBO）。</p>
+        <p>&emsp;&emsp;于拓展布赫霍兹\( \psi \)函数记作\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)。</p>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\Phi_1(0)) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-TR_0 \)的证明论序数。</p>
-        <p>&emsp;&emsp;于拉珍小\( \psi \)函数与\( \psi_\Omega(\Phi_1(0)) \)等价。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)等价。</p>
-        <h3>\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)（拉珍小\( \psi \)函数），小拉珍序数（SRO）</h3>
+        <h2>小拉珍序数（SRO）</h2><hr>
+        <p>&emsp;&emsp;于拉珍小\( \psi \)函数记作\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)。</p>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)。</p>
         <p>&emsp;&emsp;\( KPM \)的证明论序数。</p>
-        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数与\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)等价。</p>
-        <h3>\( \Psi_\Omega^0(\varepsilon_{K+1}) \)（拉珍大\( \Psi \)函数），大拉珍序数（LRO）</h3>
+        <h2>大拉珍序数（LRO）</h2><hr>
+        <p>&emsp;&emsp;于拉珍大\( \Psi \)函数记作\( \Psi_\Omega^0(\varepsilon_{K+1}) \)。</p>
         <p>&emsp;&emsp;\( KP+\Pi_3-reflection \)的证明论序数的上界。</p>
+        <h2>邱奇-克莱尼序数\( \omega_1^{CK} \)及可容序数\( \omega_\alpha^{CK} \)</h2><hr>
+        <p>&emsp;&emsp;邱奇-克莱尼序数\( \omega_1^{CK} \)是其顺序用计算机程序无法解释的最小序数。因此，本网站的所有序数系统所表示的序数皆为递归序数，即小于\( \omega_1^{CK} \)。</p>
+        <p>&emsp;&emsp;除邱奇-克莱尼序数\( \omega_1^{CK} \)外，我们还有可容序数\( \omega_\alpha^{CK} \)，使得以这些序数为等级的可构阶层\( L_{\omega_\alpha^{CK}} \)是克里普克-普拉特克集合论\( KP \)的模型。</p>
+        <p>&emsp;&emsp;可构阶层是一个以低阶的集合来构建集合的阶层，大致定义如下：</p>
+        <p>&emsp;&emsp;\( L_0=\{\} \)</p>
+        <p>&emsp;&emsp;\( L_{\alpha+1}= \)能用\( \in \)、（\( = \)、）\( \neg \)、\( \land \)、\( \exists x\in L_{\alpha} \)（\( x \)为任意变量）、括号及\( L_{\alpha} \)的元素定义的集合的集合</p>
+        <p>&emsp;&emsp;\( L_\alpha=\bigcup\{L_\beta|\beta&lt;\alpha\} \)（\( \alpha\in Lim \)）</p>
+        <br>
+        <p>&emsp;&emsp;若将公式或者数学公理系统\( T \)中的一切\( \exists x \)替换成\( \exists x\in A \)时为真，则集合\( A \)是\( T \)的模型（记作\( A\vDash T \)）。也就是说，若\( L_\alpha\vDash KP \)，则\( \alpha \)为可容序数</p>
+        <p>&emsp;&emsp;第一个可容序数是\( \omega \)，其次为邱奇-克莱尼序数\( \omega_1^{CK} \)。这些序数分别“对应”\( \omega \)与\( \Omega \)。若将克里普克-普拉特克集合论替换成包含无穷公理的相同的数学公理系统，则\( \omega \)不再是可容序数，而\( \omega_1^{CK} \)将成为第一个可容序数。</p>
+        <p>&emsp;&emsp;我们也能得到如\( \omega_2^{CK} \)、\( \omega_3^{CK} \)等更大的可容序数，这些对应于\( \Omega_2 \)与\( \Omega_3 \)等。但是，相邻两可容序数的关系（如\( \omega_1^{CK} \)与\( \omega_2^{CK} \)、\( \omega_2^{CK} \)与\( \omega_3^{CK} \)等）并没有深入研究。而且其大小（即如何构建基本序列）并非为人所知。</p>
         <h1>版本历史</h1><hr>
         <h2>2024年12月13日 - V1.0</h2><hr>
         <p>&emsp;&emsp;◇最初版本。</p>
         <h2>2024年12月16日 - V1.1</h2><hr>
-        <p>&emsp;&emsp;◇修复了使如\( {\Psi}_{\Omega}^{0}({\varphi}_{{\Psi}_{\Omega}^{0}({\varphi}_{\Omega}(1))}(\Omega+1)) \)那样的序数展开异常的拉珍大\( \Psi \)函数中的尾部函数\( t \)的04.04.01.02.行。</p>
+        <p>&emsp;&emsp;◇修复了使如\( \Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varphi_\Omega(1))}(\Omega+1)) \)那样的序数展开异常的拉珍大\( \Psi \)函数中的尾部函数\( t \)的04.04.01.02.行。</p>
         <p>&emsp;&emsp;◇修复了电脑与手机版网站字体不同从而导致标题换行的问题。</p>
         <p>&emsp;&emsp;◇给本文章的复制按钮补充了更多说明。</p>
         <h2>2025年01月24日 - V1.2</h2><hr>
         <p>&emsp;&emsp;<b>※彻底修复了拉珍大\( \Psi \)函数的序数系统。</b></p>
         <p>&emsp;&emsp;◇由于在<a href="https://d-nb.info/1017849250/34" target="_blank">这篇论文中</a>，\( \Xi \)也用于表示更大的基数，为避免\( \Xi=I \)（其中\( I \)表示最小的不可达基数）这样的混淆，\( \Xi_1 \)将不再被改写为\( \Xi \)。</p>
         <p>&emsp;&emsp;◇由于函数指定（即将拓展布赫霍兹\( \psi \)函数记作\( \psi_\alpha^*(\beta) \)，拉珍小\( \psi \)函数记作\( \rho_\alpha(\beta) \)）所导致的混乱，在对应的帮助菜单中补充了一些文字。</p>
-        <p>&emsp;&emsp;◇在<a href="#1.1.8">关于指令“search”的段落</a>中补充了一些文字。</p>
+        <p>&emsp;&emsp;◇在<a href="#1.1.10">关于指令“search”的段落</a>中补充了一些文字。</p>
         <p>&emsp;&emsp;◇在<a href="#2.7">“序数表示法”段落</a>中补充了关于关键字“令”的一些文字。</p>
         <h2>2025年08月29日 - V1.3</h2><hr>
         <p>&emsp;&emsp;<b>※添加了“中增阶层”与“哈迪阶层”。</b></p>
@@ -558,9 +576,9 @@
         <p>&emsp;&emsp;◇当选择指令栏时，现在可以通过按↑和↓键以输入先前输入的指令。</p>
         <p>&emsp;&emsp;◇指令“search”现在可以设置最大搜索步数，并且找到序数时会显示用时。</p>
         <p>&emsp;&emsp;◇由于指令“search”导致在探索菜单中突出显示的序数不再由于展开或收起其他序数时取消突出显示。</p>
-        <p>&emsp;&emsp;◇添加了<a href="1.3">“选择按钮”</a>。可以通过在探索菜单中选择序数作为标记以方便查找。</p>
-        <p>&emsp;&emsp;◇于项目<a href="1.4.4">“化简模式”</a>添加了选项\( \omega^{\alpha*\beta} \)与\( \omega^{\alpha+\beta} \)。</p>
-        <p>&emsp;&emsp;◇于项目<a href="1.4.8">“改写\( \psi_\alpha(\beta) \)”</a>添加了选项\( \psi_{\Omega_\alpha}(\beta) \)。</p>
+        <p>&emsp;&emsp;◇添加了<a href="#1.3">“选择按钮”</a>。可以通过在探索菜单中选择序数作为标记以方便查找。</p>
+        <p>&emsp;&emsp;◇于项目<a href="#1.4.4">“化简模式”</a>添加了选项\( \omega^{\alpha*\beta} \)与\( \omega^{\alpha+\beta} \)。</p>
+        <p>&emsp;&emsp;◇于项目<a href="#1.4.8">“改写\( \psi_\alpha(\beta) \)”</a>添加了选项\( \psi_{\Omega_\alpha}(\beta) \)。</p>
         <p>&emsp;&emsp;◇优化了关闭背景动画时性能。</p>
         <p>&emsp;&emsp;◇减轻了打开帮助菜单时的卡顿现象。</p>
         <p>&emsp;&emsp;◇修复了化简某些序数时导致的错误。</p>
@@ -571,5 +589,11 @@
         <p>&emsp;&emsp;<b><span style="opacity: 0.25;">※（仅限英语）将“Rathjen's Little \( \psi \)”重命名为“Rathjen's Small \( \psi \)”。</span></b></p>
         <p>&emsp;&emsp;◇现在切换菜单时会改变网址，这允许快速访问以及文章引用。</p>
         <p>&emsp;&emsp;◇修复了帮助文章中的错误。</p>
+        <h2>2026年06月02日 - V1.5</h2><hr>
+        <p>&emsp;&emsp;◇修复了使某些序数展开异常的拉珍大\( \Psi \)函数中的尾部函数\( t \)的02.02.05.02.02.03.02.行。</p>
+        <p>&emsp;&emsp;◇修改了项目<a href="#1.4.10">“改写\( \Xi_\alpha \)”</a>中选项\( \Xi_\alpha \)的运作方式。</p>
+        <p>&emsp;&emsp;◇于<a href="#3">“一些值得提及的序数”</a>添加了<a href="#3.12">“邱奇-克莱尼序数\( \omega_1^{CK} \)及可容序数\( \omega_\alpha^{CK} \)”</a>。</p>
+        <p>&emsp;&emsp;◇重新编排了本文章。</p>
+        <p>&emsp;&emsp;◇修复了帮助文章中的错误，包括本文章中链接错误的问题。</p>
     </body>
 </html>
