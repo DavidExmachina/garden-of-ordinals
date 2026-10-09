@@ -1,0 +1,1002 @@
+[
+    [
+        "4100",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(T(v,(v,))),(v,(v,))(v,),Y))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}]) \\)"
+    ],
+    [
+        "4101",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)}]}_2) \\)"
+    ],
+    [
+        "4102",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)}]}_3) \\)"
+    ],
+    [
+        "4103",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_0]) \\)"
+    ],
+    [
+        "4104",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_1]) \\)"
+    ],
+    [
+        "4105",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_1:P_{(1,0)}]) \\)"
+    ],
+    [
+        "4106",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_1:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4107",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,)(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_2:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4108",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{&lt;(1,0)}-P_1:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4109",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,),Y(v,),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{&lt;(1,0)\\{\\omega\\}}-P_1:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4110",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4111",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,)(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}-P_{(0,1)}:P_{(1,1)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4112",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}-P_{(0,2)}:P_{(1,1)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4113",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)),(v,),Y(v,)(v,)(v,)(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}-P_{&lt;(1,0)}-P_{(0,1)}:P_{(1,1)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4114",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)\\{2\\}}]) \\)"
+    ],
+    [
+        "4115",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4116",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4117",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-P_{(1,0)}:P_{(1,1)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4118",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-{(P_{(1,0)}:P_{(1,1)})}_{\\{2\\}}]) \\)"
+    ],
+    [
+        "4119",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)}-{(P_{(1,0)}:P_{(1,1)})}_{\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4120",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}]) \\)"
+    ],
+    [
+        "4121",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)}]}_{[P_{(1,1)\\{2\\}}]+1}) \\)"
+    ],
+    [
+        "4122",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,)(v,),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)\\{2\\}}]}_2) \\)"
+    ],
+    [
+        "4123",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4124",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}-P_{(1,0)}:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4125",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}-P_{(1,0)}:P_{(1,1)\\{2\\}}]) \\)"
+    ],
+    [
+        "4126",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}-{(P_{(1,0)}:P_{(1,1)\\{2\\}})}_{\\{2\\}}]) \\)"
+    ],
+    [
+        "4127",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,)(v,),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{2\\}}-{(P_{(1,0)}:P_{(1,1)\\{2\\}})}_{\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4128",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{3\\}}]) \\)"
+    ],
+    [
+        "4129",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{4\\}}]) \\)"
+    ],
+    [
+        "4130",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))),Y(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),(v,),Y(v,(v,))(v,)(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{&lt;\\omega\\}}]) \\)"
+    ],
+    [
+        "4131",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))),Y(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),(v,),Y(v,(v,))(v,)(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+I_{[P_{(1,1)\\{&lt;\\omega\\}}]+1}) \\)"
+    ],
+    [
+        "4132",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))),Y(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),(v,),Y(v,(v,))(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+K_{[P_{(1,1)\\{&lt;\\omega\\}}]+1}) \\)"
+    ],
+    [
+        "4133",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))),Y(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,0)}]}_{[P_{(1,1)\\{&lt;\\omega\\}}]+1}) \\)"
+    ],
+    [
+        "4134",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))),Y(v,),Y(v,(v,))(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)}]}_{[P_{(1,1)\\{&lt;\\omega\\}}]+1}) \\)"
+    ],
+    [
+        "4135",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4136",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(+(v,(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{\\Omega\\}}]) \\)"
+    ],
+    [
+        "4137",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(S(T(v,(v,))),(v,(v,)),Y)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{[P_{(1,1)}]\\}}]) \\)"
+    ],
+    [
+        "4138",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{{[P_{(1,1)}]}_2\\}}]) \\)"
+    ],
+    [
+        "4139",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,),Y),Y(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,1)\\{[P_{(1,1)\\{{[P_{(1,1)}]}_2\\}}]\\}}]) \\)"
+    ],
+    [
+        "4140",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(T(v,(v,))),(v,(v,))(v,)(v,),Y))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}]) \\)"
+    ],
+    [
+        "4141",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,2)}]}_2) \\)"
+    ],
+    [
+        "4142",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,2)}]}_3) \\)"
+    ],
+    [
+        "4143",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,2)}]}_4) \\)"
+    ],
+    [
+        "4144",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4145",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-P_{(1,0)}:P_{(1,1)}]) \\)"
+    ],
+    [
+        "4146",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,),Y(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-P_{(1,0)}:P_{(1,2)}]) \\)"
+    ],
+    [
+        "4147",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-P_{(1,1)}]) \\)"
+    ],
+    [
+        "4148",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-P_{(1,1)}:P_{(1,2)}]) \\)"
+    ],
+    [
+        "4149",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)),Y(v,),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)}-{(P_{(1,1)}:P_{(1,2)})}_{\\{2\\}}]) \\)"
+    ],
+    [
+        "4150",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{2\\}}]) \\)"
+    ],
+    [
+        "4151",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)(v,)),Y(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{2\\}}-P_{(1,1)}:P_{(1,2)\\{2\\}}]) \\)"
+    ],
+    [
+        "4152",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{3\\}}]) \\)"
+    ],
+    [
+        "4153",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4154",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(+(v,(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{\\Omega\\}}]) \\)"
+    ],
+    [
+        "4155",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(S(T(v,(v,))),(v,(v,)),Y)))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{[P_{(1,2)}]\\}}]) \\)"
+    ],
+    [
+        "4156",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{{[P_{(1,2)}]}_2\\}}]) \\)"
+    ],
+    [
+        "4157",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(S(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y),Y(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{(1,2)\\{[P_{(1,2)\\{{[P_{(1,2)}]}_2\\}}]\\}}]) \\)"
+    ],
+    [
+        "4158",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,),Y))",
+        "\\( \\psi(\\Upsilon+[P_{(1,3)}]) \\)"
+    ],
+    [
+        "4159",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(T(v,(v,))),(v,(v,))(v,)(v,)(v,)(v,),Y))",
+        "\\( \\psi(\\Upsilon+[P_{(1,4)}]) \\)"
+    ],
+    [
+        "4160",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)),Y(v,)(v,)),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)}]) \\)"
+    ],
+    [
+        "4161",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)))",
+        "\\( \\psi(\\Upsilon+K_{[P_{&lt;(2,0)}]+1}) \\)"
+    ],
+    [
+        "4162",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,)),Y(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,0)}]}_{[P_{&lt;(2,0)}]+1}) \\)"
+    ],
+    [
+        "4163",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,),Y(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,1)}]}_{[P_{&lt;(2,0)}]+1}) \\)"
+    ],
+    [
+        "4164",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,)(v,),Y(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{(1,2)}]}_{[P_{&lt;(2,0)}]+1}) \\)"
+    ],
+    [
+        "4165",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)),Y(v,),(v,)(v,),Y(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+{[P_{&lt;(2,0)}]}_2) \\)"
+    ],
+    [
+        "4166",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)}-P_1]) \\)"
+    ],
+    [
+        "4167",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,)),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4168",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)}-P_{(1,1)}]) \\)"
+    ],
+    [
+        "4169",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,)(v,),Y(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)}-P_{(1,2)}]) \\)"
+    ],
+    [
+        "4170",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)),Y(v,),(v,)(v,),Y(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}]) \\)"
+    ],
+    [
+        "4171",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}-P_1]) \\)"
+    ],
+    [
+        "4172",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,)(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}-P_2]) \\)"
+    ],
+    [
+        "4173",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,)),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}-P_{(1,0)}]) \\)"
+    ],
+    [
+        "4174",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}-P_{(1,1)}]) \\)"
+    ],
+    [
+        "4175",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,(v,))(v,)(v,),Y(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{2\\}}-P_{(1,2)}]) \\)"
+    ],
+    [
+        "4176",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)(v,)),Y(v,),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{3\\}}]) \\)"
+    ],
+    [
+        "4177",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{3\\}}-P_1]) \\)"
+    ],
+    [
+        "4178",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{4\\}}]) \\)"
+    ],
+    [
+        "4179",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,)(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,),(v,),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)),Y(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{5\\}}]) \\)"
+    ],
+    [
+        "4180",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,),(v,)(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)),Y(v,),(v,),Y(v,(v,))(v,)(v,)(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}]) \\)"
+    ],
+    [
+        "4181",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,),(v,)(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)),Y(v,),(v,),Y(v,(v,))(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+K_{[P_{&lt;(2,0)\\{\\omega\\}}]+1}) \\)"
+    ],
+    [
+        "4182",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,),(v,)(v,),Y(v,(v,))(v,)),Y(v,(v,))(v,)(v,)),Y(v,(v,))(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_0]) \\)"
+    ],
+    [
+        "4183",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,),(v,)(v,),Y(v,(v,))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4184",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,)(v,),(v,)(v,),Y(v,(v,))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_{&lt;(2,0)}-P_0:P_2]) \\)"
+    ],
+    [
+        "4185",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,)(v,)(v,),(v,)(v,),Y(v,(v,))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_{&lt;(2,0)\\{2\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4186",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))),Y(v,),(v,)(v,),Y(v,(v,))(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4187",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\omega\\}}-P_1]) \\)"
+    ],
+    [
+        "4188",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(+(v,(v,))),)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Gamma_0\\}}-P_1]) \\)"
+    ],
+    [
+        "4189",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(+(v,(v,))),)))))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Gamma_0\\}}-P_1])\\}}-P_1]) \\)"
+    ],
+    [
+        "4190",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,),(v,)(v,),Y(+(v,(v,)))(v,)),Y(+(v,(v,)))(v,)(v,)),Y(+(v,(v,)))(v,)(v,)(v,)),Y(v,),(v,),Y(+(v,(v,)))(v,)(v,)(v,)(v,)),Y(+(v,(v,)))(v,)(v,)(v,)(v,)(v,)),Y(+(v,(v,)))(v,)(v,)(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}]) \\)"
+    ],
+    [
+        "4191",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,),(v,)(v,),Y(+(v,(v,)))(v,)),Y(+(v,(v,)))(v,)(v,)),Y(+(v,(v,)))(v,)(v,)(v,)),Y(v,),(v,),Y(+(v,(v,)))(v,)(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+K_{[P_{&lt;(2,0)\\{\\Omega\\}}]+1}) \\)"
+    ],
+    [
+        "4192",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,),(v,)(v,),Y(+(v,(v,)))(v,)),Y(+(v,(v,)))(v,)(v,)),Y(+(v,(v,)))(v,)(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_0]) \\)"
+    ],
+    [
+        "4193",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,),(v,)(v,),Y(+(v,(v,)))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4194",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,(v,)),(v,)(v,),Y(+(v,(v,)))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_0:P_{&lt;(2,0)\\{\\omega\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4195",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(S(+(v,(v,))),),(v,)(v,),Y(+(v,(v,)))(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_0:P_{&lt;(2,0)\\{\\Gamma_0\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4196",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))),Y(v,),(v,)(v,),Y(+(v,(v,)))(v,)(v,)))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_0:P_{&lt;(2,0)\\{\\Omega\\}}-P_0:P_2]) \\)"
+    ],
+    [
+        "4197",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(+(v,(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{\\Omega\\}}-P_1]) \\)"
+    ],
+    [
+        "4198",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,))))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{K_{[P_{&lt;(2,0)}]+1}\\}}-P_1]) \\)"
+    ],
+    [
+        "4199",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "(S(+(v,(v,))),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(S(S(T(v,(v,))),(v,(v,))(v,(v,)),Y),(v,),Y(v,)))))",
+        "\\( \\psi(\\Upsilon+[P_{&lt;(2,0)\\{[P_{&lt;(2,0)\\{K_{[P_{&lt;(2,0)}]+1}\\}}-P_1]\\}}-P_1]) \\)"
+    ]
+]
