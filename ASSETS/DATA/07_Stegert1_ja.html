@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;シュテガートの第一\( \Psi \)関数とはヤン＝カール・シュテガートが2010年に提案した順序数崩壊関数である<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数は\( \Psi_\alpha^\beta(\gamma) \)と表記されて、アルファベット\( \Psi \)も使えるため、区別するために、この順序数崩壊関数は計算メニューと探索メニューでは\( \mathfrak{p}_\mathbb{X}^\alpha \)と表されます。オプション &gt; 関数の特定 &gt; \( \Psi_\mathbb{X}^\alpha \) で復元できます。</p>
+        <p>&emsp;&emsp;この順序数システム全体は3つの関数：\( \varphi_\alpha(\beta) \)、\( \alpha^+ \)と\( \Psi_\mathbb{X}^\alpha \)と\( \Pi_0^2 \)-記述不能基数\( \Xi \)で構成されており、後ほど説明および定義します。</p>
+        <h2>関数\( \varphi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)はヴェブレン関数を表します。「ヴェブレン関数」のインターフェースのヘルプメニューに示されている通り、このように定義されます：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> すべての非0の順序数\( \alpha \)に対して、\( \varphi_{\alpha}(\beta) \)はすべての\( \alpha'&lt;\alpha \)で関数\( \gamma\mapsto\varphi_{\alpha'}(\gamma) \)の\( 1+\beta \)番目の共通の不動点を返します。</p>
+        <h2>関数\( \alpha^+ \)</h2><hr>
+        <p>&emsp;&emsp;\( \alpha^+ \)は\( \alpha \)の後続基数を表し、\( \alpha \)より大きい最小の基数を返します。例えば：\( \omega^+=\Omega \)、\( \Omega^+=\Omega_2 \)、\( {\Omega_2}^+=\Omega_3 \)などです。</p>
+        <h2>関数\( \Psi_\mathbb{X}^\alpha \)</h2><hr>
+        <p>&emsp;&emsp;\( \Psi_\mathbb{X}^\alpha \)は崩壊関数を表し、この順序数システムの核心です。他の順序数崩壊関数と違って、この順序数崩壊関数は一つの順序数と一つの「反映実例」という特別な数学的対象を入力として受け取ります。反映実例と配置の複雑さのため、この関数は極めて複雑であり、理解するのが最も難しい順序数崩壊関数の一つになります。</p>
+        <p>&emsp;&emsp;\( \Psi_\mathbb{X}^\alpha \)は集合\( \mathfrak{M}_\mathbb{X}^\alpha \)の最小要素を返します。その集合は、反映実例\( \mathbb{X} \)に応じて、次を含む（ただしこれらに限定されない）条件を満たす順序数\( \kappa \)を含みます：</p>
+        <p>&emsp;&emsp;1. \( \kappa&lt;i(\mathbb{X}) \)、ここで表記\( i(\mathbb{X}) \)は後で定義されます。</p>
+        <p>&emsp;&emsp;2. \( \kappa\in \)ある集合（場合によっては）。</p>
+        <p>&emsp;&emsp;3. \( C(\alpha,\kappa)\cap i(\mathbb{X})=\kappa \)、ここで集合\( C(\alpha,\beta) \)は後で定義されます。</p>
+        <p>&emsp;&emsp;4. \( \mathbb{X},\alpha\in C(\kappa) \)、ここで\( C(\kappa)=\{\alpha|\alpha\in C(\alpha,\kappa)\} \)、表記\( \mathbb{X}\in C(\alpha,\beta) \)は後で定義されます。</p>
+        <h3>集合\( C(\alpha,\beta) \)</h3>
+        <p>&emsp;&emsp;論文中で「第\( \alpha \)の\( \beta \)のスコーレム閉包」と呼ばれる集合\( C(\alpha,\beta) \)は、次のように定義されます：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \beta\cup\{0,\Xi\} \\
+                                        C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma={\alpha'}^+\land\alpha'\in C_n(\alpha,\beta)\cap Card\cap\Xi\} \\
+                                        \cup & \{\gamma|\gamma=\Psi_\mathbb{X}^{\alpha'}\land\alpha'\in C_n(\alpha,\beta)\cap\alpha\} \\
+                                        C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \end{align} \)</p>
+        <p>&emsp;&emsp;ここで、\( Card \)は基数のクラスを表します（\( \omega=\varphi_0(1)=\varphi_0(\varphi_0(0)) \)も含まれています）。定義中の\( \mathbb{X} \)は定義明確（well-defined）であるべきです。</p>
+        <h3>反映実例と配置</h3>
+        <p>&emsp;&emsp;<b>反映実例</b>\( \mathbb{X} \)はこの順序数崩壊関数の専用の数学的対象です。これらは5つの要素で構成されて、\( (\pi;(M_{\mathbb{M}(\vec{v})}^\xi-)P_m;\vec{R};\mathbb{Z};\alpha) \)の形式であります。簡単に言えば：</p>
+        <p>&emsp;&emsp;第1の要素\( \pi \)はこの反映実例を定義するために使用される非可算正則基数を表します。\( i(\mathbb{X})=\pi \)と定義します。</p>
+        <p>&emsp;&emsp;第2の要素\( P_m \)或いは\( M_{\mathbb{M}(\vec{v})}^\xi-P_m \)と第3の要素\( \vec{R} \)は集合\( \mathfrak{M}_\mathbb{X}^\beta \)に含まれる順序数の特徴を表します。</p>
+        <p>&emsp;&emsp;第4の要素\( \mathbb{Z} \)は第1の要素\( \pi \)に使用される反映実例を表します。\( \pi \)は\( \Psi_\mathbb{Z}^\delta \)の形式ではない場合、この要素は\( \epsilon \)であり、それは「無」或いは「空白」を表します。「イプシロン数」を表する\( \varepsilon \)とは異なることに注意してください。</p>
+        <p>&emsp;&emsp;第5の要素\( \alpha \)は反映実例全体は順序数崩壊関数に代入される場合、ここで使用できる順序数の下限を表します。例えば、\( \alpha=\omega \)である場合、\( 9 \)は\( \omega \)より小さいので、\( \Psi_\mathbb{X}^9 \)は未定義であります。\( \omega \)この場合では使用できる最小の順序数であるため、\( \Psi_\mathbb{X}^\omega \)は定義明確であります。\( o(\mathbb{X})=\alpha \)と定義します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>反映配置</b>は複数の順序数を入力として受け取り、反映実例を返す関数です。各反映配置は、一つの非可算正則基数を用いて一意に定義されます。その変数の数と定義域は、この反映配置に使用される非可算正則基数に依存します。変数をとらず、ただ一つの反映実例を返する場合もあります。</p>
+        <p>&emsp;&emsp;論文では反映実例と配置の完全形はかなり複雑で面倒です。基数を何度も崩壊して得た順序数に遭遇する場合、第4の要素を2回書き出さなければならないため、指数関数的に多くの記号が必要となり、崩壊するたびに2倍になります。</p>
+        <p>&emsp;&emsp;そのため、ここで「反映括弧表記」をご紹介します。それは反映実例\( \mathbb{G}(\alpha_0,\alpha_1,\cdots,\alpha_n) \)を\( [i(\mathbb{G}),\alpha_0,\alpha_1,\cdots,\alpha_n] \)と表し、反映配置\( \mathbb{G} \)を\( [i(\mathbb{G}),\cdots] \)と表します。反映配置\( \mathbb{G} \)は変数をとらない場合、それが返する唯一の反映実例は末尾にカンマを付けて、\( [i(\mathbb{G}),] \)とも表されます。これは後で紹介する「記述不能括弧表記」との混同を避けるためです。\( \mathbb{X}\in C(\alpha,\beta) \)を\( \kappa,\alpha_0,\alpha_1,\cdots,\alpha_n\in C(\alpha,\beta) \)と定義します。ここで、\( \mathbb{X}=[\kappa,\alpha_0,\alpha_1,\cdots,\alpha_n] \)。</p>
+        <p>&emsp;&emsp;第3の要素\( \vec{R} \)は「M-P-数式」と呼ばれる数学的対象の配列であり、\( M_\mathbb{F}^{&lt;\alpha}-P_n \)の形式であります。それは、任意の\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)を定義明確させる\( \gamma&lt;\alpha \)と\( \alpha_0,\alpha_1,\cdots,\alpha_n \)に対して、集合\( \mathfrak{M}_\mathbb{X}^\beta \)に含まれるすべての要素は\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)-\( \Pi_n^1 \)-記述不能であることを意味します。\( \gamma=o(\mathbb{F}) \)の場合、前述の要素は、代わりに\( \Pi_n^1 \)-記述不能である。この要素はM-P-数式を全く持たないことも可能です。その場合、この要素は\( \epsilon \)と表されます。</p>
+        <p>&emsp;&emsp;各反映配置、ひいては反映実例の定義は極めて複雑です。完全な定義については、<a href="#3.3">「反映」</a>部分をご覧ください。</p>
+        <h3>\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能基数</h3>
+        <p>&emsp;&emsp;\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能基数はこの順序数崩壊関数でよく使用されている基数であり、次のように定義されます：</p>
+        <p>&emsp;&emsp;順序数のクラス\( \mathfrak{M} \)に対して、任意の\( U_1,\cdots,U_m\subseteq V_\kappa \)と言語\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \)の\( \Pi_n^1 \)文\( F \)に対して、次の条件を満たす場合、基数\( \kappa \)は\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能（或いは\( \mathfrak{M} \)で\( \Pi_n^1 \)-記述不能）であります：</p>
+        <p>&emsp;&emsp;\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle\vDash F \)ならば、\( \langle V_\alpha,\in,U_1\cap V_\alpha,\cdots,U_m\cap V_\alpha\rangle\vDash F \)を満たす非0で\( \kappa \)より小さい順序数\( \alpha\in\mathfrak{M} \)が存在する。</p>
+        <br>
+        <p>&emsp;&emsp;\( \mathfrak{M} \)が省略されている場合、ラティエンの大\\( \\Psi \\)関数のヘルプ記事における定義と全く同じであります。即ち、\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能性は\( \Pi_n^1 \)-記述不能性を意味する。</p>
+        <p>&emsp;&emsp;こうやって、基数は\( \Pi_n^1 \)-記述不能だけではなく、とある順序数のクラスで\( \Pi_n^1 \)-記述不能であることが可能になります。その結果、色んな複雑な記述不能基数を作ることも可能になります。それらの基数を簡単に表するため、「記述不能括弧表記」という表記はこのサイトで定義されます。完全な定義については、メインヘルプ記事をご覧ください。例えば：</p>
+        <p>&emsp;&emsp;\( [P_0] \)は最小の\( \Pi_0^1 \)-記述不能基数、つまり<b>強</b>到達不能基数<sup><a id="g2" href="#c2">[2]</a></sup>を表します。</p>
+        <p>&emsp;&emsp;\( [P_0-P_0] \)は最小の\( \{\kappa|\kappa\)は\( \Pi_0^1 \)-記述不能である\(\} \)-\( \Pi_0^1 \)-記述不能基数、つまり\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_0-P_0-P_0] \)は最小の\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_1] \)は最小の\( \Pi_1^1 \)-記述不能基数、つまり弱コンパクト基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_1-P_0] \)は最小の\( \Pi_1^1 \)-記述不能-\( \Pi_0^1 \)-記述不能基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_1-P_0:P_1] \)は最小の\( \Pi_1^1 \)-記述不能-\( \Pi_0^1 \)-記述不能の同時に\( \Pi_1^1 \)-記述不能である基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_1-P_1] \)は最小の\( \Pi_1^1 \)-記述不能-\( \Pi_1 \)-記述不能基数を表します。</p>
+        <p>&emsp;&emsp;\( [P_2] \)は最小の\( \Pi_2^1 \)-記述不能基数を表します。</p>
+        <h3>ラティエンの大\( \Psi \)関数との類似点</h3>
+        <p>&emsp;&emsp;シュテガートの第一\( \Psi \)関数はラティエンの大\( \Psi \)関数に似ています。どちらの関数も、括弧内（今回は上つき）の変数に関して単調増加しません。</p>
+        <p>&emsp;&emsp;ラティエンの大\( \Psi \)関数の定義から：</p>
+        <p>&emsp;&emsp;\( \begin{align} \Psi_\alpha^\beta(\gamma)=min(\{\delta| & \delta\in M^\beta\cap\alpha \\ & C(\gamma,\delta)\cap\alpha=\delta \\ & \alpha,\gamma\in C(\gamma,\delta) \}\cup\{\alpha\}) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \mathfrak{M}_\mathbb{X}^\alpha \)の定義を模倣するため、集合\( M_\alpha^\beta(\gamma) \)を次のように定義できます：</p>
+        <p>&emsp;&emsp;\( \Psi_\alpha^\beta(\gamma) \)は集合\( M_\alpha^\beta(\gamma) \)の最小要素を返します。その集合は次の条件を満たす順序数\( \kappa \)を含みます：</p>
+        <p>&emsp;&emsp;1. \( \kappa&lt;\alpha \).</p>
+        <p>&emsp;&emsp;2. \( \kappa\in M^\beta \).</p>
+        <p>&emsp;&emsp;3. \( C(\gamma,\kappa)\cap\alpha=\kappa \).</p>
+        <p>&emsp;&emsp;4. \( \alpha,\gamma\in C(\gamma,\kappa) \).</p>
+        <p>&emsp;&emsp;\( M_\alpha^\beta(\gamma) \)は未定義である場合、\( \Psi_\alpha^\beta(\gamma) \)は\( \alpha \)を返します。</p>
+        <br>
+        <p>&emsp;&emsp;それと、集合\( M^\beta \)はいくつかの記述不能基数のクラスに対応できます：</p>
+        <p>&emsp;&emsp;\( M^1 \)は\( \Pi_0^1 \)-記述不能基数のクラスに対応します。</p>
+        <p>&emsp;&emsp;\( M^2 \)は\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能基数のクラスに対応します。</p>
+        <p>&emsp;&emsp;\( M^3 \)は\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能-\( \Pi_0^1 \)-記述不能基数のクラスに対応します。</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;こうやって、シュテガートの第一\( \Psi \)関数は使用している非可算正則基数に応じて変数の数が変動するラティエンの大\( \Psi \)の拡張とみなすことができます。</p>
+        <h2>\( \Pi_0^2 \)-記述不能基数\( \Xi \)</h2><hr>
+        <p>&emsp;&emsp;\( \Pi_0^2 \)-記述不能基数\( \Xi \)はこの順序数崩壊関数のカギとなり、任意の自然数\( n \)に対しても\( \Pi_n^1 \)-記述不能である最小の基数と定義されます。この順序数崩壊関数の仕組みはこの基数を複数回崩壊（反映配置を構造し、順序数を代入し、そしてそれを順序数崩壊関数に代入すること）し、指定された基数を得ることです。実は、上記のすべての記述不能括弧表記で表される基数例はこの方法で得られます。\( \Pi_0^1 \)-記述不能基数が<b>強</b>到達不能基数と同等であるため、アレフ数ではなく、ベート数に基づいた一連の基数使用していることに注意してください。順序数崩壊関数で使用する基数は<b>完全に恣意的なもの</b>であるため、この順序数崩壊関数は、以前の順序数崩壊関数と同様に作動します。欲しければ、「一般連続体仮説」を仮定し、アレフ数とベート数の差異をなくすこともできます。</p>
+        <br>
+        <p>&emsp;&emsp;シュテガートの第一\( \Psi \)関数は完璧ではありません。論文には、この順序数崩壊関数が作動不能になる原因となる多くの誤りがあります。そのため、ここでのシュテガートの第一\( \Psi \)関数のバージョンは、論文とは異なる点があります。論文からの変更点はすべてここで説明します。また、その際には、論文に基づく元のバージョンもここで提供します。</p>
+        <p>&emsp;&emsp;順序数\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Xi+1}} \)は「小シュテガート順序数（SSO）」と呼ばれます。これは\( KP+\Pi_\omega-reflection \)の証明論的順序数の上限である。</p>
+        <h1>専用コマンド「ref」</h1><hr>
+        <p>&emsp;&emsp;計算インターフェースでこの順序数システムの専用のコマンド<b>「ref」</b>を使うことができます。コマンド「ref ord」はコンピュータコードは「ord」である順序数を用いて定義されたの反映配置の完全形と\( \vec{R} \)値を表示します。「ord」が(sC,...)の形式であり、順序数\( \Psi_\mathbb{X}^\alpha \)に対応する場合（Cはコンピュータコードである）、反映実例\( \mathbb{X} \)の完全形と集合\( \mathfrak{M}_\mathbb{X}^\alpha \)の定義も表示します。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b></p>
+        <p>&emsp;&emsp;入力：ref (+(v,(v,)))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( [{\omega}^{+},]=({\omega}^{+};{P}_{0};\epsilon;\epsilon;0) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \vec{R}_{{\omega}^{+}}=({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0}) \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b></p>
+        <p>&emsp;&emsp;入力：ref (sZ,(v,)(v,),(v,(v,)))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( [{\mathfrak{p}}_{[\Xi,2]}^{\omega},]=({\mathfrak{p}}_{[\Xi,2]}^{\omega};{P}_{1};({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0});[\Xi,2];\omega+1) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [\Xi,2]=(\Xi;{P}_{2};\epsilon;\epsilon;\omega) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \vec{R}_{{\mathfrak{p}}_{[\Xi,2]}^{\omega}}=({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{1},{M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0}) \)</p>
+        <br>
+        <p>&emsp;&emsp;集合\( \mathfrak{M}_{[\Xi,2]}^{\omega} \)には、次のすべての条件を満たす順序数\( \alpha \)が含まれます：</p>
+        <p>&emsp;&emsp;1. \( \alpha&lt;\Xi \)</p>
+        <p>&emsp;&emsp;2. \( C(\omega,\alpha)\cap\Xi=\alpha \)</p>
+        <p>&emsp;&emsp;3. \( [\Xi,2],\omega\in C(\alpha) \)</p>
+        <p>&emsp;&emsp;4. \( \alpha \)は\( \Pi_{1}^1 \)-記述不能である</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b></p>
+        <p>&emsp;&emsp;入力：ref (s(sZ,(v,),(v,(v,))),(v,(v,))(v,))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( {\mathfrak{p}}_{[{\mathfrak{p}}_{[\Xi,1]}^{\omega},]}^{\omega+1} \)の反映配置は定義されていません。</p>
+        <br>
+        <p>&emsp;&emsp;\( [{\mathfrak{p}}_{[\Xi,1]}^{\omega},]=({\mathfrak{p}}_{[\Xi,1]}^{\omega};{P}_{0};\epsilon;[\Xi,1];\omega+1) \)</p>
+        <br>
+        <p>&emsp;&emsp;集合\( \mathfrak{M}_{[{\mathfrak{p}}_{[\Xi,1]}^{\omega},]}^{\omega+1} \)には、次のすべての条件を満たす順序数\( \alpha \)が含まれます：</p>
+        <p>&emsp;&emsp;1. \( \alpha&lt;{\mathfrak{p}}_{[\Xi,1]}^{\omega} \)</p>
+        <p>&emsp;&emsp;2. \( C(\omega+1,\alpha)\cap{\mathfrak{p}}_{[\Xi,1]}^{\omega}=\alpha \)</p>
+        <p>&emsp;&emsp;3. \( [{\mathfrak{p}}_{[\Xi,1]}^{\omega},],\omega+1\in C(\alpha) \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例4：</b></p>
+        <p>&emsp;&emsp;入力：ref (v,(v,))</p>
+        <p>&emsp;&emsp;コンソール：</p>
+        <p>&emsp;&emsp;\( \omega \)の反映配置は定義されていません。</p>
+        <h1>順序数表記</h1><hr>
+        <h2>表記</h2><hr>
+        <p>&emsp;&emsp;\( S^* \)を次の文字を含む文字列の集合として定義します：</p>
+        <p>&emsp;&emsp;定数「\( \overline{0} \)」と「\( \Xi \)」、</p>
+        <p>&emsp;&emsp;関数文字「\( \varphi \)」、「\( ^+ \)」、「\( \Psi \)」と「\( v \)」、</p>
+        <p>&emsp;&emsp;そして他の文字「\( + \)」、「\( ( \)」、「\( ) \)」と「\( , \)」。</p>
+        <br>
+        <p>&emsp;&emsp;また、\( S \)を\( S^* \)に含まれて、「\( v \)」を含まない文字列の集合として定義します。つまり、\( S \)は\( S^* \)の部分集合です。</p>
+        <p>&emsp;&emsp;\( S^* \)の部分集合、\( T_m^* \)と\( T_s^* \)を次のように定義します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Xi\in T_m^* \)及び\( \Xi\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 任意の\( a\in T_s^* \)と\( b\in T_m^*\setminus\{\overline{0}\} \)に対して、\( a+b\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 任意の\( a,b\in T_m^* \)に対して、\( \varphi(a,b)\in T_m^* \)及び\( \varphi(a,b)\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 任意の\( a\in T_m^* \)に対して、\( a^+\in T_m^* \)及び\( a^+\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 任意の\( b,a_0,a_1,a_2,\cdots,a_n\in T_m^* \)及び\( n\in\mathbb{N} \)に対して、\( \Psi(b,a_1,a_2,\cdots,a_n,a_0)\in T_m^* \)及び\( \Psi(b,a_1,a_2,\cdots,a_n,a_0)\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 任意の\( a\in\mathbb{N} \)に対して、\( v(a)\in T_m^* \)及び\( v(a)\in T_s^* \)</p>
+        <br>
+        <p>&emsp;&emsp;また、\( T_m \)と\( T_s \)をそれぞれ\( T_m^* \)と\( T_s^* \)に含まれて、「\( v \)」を含まない文字列の集合として定義します。つまり、\( T_m \)と\( T_s \)はそれぞれ\( T_m^* \)と\( T_s^* \)の部分集合です。</p>
+        <p>&emsp;&emsp;\( MP \)を「M-P-数式」文字列の集合と次のように定義します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \epsilon\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 任意の\( a,b,c\in T_m \)に対して、\( (M_{[a,\cdots]}^{&lt;b}-P_c)\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 任意の\( A,B\in MP\setminus\{\epsilon\} \)に対して、\( AB\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 任意の\( A\in MP \)に対して、\( A\epsilon=\epsilon A=A \)</p>
+        <br>
+        <p>&emsp;&emsp;この記事では、次の略記を使用します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Psi_{[b,]}^a:=\Psi(b,a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \Psi_{[b,a_1,a_2,\cdots,a_n]}^{a_0}:=\Psi(b,a_1,a_2,\cdots,a_n,a_0) \)、ここで\( n\in\mathbb{N} \)及び\( n\ge1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( v_a:=v(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 任意の\( n\in\mathbb{N} \)に対して、\( \overline{n+1}:=\overline{n}+\overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 任意の\( (M_0)(M_1)\cdots(M_n)\in MP \)及び\( n\in\mathbb{N} \)に対して、\( (M_0,M_1,\cdots,M_n):=(M_0)(M_1)\cdots(M_n) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \exists_m^n x(P(x)):\Leftrightarrow\exists x\in\{k\in\mathbb{N}|m\le k\le n\}(P(x)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \forall_m^n x(P(x)):\Leftrightarrow\forall x\in\{k\in\mathbb{N}|m\le k\le n\}(P(x)) \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;二項関係\( &lt; \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( b=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\overline{0}\land b\neq\overline{0} \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_0&lt;b_0 \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( \neg a_0&lt;b_0 \)ならば、\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( a_0&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \neg b_0&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Xi\land b=\Xi \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> \( a_0&lt;b_0 \)ならば、\( a_1&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> \( b_0&lt;a_0 \)ならば、\( a&lt;b_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> \( a_0=_*b_0 \)ならば、\( a_1&lt;b_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> \( a={a_0}^+\land b={b_0}^+\land a_0,b_0\in T_m \)ならば、\( a_0&lt;b_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_m]}^{a_0}\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a',a_0,a_1,a_2,\cdots,a_m,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> \( \neg b&lt;a' \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 上記以外の場合、\( \neg a_0&lt;b_0\land(\neg b'\in C(a_0,a)\vee\exists_0^n i(\neg b_i\in C(a_0,a))) \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> 上記以外の場合、\( \neg a&lt;b' \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.04.</span> 上記以外の場合、\( \neg a'\in C(b_0,b)\vee\exists_0^m i(\neg a_i\in C(b_0,b)) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.05.</span> 上記以外の場合、\( b_0&lt;a_0 \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.06.</span> 上記以外の場合、\( a_0&lt;b_0 \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.</span> 上記以外の場合、\( a'&lt;b'\vee b'&lt;a' \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.</span> \( i=1,2,\cdots,m \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.01.</span> \( a_i&lt;b_i \)ならば、\( a_i\in C(b_i,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.02.</span> \( b_i&lt;a_i \)ならば、\( \neg b_i\in C(a_i,a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.09.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( a=\Xi\land b\neq\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> \( b=\varphi_{b_0}(b_1)\land b_0,b_1\in T_m \)ならば、\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> \( b={b_0}^+\land b_0\in T_m \)ならば、\( a&lt;b_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> \( b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land b',b_0,b_1,b_2,\cdots,b_n\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> \( a\neq\Xi\land b=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.01.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a_0&lt;b\land a_1&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.02.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( a_0&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.03.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば、\( \mathbb{T} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">12.</span> \( a=\varphi_{a_0}(a_1)\land(b={b_0}^+\vee b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0})\land a_0,a_1,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">12.01.</span> \( a_0&lt;b\land a_1&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">13.</span> \( (a={a_0}^+\vee a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0})\land b=\varphi_{b_0}(b_1)\land a',a_0,a_1,a_2,\cdots,a_n,b_0,b_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">13.01.</span> \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.</span> \( a={a_0}^+\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a_0,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.01.</span> \( b'={b''}^+\land b''\in T_m \)ならば、\( a&lt;b' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.02.</span> 上記以外の場合、\( a_0&lt;b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land b={b_0}^+\land a',a_0,a_1,a_2,\cdots,a_n,b_0\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.01.</span> \( a'={a''}^+\land a''\in T_m \)ならば、\( \neg b&lt;a' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.02.</span> 上記以外の場合、\( \neg b_0&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;論文中のシュテガートの第一\( \Psi \)関数における2つの\( \Psi \)項の比較に関する定理2.3.14には異常な挙動を引き起こす問題があります。いずれにせよ、論文から得た行09.を次のように示します：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_m]}^{a_0}\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a',a_0,a_1,a_2,\cdots,a_m,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> \( \neg b&lt;a' \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 上記以外の場合、\( \neg a_0&lt;b_0\land(\neg b'\in C(b',a)\vee\exists_0^n i(\neg b_i\in C(b_i,a))) \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> 上記以外の場合、\( \neg a&lt;b' \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.04.</span> 上記以外の場合、\( \neg a'\in C(a',b)\vee\exists_0^m i(\neg a_i\in C(a_i,b)) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.05.</span> 上記以外の場合、\( a_0&lt;b_0 \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.06.</span> 上記以外の場合、\( a'&lt;b'\vee b'&lt;a' \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.</span> \( i=0,1,\cdots,m \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.01.</span> \( a_i&lt;b_i \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.02.</span> \( b_i&lt;a_i \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;他のすべての比較演算子を定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg a&lt;b \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg a&lt;b\land\neg b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( a&lt;b\vee b&lt;a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( = \)と\( \neq \)は記号的な等価性を表し、\( =_* \)と\( \neq_* \)は数値的な等価性を表すことに注意してください。</p>
+        <h2>反映</h2><hr>
+        <p>&emsp;&emsp;順序数が無限基数であるかどうかを判断するため、関数\( \in Card \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in Card)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a_0=\overline{0}\land a_1=\overline{1} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( a_0\in Card \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a'={a''}^+\land a''\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数が非可算正則基数であるかどうかを判断するため、関数\( \in Reg \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in Reg)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば、\( Plug(a)\neq\overline{0} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;反映配置の変数の数の関数\( R_v \)を次のように定義します。この関数は順序数文字列を入力として受け取り、自然数を返し、両者には違いがあることに注意してください。しかし、自然数を順序数文字列に変換するのは簡単で、その逆も同様です。すべての自然数を順序数文字列に置き換えても、この関数は正常に作動します。それと、\( 0 \)と\( 1 \)は自然数であり、\( \overline{0} \)と\( \overline{1} \)は順序数文字列であることに注意してください。</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto R_v(a)\in\mathbb{N} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( 1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a'=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( a_0&lt;\overline{\omega} \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \neg a_0&lt;\overline{\omega} \)ならば、\( 2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> \( Plug(a)=\overline{0} \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> \( Plug(a)\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> \( \neg LB_0(a')&lt;a_0\land\neg LB_0(a'') \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.</span> \( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''=\Xi \)ならば、\( 2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.</span> \( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''\neq\Xi \)ならば、\( R_v(a'')+1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.05.</span> \( LB_0(a')&lt;a_0 \)ならば、\( 1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> \( \neg LB_0(a'')&lt;b'' \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> \( LB_0(a'')&lt;b''\land a''=\Xi \)ならば、\( 2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.</span> \( LB_0(a'')&lt;b''\land a''\neq\Xi \)ならば、\( R_v(a'')+1 \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;反映配置第二要素関数\( R_v \)を次のように定義します。この要素しか変数の影響を受けないため、この関数は変数を含まる順序数文字列を返すことに注意してください：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto R_2(a)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( v_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a'=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( a_0&lt;\overline{\omega} \)ならば、\( Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \neg a_0&lt;\overline{\omega} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> \( Plug(a)=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> \( Plug(a)\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> \( \neg LB_0(a')&lt;a_0\land\neg LB_0(a'') \)ならば、\( Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.</span> \( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.01.</span> \( Plug(a)[\overline{0}]=\overline{0} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.02.</span> \( Plug(a)[\overline{0}]\neq\overline{0} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.</span> \( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''\neq\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.01.</span> \( Plug(a)[\overline{0}]=\overline{0} \)ならば、\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.02.</span> \( Plug(a)[\overline{0}]\neq\overline{0} \)ならば、\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.05.</span> \( LB_0(a')&lt;a_0 \)ならば、\( \Psi_{[a',]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> \( \neg LB_0(a'')&lt;b'' \)ならば、\( c \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> \( LB_0(a'')&lt;b''\land a''=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.01.</span> \( c=\overline{0} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.</span> \( c\neq\overline{0} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0}+c \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.</span> \( LB_0(a'')&lt;b''\land a''\neq\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.01.</span> \( c=\overline{0} \)ならば、\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.02.</span> \( c\neq\overline{0} \)ならば、\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0}+c \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;「M-P-数式」文字列を返す関数\( \vec{R} \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto \vec{R}_a\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a=\Xi \)ならば、\( \epsilon \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \epsilon \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \epsilon \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( (M_{[\Xi,\cdots]}^{&lt;\overline{\omega}}-P_\overline{0}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( a'=\Xi \)ならば、\( (M_{[a',\cdots]}^{&lt;a_0}-P_{Plug(a)[\overline{0}]},\cdots,M_{[a',\cdots]}^{&lt;a_0}-P_\overline{2},M_{[a',\cdots]}^{&lt;a_0}-P_\overline{1},M_{[a',\cdots]}^{&lt;a_0}-P_\overline{0}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> \( Plug(a)=\overline{0} \)ならば、\( \epsilon \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> \( Plug(a)\neq\overline{0} \)ならば、\( (\widetilde{M}_{[a',\cdots]}^{&lt;a_0}-P_{Plug(a)[\overline{0}]})({(\vec{R}_{a'})}_{(Plug(a)[\overline{0}],\overline{0}]}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.02.</span> \( r=\overline{0} \)ならば、\( \vec{R}_p \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.03.</span> \( r\neq\overline{0} \)ならば、\( ({(\vec{R}_p)}_{(\overline{\omega},r]})(\widetilde{M}_{[a',\cdots]}^{&lt;a_0}-P_{r[\overline{0}]})({(\vec{R}_{a'})}_{(r[\overline{0}],\overline{0}]}) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;下限関数\( LB \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto LB_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( R_v(a)&lt;k \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg R_v(a)&lt;k \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( k=0 \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( k=1 \)ならば、\( \overline{1} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> \( k=0 \)ならば、\( Suc(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> \( k\neq0 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> \( a'=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.01.</span> \( k=1 \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.02.</span> \( k=2 \)ならば、\( Plug(a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k=1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( LB_0(a')&lt;a_0 \)ならば、\( LB_0(a'') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( \neg LB_0(a')&lt;a_0 \)ならば、\( LB_0(a') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( a''=\Xi \)ならば、\( Plug(a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( a''\neq\Xi \)ならば、\( LB_{k-1}(a'') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> \( k=1 \)ならば、\( LB_0(a'') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> \( a''=\Xi \)ならば、\( Suc(c) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> \( a''\neq\Xi \)ならば、\( LB_{k-1}(a'') \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;上限関数\( UB \)を次のように定義します。\( UB_k(a)=\overline{0} \)の場合、上限は存在しないことに注意してください：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto UB_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( R_v(a)&lt;k \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg R_v(a)&lt;k \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( k=0 \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( k=1 \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> \( k=0 \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> \( k\neq0 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> \( a'=\Xi \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.01.</span> \( k=1 \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.02.</span> \( k=2 \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k=1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( LB_0(a')&lt;a_0 \)ならば、\( b'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( \neg LB_0(a')&lt;a_0 \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( a''=\Xi \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( a''\neq\Xi \)ならば、\( UB_{k-1}(a'') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> \( k=1 \)ならば、\( b'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> \( a''=\Xi \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> \( a''\neq\Xi \)ならば、\( UB_{k-1}(a'') \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;崩壊基数関数\( CC \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto CC_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( R_v(a)&lt;k \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg R_v(a)&lt;k \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\Xi \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> \( k=0 \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> \( k\neq0 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> \( a'=\Xi \)ならば、\( a' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k=1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( LB_0(a')&lt;a_0 \)ならば、\( a'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( \neg LB_0(a')&lt;a_0 \)ならば、\( a' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> \( a''=\Xi \)ならば、\( a'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> \( a''\neq\Xi \)ならば、\( CC_{k-1}(a'') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> \( k=1 \)ならば、\( a'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> \( a''=\Xi \)ならば、\( a'' \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> \( a''\neq\Xi \)ならば、\( CC_{k-1}(a'') \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;変数は定義域の中であるかどうかを判断するため、関数\( \in dom(\mathbb{F}) \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m,k\in\mathbb{N})\mapsto(b\in dom_k(\mathbb{F}_a))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( R_v(a)&lt;k \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( b&lt;LB_k(a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( \neg b&lt;UB_k(a)\land UB_k(a)\neq\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( k=0\land\neg b\in C(b,a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 上記以外の場合、\( k\neq0\land\neg b\in C(UB_k(a),a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 上記以外の場合、\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( k\le1 \) return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( k&gt;1 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> \( a'=\Xi \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> \( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> \( a''=\Xi\vee b\in dom_{k-1}(\mathbb{F}_{a''}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.</span> \( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.01.</span> \( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.02.</span> \( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.03.</span> \( a''=\Xi\vee b\in dom_{k-1}(\mathbb{F}_{a''}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 上記以外の場合、\( \mathbb{T} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;論文によれば、行04.と行05.は次のように統合されます：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 上記以外の場合、\( \neg b\in C(b,a) \)ならば、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;この変更が行われた理由は、元のコードでは\( \Psi_{[\Psi_{[\Psi_{[\Xi,\overline{2}]}^\overline{\omega},]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}},\Psi_{[\Psi_{[\Xi,\overline{2}]}^\overline{\omega},]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}}]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}+\overline{1}} \)のような（ただし正確にはその順序数ではない）順序数の存在を潜在的に可能にするためです。これはラティエンの大\( \Psi \)関数で\( \Psi_{\Xi(K)}^{\Xi(K)}(K+1) \)に対応し、標準形ではありません。その変更はラティエンの大\( \Psi \)関数の論文の定義5.1 (T6)に基づいています。</p>
+        <br>
+        <p>&emsp;&emsp;変数を順序数に置き換える関数\( VRP \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m^*,b\in T_m,k\in\mathbb{N})\mapsto VRP_k(a,b)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a=\Xi \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( VRP_k(a_0,b)+VRP_k(a_1,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \varphi_{VRP_k(a_0,b)}(VRP_k(a_1,b)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( {VRP_k(a_0,b)}^+ \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば、\( \Psi_{[VRP_k(a',b),VRP_k(a_1,b),VRP_k(a_2,b),\cdots,VRP_k(a_n,b)]}^{VRP_k(a_0,b)} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=v_n\land n\in\mathbb{N} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( k=n \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( k\neq n \)ならば、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;\( \Psi \)項の変数を崩壊基数の反映配置に代入する関数\( Plug \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m^*,k\in\mathbb{N})\mapsto Plug_k(a)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( k=n \)ならば、\( R_2(a') \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( k&lt;n \)ならば、\( VRP_{n-k}(Plug_{k+1}(a),a_{n-k-1}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;\( Plug_0(a) \)を\( Plug(a) \)と書きます。</p>
+        <br>
+        <p>&emsp;&emsp;関数\( \widetilde{M}-P \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m,c\in T_m)\mapsto \widetilde{M}_{[a,\cdots]}^{&lt;b}-P_c\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \neg b&lt;LB_0(a)\land\neg LB_0(a)&lt;b\land a\neq\Xi \)ならば、\( {(\vec{R}_a)}_c \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( b&lt;LB_0(a)\vee LB_0(a)&lt;b\vee a=\Xi \)ならば、\( (M_{[a,\cdots]}^{&lt;b}-P_c) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;「M-P-数式」文字列を切断する関数\( {}_{(]} \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (A\in MP,m\in T_m,n\in T_m)\mapsto A_{(n,m]}\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( A=(M_{[a,\cdots]}^{&lt;b}-P_c)B\land B\in MP\land \neg c&lt;n \)ならば、\( B_{(n,m]} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( A=B(M_{[a,\cdots]}^{&lt;b}-P_c)\land B\in MP\land c&lt;m \)ならば、\( B_{(n,m]} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 上記以外の場合、\( A \)を返す</p>
+        <p>&emsp;&emsp;\( A\in MP \)に対して、\( A_{(Suc(n),n]} \)を\( A_n \)と書きます。</p>
+        <br>
+        <p>&emsp;&emsp;上記の定義を用いて、非可算正則基数\( \kappa \)の反映配置を次のように定義します：</p>
+        <p>&emsp;&emsp;\( \mathbb{F}_\kappa(v_0,v_1,\cdots,v_{R_v(\kappa)-1})=[\kappa,v_0,v_1,\cdots,v_{R_v(\kappa)-1}]=(\kappa;A;B;C;LB_0(\kappa)) \)</p>
+        <p>&emsp;&emsp;\( \Psi \)が\( R_2(a) \)に出現しない場合、\( A \)は\( P_{R_2(a)} \)である。</p>
+        <p>&emsp;&emsp;\( \Psi \)が\( R_2(a) \)に出現する場合、\( R_2(a)=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}+b \)とする。最後に\( +b \)がない場合、\( b=\overline{0} \)とする。</p>
+        <p>&emsp;&emsp;\( A \)は\( M_{[a',a_1,a_2,\cdots,a_n]}^{a_0}-P_b \)である。</p>
+        <p>&emsp;&emsp;\( B\in MP \)及び\( \vec{R}_\kappa=(M_{[a,\cdots]}^{&lt;b}-P_{c})B \)及び\( a,b,c\in T_m \)。</p>
+        <p>&emsp;&emsp;\( \kappa=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0} \)の場合、\( C \)は\( \mathbb{F}_{a'} \)である。さもないと、\( C \)は\( \epsilon \)である。</p>
+        <h2>標準形</h2><hr>
+        <p>&emsp;&emsp;最大値関数\( Max \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto Max(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;\( Max(\cdots Max(Max(a_0,a_1),a_2)\cdots,a_n) \)を\( Max(a_0,a_1,a_2,\cdots,a_n) \)と書きます。</p>
+        <br>
+        <p>&emsp;&emsp;最小有効値関数\( \lambda \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto\lambda_b(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a=\Xi \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \lambda_b(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( a&lt;b \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> \( \neg a&lt;b \)ならば、\( Max(Suc(a_0),\lambda_b(a_0),\lambda_b(a_1),\lambda_b(a_2),\cdots,\lambda_b(a_n)) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数\( c \)が\( C(a,b) \)の要素であるかどうかを判断するため、関数\( \in C \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( \neg a&lt;\lambda_b(c) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数が標準形であるかどうかを判断するため、関数\( \in T \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a=\Xi \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \neg a_0\in T\vee\neg a_1\in T \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a_0\in T\land a_1\in T \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a_1\in T_s \)ならば、\( \neg a_0&lt;a_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)ならば、\( \neg a_0&lt;a_2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( a_0\in Card\land a_0&lt;\Xi \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( \neg a'\in Reg \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 上記以外の場合、\( R_v(a')\neq n \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 上記以外の場合、\( \forall_0^n x(a_x\in dom_x(\mathbb{F}_{a'})) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;このシステムの限界を\( A=\Gamma_{\Xi+1} \)と定義します。</p>
+        <p>&emsp;&emsp;\( \Gamma_{\Xi+1} \)も標準形である。</p>
+        <p>&emsp;&emsp;このシステムのすべての順序数\( \alpha\in T \)に対して、\( \alpha\le\Gamma_{\Xi+1} \)。</p>
+        <p>&emsp;&emsp;\( \alpha&lt;\overline{\omega}^+ \)の場合に限り、順序数\( \alpha \)は可算である。</p>
+        <p>&emsp;&emsp;増加関数コマンド（「fgh」、「sgh」、「mgh」そして「hh」）の専用の可算極限順序数は\( \Psi_{[\overline{\omega}^+,]}^{\Gamma_{\Xi+1}} \)である。そのコンピューターコードは「(s(+(v,(v,))),A)」である。</p>
+        <h2>演算</h2><hr>
+        <p>&emsp;&emsp;順序数を標準形に変換するため、関数\( Norm \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in T \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a\in T \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Norm(a_0)+Norm(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=a_1 \)ならば、\( a_1 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=a_0 \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a\neq a_0\land a\neq a_1 \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;加法\( Add \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land b=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( ((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\})) \)及び</p>
+        <p>&emsp;&emsp;\( ((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a_0&lt;b_0 \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( \neg a_0&lt;b_0 \)ならば、\( a_0+Add(a_1,b_1) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;後続\( Suc \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;\( Add(a,\overline{1}) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;関数\( Solve \)を、\( Solve(\alpha,\beta) \)が\( \alpha+\gamma=\beta \)を満たすような\( \gamma \)を返すように定義する。そのような\( \gamma \)が存在しない場合、\( Solve(\alpha,\beta) \)を\( \overline{0} \)に設定する：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Solve(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \neg a&lt;b \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a&lt;b\land((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\})) \)及び</p>
+        <p>&emsp;&emsp;\( ((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a_0&lt;b_0 \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( \neg a_0&lt;b_0 \)ならば、\( Solve(a_1,b_1) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;左部分の関数\( L \)を次のように定義します。これは、順序数を2つの部分に分割し、左部分のすべての項が特定の順序数以上になり、右部分はその順序数より小さくなるようにします：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto L(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( a_0+L(a_1,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;同様に、右部分の関数\( R \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto R(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( R(a_1,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば、\( \overline{0} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;すべての変数が最小である\( \Psi \)項を構造する最小崩壊関数\( LC \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto LC(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a\in Reg \)ならば、\( \Psi_{[a,LB_1(a),LB_2(a),\cdots,LB_n(a)]}^{LB_0(a)} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a\in Reg \)ならば、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;ある\( \Psi \)項のある変数を置き換える置換関数\( RP \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,k\in\mathbb{N})\mapsto RP_k(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( r_m=\begin{cases} Add(LB_k(a'),b) & m=k \\ a_m & m\neq k \end{cases} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( \Psi_{[a',r_1,r_2,\cdots,r_n]}^{r_0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;根の関数\( Root \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Root(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( a'=b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( a'\neq b \)ならば、\( Root(a',b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;尾の関数\( t \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto t(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a&lt;b \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \neg a&lt;b \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( t(a_1,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a\in T_s \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( a=\Xi \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば、\( t(a_1,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> \( Cof(a_1)&lt;\overline{\omega} \)ならば、\( t(a_0,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.01.</span> \( a\in Reg \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.</span> 上記以外の場合、\( \neg LB_0(a')&lt;a_0 \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.01.</span> \( a'=\Psi_{[a'',a_1',a_2',\cdots,a_n']}^{a_0'} \)ならば、\( \Psi t(a,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.01.</span> 上記以外の場合、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.03.</span> 上記以外の場合、\( \neg FP_0(a) \)ならば、\( t(a_0,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.04.</span> 上記以外の場合、\( t(L(a_0,a'),b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;崩壊の尾の関数\( \Psi t \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto \Psi t(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( i=n,\cdots,2,1,0 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.01.</span> \( c=Solve(LB_i(a'),a_i) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.</span> \( c\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.01.</span> \( \neg FP_i(a) \)ならば、\( t(c,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.</span> \( FP_i(a) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.01.</span> \( d=L(c,CC_i(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.02.</span> \( d\neq\overline{0} \)ならば、\( t(d,b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.</span> \( d=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.01.</span> \( j=i-1,i-2,\cdots,2,1,0 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.01.01.</span> \( Solve(LB_j(a'),a_j)\neq0 \)ならば、\( t(Solve(LB_j(a'),a_j),b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( \Psi t(a',b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( a \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;順序数が不動点であるかどうかを判断するため、不動点関数\( FP \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,k\in\mathbb{N})\mapsto FP_k(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( k&gt;R_v(a') \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( k\le R_v(a') \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.01.</span> \( c=Solve(LB_k(a'),a_k) \), \( b=CC_k(a') \), \( t=t(c,b) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.02.</span> \( r=Root(a,b)=\Psi_{[r',r_1,r_2,\cdots,r_n]}^{r_0}\land r',r_0,r_1,r_2,\cdots,r_n\in T_m \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.03.</span> \( \neg t\in T_s \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.04.</span> 上記以外の場合、\( r=\overline{0} \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.</span> 上記以外の場合、\( t=\Psi_{[t',t_1,t_2,\cdots,t_n]}^{t_0}\land t',t_0,t_1,t_2,\cdots,t_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.01.</span> \( t&lt;RP_k(a,c{[\overline{0}]}^*) \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.</span> \( i=0,1,2,\cdots,n-1 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.01.</span> \( r_i&lt;a_i \)ならば、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.02.</span> \( a_i&lt;r_i \)ならば、\( \mathbb{T} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.03.</span> \( Add(LB_k(a'),c)&lt;r_k \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.06.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( \mathbb{F} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;ある変数の後の少なくともその崩壊基数の「空き」がある一番左の変数を得る最後空間関数\( LS \)を次のように定義します。\( 0 \)を返す場合、そういう変数は存在しないと意味する：</p>
+        <p>&emsp;&emsp;\( (a\in T,k\in\mathbb{N})\mapsto LS_k(a)\in\mathbb{N} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( r=0 \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( i=n+1,n+2,\cdots,R_v(a) \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.01.</span> \( \neg Solve(LB_i(a),UB_i(a))&lt;CC_i(a) \)ならば、\( r=i \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> \( r \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( 0 \)を返す</p>
+        <h2>共終数</h2><hr>
+        <p>&emsp;&emsp;共終数関数\( Cof \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0}\vee a\in Reg \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land\neg a\in Reg \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Cof(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> \( \neg Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_1) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)ならば、\( Cof(a_0) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> \( a_0=\overline{0}\land a_1=\overline{0} \)ならば、\( \overline{1} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば、\( CP(a,IT(a)) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;崩壊共終数関数\( CP \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto CP(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> \( i=u,\cdots,2,1,0 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> \( e_m=\begin{cases} c_m & m\le i \\ d_m & m&gt;i \end{cases} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> \( b=\overline{0}\land\forall_{i+1}^u x(c_{Rx}=\overline{0}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.01.</span> \( j=i,i+1,i+2,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.01.01.</span> \( \overline{1}&lt;Cof(R(e_j,b_j))\land\forall_i^{j-1}x(Cof(e_x)=\overline{1}) \)ならば、\( Cof(e_j) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.03.</span> 上記以外の場合、\( LS_i(a')=0\land c_{Li}\neq\overline{0} \)ならば、\( CPM_i(c_i,a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.</span> 上記以外の場合、\( LS_i(a')\neq0\land c_i\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.01.</span> \( j=i,i+1,i+2,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.01.01.</span> \( LS_j(a')=0\vee Cof(e_j)\neq\overline{1} \)ならば、\( CPM_j(e_j,a) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> \( CP(a',b) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;主要崩壊共終数関数\( CPM \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (s\in T,a\in T,k\in\mathbb{N})\mapsto CPM_k(s,a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( d=s \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( LS_k(a')=0 \)ならば、\( d=L(s,CC_k(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> \( Cof(d)&lt;CC_k(a') \)ならば、\( Cof(d) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> \( \neg Cof(d)&lt;CC_k(a') \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( \overline{\omega} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;また、\( Cof(\Gamma_{\Xi+1})=\overline{\omega} \)と定義します。</p>
+        <h2>基本列</h2><hr>
+        <p>&emsp;&emsp;基本列\( [] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a\neq\overline{0}\land a\in Reg \)ならば、\( n \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a\neq\overline{0}\land\neg a\in Reg \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( Add(a_0,a_1[n]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> \( a_1=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> \( a_0=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.02.</span> \( n\neq\overline{0} \)ならば、\( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0[n]}(\overline{0})) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> \( Cof(a_1)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> \( a_0=\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.01.</span> \( n=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.02.</span> \( n\neq\overline{0} \)ならば、\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> \( Cof(a_0)=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> \( n=\overline{0} \)ならば、\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.03.</span> \( n[\overline{0}]\neq\overline{0} \)ならば、\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> \( Cof(a_0)\ge\overline{\omega} \)ならば、\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> \( Cof(a_1)\ge\overline{\omega} \)ならば、\( Norm(\varphi_{a_0}(a_1[n])) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば、\( P(a,IT(a))[n] \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;初項\( IT \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto IT(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( \overline{\omega} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> \( a_0=\overline{\omega} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> \( a_0\neq\overline{\omega} \)ならば、\( a_0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( i=u,\cdots,2,1,0 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> \( Cof(c_{Ri})=\overline{1} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.01.</span> \( r=RP_i(a,c_i[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.</span> \( j=i,i+1,i+2,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.01.</span> \( \neg Cof(d_j)&lt;b_j \)ならば、\( r \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.02.</span> \( \overline{1}&lt;Cof(d_j) \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.03.</span> \( r=RP_j(c,d_j[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.03.</span> \( r \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> 上記以外の場合、\( c_{Ri}\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.</span> \( FP_i(a) \)ならば、\( t(c_m,b_m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.02.</span> \( \neg FP_i(a) \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 上記以外の場合、\( c_{Li}\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.01.</span> \( Cof(c_{Li})&lt;b_i\land FP_i(a) \)ならば、\( t(c_m,b_m) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.02.</span> \( \neg FP_i(a) \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.04.</span> \( IT(a') \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;崩壊基本列\( P[] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,n\in T)\mapsto P(a,b)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( a=\Xi \)ならば、\( LimCard(b)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)ならば、\( \overline{0} \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \Gamma(b)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> \( i=u,\cdots,2,1,0 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> \( e_m=\begin{cases} c_m & m\le i \\ d_m & m&gt;i \end{cases} \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> \( b=\overline{0}\land\forall_{i+1}^u x(c_{Rx}=\overline{0}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.</span> \( j=i,i+1,i+2,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.</span> \( \overline{1}&lt;Cof(R(e_j,b_j))\land\forall_i^{j-1}x(Cof(e_x)=\overline{1}) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.01.</span> \( r=RP_j(a,e_j[n]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.02.</span> \( k=i,i+1,i+2,\cdots,j-1 \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.02.01.</span> \( r=RP_k(r,e_k[\overline{0}]) \):とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.03.</span> \( r \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 上記以外の場合、\( LS_i(a')=0\land c_{Li}\neq\overline{0} \)ならば、\( PM_i(c_i,a,b,a)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> 上記以外の場合、\( LS_i(a')\neq0\land c_i\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.01.</span> \( r=a \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.</span> \( j=i+1,i+2,i+3,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.01.</span> \( r=RP_j(r,\overline{0}) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.</span> \( j=i,i+1,i+2,\cdots,u \)でループ：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.01.</span> \( LS_j(a')=0\vee Cof(e_j)\neq\overline{1} \)ならば、\( PM_j(e_j,a,b,r)[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.02.</span> \( r=RP_j(r,e_j[\overline{0}]) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.04.</span> \( P(a',b)[n] \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;強臨界列\( \Gamma[] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto \Gamma(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0})\in T \)ならば、\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0}) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( \neg\varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0})\in T \)ならば、\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{1}) \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;極限基数列\( LimCard[] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto LimCard(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( a \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0} \)ならば、\( {LimCard(a)[n[\overline{0}]]}^+ \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;主要崩壊基本列\( PM[] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (s\in T,a\in T,b\in T,c\in T,n\in T,k\in\mathbb{N})\mapsto PM_k(s,a,b,c)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> \( d=s \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> \( LS_k(a')=0 \)ならば、\( d=L(s,CC_k(a')) \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> \( Cof(d)&lt;CC_k(a') \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> \( LS_k(a')=0 \)ならば、\( RP_k(c,Add(d[n],b)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> \( LS_k(a')\neq0 \)ならば、\( RP_k(RP_{LS_k(a')}(c,b),Add(d[n],b)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> \( CC_k(a')&lt;Cof(d) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.01.</span> \( n=\overline{0} \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.</span> \( n\neq\overline{0} \)ならば、\( RP_k(c,Add(Re(d,CC_k(a'))[n[\overline{0}]],b)) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.</span> \( \neg Cof(d)&lt;CC_k(a')\land\neg CC_k(a')&lt;Cof(d) \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.01.</span> \( n=\overline{0} \)ならば、\( b \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.02.</span> \( n\neq\overline{0} \)ならば、\( RP_k(c,d[P(a,b)[n[\overline{0}]]]) \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 上記以外の場合、\( \overline{0} \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;再帰列\( Re[] \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,n\in T)\mapsto Re(a,b)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( n=\overline{0} \)ならば、\( a[b] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( n\neq\overline{0} \)ならば：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> \( c=Cof(a) \), \( l=LB_0(c) \), \( p=Re(a,b)[n[\overline{0}]] \)とする</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> \( a&lt;l \)ならば、\( a[RP_0(LC(c),p)] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> \( \neg a&lt;l \)ならば、\( a[RP_0(LC(c),Solve(l,p))] \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;共終数は非可算の順序数をより小さい共終数は可算の順序数として展開するため、強基本列\( {[]}^* \)を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \neg\overline{\omega}&lt;Cof(a) \)ならば、\( a[n] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{\omega}&lt;Cof(a)\land n=\overline{0} \)ならば、\( a[LC(a)] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}&lt;Cof(a)\land n\neq\overline{0} \)ならば、\( a[RP_0(LC(a),\Gamma(\Xi)[n[\overline{0}]])] \)を返す</p>
+        <br>
+        <p>&emsp;&emsp;また、\( \Gamma_{\Xi+1} \)的基本列を次のように定義します：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{\Xi+1}[n]\in T \)</p>
+        <p>&emsp;&emsp;\( \Gamma(\Xi)[n] \)を返す</p>
+        <h1>出典</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Stegert, J. (2010). <a href="https://d-nb.info/1017849250/34" target="_blank">Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles.</a> Retrieved 2026-10-09.</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2026-10-09. https://doi.org/10.2307/2274692</p>
+    </body>
+</html>

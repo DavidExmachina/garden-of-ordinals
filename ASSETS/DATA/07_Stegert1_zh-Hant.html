@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>定義</h1><hr>
+        <p>&emsp;&emsp;施泰葛第一\( \Psi \)函數指的是楊-卡爾·施泰葛於2010年提出的序數塌縮函數<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
+        <p>&emsp;&emsp;由於拉珍大\( \Psi \)函數記作\( \Psi_\alpha^\beta(\gamma) \)，也使用字母\( \Psi \)，該序數塌縮函數於計算選單與探索選單記作\( \mathfrak{p}_\mathbb{X}^\alpha \)以表示區分。您可以透過 選項 &gt; 函數指定 &gt; \( \Psi_\mathbb{X}^\alpha \) 以使其恢復原狀。</p>
+        <p>&emsp;&emsp;整個序數系統由3個函數：\( \varphi_\alpha(\beta) \)，\( \alpha^+ \)與\( \Psi_\mathbb{X}^\alpha \)與\( \Pi_0^2 \)-不可描述基數\( \Xi \)組成，描述與定義如下。</p>
+        <h2>函數\( \varphi_\alpha(\beta) \)</h2><hr>
+        <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)表示維布倫函數。定義如下且已在「維布倫函數」介面的幫助選單顯示：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切非零序數\( \alpha \)，\( \varphi_{\alpha}(\beta) \)傳回對於一切\( \alpha'&lt;\alpha \)的所有函數\( \gamma\mapsto\varphi_{\alpha'}(\gamma) \)的第\( (1+\beta) \)個共同不動點。</p>
+        <h2>函數\( \alpha^+ \)</h2><hr>
+        <p>&emsp;&emsp;\( \alpha^+ \)表示\( \alpha \)的后继基數，傳回大於\( \alpha \)的最小基數。例如：\( \omega^+=\Omega \)，\( \Omega^+=\Omega_2 \)，\( {\Omega_2}^+=\Omega_3 \)等。</p>
+        <h2>函數\( \Psi_\mathbb{X}^\alpha \)</h2><hr>
+        <p>&emsp;&emsp;\( \Psi_\mathbb{X}^\alpha \)表示塌縮函數，是該序數系統的核心。與其他序數塌縮函數不同的是，該序數塌縮函數以一序數與一種叫做「反射實例」的特殊的數學物件為變數。由於反射實例與配置的複雜性，該函數的定義及其複雜，使其成為了最難以掌握的序數塌縮函數之一。</p>
+        <p>&emsp;&emsp;\( \Psi_\mathbb{X}^\alpha \)傳回集合\( \mathfrak{M}_\mathbb{X}^\alpha \)的最小元素。該集合根據反射實例\( \mathbb{X} \)包含滿足包括但不限於以下的條件的序數\( \kappa \)：</p>
+        <p>&emsp;&emsp;1. \( \kappa&lt;i(\mathbb{X}) \)，其中記號\( i(\mathbb{X}) \)將在下文定義。</p>
+        <p>&emsp;&emsp;2. \( \kappa\in \)某個集合（有時）。</p>
+        <p>&emsp;&emsp;3. \( C(\alpha,\kappa)\cap i(\mathbb{X})=\kappa \)，其中集合\( C(\alpha,\beta) \)將在下文定義。</p>
+        <p>&emsp;&emsp;4. \( \mathbb{X},\alpha\in C(\kappa) \)，其中\( C(\kappa)=\{\alpha|\alpha\in C(\alpha,\kappa)\} \)且記號\( \mathbb{X}\in C(\alpha,\beta) \)將在下文定義。</p>
+        <h3>集合\( C(\alpha,\beta) \)</h3>
+        <p>&emsp;&emsp;集合\( C(\alpha,\beta) \)，在論文中稱作「第\( \alpha \)個\( \beta \)的斯科倫閉包」，定義如下：</p>
+        <p>&emsp;&emsp;\( \begin{align} C_0(\alpha,\beta) := & \beta\cup\{0,\Xi\} \\
+                                        C_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\} \\
+                                        \cup & \{\gamma|\gamma={\alpha'}^+\land\alpha'\in C_n(\alpha,\beta)\cap Card\cap\Xi\} \\
+                                        \cup & \{\gamma|\gamma=\Psi_\mathbb{X}^{\alpha'}\land\alpha'\in C_n(\alpha,\beta)\cap\alpha\} \\
+                                        C(\alpha,\beta) := & \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \end{align} \)</p>
+        <p>&emsp;&emsp;其中\( Card \)表示基數類，包括\( \omega=\varphi_0(1)=\varphi_0(\varphi_0(0)) \)，定義中的\( \mathbb{X} \)需定義良好。</p>
+        <h3>反射實例與配置</h3>
+        <p>&emsp;&emsp;<b>反射實例</b>\( \mathbb{X} \)是一種該序數塌縮函數中專用的數學物件。它包括5個元素且形式為\( (\pi;(M_{\mathbb{M}(\vec{v})}^\xi-)P_m;\vec{R};\mathbb{Z};\alpha) \)。簡單來說：</p>
+        <p>&emsp;&emsp;第1個元素\( \pi \)表示用來定義該反射實例的不可數正規基數。我們定義\( i(\mathbb{X})=\pi \)。</p>
+        <p>&emsp;&emsp;第2個元素\( P_m \)或\( M_{\mathbb{M}(\vec{v})}^\xi-P_m \)與第3個元素\( \vec{R} \)表示集合中\( \mathfrak{M}_\mathbb{X}^\beta \)序數的特徵。</p>
+        <p>&emsp;&emsp;第4個元素\( \mathbb{Z} \)表示用於第1個元素\( \pi \)的反射實例。若\( \pi \)的形式不為\( \Psi_\mathbb{Z}^\delta \)，則它是\( \epsilon \)，表示「無」或「空」。注意這與表示「埃普西隆數」的\( \varepsilon \)不一樣。</p>
+        <p>&emsp;&emsp;第5個元素\( \alpha \)表示當整個反射實例被代入於序數塌縮函數時，能代入它的最小序數。例如：若\( \alpha=\omega \)，則\( \Psi_\mathbb{X}^9 \)是未定義的，因為\( 9 \)小於\( \omega \)。而\( \Psi_\mathbb{X}^\omega \)定義良好，因為\( \omega \)是在這種情況下能夠使用的最小的序數。我們定義\( o(\mathbb{X})=\alpha \)。</p>
+        <br>
+        <p>&emsp;&emsp;<b>反射配置</b>是以序數為變數而傳回反射實例的函數。每個反射配置都是根據一個不可數正規基數而獨一定義的。其變數數及定義域因該反射配置的不可數正規基數而異。有時它沒有變數且只會傳回一個反射實例。</p>
+        <p>&emsp;&emsp;論文中，反射實例與配置的完整形式是非常複雜且繁瑣的。若我們碰到透過多次塌縮而得到的序數，由於第4個元素\( \mathbb{Z} \)，完整形式將需要指數級增加的符號，因為我們需要寫下第4個元素\( \mathbb{Z} \)兩次，而每次塌縮時符號的數量會翻倍。</p>
+        <p>&emsp;&emsp;因此，我們介紹「反射括號表示法」。它將反射實例\( \mathbb{G}(\alpha_0,\alpha_1,\cdots,\alpha_n) \)記作\( [i(\mathbb{G}),\alpha_0,\alpha_1,\cdots,\alpha_n] \)並將反射配置\(\mathbb{G} \)記作\( [i(\mathbb{G}),\cdots] \)。若反射配置\(\mathbb{G} \)沒有變量，則我們可以將它傳回的反射實例寫作\( [i(\mathbb{G}),] \)，在末尾有添加逗號，以避免與之後介紹的「不可描述括號表示法」混淆。我們定義\( \mathbb{X}\in C(\alpha,\beta) \)為\( \kappa,\alpha_0,\alpha_1,\cdots,\alpha_n\in C(\alpha,\beta) \)，其中\( \mathbb{X}=[\kappa,\alpha_0,\alpha_1,\cdots,\alpha_n] \)。</p>
+        <p>&emsp;&emsp;第3個元素\( \vec{R} \)是一個叫做「M-P-表達式」的數學物件的序列，形式為\( M_\mathbb{F}^{&lt;\alpha}-P_n \)，它們表示集合\( \mathfrak{M}_\mathbb{X}^\beta \)的元素對於一切使得集合\ \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)定義良好的\( \gamma&lt;\alpha \)與\( \alpha_0,\alpha_1,\cdots,\alpha_n \)都是\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)-\( \Pi_n^1 \)-不可描述的。若\( \gamma=o(\mathbb{F}) \)，則前述的元素改為都是\( \Pi_n^1 \)-不可描述的。該元素可以不含有M-P-表達式，此時記作\( \epsilon \)。</p>
+        <p>&emsp;&emsp;各反射配置，因此各反射實例的定義極為複雜。完整定義見<a href="#3.3">「反射」</a>欄位。</p>
+        <h3>\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述基數</h3>
+        <p>&emsp;&emsp;\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述基數是該序數塌縮函數經常使用的基數，定義如下：</p>
+        <p>&emsp;&emsp;對於序數類\( \mathfrak{M} \)若對於一切\( U_1,\cdots,U_m\subseteq V_\kappa \)與語言\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \)的\( \Pi_n^1 \)語句\( F \)滿足以下條件，則基數\( \kappa \)是\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述的（或在\( \mathfrak{M} \)中\( \Pi_n^1 \)-不可描述）：</p>
+        <p>&emsp;&emsp;若\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle\vDash F \)，則存在非零的小於\( \kappa \)的序數\( \alpha\in\mathfrak{M} \)使得\( \langle V_\alpha,\in,U_1\cap V_\alpha,\cdots,U_m\cap V_\alpha\rangle\vDash F \)。</p>
+        <br>
+        <p>&emsp;&emsp;若省略\( \mathfrak{M} \)，則該定義與拉珍大\( \Psi \)函數的幫助文章中的定義完全一致，意味著\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述性推得\( \Pi_n^1 \)-不可描述性。</p>
+        <p>&emsp;&emsp;因此，一基數不僅可以是\( \Pi_n^1 \)-不可描述的，還可以在一序數類中\( \Pi_n^1 \)-不可描述。於是，我們便能構造各種複雜的不可描述基數。為了輕易表示這些基數，本網站定義了「不可描述括號表示法」。完整定義見主幫助文章。例如：</p>
+        <p>&emsp;&emsp;\( [P_0] \)表示最小的\( \Pi_0^1 \)-不可描述基數，等同於最小的<b>強</b>不可達基數<sup><a id="g2" href="#c2">[2]</a></sup>。</p>
+        <p>&emsp;&emsp;\( [P_0-P_0] \)表示最小的\( \{\kappa|\kappa\)是\( \Pi_0^1 \)-不可描述的\(\} \)-\( \Pi_0^1 \)-不可描述基數，或最小的\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述基數。</p>
+        <p>&emsp;&emsp;\( [P_0-P_0-P_0] \)表示最小的\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述基數。</p>
+        <p>&emsp;&emsp;\( [P_1] \)表示最小的\( \Pi_1^1 \)-不可描述基數，等同於弱緊緻基數。</p>
+        <p>&emsp;&emsp;\( [P_1-P_0] \)表示最小的\( \Pi_1^1 \)-不可描述-\( \Pi_0^1 \)-不可描述基數。</p>
+        <p>&emsp;&emsp;\( [P_1-P_0:P_1] \)表示最小的\( \Pi_1^1 \)-不可描述-\( \Pi_0^1 \)-不可描述且\( \Pi_1^1 \)-不可描述的基數。</p>
+        <p>&emsp;&emsp;\( [P_1-P_1] \)表示最小的\( \Pi_1^1 \)-不可描述-\( \Pi_1 \)-不可描述基數。</p>
+        <p>&emsp;&emsp;\( [P_2] \)表示最小的\( \Pi_2^1 \)-不可描述基數。</p>
+        <h3>與拉珍大\( \Psi \)函數的相似點</h3>
+        <p>&emsp;&emsp;施泰葛第一\( \Psi \)函數與拉珍大\( \Psi \)函數相似。兩序數塌縮函數都不隨括號（此時是上標）中的變數單調遞增。</p>
+        <p>&emsp;&emsp;從拉珍大\( \Psi \)函數的定義中：</p>
+        <p>&emsp;&emsp;\( \begin{align} \Psi_\alpha^\beta(\gamma)=min(\{\delta| & \delta\in M^\beta\cap\alpha \\ & C(\gamma,\delta)\cap\alpha=\delta \\ & \alpha,\gamma\in C(\gamma,\delta) \}\cup\{\alpha\}) \end{align} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們可以定義集合\( M_\alpha^\beta(\gamma) \)以模仿集合\( \mathfrak{M}_\mathbb{X}^\alpha \)的定義如下：</p>
+        <p>&emsp;&emsp;\( \Psi_\alpha^\beta(\gamma) \)傳回集合\( M_\alpha^\beta(\gamma) \)的最小元素。該集合包含滿足以下的條件的序數\( \kappa \)：</p>
+        <p>&emsp;&emsp;1. \( \kappa&lt;\alpha \).</p>
+        <p>&emsp;&emsp;2. \( \kappa\in M^\beta \).</p>
+        <p>&emsp;&emsp;3. \( C(\gamma,\kappa)\cap\alpha=\kappa \).</p>
+        <p>&emsp;&emsp;4. \( \alpha,\gamma\in C(\gamma,\kappa) \).</p>
+        <p>&emsp;&emsp;若\( M_\alpha^\beta(\gamma) \)未定義，則\( \Psi_\alpha^\beta(\gamma) \)傳回\( \alpha \)。</p>
+        <br>
+        <p>&emsp;&emsp;此外，集合\( M^\beta \)與某些不可描述基數類有所對應：</p>
+        <p>&emsp;&emsp;\( M^1 \)對應\( \Pi_0^1 \)-不可描述基數類。</p>
+        <p>&emsp;&emsp;\( M^2 \)對應\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述基數類。</p>
+        <p>&emsp;&emsp;\( M^3 \)對應\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述-\( \Pi_0^1 \)-不可描述基數類。</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;因此，施泰葛第一\( \Psi \)函數可以被視作拉珍大\( \Psi \)函數的變數數基於不可數正規基數的拓展。</p>
+        <h2>\( \Pi_0^2 \)-不可描述基數\( \Xi \)</h2><hr>
+        <p>&emsp;&emsp;\( \Pi_0^2 \)-不可描述基數\( \Xi \)是此序數塌縮函數的關鍵，其定義為最小的對於一切自然數\( n \)都\( \Pi_n^1 \)-不可描述的基數。該序數塌縮函數的思路在於多次塌縮（構造某基數的反射配置，代入序數，然後將其代入序數塌縮函數）該基數以獲得指定的基數。實際上，上述所有以不可描述括號表示法表示的範例基數均可透過此方式取得。注意我們使用的是基於貝特數而不是阿列夫數的一系列基數，這是因為\( \Pi_0^1 \)-不可描述基數與<b>強</b>不可達基數等價。既然用於序數塌縮函數的基數是<b>完全任意</b>的，該序數塌縮函數的機制與之前的序數塌縮函數相似。我們還可以假設「廣義連續統假設」以消除阿列夫數與貝特數之間的差異。</p>
+        <br>
+        <p>&emsp;&emsp;施泰葛第一\( \Psi \)函數並不完美。論文中出現了不少錯誤導致了該序數塌縮函數無法正常運作。因此，此處的施泰葛第一\( \Psi \)函數的版本將與論文中有所出入。所有與論文的改動將在本文章中給出解釋。此時此處也將提供基於論文得出的原版本。</p>
+        <p>&emsp;&emsp;序數\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Xi+1}} \)稱為「小施泰葛序數（SSO）」。該序數是\( KP+\Pi_\omega-reflection \)的證明論序數的上界。</p>
+        <h1>專用指令「ref」</h1><hr>
+        <p>&emsp;&emsp;您可以在計算介面使用該序數系統的專用指令<b>「ref」</b>。指令「ref ord」會顯示以電腦程式碼為「ord」的序數定義的完整的反射配置與\( \vec{R} \)值。若「ord」的形式為(sC,...)（C為電腦程式碼），對應序數\( \Psi_\mathbb{X}^\alpha \)，它也會顯示反射實例\( \mathbb{X} \)的完整形式與集合\( \mathfrak{M}_\mathbb{X}^\alpha \)的定義。</p>
+        <br>
+        <p>&emsp;&emsp;<b>例1：</b></p>
+        <p>&emsp;&emsp;輸入：ref (+(v,(v,)))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( [{\omega}^{+},]=({\omega}^{+};{P}_{0};\epsilon;\epsilon;0) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \vec{R}_{{\omega}^{+}}=({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0}) \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例2：</b></p>
+        <p>&emsp;&emsp;輸入：ref (sZ,(v,)(v,),(v,(v,)))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( [{\mathfrak{p}}_{[\Xi,2]}^{\omega},]=({\mathfrak{p}}_{[\Xi,2]}^{\omega};{P}_{1};({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0});[\Xi,2];\omega+1) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [\Xi,2]=(\Xi;{P}_{2};\epsilon;\epsilon;\omega) \)</p>
+        <br>
+        <p>&emsp;&emsp;\( \vec{R}_{{\mathfrak{p}}_{[\Xi,2]}^{\omega}}=({M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{1},{M}_{[\Xi,\cdots]}^{&lt;\omega}-{P}_{0}) \)</p>
+        <br>
+        <p>&emsp;&emsp;集合\( \mathfrak{M}_{[\Xi,2]}^{\omega} \)包含滿足以下所有條件的序數\( \alpha \)：</p>
+        <p>&emsp;&emsp;1. \( \alpha&lt;\Xi \)</p>
+        <p>&emsp;&emsp;2. \( C(\omega,\alpha)\cap\Xi=\alpha \)</p>
+        <p>&emsp;&emsp;3. \( [\Xi,2],\omega\in C(\alpha) \)</p>
+        <p>&emsp;&emsp;4. \( \alpha \)是\( \Pi_{1}^1 \)-不可描述的</p>
+        <br>
+        <p>&emsp;&emsp;<b>例3：</b></p>
+        <p>&emsp;&emsp;輸入：ref (s(sZ,(v,),(v,(v,))),(v,(v,))(v,))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( {\mathfrak{p}}_{[{\mathfrak{p}}_{[\Xi,1]}^{\omega},]}^{\omega+1} \)的反射配置未定義。</p>
+        <br>
+        <p>&emsp;&emsp;\( [{\mathfrak{p}}_{[\Xi,1]}^{\omega},]=({\mathfrak{p}}_{[\Xi,1]}^{\omega};{P}_{0};\epsilon;[\Xi,1];\omega+1) \)</p>
+        <br>
+        <p>&emsp;&emsp;集合\( \mathfrak{M}_{[{\mathfrak{p}}_{[\Xi,1]}^{\omega},]}^{\omega+1} \)包含滿足以下所有條件的序數\( \alpha \)：</p>
+        <p>&emsp;&emsp;1. \( \alpha&lt;{\mathfrak{p}}_{[\Xi,1]}^{\omega} \)</p>
+        <p>&emsp;&emsp;2. \( C(\omega+1,\alpha)\cap{\mathfrak{p}}_{[\Xi,1]}^{\omega}=\alpha \)</p>
+        <p>&emsp;&emsp;3. \( [{\mathfrak{p}}_{[\Xi,1]}^{\omega},],\omega+1\in C(\alpha) \)</p>
+        <br>
+        <p>&emsp;&emsp;<b>例4：</b></p>
+        <p>&emsp;&emsp;輸入：ref (v,(v,))</p>
+        <p>&emsp;&emsp;控制台：</p>
+        <p>&emsp;&emsp;\( \omega \)的反射配置未定義。</p>
+        <h1>序數表示法</h1><hr>
+        <h2>表示法</h2><hr>
+        <p>&emsp;&emsp;我們定義\( S^* \)為包含以下字元的字串集合：</p>
+        <p>&emsp;&emsp;常數「\( \overline{0} \)」與「\( \Xi \)」，</p>
+        <p>&emsp;&emsp;函數字元「\( \varphi \)」，「\( ^+ \)」，「\( \Psi \)」與「\( v \)」，</p>
+        <p>&emsp;&emsp;以及其他字元「\( + \)」，「\( ( \)」，「\( ) \)」與「\( , \)」。</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( S \)為\( S^* \)中不含「\( v \)」的字串集合，意味著\( S \)是\( S^* \)的子集。</p>
+        <p>&emsp;&emsp;我們定義\( S^* \)的子集\( T_m^* \)與\( T_s^* \)如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Xi\in T_m^* \)且\( \Xi\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 對於一切\( a\in T_s^* \)與\( b\in T_m^*\setminus\{\overline{0}\} \)，\( a+b\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 對於一切\( a,b\in T_m^* \)，\( \varphi(a,b)\in T_m^* \)且\( \varphi(a,b)\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 對於一切\( a\in T_m^* \)，\( a^+\in T_m^* \)且\( a^+\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 對於一切\( b,a_0,a_1,a_2,\cdots,a_n\in T_m^* \)且\( \Psi(b,a_1,a_2,\cdots,a_n,a_0)\in T_m^* \)，\( \Psi(b,a_1,a_2,\cdots,a_n,a_0)\in T_m^* \)且\( \Psi(b,a_1,a_2,\cdots,a_n,a_0)\in T_s^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 對於一切\( a\in\mathbb{N} \)，\( v(a)\in T_m^* \)且\( v(a)\in T_s^* \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也分別定義\( T_m \)與\( T_s \)為\( T_m^* \)與\( T_s^* \)中不含「\( v \)」的字串集合，意味著\( T_m \)與\( T_s \)分別是\( T_m^* \)與\( T_s^* \)的子集。</p>
+        <p>&emsp;&emsp;我們定義\( MP \)為「M-P-表達式」字串集合如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \epsilon\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 對於一切\( a,b,c\in T_m \)，\( (M_{[a,\cdots]}^{&lt;b}-P_c)\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 對於一切\( A,B\in MP\setminus\{\epsilon\} \)，\( AB\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 對於一切\( A\in MP \)，\( A\epsilon=\epsilon A=A \)</p>
+        <br>
+        <p>&emsp;&emsp;在全篇文章中，我們採用以下簡寫：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Psi_{[b,]}^a:=\Psi(b,a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \Psi_{[b,a_1,a_2,\cdots,a_n]}^{a_0}:=\Psi(b,a_1,a_2,\cdots,a_n,a_0) \)，其中\( n\in\mathbb{N} \)且\( n\ge1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> \( v_a:=v(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 對於一切\( n\in\mathbb{N} \)，\( \overline{n+1}:=\overline{n}+\overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 對於一切\( (M_0)(M_1)\cdots(M_n)\in MP \)且\( (M_0,M_1,\cdots,M_n):=(M_0)(M_1)\cdots(M_n) \)，\( (M_0,M_1,\cdots,M_n):=(M_0)(M_1)\cdots(M_n) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> \( \exists_m^n x(P(x)):\Leftrightarrow\exists x\in\{k\in\mathbb{N}|m\le k\le n\}(P(x)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> \( \forall_m^n x(P(x)):\Leftrightarrow\forall x\in\{k\in\mathbb{N}|m\le k\le n\}(P(x)) \)</p>
+        <h2>順序</h2><hr>
+        <p>&emsp;&emsp;我們定義二元關係\( &lt; \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( b=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\overline{0}\land b\neq\overline{0} \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( \neg b_0&lt;a_0\land a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg b_0&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Xi\land b=\Xi \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 若\( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.01.</span> 若\( a_0&lt;b_0 \)，傳回\( a_1&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.02.</span> 若\( b_0&lt;a_0 \)，傳回\( a&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.03.</span> 若\( a_0=_*b_0 \)，傳回\( a_1&lt;b_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">08.</span> 若\( a={a_0}^+\land b={b_0}^+\land a_0,b_0\in T_m \)，傳回\( a_0&lt;b_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_m]}^{a_0}\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a',a_0,a_1,a_2,\cdots,a_m,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> 若\( \neg b&lt;a' \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 除以上情況，若\( \neg a_0&lt;b_0\land(\neg b'\in C(a_0,a)\vee\exists_0^n i(\neg b_i\in C(a_0,a))) \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> 除以上情況，若\( \neg a&lt;b' \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.04.</span> 除以上情況，若\( \neg a'\in C(b_0,b)\vee\exists_0^m i(\neg a_i\in C(b_0,b)) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.05.</span> 除以上情況，若\( b_0&lt;a_0 \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.06.</span> 除以上情況，若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.</span> 除以上情況，若\( a'&lt;b'\vee b'&lt;a' \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.</span> 以\( i=1,2,\cdots,m \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.01.</span> 若\( a_i&lt;b_i \)，傳回\( a_i\in C(b_i,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.02.</span> 若\( b_i&lt;a_i \)，傳回\( \neg b_i\in C(a_i,a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.09.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.</span> 若\( a=\Xi\land b\neq\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.01.</span> 若\( b=\varphi_{b_0}(b_1)\land b_0,b_1\in T_m \)，傳回\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.02.</span> 若\( b={b_0}^+\land b_0\in T_m \)，傳回\( a&lt;b_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">10.03.</span> 若\( b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land b',b_0,b_1,b_2,\cdots,b_n\in T_m \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.</span> 若\( a\neq\Xi\land b=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.01.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.02.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">11.03.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，傳回\( \mathbb{T} \)</p>
+        <br>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">12.</span> 若\( a=\varphi_{a_0}(a_1)\land(b={b_0}^+\vee b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0})\land a_0,a_1,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">12.01.</span> 傳回\( a_0&lt;b\land a_1&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">13.</span> 若\( (a={a_0}^+\vee a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0})\land b=\varphi_{b_0}(b_1)\land a',a_0,a_1,a_2,\cdots,a_n,b_0,b_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">13.01.</span> 傳回\( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.</span> 若\( a={a_0}^+\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a_0,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.01.</span> 若\( b'={b''}^+\land b''\in T_m \)，傳回\( a&lt;b' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">14.02.</span> 除以上情況，傳回\( a_0&lt;b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land b={b_0}^+\land a',a_0,a_1,a_2,\cdots,a_n,b_0\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.01.</span> 若\( a'={a''}^+\land a''\in T_m \)，傳回\( \neg b&lt;a' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">15.02.</span> 除以上情況，傳回\( \neg b_0&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;論文中有關比較施泰葛第一\( \Psi \)函數中的兩\( \Psi \)項的定理2.3.14存在導致異常行為的問題。儘管如此，我們仍然如下給出按照論文得出的09.行：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_m]}^{a_0}\land b=\Psi_{[b',b_1,b_2,\cdots,b_n]}^{b_0}\land a',a_0,a_1,a_2,\cdots,a_m,b',b_0,b_1,b_2,\cdots,b_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.01.</span> 若\( \neg b&lt;a' \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.02.</span> 除以上情況，若\( \neg a_0&lt;b_0\land(\neg b'\in C(b',a)\vee\exists_0^n i(\neg b_i\in C(b_i,a))) \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.03.</span> 除以上情況，若\( \neg a&lt;b' \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.04.</span> 除以上情況，若\( \neg a'\in C(a',b)\vee\exists_0^m i(\neg a_i\in C(a_i,b)) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.05.</span> 除以上情況，若\( a_0&lt;b_0 \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.06.</span> 除以上情況，若\( a'&lt;b'\vee b'&lt;a' \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.</span> 以\( i=0,1,\cdots,m \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.01.</span> 若\( a_i&lt;b_i \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.07.02.</span> 若\( b_i&lt;a_i \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">09.08.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義所有其他的比較符號：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;b\land\neg b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( a&lt;b\vee b&lt;a \)</p>
+        <br>
+        <p>&emsp;&emsp;注意\( = \)與\( \neq \)表示符號等價性而\( =_* \)與\( \neq_* \)表示數值等價性。</p>
+        <h2>反射</h2><hr>
+        <p>&emsp;&emsp;我們定義函數\( \in Card \)以判斷序數是否為無窮基數：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in Card)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0=\overline{0}\land a_1=\overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( a_0\in Card \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( a'={a''}^+\land a''\in T_m \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in Reg \)以判斷序數是否為不可數正規基數：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in Reg)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，傳回\( Plug(a)\neq\overline{0} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義反射配置變數数函數\( R_v \)如下。注意該函數以序數字串為變數，傳回自然數，兩者有差異。但是將自然數轉換成序數字串是輕易可行的，反之亦然。如果將一切自然數替換成序數字串，該函數將正常運作。並且，注意\( 0 \)與\( 1 \)是自然數，\( \overline{0} \)與\( \overline{1} \)是數字串：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto R_v(a)\in\mathbb{N} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( 1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( a'=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( a_0&lt;\overline{\omega} \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \neg a_0&lt;\overline{\omega} \)，傳回\( 2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> 若\( Plug(a)=\overline{0} \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> 若\( Plug(a)\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> 若\( \neg LB_0(a')&lt;a_0\land\neg LB_0(a'') \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.</span> 若\( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''=\Xi \)，傳回\( 2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.</span> 若\( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''\neq\Xi \)，傳回\( R_v(a'')+1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.05.</span> 若\( LB_0(a')&lt;a_0 \)，傳回\( 1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 若\( \neg LB_0(a'')&lt;b'' \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> 若\( LB_0(a'')&lt;b''\land a''=\Xi \)，傳回\( 2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.</span> 若\( LB_0(a'')&lt;b''\land a''\neq\Xi \)，傳回\( R_v(a'')+1 \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義反射配置第二元素函數\( R_2 \)如下。注意函數會傳回帶有變數的序數字串，因為只有該元素受到變數的影響：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto R_2(a)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( v_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( a'=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( a_0&lt;\overline{\omega} \)，傳回\( Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \neg a_0&lt;\overline{\omega} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> 若\( Plug(a)=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> 若\( Plug(a)\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> 若\( \neg LB_0(a')&lt;a_0\land\neg LB_0(a'') \)，傳回\( Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.</span> 若\( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.01.</span> 若\( Plug(a)[\overline{0}]=\overline{0} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.03.02.</span> 若\( Plug(a)[\overline{0}]\neq\overline{0} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.</span> 若\( \neg LB_0(a')&lt;a_0\land LB_0(a'')&lt;b''\land a''\neq\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.01.</span> 若\( Plug(a)[\overline{0}]=\overline{0} \)，傳回\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.04.02.</span> 若\( Plug(a)[\overline{0}]\neq\overline{0} \)，傳回\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.05.</span> 若\( LB_0(a')&lt;a_0 \)，傳回\( \Psi_{[a',]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 若\( \neg LB_0(a'')&lt;b'' \)，傳回\( c \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> 若\( LB_0(a'')&lt;b''\land a''=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.01.</span> 若\( c=\overline{0} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.</span> 若\( c\neq\overline{0} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0}+c \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.</span> 若\( LB_0(a'')&lt;b''\land a''\neq\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.01.</span> 若\( c=\overline{0} \)，傳回\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.05.02.</span> 若\( c\neq\overline{0} \)，傳回\( \Psi_{[a'',v_1,v_2,\cdots,v_{R_v(a'')}]}^{v_0}+c \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \vec{R} \)如下。它將傳回「M-P-表達式」字串：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto \vec{R}_a\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=\Xi \)，傳回\( \epsilon \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \epsilon \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \epsilon \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( (M_{[\Xi,\cdots]}^{&lt;\overline{\omega}}-P_\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( a'=\Xi \)，傳回\( (M_{[a',\cdots]}^{&lt;a_0}-P_{Plug(a)[\overline{0}]},\cdots,M_{[a',\cdots]}^{&lt;a_0}-P_\overline{2},M_{[a',\cdots]}^{&lt;a_0}-P_\overline{1},M_{[a',\cdots]}^{&lt;a_0}-P_\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.01.</span> 若\( Plug(a)=\overline{0} \)，傳回\( \epsilon \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.02.</span> 若\( Plug(a)\neq\overline{0} \)，傳回\( (\widetilde{M}_{[a',\cdots]}^{&lt;a_0}-P_{Plug(a)[\overline{0}]})({(\vec{R}_{a'})}_{(Plug(a)[\overline{0}],\overline{0}]}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.02.</span> 若\( r=\overline{0} \)，傳回\( \vec{R}_p \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.03.</span> 若\( r\neq\overline{0} \)，傳回\( ({(\vec{R}_p)}_{(\overline{\omega},r]})(\widetilde{M}_{[a',\cdots]}^{&lt;a_0}-P_{r[\overline{0}]})({(\vec{R}_{a'})}_{(r[\overline{0}],\overline{0}]}) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義下限函數\( LB \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto LB_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( R_v(a)&lt;k \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg R_v(a)&lt;k \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( k=0 \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( k=1 \)，傳回\( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> 若\( k=0 \)，傳回\( Suc(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> 若\( k\neq0 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> 若\( a'=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.01.</span> 若\( k=1 \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.02.</span> 若\( k=2 \)，傳回\( Plug(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k=1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( LB_0(a')&lt;a_0 \)，傳回\( LB_0(a'') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( \neg LB_0(a')&lt;a_0 \)，傳回\( LB_0(a') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( a''=\Xi \)，傳回\( Plug(a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( a''\neq\Xi \)，傳回\( LB_{k-1}(a'') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> 若\( k=1 \)，傳回\( LB_0(a'') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> 若\( a''=\Xi \)，傳回\( Suc(c) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> 若\( a''\neq\Xi \)，傳回\( LB_{k-1}(a'') \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義上限函數\( UB \)如下。注意若\( UB_k(a)=\overline{0} \)則不存在上限：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto UB_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( R_v(a)&lt;k \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg R_v(a)&lt;k \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( k=0 \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( k=1 \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> 若\( k=0 \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> 若\( k\neq0 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> 若\( a'=\Xi \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.01.</span> 若\( k=1 \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.02.</span> 若\( k=2 \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k=1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( LB_0(a')&lt;a_0 \)，傳回\( b'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( \neg LB_0(a')&lt;a_0 \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( a''=\Xi \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( a''\neq\Xi \)，傳回\( UB_{k-1}(a'') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> 若\( k=1 \)，傳回\( b'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> 若\( a''=\Xi \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> 若\( a''\neq\Xi \)，傳回\( UB_{k-1}(a'') \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義塌縮基數函數\( CC \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,k\in\mathbb{N})\mapsto CC_k(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( R_v(a)&lt;k \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg R_v(a)&lt;k \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\Xi \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.01.</span> 若\( k=0 \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.</span> 若\( k\neq0 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.01.</span> 若\( a'=\Xi \)，傳回\( a' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k=1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( LB_0(a')&lt;a_0 \)，傳回\( a'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( \neg LB_0(a')&lt;a_0 \)，傳回\( a' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.01.</span> 若\( a''=\Xi \)，傳回\( a'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.02.02.02.</span> 若\( a''\neq\Xi \)，傳回\( CC_{k-1}(a'') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.03.</span> 若\( k=1 \)，傳回\( a'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.01.</span> 若\( a''=\Xi \)，傳回\( a'' \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.06.02.03.04.02.</span> 若\( a''\neq\Xi \)，傳回\( CC_{k-1}(a'') \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in dom(\mathbb{F}) \)以判斷變數是否在定義域中：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m,k\in\mathbb{N})\mapsto(b\in dom_k(\mathbb{F}_a))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( R_v(a)&lt;k \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，若\( b&lt;LB_k(a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，若\( \neg b&lt;UB_k(a)\land UB_k(a)\neq\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，若\( k=0\land\neg b\in C(b,a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 除以上情況，若\( k\neq0\land\neg b\in C(UB_k(a),a) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 除以上情況，若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( k\le1 \) return \( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( k&gt;1 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> 若\( a'=\Xi \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.01.</span> 令\( {(\vec{R}_{a'})}_{Plug(a)[\overline{0}]}=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.02.</span> 傳回\( a''=\Xi\vee b\in dom_{k-1}(\mathbb{F}_{a''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.</span> 若\( a'\neq\Xi\land\neg Plug(a)&lt;\overline{\omega} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.01.</span> 令\( Plug(a)=Add(p,r)\land p\in T_s\land r&lt;\overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.02.</span> 令\( \vec{R}_p=(M_{[a'',\cdots]}^{&lt;b''}-P_{c''})B\land B\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.03.03.</span> 傳回\( a''=\Xi\vee b\in dom_{k-1}(\mathbb{F}_{a''}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> 除以上情況，傳回\( \mathbb{T} \)</p>
+        <br>
+        <p>&emsp;&emsp;注意在論文中，04.行與05.行融合如下：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 除以上情況，若\( \neg b\in C(b,a) \)，傳回\( \mathbb{F} \)</p>
+        <br>
+        <p>&emsp;&emsp;做出這個修改的原因是原程式碼潛在地允許了形如（但不是）\( \Psi_{[\Psi_{[\Psi_{[\Xi,\overline{2}]}^\overline{\omega},]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}},\Psi_{[\Psi_{[\Xi,\overline{2}]}^\overline{\omega},]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}}]}^{\Psi_{[\Xi,\overline{2}]}^\overline{\omega}+\overline{1}} \)的序數存在，於拉珍大\( \Psi \)函數中對應\( \Psi_{\Xi(K)}^{\Xi(K)}(K+1) \)，非標準型。該修改基於拉珍大\( \Psi \)函數的論文中的定義5.1 (T6)。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( VRP \)以將變數替換成序數：</p>
+        <p>&emsp;&emsp;\( (a\in T_m^*,b\in T_m,k\in\mathbb{N})\mapsto VRP_k(a,b)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=\Xi \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( VRP_k(a_0,b)+VRP_k(a_1,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \varphi_{VRP_k(a_0,b)}(VRP_k(a_1,b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( {VRP_k(a_0,b)}^+ \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，傳回\( \Psi_{[VRP_k(a',b),VRP_k(a_1,b),VRP_k(a_2,b),\cdots,VRP_k(a_n,b)]}^{VRP_k(a_0,b)} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=v_n\land n\in\mathbb{N} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( k=n \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( k\neq n \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( Plug \)以將\( \Psi \)項中的變數代入塌縮基數的反射配置：</p>
+        <p>&emsp;&emsp;\( (a\in T_m^*,k\in\mathbb{N})\mapsto Plug_k(a)\in T_m^* \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 若\( k=n \)，傳回\( R_2(a') \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 若\( k&lt;n \)，傳回\( VRP_{n-k}(Plug_{k+1}(a),a_{n-k-1}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;我們將\( Plug_0(a) \)寫作\( Plug(a) \)。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \widetilde{M}-P \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m,c\in T_m)\mapsto \widetilde{M}_{[a,\cdots]}^{&lt;b}-P_c\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg b&lt;LB_0(a)\land\neg LB_0(a)&lt;b\land a\neq\Xi \)，傳回\( {(\vec{R}_a)}_c \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( b&lt;LB_0(a)\vee LB_0(a)&lt;b\vee a=\Xi \)，傳回\( (M_{[a,\cdots]}^{&lt;b}-P_c) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義切割「M-P-表達式」字串的函數\( {}_{(]} \)如下：</p>
+        <p>&emsp;&emsp;\( (A\in MP,m\in T_m,n\in T_m)\mapsto A_{(n,m]}\in MP \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( A=(M_{[a,\cdots]}^{&lt;b}-P_c)B\land B\in MP\land \neg c&lt;n \)，傳回\( B_{(n,m]} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，若\( A=B(M_{[a,\cdots]}^{&lt;b}-P_c)\land B\in MP\land c&lt;m \)，傳回\( B_{(n,m]} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 除以上情況，傳回\( A \)</p>
+        <p>&emsp;&emsp;對於\( A\in MP \)，我們將\( A_{(Suc(n),n]} \)寫作\( A_n \)。</p>
+        <br>
+        <p>&emsp;&emsp;根據以上定義，不可數正規基數\( \kappa \)的反射配置\( \mathbb{F}_\kappa \)定義如下：</p>
+        <p>&emsp;&emsp;\( \mathbb{F}_\kappa(v_0,v_1,\cdots,v_{R_v(\kappa)-1})=[\kappa,v_0,v_1,\cdots,v_{R_v(\kappa)-1}]=(\kappa;A;B;C;LB_0(\kappa)) \)</p>
+        <p>&emsp;&emsp;若\( \Psi \)不於\( R_2(a) \)出現，則\( A \)是\( P_{R_2(a)} \)。</p>
+        <p>&emsp;&emsp;若\( \Psi \)於\( R_2(a) \)出現，令\( R_2(a)=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}+b \)。若不以\( +b \)結尾，令\( b=\overline{0} \)。</p>
+        <p>&emsp;&emsp;則\( A \)是\( M_{[a',a_1,a_2,\cdots,a_n]}^{a_0}-P_b \)。</p>
+        <p>&emsp;&emsp;\( B\in MP \)且\( \vec{R}_\kappa=(M_{[a,\cdots]}^{&lt;b}-P_{c})B \)且\( a,b,c\in T_m \)。</p>
+        <p>&emsp;&emsp;若\( \kappa=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0} \)，則\( C \)是\( \mathbb{F}_{a'} \)。否則，\( C \)是\( \epsilon \)。</p>
+        <h2>標準型</h2><hr>
+        <p>&emsp;&emsp;我們定義最大值函數\( Max \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto Max(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;我們將\( Max(\cdots Max(Max(a_0,a_1),a_2)\cdots,a_n) \)寫作\( Max(a_0,a_1,a_2,\cdots,a_n) \)。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義最小有效值\( \lambda \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T_m,b\in T_m)\mapsto\lambda_b(a)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=\Xi \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( Max(\lambda_b(a_0),\lambda_b(a_1)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \lambda_b(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( a&lt;b \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( \neg a&lt;b \)，傳回\( Max(Suc(a_0),\lambda_b(a_0),\lambda_b(a_1),\lambda_b(a_2),\cdots,\lambda_b(a_n)) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in C \)以判斷序數\( c \)是否為\( C(a,b) \)的元素：</p>
+        <p>&emsp;&emsp;\( (c\in T_m,a\in T_m,b\in T_m)\mapsto c\in C(a,b)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;傳回\( \neg a&lt;\lambda_b(c) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數\( \in T \)以判斷序數是否為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=\Xi \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a_0\in T\land a_1\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a_1\in T_s \)，傳回\( \neg a_0&lt;a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a_1=a_2+a_3\land a_2\in T_s\land a_3\in T_m\setminus\{\overline{0}\} \)，傳回\( \neg a_0&lt;a_2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_0&lt;a\land a_1&lt;a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( a_0\in Card\land a_0&lt;\Xi \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( \neg a'\in Reg \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 除以上情況，若\( R_v(a')\neq n \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.03.</span> 除以上情況，傳回\( \forall_0^n x(a_x\in dom_x(\mathbb{F}_{a'})) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義該系統的極限為\( A=\Gamma_{\Xi+1} \)。</p>
+        <p>&emsp;&emsp;\( \Gamma_{\Xi+1} \)亦為標準型。</p>
+        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha\le\Gamma_{\Xi+1} \)。</p>
+        <p>&emsp;&emsp;序數\( \alpha \)可數當且僅當\( \alpha&lt;\overline{\omega}^+ \)。</p>
+        <p>&emsp;&emsp;僅限於增長階層指令（「fgh」，「sgh」，「mgh」以及「hh」）可用的可數極限序數為\( \Psi_{[\overline{\omega}^+,]}^{\Gamma_{\Xi+1}} \)。其電腦程式碼為「(s(+(v,(v,))),A)」。</p>
+        <h2>運算</h2><hr>
+        <p>&emsp;&emsp;我們定義標準化函數\( Norm \)以將序數化為標準型：</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a\in T \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a\in T \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Norm(a_0)+Norm(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a=a_1 \)，傳回\( a_1 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a=a_0 \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( a\neq a_0\land a\neq a_1 \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 除以上情況，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義加法\( Add \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land b=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( ((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\})) \)，且</p>
+        <p>&emsp;&emsp;\( ((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a_0&lt;b_0 \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( a_0+Add(a_1,b_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義後繼\( Suc \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Suc(a)\in T\setminus\{\overline{0}\} \)</p>
+        <p>&emsp;&emsp;傳回\( Add(a,\overline{1}) \)</p>
+        <br>
+        <p>&emsp;&emsp;我们定义函數\( Solve \)，使得\( Solve(\alpha,\beta) \)返回滿足\( \alpha+\gamma=\beta \)的\( \gamma \)。若這樣的\( \gamma \)不存在，則將\( Solve(\alpha,\beta) \)設爲\( \overline{0} \)：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Solve(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg a&lt;b \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a&lt;b\land((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\})) \)，且</p>
+        <p>&emsp;&emsp;\( ((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a_0&lt;b_0 \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( \neg a_0&lt;b_0 \)，傳回\( Solve(a_1,b_1) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義左部函數\( L \)如下。這是為了將序數分成兩部分，其中，左部的序數每一項都大於或等於某序數，右部則小於該序數：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto L(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( a_0+L(a_1,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a\in T_s \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;類似地，我们定义右部函数\( R \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto R(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( R(a_1,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a\in T_s \)，傳回\( \overline{0} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義最小塌縮函數\( LC \)以建構所有變數都為最小值的\( \Psi \)項：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto LC(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a\in Reg \)，傳回\( \Psi_{[a,LB_1(a),LB_2(a),\cdots,LB_n(a)]}^{LB_0(a)} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a\in Reg \)，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義替換函數\( RP \)以替換某\( \Psi \)項的某變數：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,k\in\mathbb{N})\mapsto RP_k(a,b)\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 令\( r_m=\begin{cases} Add(LB_k(a'),b) & m=k \\ a_m & m\neq k \end{cases} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 傳回\( \Psi_{[a',r_1,r_2,\cdots,r_n]}^{r_0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義根部函數\( Root \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Root(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 若\( a'=b \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 若\( a'\neq b \)，傳回\( Root(a',b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義尾部函數\( t \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto t(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a&lt;b \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \neg a&lt;b \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( t(a_1,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a\in T_s \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( a=\Xi \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，傳回\( t(a_1,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.02.</span> 若\( Cof(a_1)&lt;\overline{\omega} \)，傳回\( t(a_0,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.01.</span> 若\( a\in Reg \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.</span> 除以上情況，若\( \neg LB_0(a')&lt;a_0 \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.01.</span> 若\( a'=\Psi_{[a'',a_1',a_2',\cdots,a_n']}^{a_0'} \)，傳回\( \Psi t(a,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.02.01.</span> 除以上情況，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.03.</span> 除以上情況，若\( \neg FP_0(a) \)，傳回\( t(a_0,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.04.</span> 除以上情況，傳回\( t(L(a_0,a'),b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> 除以上情況，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義塌縮尾部函數\( \Psi t \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto \Psi t(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 以\( i=n,\cdots,2,1,0 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.01.</span> 令\( c=Solve(LB_i(a'),a_i) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.</span> 若\( c\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.01.</span> 若\( \neg FP_i(a) \)，傳回\( t(c,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.</span> 若\( FP_i(a) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.01.</span> 令\( d=L(c,CC_i(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.02.</span> 若\( d\neq\overline{0} \)，傳回\( t(d,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.</span> 若\( d=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.01.</span> 以\( j=i-1,i-2,\cdots,2,1,0 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.02.02.03.01.01.</span> 若\( Solve(LB_j(a'),a_j)\neq0 \)，傳回\( t(Solve(LB_j(a'),a_j),b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 傳回\( \Psi t(a',b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( a \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義不動點函數\( FP \)以判斷某序數是否為不動點：</p>
+        <p>&emsp;&emsp;\( (a\in T,k\in\mathbb{N})\mapsto FP_k(a)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 若\( k&gt;R_v(a') \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 若\( k\le R_v(a') \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.01.</span> 令\( c=Solve(LB_k(a'),a_k) \), \( b=CC_k(a') \), \( t=t(c,b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.02.</span> 令\( r=Root(a,b)=\Psi_{[r',r_1,r_2,\cdots,r_n]}^{r_0}\land r',r_0,r_1,r_2,\cdots,r_n\in T_m \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.03.</span> 若\( \neg t\in T_s \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.04.</span> 除以上情況，若\( r=\overline{0} \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.</span> 除以上情況，若\( t=\Psi_{[t',t_1,t_2,\cdots,t_n]}^{t_0}\land t',t_0,t_1,t_2,\cdots,t_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.01.</span> 若\( t&lt;RP_k(a,c{[\overline{0}]}^*) \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.</span> 以\( i=0,1,2,\cdots,n-1 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.01.</span> 若\( r_i&lt;a_i \)，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.02.02.</span> 若\( a_i&lt;r_i \)，傳回\( \mathbb{T} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.05.03.</span> 傳回\( Add(LB_k(a'),c)&lt;r_k \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.06.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義最後空間函數\( LS \)以得出某變數之後最左邊的含有至少為其塌縮基數的「空間」的變數。若傳回\( 0 \)，則表示該變數不存在：</p>
+        <p>&emsp;&emsp;\( (a\in T,k\in\mathbb{N})\mapsto LS_k(a)\in\mathbb{N} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 令\( r=0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 以\( i=n+1,n+2,\cdots,R_v(a) \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.01.</span> 若\( \neg Solve(LB_i(a),UB_i(a))&lt;CC_i(a) \)，令\( r=i \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 傳回\( r \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( 0 \)</p>
+        <h2>共尾數</h2><hr>
+        <p>&emsp;&emsp;我們定義共尾函數\( Cof \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto Cof(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a\in Reg \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land\neg a\in Reg \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.01.</span> 若\( \neg Cof(a_1)&lt;\overline{\omega} \)，傳回\( Cof(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.02.</span> 若\( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \)，傳回\( Cof(a_0) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.03.</span> 若\( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.04.</span> 若\( a_0=\overline{0}\land a_1=\overline{0} \)，傳回\( \overline{1} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，傳回\( CP(a,IT(a)) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義塌縮共尾函數\( CP \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto CP(a,b)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 令\( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 令\( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 以\( i=u,\cdots,2,1,0 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> 令\( e_m=\begin{cases} c_m & m\le i \\ d_m & m&gt;i \end{cases} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> 若\( b=\overline{0}\land\forall_{i+1}^u x(c_{Rx}=\overline{0}) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.01.</span> 以\( j=i,i+1,i+2,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.01.01.</span> 若\( \overline{1}&lt;Cof(R(e_j,b_j))\land\forall_i^{j-1}x(Cof(e_x)=\overline{1}) \)，傳回\( Cof(e_j) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.03.</span> 除以上情況，若\( LS_i(a')=0\land c_{Li}\neq\overline{0} \)，傳回\( CPM_i(c_i,a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.</span> 除以上情況，若\( LS_i(a')\neq0\land c_i\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.01.</span> 以\( j=i,i+1,i+2,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.04.01.01.</span> 若\( LS_j(a')=0\vee Cof(e_j)\neq\overline{1} \)，傳回\( CPM_j(e_j,a) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> 傳回\( CP(a',b) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義主塌縮共尾函數\( CPM \)如下：</p>
+        <p>&emsp;&emsp;\( (s\in T,a\in T,k\in\mathbb{N})\mapsto CPM_k(s,a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 令\( d=s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 若\( LS_k(a')=0 \)，令\( d=L(s,CC_k(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 若\( Cof(d)&lt;CC_k(a') \)，傳回\( Cof(d) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> 若\( \neg Cof(d)&lt;CC_k(a') \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \overline{\omega} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( Cof(\Gamma_{\Xi+1})=\overline{\omega} \)。</p>
+        <h2>基本序列</h2><hr>
+        <p>&emsp;&emsp;我們定義基本序列\( [] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a\neq\overline{0}\land a\in Reg \)，傳回\( n \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a\neq\overline{0}\land\neg a\in Reg \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( Add(a_0,a_1[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.</span> 若\( a_1=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.01.</span> 若\( a_0=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.02.02.</span> 若\( n\neq\overline{0} \)，傳回\( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.01.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.</span> 若\( Cof(a_1)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.</span> 若\( a_0=\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.01.</span> 若\( n=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.01.02.</span> 若\( n\neq\overline{0} \)，傳回\( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.</span> 若\( Cof(a_0)=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.01.</span> 若\( n=\overline{0} \)，傳回\( Norm(\varphi_{a_0}(a_1[\overline{0}])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.02.</span> 若\( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(Suc(a[n[\overline{0}]])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.02.03.</span> 若\( n[\overline{0}]\neq\overline{0} \)，傳回\( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.02.03.</span> 若\( Cof(a_0)\ge\overline{\omega} \)，傳回\( \varphi_{a_0[n]}(Suc(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.03.</span> 若\( Cof(a_1)\ge\overline{\omega} \)，傳回\( Norm(\varphi_{a_0}(a_1[n])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.03.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，傳回\( P(a,IT(a))[n] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義初項\( IT \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T)\mapsto IT(a)\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( \overline{\omega} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.01.</span> 若\( a_0=\overline{\omega} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.02.</span> 若\( a_0\neq\overline{\omega} \)，傳回\( a_0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 令\( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 令\( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> 以\( i=u,\cdots,2,1,0 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> 若\( Cof(c_{Ri})=\overline{1} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.01.</span> 令\( r=RP_i(a,c_i[\overline{0}]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.</span> 以\( j=i,i+1,i+2,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.01.</span> 若\( \neg Cof(d_j)&lt;b_j \)，傳回\( r \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.02.</span> 若\( \overline{1}&lt;Cof(d_j) \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.02.03.</span> 令\( r=RP_j(c,d_j[\overline{0}]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.03.</span> 傳回\( r \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> 除以上情況，若\( c_{Ri}\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.</span> 若\( FP_i(a) \)，傳回\( t(c_m,b_m) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.02.</span> 若\( \neg FP_i(a) \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 除以上情況，若\( c_{Li}\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.01.</span> 若\( Cof(c_{Li})&lt;b_i\land FP_i(a) \)，傳回\( t(c_m,b_m) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.02.</span> 若\( \neg FP_i(a) \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.04.</span> 傳回\( IT(a') \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義塌縮基本序列\( P[] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,n\in T)\mapsto P(a,b)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=\Xi \)，傳回\( LimCard(b)[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( \overline{0} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \Gamma(b)[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 令\( u=R_v(a') \), \( l_m=LB_m(a') \), \( b_m=CC_m(a') \), \( c_m=Solve(l_m,a_m) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 令\( c_{Lm}=L(c_m,b_m) \), \( c_{Rm}=R(c_m,b_m) \), \( d_m=Solve(l_m,UB_m(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.</span> 以\( i=u,\cdots,2,1,0 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.01.</span> 令\( e_m=\begin{cases} c_m & m\le i \\ d_m & m&gt;i \end{cases} \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.</span> 若\( b=\overline{0}\land\forall_{i+1}^u x(c_{Rx}=\overline{0}) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.</span> 以\( j=i,i+1,i+2,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.</span> 若\( \overline{1}&lt;Cof(R(e_j,b_j))\land\forall_i^{j-1}x(Cof(e_x)=\overline{1}) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.01.</span> 令\( r=RP_j(a,e_j[n]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.02.</span> 以\( k=i,i+1,i+2,\cdots,j-1 \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.02.01.</span> 令\( r=RP_k(r,e_k[\overline{0}]) \):</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.02.01.01.03.</span> 傳回\( r \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.03.</span> 除以上情況，若\( LS_i(a')=0\land c_{Li}\neq\overline{0} \)，傳回\( PM_i(c_i,a,b,a)[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.</span> 除以上情況，若\( LS_i(a')\neq0\land c_i\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.01.</span> 令\( r=a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.</span> 以\( j=i+1,i+2,i+3,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.02.01.</span> 令\( r=RP_j(r,\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.</span> 以\( j=i,i+1,i+2,\cdots,u \)循環：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.01.</span> 若\( LS_j(a')=0\vee Cof(e_j)\neq\overline{1} \)，傳回\( PM_j(e_j,a,b,r)[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.03.04.03.02.</span> 令\( r=RP_j(r,e_j[\overline{0}]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.04.</span> 傳回\( P(a',b)[n] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義強臨界數列\( \Gamma[] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto \Gamma(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0})\in T \)，傳回\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0}) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( \neg\varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{0})\in T \)，傳回\( \varphi_{\Gamma(a)[n[\overline{0}]]}(\overline{1}) \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義極限基數數列\( LimCard[] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto LimCard(a)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( a \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，傳回\( {LimCard(a)[n[\overline{0}]]}^+ \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義主塌縮基本序列\( PM[] \)如下：</p>
+        <p>&emsp;&emsp;\( (s\in T,a\in T,b\in T,c\in T,n\in T,k\in\mathbb{N})\mapsto PM_k(s,a,b,c)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.01.</span> 令\( d=s \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.02.</span> 若\( LS_k(a')=0 \)，令\( d=L(s,CC_k(a')) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.</span> 若\( Cof(d)&lt;CC_k(a') \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.01.</span> 若\( LS_k(a')=0 \)，傳回\( RP_k(c,Add(d[n],b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.03.02.</span> 若\( LS_k(a')\neq0 \)，傳回\( RP_k(RP_{LS_k(a')}(c,b),Add(d[n],b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.</span> 若\( CC_k(a')&lt;Cof(d) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.01.</span> 若\( n=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.04.02.</span> 若\( n\neq\overline{0} \)，傳回\( RP_k(c,Add(Re(d,CC_k(a'))[n[\overline{0}]],b)) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.</span> 若\( \neg Cof(d)&lt;CC_k(a')\land\neg CC_k(a')&lt;Cof(d) \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.01.</span> 若\( n=\overline{0} \)，傳回\( b \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.05.02.</span> 若\( n\neq\overline{0} \)，傳回\( RP_k(c,d[P(a,b)[n[\overline{0}]]]) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \overline{0} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義遞迴序列\( Re[] \)如下：</p>
+        <p>&emsp;&emsp;\( (a\in T,b\in T,n\in T)\mapsto Re(a,b)[n]\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( n=\overline{0} \)，傳回\( a[b] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( n\neq\overline{0} \)，則：</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 令\( c=Cof(a) \), \( l=LB_0(c) \), \( p=Re(a,b)[n[\overline{0}]] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> 若\( a&lt;l \)，傳回\( a[RP_0(LC(c),p)] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.03.</span> 若\( \neg a&lt;l \)，傳回\( a[RP_0(LC(c),Solve(l,p))] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義強基本序列\( {[]}^* \)如下，以便將共尾數不可數的序數以更小的共尾數可數的序數展開：</p>
+        <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( \neg\overline{\omega}&lt;Cof(a) \)，傳回\( a[n] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( \overline{\omega}&lt;Cof(a)\land n=\overline{0} \)，傳回\( a[LC(a)] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> 若\( \overline{\omega}&lt;Cof(a)\land n\neq\overline{0} \)，傳回\( a[RP_0(LC(a),\Gamma(\Xi)[n[\overline{0}]])] \)</p>
+        <br>
+        <p>&emsp;&emsp;我們也定義\( \Gamma_{\Xi+1} \)的基本序列如下：</p>
+        <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{\Xi+1}[n]\in T \)</p>
+        <p>&emsp;&emsp;傳回\( \Gamma(\Xi)[n] \)</p>
+        <h1>引用</h1><hr>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Stegert, J. (2010). <a href="https://d-nb.info/1017849250/34" target="_blank">Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles.</a> Retrieved 2026-10-09.</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2026-10-09. https://doi.org/10.2307/2274692</p>
+    </body>
+</html>
