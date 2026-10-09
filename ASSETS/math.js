@@ -223,6 +223,86 @@ function rexi(math, level = 4){
     }
     return result;
 }
+// REWRITE K
+function rek(math){
+    // ZERO CASE
+    if (feq(math, ["0"]) || feq(math, [])) return math;
+    // LOOP
+    let result = [], item;
+    for (let i = 0; i < math.length; i++){
+        // CHANGE K IN SIMPLE TERMS
+        if (typeof math[i] !== "object"){
+            if (math[i] === "K") result.push("\\mathcal{K}");
+            else result.push(math[i]);
+            continue;
+        }
+        // KEEP NON-SIMPLE TERMS
+        item = clone(math[i]);
+        for (let j = 1; j < item.length; j++) item[j] = rek(item[j]);
+        result.push(item);
+        continue;
+    }
+    return result;
+}
+// REWRITE STEGERT'S PSI
+function restegert(math, square = false){
+    // ZERO CASE
+    if (feq(math, ["0"]) || feq(math, [])) return math;
+    // LOOP
+    let result = [], item, a;
+    for (let i = 0; i < math.length; i++){
+        // KEEP SIMPLE TERMS
+        if (typeof math[i] !== "object"){
+            result.push(math[i]);
+            continue;
+        }
+        // KEEP NON-STEGERT TERMS
+        if (!"sS".includes(math[i][0])){
+            item = clone(math[i]);
+            for (let j = 1; j < item.length; j++) item[j] = restegert(item[j], square);
+            result.push(item);
+            continue;
+        }
+        // REWRITE MIDDLE
+        item = clone(math[i].slice(2, -1));
+        for (let j = 0; j < item.length; j++) item[j] = restegert(item[j], square);
+        // REWRITE REMAINING
+        item = ["l"].concat(item);
+        a = restegert(math[i].slice(-1)[0], square);
+        item = [math[i][0], [["f", restegert(math[i][1], square), [item]]], a];
+        if (square) item = [3, [item]];
+        result.push(item);
+    }
+    return result;
+}
+// REWRITE REFLECTION
+function reref(math, mode = 0){
+    // SKIP IF MODE IS 0
+    if (!mode) return math;
+    // ZERO CASE
+    if (feq(math, ["0"]) || feq(math, [])) return math;
+    // LOOP
+    let result = [], item, f;
+    for (let i = 0; i < math.length; i++){
+        // KEEP SIMPLE TERMS
+        if (typeof math[i] !== "object"){
+            result.push(math[i]);
+            continue;
+        }
+        // KEEP TERMS EXCEPT REFLECTION
+        item = clone(math[i]);
+        f = `f${mode}`;
+        if (item[0] === "f") item[0] = f;
+        for (let j = 1; j < item.length; j++){
+            item[j] = reref(item[j], mode);
+            if (item[0] !== f) continue;
+            if (typeof item[j][0] !== "object") continue;
+            if (item[j][0][0] === "l") item[j][0][0] = "l_";
+        }
+        result.push(item);
+    }
+    return result;
+}
 // REWRITE UNCOUNTABLE
 function reunc(math){
     // ZERO CASE
@@ -306,6 +386,47 @@ function reveb(math, level1 = 5, level2 = 4){
         // φ_4+(α) OR Φ_4+(α) REMAINS THE SAME
         } else result.push([math[i][0], reveb(math[i][1], level1, level2),
                                         reveb(math[i][2], level1, level2)]);
+    }
+    return result;
+}
+// REWRITE CARDINAL SUCCESSION
+function recs(math, level = 0){
+    // ZERO CASE
+    if (feq(math, ["0"]) || feq(math, [])) return math;
+    // LOOP
+    let result = [], item, skip, nw, a, b;
+    for (let i = 0; i < math.length; i++){
+        // KEEP SIMPLE TERMS
+        if (typeof math[i] !== "object"){
+            result.push(math[i]);
+            continue;
+        }
+        skip = false;
+        for (let j = 0; j < 1; j++){
+            // KEEP NON-CARDINAL SUCCESSION TERMS
+            if (math[i][0][0] !== "+"){skip = true; break;}
+            // KEEP TERM IF INSIDE IS NOT SINGLE
+            if (math[i][1].length !== 1){skip = true; break;}
+            // KEEP TERM IF INSIDE IS NOT CARDINAL SUCCESSION
+            if (math[i][1][0][0][0] !== "+"){skip = true; break;}
+        }
+        // KEEP SKIPPED TERMS
+        if (skip){
+            item = clone(math[i]);
+            for (let j = 1; j < item.length; j++) item[j] = recs(item[j], level);
+            result.push(item);
+            continue;
+        }
+        // REWRITE
+        if (level === 0) nw = math[i][0] + math[i][1][0][0];
+        else {
+            a = math[i][0].slice(1);
+            a = a ? Number(a) : 1;
+            b = math[i][1][0][0].slice(1);
+            b = b ? Number(b) : 1;
+            nw = "+" + (a + b);
+        }
+        result.push(recs([[nw, math[i][1][0][1]]], level)[0]);
     }
     return result;
 }
@@ -563,22 +684,22 @@ function remult(math){
         }
         // CHECK LEFT
         if (typeof math[i - 1] === "object"){
-            if ("vVbBrRxX".includes(math[i - 1][0])){
+            if ("vVbBrRxXsST".includes(math[i - 1][0])){
                 result.push("*");
                 continue;
             }
-            if ("012".includes(math[i - 1][0]) && "vVbBrRxX".includes(math[i - 1][1][0][0])){
+            if ("012".includes(math[i - 1][0]) && "vVbBrRxXsST".includes(math[i - 1][1][0][0])){
                 result.push("*");
                 continue;
             }
         }
         // CHECK RIGHT
         if (typeof math[i + 1] === "object"){
-            if ("vVbBrRxX".includes(math[i + 1][0])){
+            if ("vVbBrRxXsST".includes(math[i + 1][0])){
                 result.push("*");
                 continue;
             }
-            if ("012".includes(math[i + 1][0]) && "vVbBrRxX".includes(math[i + 1][1][0][0])){
+            if ("012".includes(math[i + 1][0]) && "vVbBrRxXsST".includes(math[i + 1][1][0][0])){
                 result.push("*");
                 continue;
             }
@@ -595,6 +716,9 @@ function orifunc(math){
     for (let i = 0; i < result.length; i++){
         if (typeof result[i] !== "object") continue;
         if ("Br".includes(result[i][0])) result[i][0] = "b";
+        if ("sS".includes(result[i][0])) result[i][0] = "R";
+        if (result[i][0] === "X") result[i][0] = "X2";
+        if (result[i][0] === "X1") result[i][0] = "X3";
         for (let j = 1; j < result[i].length; j++) result[i][j] = orifunc(result[i][j]);
     }
     return result;
@@ -616,6 +740,8 @@ function refunc(math){
         else if (math[i][0] === 1) result.push([1, refunc(math[i][1]), refunc(math[i][2])]);
         else if (math[i][0] === 2){
             result.push([2, refunc(math[i][1]), refunc(math[i][2]), refunc(math[i][3])]);
+        } else if (math[i][0][0] === "+"){
+            result.push([0, refunc(math[i][1]), math[i][0].slice(1) + math[i][0][0]]);
         } else if (math[i][0] === "W") result.push([1, ["\\Omega"], refunc(math[i][1])]);
         else if (math[i][0] === "e") result.push([1, ["\\varepsilon"], refunc(math[i][1])]);
         else if (math[i][0] === "E") result.push([1, ["E"], refunc(math[i][1])]);
@@ -642,14 +768,66 @@ function refunc(math){
             result = result.concat(["("], refunc(math[i][2]), [")"]);
         } else if (math[i][0] === "R"){
             result.push([2, ["\\Psi"], refunc(math[i][1]), refunc(math[i][2])]);
-            result = result.concat(["("], refunc(math[i][3]), [")"]);
+            if (math[i].length > 3) result = result.concat(["("], refunc(math[i][3]), [")"]);
         } else if (math[i][0] === "x"){
             result.push([1, ["\\chi"], refunc(math[i][1])]);
             result = result.concat(["("], refunc(math[i][2]), [")"]);
         } else if (math[i][0] === "X"){
-            result = result.concat(["\\Xi", "("], refunc(math[i][1]), [")"]);
+            result = result.concat(["X", "("], refunc(math[i][1]), [")"]);
         } else if (math[i][0] === "X1"){
+            result.push([1, ["X"], refunc(math[i][1])]);
+        } else if (math[i][0] === "X2"){
+            result = result.concat(["\\Xi", "("], refunc(math[i][1]), [")"]);
+        } else if (math[i][0] === "X3"){
             result.push([1, ["\\Xi"], refunc(math[i][1])]);
+        } else if (math[i][0] === "s"){
+            result.push([2, ["\\mathfrak{p}"], refunc(math[i][1]), refunc(math[i][2])]);
+            if (math[i].length > 3) result = result.concat(["("], refunc(math[i][3]), [")"]);
+        } else if (math[i][0] === "S"){
+            result.push([2, ["\\mathfrak{P}"], refunc(math[i][1]), refunc(math[i][2])]);
+            if (math[i].length > 3) result = result.concat(["("], refunc(math[i][3]), [")"]);
+        } else if (math[i][0] === "T"){
+            result = result.concat(["\\Theta", "("], refunc(math[i][1]), [")"]);
+        } else if (math[i][0] === "f"){
+            result.push([1, ["\\mathbb{F}"], refunc(math[i][1])]);
+            if (!feq(math[i][2], ["\\cdots"])) result = result.concat(refunc(math[i][2]));
+        } else if (math[i][0] === "f1"){
+            result = result.concat(["["], refunc(math[i][1]), [","], refunc(math[i][2]), ["]"]);
+        } else if (math[i][0] === "f2"){
+            result = result.concat(["["], refunc(math[i][1]));
+            if (feq(math[i][2], ["\\cdots"])) result = result.concat([","], refunc(math[i][2]));
+            else if (math[i][2][0].length > 1) result = result.concat([","], refunc(math[i][2]));
+            result.push("]");
+        } else if (math[i][0] === "l"){
+            result.push("(");
+            for (let j = 1; j < math[i].length; j++){
+                if (j > 1) result.push(",");
+                result = result.concat(refunc(math[i][j]));
+            }
+            result.push(")");
+        } else if (math[i][0] === "l_"){
+            for (let j = 1; j < math[i].length; j++){
+                if (j > 1) result.push(",");
+                result = result.concat(refunc(math[i][j]));
+            }
+        } else if (math[i][0] === "L"){
+            result.push("(");
+            for (let j = 1; j < math[i].length; j++){
+                if (j > 1) result.push(";");
+                result = result.concat(refunc(math[i][j]));
+            }
+            result.push(")");
+        } else if (math[i][0] === "a") result.push([1, ["\\alpha"], refunc(math[i][1])]);
+        else if (math[i][0] === "MP"){
+            if (math[i][1].length && math[i][2].length){
+                result.push([2, ["M"], refunc(math[i][1]), refunc(math[i][2])]);
+                result.push("-");
+            }
+            result.push([1, ["P"], refunc(math[i][3])]);
+        } else if (math[i][0] === "MP2"){
+            result.push([2, ["M"], refunc(math[i][1]), ["&lt;"].concat(refunc(math[i][2]))]);
+            result.push("-");
+            result.push([1, ["P"], refunc(math[i][3])]);
         } else {
             result.push([math[i][0]]);
             for (let j = 1; j < math[i].length; j++){
@@ -665,9 +843,13 @@ function simplify(math, options){
     result = rebuch(result, options.rebuch);
     result = rechi(result, options.rechi);
     result = rexi(result, options.rexi);
+    if (options.rek) result = rek(result);
+    result = restegert(result, options.square);
+    result = reref(result, options.ref);
     result = reunc(result);
     result = reveb(result, Math.max(options.reveb1, options.force_omega),
                    options.reveb2 + !!options.reveb2);
+    result = recs(result, 0);
     if (options.simplify > 0) result = spexp(result, options.simplify % 2);
     if (options.simplify > 1) result = spmult(result);
     if (options.simplify > 3) result = spadd(result);
@@ -682,6 +864,8 @@ function simplify(math, options){
 // REPLACE MATHJAX SYMBOLS WITH TEXTS
 function replace(math){
     const rep = [
+        ["\\alpha", "α"],
+        ["\\epsilon", "ε"],
         ["\\varepsilon", "ε"],
         ["\\zeta", "ζ"],
         ["\\eta", "η"],
@@ -691,11 +875,17 @@ function replace(math){
         ["\\psi", "ψ"],
         ["\\omega", "ω"],
         ["\\Gamma", "Γ"],
+        ["\\Theta", "Θ"],
         ["\\Xi", "Ξ"],
         ["\\Phi", "Φ"],
         ["\\Psi", "Ψ"],
+        ["\\Upsilon", "Υ"],
         ["\\Omega", "Ω"],
+        ["\\mathfrak{p}", "st"],
+        ["\\mathfrak{P}", "St"],
+        ["\\mathbb{F}", "F"],
         ["\\cdot_{\\cdot_\\cdot}", "..."],
+        ["\\cdots", "..."],
     ];
     let result = clone(math);
     for (let i = 0; i < rep.length; i++) result = result.split(rep[i][0]).join(rep[i][1]);
@@ -716,6 +906,9 @@ function html(math, rep = true){
                 text += html(math[i][1], false);
                 text += `<sub>${html(math[i][2], false)}</sub>`;
                 text += `<sup>${html(math[i][3], false)}</sup>`;
+            } else if (math[i][0] === 3){
+                text += `<span style="border: 1px solid; padding: 1px; display: inline-block; `;
+                text += `white-space: nowrap;">${html(math[i][1], false)}</span>`;
             } else {
                 text += math[i][0] + "(";
                 for (let j = 1; j < math[i].length; j++) text += html(math[i][j], false) + ",";
@@ -741,6 +934,8 @@ function mathjax(math, bracket = true){
                 text += `{${mathjax(math[i][1], false)}}_`;
                 text += `{${mathjax(math[i][2], false)}}^`;
                 text += `{${mathjax(math[i][3], false)}}`;
+            } else if (math[i][0] === 3){
+                text += `\\boxed{${mathjax(math[i][1], false)}}`;
             } else {
                 text += math[i][0] + "(";
                 for (let j = 1; j < math[i].length; j++) text += mathjax(math[i][j], false) + ",";

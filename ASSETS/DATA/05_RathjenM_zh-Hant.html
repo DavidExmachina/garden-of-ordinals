@@ -5,7 +5,7 @@
         <h1>定義</h1><hr>
         <p>&emsp;&emsp;拉珍小\( \psi \)函數指的是麥可·拉珍於1990年提出的序數塌縮函數<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
         <p>&emsp;&emsp;由於布赫霍茲\( \psi \)函數也記作\( \psi_\alpha(\beta) \)，該序數塌縮函數於計算選單與探索選單記作\( \rho_\alpha(\beta) \)以表示區分。您可以透過 選項 &gt; 函數指定 &gt; \( \psi_\alpha(\beta) \) 以使其恢復原狀。</p>
-        <p>&emsp;&emsp;整個序數系統由4個函數：\( \varphi_\alpha(\beta) \)，\( \Phi_\alpha(\beta) \)，\( \chi_\alpha(\beta) \)與\( \psi_\alpha(\beta) \)組成，描述與定義如下。</p>
+        <p>&emsp;&emsp;整個序數系統由4個函數：\( \varphi_\alpha(\beta) \)，\( \Phi_\alpha(\beta) \)，\( \chi_\alpha(\beta) \)與\( \psi_\alpha(\beta) \)與麻洛基數\( M \)組成，描述與定義如下。</p>
         <h2>函數\( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)表示維布倫函數。定義如下且已在「維布倫函數」介面的幫助選單顯示：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -83,10 +83,10 @@
         <p>&emsp;&emsp;\( \chi_2(0) \)（於之前記作\( I(2,0) \)）不是麻洛基數，因為小於\( \chi_2(0) \)的不可達基數的集合與\( \chi_2(0) \)的一個俱樂集\( \{I_{\omega(1+\alpha)}|\alpha&lt;\chi_2(0)\} \)不交。這利用了\( I_\omega \)，\( I_{\omega2} \)等基數因為是奇異基數從而不是不可達基數的事實。</p>
         <p>&emsp;&emsp;由此可驗證類似\( \chi_3(0) \)與\( \chi_M(0) \)等更大的不可達基數皆如此，從而說明了為什麼\( M \)在此可用來構造大的不可達基數。順便一提，ZFC無法證明麻洛基數是否存在。</p>
         <br>
-        <p>&emsp;&emsp;序數\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)稱為「小拉珍序數（SRO）」。該序數是\( KPM \)的證明論序數。</p>
+        <p>&emsp;&emsp;序數\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)稱作「小拉珍序數（SRO）」。該序數是\( KPM \)的證明論序數。</p>
         <h1>序數表示法</h1><hr>
         <h2>表示法</h2><hr>
-        <p>&emsp;&emsp;我們定義\( S \)為包含以下字元的集合：</p>
+        <p>&emsp;&emsp;我們定義\( S \)為包含以下字元的字串集合：</p>
         <p>&emsp;&emsp;常數「\( \overline{0} \)」與「\( M \)」，</p>
         <p>&emsp;&emsp;函數字元「\( \varphi \)」，「\( \Phi \)」，「\( \chi \)」與「\( \psi \)」，</p>
         <p>&emsp;&emsp;以及其他字元「\( + \)」，「\( ( \)」，「\( ) \)」與「\( , \)」。</p>
@@ -238,7 +238,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \)，傳回\( a \)</p>
         <br>
         <p>&emsp;&emsp;我們定義函數\( \in R \)以判斷序數是否為小於\( M \)的不可數正規基數：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( Cof(a_1)&lt;\overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情況，傳回\( \mathbb{F} \)</p>
         <br>
@@ -258,7 +258,7 @@
         <p>&emsp;&emsp;傳回\( \neg a&lt;\lambda_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;我們定義函數\( \in T \)以判斷序數是否為標準型：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，傳回\( \mathbb{F} \)</p>
@@ -271,7 +271,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，傳回\( a_0\in T\land a_1\in T\land a_0\in R\land a_1\in C(a_0,a_1) \)</p>
         <br>
         <p>&emsp;&emsp;順便一提，麥可·拉珍在論文中也定義了標準型\( T(M) \)。我們也將用該網站的語言定義該版本：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，傳回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T(M)\vee\neg a_1\in T(M) \)，傳回\( \mathbb{F} \)</p>
@@ -285,9 +285,9 @@
         <br>
         <p>&emsp;&emsp;我們定義該系統的極限為\( A=\Gamma_{M+1} \)。</p>
         <p>&emsp;&emsp;\( \Gamma_{M+1} \)亦為標準型。</p>
-        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha&lt;\Gamma_{M+1} \)。</p>
+        <p>&emsp;&emsp;對於一切該系統的序數\( \alpha\in T \)，\( \alpha\le\Gamma_{M+1} \)。</p>
         <p>&emsp;&emsp;序數\( \alpha \)可數當且僅當\( \alpha&lt;\chi_\overline{0}(\overline{0}) \)。</p>
-        <p>&emsp;&emsp;僅限於增長階層指令（「fgh」，「sgh」，「mgh」以及「hh」）可用的可數序數極限為\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其電腦程式碼為(r(x,),A)。</p>
+        <p>&emsp;&emsp;僅限於增長階層指令（「fgh」，「sgh」，「mgh」以及「hh」）可用的可數極限序數為\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其電腦程式碼為「(r(x,),A)」。</p>
         <h2>運算</h2><hr>
         <p>&emsp;&emsp;我們定義標準化函數\( Norm \)以將序數化為標準型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>

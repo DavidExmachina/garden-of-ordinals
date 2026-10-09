@@ -3,25 +3,25 @@
     <head></head>
     <body>
         <h1>關於本網站</h1><hr>
-        <p>&emsp;&emsp;序數花園是一個在不同的序數系統中透過運行計算與探索來演示（主要是無窮且極大的）序數的性質的網站。本網站涉及6個序數系統：康托爾標準型，維布倫函數，布赫霍茲\( \psi \)函數，拓展布赫霍茲\( \psi \)函數，拉珍小\( \psi \)函數以及拉珍大\( \Psi \)函數。</p>
-        <p>&emsp;&emsp;您可以透過點擊按鈕來進入對應的序數系統的介面。進入介面後，您將看到4個標籤：計算，探索，選項以及幫助。您可以透過點擊幫助標籤以獲取更多關於這個序數系統的資訊。</p>
+        <p>&emsp;&emsp;歡迎來到序數花園！序數花園是一個在不同的序數系統中透過運行計算與探索來演示（主要是無窮且極大的）序數的性質的網站。本網站涉及8個序數系統：康托爾標準型，維布倫函數，布赫霍茲\( \psi \)函數，拓展布赫霍茲\( \psi \)函數，拉珍小\( \psi \)函數，拉珍大\( \Psi \)函數，施泰葛第一\( \Psi \)函數以及施泰葛第二\( \Psi \)函數。</p>
+        <p>&emsp;&emsp;您可以透過在標題畫面點擊按鈕來進入對應的序數系統的介面。進入介面後，您將看到4個標籤：計算，探索，選項以及幫助。您可以透過點擊幫助標籤以獲取更多關於這個序數系統的資訊。</p>
         <h2>計算介面</h2><hr>
         <p>&emsp;&emsp;您可以透過點擊頁面上方的計算標籤以進入計算選單。事實上，這是一開始進入序數系統介面時的第一個介面。當選擇指令列時，可以透過按回車鍵以執行指令與透過按↑和↓鍵以輸入先前輸入的指令。</p>
         <p>&emsp;&emsp;在計算選單中，您可以看到指令列，控制台視窗以及預設視窗。進行計算或者執行一些其他功能的方法是透過輸入指令。這是程式設計師們愛做的事情。</p>
         <p>&emsp;&emsp;要輸入序數，您需要將序數轉換為「電腦程式碼」。轉換規則因序數系統而異且會在一開始進入序數系統介面或者在指令列中輸入空字串時給出。</p>
-        <p>&emsp;&emsp;比如說，在布赫霍茲\( \psi \)函數的序數系統中，轉換規則是：</p>
+        <p>&emsp;&emsp;例如，在布赫霍茲\( \psi \)函數的序數系統中，轉換規則是：</p>
         <p>&emsp;&emsp;空字元表示\( 0 \)</p>
         <p>&emsp;&emsp;字元「A」表示\( \varepsilon_{\Omega_\omega+1} \)</p>
         <p>&emsp;&emsp;BC表示\( b+c \)</p>
         <p>&emsp;&emsp;(B,C)表示\( \psi_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;現在，我們來將序數\( \zeta_0=\psi_0(\Omega^2) \)轉換為該序數系統的電腦程式碼：</p>
-        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{(,)}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
+        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{"(,)"}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
         <br>
         <p>&emsp;&emsp;也就是說，\( \psi_0(\Omega^2) \)的電腦程式碼為(,((,),((,),)))。</p>
         <p>&emsp;&emsp;需要注意的是，輸入的序數的電腦程式碼必須有效且為標準型。有效指的是電腦程式碼中不含有無效字元及不匹配或缺失的括號。標準型比較複雜且在對應序數系統的幫助選單中有定義。</p>
         <p>&emsp;&emsp;而且，字元「A」永遠表示<b>序數系統極限</b>。</p>
-        <p>&emsp;&emsp;為了有助於使電腦程式碼視覺化，您可以在程式碼中輸入空格，但是這樣做的話就必須在程式碼兩端輸入半角雙引號以避免識別錯誤。比如說，輸入"(, (,)(,) )"等價於輸入(,(,)(,))。</p>
+        <p>&emsp;&emsp;為了有助於使電腦程式碼視覺化，您可以在程式碼中輸入空格，但是這樣做的話就必須在程式碼兩端輸入半角雙引號以避免識別錯誤。例如，輸入"(, (,)(,) )"等價於輸入(,(,)(,))。</p>
         <p>&emsp;&emsp;支援的指令及其格式與功能如下：</p>
         <h3>display</h3>
         <p>&emsp;&emsp;<b>格式：</b>display ord</p>
@@ -126,6 +126,10 @@
         <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega_\omega) \)<span class="copy2 button2 noclick">複製</span></p>
         <p>&emsp;&emsp;\( \alpha[2]=\psi_0({\Omega_\omega}^2) \)<span class="copy2 button2 noclick">複製</span></p>
         <p>&emsp;&emsp;\( \alpha[3]=\psi_0({\Omega_\omega}^{\Omega_\omega}) \)<span class="copy2 button2 noclick">複製</span></p>
+        <h3>ref</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
+        <p>&emsp;&emsp;<b>格式：</b>ref ord</p>
+        <p>&emsp;&emsp;<b>描述：</b>顯示由序數「ord」定義的反射配置及該序數的其他相關性質。請查看相關序數系統的幫助選單以取得更多資訊。</p>
         <h3>fgh</h3>
         <p>&emsp;&emsp;<b>格式：</b>fgh ord n [steps=1]</p>
         <p>&emsp;&emsp;<b>描述：</b>計算序數「ord」與數字「n」的激增階層的前「steps」步。</p>
@@ -214,7 +218,7 @@
         <p>&emsp;&emsp;建議如果目前的預設重要則在重設之前匯出。</p>
         <h2>計算預設</h2><hr>
         <p>&emsp;&emsp;您可以使用控制台視窗下的預設來使程式碼變得更加簡單。</p>
-        <p>&emsp;&emsp;比如說，在布赫霍茲\( \psi \)函數的序數系統中，可能會想把(,(,))寫成「w」，這是因為它的確表示序數\( \omega \)。假如有以下預設：</p>
+        <p>&emsp;&emsp;例如，在布赫霍茲\( \psi \)函數的序數系統中，可能會想把(,(,))寫成「w」，這是因為它的確表示序數\( \omega \)。假如有以下預設：</p>
         <p>&emsp;&emsp;名稱：w</p>
         <p>&emsp;&emsp;序數：(,(,))</p>
         <br>
@@ -270,13 +274,13 @@
         <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \)：與\( \alpha+\beta \)相同，只是\( \omega^{\epsilon+\alpha} \)不會化簡為\( epsilon\omega^\alpha \)。</p>
         <p>&emsp;&emsp;\( \alpha+\beta \)：除\( \alpha*\beta \)外，將重複的加法化簡為乘法。（例：\( \alpha+\alpha+\alpha=\alpha3 \)）</p>
         <h3>函數指定</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>拓展布赫霍茲\( \psi \)函數、拉珍小\( \psi \)函數、拉珍大\( \Psi \)函數、施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
         <p>&emsp;&emsp;<b>描述：</b>調整是否將某些序數塌縮函數寫成其他形式以避免名稱衝突。</p>
-        <p>&emsp;&emsp;<b>僅限於：</b>拓展布赫霍茲\( \psi \)函數、拉珍小\( \psi \)函數</p>
         <p>&emsp;&emsp;（左邊）：將序數塌縮函數寫成與論文中相同的形式。</p>
         <p>&emsp;&emsp;（右邊）：將序數塌縮函數寫成其他形式。</p>
         <h3>改寫\( \varphi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>維布倫函數、拉珍小\( \psi \)函數、拉珍大\( \Psi \)函數、施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
         <p>&emsp;&emsp;<b>描述：</b>調整函數\( \varphi_\alpha(\beta) \)的書寫方式。</p>
-        <p>&emsp;&emsp;<b>僅限於：</b>維布倫函數、拉珍小\( \psi \)函數、拉珍大\( \Psi \)函數</p>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)：不改寫\( \varphi_\alpha(\beta) \)。</p>
         <p>&emsp;&emsp;\( 1 \)：將\( \varphi_0(0) \)改寫為\( 1 \)。</p>
         <p>&emsp;&emsp;\( \omega^\beta \)：對於一切\( \beta \)，將\( \varphi_0(\beta) \)改寫為\( \omega^\beta \)。</p>
@@ -284,33 +288,49 @@
         <p>&emsp;&emsp;\( \zeta_\beta \)：除以上外，對於一切\( \beta \)，將\( \varphi_2(\beta) \)改寫為\( \zeta_\beta \)。</p>
         <p>&emsp;&emsp;\( \eta_\beta \)：除以上外，對於一切\( \beta \)，將\( \varphi_3(\beta) \)改寫為\( \eta_\beta \)。</p>
         <h3>改寫\( \Phi_\alpha(\beta) \)</h3>
-        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Phi_\alpha(\beta) \)的書寫方式。</p>
         <p>&emsp;&emsp;<b>僅限於：</b>拉珍小\( \psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Phi_\alpha(\beta) \)的書寫方式。</p>
         <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \)：不改寫\( \Phi_\alpha(\beta) \)。</p>
         <p>&emsp;&emsp;\( E_\beta \)：對於一切\( \beta \)，將\( \Phi_1(\beta) \)改寫為\( E_\beta \)。</p>
         <p>&emsp;&emsp;\( Z_\beta \)：除以上外，對於一切\( \beta \)，將\( \Phi_2(\beta) \)改寫為\( Z_\beta \)。</p>
         <p>&emsp;&emsp;\( H_\beta \)：除以上外，對於一切\( \beta \)，將\( \Phi_3(\beta) \)改寫為\( H_\beta \)。</p>
         <h3>改寫\( \psi_\alpha(\beta) \)</h3>
-        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \psi_\alpha(\beta) \)（布赫霍茲\( \psi \)函數或拓展布赫霍茲\( \psi \)函數）的書寫方式。</p>
         <p>&emsp;&emsp;<b>僅限於：</b>布赫霍茲\( \psi \)函數、拓展布赫霍茲\( \psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \psi_\alpha(\beta) \)（布赫霍茲\( \psi \)函數或拓展布赫霍茲\( \psi \)函數）的書寫方式。</p>
         <p>&emsp;&emsp;\( \psi_\alpha(\beta) \)：不改寫\( \psi_\alpha(\beta) \)。</p>
         <p>&emsp;&emsp;\( 1 \)：將\( \psi_0(0) \)改寫為\( 1 \)。</p>
         <p>&emsp;&emsp;\( \psi_{\Omega_\alpha}(\beta) \)：一開始，\( \psi_\gamma(\delta) \)中的\( \gamma \)會按照選項\( \omega^{\Omega_\alpha+\beta} \)來化簡，而\( \delta \)會按照該選項來化簡。除此之外，序數保持不變。</p>
         <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \)：若\( \beta&lt;\Omega_{\alpha+1} \)，則將\( \psi_\alpha(\beta) \)改寫為\( \omega^{\Omega_\alpha+\beta} \)。在這種情況下，若\( \alpha=0 \)，則取而代之改寫為\( \omega^\beta \)。</p>
         <h3>改寫\( \chi_\alpha(\beta) \)</h3>
-        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \chi_\alpha(\beta) \)的書寫方式。</p>
         <p>&emsp;&emsp;<b>僅限於：</b>拉珍小\( \psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \chi_\alpha(\beta) \)的書寫方式。</p>
         <p>&emsp;&emsp;\( \chi_\alpha(\beta) \)：不改寫\( \chi_\alpha(\beta) \)。</p>
         <p>&emsp;&emsp;\( \Omega_{1+\beta} \)：對於一切\( \beta \)，將\( \chi_0(\beta) \)改寫為\( \Omega_{1+\beta} \)。</p>
         <p>&emsp;&emsp;\( I_{1+\beta} \)：除以上外，對於一切\( \beta \)，將\( \chi_1(\beta) \)改寫為\( I_{1+\beta} \)。</p>
-        <h3>改寫\( \Xi(\alpha) \)</h3>
-        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Xi(\alpha) \)的書寫方式。</p>
+        <h3>改寫\( \Xi(\alpha) \)（或\( X(\alpha) \)）</h3>
         <p>&emsp;&emsp;<b>僅限於：</b>拉珍大\( \Psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整函數\( \Xi(\alpha) \)的書寫方式。若在項目「函數指定」中選擇右邊的選項，則\( \Xi \)會被替換成\( X \)。</p>
         <p>&emsp;&emsp;\( \Xi(\alpha) \)：不改寫\( \Xi(\alpha) \)。</p>
         <p>&emsp;&emsp;\( \Xi_\alpha \)：若\( \alpha&lt;K \)，則將\( \Xi(\alpha) \)改寫為\( \Xi_\alpha \)。</p>
         <p>&emsp;&emsp;\( I \)：除以上外，將\( \Xi_1 \)改寫為\( I \)。</p>
         <p>&emsp;&emsp;\( M \)：除以上外，將\( \Xi_2 \)改寫為\( M \)。</p>
         <p>&emsp;&emsp;\( N \)：除以上外，將\( \Xi_3 \)改寫為\( N \)。</p>
+        <h3>改寫\( K \)</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>拉珍大\( \Psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整\( K \)的書寫方式。</p>
+        <p>&emsp;&emsp;\( K \)：不改寫\( K \)。</p>
+        <p>&emsp;&emsp;\( \mathcal{K} \)：將\( K \)改寫為\( \mathcal{K} \)。</p>
+        <h3>反射實例與配置</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整反射實例與配置的書寫方式。</p>
+        <p>&emsp;&emsp;\( \mathbb{F}_\kappa(\cdots) \)：將反射實例與配置寫成與論文中相似的形式。</p>
+        <p>&emsp;&emsp;\( [\kappa,\cdots] \)：將反射實例與配置以「反射括號表示法」書寫。其中，\( [\kappa,\alpha_0,\alpha_1,\cdots]=\mathbb{F}_\kappa(\alpha_0,\alpha_1,\cdots) \)。若沒有變量，則在末尾添加逗號。</p>
+        <p>&emsp;&emsp;\( [\kappa\cdots] \)：同上，但是若沒有變量，則省略逗號。</p>
+        <h3>矩形邊框</h3>
+        <p>&emsp;&emsp;<b>僅限於：</b>施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整是否將以塌縮函數書寫的序數用矩形邊框包圍。這是為了助於閱讀，因為這些序數塌縮函數的結構比較複雜。</p>
+        <p>&emsp;&emsp;關：不將以塌縮函數書寫的序數用矩形邊框包圍。</p>
+        <p>&emsp;&emsp;開：將以塌縮函數書寫的序數用矩形邊框包圍。</p>
         <h1>關於序數</h1><hr>
         <p>&emsp;&emsp;我們從0開始，然後數1，2，3等。這個過程永遠不會結束，因為自然數有無限多個。當我們接受無窮的概念的時候，我們接受數字\( \omega \)為最小的大於一切自然數的序數。就像按回車鍵，移至第二行然後在這一行輸入第一個字一樣。因為無論第一行有多少字，第二行的字總是在所有第一行的字的「後面」。</p>
         <p>&emsp;&emsp;我們可以繼續「在第二行打字」以構造\( \omega+1 \)、\( \omega+2 \)、\( \omega+3 \)等更大的序數。我們可以再「按下回車鍵」然後得到\( \omega+\omega \)，即\( \omega2 \)。我們可以重複這段過程然後得到\( \omega3 \)，\( \omega4 \)等，最後我們「插入分頁符然後在下一頁輸入第一個字」而得到\( \omega*\omega \)，即\( \omega^2 \)。</p>
@@ -347,7 +367,7 @@
         <p>&emsp;&emsp;\( \omega*2\neq 2*\omega \)</p>
         <br>
         <p>&emsp;&emsp;這是因為序數與數量無關，而是與順序相關。假設我們有無限多的標有小於\( \varepsilon_0 \)的序數的字，我們仍然能將它們壓縮至一行。此時，我們說\( \omega \)與\( \varepsilon_0 \)的<b>勢</b>相等。</p>
-        <p>&emsp;&emsp;基數用於衡量集合（因此也衡量序數）的實際大小。我們說兩集合若有一一對應的關係（亦稱雙射）則勢相等。比如說：\( \omega \)與\( \omega2 \)勢相等，這是因為它們之間有如下的一一對應的關係：（\( n\in\omega \)）</p>
+        <p>&emsp;&emsp;基數用於衡量集合（因此也衡量序數）的實際大小。我們說兩集合若有一一對應的關係（亦稱雙射）則勢相等。例如：\( \omega \)與\( \omega2 \)勢相等，這是因為它們之間有如下的一一對應的關係：（\( n\in\omega \)）</p>
         <p>&emsp;&emsp;從\( \omega \)到\( \omega2 \)：</p>
         <p>&emsp;&emsp;\( 0\rightarrow0 \)</p>
         <p>&emsp;&emsp;\( 1\rightarrow\omega \)</p>
@@ -366,8 +386,8 @@
         <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
         <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
         <br>
-        <p>&emsp;&emsp;一切自然數皆為基數。對於無窮基數，我們將它們記作阿列夫數\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)、\( \aleph_3 \)等，然後將\( \omega \)的勢（記作\( \#\omega \)）定義為\( \aleph_0 \)。在研究ZFC（策梅洛-弗蘭克爾集合論）時，我們可以為每個無窮基數指派一個序數。這叫做<b>馮·諾伊曼基數指派</b>。此時，我們定義集合的勢為最小與其有一一對應的關係的序數。因此，<b>基數是序數</b>且\( \aleph_0=\omega \)，\( \aleph_1=\Omega \)，\( \aleph_2=\Omega_2 \)，\( \aleph_3=\Omega_3 \)，以此類推。</p>
-        <p>&emsp;&emsp;之所以我們知道有比\( \aleph_0 \)大的無窮，這是因為實數集的勢大於自然數集的勢。實數集的勢是\( \beth_1 \)（貝特-1），與自然數集的冪集（其子集的集合）相等。我們也可以多次取冪集以獲得貝特數\( \beth_2 \)，\( \beth_3 \)等。這是另一個勢序列。連續統假設意味著\( \aleph_1=\beth_1 \)。然而，ZFC本身既無法證明它為真又無法證明它為偽，即與ZFC獨立。另外還有一個名為「廣義連續統假設」的擴展，意味著對於一切序數\( \alpha \)，\( \aleph_\alpha=\beth_\alpha \)。它也與ZFC獨立。</p>
+        <p>&emsp;&emsp;一切自然數皆為基數。對於無窮基數，我們將它們記作<b>阿列夫數</b>\( \aleph_0 \)、\( \aleph_1 \)、\( \aleph_2 \)、\( \aleph_3 \)等，然後將\( \omega \)的勢（記作\( \#\omega \)）定義為\( \aleph_0 \)。在研究ZFC（策梅洛-弗蘭克爾集合論）時，我們可以為每個無窮基數指派一個序數。這叫做<b>馮·諾伊曼基數指派</b>。此時，我們定義集合的勢為最小與其有一一對應的關係的序數。因此，<b>基數是序數</b>且\( \aleph_0=\omega \)，\( \aleph_1=\Omega \)，\( \aleph_2=\Omega_2 \)，\( \aleph_3=\Omega_3 \)，以此類推。</p>
+        <p>&emsp;&emsp;之所以我們知道有比\( \aleph_0 \)大的無窮，這是因為實數集的勢大於自然數集的勢。實數集的勢是\( \beth_1 \)（貝特-1），與自然數集的冪集（其子集的集合）相等。連續統假設意味著\( \aleph_1=\beth_1 \)。然而，ZFC本身既無法證明它為真又無法證明它為偽，即與ZFC獨立。既然\( \beth_1 \)是一個與阿列夫數不同的序數，我們可以得到另一個勢的序列。我們從\( \beth_0=\aleph_0 \)開始，然後定義\( \beth_1 \)為\( \beth_0 \)的冪集（其子集的集合）的勢，\( \beth_2 \)為\( \beth_1 \)的冪集（其子集的集合）的勢等。這一系列的勢叫做<b>貝特數</b>。另外還有一個名為「廣義連續統假設」的假設，意味著對於一切序數\( \alpha \)，\( \aleph_\alpha=\beth_\alpha \)。它也與ZFC獨立。</p>
         <p>&emsp;&emsp;基數也能進行運算。但是，這些運算與序數運算不同而需要小心區分：（其中\( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \)）</p>
         <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
@@ -445,7 +465,7 @@
         <p>&emsp;&emsp;\( (\alpha+1)[n]=\alpha \)</p>
         <p>&emsp;&emsp;\( 0[n]=0 \)</p>
         <br>
-        <p>&emsp;&emsp;在上面的例子中，我們選擇了基本序列\( \omega[n]=n \)，但是事實上，有多數的基本序列滿足上述條件。比如說，我們可以定義\( \omega[n]=2^n \)以致使增長階層增長大幅加快。也可以定義\( \omega[n]=\lfloor\log_2(n+1)\rfloor \)（不是理想基本序列）以致使增長階層增長大幅減緩。</p>
+        <p>&emsp;&emsp;在上面的例子中，我們選擇了基本序列\( \omega[n]=n \)，但是事實上，有多數的基本序列滿足上述條件。例如，我們可以定義\( \omega[n]=2^n \)以致使增長階層增長大幅加快。也可以定義\( \omega[n]=\lfloor\log_2(n+1)\rfloor \)（不是理想基本序列）以致使增長階層增長大幅減緩。</p>
         <p>&emsp;&emsp;因此，<b>僅靠序數並不能構造巨大數</b>。在使用增長階層時，我們需要指定使用的基本序列。若不指定基本序列，我們便無法決定這些函數的實際增長率，而緩增階層能否趕上激增階層的問題將失去數學意義。此外，若使用的基本序列並非最終單調遞增，則無法保證序數大的增長階層支配序數小的相同的增長階層。</p>
         <p>&emsp;&emsp;對於如\( \varepsilon_0 \)的較小的序數，要定義基本序列很簡單。但是，當序數增長時，定義基本序列會變得更加困難，甚至會花費幾個月的時間。</p>
         <p>&emsp;&emsp;本網站所使用的6個序數系統使用不同的基本序列系統。如上所示，序數的基本序列因序數係統而異。</p>
@@ -463,11 +483,11 @@
         <h2>共尾數</h2><hr>
         <p>&emsp;&emsp;現在，我們在使用不可數基數來定義可數序數，有時我們需要討論不可數基數的​​基本序列。在上述定義中，我們假設了一切基本序列的長度皆為\( \omega \)。但是，我們並不能為大多數的不可數基數構造長度為\( \omega \)的基本序列。這就涉及到共尾數的概念。</p>
         <p>&emsp;&emsp;我們定義序數\( \alpha \)的共尾數（或共尾性，記作\( Cof(\alpha) \)）為\( \alpha \)的一子集的最小的勢，使得\( \alpha \)大於該子集一切元素。我們稱該子集為共尾子集。</p>
-        <p>&emsp;&emsp;比如說，\( Cof(\Omega_\omega)=\omega \)，這是因為我們可以找到一個勢為\( \omega \)的共尾子集\( \{\Omega_{1+\alpha}|\alpha\in\omega\} \)。</p>
+        <p>&emsp;&emsp;例如，\( Cof(\Omega_\omega)=\omega \)，這是因為我們可以找到一個勢為\( \omega \)的共尾子集\( \{\Omega_{1+\alpha}|\alpha\in\omega\} \)。</p>
         <p>&emsp;&emsp;而且，\( 0 \)的共尾數為\( 0 \)，因為0不比任何序數大。一切後繼序數的共尾數皆為\( 1 \)，因為一切後繼序數\( \alpha+1 \)都有一個勢為\( 1 \)的共尾子集\( \{\alpha\} \)。一切極限序數的共尾數至少為\( \omega \)。</p>
         <p>&emsp;&emsp;有了共尾數的概念，我們便能將基本序列的定義中的所有\( \mathbb{N} \)替換成\( Cof(\alpha) \)。注意\( \mathbb{N}=\omega \)。</p>
         <p>&emsp;&emsp;此外，對於基數\( \kappa \)，若\( Cof(\kappa)=\kappa \)，我們說它是一個<b>正規基數</b>，否則是一個<b>奇異基數</b>。</p>
-        <p>&emsp;&emsp;比如說：\( \Omega \)是一個正規基數，因為\( Cof(\Omega)=\Omega \)。\( \Omega_\omega \)是一個奇異基數，因為\( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \)。</p>
+        <p>&emsp;&emsp;例如：\( \Omega \)是一個正規基數，因為\( Cof(\Omega)=\Omega \)。\( \Omega_\omega \)是一個奇異基數，因為\( Cof(\Omega_\omega)=\omega\neq\Omega_\omega \)。</p>
         <h2>序數表示法</h2><hr>
         <p>&emsp;&emsp;因為上述的一切函數都是集合的函數，它們在數學上是不可計算的，這是因為多數集合都是無窮的，而電腦不能處理像這樣的無窮多的元素。然而，我們仍然能將它們轉換為有限的字串然後使電腦能夠處理它們。</p>
         <p>&emsp;&emsp;序數表示法是一個將序數轉換成包含有限符號的有限的字串的方法，類比自然數（或者更多數字）的十進制（或者如二進制的其他數制），因為這是將自然數轉換成包含0、1、2、3、4、5、6、7、8與9的有限的字串的方法。</p>
@@ -492,6 +512,147 @@
         <br>
         <p>&emsp;&emsp;程式碼如此運行：我們從01.行開始。我們對變數\( v \)賦值\( n_0 \)然後跳轉到下一行，02.行。若\( c_5 \)為\( \mathbb{T} \)，我們將變數\( v \)賦值\( n_1 \)然後跳轉到下一行。否則，直接跳轉到下一行。若\( c_6 \)為\( \mathbb{T} \)，函數\( g(a) \)傳回值\( d_5 \)，計算結束。否則，計算繼續，跳轉到下一行。然後函數\( g(a) \)傳回值\( v \)，這取決於先前的賦值。</p>
         <p>&emsp;&emsp;有時，同一變數會在兩端同時出現。此時意味著對變數賦予取決於舊值的新值，而不是解方程式。</p>
+        <h1>不可描述括號表示法</h1><hr>
+        <p>&emsp;&emsp;在研究如施泰葛第一\( \Psi \)函數及施泰葛第二\( \Psi \)函數那樣的複雜序數塌縮函數時，我們會遇到用簡單的表示法無法表示的基數。因此，在此介紹「不可描述括號表示法」這一表示法系統。</p>
+        <h2>基本定義</h2><hr>
+        <p>&emsp;&emsp;我們將序數類記作\( Ord \)，極限序數類記作\( Lim \)，基數類記作\( Card \)，\( A \)的冪集記作\( P(A) \)。除非另有說明，\( A,B\in P(Ord) \)，\( \beta\in Ord \)，\( n&lt;\omega \)，\( \gamma_0,\gamma_1,\gamma_2,\cdots,\gamma_{m-1}\in Ord \)，其中\( m&lt;\omega \)且\( k&lt;m \)，\( f \)為以一序數為變量，傳回一序數的函數（\( f:Ord\rightarrow Ord \)），\( z \)表示空字串或者至少一個的「0」，如「\( 0 \)」，「\( 0,0 \)」，「\( 0,0,0 \)」等。</p>
+        <p>&emsp;&emsp;我們定義傳回從小到大數的\( A \)的第\( 1+\beta \)個元素的枚舉函數\( Enum_A(\beta) \)如下：</p>
+        <p>&emsp;&emsp;\( Enum_A(\beta):=min\{x\in A|\forall\gamma&lt;\beta(Enum_A(\gamma)&lt;x)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義包含\( A \)及其極限點的閉合函數\( Cl(A) \)如下。這是因為某些類不是連續的，即對於極限序數\( \beta \)，\( Enum_A(\beta)\neq sup\{Enum_A(\gamma)|\gamma&lt;\beta\} \)。例如，第\( \omega \)個正規基數是\( \Omega_{\omega+1} \)而不是\( \Omega_\omega=sup\{\Omega_\alpha|\alpha&lt;\omega\} \)，這是因為\( \Omega_\omega \)是奇異基數。實際上這個函數出現在拉珍小\( \psi \)函數的定義之中：</p>
+        <p>&emsp;&emsp;\( Cl(A):=A\cup\{\beta\in Lim|\beta=sup(A\cap\beta)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義函數閉包\( FC_f \)如下：</p>
+        <p>&emsp;&emsp;\( FC_f:=\{\beta\in Ord|\forall\gamma&lt;\beta(f(\gamma)&lt;\beta)\} \)</p>
+        <p>&emsp;&emsp;注意若\( f=(\alpha\mapsto\alpha) \)（即\( f(\alpha)=\alpha \)），則\( FC_f=Ord \)，這是因為\( \forall\gamma&lt;\beta(\gamma&lt;\beta) \)恆真。</p>
+        <br>
+        <p>&emsp;&emsp;我們定義不可數基數類\( UC \)如下：</p>
+        <p>&emsp;&emsp;\( UC:=\{\kappa\in Card|\kappa&gt;\omega\} \)</p>
+        <h2>不可描述類，細化運算及括號函數</h2><hr>
+        <p>&emsp;&emsp;我們定義類\( f;A-P_{(\beta,n)}:B \)如下：</p>
+        <p>&emsp;&emsp;\( f;A-P_{(\beta,n)}:B:=\{\kappa|\kappa \)在\( A \)中\( \beta \)-\( \Pi_n^1 \)不可描述\( \}\cap B\cap FC_f \)</p>
+        <p>&emsp;&emsp;我們將\( (\alpha\mapsto\alpha);A-P_{(\beta,n)}:B \)寫作\( A-P_{(\beta,n)}:B \)，\( A-P_{(\beta,n)}:Ord \)寫作\( A-P_{(\beta,n)} \)，\( Ord-P_{(\beta,n)} \)寫作\( P_{(\beta,n)} \)，\( P_{(0,n)} \)寫作\( P_n \)。</p>
+        <p>&emsp;&emsp;在此添加\( f \)看似畫蛇添足，但是由於之後的定義依賴於\( f \)，到之後就會有意義。</p>
+        <br>
+        <p>&emsp;&emsp;由於\( A-P_{(\beta,n)}:B\subseteq A \)，能將類「縮小」，可將其視作一種細化運算。因此，我們可以定義一種將類縮小多次甚至是無限次的細化運算系統。</p>
+        <p>&emsp;&emsp;我們定義類\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}} \)如下：</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0\}}:=f;A \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\delta_0\}}-P_{(\beta,n)}:B)\} \)（\( \gamma_0&gt;0 \)）</p>
+        <br>
+        <p>&emsp;&emsp;例如：</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0\}}=f;A \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1\}}=f;A-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{2\}}=f;A-P_{(\beta,n)}:B-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{3\}}=f;A-P_{(\beta,n)}:B-P_{(\beta,n)}:B-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\omega\}} \)是\( f;A-(P_{(\beta,n)}:B)_{\{0\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{1\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{2\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{3\}} \)等對於一切自然數的交類。</p>
+        <br>
+        <p>&emsp;&emsp;我們也會遇到更加複雜的基數。因此，我們可以添加變數並定義類\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\gamma_0\}} \)如下：</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0,\gamma_0\}}:=f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}} \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\delta_0\}}-P_{(\beta,n)}:B)\} \)（\( \gamma_0&gt;0 \)）</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,0\}}:=\{\xi\in Ord|\forall\delta_1&lt;\gamma_1(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\delta_1,\xi\}})\} \)（\( \gamma_1&gt;0 \)）</p>
+        <br>
+        <p>&emsp;&emsp;我們還能添加更多的變數並定義類\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\gamma_0\}} \)如下：</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{z,0,\gamma_k,\cdots,\gamma_1,\gamma_0\}}:=f;A-(P_{(\beta,n)}:B)_{\{\gamma_k,\cdots,\gamma_1,\gamma_0\}} \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\delta_0\}}-P_{(\beta,n)}:B)\} \)（\( \gamma_0&gt;0 \)）</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_k,0,z\}}:=\{\xi\in Ord|\forall\delta_k&lt;\gamma_k(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_k,\xi,z\}})\} \)（\( \gamma_k&gt;0 \)）</p>
+        <br>
+        <p>&emsp;&emsp;我們甚至可以仿照「次元維布倫函數」的思路拓展定義，例如：</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1@\omega\}} \)是\( f;A-(P_{(\beta,n)}:B)_{\{1\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{1,0\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{1,0,0\}} \)、\( f;A-(P_{(\beta,n)}:B)_{\{1,0,0,0\}} \)等的交類。</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1@(1,0)\}}=\{\xi\in Ord|\xi\in f;A-(P_{(\beta,n)}:B)_{\{1@\xi\}}\} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義括號函數\( f-[A]_\beta \)如下：</p>
+        <p>&emsp;&emsp;\( f-[A]_\beta:=Enum_{Cl(\{\omega\}\cup(UC\cap f;A))}(\beta) \)</p>
+        <p>&emsp;&emsp;可以將\( A \)視作以一函數\( f:Ord\rightarrow Ord \)為變數，傳回一基數類（\( f;A\in P(Ord) \)）的函數。</p>
+        <p>&emsp;&emsp;注意對任意\( A \)，\( [A]_0=\omega \)。</p>
+        <br>
+        <p>&emsp;&emsp;我們將\( (\alpha\mapsto\alpha)-[A]_\beta \)寫作\( [A]_\beta \)。因此，\( [A]_\beta:=Enum_{Cl(\{\omega\}\cup(UC\cap A))}(\beta) \)。</p>
+        <p>&emsp;&emsp;若上下文明確，則可將\( (\alpha\mapsto f(\alpha))-[B]_\beta \)寫作\( f(\alpha)-[B]_\beta \)。注意必須是\( \alpha \)因為這在此作為「不動點記號」。</p>
+        <p>&emsp;&emsp;我們也將\( [A]_1 \)寫作\( [A] \)，\( [Card] \)寫作\( [] \)。我們也能將\( [] \)寫作\( \Omega \)，\( [P_0] \)寫作\( I \)，\( [P_{0\{2\}}] \)寫作\( M \)，\( [P_{0\{3\}}] \)寫作\( N \)，\( [P_1] \)寫作\( K \)，\( [P_{(1,0)}] \)寫作\( \Xi \)。</p>
+        <br>
+        <p>&emsp;&emsp;此外，我們也會碰到形如\( [A]_\alpha-[A] \)、\( [A]_\alpha-[A]_2 \)、\( [A]_\alpha-[A]_\alpha-[A] \)等的基數。為簡便起見，我們給出如下定義：</p>
+        <p>&emsp;&emsp;\( f-[A](0,\gamma_0):=f-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1+1,\gamma_0):=f-[A](\gamma_1,\alpha)-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,0):=sup\{f-[A](\delta_1,0)|\delta_1&lt;\gamma_1\} \)（\( \gamma_1\in Lim \)）</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,\gamma_0+1):=sup\{f-[A](\delta_1,f-[A](\gamma_1,\gamma_0)+1)|\delta_1&lt;\gamma_1\} \)（\( \gamma_1\in Lim \)）</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,\gamma_0):=sup\{f-[A](\gamma_1,\gamma_0)|\delta_0&lt;\gamma_0\} \)（\( \gamma_0,\gamma_1\in Lim \)）</p>
+        <br>
+        <p>&emsp;&emsp;我們還能加入更多的變數：</p>
+        <p>&emsp;&emsp;\( f-[A](z,0,\gamma_k,\cdots,\gamma_1,\gamma_0):=f-[A](\gamma_k,\cdots,\gamma_1,\gamma_0) \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k+1,z,\gamma_0):=f-[A](\gamma_{m-1},\cdots,\gamma_k,\alpha,z)-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k,z):=sup\{f-[A](\gamma_{m-1},\cdots,\delta_k,z)|\delta_k&lt;\gamma_k\} \)（\( \gamma_k\in Lim \)）</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k,z,\gamma_0+1):=sup\{f-[A](\gamma_{m-1},\cdots,\delta_k,f-[A](\gamma_{m-1},\cdots,\gamma_k,z,\gamma_0)+1,z)|\delta_k&lt;\gamma_k\} \)（\( \gamma_k\in Lim \)）</p>
+        <br>
+        <p>&emsp;&emsp;我們甚至可以仿照「次元維布倫函數」的思路拓展定義，例如：</p>
+        <p>&emsp;&emsp;\( f-[A](1@\omega)=sup\{f-[A](1),f-[A](1,0),f-[A](1,0,0),f-[A](1,0,0,0),\cdots\} \)</p>
+        <p>&emsp;&emsp;\( f-[A](1@(1,0))=f-[A](1@\alpha)-[A] \)</p>
+        <h2>極限類及不動點類</h2><hr>
+        <p>&emsp;&emsp;我們還會遇到重要的奇異基數。但是，我們至今遇到的類都是正規基數類。雖然括號函數能表示如\( []_\omega=\Omega_\omega \)、\( [P_0]_\omega=I_\omega \)的正規基數，但是它無法表示\( [P_{0\{0\}}] \)、\( [P_{0\{1\}}] \)、\( [P_{0\{2\}}] \)、\( [P_{0\{3\}}] \)等的極限及\(​​ [P_0] \)、\( [P_1] \)、\( [P_2] \)、\( [P_3] \)等的極限。正確答案分別不是\( [P_{0\{\omega\}}] \)\( [P_{(1,0)}] \)，因為這些都是正規基數，而我們需要的是共尾數為\( \omega \)的奇異基數。因此，我們必須進一步拓展定義。</p>
+        <p>&emsp;&emsp;我們引入「極限類」這一概念。我們先從維布倫函數開始，並定義「維布倫類」如下：</p>
+        <p>&emsp;&emsp;\( \varphi_0:=\{\omega^\beta|\beta\in Ord\} \)</p>
+        <p>&emsp;&emsp;\( \varphi_{\alpha+1}:=\{\beta|\beta=Enum_{\varphi_\alpha}(\beta)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;那麼，我們如何定義\( \varphi_\omega \)，或者更普遍地說，滿足\( \alpha\in Lim \)的\( \varphi_\alpha \)呢？因為以下都為真：</p>
+        <p>&emsp;&emsp;\( \varphi_\omega(0) \)是大於\( \varphi_0(0)=1 \)、\( \varphi_1(0)=\varepsilon_0 \)、\( \varphi_2(0)=\zeta_0 \)、\( \varphi_3(0)=\eta_0 \)等的最小序數。</p>
+        <p>&emsp;&emsp;\( \varphi_\omega(1) \)是大於\( \varphi_0(\varphi_\omega(0)+1)=\varphi_\omega(0)*\omega \)、\( \varphi_1(\varphi_\omega(0)+1)=\varepsilon_{\varphi_\omega(0)+1} \)、\( \varphi_2(\varphi_\omega(0)+1)=\zeta_{\varphi_\omega(0)+1} \)、\( \varphi_3(\varphi_\omega(0)+1)=\eta_{\varphi_\omega(0)+1} \)等的最小序數。</p>
+        <p>&emsp;&emsp;我們可以定義以下序列：</p>
+        <p>&emsp;&emsp;\( s_\alpha \)是大於\( \varphi_0 \)、\( \varphi_1 \)、\( \varphi_2 \)、\( \varphi_3 \)等以及一切滿足\( \beta&lt;\alpha \)的\( s_\beta \)的最小序數。</p>
+        <p>&emsp;&emsp;然後：</p>
+        <p>&emsp;&emsp;\( \varphi_\omega:=\{s_\alpha|\alpha\in Ord\} \)</p>
+        <br>
+        <p>&emsp;&emsp;因此，我們的思路是定義定義域為某極限序數的類函數然後仿照類似的過程。我們定義「類函數」為以一小於某極限序數的序數為變量，傳回一基數類（\( f;A\in P(Ord) \)）的函數（\( F:\beta\rightarrow P(Ord) \)。其中，\( \beta\in Lim \)）。對於類函數\( F \)，我們定義以下運算\( F^* \)以將類函數轉換成極限類：</p>
+        <p>&emsp;&emsp;\( s_\alpha:=sup\{min\{\gamma\in F(\beta)|\forall\alpha_0&lt;\alpha(\gamma&gt;s_{\alpha_0})\}|\beta&lt;dom(F)\} \)</p>
+        <p>&emsp;&emsp;\( F^*:=\{s_\alpha|\alpha\in Ord\} \)</p>
+        <br>
+        <p>&emsp;&emsp;我們定義以下極限類：</p>
+        <p>&emsp;&emsp;\( f;\cdots P_{&lt;(\beta+1,0)}=F^* \)，其中\( F(n)=f;\cdots P_{&lt;(\beta,n)} \)且\( dom(F)=\omega \)</p>
+        <p>&emsp;&emsp;\( f;\cdots P_{&lt;(\beta,0)}=F^* \)，其中\( F(\beta_0)=f;\cdots P_{&lt;(\beta_0,0)} \)，\( dom(F)=\beta \)且\( \beta\in Lim \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k,z\}}=F^* \)，其中\( F(\delta)=f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\delta,z\}} \)，\( dom(F)=\gamma_k \)且\( \gamma_k\in Lim \)</p>
+        <br>
+        <p>&emsp;&emsp;在最後一行定義，若\( P_\cdots:B \)（或\( P_\cdots \)）以\( &lt;\cdots \)結尾，則右側的\( &lt; \)可省略。這是因為其別函數必傳回極限類別而導致兩者相等。例如：</p>
+        <p>&emsp;&emsp;\( P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{&lt;\omega\}}=P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{\omega\}} \)</p>
+        <br>
+        <p>&emsp;&emsp;括號函數對極限類有相同定義，以上所有縮寫均適用。例如：</p>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;\omega\}}] \)是\( [P_{0\{0\}}]=[]=\Omega \)、\( [P_{0\{1\}}]=[P_0]=I \)、\( [P_{0\{2\}}]=[P_0-P_0]=M \)、\( [P_{0\{3\}}]=[P_0-P_0-P_0]=N \)等的極限。</p>
+        <p>&emsp;&emsp;\( [P_{&lt;(1,0)}] \)是\( [P_0]=I \)、\( [P_1]=K \)、\( [P_2] \)、\( [P_3] \)等的極限。</p>
+        <br>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]}_2={[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}]}_2 \)是以下的極限：</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_1]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_2]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_3]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{&lt;(2,0)}](1,0)={[P_{&lt;(2,0)}]}_\alpha-[P_{&lt;(2,0)}] \)是以下的極限：</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,0)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,1)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,2)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,3)}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;但就算是引入了「極限類」這一概念，我們仍然無法表示\( 0 \)、\( [P_{0\{0\}}]=[]=\Omega \)、\( [P_{0\{[P_{0\{0\}}]\}}]=[P_{0\{\Omega\}}] \)、\( [P_{0\{[P_{0\{[P_{0\{0\}}]\}}]\}}]=[P_{0\{[P_{0\{\Omega\}}]\}}] \)等的極限。因此我們仍然必須進一步拓展定義。</p>
+        <p>&emsp;&emsp;我們引入「不動點類」這一概念並如下定義：</p>
+        <p>&emsp;&emsp;\( f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k+1,0,z\}}=\{\xi\in Ord|\forall\xi_0&lt;\xi(f-[A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k,\xi_0,z\}}]&lt;\xi)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;若\( P_\cdots:B \)（或\( P_\cdots \)）以\( &lt;\cdots \)結尾，則由於相同的原因，右側的\( &lt; \)可省略。例如：</p>
+        <p>&emsp;&emsp;\( P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{&lt;1,0\}}=P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{1,0\}} \)</p>
+        <br>
+        <p>&emsp;&emsp;括號函數對不動點類有相同定義，以上所有縮寫都適用。例如：</p>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;1,0\}}] \)是\( 0 \)、\( [P_{0\{0\}}]=[]=\Omega \)、\( [P_{0\{[P_{0\{0\}}]\}}]=[P_{0\{\Omega\}}] \)、\( [P_{0\{[P_{0\{[P_{0\{0\}}]\}}]\}}]=[P_{0\{[P_{0\{\Omega\}}]\}}] \)等的極限。</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_2 \)是\( [P_{0\{&lt;1,0\}}] \)、\( [P_{0\{[P_{0\{&lt;1,0\}}]\}}] \)、\( [P_{0\{[P_{0\{[P_{0\{&lt;1,0\}}]\}}]\}}] \)、\( [P_{0\{[P_{0\{[P_{0\{[P_{0\{&lt;1,0\}}]\}}]\}}]\}}] \)等的极限。</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;1,0\}}](1,0)={[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{&lt;1,0\}}] \)是以下的極限：</p>
+        <p>&emsp;&emsp;\( 0 \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}]\}}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}]\}}]\}}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;2,0,0,0\}}] \)是以下的極限：</p>
+        <p>&emsp;&emsp;\( 0 \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,0,0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,[P_{0\{1,0,0,0\}}],0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,[P_{0\{1,[P_{0\{1,0,0,0\}}],0,0\}}],0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
         <h1>一些值得提及的序數</h1><hr>
         <h2>\( \varepsilon_0 \)</h2><hr>
         <p>&emsp;&emsp;於維布倫函數記作\( \varphi_1(0) \)。</p>
@@ -502,50 +663,72 @@
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega^\Omega) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(0) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(0) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一/二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^0 \)。</p>
         <p>&emsp;&emsp;滿足\( \alpha=\varphi_\alpha(0) \)的第一個序數。</p>
         <p>&emsp;&emsp;算術超限遞迴法\( ATR_0 \)的證明論序數。</p>
         <h2>阿克曼序數（AO）</h2><hr>
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega^{\Omega^2}) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\Omega^{\Omega^2}) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\Omega^3) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一/二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^3} \)。</p>
         <h2>小維布倫序數（SVO）</h2><hr>
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega^{\Omega^\omega}) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\Omega^{\Omega^\omega}) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\Omega^\omega) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一/二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^\omega} \)。</p>
         <h2>大維布倫序數（LVO）</h2><hr>
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega^{\Omega^\Omega}) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\Omega^{\Omega^\Omega}) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\Omega^\Omega) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一/二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^{\omega^+}} \)。</p>
         <h2>巴赫曼-霍華德序數（BHO）</h2><hr>
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega_2) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\varepsilon_{\Omega+1}) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一/二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\omega^++1}} \)。</p>
         <p>&emsp;&emsp;包含無窮公理的克里普克-普拉特克集理論\( KP\omega \)的證明論序數。</p>
         <h2>小布赫霍茲序數（SBO）</h2><hr>
         <p>&emsp;&emsp;又称布赫霍茲序數（BO）。</p>
         <p>&emsp;&emsp;於（拓展）布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega_\omega) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\Omega_\omega) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\Omega_\omega) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Psi_{(\Psi_{\mathbb{A}(1)}^\omega;P_0;\epsilon;\mathbb{A}(1);\omega+1)}^{\omega+1}} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Theta(\omega)} \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA \)的證明論序數。</p>
         <h2>竹內-費弗曼-布赫霍茲序數（TFBO）</h2><hr>
         <p>&emsp;&emsp;於布赫霍茲\( \psi \)函數記作\( \psi_0(\varepsilon_{\Omega_\omega+1}) \)。</p>
         <p>&emsp;&emsp;於拓展布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega_{\omega+1}) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{(\Psi_{\mathbb{A}(1)}^\omega;P_0;\epsilon;\mathbb{A}(1);\omega+1)}^{\omega+1}+1}} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Theta(\omega)+1}} \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-CA+BI \)的證明論序數。</p>
         <h2>大布赫霍茲序數（LBO）</h2><hr>
         <p>&emsp;&emsp;又称拓展布赫霍茲序數（EBO）。</p>
         <p>&emsp;&emsp;於拓展布赫霍茲\( \psi \)函數記作\( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)。</p>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\Phi_1(0)) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Psi_{\mathbb{A}(1)}^\omega} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon} \)。</p>
         <p>&emsp;&emsp;\( \Pi_1^1-TR_0 \)的證明論序數。</p>
         <h2>小拉珍序數（SRO）</h2><hr>
         <p>&emsp;&emsp;於拉珍小\( \psi \)函數記作\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)。</p>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{(\Psi_{\mathbb{A}(2)}^\omega;P_1;(M_\mathbb{A}^{&lt;\omega}-P_0);\mathbb{A}(2);\omega+1)}^{\omega+2}+1}} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Psi_{(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon)}^\Upsilon;P_{(0,1)};\epsilon;(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon);\Upsilon+1)}^{\Upsilon+2}+1}} \)。</p>
         <p>&emsp;&emsp;\( KPM \)的證明論序數。</p>
         <h2>大拉珍序數（LRO）</h2><hr>
         <p>&emsp;&emsp;於拉珍大\( \Psi \)函數記作\( \Psi_\Omega^0(\varepsilon_{K+1}) \)。</p>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{\mathbb{A}(2)}^\omega+1}} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon)}^\Upsilon+1}} \)。</p>
         <p>&emsp;&emsp;\( KP+\Pi_3-reflection \)的證明論序數的上界。</p>
+        <h2>小施泰葛序數（SSO）</h2><hr>
+        <p>&emsp;&emsp;於施泰葛第一\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Xi+1}} \)。</p>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Theta(\omega);P_{(1,0)};\epsilon;\epsilon;\Upsilon)}^\Upsilon+1}} \)。</p>
+        <p>&emsp;&emsp;\( KP+\Pi_\omega-reflection \)的證明論序數的上界。</p>
+        <h2>大施泰葛序數（LSO）</h2><hr>
+        <p>&emsp;&emsp;於施泰葛第二\( \Psi \)函數記作\( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Upsilon+1}} \)。</p>
+        <p>&emsp;&emsp;\( Stability \)的證明論序數的上界。</p>
         <h2>邱奇-克萊尼序數\( \omega_1^{CK} \)及可容序數\( \omega_\alpha^{CK} \)</h2><hr>
         <p>&emsp;&emsp;邱奇-克萊尼序數\( \omega_1^{CK} \)是其順序用電腦程式無法解釋的最小序數。因此，本網站的所有序數系統所表示的序數皆為遞歸序數，即小於\( \omega_1^{CK} \)。</p>
         <p>&emsp;&emsp;除邱奇-克萊尼序數\( \omega_1^{CK} \)外，我們還有可容序數\( \omega_\alpha^{CK} \)，使得以這些序數為等級的可構階層\( L_{\omega_\alpha^{CK}} \)是克里普克-普拉特克集合論\( KP \)的模型。</p>
@@ -566,22 +749,22 @@
         <p>&emsp;&emsp;◇給本文章的複製按鈕補充了更多說明。</p>
         <h2>2025年01月24日 - V1.2</h2><hr>
         <p>&emsp;&emsp;<b>※徹底修復了拉珍大\( \Psi \)函數的序數系統。</b></p>
-        <p>&emsp;&emsp;◇由於在<a href="https://d-nb.info/1017849250/34" target="_blank">這篇論文中</a>，\( \Xi \)也用於表示更大的基數，為避免\( \Xi=I \)（其中\( I \)表示最小的不可達基數）這樣的混淆，\( \Xi_1 \)將不再被改寫為\( \Xi \)。</p>
+        <p>&emsp;&emsp;◇由於在<a href="https://d-nb.info/1017849250/34" target="_blank">這篇論文</a>中，\( \Xi \)也用於表示更大的基數，為避免\( \Xi=I \)（其中\( I \)表示最小的不可達基數）這樣的混淆，\( \Xi_1 \)將不再被改寫為\( \Xi \)。</p>
         <p>&emsp;&emsp;◇由於函數指定（即將拓展布赫霍茲\( \psi \)函數記作\( \psi_\alpha^*(\beta) \)，拉珍小\( \psi \)函數記作\( \rho_\alpha(\beta) \)）所導致的混亂，在對應的幫助選單中補充了一些文字。</p>
-        <p>&emsp;&emsp;◇在<a href="#1.1.10">關於指令「search」的段落</a>中補充了一些文字。</p>
+        <p>&emsp;&emsp;◇在<a href="#1.1.11">關於指令「search」的段落</a>中補充了一些文字。</p>
         <p>&emsp;&emsp;◇在<a href="#2.7">「序數表示法」段落</a>中補充了關於關鍵字「令」的一些文字。</p>
         <h2>2025年08月29日 - V1.3</h2><hr>
         <p>&emsp;&emsp;<b>※新增了「中增階層」與「哈迪階層」。</b></p>
         <p>&emsp;&emsp;◇簡化了拉珍大\( \Psi \)函數的序數系統並修復了塌縮不動點函數\( \Psi FP \)的問題。</p>
         <p>&emsp;&emsp;◇當選擇指令列時，現在可以透過按↑和↓鍵以輸入先前輸入的指令。</p>
-        <p>&emsp;&emsp;◇指令“search”現在可以設定最大搜尋步數，並且找到序數時會顯示用時。</p>
+        <p>&emsp;&emsp;◇指令「search」現在可以設定最大搜尋步數，並且找到序數時會顯示用時。</p>
         <p>&emsp;&emsp;◇由於指令「search」導致在探索選單中反白顯示的序數不再由於展開或收起其他序數時取消反白顯示。</p>
         <p>&emsp;&emsp;◇添加了<a href="#1.3">「選擇按鈕」</a>。可以透過在探索選單中選擇序數作為標記以方便查找。</p>
         <p>&emsp;&emsp;◇於項目<a href="#1.4.4">「化簡模式」</a>添加了選項\( \omega^{\alpha*\beta} \)與\( \omega^{\alpha+\beta} \)。</p>
         <p>&emsp;&emsp;◇於項目<a href="#1.4.8">「改寫\( \psi_\alpha(\beta) \)」</a>添加了選項\( \psi_{\Omega_\alpha}(\beta) \)。</p>
         <p>&emsp;&emsp;◇優化了關閉背景動畫時效能。</p>
         <p>&emsp;&emsp;◇減輕了開啟幫助選單時的卡頓現象。</p>
-        <p>&emsp;&emsp;◇修正了化簡某些序數時導致的錯誤。</p>
+        <p>&emsp;&emsp;◇修復了化簡某些序數時導致的錯誤。</p>
         <p>&emsp;&emsp;◇修復了幫助文章中的錯誤並添加了一些重要細節。</p>
         <h2>2026年04月10日 - V1.4</h2><hr>
         <p>&emsp;&emsp;<b>※修改了函數\( \varphi_\alpha(\beta) \)以及\( \Phi_\alpha(\beta) \)的基本序列。</b></p>
@@ -590,10 +773,27 @@
         <p>&emsp;&emsp;◇現在切換選​​單時會改變網址，這允許快速訪問以及文章引用。</p>
         <p>&emsp;&emsp;◇修復了幫助文章中的錯誤。</p>
         <h2>2026年06月02日 - V1.5</h2><hr>
-        <p>&emsp;&emsp;◇修正了使某些序數展開異常的拉珍大\( \Psi \)函數中的尾部函數\( t \)的02.02.05.02.02.03.02.行。</p>
+        <p>&emsp;&emsp;◇修復了使某些序數展開異常的拉珍大\( \Psi \)函數中的尾部函數\( t \)的02.02.05.02.02.03.02.行。</p>
         <p>&emsp;&emsp;◇修改了項目<a href="#1.4.10">「改寫\( \Xi_\alpha \)」</a>中選項\( \Xi_\alpha \)的運作方式。</p>
-        <p>&emsp;&emsp;◇於<a href="#3">「一些值得提及的序數」</a>添加了<a href="#3.12">「邱奇-克萊尼序數\( \omega_1^{CK} \)及可容序數\( \omega_\alpha^{CK} \)」</a>。</p>
+        <p>&emsp;&emsp;◇於<a href="#4">「一些值得提及的序數」</a>添加了<a href="#4.14">「邱奇-克萊尼序數\( \omega_1^{CK} \)及可容序數\( \omega_\alpha^{CK} \)」</a>。</p>
         <p>&emsp;&emsp;◇重新編排了本文章。</p>
-        <p>&emsp;&emsp;◇修正了幫助文章中的錯誤，包括本文章中連結錯誤的問題。</p>
+        <p>&emsp;&emsp;◇修復了幫助文章中的錯誤，包括本文章中連結錯誤的問題。</p>
+        <h2>2026年10月09日 - V2.0</h2><hr>
+        <p>&emsp;&emsp;<b>※添加了「施泰葛第一\( \Psi \)函數」與「施泰葛第二\( \Psi \)函數」的序數系統。</b></p>
+        <p>&emsp;&emsp;<b>※添加了「超長可數序數表」，旨在展示序數如何在各序數系統中成長與對應。</b></p>
+        <p>&emsp;&emsp;◇由於在施泰葛第一\( \Psi \)函數中，\( \Xi \)也用來表示\( \Pi_0^2 \)-不可描述基數，於拉珍大\( \Psi \)函數中使用的函數\( \Xi(\alpha) \)現在預設記作\( X(\alpha) \)。您可以透過 選項 &gt; 函數指定 &gt; \( \Xi(\alpha) \) 以使其恢復原狀。</p>
+        <p>&emsp;&emsp;◇添加了用作背景動畫的序數。</p>
+        <p>&emsp;&emsp;◇添加了指令<a href="#1.1.5">「ref」</a>。</p>
+        <p>&emsp;&emsp;◇由於拉珍大\( \Psi \)函數的論文中使用的是\( \mathcal{K} \)而不是\( K \)，添加了選項項目<a href="#1.4.11">「改寫\( K \)」</a>。</p>
+        <p>&emsp;&emsp;◇添加了選項項目<a href="#1.4.12">「反射實例與配置」</a>與<a href="#1.4.13">「矩形邊框」</a>。</p>
+        <p>&emsp;&emsp;◇於<a href="#2.2">「基數」</a>添加了與貝特數相關的一些文字。</p>
+        <p>&emsp;&emsp;◇添加了<a href="#3">「不可描述括號表示法」</a>，旨在表示在施泰葛第一\( \Psi \)函數與施泰葛第二\( \Psi \)函數使用的比弱緊緻基數\( K \)大的基數。</p>
+        <p>&emsp;&emsp;◇於<a href="#4">「一些值得提及的序數」</a>添加了<a href="#4.12">「小施泰葛序數（SSO）」</a>與<a href="#4.13">「大施泰葛序數（LSO）」</a>。</p>
+        <p>&emsp;&emsp;◇於拉珍大\( \Psi \)函數的幫助文章增加了與弱緊緻基數\( K \)相關的一些文字。</p>
+        <p>&emsp;&emsp;◇於URL末尾添加了版本號，以便在之後的版本中的引用。</p>
+        <p>&emsp;&emsp;◇調整了標題畫面和選項選單的佈局，以支援尺寸較小的設備。</p>
+        <p>&emsp;&emsp;◇修復了訪問<a href="https://davidexmachina.github.io" target="_blank">製作者的網站</a>之後本網站的圖示會變成那個網站的圖示的問題。</p>
+        <p>&emsp;&emsp;◇修复了初次使用以V1.3之前的版本訪問本網站時選項導致錯誤的問題。</p>
+        <p>&emsp;&emsp;◇修復了幫助文章中的錯誤。</p>
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head></head>
     <body>
         <h1>About This Website</h1><hr>
-        <p>&emsp;&emsp;Garden of Ordinals is a website that can demonstrate the behaviors of (mainly infinite and extremely large) ordinal numbers by running calculations and exploring them in different ordinal systems. This website involves 6 ordinal systems: Cantor Normal Form, Veblen Function, Buchholz's \( \psi \), Extended Buchholz's \( \psi \), Rathjen's Small \( \psi \) and Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Welcome to Garden of Ordinals! Garden of Ordinals is a website that can demonstrate the behaviors of (mainly infinite and extremely large) ordinal numbers by running calculations and exploring them in different ordinal systems. This website involves 8 ordinal systems: Cantor Normal Form, Veblen Function, Buchholz's \( \psi \), Extended Buchholz's \( \psi \), Rathjen's Small \( \psi \), Rathjen's Capital \( \Psi \), Stegert's First \( \Psi \) and Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;You can enter the interface of these ordinal systems by clicking the corresponding button on the title screen. After entering the interface, you will see 4 tabs: Calculate, Explore, Options and Help. You can click the Help tab for more information about the ordinal system.</p>
         <h2>The Calculation Interface</h2><hr>
         <p>&emsp;&emsp;You can enter the Calculate menu by clicking the Calculate tab at the top of the page. In fact, this is the first menu you enter when you first enter the ordinal system interface.</p>
@@ -16,7 +16,7 @@
         <p>&emsp;&emsp;(B,C) represents \( \psi_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;Now, let's convert the ordinal \( \zeta_0=\psi_0(\Omega^2) \) into the computer code in this ordinal system:</p>
-        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{(,)}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
+        <p>&emsp;&emsp;\( \begin{align} & \psi_0(\Omega^2) \\\\ = & \psi_0(\psi_1(\psi_1(0))) \\\\ = & \psi_0(\psi_{\psi_0(0)}(\psi_{\psi_0(0)}(0))) \\\\ = & \psi_0(\psi_{"(,)"}(\psi_{"(,)"}(0))) \\\\ = & \psi_0(\psi_{"(,)"}("((,),)")) \\\\ = & \psi_0("((,),((,),))") \\\\ = & "(,((,),((,),)))" \end{align} \)</p>
         <br>
         <p>&emsp;&emsp;Which means, the computer code of \( \psi_0(\Omega^2) \) is (,((,),((,),))).</p>
         <p>&emsp;&emsp;It should be noted that the computer code of ordinals you enter has to be valid and in normal form. Being valid means there are no invalid characters and mismatched or missing brackets in the computer code. Being in normal form means something complicated and is defined in the Help menu in the corresponding ordinal system interface.</p>
@@ -126,6 +126,10 @@
         <p>&emsp;&emsp;\( \alpha[1]=\psi_0(\Omega_\omega) \)<span class="copy2 button2 noclick">Copy</span></p>
         <p>&emsp;&emsp;\( \alpha[2]=\psi_0({\Omega_\omega}^2) \)<span class="copy2 button2 noclick">Copy</span></p>
         <p>&emsp;&emsp;\( \alpha[3]=\psi_0({\Omega_\omega}^{\Omega_\omega}) \)<span class="copy2 button2 noclick">Copy</span></p>
+        <h3>ref</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
+        <p>&emsp;&emsp;<b>Format:</b> ref ord</p>
+        <p>&emsp;&emsp;<b>Description:</b> Display the reflection configuration defined using the ordinal "ord" and other related properties regarding this ordinal. See the Help menu in the related ordinal system interface for more information.</p>
         <h3>fgh</h3>
         <p>&emsp;&emsp;<b>Format:</b> fgh ord n [steps=1]</p>
         <p>&emsp;&emsp;<b>Description:</b> Compute the Fast-Growing Hierarchy using the ordinal "ord" and number "n" in "steps" steps.</p>
@@ -270,13 +274,13 @@
         <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \): Same as \( \alpha+\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( epsilon\omega^\alpha \).</p>
         <p>&emsp;&emsp;\( \alpha+\beta \): In addition to \( \alpha*\beta \), repeated additions will be simplified as multiplications. (For example: \( \alpha+\alpha+\alpha=\alpha3 \))</p>
         <h3>Function Specification</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Extended Buchholz's \( \psi \), Rathjen's Small \( \psi \), Rathjen's Capital \( \Psi \), Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
         <p>&emsp;&emsp;<b>Description:</b> Adjust whether the OCFs are written in another way to avoid name collision.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Extended Buchholz's \( \psi \), Rathjen's Small \( \psi \)</p>
         <p>&emsp;&emsp;(Left): The OCFs will be written just like in the original papers.</p>
         <p>&emsp;&emsp;(Right): The OCFs will be written in another way.</p>
         <h3>Rewrite \( \varphi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Veblen Function, Rathjen's Small \( \psi \), Rathjen's Capital \( \Psi \), Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
         <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \varphi_\alpha(\beta) \) is written.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Veblen Function, Rathjen's Small \( \psi \), Rathjen's Capital \( \Psi \)</p>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \): \( \varphi_\alpha(\beta) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( 1 \): \( \varphi_0(0) \) will be rewritten as \( 1 \).</p>
         <p>&emsp;&emsp;\( \omega^\beta \): \( \varphi_0(\beta) \) will be rewritten as \( \omega^\beta \) for all \( \beta \).</p>
@@ -284,33 +288,49 @@
         <p>&emsp;&emsp;\( \zeta_\beta \): In addition to the above, \( \varphi_2(\beta) \) will be rewritten as \( \zeta_\beta \) for all \( \beta \).</p>
         <p>&emsp;&emsp;\( \eta_\beta \): In addition to the above, \( \varphi_3(\beta) \) will be rewritten as \( \eta_\beta \) for all \( \beta \).</p>
         <h3>Rewrite \( \Phi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Rathjen's Small \( \psi \)</p>
         <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \Phi_\alpha(\beta) \) is written.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Small \( \psi \)</p>
         <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \): \( \Phi_\alpha(\beta) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( E_\beta \): \( \Phi_1(\beta) \) will be rewritten as \( E_\beta \) for all \( \beta \).</p>
         <p>&emsp;&emsp;\( Z_\beta \): In addition to the above, \( \Phi_2(\beta) \) will be rewritten as \( Z_\beta \) for all \( \beta \).</p>
         <p>&emsp;&emsp;\( H_\beta \): In addition to the above, \( \Phi_3(\beta) \) will be rewritten as \( H_\beta \) for all \( \beta \).</p>
         <h3>Rewrite \( \psi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Buchholz's \( \psi \), Extended Buchholz's \( \psi \)</p>
         <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \psi_\alpha(\beta) \) (Buchholz's \( \psi \) or Extended Buchholz's \( \psi \)) is written.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Buchholz's \( \psi \), Extended Buchholz's \( \psi \)</p>
         <p>&emsp;&emsp;\( \psi_\alpha(\beta) \): \( \psi_\alpha(\beta) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( 1 \): \( \psi_0(0) \) will be rewritten as \( 1 \).</p>
         <p>&emsp;&emsp;\( \psi_{\Omega_\alpha}(\beta) \): In the beginning, \( \gamma \) in \( \psi_\gamma(\delta) \) will be simplified according to the option \( \omega^{\Omega_\alpha+\beta} \) and \( \delta \) will be simplified according to this option. The ordinal remains unchanged other than these changes.</p>
         <p>&emsp;&emsp;\( \omega^{\Omega_\alpha+\beta} \): \( \psi_\alpha(\beta) \) will be rewritten as \( \omega^{\Omega_\alpha+\beta} \) if \( \beta&lt;\Omega_{\alpha+1} \). In this case, if \( \alpha=0 \), then it's rewritten as \( \omega^\beta \) instead.</p>
         <h3>Rewrite \( \chi_\alpha(\beta) \)</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Rathjen's Small \( \psi \)</p>
         <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \chi_\alpha(\beta) \) is written.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Small \( \psi \)</p>
         <p>&emsp;&emsp;\( \chi_\alpha(\beta) \): \( \chi_\alpha(\beta) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( \Omega_{1+\beta} \): \( \chi_0(\beta) \) will be rewritten as \( \Omega_{1+\beta} \) for all \( \beta \).</p>
         <p>&emsp;&emsp;\( I_{1+\beta} \): In addition to the above, \( \chi_1(\beta) \) will be rewritten as \( I_{1+\beta} \) for all \( \beta \).</p>
-        <h3>Rewrite \( \Xi(\alpha) \)</h3>
-        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \Xi(\alpha) \) is written.</p>
-        <p>&emsp;&emsp;<b>Only available in:</b> Rathjen's Capital \( \Psi \)</p>
+        <h3>Rewrite \( \Xi(\alpha) \) (Or \( X(\alpha) \))</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Rathjen's Capital \( \Psi \)</p>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the function \( \Xi(\alpha) \) is written. If the option on the right in the item "Function Specification" is chosen, \( \Xi \) will be replaced with \( X \).</p>
         <p>&emsp;&emsp;\( \Xi(\alpha) \): \( \Xi(\alpha) \) will not be rewritten.</p>
         <p>&emsp;&emsp;\( \Xi_\alpha \): \( \Xi(\alpha) \) will be rewritten as \( \Xi_\alpha \) if \( \alpha&lt;K \).</p>
         <p>&emsp;&emsp;\( I \): In addition to the above, \( \Xi_1 \) will be rewritten as \( I \).</p>
         <p>&emsp;&emsp;\( M \): In addition to the above, \( \Xi_2 \) will be rewritten as \( M \).</p>
         <p>&emsp;&emsp;\( N \): In addition to the above, \( \Xi_3 \) will be rewritten as \( N \).</p>
+        <h3>Rewrite \( K \)</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Rathjen's Capital \( \Psi \)</p>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how \( K \) is written.</p>
+        <p>&emsp;&emsp;\( K \): \( K \) will not be rewritten.</p>
+        <p>&emsp;&emsp;\( \mathcal{K} \): \( K \) will be rewritten as \( \mathcal{K} \).</p>
+        <h3>Reflection Instances and Configurations</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust how the reflection instances and configurations are written.</p>
+        <p>&emsp;&emsp;\( \mathbb{F}_\kappa(\cdots) \): The reflection instances and configurations will be written in the form closed to the ones in the original paper.</p>
+        <p>&emsp;&emsp;\( [\kappa,\cdots] \): The reflection instances and configurations will be written in the "Reflection Bracket Notation", where \( [\kappa,\alpha_0,\alpha_1,\cdots]=\mathbb{F}_\kappa(\alpha_0,\alpha_1,\cdots) \). If there are no variables, there will be a comma at the end.</p>
+        <p>&emsp;&emsp;\( [\kappa\cdots] \): Same as above except that if there are no variables, the comma will be omitted.</p>
+        <h3>Rectangular Border</h3>
+        <p>&emsp;&emsp;<b>Exclusive in:</b> Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust whether the ordinals written in the collapsing functions are surrounded by rectangular borders. This is to make reading easier due to the complicated structure of these OCFs.</p>
+        <p>&emsp;&emsp;Off: The ordinals written in the collapsing functions will not be surrounded by rectangular borders.</p>
+        <p>&emsp;&emsp;On: The ordinals written in the collapsing functions will be surrounded by rectangular borders.</p>
         <h1>About Ordinals</h1><hr>
         <p>&emsp;&emsp;We start from 0, and we count 1, 2, 3 and so on. This process will never end because there are infinitely many natural numbers. As we accept the concept of infinity, we accept the number \( \omega \) as the smallest ordinal number larger than all natural numbers. It's like pressing the Enter key, moving on to the second line and typing the first letter of this line. Because no matter how many letters we type on the first line, the letter on the second line is AFTER all the letters on the first line.</p>
         <p>&emsp;&emsp;We can continue "typing letters on the second line" to create larger ordinal numbers like \( \omega+1 \), \( \omega+2 \), \( \omega+3 \) and so on. We can then "press the Enter key" again and get \( \omega+\omega \), which is \( \omega2 \). We can repeat the process and get \( \omega3 \), \( \omega4 \) and so on, and finally, we "insert a page break and type a letter on the next page" and get \( \omega*\omega \), which is \( \omega^2 \).</p>
@@ -328,7 +348,7 @@
         <p>&emsp;&emsp;\( \omega=\{0,1,2,3,\cdots\}=\mathbb{N} \)</p>
         <br>
         <p>&emsp;&emsp;They're known as the <b>von Neumann ordinals</b>. Consequently, for any two ordinals \( \alpha \) and \( \beta \), \( \alpha&lt;\beta \) if and only if \( \alpha\in\beta \).</p>
-        <p>&emsp;&emsp;All non-zero ordinals contain \( 0 \) as the smallest element, while not all of them contain the largest element. And so, we can divide ordinals into two categories - successor ordinals and limit ordinals. Successor ordinals are non-zero ordinals that contain the largest element because every successor ordinal \( \alpha+1 \) contains the largest element \( \alpha \) by definition, while limit ordinals are non-zero ordinals that don't contain the largest element. Consequently, \( 0 \) is neither a successor ordinal nor a limit ordinal.</p>
+        <p>&emsp;&emsp;All nonzero ordinals contain \( 0 \) as the smallest element, while not all of them contain the largest element. And so, we can divide ordinals into two categories - successor ordinals and limit ordinals. Successor ordinals are nonzero ordinals that contain the largest element because every successor ordinal \( \alpha+1 \) contains the largest element \( \alpha \) by definition, while limit ordinals are nonzero ordinals that don't contain the largest element. Consequently, \( 0 \) is neither a successor ordinal nor a limit ordinal.</p>
         <p>&emsp;&emsp;We can also do arithmetic on ordinals. Addition, multiplication and exponentiation in ordinals are defined as follows:</p>
         <p>&emsp;&emsp;\( \alpha+0:=\alpha \)</p>
         <p>&emsp;&emsp;\( \alpha+Suc(\beta):=Suc(\alpha+\beta) \)</p>
@@ -366,8 +386,8 @@
         <p>&emsp;&emsp;\( n\rightarrow2n \)</p>
         <p>&emsp;&emsp;\( \omega+n\rightarrow2n+1 \)</p>
         <br>
-        <p>&emsp;&emsp;All natural numbers are cardinals. As of infinite cardinals, we label them as aleph numbers, which are \( \aleph_0 \), \( \aleph_1 \), \( \aleph_2 \), \( \aleph_3 \) and so on, and we set the cardinality of \( \omega \) (Denoted as \( \#\omega \)) to be \( \aleph_0 \). When working in ZFC (Zermelo-Fraenkel set theory), we can assign each infinite cardinal with an ordinal. This is called the <b>von Neumann cardinal assignment</b>. In this case, we define the cardinality of a set as the smallest ordinal that has a one-to-one correspondence with the set. Consequently, <b>cardinals are ordinals</b> and \( \aleph_0=\omega \), \( \aleph_1=\Omega \), \( \aleph_2=\Omega_2 \), \( \aleph_3=\Omega_3 \) and so on. We say that an ordinal is <b>countable</b> if and only if it's less than \( \Omega \).</p>
-        <p>&emsp;&emsp;We know that there are infinities larger than \( \aleph_0 \) because the cardinality of the set of real numbers is larger than natural numbers. The cardinality of the set of real numbers is \( \beth_1 \) (beth-1), which is also the same as the powerset of (the set of subsets of) the set of natural numbers. We can also do more powersets to obtain beth numbers \( \beth_2 \),  \( \beth_3 \) and so on, which is another sequence of cardinals. The Continuum Hypothesis implies that \( \aleph_1=\beth_1 \). However, it can neither be proven nor disproven by ZFC itself, i.e. independent of ZFC. There's also an extension called "Generalized Continuum Hypothesis", which implies that \( \aleph_\alpha=\beth_\alpha \) for all ordinals \( \alpha \) and is also independent of ZFC.</p>
+        <p>&emsp;&emsp;All natural numbers are cardinals. As of infinite cardinals, we label them as <b>aleph numbers</b>, which are \( \aleph_0 \), \( \aleph_1 \), \( \aleph_2 \), \( \aleph_3 \) and so on, and we set the cardinality of \( \omega \) (Denoted as \( \#\omega \)) to be \( \aleph_0 \). When working in ZFC (Zermelo-Fraenkel set theory), we can assign each infinite cardinal with an ordinal. This is called the <b>von Neumann cardinal assignment</b>. In this case, we define the cardinality of a set as the smallest ordinal that has a one-to-one correspondence with the set. Consequently, <b>cardinals are ordinals</b> and \( \aleph_0=\omega \), \( \aleph_1=\Omega \), \( \aleph_2=\Omega_2 \), \( \aleph_3=\Omega_3 \) and so on. We say that an ordinal is <b>countable</b> if and only if it's less than \( \Omega \).</p>
+        <p>&emsp;&emsp;We know that there are infinities larger than \( \aleph_0 \) because the cardinality of the set of real numbers is larger than natural numbers. The cardinality of the set of real numbers is \( \beth_1 \) (beth-1), which is also the same as the powerset of (the set of subsets of) the set of natural numbers. The Continuum Hypothesis implies that \( \aleph_1=\beth_1 \). However, it can neither be proven nor disproven by ZFC itself, i.e. independent of ZFC. Since \( \beth_1 \) is a cardinal different from the aleph numbers, we can obtain another sequence of cardinals. We start from \( \beth_0=\aleph_0 \), and define \( \beth_1 \) to be the cardinality of the powerset of (the set of subsets of) \( \beth_0 \), \( \beth_2 \) to be the cardinality of the powerset of \( \beth_1 \) and so on. This series of cardinals is called the <b>beth numbers</b>. There's also a hypothesis called "Generalized Continuum Hypothesis", which implies that \( \aleph_\alpha=\beth_\alpha \) for all ordinals \( \alpha \) and is also independent of ZFC.</p>
         <p>&emsp;&emsp;There is also arithmetic of cardinals. However, these arithmetic are different from the arithmetic of ordinals, and we need to differ them carefully: (Where \( \langle a,b\rangle:=\{\{a\},\{a,b\}\} \))</p>
         <p>&emsp;&emsp;\( A+_\#B:=\#\{x|(x=\langle a,0\rangle\vee\langle b,1\rangle)\land a\in A\land b\in B \} \)</p>
         <p>&emsp;&emsp;\( A*_\#B:=\#\{x|x=\langle a,b\rangle\land a\in A\land b\in B \} \)</p>
@@ -492,6 +512,147 @@
         <br>
         <p>&emsp;&emsp;The code runs like this: We start from line 01. . We assign the value \( n_0 \) to the variable \( v \) and then go to the next line, line 02. . If \( c_5 \) is \( \mathbb{T} \), we assign the value \( n_1 \) to the variable \( v \) and then go to the next line. Otherwise, we go to the next line directly. If \( c_6 \) is \( \mathbb{T} \), the function \( g(a) \) returns the value \( d_5 \) and the evaluation ends. Otherwise, the evaluation continues and we go to the next line. And then the function \( g(a) \) returns the value \( v \), which depends on the value that we assigned to previously.</p>
         <p>&emsp;&emsp;Sometimes, the same variable will appear on both sides. When this happens, it means assigning the variable a new value that depends on its old value instead of solving an equation.</p>
+        <h1>Indescribable Bracket Notation</h1><hr>
+        <p>&emsp;&emsp;When we work with complex OCFs like Stegert's First \( \Psi \) and Stegert's Second \( \Psi \), we will encounter complex cardinals that can't be represented using simple notations. Therefore, a system of notation called "Indescribable Bracket Notation" is introduced here.</p>
+        <h2>Basic Definitions</h2><hr>
+        <p>&emsp;&emsp;We denote \( Ord \) as the class of ordinals, \( Lim \) as the class of limit ordinals, \( Card \) as the class of cardinals and \( P(A) \) as the powerset of \( A \). Unless stated otherwise, \( A,B\in P(Ord) \), \( \beta\in Ord \), \( n&lt;\omega \), \( \gamma_0,\gamma_1,\gamma_2,\cdots,\gamma_{m-1}\in Ord \) with \( m&lt;\omega \), \( k&lt;m \), \( f \) is a function that takes one ordinal as input and returns one ordinal (\( f:Ord\rightarrow Ord \)), \( z \) represents an empty string or at least one zero like "\( 0 \)", "\( 0,0 \)", "\( 0,0,0 \)" and so on.</p>
+        <p>&emsp;&emsp;We define the enumeration function \( Enum_A(\beta) \) that returns the \( 1+\beta \)-th element of \( A \) sorted by size:</p>
+        <p>&emsp;&emsp;\( Enum_A(\beta):=min\{x\in A|\forall\gamma&lt;\beta(Enum_A(\gamma)&lt;x)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the closing function \( Cl(A) \) which contains the element of \( A \) and its limit points as follows. This is because some classes are not continuous, i.e. for a limit ordinal \( \beta \), \( Enum_A(\beta)\neq sup\{Enum_A(\gamma)|\gamma&lt;\beta\} \). For example, the \( \omega \)-th regular cardinal is \( \Omega_{\omega+1} \) instead of \( \Omega_\omega=sup\{\Omega_\alpha|\alpha&lt;\omega\} \) because \( \Omega_\omega \) is singular. This function actually appears from the definition of Rathjen's Small \( \psi \):</p>
+        <p>&emsp;&emsp;\( Cl(A):=A\cup\{\beta\in Lim|\beta=sup(A\cap\beta)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the functional closure \( FC_f \) as follows:</p>
+        <p>&emsp;&emsp;\( FC_f:=\{\beta\in Ord|\forall\gamma&lt;\beta(f(\gamma)&lt;\beta)\} \)</p>
+        <p>&emsp;&emsp;Note that if \( f=(\alpha\mapsto\alpha) \) (i.e. \( f(\alpha)=\alpha \)), then \( FC_f=Ord \) because \( \forall\gamma&lt;\beta(\gamma&lt;\beta) \) is a tautology (i.e. always true).</p>
+        <br>
+        <p>&emsp;&emsp;We define the class of uncountable cardinals \( UC \) as follows:</p>
+        <p>&emsp;&emsp;\( UC:=\{\kappa\in Card|\kappa&gt;\omega\} \)</p>
+        <h2>Indescribable Classes, Thinning Operations and the Bracket Function</h2><hr>
+        <p>&emsp;&emsp;We define the class \( f;A-P_{(\beta,n)}:B \) as follows:</p>
+        <p>&emsp;&emsp;\( f;A-P_{(\beta,n)}:B:=\{\kappa|\kappa \) is \( \beta \)-\( \Pi_n^1 \)-indescribable in \( A\}\cap B\cap FC_f \)</p>
+        <p>&emsp;&emsp;We write \( A-P_{(\beta,n)}:B \) for \( (\alpha\mapsto\alpha);A-P_{(\beta,n)}:B \), \( A-P_{(\beta,n)} \) for \( A-P_{(\beta,n)}:Ord \), \( P_{(\beta,n)} \) for \( Ord-P_{(\beta,n)} \) and \( P_n \) for \( P_{(0,n)} \).</p>
+        <p>&emsp;&emsp;The addition of \( f \) seems unnecessary here, but it will make sense later because the definition later will rely on \( f \).</p>
+        <br>
+        <p>&emsp;&emsp;\( -P_{(\beta,n)}:B \) can be considered as a "thinning operation" because this "shrinks" a class since \( A-P_{(\beta,n)}:B\subseteq A \). For this reason, we can also define a system of thinning operations that shrinks a set multiple and even infinitely many times.</p>
+        <p>&emsp;&emsp;We define the class \( f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}} \) as follows:</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0\}}:=f;A \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\delta_0\}}-P_{(\beta,n)}:B)\} \) (\( \gamma_0&gt;0 \))</p>
+        <br>
+        <p>&emsp;&emsp;For example:</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0\}}=f;A \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1\}}=f;A-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{2\}}=f;A-P_{(\beta,n)}:B-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{3\}}=f;A-P_{(\beta,n)}:B-P_{(\beta,n)}:B-P_{(\beta,n)}:B \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\omega\}} \) is the intersection of \( f;A-(P_{(\beta,n)}:B)_{\{0\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{1\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{2\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{3\}} \) and so on for all natural numbers.</p>
+        <br>
+        <p>&emsp;&emsp;We will also encounter more complicated cardinals. So, we can extend the definition by adding more variables and define the class \( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\gamma_0\}} \) as follows:</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{0,\gamma_0\}}:=f;A-(P_{(\beta,n)}:B)_{\{\gamma_0\}} \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,\delta_0\}}-P_{(\beta,n)}:B)\} \) (\( \gamma_0&gt;0 \))</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_1,0\}}:=\{\xi\in Ord|\forall\delta_1&lt;\gamma_1(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\delta_1,\xi\}})\} \) (\( \gamma_1&gt;0 \))</p>
+        <br>
+        <p>&emsp;&emsp;We can add even more variables and define the class \( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\gamma_0\}} \) as follows:</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{z,0,\gamma_k,\cdots,\gamma_1,\gamma_0\}}:=f;A-(P_{(\beta,n)}:B)_{\{\gamma_k,\cdots,\gamma_1,\gamma_0\}} \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\gamma_0\}}:=\{\xi\in Ord|\forall\delta_0&lt;\gamma_0(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_2,\gamma_1,\delta_0\}}-P_{(\beta,n)}:B)\} \) (\( \gamma_0&gt;0 \))</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_k,0,z\}}:=\{\xi\in Ord|\forall\delta_k&lt;\gamma_k(\xi\in f;A-(P_{(\beta,n)}:B)_{\{\gamma_{m-1},\cdots,\gamma_k,\xi,z\}})\} \) (\( \gamma_k&gt;0 \))</p>
+        <br>
+        <p>&emsp;&emsp;We can even extend the definition using the ideas in the <a href="https://arxiv.org/abs/2310.12832" target="_blank">"dimensional Veblen function"</a>. For example:</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1@\omega\}} \) is the intersection of \( f;A-(P_{(\beta,n)}:B)_{\{1\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{1,0\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{1,0,0\}} \), \( f;A-(P_{(\beta,n)}:B)_{\{1,0,0,0\}} \) and so on.</p>
+        <p>&emsp;&emsp;\( f;A-(P_{(\beta,n)}:B)_{\{1@(1,0)\}}=\{\xi\in Ord|\xi\in f;A-(P_{(\beta,n)}:B)_{\{1@\xi\}}\} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the bracket function \( f-[A]_\beta \) as follows:</p>
+        <p>&emsp;&emsp;\( f-[A]_\beta:=Enum_{Cl(\{\omega\}\cup(UC\cap f;A))}(\beta) \)</p>
+        <p>&emsp;&emsp;\( A \) can be considered a function that takes one function \( f:Ord\rightarrow Ord \) as input and returns a class of ordinals (\( f;A\in P(Ord) \)).</p>
+        <p>&emsp;&emsp;Note that for every \( A \), \( [A]_0=\omega \).</p>
+        <br>
+        <p>&emsp;&emsp;We write \( [A]_\beta \) for \( (\alpha\mapsto\alpha)-[A]_\beta \). Consequently, \( [A]_\beta:=Enum_{Cl(\{\omega\}\cup(UC\cap A))}(\beta) \).</p>
+        <p>&emsp;&emsp;If the context is clear, we write \( f(\alpha)-[B]_\beta \) for \( (\alpha\mapsto f(\alpha))-[B]_\beta \). Note that it must be \( \alpha \) as it's a "fixed point notation" here.</p>
+        <p>&emsp;&emsp;We also write \( [A] \) for \( [A]_1 \) and \( [] \) for \( [Card] \). We can also write \( \Omega \) for \( [] \), \( I \) for \( [P_0] \), \( M \) for \( [P_{0\{2\}}] \), \( N \) for \( [P_{0\{3\}}] \), \( K \) for \( [P_1] \) and \( \Xi \) for \( [P_{(1,0)}] \).</p>
+        <br>
+        <p>&emsp;&emsp;We will also encounter cardinals in the form \( [A]_\alpha-[A] \), \( [A]_\alpha-[A]_2 \), \( [A]_\alpha-[A]_\alpha-[A] \) and so on. For simplicity, we have the following definition:</p>
+        <p>&emsp;&emsp;\( f-[A](0,\gamma_0):=f-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1+1,\gamma_0):=f-[A](\gamma_1,\alpha)-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,0):=sup\{f-[A](\delta_1,0)|\delta_1&lt;\gamma_1\} \) (\( \gamma_1\in Lim \))</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,\gamma_0+1):=sup\{f-[A](\delta_1,f-[A](\gamma_1,\gamma_0)+1)|\delta_1&lt;\gamma_1\} \) (\( \gamma_1\in Lim \))</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_1,\gamma_0):=sup\{f-[A](\gamma_1,\gamma_0)|\delta_0&lt;\gamma_0\} \) (\( \gamma_0,\gamma_1\in Lim \))</p>
+        <br>
+        <p>&emsp;&emsp;We can also add more variables here:</p>
+        <p>&emsp;&emsp;\( f-[A](z,0,\gamma_k,\cdots,\gamma_1,\gamma_0):=f-[A](\gamma_k,\cdots,\gamma_1,\gamma_0) \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k+1,z,\gamma_0):=f-[A](\gamma_{m-1},\cdots,\gamma_k,\alpha,z)-[A]_{1+\gamma_0} \)</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k,z):=sup\{f-[A](\gamma_{m-1},\cdots,\delta_k,z)|\delta_k&lt;\gamma_k\} \) (\( \gamma_k\in Lim \))</p>
+        <p>&emsp;&emsp;\( f-[A](\gamma_{m-1},\cdots,\gamma_k,z,\gamma_0+1):=sup\{f-[A](\gamma_{m-1},\cdots,\delta_k,f-[A](\gamma_{m-1},\cdots,\gamma_k,z,\gamma_0)+1,z)|\delta_k&lt;\gamma_k\} \) (\( \gamma_k\in Lim \))</p>
+        <br>
+        <p>&emsp;&emsp;We can also extend the definition using the ideas in the <a href="https://arxiv.org/abs/2310.12832" target="_blank">"dimensional Veblen function"</a>. For example:</p>
+        <p>&emsp;&emsp;\( f-[A](1@\omega)=sup\{f-[A](1),f-[A](1,0),f-[A](1,0,0),f-[A](1,0,0,0),\cdots\} \)</p>
+        <p>&emsp;&emsp;\( f-[A](1@(1,0))=f-[A](1@\alpha)-[A] \)</p>
+        <h2>Limit Classes and Fixed-Point Classes</h2><hr>
+        <p>&emsp;&emsp;We will encounter some important singular cardinals. However, all the classes we've encountered are classes of regular cardinals. Even though the bracket function is already capable of representing some singular cardinals like \( []_\omega=\Omega_\omega \), \( [P_0]_\omega=I_\omega \) and so on, it still fails to represent the limit of \( [P_{0\{0\}}] \), \( [P_{0\{1\}}] \), \( [P_{0\{2\}}] \), \( [P_{0\{3\}}] \), and so on and the limit of \( [P_0] \), \( [P_1] \), \( [P_2] \), \( [P_3] \) and so on. The answers are not \( [P_{0\{\omega\}}] \) and \( [P_{(1,0)}] \) respectively, because they're both regular cardinals and what we want are singular cardinals with cofinality \( \omega \). Therefore, we have to extend the definition.</p>
+        <p>&emsp;&emsp;We introduce the concept of limit classes. We can start from the Veblen function and define the "Veblen classes" as follows:</p>
+        <p>&emsp;&emsp;\( \varphi_0:=\{\omega^\beta|\beta\in Ord\} \)</p>
+        <p>&emsp;&emsp;\( \varphi_{\alpha+1}:=\{\beta|\beta=Enum_{\varphi_\alpha}(\beta)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;So, how do we define \( \varphi_\omega \), or more generally, \( \varphi_\alpha \) with \( \alpha\in Lim \)? Since it's true that:</p>
+        <p>&emsp;&emsp;\( \varphi_\omega(0) \) is the least ordinal greater than \( \varphi_0(0)=1 \), \( \varphi_1(0)=\varepsilon_0 \), \( \varphi_2(0)=\zeta_0 \), \( \varphi_3(0)=\eta_0 \) and so on.</p>
+        <p>&emsp;&emsp;\( \varphi_\omega(1) \) is the least ordinal greater than \( \varphi_0(\varphi_\omega(0)+1)=\varphi_\omega(0)*\omega \), \( \varphi_1(\varphi_\omega(0)+1)=\varepsilon_{\varphi_\omega(0)+1} \), \( \varphi_2(\varphi_\omega(0)+1)=\zeta_{\varphi_\omega(0)+1} \), \( \varphi_3(\varphi_\omega(0)+1)=\eta_{\varphi_\omega(0)+1} \) and so on.</p>
+        <p>&emsp;&emsp;We can define a sequence as follows:</p>
+        <p>&emsp;&emsp;\( s_\alpha \) is the least ordinal greater than the first element in \( \varphi_0 \), \( \varphi_1 \), \( \varphi_2 \), \( \varphi_3 \) and so on and also greater than all \( s_\beta \) for \( \beta&lt;\alpha \)</p>
+        <p>&emsp;&emsp;And then:</p>
+        <p>&emsp;&emsp;\( \varphi_\omega:=\{s_\alpha|\alpha\in Ord\} \)</p>
+        <br>
+        <p>&emsp;&emsp;Therefore, the idea is to define a function of classes whose domain is some limit ordinal and follow the same process. We define "Class Functions" that takes an ordinal less than some limit ordinal as input and returns a class of ordinals (\( F:\beta\rightarrow P(Ord) \), where \( \beta\in Lim \)). For a class function \( F \), we can turn it into a limit class using the operation \( F^* \) defined as follows:</p>
+        <p>&emsp;&emsp;\( s_\alpha:=sup\{min\{\gamma\in F(\beta)|\forall\alpha_0&lt;\alpha(\gamma&gt;s_{\alpha_0})\}|\beta&lt;dom(F)\} \)</p>
+        <p>&emsp;&emsp;\( F^*:=\{s_\alpha|\alpha\in Ord\} \)</p>
+        <br>
+        <p>&emsp;&emsp;We define the following limit classes:</p>
+        <p>&emsp;&emsp;\( f;\cdots P_{&lt;(\beta+1,0)}=F^* \) for \( F(n)=f;\cdots P_{&lt;(\beta,n)} \) with \( dom(F)=\omega \)</p>
+        <p>&emsp;&emsp;\( f;\cdots P_{&lt;(\beta,0)}=F^* \) for \( F(\beta_0)=f;\cdots P_{&lt;(\beta_0,0)} \) with \( dom(F)=\beta \) and \( \beta\in Lim \)</p>
+        <p>&emsp;&emsp;\( f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k,z\}}=F^* \) for \( F(\delta)=f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\delta,z\}} \) with \( dom(F)=\gamma_k \) and \( \gamma_k\in Lim \)</p>
+        <br>
+        <p>&emsp;&emsp;In the last line of the definition, if \( P_\cdots:B \) (or \( P_\cdots \)) ends with \( &lt;\cdots \), we can omit \( &lt; \) on the right side because they are equal since every output of the class function is a limit class. For example:</p>
+        <p>&emsp;&emsp;\( P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{&lt;\omega\}}=P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{\omega\}} \)</p>
+        <br>
+        <p>&emsp;&emsp;The bracket function is defined the same for limit classes. All the abbreviations introduced above also apply. For example:</p>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;\omega\}}] \) is the limit of \( [P_{0\{0\}}]=[]=\Omega \), \( [P_{0\{1\}}]=[P_0]=I \), \( [P_{0\{2\}}]=[P_0-P_0]=M \), \( [P_{0\{3\}}]=[P_0-P_0-P_0]=N \) and so on.</p>
+        <p>&emsp;&emsp;\( [P_{&lt;(1,0)}] \) is the limit of \( [P_0]=I \), \( [P_1]=K \), \( [P_2] \), \( [P_3] \) and so on.</p>
+        <br>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]}_2={[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}]}_2 \) is the limit of the following:</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_1]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_2]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(1,0)}-P_0:P_{&lt;(1,0)}-P_0:P_3]}_{[P_{&lt;(1,0)}-(P_0:P_{&lt;(1,0)})_{\{2\}}]+1} \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{&lt;(2,0)}](1,0)={[P_{&lt;(2,0)}]}_\alpha-[P_{&lt;(2,0)}] \) is the limit of the following:</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,0)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,1)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,2)}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{&lt;(2,0)}]}_\alpha-[P_{(1,3)}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;Despite the introduction of limit classes, it's still incapable of representing the limit of \( 0 \), \( [P_{0\{0\}}]=[]=\Omega \), \( [P_{0\{[P_{0\{0\}}]\}}]=[P_{0\{\Omega\}}] \), \( [P_{0\{[P_{0\{[P_{0\{0\}}]\}}]\}}]=[P_{0\{[P_{0\{\Omega\}}]\}}] \) and so on. Therefore, we have to extend the definition even further.</p>
+        <p>&emsp;&emsp;We introduce fixed-point classes and define them as follows:</p>
+        <p>&emsp;&emsp;\( f;A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k+1,0,z\}}=\{\xi\in Ord|\forall\xi_0&lt;\xi(f-[A-(P_\cdots:B)_{\{&lt;\gamma_{m-1},\cdots,\gamma_k,\xi_0,z\}}]&lt;\xi)\} \)</p>
+        <br>
+        <p>&emsp;&emsp;If \( P_\cdots:B \) (or \( P_\cdots \)) ends with \( &lt;\cdots \), we can omit \( &lt; \) on the right side for the same reason. For example:</p>
+        <p>&emsp;&emsp;\( P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{&lt;1,0\}}=P_{(2,0)}-(P_0:P_{&lt;(1,0)})_{\{1,0\}} \)</p>
+        <br>
+        <p>&emsp;&emsp;The bracket function is defined the same for fixed-point classes. All the abbreviations introduced above also apply. For example:</p>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;1,0\}}] \) is the limit of \( 0 \), \( [P_{0\{0\}}]=[]=\Omega \), \( [P_{0\{[P_{0\{0\}}]\}}]=[P_{0\{\Omega\}}] \), \( [P_{0\{[P_{0\{[P_{0\{0\}}]\}}]\}}]=[P_{0\{[P_{0\{\Omega\}}]\}}] \) and so on.</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_2 \) is the limit of \( [P_{0\{&lt;1,0\}}] \), \( [P_{0\{[P_{0\{&lt;1,0\}}]\}}] \), \( [P_{0\{[P_{0\{[P_{0\{&lt;1,0\}}]\}}]\}}] \), \( [P_{0\{[P_{0\{[P_{0\{[P_{0\{&lt;1,0\}}]\}}]\}}]\}}] \) and so on.</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;1,0\}}](1,0)={[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{&lt;1,0\}}] \) is the limit of the following:</p>
+        <p>&emsp;&emsp;\( 0 \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}]\}}] \)</p>
+        <p>&emsp;&emsp;\( {[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{{[P_{0\{&lt;1,0\}}]}_\alpha-[P_{0\{0\}}]\}}]\}}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
+        <br>
+        <p>&emsp;&emsp;\( [P_{0\{&lt;2,0,0,0\}}] \) is the limit of the following:</p>
+        <p>&emsp;&emsp;\( 0 \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,0,0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,[P_{0\{1,0,0,0\}}],0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( [P_{0\{1,[P_{0\{1,[P_{0\{1,0,0,0\}}],0,0\}}],0,0\}}] \)</p>
+        <p>&emsp;&emsp;\( \cdots \)</p>
         <h1>Some Notable Ordinals</h1><hr>
         <h2>\( \varepsilon_0 \)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \varphi_1(0) \) in Veblen function.</p>
@@ -502,50 +663,72 @@
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega^\Omega) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(0) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(0) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^0 \) in Stegert's First/Second \( \Psi \).</p>
         <p>&emsp;&emsp;The first ordinal that \( \alpha=\varphi_\alpha(0) \).</p>
         <p>&emsp;&emsp;The PTO of arithmetical transfinite recursion \( ATR_0 \).</p>
         <h2>Ackermann Ordinal (AO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega^{\Omega^2}) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\Omega^{\Omega^2}) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\Omega^3) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^3} \) in Stegert's First/Second \( \Psi \).</p>
         <h2>Small Veblen Ordinal (SVO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega^{\Omega^\omega}) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\Omega^{\Omega^\omega}) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\Omega^\omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^\omega} \) in Stegert's First/Second \( \Psi \).</p>
         <h2>Large Veblen Ordinal (LVO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega^{\Omega^\Omega}) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\Omega^{\Omega^\Omega}) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\Omega^\Omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{{\omega^+}^{\omega^+}} \) in Stegert's First/Second \( \Psi \).</p>
         <h2>Bachmann-Howard Ordinal (BHO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega_2) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\varepsilon_{\Omega+1}) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\omega^++1}} \) in Stegert's First/Second \( \Psi \).</p>
         <p>&emsp;&emsp;The PTO of Kripke-Platek set theory with the axiom of infinity \( KP\omega \).</p>
         <h2>Small Buchholz Ordinal (SBO)</h2><hr>
         <p>&emsp;&emsp;Also known as Buchholz's ordinal (BO).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega_\omega) \) in (Extended) Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\Omega_\omega) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\Omega_\omega) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Psi_{(\Psi_{\mathbb{A}(1)}^\omega;P_0;\epsilon;\mathbb{A}(1);\omega+1)}^{\omega+1}} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Theta(\omega)} \) in Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;The PTO of \( \Pi_1^1-CA \).</p>
         <h2>Takeuti-Feferman-Buchholz Ordinal (TFBO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\varepsilon_{\Omega_\omega+1}) \) in Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega_{\omega+1}) \) in Extended Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{(\Psi_{\mathbb{A}(1)}^\omega;P_0;\epsilon;\mathbb{A}(1);\omega+1)}^{\omega+1}+1}} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Theta(\omega)+1}} \) in Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;The PTO of \( \Pi_1^1-CA+BI \).</p>
         <h2>Large Buchholz Ordinal (LBO)</h2><hr>
         <p>&emsp;&emsp;Also known as Extended Buchholz's Ordinal (EBO).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \) in Extended Buchholz's \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\Phi_1(0)) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\Psi_{\Xi(1)}^0(2)) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Psi_{\mathbb{A}(1)}^\omega} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon} \) in Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;The PTO of \( \Pi_1^1-TR_0 \).</p>
         <h2>Small Rathjen Ordinal (SRO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \) in Rathjen's Small \( \psi \).</p>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\varepsilon_{\Xi(2)+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{(\Psi_{\mathbb{A}(2)}^\omega;P_1;(M_\mathbb{A}^{&lt;\omega}-P_0);\mathbb{A}(2);\omega+1)}^{\omega+2}+1}} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Psi_{(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon)}^\Upsilon;P_{(0,1)};\epsilon;(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon);\Upsilon+1)}^{\Upsilon+2}+1}} \) in Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;The PTO of \( KPM \).</p>
         <h2>Large Rathjen Ordinal (LRO)</h2><hr>
         <p>&emsp;&emsp;Denoted as \( \Psi_\Omega^0(\varepsilon_{K+1}) \) in Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Psi_{\mathbb{A}(2)}^\omega+1}} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Theta(\omega);P_{(0,1)};\epsilon;\epsilon;\Upsilon)}^\Upsilon+1}} \) in Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;The upper bound of the PTO of \( KP+\Pi_3-reflection \).</p>
+        <h2>Small Stegert Ordinal (SSO)</h2><hr>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Xi+1}} \) in Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\Upsilon+\varepsilon_{\Psi_{(\Theta(\omega);P_{(1,0)};\epsilon;\epsilon;\Upsilon)}^\Upsilon+1}} \) in Stegert's Second \( \Psi \).</p>
+        <p>&emsp;&emsp;The upper bound of the PTO of \( KP+\Pi_\omega-reflection \).</p>
+        <h2>Large Stegert Ordinal (LSO)</h2><hr>
+        <p>&emsp;&emsp;Denoted as \( \Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Upsilon+1}} \) in Stegert's Second \( \Psi \).</p>
+        <p>&emsp;&emsp;The upper bound of the PTO of \( Stability \).</p>
         <h2>Church-Kleene Ordinal \( \omega_1^{CK} \) and Admissible Ordinals \( \omega_\alpha^{CK} \)</h2><hr>
         <p>&emsp;&emsp;The Church-Kleene Ordinal \( \omega_1^{CK} \) is the least ordinal whose order cannot be interpreted using computer programs. For this reason, all the countable ordinals represented using every ordinal system on this website are recursive, i.e. less than \( \omega_1^{CK} \).</p>
         <p>&emsp;&emsp;Other than the Church-Kleene Ordinal \( \omega_1^{CK} \), we also have admissible ordinals \( \omega_\alpha^{CK} \) such that the constructible hierarchies \( L_\alpha \) at the levels of these ordinals \( L_{\omega_\alpha^{CK}} \) are models of Kripke-Platek set theory \( KP \).</p>
@@ -568,7 +751,7 @@
         <p>&emsp;&emsp;<b>※Thoroughly fixed the ordinal system of Rathjen's Capital \( \Psi \).</b></p>
         <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent a larger cardinal in <a href="https://d-nb.info/1017849250/34" target="_blank">this paper</a>, to avoid the confusion that \( \Xi=I \) (Where \( I \) denotes the least inaccessible cardinal), \( \Xi_1 \) is no longer rewritten as \( \Xi \).</p>
         <p>&emsp;&emsp;◇Due to some confusion caused by function specifications (Denoting Extended Buchholz's \( \psi \) as \( \psi_\alpha^*(\beta) \) and Rathjen's Small \( \psi \) as \( \rho_\alpha(\beta) \)), some text are added to the corresponding help menu.</p>
-        <p>&emsp;&emsp;◇Added some texts in <a href="#1.1.10">the paragraph about the command "search"</a>.</p>
+        <p>&emsp;&emsp;◇Added some texts in <a href="#1.1.11">the paragraph about the command "search"</a>.</p>
         <p>&emsp;&emsp;◇Added some texts in <a href="#2.7">the paragraph of "Ordinal notation"</a> about the keyword "Let".</p>
         <h2>Aug 29, 2025 - V1.3</h2><hr>
         <p>&emsp;&emsp;<b>※Added "Middle-growing hierarchy" and "Hardy hierarchy".</b></p>
@@ -592,8 +775,25 @@
         <h2>Jun 02, 2026 - V1.5</h2><hr>
         <p>&emsp;&emsp;◇Fixed line 02.02.05.02.02.03.02. of the tail function \( t \) in Rathjen's Capital \( \Psi \) that caused some ordinals to expand abnormally.</p>
         <p>&emsp;&emsp;◇Changed how the option \( \Xi_\alpha \) in the item <a href="#1.4.10">"Rewrite \( \Xi(\alpha) \)"</a> works.</p>
-        <p>&emsp;&emsp;◇Added <a href="#3.12">"Church-Kleene Ordinal \( \omega_1^{CK} \) and Admissible Ordinals \( \omega_\alpha^{CK} \)"</a> in <a href="#3">"Some Notable Ordinals"</a>.</p>
+        <p>&emsp;&emsp;◇Added <a href="#4.14">"Church-Kleene Ordinal \( \omega_1^{CK} \) and Admissible Ordinals \( \omega_\alpha^{CK} \)"</a> in <a href="#4">"Some Notable Ordinals"</a>.</p>
         <p>&emsp;&emsp;◇Rearranged this article.</p>
         <p>&emsp;&emsp;◇Fixed some errors in the help articles, including bad links in this article.</p>
+        <h2>Oct 09, 2026 - V2.0</h2><hr>
+        <p>&emsp;&emsp;<b>※Added the ordinal systems of "Stegert's First \( \Psi \)" and "Stegert's Second \( \Psi \)".</b></p>
+        <p>&emsp;&emsp;<b>※Added the "Huge List of Countable Ordinals", a list dedicated to showing how the ordinals increase and are represented in each ordinal system.</b></p>
+        <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent the \( \Pi_0^2 \)-indescribable cardinal in Stegert's First \( \Psi \), the function \( \Xi(\alpha) \) in Rathjen's Capital \( \Psi \) is now denoted as \( X(\alpha) \) by default. You can restore it by Options &gt; Function Specification &gt; \( \Xi(\alpha) \).</p>
+        <p>&emsp;&emsp;◇Added ordinals for the particles for the background animation.</p>
+        <p>&emsp;&emsp;◇Added the command <a href="#1.1.5">"ref"</a>.</p>
+        <p>&emsp;&emsp;◇Since \( \mathcal{K} \) is used in the paper on Rathjen's Capital \( \Psi \) instead of \( K \), add the option item <a href="#1.4.11">"Rewrite \( K \)"</a>.</p>
+        <p>&emsp;&emsp;◇Added the option items <a href="#1.4.12">"Reflection Instances and Configurations"</a> and <a href="#1.4.13">"Rectangular Border"</a>.</p>
+        <p>&emsp;&emsp;◇Added some texts about beth numbers in <a href="#2.2">"Cardinals"</a>.</p>
+        <p>&emsp;&emsp;◇Added the <a href="#3">"Indescribable Bracket Notation"</a>, a notation dedicated to representing cardinals larger than the Weakly Compact Cardinal \( K \) that are mainly used in Stegert's First \( \Psi \) and Stegert's Second \( \Psi \).</p>
+        <p>&emsp;&emsp;◇Added the <a href="#4.12">"Small Stegert Ordinal (SSO)"</a> and <a href="#4.13">"Large Stegert Ordinal (LSO)"</a> in <a href="#4">"Some Notable Ordinals"</a>.</p>
+        <p>&emsp;&emsp;◇Added some texts about The Weakly Compact Cardinal \( K \) in the help article of Rathjen's Capital \( \Psi \).</p>
+        <p>&emsp;&emsp;◇Added the version at the end of the URL for references in future versions.</p>
+        <p>&emsp;&emsp;◇Changed the layout of the title screen and the option menu to support smaller devices.</p>
+        <p>&emsp;&emsp;◇Fixed the problem that the icon of this website becomes the icon of <a href="https://davidexmachina.github.io" target="_blank">the creator's website</a> after visiting the website.</p>
+        <p>&emsp;&emsp;◇Fixed the problem that the options cause errors if this website is visited with the version prior to V1.3 for the first time.</p>
+        <p>&emsp;&emsp;◇Fixed more errors in the help articles.</p>
     </body>
 </html>

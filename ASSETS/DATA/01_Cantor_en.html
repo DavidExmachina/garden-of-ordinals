@@ -6,9 +6,9 @@
         <p>&emsp;&emsp;Cantor Normal Form is a standard of writing ordinals. It's defined as follows:</p>
         <p>&emsp;&emsp;\( \alpha=\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_n} \)</p>
         <p>&emsp;&emsp;Where \( n \) is a natural number and \( \alpha_0\ge\alpha_1\ge\cdots\ge\alpha_n \).</p>
-        <p>&emsp;&emsp;Every non-zero ordinal can be uniquely written as the Cantor Normal Form.</p>
+        <p>&emsp;&emsp;Every nonzero ordinal can be uniquely written as the Cantor Normal Form.</p>
         <br>
-        <p>&emsp;&emsp;In this website, we are working with ordinals less than \( \varepsilon_0 \) because \( \varepsilon_0 \) is the least ordinal that \( \alpha=\omega^\alpha \) and every ordinal less than \( \varepsilon_0 \) can be constructed only using zero, addition and power of \( \omega \).</p>
+        <p>&emsp;&emsp;On this website, we are working with ordinals less than \( \varepsilon_0 \) because \( \varepsilon_0 \) is the least ordinal that \( \alpha=\omega^\alpha \) and every ordinal less than \( \varepsilon_0 \) can be constructed only using zero, addition and power of \( \omega \).</p>
         <p>&emsp;&emsp;The fundamental sequence system used on this website is defined as follows:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_m}+\omega^{\alpha_{m+1}})[n]:=\omega^{\alpha_0}+\omega^{\alpha_1}+\cdots+\omega^{\alpha_m}+\omega^{\alpha_{m+1}}[n] \)</p>
@@ -30,7 +30,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For all \( a\in T_s \) and \( b\in T_m\setminus\{\overline{0}\} \), \( a+b\in T_m \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> For all \( a\in T_m \), \( \omega(a)\in T_m \) and \( \omega(a)\in T_s \)</p>
         <br>
-        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviations:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \omega^a:=\omega(a) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\omega^\overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\omega^\overline{1} \)</p>
@@ -65,7 +65,7 @@
         <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represent symbolic equivalence, while \( =_* \) and \( \neq_* \) represent numerical equivalence.</p>
         <h2>Normal Form</h2><hr>
         <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
@@ -76,7 +76,7 @@
         <br>
         <p>&emsp;&emsp;We define the limit of the system \( A=\varepsilon_0 \).</p>
         <p>&emsp;&emsp;\( \varepsilon_0 \) is also in normal form.</p>
-        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\varepsilon_0 \)</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha\le\varepsilon_0 \).</p>
         <p>&emsp;&emsp;Ordinals in this system are <b>always countable</b>.</p>
         <p>&emsp;&emsp;There is <b>no countable limit ordinal</b> exclusive to the growing hierarchy commands. ("fgh", "sgh", "mgh" and "hh")</p>
         <h2>Operations</h2><hr>

@@ -43,7 +43,7 @@ input {
     padding: 0px 6px 0px 6px;
     outline: none;
     box-shadow: #000000ff 0px 0px 0px 0px inset;
-    font-family: "Times New Roman", TNR, SimSun, SS;
+    font-family: TNR, SS;
     font-size: 1em;
     background-color: #00000000;
     transition: box-shadow 250ms;
@@ -112,16 +112,18 @@ input:focus {
 
 .menu-main1 {
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: 32px 1fr auto 3fr 32px;
+    grid-template-columns: 1fr auto 1fr;
 }
 .menu-main2 {
-    margin: calc(32px + max(25dvh - 160px, 0px)) 0px calc(32px + max(75dvh - 480px, 0px)) 0px;
+    grid-row: 3;
+    grid-column: 2;
 }
 .menu-title {
     width: min(512px, 100vw);
-    margin: 16px 0px 16px 0px;
+    margin: 12px 0px 12px 0px;
 }
 .big-text {
     height: 80px;
@@ -137,14 +139,14 @@ input:focus {
     text-align: end;
 }
 .menu-button1 {
-    height: 48px;
-    margin: 16px 0px 16px 0px;
+    height: min(max((100dvh - 288px) / 10, 32px), 48px);
+    margin: 4px 0px 4px 0px;
     display: flex;
     justify-content: center;
 }
 .menu-button2 {
     width: min(286px, calc(100vw - 2px));
-    height: 46px;
+    height: min(max((100dvh - 288px) / 10 - 2px, 30px), 46px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,8 +169,8 @@ input:focus {
 }
 .version {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
+    bottom: 8px;
+    left: 8px;
     font-size: 2em;
 }
 
@@ -181,10 +183,10 @@ input:focus {
 }
 .tab {
     padding: 0px 8px 6px 8px;
-    font-size: 2em;
+    font-size: min(max((100dvh - 128px) / 320px * 1em, 1.5em), 2em);
 }
 .tab-button {
-    height: 46px;
+    height: min(max((100dvh - 288px) / 10 - 2px, 30px), 46px);
     margin: 8px 0px 0px 0px;
     padding: 0px 8px 0px 8px;
     display: inline-block;
@@ -346,6 +348,87 @@ input.cal-item {
 }
 .section td {
     padding: 0px 16px 0px 0px;
+}
+
+/* SHEET ---------------------------------------------------------------------------------------- */
+
+.sheet {
+    padding: 32px 32px 32px 32px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.sheet-button {
+    margin: 2px 2px 2px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet-disabled {
+    margin: 2px 2px 2px 2px;
+    border: 1px solid #000000;
+    background-color: #c0c0c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+.sheet-input {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+}
+.sheet-input-square {
+    margin: 2px 2px 2px 2px;
+    text-align: center;
+}
+.sheet-input-right {
+    display: flex;
+    align-items: center;
+}
+.sheet-page {
+    display: flex;
+    column-gap: 32px;
+    flex-wrap: wrap;
+}
+.sheet-title {
+    font-size: 250%;
+}
+.sheet-title-buttons {
+    height: 48px;
+    display: grid;
+    grid-template-columns: 48px 80px 80px 48px;
+}
+.sheet-help {
+    margin: 16px 0px 16px 0px;
+    font-size: 125%;
+}
+.sheet-tools {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sheet-zoom {
+    height: 32px;
+    min-height: 32px;
+    display: grid;
+    grid-template-columns: 32px 112px 80px 32px;
+}
+.sheet-copy {
+    width: 250px;
+    height: 26px;
+    min-width: 250px;
+    min-height: 26px;
+}
+.sheet-screen {
+    min-height: 50dvh;
+    margin: 2px 2px 2px 2px;
+    border: 1px solid #000000;
+    padding: 8px 8px 8px 8px;
+    overflow: auto;
+    flex-grow: 1;
 }
 
 /* BUTTONS -------------------------------------------------------------------------------------- */

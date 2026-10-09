@@ -3,11 +3,13 @@
     <head></head>
     <body>
         <h1>Definition</h1><hr>
-        <p>&emsp;&emsp;Rathjen's Capital \( \Psi \) refers to another ordinal collapsing function proposed by Michael Rathjen in 1994<sup><a id="g1" href="#c1">[1]</a></sup>. The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Omega_\alpha \), \( \Xi(\alpha) \) and \( \Psi_\alpha^\beta(\gamma) \) and they're described and defined as follows.</p>
+        <p>&emsp;&emsp;Rathjen's Capital \( \Psi \) refers to another ordinal collapsing function proposed by Michael Rathjen in 1994<sup><a id="g1" href="#c1">[1]</a></sup>.</p>
+        <p>&emsp;&emsp;Since the \( \Pi_0^2 \)-indescribable cardinal is also denoted as \( \Xi \), the function \( \Xi(\alpha) \) is denoted as \( X(\alpha) \) in the Calculate menu and the Explore menu for distinction. You can restore it by Options &gt; Function Specification &gt; \( \Xi(\alpha) \).</p>
+        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Omega_\alpha \), \( \Xi(\alpha) \) and \( \Psi_\alpha^\beta(\gamma) \) and the Weakly Compact Cardinal \( K \) and they're described and defined as follows.</p>
         <h2>The Function \( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \) denotes Veblen Function. It's defined as follows, as shown in the Help menu in the "Veblen Function" interface:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a nonzero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
         <h2>The Function \( \Omega_\alpha \)</h2><hr>
         <p>&emsp;&emsp;\( \Omega_\alpha \) denotes the \( (1+\alpha) \)-th infinite cardinal. Note that \( \Omega_0 \) is defined as \( 0 \) in the paper.</p>
         <h2>The Function \( \Xi(\alpha) \)</h2><hr>
@@ -30,7 +32,7 @@
         <br>
         <p>&emsp;&emsp;From the definition above, we can see that it introduces an extension of Mahlo Cardinals:</p>
         <p>&emsp;&emsp;\( M^0 \) denotes the class of limit ordinals (less than \( K \)).</p>
-        <p>&emsp;&emsp;\( M^1 \) denotes the class of Inaccessible Cardinals due to the presence of the function \( \Omega_\alpha \). The reason why this function is included is probably because \( \Pi_0^1- \)indescribable cardinals are equivalent to Strongly Inaccessible Cardinals<sup><a id="g2" href="#c2">[2]</a></sup>. Note that these are <b>STRONGLY</b> indescribable cardinals obtained from the function \( \beth_\alpha \) rather than <b>WEAKLY</b> indescribable cardinals obtained from the function \( \aleph_\alpha=\Omega_\alpha \).</p>
+        <p>&emsp;&emsp;\( M^1 \) denotes the class of Inaccessible Cardinals due to the presence of the function \( \Omega_\alpha \). The reason why this function is included is probably because \( \Pi_0^1 \)-indescribable cardinals are equivalent to Strongly Inaccessible Cardinals<sup><a id="g2" href="#c2">[2]</a></sup>. Note that these are <b>STRONGLY</b> indescribable cardinals obtained from the function \( \beth_\alpha \) rather than <b>WEAKLY</b> indescribable cardinals obtained from the function \( \aleph_\alpha=\Omega_\alpha \).</p>
         <p>&emsp;&emsp;\( M^2 \) denotes the class of Mahlo Cardinals. In fact, an uncountable regular cardinal that the set of all uncountable regular cardinals less than itself is a stationary set in itself is also a Mahlo Cardinal, which is a less strict condition. Not only does this contain the least Mahlo Cardinal \( M \), but it also contains larger Mahlo Cardinals like \( M_2 \), \( M_3 \) and so on.</p>
         <p>&emsp;&emsp;\( M^3 \) denotes the class of "Hyper-Mahlo Cardinals". It contains uncountable regular cardinals that the set of all Mahlo Cardinals less than itself is a stationary set in itself.</p>
         <p>&emsp;&emsp;\( M^4 \) denotes the class of "Hyper-Hyper-Mahlo Cardinals". It contains uncountable regular cardinals that the set of all "Hyper-Mahlo Cardinals" less than itself is a stationary set in itself and so on.</p>
@@ -49,7 +51,13 @@
         <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \)</p>
         <p>&emsp;&emsp;As a result, it becomes extremely difficult to determine whether an infinite sequence approaches to ordinals represented in this OCF in general. With all the complexities above, Rathjen's Capital \( \Psi \) becomes one of the hardest OCFs to understand.</p>
         <h2>The Weakly Compact Cardinal \( K \)</h2><hr>
-        <p>&emsp;&emsp;The Weakly Compact Cardinal \( K \) is the key to this OCF. There are multiple definitions of this cardinal. For example, Weakly Compact Cardinals are equivalent to \( \Pi_1^1- \)indescribable cardinals. However, almost all the definitions require high-level set theoretical concepts. Since it requires a long article to explain this cardinal clearly, this article doesn't aim to explain this cardinal. One thing is certain, the immense size of this cardinal allows itself to be used to construct high-level Mahlo Cardinals. By the way, ZFC can't determine the existence of Weakly Compact Cardinals.</p>
+        <p>&emsp;&emsp;The Weakly Compact Cardinal \( K \) is the key to this OCF. There are multiple definitions of this cardinal. For example, Weakly Compact Cardinals are equivalent to \( \Pi_1^1 \)-indescribable cardinals, and \( K \) is the least \( \Pi_1^1 \)-indescribable cardinals.</p>
+        <p>&emsp;&emsp;\( \Pi_n^1 \)-indescribable cardinals are defined as follows: A cardinal \( \kappa \) is \( \Pi_n^1 \)-indescribable if whenever \( U_1,\cdots,U_m\subseteq V_\kappa \) and \( F \) is a \( \Pi_n^1 \) sentence of the language of \( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \) such that:</p>
+        <p>&emsp;&emsp;If \( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle\vDash F \), then there exists a nonzero ordinal \( \alpha \) less than \( \kappa \) such that \( \langle V_\alpha,\in,U_1\cap V_\alpha,\cdots,U_m\cap V_\alpha\rangle\vDash F \).</p>
+        <p>&emsp;&emsp;As you an see, this definition has a lot of terms not defined here and is difficult to understand. Although it's certain that it can be used to construct high-level Mahlo Cardinals, the definition above doesn't immediately explain why this is the case. What's worse, almost all the definitions of Weakly Compact Cardinals require high-level set theoretical concepts. Therefore, this article doesn't aim to explain this cardinal intensively. By the way, ZFC can't determine the existence of Weakly Compact Cardinals.</p>
+        <p>&emsp;&emsp;There's another cardinal called the <b>greatly Mahlo cardinal</b>, which is defined as the least cardinal \( \kappa \) such that there is a normal \( \kappa \)-complete filter on the powerset of \( \kappa \) that is closed under the Mahlo operation, which maps the class of ordinals \( A \) to the class \( \{\alpha\in A|Cof(\alpha)&gt;\omega\land A\cap\alpha\in Sta_\alpha\} \). Again, this definition also has a lot of terms not defined here and is difficult to understand. But the important thing is, this is also a cardinal that can be used to construct high-level Mahlo Cardinals and that is also <b>less than the Weakly Compact Cardinal \( K \)</b>.</p>
+        <p>&emsp;&emsp;It seems that we failed to unleash the full potential of the Weakly Compact Cardinal \( K \). But in fact, the cardinals we use in the OCFs are <b>completely arbitrary</b>. We can replace the Weakly Compact Cardinal \( K \) with the \( \Pi_0^2 \)-indescribable cardinal \( \Xi \) or even larger cardinals, and the OCF will still function normally.</p>
+        <p>&emsp;&emsp;Despite the popularity of the notation of \( K \), the notation \( \mathcal{K} \), which is \( K \) in the calligraphic font, is used in the original paper. You can use this notation by Options &gt; Rewrite \( K \) &gt; \( \mathcal{K} \).</p>
         <br>
         <p>&emsp;&emsp;The ordinal \( \Psi_\Omega^0(\varepsilon_{K+1}) \) is called the Large Rathjen ordinal (LRO). It's the upper bound of the PTO of \( KP+\Pi_3-reflection \).</p>
         <h1>Ordinal Notation</h1><hr>
@@ -68,7 +76,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> For all \( a\in T_m \), \( \Xi(a)\in T_m \) and \( \Xi(a)\in T_s \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> For all \( a,b,c\in T_m \), \( \Psi(a,b,c)\in T_m \) and \( \Psi(a,b,c)\in T_s \)</p>
         <br>
-        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviations:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Omega_a:=\Omega(a) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \Psi_a^b(c):=\Psi(a,b,c) \)</p>
@@ -189,7 +197,7 @@
         <p>&emsp;&emsp;Return \( \neg a&lt;\lambda_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=K \), return \( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
@@ -206,7 +214,7 @@
         <br>
         <p>&emsp;&emsp;We define the limit of the system \( A=\Gamma_{K+1} \). (Denoted as \( K^\Gamma \) in the paper)</p>
         <p>&emsp;&emsp;\( \Gamma_{K+1} \) is also in normal form.</p>
-        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Gamma_{K+1} \)</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha\le\Gamma_{K+1} \).</p>
         <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\Omega_\overline{1} \).</p>
         <p>&emsp;&emsp;The countable limit ordinal exclusive to the growing hierarchy commands ("fgh", "sgh", "mgh" and "hh") is \( \Psi_{\Omega_\overline{1}}^\overline{0}(\Gamma_{K+1}) \), written in computer code as "(R(W(v,)),,A)".</p>
         <h2>Operations</h2><hr>
@@ -226,7 +234,7 @@
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Add(a,b)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( ((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\}))\land((b=a_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_b+a_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( ((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\}))\land((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.01.</span> If \( a_0&lt;b_0 \), return \( b \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.02.</span> If \( \neg a_0&lt;b_0 \), return \( a_0+Add(a_1,b_1) \)</p>
         <br>
@@ -237,7 +245,7 @@
         <p>&emsp;&emsp;We define the function \( Solve \) so that \( Solve(\alpha,\beta) \) returns \( \gamma \) such that \( \alpha+\gamma=\beta \). If such \( \gamma \) doesn't exist, we set \( Solve(\alpha,\beta) \) to \( \overline{0} \):</p>
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto Solve(a,b)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \neg a&lt;b \), return \( \overline{0} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a&lt;b\land((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\}))\land((b=a_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_b+a_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \), then:</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a&lt;b\land((a=a_0\land a_0\in T_m\land a_1=\overline{0})\vee(a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\}))\land((b=b_0\land b_0\in T_m\land b_1=\overline{0})\vee(b=b_0+b_1\land b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\})) \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( a_0&lt;b_0 \), return \( b \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( \neg a_0&lt;b_0 \), return \( Solve(a_1,b_1) \)</p>
         <br>
@@ -252,7 +260,7 @@
         <p>&emsp;&emsp;\( (a\in T,b\in T)\mapsto R_b(a)\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a&lt;b \), return \( a \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \neg a&lt;b \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( L_b(a_1) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( R_b(a_1) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.02.</span> If \( a\in T_s \), return \( \overline{0} \)</p>
         <br>
         <p>&emsp;&emsp;We define the root function \( Root \) as follows:</p>
@@ -499,13 +507,13 @@
         <p>&emsp;&emsp;\( (a\in T,n\in T)\mapsto a{[n]}^*\in T \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( \neg\overline{\omega}&lt;Cof(a) \), return \( a[n] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( \overline{\omega}&lt;Cof(a)\land Cof(a)&lt;K \), return \( a[\Psi_{Cof(a)}^\overline{0}(Add(\lambda(Cof(a)),\Gamma_{K+1}[n])) \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( Cof(a)=K \), return \( \Xi(Add(\overline{1},\Gamma_{K+1}[n])) \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> If \( Cof(a)=K \), return \( a[\Xi(Add(\overline{1},\Gamma_{K+1}[n]))] \)</p>
         <br>
         <p>&emsp;&emsp;We also define the fundamental sequence of \( \Gamma_{K+1} \) as follows:</p>
         <p>&emsp;&emsp;\( (n\in T)\mapsto\Gamma_{K+1}[n]\in T \)</p>
         <p>&emsp;&emsp;Return \( \Gamma(K)[n] \)</p>
         <h1>References</h1><hr>
         <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Rathjen, M. (1994). <a href="https://web.archive.org/web/20231208185422/https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf" target="_blank">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-12-13. https://doi.org/10.1016/0168-0072(94)90074-4</p>
-        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2024-12-13. https://doi.org/10.2307%2F2274692</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2024-12-13. https://doi.org/10.2307/2274692</p>
     </body>
 </html>

@@ -3,7 +3,9 @@
     <head></head>
     <body>
         <h1>定义</h1><hr>
-        <p>&emsp;&emsp;拉珍大\( \Psi \)函数指的是迈克尔·拉珍于1994年提出的另一个序数塌缩函数<sup><a id="g1" href="#c1">[1]</a></sup>。整个序数系统由4个函数：\( \varphi_\alpha(\beta) \)，\( \Omega_\alpha \)，\( \Xi(\alpha) \)与\( \Psi_\alpha^\beta(\gamma) \)组成，描述与定义如下。</p>
+        <p>&emsp;&emsp;拉珍大\( \Psi \)函数指的是迈克尔·拉珍于1994年提出的另一个序数塌缩函数<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
+        <p>&emsp;&emsp;由于\( \Pi_0^2 \)-不可描述基数也记作\( \Xi \)，函数\( \Xi(\alpha) \)于计算菜单与探索菜单记作\( X(\alpha) \)以表示区分。您可以通过 选项 &gt; 函数指定 &gt; \( \Xi(\alpha) \) 以使其恢复原状。</p>
+        <p>&emsp;&emsp;整个序数系统由4个函数：\( \varphi_\alpha(\beta) \)，\( \Omega_\alpha \)，\( \Xi(\alpha) \)与\( \Psi_\alpha^\beta(\gamma) \)与弱紧致基数\( K \)组成，描述与定义如下。</p>
         <h2>函数\( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)表示维布伦函数。定义如下且已在“维布伦函数”界面的帮助菜单显示：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -30,7 +32,7 @@
         <br>
         <p>&emsp;&emsp;从上述定义，可见这个函数引入了麻洛基数的拓展：</p>
         <p>&emsp;&emsp;\( M^0 \)表示一类（小于\( K \)的）极限序数。</p>
-        <p>&emsp;&emsp;\( M^1 \)表示一类不可达基数，这是由于函数\( \Omega_\alpha \)的出现而导致的。引入了这个函数的原因可能是因为\( \Pi_0^1- \)不可描述基数与强不可达基数是等价的<sup><a id="g2" href="#c2">[2]</a></sup>。注意是从函数\( \beth_\alpha \)得到的<b>强</b>不可达基数而不是从函数\( \aleph_\alpha=\Omega_\alpha \)得到的<b>弱</b>不可达基数。</p>
+        <p>&emsp;&emsp;\( M^1 \)表示一类不可达基数，这是由于函数\( \Omega_\alpha \)的出现而导致的。引入了这个函数的原因可能是因为\( \Pi_0^1 \)-不可描述基数与强不可达基数是等价的<sup><a id="g2" href="#c2">[2]</a></sup>。注意是从函数\( \beth_\alpha \)得到的<b>强</b>不可达基数而不是从函数\( \aleph_\alpha=\Omega_\alpha \)得到的<b>弱</b>不可达基数。</p>
         <p>&emsp;&emsp;\( M^2 \)表示一类麻洛基数。实际上，使得小于自身的不可数正规基数的集合是自身的驻集的不可数正规基数也是麻洛基数。这是一个更加宽松的条件。它不仅包含最小麻洛基数\( M \)，还包含更大的麻洛基数如\( M_2 \)，\( M_3 \)等。</p>
         <p>&emsp;&emsp;\( M^3 \)表示一类“超麻洛基数”。它包含一切使得小于自身的麻洛基数的集合是自身的驻集的麻洛基数的不可数正规基数。</p>
         <p>&emsp;&emsp;\( M^4 \)表示一类“超超麻洛基数”。它包含一切使得小于自身的“超麻洛基数”的集合是自身的驻集的“超麻洛基数”的不可数正规基数，以此类推。</p>
@@ -43,18 +45,24 @@
         <p>&emsp;&emsp;可见，这个序数塌缩函数有3个变量，而非像其他序数塌缩函数那样只有2个。若\( \beta&gt;0 \)，则\( \Psi_\alpha^\beta(\gamma) \)必返回正规基数。此外，因为\( \Psi_\alpha^\beta(\gamma) \)与\( \Xi(\beta) \)都返回\( M^\beta \)的元素，它能表示更大的不可达基数，麻洛基数，“超麻洛基数”等。因此，\( \Psi_{\Xi(2)}^1(3)=I_2 \)，\( \Psi_{\Xi(2)}^1(4)=I_3 \)，\( \Psi_{\Xi(3)}^2(4)=M_2 \)，\( \Psi_{\Xi(3)}^2(5)=M_3 \)，\( \Psi_{\Xi(4)}^3(5)=N_2 \)，\( \Psi_{\Xi(4)}^3(6)=N_3 \)，以此类推。</p>
         <p>&emsp;&emsp;而且，\( \Psi_\alpha^\beta(\gamma)=\alpha \)似乎有可能是成立的。事实上这是真的，而且函数\( \Xi(\alpha) \)也是如此。当这种情况发生时，我们称函数“塌缩失败”。因此，大多数情况下，都会有一个最小的\( \gamma \)使\( \Psi_\alpha^\beta(\gamma) \)不会塌缩失败。</p>
         <p>&emsp;&emsp;该序数塌缩函数最具挑战性的一点在于\( \Psi_\alpha^\beta(\gamma) \)不随\( \gamma \)单调递增，这就意味着在分析该序数塌缩函数时容易漏掉一些序数。</p>
-        <p>&emsp;&emsp;比如说，乍看之下我们会如此预料：</p>
+        <p>&emsp;&emsp;例如，乍看之下我们会如此预料：</p>
         <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\varphi_{\Psi_\Omega^0(\Omega)}(1),\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0)}(0),\cdots\} \)</p>
         <p>&emsp;&emsp;但实际上：</p>
         <p>&emsp;&emsp;\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \)</p>
         <p>&emsp;&emsp;因此，在一般情况下决定某无穷序列是否逼近用这个序数塌缩函数表示的序数变得非常困难。再加上上述的一切复杂因素，拉珍大\( \Psi \)函数成为了最难以掌握的序数塌缩函数之一。</p>
         <h2>弱紧致基数\( K \)</h2><hr>
-        <p>&emsp;&emsp;弱紧致基数\( K \)是该序数塌缩函数的关键。有很多关于该基数的定义。比如说：弱紧致基数与\( \Pi_1^1- \)不可描述基数等价。然而，几乎所有定义会涉及到高等的集合论概念。既然解释该基数需要长篇大论，该文章不注重于解释该基数。有一件事是肯定的，该基数的巨大使它能用来构造高等的麻洛基数。顺便一提，ZFC无法证明弱紧致基数是否存在。</p>
+        <p>&emsp;&emsp;弱紧致基数\( K \)是该序数塌缩函数的关键。有很多关于该基数的定义。例如：弱紧致基数与\( \Pi_1^1 \)-不可描述基数等价。而\( K \)是最小的\( \Pi_1^1 \)-不可描述基数。</p>
+        <p>&emsp;&emsp;\( \Pi_n^1 \)-不可描述基数定义如下：若对于一切\( U_1,\cdots,U_m\subseteq V_\kappa \)与语言\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \)的\( \Pi_n^1 \)语句\( F \)满足以下条件，则基数\( \kappa \)是\( \Pi_n^1 \)-不可描述的：</p>
+        <p>&emsp;&emsp;若\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle\vDash F \)，则存在非零的小于\( \kappa \)的序数\( \alpha \)使得\( \langle V_\alpha,\in,U_1\cap V_\alpha,\cdots,U_m\cap V_\alpha\rangle\vDash F \)。</p>
+        <p>&emsp;&emsp;如您所见，上述定义有很多术语在此处未定义，令人费解。虽然它的确可以用来构造高等的麻洛基数，但是上述的定义无法明显地解释为什么。更遭的是，几乎所有的弱紧致基数的定义都会涉及到高等的集合论概念。因此，该文章不注重于详细解释该基数。顺便一提，ZFC无法证明弱紧致基数是否存在。</p>
+        <p>&emsp;&emsp;还有一种叫做<b>大幅麻洛基数</b>的基数，定义为存在闭合于麻洛运算（将序数类\( A \)映射到类\( \{\alpha\in A|Cof(\alpha)&gt;\omega\land A\cap\alpha\in Sta_\alpha\} \)的运算）的于\( \kappa \)的幂集上的正规的\( \kappa \)-完备滤子的最小的基数\( \kappa \)。这个定义也是有很多术语在此处未定义且令人费解的。但重要的是，这也用来构造高等的麻洛基数，而且还<b>小于弱紧致基数\( K \)</b>。</p>
+        <p>&emsp;&emsp;我们似乎未能完全发挥弱紧致基数\( K \)的潜力。但实际上，用于序数塌缩函数的基数是<b>完全任意</b>的。我们能将弱紧致基数\( K \)替换成\( \Pi_0^2 \)-不可描述基数\( \Xi \)甚至是更大的基数，而这个序数塌缩函数仍然会正常运作。</p>
+        <p>&emsp;&emsp;虽然记号\( K \)更加常用，但是在论文中，记号是\( \mathcal{K} \)，是\( K \)的书法字体。您可以通过 选项 &gt; 改写\( K \) &gt; \( \mathcal{K} \) 来使用该记号。</p>
         <br>
         <p>&emsp;&emsp;序数\( \Psi_\Omega^0(\varepsilon_{K+1}) \)称作“大拉珍序数（LRO）”。该序数是\( KP+\Pi_3-reflection \)的证明论序数的上界。</p>
         <h1>序数表示法</h1><hr>
         <h2>表示法</h2><hr>
-        <p>&emsp;&emsp;我们定义\( S \)为包含以下字符的集合：</p>
+        <p>&emsp;&emsp;我们定义\( S \)为包含以下字符的字符串集合：</p>
         <p>&emsp;&emsp;常数“\( \overline{0} \)”与“\( K \)”，</p>
         <p>&emsp;&emsp;函数字符“\( \varphi \)”，“\( \Omega \)”，“\( \Xi \)”与“\( \Psi \)”，</p>
         <p>&emsp;&emsp;以及其他字符“\( + \)”，“\( ( \)”，“\( ) \)”与“\( , \)”。</p>
@@ -189,7 +197,7 @@
         <p>&emsp;&emsp;返回\( \neg a&lt;\lambda_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;我们定义函数\( \in T \)以判断序数是否为标准型：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0}\vee a=K \)，返回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，返回\( \mathbb{F} \)</p>
@@ -206,9 +214,9 @@
         <br>
         <p>&emsp;&emsp;我们定义该系统的极限为\( A=\Gamma_{K+1} \)。</p>
         <p>&emsp;&emsp;\( \Gamma_{K+1} \)亦为标准型。</p>
-        <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha&lt;\Gamma_{K+1} \)。</p>
+        <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha\le\Gamma_{K+1} \)。</p>
         <p>&emsp;&emsp;序数\( \alpha \)可数当且仅当\( \alpha&lt;\Omega_\overline{1} \)。</p>
-        <p>&emsp;&emsp;仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的可数序数极限为\( \Psi_{\Omega_\overline{1}}^\overline{0}(\Gamma_{K+1}) \)。其电脑代码为(R(W(v,)),,A)。</p>
+        <p>&emsp;&emsp;仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的可数极限序数为\( \Psi_{\Omega_\overline{1}}^\overline{0}(\Gamma_{K+1}) \)。其电脑代码为“(R(W(v,)),,A)”。</p>
         <h2>运算</h2><hr>
         <p>&emsp;&emsp;我们定义标准化函数\( Norm \)以将序数化作标准型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
@@ -506,6 +514,6 @@
         <p>&emsp;&emsp;返回\( \Gamma(K)[n] \)</p>
         <h1>引用</h1><hr>
         <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Rathjen, M. (1994). <a href="https://web.archive.org/web/20231208185422/https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf" target="_blank">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-12-13. https://doi.org/10.1016/0168-0072(94)90074-4</p>
-        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2024-12-13. https://doi.org/10.2307%2F2274692</p>
+        <p>&emsp;&emsp;<a id="c2" href="#g2">[2]</a>Hauser, Kai (1991). Indescribable Cardinals and Elementary Embeddings. Journal of Symbolic Logic, 56(2), 439-457. Retrieved 2024-12-13. https://doi.org/10.2307/2274692</p>
     </body>
 </html>

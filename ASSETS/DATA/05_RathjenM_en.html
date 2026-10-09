@@ -4,16 +4,16 @@
     <body>
         <h1>Definition</h1><hr>
         <p>&emsp;&emsp;Rathjen's Small \( \psi \) refers to an ordinal collapsing function proposed by Michael Rathjen in 1990<sup><a id="g1" href="#c1">[1]</a></sup>.</p>
-        <p>&emsp;&emsp;Because Buchholz's \( \psi \) is also denoted as \( \psi_\alpha(\beta) \), this OCF is denoted as \( \rho_\alpha(\beta) \) in the Calculate menu and the Explore menu for distinction. You can restore it by Options &gt; Function Specification &gt; \( \psi_\alpha(\beta) \).</p>
-        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and they're described and defined as follows.</p>
+        <p>&emsp;&emsp;Since Buchholz's \( \psi \) is also denoted as \( \psi_\alpha(\beta) \), this OCF is denoted as \( \rho_\alpha(\beta) \) in the Calculate menu and the Explore menu for distinction. You can restore it by Options &gt; Function Specification &gt; \( \psi_\alpha(\beta) \).</p>
+        <p>&emsp;&emsp;The whole ordinal system consists of 4 functions: \( \varphi_\alpha(\beta) \), \( \Phi_\alpha(\beta) \), \( \chi_\alpha(\beta) \) and \( \psi_\alpha(\beta) \) and the Mahlo Cardinal \( M \) and they're described and defined as follows.</p>
         <h2>The Function \( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \) denotes Veblen Function. It's defined as follows, as shown in the Help menu in the "Veblen Function" interface:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a nonzero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
         <h2>The Function \( \Phi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \Phi_\alpha(\beta) \) denotes a variant of Veblen Function. It's defined as follows:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \Phi_0(\beta)=\Omega_{1+\beta} \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \Phi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\Phi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a nonzero ordinal \( \alpha \), \( \Phi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\Phi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
         <br>
         <p>&emsp;&emsp;The only difference from the original is that \( \Phi_0(\beta) \) starts from a function \( \beta\mapsto\Omega_{1+\beta} \) that returns uncountable cardinals rather than just powers of \( \omega \). As a consequence, the Omega fixed point \( \Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}} \) in the Extended Buchholz's \( \psi \) ordinal system can be written as \( \Phi_1(0) \), or \( E_0 \) just as we write \( \varepsilon_0 \) for \( \varphi_1(0) \).</p>
         <p>&emsp;&emsp;Furthermore, we introduce the following abbreviation:</p>
@@ -71,7 +71,7 @@
         <p>&emsp;&emsp;Also, this OCF also uses the Veblen Function from the previous results. For example, \( \rho_\Omega(0) \) starts with \( \Gamma_0=\psi_0(\Omega^\Omega) \), and \( \rho_\Omega(1)=\psi_0(\Omega^\Omega2) \) and so on. In general, for some ordinals \( \alpha \), \( \rho_\Omega(\alpha)=\psi_0(\Omega^\Omega(1+\alpha)) \).</p>
         <h2>The Mahlo Cardinal \( M \)</h2><hr>
         <p>&emsp;&emsp;The Mahlo Cardinal \( M \) is the key to this OCF. Before we describe this cardinal, we need to define some concepts.</p>
-        <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is <b>closed</b> in \( \alpha \) if it contains all the non-zero limit points of \( A \) less than \( \alpha \).</p>
+        <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is <b>closed</b> in \( \alpha \) if it contains all the nonzero limit points of \( A \) less than \( \alpha \).</p>
         <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is <b>unbounded</b> in \( \alpha \) if every ordinal less than \( \alpha \) can be surpassed by an element of \( A \).</p>
         <p>&emsp;&emsp;A subset of a limit ordinal \( \alpha \), \( A \) is a <b>club set</b> in \( \alpha \) if \( A \) is both closed and unbounded in \( \alpha \). This term comes from merging the word "closed" and "unbounded".</p>
         <p>&emsp;&emsp;A subset of a cardinal of uncountable cofinality \( \alpha \), \( A \) is a <b>stationary set</b> (Not to be confused with "stationEry set") in \( \alpha \) if \( A \) intersects every club set in \( \alpha \), in other words, there's no club set in \( \alpha \) that doesn't intersect with \( A \).</p>
@@ -100,7 +100,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \chi(a,b)\in T_m \) and \( \chi(a,b)\in T_s \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">07.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \psi(a,b)\in T_m \) and \( \psi(a,b)\in T_s \)</p>
         <br>
-        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviations:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \Phi_a(b):=\Phi(a,b) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \chi_a(b):=\chi(a,b) \)</p>
@@ -238,7 +238,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> If \( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \), return \( a \)</p>
         <br>
         <p>&emsp;&emsp;We define the function \( \in R \) to determine whether a term is an uncountable regular cardinal less than \( M \):</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( Cof(a_1)&lt;\overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> Else, return \( \mathbb{F} \)</p>
         <br>
@@ -258,7 +258,7 @@
         <p>&emsp;&emsp;Return \( \neg a&lt;\lambda_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
@@ -271,7 +271,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0\in T\land a_1\in T\land a_0\in R\land a_1\in C(a_0,a_1) \)</p>
         <br>
         <p>&emsp;&emsp;It should be noted that Michael Rathjen also defined the normal form \( T(M) \) in his paper. We will also define this version in the language used on this website:</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T(M)\vee\neg a_1\in T(M) \), return \( \mathbb{F} \)</p>
@@ -285,7 +285,7 @@
         <br>
         <p>&emsp;&emsp;We define the limit of the system \( A=\Gamma_{M+1} \). (Denoted as \( M^\Gamma \) in the paper)</p>
         <p>&emsp;&emsp;\( \Gamma_{M+1} \) is also in normal form.</p>
-        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Gamma_{M+1} \)</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha\le\Gamma_{M+1} \).</p>
         <p>&emsp;&emsp;Ordinal \( \alpha \) is countable if and only if \( \alpha&lt;\chi_\overline{0}(\overline{0}) \).</p>
         <p>&emsp;&emsp;The countable limit ordinal exclusive to the growing hierarchy commands ("fgh", "sgh", "mgh" and "hh") is \( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \), written in computer code as "(r(x,),A)".</p>
         <h2>Operations</h2><hr>

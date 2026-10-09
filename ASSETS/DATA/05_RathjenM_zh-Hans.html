@@ -5,7 +5,7 @@
         <h1>定义</h1><hr>
         <p>&emsp;&emsp;拉珍小\( \psi \)函数指的是迈克尔·拉珍于1990年提出的序数塌缩函数<sup><a id="g1" href="#c1">[1]</a></sup>。</p>
         <p>&emsp;&emsp;由于布赫霍兹\( \psi \)函数也记作\( \psi_\alpha(\beta) \)，该序数塌缩函数于计算菜单与探索菜单记作\( \rho_\alpha(\beta) \)以表示区分。您可以通过 选项 &gt; 函数指定 &gt; \( \psi_\alpha(\beta) \) 以使其恢复原状。</p>
-        <p>&emsp;&emsp;整个序数系统由4个函数：\( \varphi_\alpha(\beta) \)，\( \Phi_\alpha(\beta) \)，\( \chi_\alpha(\beta) \)与\( \psi_\alpha(\beta) \)组成，描述与定义如下。</p>
+        <p>&emsp;&emsp;整个序数系统由4个函数：\( \varphi_\alpha(\beta) \)，\( \Phi_\alpha(\beta) \)，\( \chi_\alpha(\beta) \)与\( \psi_\alpha(\beta) \)与麻洛基数\( M \)组成，描述与定义如下。</p>
         <h2>函数\( \varphi_\alpha(\beta) \)</h2><hr>
         <p>&emsp;&emsp;\( \varphi_\alpha(\beta) \)表示维布伦函数。定义如下且已在“维布伦函数”界面的帮助菜单显示：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
@@ -86,7 +86,7 @@
         <p>&emsp;&emsp;序数\( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \)称作“小拉珍序数（SRO）”。该序数是\( KPM \)的证明论序数。</p>
         <h1>序数表示法</h1><hr>
         <h2>表示法</h2><hr>
-        <p>&emsp;&emsp;我们定义\( S \)为包含以下字符的集合：</p>
+        <p>&emsp;&emsp;我们定义\( S \)为包含以下字符的字符串集合：</p>
         <p>&emsp;&emsp;常数“\( \overline{0} \)”与“\( M \)”，</p>
         <p>&emsp;&emsp;函数字符“\( \varphi \)”，“\( \Phi \)”，“\( \chi \)”与“\( \psi \)”，</p>
         <p>&emsp;&emsp;以及其他字符“\( + \)”，“\( ( \)”，“\( ) \)”与“\( , \)”。</p>
@@ -238,7 +238,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">04.</span> 若\( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \)，返回\( a \)</p>
         <br>
         <p>&emsp;&emsp;我们定义函数\( \in R \)以判断序数是否为小于\( M \)的不可数正规基数：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in R)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \)，返回\( Cof(a_1)&lt;\overline{\omega} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 除以上情况，返回\( \mathbb{F} \)</p>
         <br>
@@ -258,7 +258,7 @@
         <p>&emsp;&emsp;返回\( \neg a&lt;\lambda_b(c) \)</p>
         <br>
         <p>&emsp;&emsp;我们定义函数\( \in T \)以判断序数是否为标准型：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T\vee\neg a_1\in T \)，返回\( \mathbb{F} \)</p>
@@ -271,7 +271,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \)，返回\( a_0\in T\land a_1\in T\land a_0\in R\land a_1\in C(a_0,a_1) \)</p>
         <br>
         <p>&emsp;&emsp;顺便一提，迈克尔·拉珍在论文中也定义了标准型\( T(M) \)。我们也将用该网站的语言定义该版本：</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T(M))\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> 若\( a=\overline{0} \)，返回\( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> 若\( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \)，则：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> 若\( \neg a_0\in T(M)\vee\neg a_1\in T(M) \)，返回\( \mathbb{F} \)</p>
@@ -285,9 +285,9 @@
         <br>
         <p>&emsp;&emsp;我们定义该系统的极限为\( A=\Gamma_{M+1} \)。</p>
         <p>&emsp;&emsp;\( \Gamma_{M+1} \)亦为标准型。</p>
-        <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha&lt;\Gamma_{M+1} \)。</p>
+        <p>&emsp;&emsp;对于一切该系统的序数\( \alpha\in T \)，\( \alpha\le\Gamma_{M+1} \)。</p>
         <p>&emsp;&emsp;序数\( \alpha \)可数当且仅当\( \alpha&lt;\chi_\overline{0}(\overline{0}) \)。</p>
-        <p>&emsp;&emsp;仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的可数序数极限为\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其电脑代码为(r(x,),A)。</p>
+        <p>&emsp;&emsp;仅限于增长阶层指令（“fgh”，“sgh”，“mgh”以及“hh”）可用的可数极限序数为\( \psi_{\chi_\overline{0}(\overline{0})}(\Gamma_{M+1}) \)。其电脑代码为“(r(x,),A)”。</p>
         <h2>运算</h2><hr>
         <p>&emsp;&emsp;我们定义标准化函数\( Norm \)以将序数化作标准型：</p>
         <p>&emsp;&emsp;\( (a\in T_m)\mapsto Norm(a)\in T \)</p>

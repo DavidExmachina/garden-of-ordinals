@@ -5,15 +5,15 @@
         <h1>Definition</h1><hr>
         <p>&emsp;&emsp;Veblen Function refers to an ordinal function proposed by Oswald Veblen in 1908<sup><a id="g1" href="#c1">[1]</a></sup>. The definition of the function \( \varphi_\alpha(\beta) \) is as follows:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_0(\beta)=\omega^\beta \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a non-zero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For a nonzero ordinal \( \alpha \), \( \varphi_{\alpha}(\beta) \) returns the \( (1+\beta) \)-th common fixed point of all the functions \( \gamma\mapsto\varphi_{\alpha'}(\gamma) \) for \( \alpha'&lt;\alpha \).</p>
         <p>&emsp;&emsp;A fixed point of a function \( f \) is an input of the function \( x \) that \( x=f(x) \).</p>
         <br>
         <p>&emsp;&emsp;The normal form of this system is called <b>Veblen Normal Form</b> and is defined as follows:</p>
         <p>&emsp;&emsp;\( \alpha=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_n}(\beta_n) \)</p>
         <p>&emsp;&emsp;Where \( n \) is a natural number, \( \varphi_{\alpha_0}(\beta_0)\ge\varphi_{\alpha_1}(\beta_1)\ge\cdots\ge\varphi_{\alpha_n}(\beta_n) \) and \( \varphi_{\alpha_m}(\beta_m)&lt;\beta_m \) for all natural numbers \( m\le n \).</p>
-        <p>&emsp;&emsp;Every non-zero ordinal can be uniquely written as Veblen Normal Form.</p>
+        <p>&emsp;&emsp;Every nonzero ordinal can be uniquely written as Veblen Normal Form.</p>
         <br>
-        <p>&emsp;&emsp;In this website, we are working with ordinals less than the Feferman-Schütte ordinal \( \Gamma_0 \) because \( \Gamma_0 \) is the least ordinal that \( \alpha=\varphi_{\alpha}(0) \) and every ordinal less than \( \Gamma_0 \) can be constructed only using zero, addition and the function.</p>
+        <p>&emsp;&emsp;On this website, we are working with ordinals less than the Feferman-Schütte ordinal \( \Gamma_0 \) because \( \Gamma_0 \) is the least ordinal that \( \alpha=\varphi_{\alpha}(0) \) and every ordinal less than \( \Gamma_0 \) can be constructed only using zero, addition and the function.</p>
         <p>&emsp;&emsp;The fundamental sequence system used on this website is defined as follows:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( 0[n]:=0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( (\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1}))[n]:=\varphi_{\alpha_0}(\beta_0)+\varphi_{\alpha_1}(\beta_1)+\cdots+\varphi_{\alpha_m}(\beta_m)+\varphi_{\alpha_{m+1}}(\beta_{m+1})[n] \)</p>
@@ -60,7 +60,7 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> For all \( a\in T_s \) and \( b\in T_m\setminus\{\overline{0}\} \), \( a+b\in T_m \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> For all \( a,b\in T_m \), \( \varphi(a,b)\in T_m \) and \( \varphi(a,b)\in T_s \)</p>
         <br>
-        <p>&emsp;&emsp;Throughout this article, we use the following abbreviation:</p>
+        <p>&emsp;&emsp;Throughout this article, we use the following abbreviations:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> \( \varphi_a(b):=\varphi(a,b) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> \( \overline{1}:=\varphi_\overline{0}(\overline{0}) \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">03.</span> \( \overline{\omega}:=\varphi_\overline{0}(\overline{1}) \)</p>
@@ -98,7 +98,7 @@
         <p>&emsp;&emsp;Note that \( = \) and \( \neq \) represent symbolic equivalence, while \( =_* \) and \( \neq_* \) represent numerical equivalence.</p>
         <h2>Normal Form</h2><hr>
         <p>&emsp;&emsp;We define the function \( \in T \) to determine whether an ordinal is in normal form:</p>
-        <p>&emsp;&emsp;\( (a\in T_m)\mapsto (a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
+        <p>&emsp;&emsp;\( (a\in T_m)\mapsto(a\in T)\in\{\mathbb{T},\mathbb{F}\} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \mathbb{T} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.01.</span> If \( \neg a_0\in T\vee\neg a_1\in T \), return \( \mathbb{F} \)</p>
@@ -109,7 +109,7 @@
         <br>
         <p>&emsp;&emsp;We define the limit of the system \( A=\Gamma_0 \).</p>
         <p>&emsp;&emsp;\( \Gamma_0 \) is also in normal form.</p>
-        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha&lt;\Gamma_0 \)</p>
+        <p>&emsp;&emsp;For all ordinals in this system \( \alpha\in T \), \( \alpha\le\Gamma_0 \).</p>
         <p>&emsp;&emsp;Ordinals in this system are <b>always countable</b>.</p>
         <p>&emsp;&emsp;There is <b>no countable limit ordinal</b> exclusive to the growing hierarchy commands. ("fgh", "sgh", "mgh" and "hh")</p>
         <h2>Operations</h2><hr>
@@ -172,6 +172,6 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0} \), return \( \varphi_{\Gamma_0[n[\overline{0}]]}(0) \)</p>
         <h1>References</h1><hr>
-        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Veblen, O. (1908). Continuous Increasing Functions of Finite and Transfinite Ordinals. Transactions of the American Mathematical Society, 9(3), 280-292. Retrieved 2024-12-13. https://doi.org/10.2307%2F1988605</p>
+        <p>&emsp;&emsp;<a id="c1" href="#g1">[1]</a>Veblen, O. (1908). Continuous Increasing Functions of Finite and Transfinite Ordinals. Transactions of the American Mathematical Society, 9(3), 280-292. Retrieved 2024-12-13. https://doi.org/10.2307/1988605</p>
     </body>
 </html>
