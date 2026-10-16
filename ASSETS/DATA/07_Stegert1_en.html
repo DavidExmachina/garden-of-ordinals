@@ -39,7 +39,7 @@
         <p>&emsp;&emsp;The complete form of the Reflection Instances and Configurations in the paper is quite complicated and tedious when written out completely. If we encounter ordinals obtained by collapsing a cardinal many times, due to the 4th element \( \mathbb{Z} \), the complete from will take exponentially more symbols to write down since we have to write down the 4th element \( \mathbb{Z} \) twice, and it doubles each time we collapse the cardinal.</p>
         <p>&emsp;&emsp;Therefore, we introduce the "Reflection Bracket Notation", which denotes the Reflection Instance \( \mathbb{G}(\alpha_0,\alpha_1,\cdots,\alpha_n) \) as \( [i(\mathbb{G}),\alpha_0,\alpha_1,\cdots,\alpha_n] \) and the Reflection Configuration \( \mathbb{G} \) as \( [i(\mathbb{G}),\cdots] \). If the Reflection Configuration \( \mathbb{G} \) has no variables, then we can write the only Reflection Instance it returns as \( [i(\mathbb{G}),] \), with a comma in the end that avoids the confusion with the "Indescribable Bracket Notation" introduced here later. We define \( \mathbb{X}\in C(\alpha,\beta) \) as \( \kappa,\alpha_0,\alpha_1,\cdots,\alpha_n\in C(\alpha,\beta) \) for \( \mathbb{X}=[\kappa,\alpha_0,\alpha_1,\cdots,\alpha_n] \).</p>
         <p>&emsp;&emsp;The 3rd element \( \vec{R} \) is an array of mathematical objects called "M-P-Expressions", which are in the form \( M_\mathbb{F}^{&lt;\alpha}-P_n \) and they indicate that the elements in the set \( \mathfrak{M}_\mathbb{X}^\beta \) are also \( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)-\( \Pi_n^1 \)-indescribable for all \( \gamma&lt;\alpha \) and \( \alpha_0,\alpha_1,\cdots,\alpha_n \) that makes the set \( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \) well-defined. If \( \gamma=o(\mathbb{F}) \), then the aforementioned elements should be \( \Pi_n^1 \)-indescribable instead. The element can also have no M-P-Expressions at all, in which case it's also denoted as \( \epsilon \).</p>
-        <p>&emsp;&emsp;The definition of each Reflection Configuration and therefore each Reflection Instance is extremely complicated. For the full definition, check out the <a href="#2.3">"Reflection"</a> section.</p>
+        <p>&emsp;&emsp;The definition of each Reflection Configuration and therefore each Reflection Instance is extremely complicated. For the full definition, check out the <a href="#3.3">"Reflection"</a> section.</p>
         <h3>\( \mathfrak{M} \)-\( \Pi_n^1 \)-Indescribable Cardinals</h3>
         <p>&emsp;&emsp;\( \mathfrak{M} \)-\( \Pi_n^1 \)-Indescribable Cardinals are cardinals that are frequently used in this OCF, which is defined as follows:</p>
         <p>&emsp;&emsp;For a class of ordinals \( \mathfrak{M} \), a cardinal \( \kappa \) is \( \mathfrak{M} \)-\( \Pi_n^1 \)-indescribable (Or \( \Pi_n^1 \)-indescribable in \( \mathfrak{M} \)) if whenever \( U_1,\cdots,U_m\subseteq V_\kappa \) and \( F \) is a \( \Pi_n^1 \) sentence of the language of \( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \) such that:</p>
@@ -266,8 +266,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a={a_0}^+\land a_0\in T_m \), return \( 0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( a'=\Xi \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> If \( a_0&lt;\overline{\omega} \), return \( 0 \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> If \( \neg a_0&lt;\overline{\omega} \), return \( 2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> If \( \neg\overline{\omega}&lt;a_0 \), return \( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> If \( \overline{\omega}&lt;a_0 \), return \( 2 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> If \( Plug(a)=\overline{0} \), return \( 0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> If \( Plug(a)\neq\overline{0} \), then:</p>
@@ -292,8 +292,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> If \( a={a_0}^+\land a_0\in T_m \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> If \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> If \( a'=\Xi \), then:</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> If \( a_0&lt;\overline{\omega} \), return \( Plug(a)[\overline{0}] \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> If \( \neg a_0&lt;\overline{\omega} \), return \( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> If \( \neg\overline{\omega}&lt;a_0 \), return \( Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> If \( \overline{\omega}&lt;a_0 \), return \( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> If \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \), then:</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> If \( Plug(a)=\overline{0} \), return \( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> If \( Plug(a)\neq\overline{0} \), then:</p>

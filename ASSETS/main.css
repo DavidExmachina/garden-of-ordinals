@@ -293,7 +293,7 @@ input.cal-item {
 }
 .op-content {
     width: 288px;
-    height: 48px;
+    height: 40px;
 }
 .op-text {
     height: 16px;
@@ -301,7 +301,7 @@ input.cal-item {
     font-size: 75%;
 }
 .op-buttons {
-    height: 32px;
+    height: 24px;
     display: flex;
 }
 .op-button {

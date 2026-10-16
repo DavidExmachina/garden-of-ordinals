@@ -52,7 +52,7 @@ function indent_mode(){return data.save.options.indent;}
 function doption(){
     let options = {};
     let op = [
-        "simplify", "specify", "reveb1", "reveb2",
+        "mult", "simplify", "specify", "reveb1", "reveb2",
         "rebuch", "rechi", "rexi", "rek", "ref", "square",
     ];
     for (let i = 0; i < op.length; i++) options[op[i]] = data.save.options[op[i]];
@@ -198,20 +198,21 @@ function set_explore(){
 }
 // SET OPTIONS
 function set_options(){
-    let options = ["background", "display", "indent", "simplify", "specify", "reveb1", "reveb2",
-                   "rebuch", "rechi", "rexi", "rek", "ref", "square"], element, condition, a;
+    let options = ["background", "display", "indent", "mult", "simplify", "specify",
+                   "reveb1", "reveb2", "rebuch", "rechi", "rexi", "rek", "ref", "square"];
+    let element, condition, a;
     MathJax.typesetClear([document.querySelector(".options")]);
-    set_display(document.querySelectorAll(".op-item")[4], [5, 6, 7, 8, 9].includes(get_mode()[0]));
-    set_display(document.querySelectorAll(".op-item")[5], [3, 6, 7, 8, 9].includes(get_mode()[0]));
-    set_display(document.querySelectorAll(".op-item")[6], get_mode()[0] === 6);
-    set_display(document.querySelectorAll(".op-item")[7], [4, 5].includes(get_mode()[0]));
-    set_display(document.querySelectorAll(".op-item")[8], get_mode()[0] === 6);
-    set_display(document.querySelectorAll(".op-item")[9], get_mode()[0] === 7);
+    set_display(document.querySelectorAll(".op-item")[5], [5, 6, 7, 8, 9].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[6], [3, 6, 7, 8, 9].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[7], get_mode()[0] === 6);
+    set_display(document.querySelectorAll(".op-item")[8], [4, 5].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[9], get_mode()[0] === 6);
     set_display(document.querySelectorAll(".op-item")[10], get_mode()[0] === 7);
-    set_display(document.querySelectorAll(".op-item")[11], [8, 9].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[11], get_mode()[0] === 7);
     set_display(document.querySelectorAll(".op-item")[12], [8, 9].includes(get_mode()[0]));
+    set_display(document.querySelectorAll(".op-item")[13], [8, 9].includes(get_mode()[0]));
     for (let i = 0; i < options.length; i++){
-        for (let j = 0; j < [2, 3, 3, 6, 2, 6, 4, 4, 3, 5, 2, 3, 2][i]; j++){
+        for (let j = 0; j < [2, 3, 3, 3, 6, 2, 6, 4, 4, 3, 5, 2, 3, 2][i]; j++){
             element = document.getElementById(`op${i}-${j}`);
             condition = data.save.options[options[i]] === j;
             element.setAttribute("class", `op-button button${condition * 2 + 1}`);
@@ -222,17 +223,18 @@ function set_options(){
     set_text("op0", words().option.background);
     set_text("op1", words().option.display_mode);
     set_text("op2", words().option.indent_mode);
-    set_text("op3", words().option.simplification);
-    set_text("op4", words().option.specification);
-    set_text("op5", words().option.rewrite.replace("${ord}", "\\( \\varphi_\\alpha(\\beta) \\)"));
-    set_text("op6", words().option.rewrite.replace("${ord}", "\\( \\Phi_\\alpha(\\beta) \\)"));
-    set_text("op7", words().option.rewrite.replace("${ord}", "\\( \\psi_\\alpha(\\beta) \\)"));
-    set_text("op8", words().option.rewrite.replace("${ord}", "\\( \\chi_\\alpha(\\beta) \\)"));
+    set_text("op3", words().option.mult_symbol);
+    set_text("op4", words().option.simplification);
+    set_text("op5", words().option.specification);
+    set_text("op6", words().option.rewrite.replace("${ord}", "\\( \\varphi_\\alpha(\\beta) \\)"));
+    set_text("op7", words().option.rewrite.replace("${ord}", "\\( \\Phi_\\alpha(\\beta) \\)"));
+    set_text("op8", words().option.rewrite.replace("${ord}", "\\( \\psi_\\alpha(\\beta) \\)"));
+    set_text("op9", words().option.rewrite.replace("${ord}", "\\( \\chi_\\alpha(\\beta) \\)"));
     a = `\\( ${data.save.options.specify ? "X" : "\\Xi"}(\\alpha) \\)`;
-    set_text("op9", words().option.rewrite.replace("${ord}", a));
-    set_text("op10", words().option.rewrite.replace("${ord}", "\\( K \\)"));
-    set_text("op11", words().option.reflection);
-    set_text("op12", words().option.square);
+    set_text("op10", words().option.rewrite.replace("${ord}", a));
+    set_text("op11", words().option.rewrite.replace("${ord}", "\\( K \\)"));
+    set_text("op12", words().option.reflection);
+    set_text("op13", words().option.square);
     set_text("op0-0", words().option.off);
     set_text("op0-1", words().option.on);
     set_text("op1-0", words().option.original);
@@ -241,47 +243,51 @@ function set_options(){
     set_text("op2-0", words().option.none);
     set_text("op2-1", words().option.expansive);
     set_text("op2-2", words().option.recursive);
-    set_text("op3-0", words().option.none);
-    set_text("op3-1", "\\( \\alpha^\\beta \\)");
-    set_text("op3-2", "\\( \\omega^{\\alpha*\\beta} \\)");
-    set_text("op3-3", "\\( \\alpha*\\beta \\)");
-    set_text("op3-4", "\\( \\omega^{\\alpha+\\beta} \\)");
-    set_text("op3-5", "\\( \\alpha+\\beta \\)");
+    set_text("op3-0", "\\( * \\)");
+    set_text("op3-1", "\\( \\cdot \\)");
+    set_text("op3-2", "\\( \\times \\)");
+    a = ["*", "\\cdot", "\\times"][data.save.options.mult];
+    set_text("op4-0", words().option.none);
+    set_text("op4-1", `\\( \\alpha^\\beta \\)`);
+    set_text("op4-2", `\\( \\omega^{\\alpha${a}\\beta} \\)`);
+    set_text("op4-3", `\\( \\alpha${a}\\beta \\)`);
+    set_text("op4-4", `\\( \\omega^{\\alpha+\\beta} \\)`);
+    set_text("op4-5", `\\( \\alpha+\\beta \\)`);
     a = Math.min(Math.max(get_mode()[0] - 6, 0), 2);
     a = ["\\psi_\\alpha(\\beta)", "\\Xi(\\alpha)", "\\Psi_\\mathbb{X}^\\alpha"][a];
-    set_text("op4-0", `\\( ${a} \\)`);
+    set_text("op5-0", `\\( ${a} \\)`);
     a = ["\\psi_\\alpha^*(\\beta)", "\\rho_\\alpha(\\beta)", "X(\\alpha)"];
     a = a.concat(["\\mathfrak{p}_\\mathbb{X}^\\alpha", "\\mathfrak{P}_\\mathbb{X}^\\alpha"]);
-    set_text("op4-1", `\\( ${a[Math.max(get_mode()[0] - 5, 0)]} \\)`);
-    set_text("op5-0", "\\( \\varphi_\\alpha(\\beta) \\)");
-    set_text("op5-1", "\\( 1 \\)");
-    set_text("op5-2", "\\( \\omega^\\beta \\)");
-    set_text("op5-3", "\\( \\varepsilon_\\beta \\)");
-    set_text("op5-4", "\\( \\zeta_\\beta \\)");
-    set_text("op5-5", "\\( \\eta_\\beta \\)");
-    set_text("op6-0", "\\( \\Phi_\\alpha(\\beta) \\)");
-    set_text("op6-1", "\\( E_\\beta \\)");
-    set_text("op6-2", "\\( Z_\\beta \\)");
-    set_text("op6-3", "\\( H_\\beta \\)");
-    set_text("op7-0", "\\( \\psi_\\alpha(\\beta) \\)");
-    set_text("op7-1", "\\( 1 \\)");
-    set_text("op7-2", "\\( \\psi_{\\Omega_\\alpha}(\\beta) \\)");
-    set_text("op7-3", "\\( \\omega^{\\Omega_\\alpha+\\beta} \\)");
-    set_text("op8-0", "\\( \\chi_\\alpha(\\beta) \\)");
-    set_text("op8-1", "\\( \\Omega_{1+\\beta} \\)");
-    set_text("op8-2", "\\( I_{1+\\beta} \\)");
-    set_text("op9-0", `\\( ${data.save.options.specify ? "X" : "\\Xi"}(\\alpha) \\)`);
-    set_text("op9-1", `\\( ${data.save.options.specify ? "X" : "\\Xi"}_\\alpha \\)`);
-    set_text("op9-2", "\\( I \\)");
-    set_text("op9-3", "\\( M \\)");
-    set_text("op9-4", "\\( N \\)");
-    set_text("op10-0", "\\( K \\)");
-    set_text("op10-1", "\\( \\mathcal{K} \\)");
-    set_text("op11-0", "\\( \\mathbb{F}_\\kappa(\\cdots) \\)");
-    set_text("op11-1", "\\( [\\kappa,\\cdots] \\)");
-    set_text("op11-2", "\\( [\\kappa\\cdots] \\)");
-    set_text("op12-0", words().option.off);
-    set_text("op12-1", words().option.on);
+    set_text("op5-1", `\\( ${a[Math.max(get_mode()[0] - 5, 0)]} \\)`);
+    set_text("op6-0", "\\( \\varphi_\\alpha(\\beta) \\)");
+    set_text("op6-1", "\\( 1 \\)");
+    set_text("op6-2", "\\( \\omega^\\beta \\)");
+    set_text("op6-3", "\\( \\varepsilon_\\beta \\)");
+    set_text("op6-4", "\\( \\zeta_\\beta \\)");
+    set_text("op6-5", "\\( \\eta_\\beta \\)");
+    set_text("op7-0", "\\( \\Phi_\\alpha(\\beta) \\)");
+    set_text("op7-1", "\\( E_\\beta \\)");
+    set_text("op7-2", "\\( Z_\\beta \\)");
+    set_text("op7-3", "\\( H_\\beta \\)");
+    set_text("op8-0", "\\( \\psi_\\alpha(\\beta) \\)");
+    set_text("op8-1", "\\( 1 \\)");
+    set_text("op8-2", "\\( \\psi_{\\Omega_\\alpha}(\\beta) \\)");
+    set_text("op8-3", "\\( \\omega^{\\Omega_\\alpha+\\beta} \\)");
+    set_text("op9-0", "\\( \\chi_\\alpha(\\beta) \\)");
+    set_text("op9-1", "\\( \\Omega_{1+\\beta} \\)");
+    set_text("op9-2", "\\( I_{1+\\beta} \\)");
+    set_text("op10-0", `\\( ${data.save.options.specify ? "X" : "\\Xi"}(\\alpha) \\)`);
+    set_text("op10-1", `\\( ${data.save.options.specify ? "X" : "\\Xi"}_\\alpha \\)`);
+    set_text("op10-2", "\\( I \\)");
+    set_text("op10-3", "\\( M \\)");
+    set_text("op10-4", "\\( N \\)");
+    set_text("op11-0", "\\( K \\)");
+    set_text("op11-1", "\\( \\mathcal{K} \\)");
+    set_text("op12-0", "\\( \\mathbb{F}_\\kappa(\\cdots) \\)");
+    set_text("op12-1", "\\( [\\kappa,\\cdots] \\)");
+    set_text("op12-2", "\\( [\\kappa\\cdots] \\)");
+    set_text("op13-0", words().option.off);
+    set_text("op13-1", words().option.on);
     MathJax.typesetPromise([document.querySelector(".options")]);
 }
 // CHANGE OPTION
@@ -458,7 +464,7 @@ function set_sheet_ordinal(){
 }
 // SET SHEET TABLE
 async function set_sheet_table(){
-    let p = data.save.sheet.page, line = [], table;
+    let p = data.save.sheet.page, line = [], table, k, options = {};
     let filename = `ASSETS/DATA/${data.resources.sheet.content}${z(p, 2)}.json`;
     let content = JSON.parse(await (await fetch(filename)).text());
     if (p !== data.save.sheet.page) return;
@@ -473,6 +479,11 @@ async function set_sheet_table(){
         table += `<th>${data.resources.sheet.names[line[i]]}</th>`;
     }
     table += `</tr>`;
+    k = Object.keys(data.resources.sheet.options);
+    for (let i = 0; i < k.length; i++){
+        options[k[i]] = data.resources.sheet.options[k[i]];
+        if (options[k[i]] === null) options[k[i]] = data.save.options[k[i]];
+    }
     for (let i = 0; i < data.resources.sheet.page_size; i++){
         table += `<tr>`;
         for (let j = 0; j < line.length; j++){
@@ -489,7 +500,7 @@ async function set_sheet_table(){
                 content[i][line[j]],
                 data.constant.systems[data.resources.sheet.rules[line[j]]],
                 display_mode(),
-                data.resources.sheet.options,
+                options,
             );
             table += `</td>`;
         }
@@ -1809,6 +1820,9 @@ async function load_data(){
         data.save.options.ref = data.constant.save.options.ref;
         data.save.options.square = data.constant.save.options.square;
     }
+    if (ver < "2.1"){
+        data.save.options.mult = data.constant.save.options.mult;
+    }
     if (ver < data.constant.save.version){
         data.save.version = data.constant.save.version;
         save_data();
@@ -1832,13 +1846,14 @@ let data = {
             Stegert2,
         ],
         save        : {
-            version     : "2.0",
+            version     : "2.1",
             lang        : 0,
             presets     : [],
             options     : {
                 background  : 1,
                 display     : 2,
                 indent      : 1,
+                mult        : 0,
                 simplify    : 5,
                 specify     : 1,
                 reveb1      : 5,

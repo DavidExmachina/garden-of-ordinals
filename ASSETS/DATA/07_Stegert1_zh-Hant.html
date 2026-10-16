@@ -39,7 +39,7 @@
         <p>&emsp;&emsp;論文中，反射實例與配置的完整形式是非常複雜且繁瑣的。若我們碰到透過多次塌縮而得到的序數，由於第4個元素\( \mathbb{Z} \)，完整形式將需要指數級增加的符號，因為我們需要寫下第4個元素\( \mathbb{Z} \)兩次，而每次塌縮時符號的數量會翻倍。</p>
         <p>&emsp;&emsp;因此，我們介紹「反射括號表示法」。它將反射實例\( \mathbb{G}(\alpha_0,\alpha_1,\cdots,\alpha_n) \)記作\( [i(\mathbb{G}),\alpha_0,\alpha_1,\cdots,\alpha_n] \)並將反射配置\(\mathbb{G} \)記作\( [i(\mathbb{G}),\cdots] \)。若反射配置\(\mathbb{G} \)沒有變量，則我們可以將它傳回的反射實例寫作\( [i(\mathbb{G}),] \)，在末尾有添加逗號，以避免與之後介紹的「不可描述括號表示法」混淆。我們定義\( \mathbb{X}\in C(\alpha,\beta) \)為\( \kappa,\alpha_0,\alpha_1,\cdots,\alpha_n\in C(\alpha,\beta) \)，其中\( \mathbb{X}=[\kappa,\alpha_0,\alpha_1,\cdots,\alpha_n] \)。</p>
         <p>&emsp;&emsp;第3個元素\( \vec{R} \)是一個叫做「M-P-表達式」的數學物件的序列，形式為\( M_\mathbb{F}^{&lt;\alpha}-P_n \)，它們表示集合\( \mathfrak{M}_\mathbb{X}^\beta \)的元素對於一切使得集合\ \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)定義良好的\( \gamma&lt;\alpha \)與\( \alpha_0,\alpha_1,\cdots,\alpha_n \)都是\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)-\( \Pi_n^1 \)-不可描述的。若\( \gamma=o(\mathbb{F}) \)，則前述的元素改為都是\( \Pi_n^1 \)-不可描述的。該元素可以不含有M-P-表達式，此時記作\( \epsilon \)。</p>
-        <p>&emsp;&emsp;各反射配置，因此各反射實例的定義極為複雜。完整定義見<a href="#2.3">「反射」</a>欄位。</p>
+        <p>&emsp;&emsp;各反射配置，因此各反射實例的定義極為複雜。完整定義見<a href="#3.3">「反射」</a>欄位。</p>
         <h3>\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述基數</h3>
         <p>&emsp;&emsp;\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述基數是該序數塌縮函數經常使用的基數，定義如下：</p>
         <p>&emsp;&emsp;對於序數類\( \mathfrak{M} \)若對於一切\( U_1,\cdots,U_m\subseteq V_\kappa \)與語言\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \)的\( \Pi_n^1 \)語句\( F \)滿足以下條件，則基數\( \kappa \)是\( \mathfrak{M} \)-\( \Pi_n^1 \)-不可描述的（或在\( \mathfrak{M} \)中\( \Pi_n^1 \)-不可描述）：</p>
@@ -266,8 +266,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( 0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( a'=\Xi \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( a_0&lt;\overline{\omega} \)，傳回\( 0 \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \neg a_0&lt;\overline{\omega} \)，傳回\( 2 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( \neg\overline{\omega}&lt;a_0 \)，傳回\( 0 \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \overline{\omega}&lt;a_0 \)，傳回\( 2 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> 若\( Plug(a)=\overline{0} \)，傳回\( 0 \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> 若\( Plug(a)\neq\overline{0} \)，則：</p>
@@ -292,8 +292,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> 若\( a={a_0}^+\land a_0\in T_m \)，傳回\( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> 若\( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> 若\( a'=\Xi \)，則：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( a_0&lt;\overline{\omega} \)，傳回\( Plug(a)[\overline{0}] \)</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \neg a_0&lt;\overline{\omega} \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> 若\( \neg\overline{\omega}&lt;a_0 \)，傳回\( Plug(a)[\overline{0}] \)</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> 若\( \overline{\omega}&lt;a_0 \)，傳回\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> 若\( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)，則：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> 若\( Plug(a)=\overline{0} \)，傳回\( \overline{0} \)</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> 若\( Plug(a)\neq\overline{0} \)，則：</p>

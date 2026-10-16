@@ -193,9 +193,8 @@
         <p>&emsp;&emsp;Console: The initial ordinal in the Explore menu has been set to \( \omega \).</p>
         <h3>search</h3>
         <p>&emsp;&emsp;<b>Format:</b> search ord [steps=10000]</p>
-        <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal within "steps" step(s) in the Explore menu.</p>
-        <p>&emsp;&emsp;If the ordinal "ord" is found, it will be highlighted in the Explore menu.</p>
-        <p>&emsp;&emsp;The ordinal "ord" is supposed to always be found within sufficient steps when the initial ordinal is set to "A" in computer code, which is the default value.</p>
+        <p>&emsp;&emsp;<b>Description:</b> Search the ordinal "ord" under the current initial ordinal within "steps" step(s) in the Explore menu. If the ordinal "ord" is found, it will be highlighted in the Explore menu.</p>
+        <p>&emsp;&emsp;The ordinal "ord" is supposed to always be found within sufficient steps when the initial ordinal is set to "A" in computer code, which is the default value. However, due to the high complexity of Stegert's First \( \Psi \) and Stegert's Second \( \Psi \), some ordinals may take too many steps to find in these ordinal systems, even if "steps" is omitted.</p>
         <br>
         <p>&emsp;&emsp;<b>Example:</b> (Buchholz's \( \psi \))</p>
         <p>&emsp;&emsp;Input: search (,(,))</p>
@@ -265,13 +264,18 @@
         <p>&emsp;&emsp;None: The ordinals will not be indented.</p>
         <p>&emsp;&emsp;Expansive: The ordinals expanded the same number of times will have the same indentation.</p>
         <p>&emsp;&emsp;Recursive: The ordinals that are recursively expanded will have the same indentation.</p>
+        <h3>Multiplication Symbol</h3>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust the multiplication symbols of ordinals written in non-computer codes.</p>
+        <p>&emsp;&emsp;\( * \): The multiplication symbols will be written as \( * \).</p>
+        <p>&emsp;&emsp;\( \cdot \): The multiplication symbols will be written as \( \cdot \).</p>
+        <p>&emsp;&emsp;\( \times \): The multiplication symbols will be written as \( \times \).</p>
         <h3>Simplification Mode</h3>
-        <p>&emsp;&emsp;<b>Description:</b> Adjust the degree of simplification of ordinals written in non-computer codes.</p>
+        <p>&emsp;&emsp;<b>Description:</b> Adjust the degree of simplification of ordinals written in non-computer codes. The multiplication symbols used here depends on the option "Multiplication Symbol".</p>
         <p>&emsp;&emsp;None: The ordinals will not be simplified.</p>
         <p>&emsp;&emsp;\( \alpha^\beta \): The bases and exponents of the ordinals will be simplified. (For example: \( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \), where \( \epsilon \) is an arbitrary epsilon number (\( \omega^\epsilon=\epsilon \)))</p>
-        <p>&emsp;&emsp;\( \omega^{\alpha*\beta} \): Same as \( \alpha*\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( epsilon\omega^\alpha \).</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha*\beta} \): Same as \( \alpha*\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( \epsilon\omega^\alpha \).</p>
         <p>&emsp;&emsp;\( \alpha*\beta \): In addition to \( \alpha^\beta \), repeated multiplications will be simplified as exponentiations. (For example: \( \alpha\alpha\alpha=\alpha^3 \))</p>
-        <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \): Same as \( \alpha+\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( epsilon\omega^\alpha \).</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \): Same as \( \alpha+\beta \) except \( \omega^{\epsilon+\alpha} \) will not be simplified as \( \epsilon\omega^\alpha \).</p>
         <p>&emsp;&emsp;\( \alpha+\beta \): In addition to \( \alpha*\beta \), repeated additions will be simplified as multiplications. (For example: \( \alpha+\alpha+\alpha=\alpha3 \))</p>
         <h3>Function Specification</h3>
         <p>&emsp;&emsp;<b>Exclusive in:</b> Extended Buchholz's \( \psi \), Rathjen's Small \( \psi \), Rathjen's Capital \( \Psi \), Stegert's First \( \Psi \), Stegert's Second \( \Psi \)</p>
@@ -760,8 +764,8 @@
         <p>&emsp;&emsp;◇The command "search" now allows you to set a maximum search step limit, and displays the elapsed time when the ordinal is found.</p>
         <p>&emsp;&emsp;◇The highlighted ordinal due to the command "search" will no longer be dehighlighted when expanding or collapsing other ordinals.</p>
         <p>&emsp;&emsp;◇Added the <a href="#1.3">"select button"</a>. You can now select an ordinal in the Explore menu as a label to make it easier to find.</p>
-        <p>&emsp;&emsp;◇Added the options \( \omega^{\alpha*\beta} \) and \( \omega^{\alpha+\beta} \) in the item <a href="#1.4.4">"Simplification Mode"</a>.</p>
-        <p>&emsp;&emsp;◇Added the option \( \psi_{\Omega_\alpha}(\beta) \) in the item <a href="#1.4.8">"Rewrite \( \psi_\alpha(\beta) \)"</a>.</p>
+        <p>&emsp;&emsp;◇Added the options \( \omega^{\alpha*\beta} \) and \( \omega^{\alpha+\beta} \) in the item <a href="#1.4.5">"Simplification Mode"</a>.</p>
+        <p>&emsp;&emsp;◇Added the option \( \psi_{\Omega_\alpha}(\beta) \) in the item <a href="#1.4.9">"Rewrite \( \psi_\alpha(\beta) \)"</a>.</p>
         <p>&emsp;&emsp;◇Improved the performance of the website when the background animation is turned off.</p>
         <p>&emsp;&emsp;◇Reduced the lag when opening the Help menu.</p>
         <p>&emsp;&emsp;◇Fixed some errors when simplifying some ordinals.</p>
@@ -774,7 +778,7 @@
         <p>&emsp;&emsp;◇Fixed some errors in the help articles.</p>
         <h2>Jun 02, 2026 - V1.5</h2><hr>
         <p>&emsp;&emsp;◇Fixed line 02.02.05.02.02.03.02. of the tail function \( t \) in Rathjen's Capital \( \Psi \) that caused some ordinals to expand abnormally.</p>
-        <p>&emsp;&emsp;◇Changed how the option \( \Xi_\alpha \) in the item <a href="#1.4.10">"Rewrite \( \Xi(\alpha) \)"</a> works.</p>
+        <p>&emsp;&emsp;◇Changed how the option \( \Xi_\alpha \) in the item <a href="#1.4.11">"Rewrite \( \Xi(\alpha) \)"</a> works.</p>
         <p>&emsp;&emsp;◇Added <a href="#4.14">"Church-Kleene Ordinal \( \omega_1^{CK} \) and Admissible Ordinals \( \omega_\alpha^{CK} \)"</a> in <a href="#4">"Some Notable Ordinals"</a>.</p>
         <p>&emsp;&emsp;◇Rearranged this article.</p>
         <p>&emsp;&emsp;◇Fixed some errors in the help articles, including bad links in this article.</p>
@@ -784,8 +788,8 @@
         <p>&emsp;&emsp;◇Since \( \Xi \) is also used to represent the \( \Pi_0^2 \)-indescribable cardinal in Stegert's First \( \Psi \), the function \( \Xi(\alpha) \) in Rathjen's Capital \( \Psi \) is now denoted as \( X(\alpha) \) by default. You can restore it by Options &gt; Function Specification &gt; \( \Xi(\alpha) \).</p>
         <p>&emsp;&emsp;◇Added ordinals for the particles for the background animation.</p>
         <p>&emsp;&emsp;◇Added the command <a href="#1.1.5">"ref"</a>.</p>
-        <p>&emsp;&emsp;◇Since \( \mathcal{K} \) is used in the paper on Rathjen's Capital \( \Psi \) instead of \( K \), add the option item <a href="#1.4.11">"Rewrite \( K \)"</a>.</p>
-        <p>&emsp;&emsp;◇Added the option items <a href="#1.4.12">"Reflection Instances and Configurations"</a> and <a href="#1.4.13">"Rectangular Border"</a>.</p>
+        <p>&emsp;&emsp;◇Since \( \mathcal{K} \) is used in the paper on Rathjen's Capital \( \Psi \) instead of \( K \), add the option item <a href="#1.4.12">"Rewrite \( K \)"</a>.</p>
+        <p>&emsp;&emsp;◇Added the option items <a href="#1.4.13">"Reflection Instances and Configurations"</a> and <a href="#1.4.14">"Rectangular Border"</a>.</p>
         <p>&emsp;&emsp;◇Added some texts about beth numbers in <a href="#2.2">"Cardinals"</a>.</p>
         <p>&emsp;&emsp;◇Added the <a href="#3">"Indescribable Bracket Notation"</a>, a notation dedicated to representing cardinals larger than the Weakly Compact Cardinal \( K \) that are mainly used in Stegert's First \( \Psi \) and Stegert's Second \( \Psi \).</p>
         <p>&emsp;&emsp;◇Added the <a href="#4.12">"Small Stegert Ordinal (SSO)"</a> and <a href="#4.13">"Large Stegert Ordinal (LSO)"</a> in <a href="#4">"Some Notable Ordinals"</a>.</p>
@@ -795,5 +799,12 @@
         <p>&emsp;&emsp;◇Fixed the problem that the icon of this website becomes the icon of <a href="https://davidexmachina.github.io" target="_blank">the creator's website</a> after visiting the website.</p>
         <p>&emsp;&emsp;◇Fixed the problem that the options cause errors if this website is visited with the version prior to V1.3 for the first time.</p>
         <p>&emsp;&emsp;◇Fixed more errors in the help articles.</p>
+        <h2>Oct 16, 2026 - V2.1</h2><hr>
+        <p>&emsp;&emsp;◇Added the option item <a href="#1.4.4">"Multiplication Symbol"</a>.</p>
+        <p>&emsp;&emsp;◇Made the display option <a href="#1.4.14">"Rectangular Border"</a> depend on settings in the "Huge List of Countable Ordinals".</p>
+        <p>&emsp;&emsp;◇Added some texts in <a href="#1.1.11">the paragraph about the command "search"</a> about some ordinals taking too many steps to find in Stegert's First \( \Psi \) and Stegert's Second \( \Psi \).</p>
+        <p>&emsp;&emsp;◇Fixed the invalid link in the "Reflection Instances and Configurations" paragraph in the help article of Stegert's First \( \Psi \).</p>
+        <p>&emsp;&emsp;◇Fixed the lines 06.01.01. and 06.01.02. in the functions \( R_v \) and \( R_2 \) in the help article of Stegert's First \( \Psi \). This is an error in the help article rather than in the code of the ordinal system.</p>
+        <p>&emsp;&emsp;◇Fixed the error of ordinals #0423-0430, #0435, #0436 in the "RathjenK" column and ordinal #0811 in the "Notes" column in the "Huge List of Countable Ordinals".</p>
     </body>
 </html>

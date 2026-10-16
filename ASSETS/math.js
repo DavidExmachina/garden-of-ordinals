@@ -663,11 +663,11 @@ function spadd(math){
     return result.slice(0, -1);
 }
 // REMOVE REMOVABLE * SIGN
-function remult(math){
+function remult(math, type = 0){
     // ZERO CASE
     if (feq(math, ["0"]) || feq(math, [])) return math;
     // LOOP
-    let result = [], a;
+    let result = [], a, mult = ["*", "\\cdot", "\\times"][type];
     for (let i = 0; i < math.length; i++){
         // KEEP ALL NON-* SYMBOLS
         if (math[i] !== "*"){
@@ -685,22 +685,22 @@ function remult(math){
         // CHECK LEFT
         if (typeof math[i - 1] === "object"){
             if ("vVbBrRxXsST".includes(math[i - 1][0])){
-                result.push("*");
+                result.push(mult);
                 continue;
             }
             if ("012".includes(math[i - 1][0]) && "vVbBrRxXsST".includes(math[i - 1][1][0][0])){
-                result.push("*");
+                result.push(mult);
                 continue;
             }
         }
         // CHECK RIGHT
         if (typeof math[i + 1] === "object"){
             if ("vVbBrRxXsST".includes(math[i + 1][0])){
-                result.push("*");
+                result.push(mult);
                 continue;
             }
             if ("012".includes(math[i + 1][0]) && "vVbBrRxXsST".includes(math[i + 1][1][0][0])){
-                result.push("*");
+                result.push(mult);
                 continue;
             }
         }
@@ -853,7 +853,7 @@ function simplify(math, options){
     if (options.simplify > 0) result = spexp(result, options.simplify % 2);
     if (options.simplify > 1) result = spmult(result);
     if (options.simplify > 3) result = spadd(result);
-    result = remult(result);
+    result = remult(result, options.mult);
     if (!options.specify) result = orifunc(result);
     result = refunc(result);
     return result;
@@ -884,8 +884,10 @@ function replace(math){
         ["\\mathfrak{p}", "st"],
         ["\\mathfrak{P}", "St"],
         ["\\mathbb{F}", "F"],
+        ["\\cdot", "·"],
         ["\\cdot_{\\cdot_\\cdot}", "..."],
         ["\\cdots", "..."],
+        ["\\times", "×"],
     ];
     let result = clone(math);
     for (let i = 0; i < rep.length; i++) result = result.split(rep[i][0]).join(rep[i][1]);
@@ -921,7 +923,7 @@ function html(math, rep = true){
 }
 // MATHJAX NOTATION
 function mathjax(math, bracket = true){
-    let text = "";
+    let text = "", symbol = false, c;
     for (let i = 0; i < math.length; i++){
         if (typeof math[i] === "object"){
             if (math[i][0] === 0){
@@ -941,7 +943,13 @@ function mathjax(math, bracket = true){
                 for (let j = 1; j < math[i].length; j++) text += mathjax(math[i][j], false) + ",";
                 text = text.slice(0, -1) + ")";
             }
-        } else text += math[i];
+        } else {
+            c = math[i][0].toUpperCase().charCodeAt(0);
+            if (symbol && c >= 65 && c < 91) text += " ";
+            text += math[i];
+            c = math[i].slice(-1).toUpperCase().charCodeAt(0);
+            symbol = math[i][0] === "\\" && c >= 65 && c < 91;
+        }
     }
     if (bracket) return `\\( ${text} \\)`;
     return text;

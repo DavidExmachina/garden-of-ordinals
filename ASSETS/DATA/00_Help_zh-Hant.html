@@ -193,9 +193,8 @@
         <p>&emsp;&emsp;控制台：已將探索選單的初始序數設定為\( \omega \)。</p>
         <h3>search</h3>
         <p>&emsp;&emsp;<b>格式：</b>search ord [steps=10000]</p>
-        <p>&emsp;&emsp;<b>描述：</b>於「steps」步之內在探索選單中的初始序數下搜尋序數「ord」。</p>
-        <p>&emsp;&emsp;若找到序數「ord」，則會在探索選單中反白顯示。</p>
-        <p>&emsp;&emsp;在初始序數被設定成初始值「A」時，序數「ord」應該一定會於足夠步數內找到。</p>
+        <p>&emsp;&emsp;<b>描述：</b>於「steps」步之內在探索選單中的初始序數下搜尋序數「ord」。若找到序數「ord」，則會在探索選單中反白顯示。</p>
+        <p>&emsp;&emsp;在初始序數被設定成初始值「A」時，序數「ord」應該一定會於足夠步數內找到。但是，由於施泰葛第一\( \Psi \)函數與施泰葛第二\( \Psi \)函數高度複雜，有些序數在這些序數系統中需要過多的步數才能找到，甚至是在省略「steps」的情況下。</p>
         <br>
         <p>&emsp;&emsp;<b>例：</b>（布赫霍茲\( \psi \)函數）</p>
         <p>&emsp;&emsp;輸入：search (,(,))</p>
@@ -265,13 +264,18 @@
         <p>&emsp;&emsp;無：序數沒有縮排。</p>
         <p>&emsp;&emsp;展開式：同樣次數展開的序數有相同的縮排。</p>
         <p>&emsp;&emsp;遞歸式：遞歸展開的序數有相同的縮排。</p>
+        <h3>乘法符號</h3>
+        <p>&emsp;&emsp;<b>描述：</b>調整寫成非電腦程式碼的序數的乘法符號。</p>
+        <p>&emsp;&emsp;\( * \)：乘法符號將寫作\( * \)。</p>
+        <p>&emsp;&emsp;\( \cdot \)：乘法符號將寫作\( \cdot \)。</p>
+        <p>&emsp;&emsp;\( \times \)：乘法符號將寫作\( \times \)。</p>
         <h3>化簡模式</h3>
-        <p>&emsp;&emsp;<b>描述：</b>調整寫成非電腦程式碼的序數的化簡程度。</p>
+        <p>&emsp;&emsp;<b>描述：</b>調整寫成非電腦程式碼的序數的化簡程度。此處使用的乘法符號取決於選項「乘法符號」。</p>
         <p>&emsp;&emsp;無：不化簡序數。</p>
         <p>&emsp;&emsp;\( \alpha^\beta \)：化簡序數的底數與指數。（例：\( \omega^{\epsilon+\alpha}=\epsilon\omega^\alpha \)，其中\( \epsilon \)是任意埃普西隆數（\( \omega^\epsilon=\epsilon \)））</p>
-        <p>&emsp;&emsp;\( \omega^{\alpha*\beta} \)：與\( \alpha*\beta \)相同，只是\( \omega^{\epsilon+\alpha} \)不會化簡為\( epsilon\omega^\alpha \)。</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha*\beta} \)：與\( \alpha*\beta \)相同，只是\( \omega^{\epsilon+\alpha} \)不會化簡為\( \epsilon\omega^\alpha \)。</p>
         <p>&emsp;&emsp;\( \alpha*\beta \)：除\( \alpha^\beta \)外，將重複的乘法化簡為乘方。（例：\( \alpha\alpha\alpha=\alpha^3 \)）</p>
-        <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \)：與\( \alpha+\beta \)相同，只是\( \omega^{\epsilon+\alpha} \)不會化簡為\( epsilon\omega^\alpha \)。</p>
+        <p>&emsp;&emsp;\( \omega^{\alpha+\beta} \)：與\( \alpha+\beta \)相同，只是\( \omega^{\epsilon+\alpha} \)不會化簡為\( \epsilon\omega^\alpha \)。</p>
         <p>&emsp;&emsp;\( \alpha+\beta \)：除\( \alpha*\beta \)外，將重複的加法化簡為乘法。（例：\( \alpha+\alpha+\alpha=\alpha3 \)）</p>
         <h3>函數指定</h3>
         <p>&emsp;&emsp;<b>僅限於：</b>拓展布赫霍茲\( \psi \)函數、拉珍小\( \psi \)函數、拉珍大\( \Psi \)函數、施泰葛第一\( \Psi \)函數、施泰葛第二\( \Psi \)函數</p>
@@ -760,8 +764,8 @@
         <p>&emsp;&emsp;◇指令「search」現在可以設定最大搜尋步數，並且找到序數時會顯示用時。</p>
         <p>&emsp;&emsp;◇由於指令「search」導致在探索選單中反白顯示的序數不再由於展開或收起其他序數時取消反白顯示。</p>
         <p>&emsp;&emsp;◇添加了<a href="#1.3">「選擇按鈕」</a>。可以透過在探索選單中選擇序數作為標記以方便查找。</p>
-        <p>&emsp;&emsp;◇於項目<a href="#1.4.4">「化簡模式」</a>添加了選項\( \omega^{\alpha*\beta} \)與\( \omega^{\alpha+\beta} \)。</p>
-        <p>&emsp;&emsp;◇於項目<a href="#1.4.8">「改寫\( \psi_\alpha(\beta) \)」</a>添加了選項\( \psi_{\Omega_\alpha}(\beta) \)。</p>
+        <p>&emsp;&emsp;◇於項目<a href="#1.4.5">「化簡模式」</a>添加了選項\( \omega^{\alpha*\beta} \)與\( \omega^{\alpha+\beta} \)。</p>
+        <p>&emsp;&emsp;◇於項目<a href="#1.4.9">「改寫\( \psi_\alpha(\beta) \)」</a>添加了選項\( \psi_{\Omega_\alpha}(\beta) \)。</p>
         <p>&emsp;&emsp;◇優化了關閉背景動畫時效能。</p>
         <p>&emsp;&emsp;◇減輕了開啟幫助選單時的卡頓現象。</p>
         <p>&emsp;&emsp;◇修復了化簡某些序數時導致的錯誤。</p>
@@ -774,7 +778,7 @@
         <p>&emsp;&emsp;◇修復了幫助文章中的錯誤。</p>
         <h2>2026年06月02日 - V1.5</h2><hr>
         <p>&emsp;&emsp;◇修復了使某些序數展開異常的拉珍大\( \Psi \)函數中的尾部函數\( t \)的02.02.05.02.02.03.02.行。</p>
-        <p>&emsp;&emsp;◇修改了項目<a href="#1.4.10">「改寫\( \Xi_\alpha \)」</a>中選項\( \Xi_\alpha \)的運作方式。</p>
+        <p>&emsp;&emsp;◇修改了項目<a href="#1.4.11">「改寫\( \Xi_\alpha \)」</a>中選項\( \Xi_\alpha \)的運作方式。</p>
         <p>&emsp;&emsp;◇於<a href="#4">「一些值得提及的序數」</a>添加了<a href="#4.14">「邱奇-克萊尼序數\( \omega_1^{CK} \)及可容序數\( \omega_\alpha^{CK} \)」</a>。</p>
         <p>&emsp;&emsp;◇重新編排了本文章。</p>
         <p>&emsp;&emsp;◇修復了幫助文章中的錯誤，包括本文章中連結錯誤的問題。</p>
@@ -784,8 +788,8 @@
         <p>&emsp;&emsp;◇由於在施泰葛第一\( \Psi \)函數中，\( \Xi \)也用來表示\( \Pi_0^2 \)-不可描述基數，於拉珍大\( \Psi \)函數中使用的函數\( \Xi(\alpha) \)現在預設記作\( X(\alpha) \)。您可以透過 選項 &gt; 函數指定 &gt; \( \Xi(\alpha) \) 以使其恢復原狀。</p>
         <p>&emsp;&emsp;◇添加了用作背景動畫的序數。</p>
         <p>&emsp;&emsp;◇添加了指令<a href="#1.1.5">「ref」</a>。</p>
-        <p>&emsp;&emsp;◇由於拉珍大\( \Psi \)函數的論文中使用的是\( \mathcal{K} \)而不是\( K \)，添加了選項項目<a href="#1.4.11">「改寫\( K \)」</a>。</p>
-        <p>&emsp;&emsp;◇添加了選項項目<a href="#1.4.12">「反射實例與配置」</a>與<a href="#1.4.13">「矩形邊框」</a>。</p>
+        <p>&emsp;&emsp;◇由於拉珍大\( \Psi \)函數的論文中使用的是\( \mathcal{K} \)而不是\( K \)，添加了選項項目<a href="#1.4.12">「改寫\( K \)」</a>。</p>
+        <p>&emsp;&emsp;◇添加了選項項目<a href="#1.4.13">「反射實例與配置」</a>與<a href="#1.4.14">「矩形邊框」</a>。</p>
         <p>&emsp;&emsp;◇於<a href="#2.2">「基數」</a>添加了與貝特數相關的一些文字。</p>
         <p>&emsp;&emsp;◇添加了<a href="#3">「不可描述括號表示法」</a>，旨在表示在施泰葛第一\( \Psi \)函數與施泰葛第二\( \Psi \)函數使用的比弱緊緻基數\( K \)大的基數。</p>
         <p>&emsp;&emsp;◇於<a href="#4">「一些值得提及的序數」</a>添加了<a href="#4.12">「小施泰葛序數（SSO）」</a>與<a href="#4.13">「大施泰葛序數（LSO）」</a>。</p>
@@ -794,6 +798,13 @@
         <p>&emsp;&emsp;◇調整了標題畫面和選項選單的佈局，以支援尺寸較小的設備。</p>
         <p>&emsp;&emsp;◇修復了訪問<a href="https://davidexmachina.github.io" target="_blank">製作者的網站</a>之後本網站的圖示會變成那個網站的圖示的問題。</p>
         <p>&emsp;&emsp;◇修复了初次使用以V1.3之前的版本訪問本網站時選項導致錯誤的問題。</p>
-        <p>&emsp;&emsp;◇修復了幫助文章中的錯誤。</p>
+        <p>&emsp;&emsp;◇修復了幫助文章中更多的錯誤。</p>
+        <h2>2026年10月16日 - V2.1</h2><hr>
+        <p>&emsp;&emsp;◇添加了選項項目<a href="#1.4.4">「乘法符號」</a>。 </p>
+        <p>&emsp;&emsp;◇使顯示選項<a href="#1.4.14">「矩形邊框」</a>在「超長可數序數表」中跟隨設定。 </p>
+        <p>&emsp;&emsp;◇在<a href="#1.1.11">關於指令「search」的段落</a>中補充了一些關於某些序數在施泰葛第一\( \Psi \)函數與施泰葛第二\( \Psi \)函數中需要過多的步數才能找到的文字。</p>
+        <p>&emsp;&emsp;◇修復了的施泰葛第一\( \Psi \)函數的幫助文章中的段落「反射實例與配置」中的失效連結。</p>
+        <p>&emsp;&emsp;◇修復了的施泰葛第一\( \Psi \)函數的幫助文章中的函數\( R_v \)與\( R_2 \)的06.01.01.行與06.01.02.行。這是幫助文章中的筆誤，而不是序數系統的程式碼出錯。</p>
+        <p>&emsp;&emsp;◇修復了「超長可數序數表」中的「RathjenK」列中的序數#0423-0430、#0435、#0436的以及「Notes」列中的序數#0811的錯誤。</p>
     </body>
 </html>

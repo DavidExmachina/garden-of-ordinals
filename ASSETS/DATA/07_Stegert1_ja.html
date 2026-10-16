@@ -39,7 +39,7 @@
         <p>&emsp;&emsp;論文では反映実例と配置の完全形はかなり複雑で面倒です。基数を何度も崩壊して得た順序数に遭遇する場合、第4の要素を2回書き出さなければならないため、指数関数的に多くの記号が必要となり、崩壊するたびに2倍になります。</p>
         <p>&emsp;&emsp;そのため、ここで「反映括弧表記」をご紹介します。それは反映実例\( \mathbb{G}(\alpha_0,\alpha_1,\cdots,\alpha_n) \)を\( [i(\mathbb{G}),\alpha_0,\alpha_1,\cdots,\alpha_n] \)と表し、反映配置\( \mathbb{G} \)を\( [i(\mathbb{G}),\cdots] \)と表します。反映配置\( \mathbb{G} \)は変数をとらない場合、それが返する唯一の反映実例は末尾にカンマを付けて、\( [i(\mathbb{G}),] \)とも表されます。これは後で紹介する「記述不能括弧表記」との混同を避けるためです。\( \mathbb{X}\in C(\alpha,\beta) \)を\( \kappa,\alpha_0,\alpha_1,\cdots,\alpha_n\in C(\alpha,\beta) \)と定義します。ここで、\( \mathbb{X}=[\kappa,\alpha_0,\alpha_1,\cdots,\alpha_n] \)。</p>
         <p>&emsp;&emsp;第3の要素\( \vec{R} \)は「M-P-数式」と呼ばれる数学的対象の配列であり、\( M_\mathbb{F}^{&lt;\alpha}-P_n \)の形式であります。それは、任意の\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)を定義明確させる\( \gamma&lt;\alpha \)と\( \alpha_0,\alpha_1,\cdots,\alpha_n \)に対して、集合\( \mathfrak{M}_\mathbb{X}^\beta \)に含まれるすべての要素は\( \mathfrak{M}_{[i(\mathbb{F}),\alpha_0,\alpha_1,\cdots,\alpha_n]}^\gamma \)-\( \Pi_n^1 \)-記述不能であることを意味します。\( \gamma=o(\mathbb{F}) \)の場合、前述の要素は、代わりに\( \Pi_n^1 \)-記述不能である。この要素はM-P-数式を全く持たないことも可能です。その場合、この要素は\( \epsilon \)と表されます。</p>
-        <p>&emsp;&emsp;各反映配置、ひいては反映実例の定義は極めて複雑です。完全な定義については、<a href="#2.3">「反映」</a>部分をご覧ください。</p>
+        <p>&emsp;&emsp;各反映配置、ひいては反映実例の定義は極めて複雑です。完全な定義については、<a href="#3.3">「反映」</a>部分をご覧ください。</p>
         <h3>\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能基数</h3>
         <p>&emsp;&emsp;\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能基数はこの順序数崩壊関数でよく使用されている基数であり、次のように定義されます：</p>
         <p>&emsp;&emsp;順序数のクラス\( \mathfrak{M} \)に対して、任意の\( U_1,\cdots,U_m\subseteq V_\kappa \)と言語\( \langle V_\kappa,\in,U_1,\cdots,U_m\rangle \)の\( \Pi_n^1 \)文\( F \)に対して、次の条件を満たす場合、基数\( \kappa \)は\( \mathfrak{M} \)-\( \Pi_n^1 \)-記述不能（或いは\( \mathfrak{M} \)で\( \Pi_n^1 \)-記述不能）であります：</p>
@@ -266,8 +266,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( 0 \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a'=\Xi \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( a_0&lt;\overline{\omega} \)ならば、\( 0 \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \neg a_0&lt;\overline{\omega} \)ならば、\( 2 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( \neg\overline{\omega}&lt;a_0 \)ならば、\( 0 \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \overline{\omega}&lt;a_0 \)ならば、\( 2 \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> \( Plug(a)=\overline{0} \)ならば、\( 0 \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> \( Plug(a)\neq\overline{0} \)ならば：</p>
@@ -292,8 +292,8 @@
         <p>&emsp;&emsp;<span style="opacity: 0.5;">05.</span> \( a={a_0}^+\land a_0\in T_m \)ならば、\( \overline{0} \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.</span> \( a=\Psi_{[a',a_1,a_2,\cdots,a_n]}^{a_0}\land a',a_0,a_1,a_2,\cdots,a_n\in T_m \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.</span> \( a'=\Xi \)ならば：</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( a_0&lt;\overline{\omega} \)ならば、\( Plug(a)[\overline{0}] \)を返す</p>
-        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \neg a_0&lt;\overline{\omega} \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.01.</span> \( \neg\overline{\omega}&lt;a_0 \)ならば、\( Plug(a)[\overline{0}] \)を返す</p>
+        <p>&emsp;&emsp;<span style="opacity: 0.5;">06.01.02.</span> \( \overline{\omega}&lt;a_0 \)ならば、\( \Psi_{[\Xi,v_1]}^{v_0}+Plug(a)[\overline{0}] \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.</span> \( a'\neq\Xi\land Plug(a)&lt;\overline{\omega} \)ならば：</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.01.</span> \( Plug(a)=\overline{0} \)ならば、\( \overline{0} \)を返す</p>
         <p>&emsp;&emsp;<span style="opacity: 0.5;">06.02.02.</span> \( Plug(a)\neq\overline{0} \)ならば：</p>
