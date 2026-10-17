@@ -1846,7 +1846,7 @@ let data = {
             Stegert2,
         ],
         save        : {
-            version     : "2.1",
+            version     : "2.2",
             lang        : 0,
             presets     : [],
             options     : {

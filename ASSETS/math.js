@@ -678,7 +678,7 @@ function remult(math, type = 0){
             }
             // SIMPLIFY COMPLEX SYMBOLS
             a = clone(math[i]);
-            for (let j = 1; j < a.length; j++) a[j] = remult(a[j]);
+            for (let j = 1; j < a.length; j++) a[j] = remult(a[j], type);
             result.push(a);
             continue;
         }
