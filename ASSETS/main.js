@@ -7,6 +7,17 @@
 function z(n, d){return n.toString().padStart(d, "0");}
 // REPLACE ALL (String.prototype.replaceAll() has compatibility issues)
 function replaceall(text, match, target){return text.split(match).join(target);}
+// COMPARE DOT SPLIT
+function compare_dot(a, b){
+    let a1 = a.split("."), b1 = b.split(".");
+    for (let i = 0; i < Math.max(a1.length, b1.length); i++){
+        if (i >= a1.length) return -1;
+        if (i >= b1.length) return 1;
+        if (Number(a1[i]) < Number(b1[i])) return -1;
+        if (Number(a1[i]) > Number(b1[i])) return 1;
+    }
+    return 0;
+}
 // ADD SPACE
 function add_space(text, space){
     if (space >= 0) return replaceall(text, "\n", "\n" + " ".repeat(space));
@@ -21,7 +32,7 @@ function get_para(code, url = null){
     return new URLSearchParams(url === null ? window.location.search : url).get(code);
 }
 // CHANGE URL
-function change_url(url){window.history.pushState({}, "", url);}
+function change_url(url){history.pushState({}, "", url);}
 // CHECK VALIDITY OF A NUMBER
 function num_validity(n, mode = 0){
     try {Number(n)} catch {return false;}
@@ -212,7 +223,7 @@ function set_options(){
     set_display(document.querySelectorAll(".op-item")[12], [8, 9].includes(get_mode()[0]));
     set_display(document.querySelectorAll(".op-item")[13], [8, 9].includes(get_mode()[0]));
     for (let i = 0; i < options.length; i++){
-        for (let j = 0; j < [2, 3, 3, 3, 6, 2, 6, 4, 4, 3, 5, 2, 3, 2][i]; j++){
+        for (let j = 0; j < [2, 3, 3, 3, 6, 2, 6, 4, 4, 4, 5, 2, 3, 2][i]; j++){
             element = document.getElementById(`op${i}-${j}`);
             condition = data.save.options[options[i]] === j;
             element.setAttribute("class", `op-button button${condition * 2 + 1}`);
@@ -276,6 +287,7 @@ function set_options(){
     set_text("op9-0", "\\( \\chi_\\alpha(\\beta) \\)");
     set_text("op9-1", "\\( \\Omega_{1+\\beta} \\)");
     set_text("op9-2", "\\( I_{1+\\beta} \\)");
+    set_text("op9-3", "\\( I_\\alpha(\\beta) \\)");
     set_text("op10-0", `\\( ${data.save.options.specify ? "X" : "\\Xi"}(\\alpha) \\)`);
     set_text("op10-1", `\\( ${data.save.options.specify ? "X" : "\\Xi"}_\\alpha \\)`);
     set_text("op10-2", "\\( I \\)");
@@ -1801,14 +1813,14 @@ async function load_data(){
         save_data();
         return;
     }
-    ver = data.save.version === undefined ? "1.2-" : data.save.version;
-    if (ver < "1.3"){
+    ver = data.save.version === undefined ? "1.2" : data.save.version;
+    if (compare_dot(ver, "1.3") === -1){
         if (data.save.options.simplify){
             data.save.options.simplify += data.save.options.simplify - 1;
         }
         if (data.save.options.rebuch > 1) data.save.options.rebuch++;
     }
-    if (ver < "2.0"){
+    if (compare_dot(ver, "2.0") === -1){
         for (let i = 0; i < 2; i++) data.save.presets.push(data.constant.save.presets[i + 6]);
         if (data.save.options.simplify >= 6){
             data.save.options.simplify = data.constant.save.options.simplify;
@@ -1820,10 +1832,10 @@ async function load_data(){
         data.save.options.ref = data.constant.save.options.ref;
         data.save.options.square = data.constant.save.options.square;
     }
-    if (ver < "2.1"){
+    if (compare_dot(ver, "2.1") === -1){
         data.save.options.mult = data.constant.save.options.mult;
     }
-    if (ver < data.constant.save.version){
+    if (compare_dot(ver, data.constant.save.version) === -1){
         data.save.version = data.constant.save.version;
         save_data();
     }
@@ -1846,7 +1858,7 @@ let data = {
             Stegert2,
         ],
         save        : {
-            version     : "2.2.1",
+            version     : "2.2.2",
             lang        : 0,
             presets     : [],
             options     : {
@@ -1901,8 +1913,24 @@ let data = {
 // =================================================================================================
 // MAIN
 // =================================================================================================
+// UPDATE_URL
+function update_url(){
+    let ver = get_para("ver"), mode = get_mode(), hash = window.location.hash.slice(1), url;
+    if (!ver) return;
+    if (compare_dot(ver, data.constant.save.version) >= 0) return;
+    if (compare_dot(ver, "2.1") === -1){
+        if (hash && mode[0] === 1 && mode[1] === 3){
+            if (compare_dot(hash, "1.4.4") >= 0 && compare_dot(hash, "2") === -1){
+                hash = hash.split("."); hash[2]++; hash = hash.join(".");
+            }
+        }
+    }
+    url = `?mode=${mode[0]}-${mode[1]}&ver=${data.constant.save.version}#${hash}`;
+    history.replaceState({}, "", url);
+}
 // INITIALIZE
 function initialize(){
+    update_url();
     set_title();
     set_text("version", "V" + data.constant.save.version);
     let command1 = function (e){

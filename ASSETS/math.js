@@ -126,6 +126,18 @@ function rebuch(math, level = 3){
     }
     return result;
 }
+// HAS M
+function hasm(math){
+    // LOOP
+    for (let i = 0; i < math.length; i++){
+        // CHECK SIMPLE TERMS
+        if (typeof math[i] !== "object") if (math[i] === "M") return true;
+        // CHECK VEBLEN TERMS
+        if (!"vV".includes(math[i][0])) continue;
+        for (let j = 1; j < math[i].length; j++) if (hasm(math[i][j])) return true;
+    }
+    return false;
+}
 // REWRITE χ_α(β)
 function rechi(math, level = 2){
     // DO NOTHING IF LEVEL IS 0
@@ -169,7 +181,10 @@ function rechi(math, level = 2){
                 continue;
             }
             result.push(["I", rechi(math[i][2], level)]);
-        // χ_2+(α) REMAINS THE SAME
+        // REWRITE χ_α(β) AS I_α(β) FOR α LESS THAN M
+        } else if (level > 2 && !hasm(math[i][1])){
+            result.push(["I_", rechi(math[i][1], level), rechi(math[i][2], level)]);
+        // χ_M+(α) REMAINS THE SAME
         } else result.push([math[i][0], rechi(math[i][1], level), rechi(math[i][2], level)]);
     }
     return result;
@@ -771,6 +786,9 @@ function refunc(math){
             if (math[i].length > 3) result = result.concat(["("], refunc(math[i][3]), [")"]);
         } else if (math[i][0] === "x"){
             result.push([1, ["\\chi"], refunc(math[i][1])]);
+            result = result.concat(["("], refunc(math[i][2]), [")"]);
+        } else if (math[i][0] === "I_"){
+            result.push([1, ["I"], refunc(math[i][1])]);
             result = result.concat(["("], refunc(math[i][2]), [")"]);
         } else if (math[i][0] === "X"){
             result = result.concat(["X", "("], refunc(math[i][1]), [")"]);
