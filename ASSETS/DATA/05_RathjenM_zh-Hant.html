@@ -32,11 +32,11 @@
         <br>
         <p>&emsp;&emsp;我們可以把最小的滿足這些條件的基數記作\( I(2,0) \)。我們還有更大的基數\( I(2,1) \)，\( I(2,2) \)，依此類推。如此反复，我們便有一系列不可達基數的階層。</p>
         <p>&emsp;&emsp;函數\( \chi_\alpha(\beta) \)定義如下：（\( \alpha&lt;\Gamma_{M+1} \)且\( \beta&lt;M \)）</p>
-        <p>&emsp;&emsp;\( \begin{align} B_0(\alpha,\beta) := & \{0,M\} \\
+        <p>&emsp;&emsp;\( \begin{align} B_0(\alpha,\beta) := & \beta\cup\{0,M\} \\
                                         B_{n+1}(\alpha,\beta) := & \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in B_n(\alpha,\beta)\} \\
                                         \cup & \{\gamma|\gamma=\varphi_{\alpha'}(\beta')\land\alpha',\beta'\in B_n(\alpha,\beta)\} \\
                                         \cup & \{\gamma|\gamma&lt;\kappa\land\kappa\in R\land\kappa\in B_n(\alpha,\beta)\} \\
-                                        \cup & \{\gamma|\gamma=\chi_{\alpha'}(\beta')\land\alpha'&lt;\alpha\land\beta'&lt;M\} \\
+                                        \cup & \{\gamma|\gamma=\chi_{\alpha'}(\beta')\land\alpha'&lt;\alpha\land\beta'&lt;M\land\alpha',\beta'\in B_n(\alpha,\beta)\} \\
                                         B(\alpha,\beta) := & \bigcup_{n&lt;\omega}{B_n(\alpha,\beta)}=B_0(\alpha,\beta)\cup B_1(\alpha,\beta)\cup B_2(\alpha,\beta)\cup\cdots\cup B_m(\alpha,\beta)\cup\cdots \\
                                         \chi_\alpha(\beta) := & Enum_{Cl_M(\{\kappa|\kappa\in R\land\kappa\notin B(\alpha,\kappa)\land\alpha\in B(\alpha,\kappa)\})}(\beta) \end{align} \)</p>
         <br>
